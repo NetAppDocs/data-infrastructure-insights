@@ -5,24 +5,27 @@ indexpage:
   keywords: Data Infrastructure, insight, cloud
   tiles:
   tiles:
-  - title: Get started
+  - title: Getting started
     links:
-      - title: Installation (Windows)
-        url: install-windows/installation-prerequisites.html
-      - title: Installation (Linux)
-        url: install-linux/installation-prerequisites.html
-      - title: Configuration and administration
-        url: config-admin/setting-up-insight.html
-  - title: Reporting
+      - title: Onboarding
+        url: task_cloud_insights_onboarding_1.html
+      - title: Collecting Data
+        url: task_getting_started_with_cloud_insights.html
+      - title: Setting up Users
+        url: concept_user_roles.html
+  - title: Monitoring your Infrastructure
     links:
-      - title: Data Warehouse Administration
-        url: dwh/welcome-to-data-warehouse.html
-      - title: Reporting
-        url: reporting/welcome-to-oncommand-insight-reporting.html
-  - title: How-To's and FAQ
+      - title: Annotating your Assets
+        url: :task_defining_annotations.html
+      - title: Querying your Data
+        url: :concept_querying_assets.html
+      - title: Creating Dashboards
+        url: :concept_dashboards_overview.html
+      - title: Alerting
+        url: task_create_monitor.html
+  - title: Securing your Data
     links:
-      - title: How-To's
-        url: howto/getting-started-with-insight.html
-      - title: Frequently-Asked Questions
-        url: faq/faq-general-insight-questions.html
-  
+      - title: Workload Security
+        url: task_cs_getting_started.html
+
+#  - title: Working with Kubernetes  
