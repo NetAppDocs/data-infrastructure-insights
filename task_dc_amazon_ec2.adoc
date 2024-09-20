@@ -109,6 +109,7 @@ Cloud Insights supports collection of child accounts for AWS within a single AWS
 * You must configure each child account to have an AWS Role that allows the main account ID to access EC2 details from the children account. 
 * Each child account must have the role name configured as the same string. 
 * Enter this role name string into the Cloud Insights AWS Data Collector *Advanced Configuration* section, in the *Cross account role* field.
+* The account where the collector is installed needs to have _delegate access administrator_ privileges.  See the link:https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-delegated-admin.html[AWS Documentation] for more information. 
 
 Best Practice: It is highly recommended to assign the AWS predefined _AmazonEC2ReadOnlyAccess_ policy to the EC2 main account. Also, the user configured in the data source should have at least the predefined _AWSOrganizationsReadOnlyAccess_ policy assigned, in order to query AWS. 
 

@@ -114,6 +114,26 @@ Sample output:
  35000-55000/tcp
 
 
+== "Pinning" an Agent at the current version
+
+By default, Cloud Insights Workload Security updates agents automatically. Some customers may wish to pause automatic updating, which leaves an Agent at its current version until one of the following occurs:
+
+* The customer resumes automatic Agent updates. 
+* 30 days have passed. Note that the 30 days starts on the day of the most recent Agent update, not at the day the Agent is paused.
+
+In each of these cases, the agent will be updated at the next Workload Security refresh.
+
+To pause or resume automatic agent updates, use the _cloudsecure_config.agents_ APIs:
+
+image:ws_pin_agent_apis.png[cloudsecure agent APIs to pin and unpin agents]
+
+Note that it may take up to five minutes for the pause or resume action to take effect.
+
+You can view your current Agent versions on the *Workload Security > Collectors* page, in the *Agents* tab.
+
+image:ws_agent_version.png[WS Agent versions shown in the agents table]
+
+
 == Troubleshooting Agent Errors
 
 Known problems and their resolutions are described in the following table. 
@@ -125,7 +145,7 @@ Known problems and their resolutions are described in the following table.
 
 |Agent installation fails to create the /opt/netapp/cloudsecure/agent/logs/agent.log folder and the install.log file provides no relevant information.|This error occurs during bootstrapping of the agent. The error is not logged in log files because it occurs before logger is initialized. 
 The error is redirected to standard output, and is visible in the service log using the `journalctl -u cloudsecure-agent.service` command. This command can be used for troubleshooting the issue further.
-
+est
 |Agent installation fails with ‘This linux distribution is not supported. Exiting the installation’.|This error appears when you attempt to install the Agent on an unsupported system. See link:concept_cs_agent_requirements.html[Agent Requirements].
 
 |Agent Installation failed with the error: 

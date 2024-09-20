@@ -140,4 +140,4 @@ For example, clicking the linked percentage next to a top correlated asset displ
 +
 * If the Top correlated section does not contain an asset you want to display in a performance chart for comparison purposes, you can use the Search assets box in the Additional resources section to locate other assets.
 
-After you select an asset, it displays in the additional resources section. When you no longer want to view information about the asset, click image:TrashCanIcon.png[Delete].
+After you select an asset, it displays in the additional resources section. When you no longer want to view information about the asset, click the trash can icon to delete.

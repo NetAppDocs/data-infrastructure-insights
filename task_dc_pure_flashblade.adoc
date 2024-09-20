@@ -15,7 +15,7 @@ summary: Configuring Pure Storage data collector.
 :imagesdir: ./media/
 
 [.lead] 
-Cloud Insights uses the Pure Storage FlashBlade data collector to gather inventory and performance data.   
+Cloud Insights uses the Pure Storage FlashBlade data collector to gather inventory and performance data from FlashBlade clusters that expose version 2 of their REST API
 
 == Terminology
 
@@ -26,9 +26,9 @@ For each asset type acquired by Cloud Insights, the most common terminology used
 |Vendor/Model Term | Cloud Insights Term
 |Drive (SSD)|Disk
 |Array|Storage
-|Controller|Storage Node
-|Volume|Volume
-|LUN Map|Volume Map
+|Blade|Storage Node
+|File System|Internal Volume
+|Object storage bucket|Qtree
 |Initiator,Target|Volume Mask
 |===
 
@@ -36,9 +36,9 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Requirements
 
-* Storage system IP address 
-* User name and password for the Administrator account of the Pure storage system. 
-* Port requirement: HTTP/HTTPS 80/443
+* Storage system IP address or Fully Qualified Domain Name 
+* API token, ideally with an infinite lifespan. A readonly level user should suffice. 
+* Port requirement: HTTPS 443
 
 == Configuration
 
@@ -46,8 +46,8 @@ Note: These are common terminology mappings only and might not represent every c
 |===
 |Field | Description
 |FlashBlade Host IP Address|IP address of the storage system 
-|User name |User name with admin privileges 
-|Password for the admin privileged account|Password
+|User name |User name to help Cloud Insights admins remember for which user their API token belongs to
+|API token|API token
 |===
 
 == Advanced configuration 

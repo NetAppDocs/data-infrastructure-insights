@@ -37,13 +37,13 @@ A *Contention* occurs when IOPS are determined to be affecting other resources o
 
 === High-Consuming Workloads
 
-To start looking into Impactful and impacted workloads in your shared resources, click on *Dashboards > High Consuming Workloads* in the Cloud Insights menu.
+Any High-Consuming Workloads that Cloud Insights detects are shown in the _Shared Resources Under Stress_ Insight. Navigate to *Observability > Infrastructure Insights* to view these Insights.
 
-image:Impacts_Workloads_Menu.png[High Consuming Workloads menu]
+image:Impacts_Workloads_Menu.png[Shares Resources]
 
-Cloud Insights displays a list of any workloads where a saturation has been detected. Click on a workload to open the workload dashboard.
+//Cloud Insights displays a list of any workloads where a saturation has been detected. Click on a workload to open the workload dashboard.
 
-image:Impacts_High_Consuming_Workloads.png[Workloads List]
+//image:Impacts_High_Consuming_Workloads.png[Workloads List]
 
 Click on a workload to view the details page for it.  The top chart shows the activity on the shared resource (for example, a storage pool) on which the contention is occurring.
 

@@ -24,7 +24,7 @@ NOTE: You can use these steps to add or remove link:task_defining_annotations.ht
 You must have already created a query that finds all the assets that you to edit.
 
 .Steps
-. Click *Queries* and select *Show all queries*.
+. Click *Explore* and select *Metric Queries*.
 +
 The Queries page displays.
 . Click the name of the query that finds the assets.
@@ -32,14 +32,14 @@ The Queries page displays.
 The list of assets associated with the query displays.
 . Select the desired assets in the list or click the top checkbox to select All.
 +
-The image:BulkActions.png[Actions] button displays.
-.  To add an application to the selected assets, click image:BulkActions.png[Actions] and select *Add Application*.
+The Bulk Actions drop-down displays.
+.  To add an application to the selected assets, click Bulk Actions and select *Add Application*.
 . Select one or more applications.
 +
 You can select multiple applications for hosts, internal volumes, qtrees, and virtual machines; however, you can select only one application for a volume or a share.
 . Click *Save*.
 
-. To remove an application assigned to the assets, click image:BulkActions.png[Actions] and select *Remove Application*.
+. To remove an application assigned to the assets, click Bulk Actions and select *Remove Application*.
 . Select the application or applications you want to remove.
 . Click *Delete*.
 

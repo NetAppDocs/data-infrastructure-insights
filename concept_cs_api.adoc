@@ -57,4 +57,21 @@ Where _<API_Access_Token>_ is the token you saved during API access key creation
 
 Detailed information can be found in the _API Documentation_ link under *Admin > API Access*. 
 
+== Script to extract data via the API
+
+Workload Security agents include an export script to facilitate parallel calls to the v2 API by dividing the requested time range into smaller batches.
+
+The script is located at _/opt/netapp/cloudsecure/agent/export-script_. A README file in the same directory provides usage instructions. 
+
+Here is an example command to invoke the script:
+
+```
+python3 data-export.py --tenant_url <tenant id>.cs01.cloudinsights.netapp.com --access_key %ACCESS_KEY% --path_filter "<dir path>" --user_name "<user>" --from_time "01-08-2024 00:00:00" --to_time "31-08-2024 23:59:59" --iteration_interval 12 --num_workers 3
+```
+
+Key Parameters:
+- `--iteration_interval 12`: Splits the requested time range into intervals of 12 hours.
+- `--num_workers 3`: Fetches these intervals in parallel using 3 threads.
+
+
 

@@ -53,7 +53,7 @@ Anomaly Detection monitoring can provide helpful alerts for many situations, inc
 
 To alert on anomalies, create a monitor by navigating to *Observability > Alerts > +Monitor*. Select _Anomaly Detection Monitor_ as the monitor type. 
 
-image:Anomaly Detection Monitor Choice.png[Selecting Anomaly Detection when creating a monitor, width=480]
+image:AnomalyDetectionMonitorChoice.png[Selecting Anomaly Detection when creating a monitor, width=480]
 
 Choose the object and metric you want to monitor. You can set filters and grouping as with other types of monitors. 
 
@@ -64,7 +64,7 @@ Next, set the conditions for the monitor.
 * Determine whether the alert level is _Critical_ or _Warning_.
 * Optionally, set a value below which anomalies are _ignored_. This can help reduce noise. This value is shown as a dashed line on the sample graph. 
 
-image:Anomaly Detection Monitor Conditions.png[Setting conditions for Anomaly Detection monitor]
+image:AnomalyDetectionMonitorConditions.png[Setting conditions for Anomaly Detection monitor]
 
 
 Finally, you can configure a delivery method for the alerts (email, webhook, or both), give the monitor an optional description or corrective actions, and add the monitor to a custom group, if desired.

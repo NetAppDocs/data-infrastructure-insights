@@ -24,7 +24,7 @@ TIP: Monitors and Alerting is available in Cloud Insights Standard Edition and h
 To view and manage alerts, do the following.
 
 . Navigate to the *Alerts > All Alerts* page.
-. A list of up to the most recent 1,000 alerts is displayed. You can sort this list on any field by clicking the column header for the field. The list displays the following information. Note that not all of these columns are displayed by default. You can select columns to display by clicking on the "gear" icon image:gear.png[gear icon]:
+. A list of up to the most recent 1,000 alerts is displayed. You can sort this list on any field by clicking the column header for the field. The list displays the following information. Note that not all of these columns are displayed by default. You can select columns to display by clicking on the "gear" icon:
 
 ** *Alert ID*: System-generated unique alert ID
 ** *Triggered Time*: The time at which the relevant Monitor triggered the alert

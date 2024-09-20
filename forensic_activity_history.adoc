@@ -30,7 +30,7 @@ You can zoom the graph by dragging out a rectangle in the graph. The entire page
 * A chart of Activity on _Entity Types_. To obtain activity history data by entity type, click on corresponding x-axis label link.
 * A list of the _All Activity_ data
 
-The _*All Activity*_ table shows the following information. Note that not all of these columns are displayed by default. You can select columns to display by clicking on the "gear" icon  image:GearIcon.png[gear icon].
+The _*All Activity*_ table shows the following information. Note that not all of these columns are displayed by default. You can select columns to display by clicking on the "gear" icon.
 
 * The *time* an entity was accessed including the year, month, day, and time of the last access. 
 
@@ -204,6 +204,21 @@ Search results with and  without / will be different
 
 |===
 
+
+
+
+
+== Local root SVM  user activity changes 
+ 
+If a local root SVM user is performing any activity, the IP of the client on which the NFS share is mounted is now considered in the username, which will be shown as root@<ip-address-of-the-client> in both forensic activity and user activity pages.
+ 
+For example: 
+
+* If SVM-1 is monitored by Workload Security, and the root user of that SVM mounts the share on a client with IP address 10.197.12.40, the username shown in forensic activity page will be _root@10.197.12.40_.
+ 
+* If the same SVM-1 is mounted into another client with IP address 10.197.12.41, the username shown in forensic activity page will be _root@10.197.12.41_.
+ 
+*•	This is done to segregate NFS root user activity by IP address. Previously, all the activity was considered to be done by _root_ user only, with no IP distinction.
 
 
 

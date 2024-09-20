@@ -56,11 +56,14 @@ The following table shows the functions available to each Reporting role.
 NOTE: If you change your user email preferences within Cloud Insights Reporting (i.e. the Cognos application), those preferences are active _only for the current session_. Logging out of Cognos and back in again will reset your email preferences.
 
 
+////
 == Important note for existing customers
 
 If you are new to Cloud Insights with Reporting, welcome!  There is nothing more you need to do to begin enjoying Reporting.
 
 If you are a current Premium Edition customer, SSO is not automatically enabled for your environment. When you enable SSO, the administrator user for the reporting portal (Cognos) ceases to exist. This means that any reports that are in the _My Content_ folder are removed and must be reinstalled or re-created in _Team Content_. Additionally, scheduled reports will need to be configured once SSO is enabled.
+////
+
 
 === What steps should I take to prepare my existing environment for enabling SSO?
 

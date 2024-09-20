@@ -37,7 +37,6 @@ All dashboard widgets can be positioned and sized according to your needs for ea
 
 In dashboard Edit mode, click the menu on the widget and select *Duplicate*. The widget editor is launched, pre-filled with the original widget's configuration and with a “copy” suffix in the widget name. You can easily make any necessary changes and Save the new widget. The widget will be placed at the bottom of your dashboard, and you can position it as needed. Remember to Save your dashboard when all changes are complete.
 
-image:DuplicateWidget.png[Duplicate a widget]
 
 == Displaying Widget Legends
 
@@ -409,7 +408,7 @@ The widget opens in edit mode. By default, a query is displayed showing _IOPS - 
 +
 The Chart displays a line showing the sum of total IOPS.
 
-. Click the _Duplicate this Query_ icon image:DuplicateQueryIcon.png[Duplicat Query] to create a copy of the query.
+. Click the _Duplicate this Query_ icon to create a copy of the query.
 +
 A duplicate of the query is added below the original.
 
@@ -443,7 +442,7 @@ To use a variable in an expression, simply type the variable name, for example, 
 
 Table widgets handle expressions a little differently. You can have up to five expressions in a single table widget, each of which is added as a new column to the table. Each expression can include up to five values on which to perform its calculation. You can easily name the column something meaningful.
 
-image:Expression Example.png[Expression in a Table Widget]
+image:ExpressionExample.png[Expression in a Table Widget]
 
 
 
@@ -587,7 +586,7 @@ Variables names:
 
 The Solid and Bullet Gauge widgets allow you to set thresholds for _Warning_ and/or _Critical_ levels, providing clear representation of the data you specify. 
 
-image:Gauge Widget Formatting.png[Format settings for Gauge Widget]
+image:GaugeWidgetFormatting.png[Format settings for Gauge Widget]
 
 To set formatting for these widgets, follow these steps:
 
@@ -606,7 +605,7 @@ image:Gauge-Bullet.png[Bullet Gauge, width=374]
 
 in the Single-Value widget, in addition to setting Warning (orange) and Critical (red) thresholds, you can choose to have "In Range" values (those below Warning level) shown with either green or white background.
 
-image:Single-Value Widgets.png[Single-Value Widget with and without Formatting]
+image:Single-ValueWidgets.png[Single-Value Widget with and without Formatting]
 
 Clicking the link in either a single-value widget or a gauge widget will display a query page corresponding to the first query in the widget.
 
@@ -667,7 +666,7 @@ Depending on the widget and the range of values displayed, Cloud Insights will t
 
 If you have a time-series widget (i.e. line, spline, area, stacked area) that has two queries where both are plotted the primary Y-Axis, the base unit is not shown at the top of the Y-Axis.  However, if your widget has a query on the primary Y-Axis and a query on the secondary Y-Axis, the base units for each are shown.
 
-image:UnitsOnPrimaryAnd SecondaryYAxis.png[Units on both Y-Axes]
+image:UnitsOnPrimaryAndSecondaryYAxis.png[Units on both Y-Axes]
 
 If your widget has three or more queries, base units are not shown on the Y-Axis.
 
@@ -781,8 +780,8 @@ When combined with *TV Mode*, auto-refresh allows for near-real-time display of 
 
 NOTE: Because NetApp BlueXP has its own user login timeout of 7 days, Cloud Insights must log out with that event as well. You can simply log in again and your dashboard will continue to display.
 
-* To activate TV Mode, click the image:ActivateTVMode.png[TV Mode] button.
-* To disable TV Mode, click the *Exit* button in the upper left of the screen. image:ExitTVMode.png[Exit Button]
+* To activate TV Mode, click the TV Mode button.
+* To disable TV Mode, click the *Exit* button in the upper left of the screen. 
 
 You can temporarily suspend auto-refresh by clicking the Pause button in the upper right corner. While paused, the dashboard time range field will display the paused data's active time range. Your data is still being acquired and updated while auto-refresh is paused. Click the Resume button to continue auto-refreshing of data.
 

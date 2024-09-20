@@ -20,12 +20,12 @@ You can change the criteria that are associated with a query when you want to ch
 == Modifying a Query
 
 .Steps
-. Click *Queries* and select *Show all queries*.
+. Click *Explore* and select *All Metric Queries*.
 +
 The Queries page is displayed.
 . Click the query name
-. To add a criteria to the query, click image:GearIcon.png[Columns] and select a criteria from the list.
-. To remove a filter from the query, click the *X* next to the filter to remove.
+. To add a criteria to the query, click Columns icon and select a metric or attribute from the list.
+
 
 When you have made all necessary changes, do one of the following:
 

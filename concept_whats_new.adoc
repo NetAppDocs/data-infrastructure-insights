@@ -17,6 +17,49 @@ keywords: features
 [.lead]
 NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in the commercial Editions of Cloud Insights.   
 
+
+
+== August 2024 
+
+
+=== View Data Specific to Your Time Range
+
+Investigating an alert? Zoomed in on a chart? These actions change the time range for those pages. Now you can lock that time range, navigate to other Cloud Insights pages, and see data specific to that locked time range. Investigating and troubleshooting just got a whole lot easier!
+
+image:timerange_lock.png[tooltip stating to click the icon to lock the time range for use on other pages]
+
+=== Change and Change Ratio (%) Analysis
+
+Change-ratio time aggregations aid you in identifying significant changes and trends in metric values over time.
+Those insights are key to understanding what changed, such as considerable capacity growth for a specific time or a change in single port performance.
+
+* *Change* - observe the change in a metric between two points within a selected period.
+* *Change Ratio* - observe the proportional change in a metric between two points, with respect to the initial point, within a selected period.
+
+image:change_and_change_ratio_bar_chart.png[bar chart example showing change and change ration aggregation choices]
+
+
+
+=== Export Log Query Results to .CSV
+
+When viewing log query results, easily export up to 10,000 rows to .CSV by clicking the new "Export" button. This enhances data accessibility, eases data analysis and reporting, and facilitates seamless integration with other data processing tools.
+
+image:csv_export_button.png[Export to CSV button on a log query page]
+
+
+
+=== Resolve Alerts by time
+
+Cloud Insights now gives you the option to resolve an alert when the monitored metric stays within the acceptable range for a specified duration. This lets you focus on genuine issues, reducing the noise associated with metrics repeatedly crossing defined thresholds by consolidating multiple alerts to one.
+
+image:resolve_alert_by_time_dropdown.png[resolving an alert based on time]
+
+
+
+
+
+'''
+
 == July 2024
 
 

@@ -7768,10 +7768,14 @@ Products supported by this data collector:
 |Storage Port|Implemented|HTTPS|
 |Type|Gap|HTTPS|
 
-.4+|Performance .0+|Qtree .1+|Storage|Failed Disks|Implemented|HTTPS|
+
+
+.5+|Performance .1+|Storage|Failed Disks|Implemented|HTTPS|
 .3+|Storage Node|Cache Hit Ratio Total|Implemented|HTTPS|
 |Total Disk Read Replaced|Implemented|HTTPS|
 |Utilization Total|Implemented|HTTPS|
+.1+|QTree||Implemented|HTTPS|
+
 
 |===
 

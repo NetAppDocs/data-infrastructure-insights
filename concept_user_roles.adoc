@@ -19,7 +19,7 @@ summary: Cloud Insights provides multiple user accounts with different permissio
 [.lead]
 Cloud Insights provides up to four user account roles: Account Owner, Administrator, User, and Guest. Each account is assigned specific permission levels as noted in the table below.  Users are either link:#creating-accounts-by-inviting-users[invited] to Cloud Insights and assigned a specific role, or can sign in via link:#single-sign-on-sso-and-identity-federation[Single Sign-On (SSO) Authorization] with a default role. SSO Authorization is available as a feature in Cloud Insights Premium Edition.
 
-NOTE: User logins in Cloud Insights Federal Edition are limited to configured identity providers (with their specified email domains). When a new user is invited to a Cloud Insights Federal environment, their email address must match the domain configured for that environment.
+//NOTE: User logins in Cloud Insights Federal Edition are limited to configured identity providers (with their specified email domains). When a new user is invited to a Cloud Insights Federal environment, their email address must match the domain configured for that environment.
 
 :toc: macro
 :hardbreaks:
@@ -42,36 +42,43 @@ You use an account that has Administrator privileges to create or modify user ac
 
 
 |===
-|Role	|Observability |Workload Security |Reporting 
+|Role	|Observability |Workload Security |Reporting |Admin
 
-|Account Owner	
-3+<|Can modify subscriptions, view billing and usage information, and perform all Administrator functions for Observability, Security, and Reporting.
-Owners can also invite and manage users, as well as manage SSO Authentication and Identity Federation settings. 
+//|Account Owner	
+//4+<|Can modify subscriptions, view billing and usage information, and perform all Administrator functions for Observability, Security, and Reporting. Can perform all Admin functions including API management, view audit, set notification recipient lists, and invite and manage users as well as manage SSO Authentication and Identity Federation configuration. 
 
-The first Account Owner is created when you register for Cloud Insights.
+//The first Account Owner is created when you register for Cloud Insights.
 
-It is strongly recommended to have at least two Account Owners for each Cloud Insights environment. 
+//It is strongly recommended to have at least two Account Owners for each Cloud Insights environment.
+
+
+|Account Owner
+|Same as Administrator
+|Same as Administrator
+|Same as Administrator
+|Same as Administrator, as well as manage SSO Authentication and Identity Federation configuration. Can also assign additional owners.
 
 |Administrator	
-|Can perform all Observability functions, all user functions, as well as management of data collectors, Observability API tokens, and notifications.
-An Administrator can also invite other users but can only assign Observability roles. 
+|Can perform all Observability functions, as well as management of data collectors. 
 
 |Can perform all Security functions, including those for Alerts, Forensics, data collectors, automated response policies, and API tokens for Security.
 An Administrator can also invite other users but can only assign Security roles.
 
 |Can perform all User/Author functions including managing Reporting API tokens, as well as all administrative tasks such as configuration of reports, and the shutdown and restart of reporting tasks.
 An Administrator can also invite other users but can only assign Reporting roles.
+|Can invite other users but can only assign Observability roles. Can view but not modify SSO configuration. Can create and manage API access tokens. Can view audit information. Can view subscription information, usage, and history. Can manage global alert notification and subscription notification recipient lists.
 
 |User	
 |Can view and modify dashboards, queries, alerts, annotations, annotation rules, and applications, and manage device resolution.
 |Can view and manage Alerts and view Forensics. User role can change alert status, add a note, take snapshots manually, and manage restrict user access.
 |Can perform all Guest/Consumer functions as well as create and manage reports and dashboards.
+|Not available
 
 |Guest	
 |Has read-only access to asset pages, dashboards, alerts, and can view and run queries.
 |Can view Alerts and Forensics. Guest role cannot change alert status, add a note, take snapshots manually, or restrict user access.
 |Can view, schedule, and run reports and set personal preferences such as those for languages and time zones. Guests/Consumers cannot create reports or perform administrative tasks.
-
+|Not available
 |===
 
 

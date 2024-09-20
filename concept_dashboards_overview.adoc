@@ -59,35 +59,35 @@ image:TableWidgetPerformanceData.png[Table Widget]
 
 * *Line, Spline, Area, Stacked Area Charts*: These are time-series chart widgets on which you can display performance and other data over time.
 +
-image:Time-Series Charts.png[Area, Stacked Area, Line, Spline Charts]
+image:Time-SeriesCharts.png[Area, Stacked Area, Line, Spline Charts]
 
 * *Single Value widget*: A widget allowing you to display a single value that can be derived either directly from a counter or calculated using a query or expression. You can define color formatting thresholds to show whether the value is in expected, warning, or critical range.
 +
-image:Single-Value Widgets.png[Single-Value Widgets With and Without Formatting]
+image:Single-ValueWidgets.png[Single-Value Widgets With and Without Formatting]
 
 * *Gauge widget*: Displays single-value data in a traditional (solid) gauge or bullet gauge, with colors based on "Warning" or "Critical" values you link:concept_dashboard_features.html#formatting-gauge-widgets[customize].
 +
-image:Gauge Widgets.png[Single-Value with formatting, Traditional Gauge, Bullet Gauge]
+image:GaugeWidgets.png[Single-Value with formatting, Traditional Gauge, Bullet Gauge]
 
 * *Bar, Column Charts*: Displays top or bottom N values, for example, Top 10 storages by capacity or bottom 5 volumes by IOPS.
 +
-image:Bar and Column Charts.png[Bar and Column Charts]
+image:BarandColumnCharts.png[Bar and Column Charts]
 
 * *Box Plot Chart*: A plot of the min, max, median, and the range between lower and upper quartile of data in a single chart.
 +
-image:Box Plot.png[Box Plot]
+image:BoxPlot.png[Box Plot]
 
 * *Scatter Plot Chart*: Plots related data as points, for example, IOPS and latency. In this example, you can quickly locate assets with high throughput and low IOPS.
 +
-image:Scatter Plot.png[Scatter Plot]
+image:ScatterPlot.png[Scatter Plot]
 
 * *Pie Chart*: a traditional pie chart to display data as a piece of the total.
 +
-image:Pie Chart.png[Pie Chart]
+image:PieChart.png[Pie Chart]
 
 * *Note widget*: Up to 1000 characters of free text.
 +
-image:Note Widget.png[Note Widget]
+image:NoteWidget.png[Note Widget]
 
 * *Alerts Table*: Displays up to the last 1,000 alerts. 
 

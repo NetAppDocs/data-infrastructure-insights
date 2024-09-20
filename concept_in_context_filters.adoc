@@ -17,7 +17,7 @@ keywords: Assets, landing page, filtering, context, related
 [.lead]
 When configuring a widget on an asset's landing page, you can set _in-context_ filters to show only objects directly related to the current asset. By default, when you add a widget, _all_ objects of the selected type in your environment are displayed. In-context filters allow you to display only the data relevant to your current asset.
 
-On most asset landing pages, widgets allow you to filter for objects related to the current asset. In filter drop-downs, object types that display a link icon image:LinkIcon.png[Link Icon] can be filtered in-context to the current asset.
+On most asset landing pages, widgets allow you to filter for objects related to the current asset. In filter drop-downs, object types that display a link icon can be filtered in-context to the current asset.
 
 For example, on a Storage asset page, you can add a Bar Chart widget to show the top IOPS on internal volumes only on that storage. By default, when you add a widget, _all_ internal volumes in your environment are displayed. 
 
@@ -27,7 +27,7 @@ To show only internal volumes on the current storage asset, do the following:
 . Open an asset page for any *Storage* asset. 
 . Click *Edit* to open the asset page in Edit mode.
 . Click *Add Widget* and select _Bar Chart_.
-. Select *Internal Volume* for the object type to display on the bar chart. Notice that the internal volume object type has a link icon image:LinkIcon.png[Link Icon] beside it. The "linked" icon is enabled by default.
+. Select *Internal Volume* for the object type to display on the bar chart. Notice that the internal volume object type has a link icon beside it. The "linked" icon is enabled by default.
 +
 image:LinkingObjects.png[bar chart volumes]
 . Choose _IOPS - Total_ and set any additional filters you like.
@@ -39,6 +39,6 @@ The bar chart shows only the internal volumes that reside on the current storage
 
 The widget will be displayed on the asset pages for all storage objects. When the in-context link is enabled in the widget, the bar chart shows data for internal volumes related only to the currently-displayed storage asset.
 
-To unlink the object data, edit the widget and click the link icon image:LinkIconEnabled.png[Link Icon Enabled] next to the object type. The link becomes disabled image:LinkIconDisabled.png[Link Icon Disabled] and the chart displays data for _all_ objects in your environment.
+To unlink the object data, edit the widget and click the link icon next to the object type. The link becomes disabled and the chart displays data for _all_ objects in your environment.
 
 You can also use link:concept_dashboard_features.html#variables[*special variables in widgets*] to display asset-related information on landing pages.

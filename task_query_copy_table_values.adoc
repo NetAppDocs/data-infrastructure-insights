@@ -22,6 +22,6 @@ There are two methods you can use to copy values from tables or query results to
 
 .Steps
 . Method 1: Highlight the desired text with the mouse, copy it, and paste it into search fields or other applications.
-. Method 2: For single-value fields, hover over the field and click the clipboard icon image:ClipboardIcon.png[Clipboard] that appears. The value is copied to the clipboard for use in search fields or other applications.
+. Method 2: For single-value fields, hover over the field and click the clipboard icon that appears. The value is copied to the clipboard for use in search fields or other applications.
 +
 Note that only values that are links to assets can be copied using this method. Only fields that include single values (i.e. non-lists) have the copy icon.
