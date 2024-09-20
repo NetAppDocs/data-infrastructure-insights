@@ -1,0 +1,141 @@
+---
+sidebar: sidebar
+permalink: infrastructure_network_monitoring_and_map.html
+keywords: service map, workloads, infra 
+summary: Presents infrastructure-based workload dependencies and flows, and highlights network and performance issues
+---
+= Infrastructure Network Performance Monitoring and Map
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The Infrastructure Network Performance Monitoring and Map feature simplifies troubleshooting by mapping dependencies between services (also called workloads), and provides real-time visibility into network performance latencies and anomalies to identify performance issues before they affect users.
+This capability helps organizations reduce overall costs by analyzing and auditing Kubernetes traffic flows.
+
+Key Features:
+• The Workload Map presents workload dependencies and flows and highlights network and performance issues.
+• Monitor network traffic between Kubernetes pods, workloads, and nodes; identifies the source of traffic and latency problems.
+• Reduce overall costs by analyzing ingress, egress, cross-region, and cross-zone network traffic.
+
+
+//image:workload-map-animated.gif[Workload Map Example]
+
+
+== Pre-Requisites
+
+Before you can use the infrastructure Network Performance Monitoring and Map, you must have configured the link:task_config_telegraf_agent_k8s.html[NetApp Kubernetes Monitoring Operator] to enable this option. During deployment of the Operator, select the "Network Performance and Map" checkbox to enable. You can also enable this option by navigating to a Kubernetes landing page and selecting "Modify Deployment".
+
+//image:ServiceMap_NKMO_Deployment_Options.png[selecting the Map option during NKMO stup]
+
+== Monitors
+
+The Workload Map uses link:task_create_monitor.html[monitors] to derive information. Cloud Insights provides a number of default Monitors (note that these may be _Paused_ by default. You can _Resume_ to enable the monitors you want), or you can create custom monitors, which the Workload Map will also use. 
+
+You can create Cloud insights metric alerts on any of the object types below. Make sure the data is grouped by the default object type. 
+
+////
+* kubernetes.workload
+* kubernetes.daemonset
+* kubernetes.deployment
+* kubernetes.cronjob
+* kubernetes.job
+* kubernetes.replicaset
+* kubernetes.statefulset
+* kubernetes.pod
+* kubernetes.network_traffic_l4
+////
+
+== The Map
+
+The Map shows services/workloads and their relationships to each other. Arrows show directions of traffic. Hovering over a workload displays summary information for that workload, as you can see in this example:
+
+//image:ServiceMap_Simple_Example.png[Example of a Workload Map workload]
+
+Icons within the circles represent different service types. Note that icons are only visible if the underlying objects have <<workload-labels, labels>>.
+
+//image:ServiceMap_Icons.png[Service Icons Explained]
+
+The size of each circle indicates node size. Note that these sizes are relative, your browser zoom level or screen size may affect actual circle sizes.  In the same way, the traffic line style gives you an at-a-glance view of the connection size; bold solid lines are high traffic, while light dotted lines are lower traffic. 
+
+Numbers inside the circles are the number of external connections currently being processed by the service.
+
+//image:ServiceMap_Node_and_Connection_Legend.png[legend showing relative circle (node) and connection sizes]
+
+
+
+
+
+== Workload Details and Alerts
+
+Circles displayed in color indicate a warning- or critical-level alert for the workload.  Hover over the circle for a summary of the issue, or click on the circle to open a slideout panel with more detail.
+
+//image:Workload_Map_Slideout_with_Alert.png[Workload Slideout Details With Alerts]
+
+
+== Finding and Filtering
+
+As with other Cloud Insights features, you can easily set filters to focus on the specific objects or workload attributes you want.  
+
+//image:Workload_Map_Filtering.png[Workload Map filtering]
+
+Likewise, typing a string in the _Find_ field will highlight matching workloads.
+
+//image:Workload_Map_Find_Highlighting.png[typing in find box highlights workloads]
+
+
+
+== Workload Labels
+
+Workload labels are necessary if you want the Map to identify the types of workloads displayed (i.e. the circle icons).  Labels are derived as follows:
+
+* Name of the service/application running in generic terms
+
+* If the source is a pod:
+** Label is derived from the workload label of the pod
+** Expected label on the workload: app.kubernetes.io/component
+** Label name reference: https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/
+** Recommended labels:
+*** frontend
+*** backend
+*** database
+*** cache
+*** queue
+*** kafka
+
+* If the source is external to the kubernetes cluster:
+** Cloud Insights will attempt to parse the DNS resolved name to extract the service type.
++
+For example, with a DNS resolved name of _s3.eu-north-1.amazonaws.com_, the resolved name is parsed to get _s3_ as the service type.
+
+
+
+== Dive Deep
+
+Right-clicking on a workload presents you with additional options to explore further. For example, from here you can zoom in to view the connections for that workload.
+
+//image:Workload_Map_Zoom_Into_Connections.png[Workload Map Right-Click Zoom to show the workload's connections]
+
+Or you can open the detail slideout panel to directly view the _Summary_, _Network_, or _Pod & Storage_ tab.
+
+//image:Workload_Map_Detail_Network_Slideout.png[Detail Slideout Network Tab Example]
+
+Finally, selecting _Go to Asset Page_ will open the detailed asset landing page for the workload.
+
+//image:Workload_Map_Asset_Page.png[Workload Asset Page]
+
+
+
+
+
+
+
+
+
+
+
+
