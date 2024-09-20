@@ -16,11 +16,11 @@ indexpage:
   - title: Monitoring your Infrastructure
     links:
       - title: Annotating your Assets
-        url: :task_defining_annotations.html
+        url: task_defining_annotations.html
       - title: Querying your Data
-        url: :concept_querying_assets.html
+        url: concept_querying_assets.html
       - title: Creating Dashboards
-        url: :concept_dashboards_overview.html
+        url: concept_dashboards_overview.html
       - title: Alerting
         url: task_create_monitor.html
   - title: Securing your Data
