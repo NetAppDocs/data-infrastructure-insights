@@ -1,4 +1,36 @@
 indexpage:
+  title: Data Infrastructure Insights documentation
+  lead: NetApp Cloud Insights is a cloud infrastructure monitoring tool that gives you visibility into your complete infrastructure. With Cloud Insights, you can monitor, troubleshoot and optimize all your resources including your public clouds and your private data centers.
+  summary: NetApp Cloud Insights is a cloud infrastructure monitoring tool that gives you visibility into your complete infrastructure. With Cloud Insights, you can monitor, troubleshoot and optimize all your resources including your public clouds and your private data centers.
+  keywords: Data Infrastructure, insight, cloud
+  tiles:
+  tiles:
+  - title: Get started
+    links:
+      - title: Installation (Windows)
+        url: install-windows/installation-prerequisites.html
+      - title: Installation (Linux)
+        url: install-linux/installation-prerequisites.html
+      - title: Configuration and administration
+        url: config-admin/setting-up-insight.html
+  - title: Reporting
+    links:
+      - title: Data Warehouse Administration
+        url: dwh/welcome-to-data-warehouse.html
+      - title: Reporting
+        url: reporting/welcome-to-oncommand-insight-reporting.html
+  - title: How-To's and FAQ
+    links:
+      - title: How-To's
+        url: howto/getting-started-with-insight.html
+      - title: Frequently-Asked Questions
+        url: faq/faq-general-insight-questions.html
+  
+
+
+
+////
+indexpage:
   title: Cloud Insights documentation
   lead: NetApp Cloud Insights is a cloud infrastructure monitoring tool that gives you visibility into your complete infrastructure. With Cloud Insights, you can monitor, troubleshoot and optimize all your resources including your public clouds and your private data centers. 
   summary: NetApp Cloud Insights is a cloud infrastructure monitoring tool that gives you visibility into your complete infrastructure. With Cloud Insights, you can monitor, troubleshoot and optimize all your resources including your public clouds and your private data centers. 
@@ -31,5 +63,5 @@ indexpage:
         url: task_cs_getting_started.html
 
 #  - title: Working with Kubernetes
-
+////
 
