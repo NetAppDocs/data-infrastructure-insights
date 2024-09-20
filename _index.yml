@@ -26,6 +26,7 @@ indexpage:
         url: task_create_monitor.html
 
   - title: Securing your Data
+    links:
       - title: Workload Security
         url: task_cs_getting_started.html
 
