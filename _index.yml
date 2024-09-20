@@ -1,0 +1,34 @@
+indexpage:
+  title: Cloud Insights documentation
+  lead: NetApp Cloud Insights is a cloud infrastructure monitoring tool that gives you visibility into your complete infrastructure. With Cloud Insights, you can monitor, troubleshoot and optimize all your resources including your public clouds and your private data centers. 
+  summary: NetApp Cloud Insights is a cloud infrastructure monitoring tool that gives you visibility into your complete infrastructure. With Cloud Insights, you can monitor, troubleshoot and optimize all your resources including your public clouds and your private data centers. 
+  keywords: Data Infrastructure, insight, cloud
+  tiles:
+  tiles:
+  - title: Getting started
+    links:
+      - title: Onboarding
+        url: task_cloud_insights_onboarding_1.html
+      - title: Collecting Data
+        url: task_getting_started_with_cloud_insights.html
+      - title: Setting up Users
+        url: concept_user_roles.html
+
+  - title: Monitoring your Infrastructure
+    links:
+      - title: Annotating your Assets
+        url: :task_defining_annotations.html
+      - title: Querying your Data
+        url: :concept_querying_assets.html
+      - title: Creating Dashboards
+        url: :concept_dashboards_overview.html
+      - title: Alerting
+        url: task_create_monitor.html
+
+  - title: Securing your Data
+      -title: Workload Security
+        url: task_cs_getting_started.html
+
+#  - title: Working with Kubernetes
+
+
