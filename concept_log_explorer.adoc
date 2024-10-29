@@ -139,6 +139,8 @@ Clicking anywhere in a log entry in the list will open a detail pane for that en
 
 Click on "Add Filter" to add the selected field to the current filter. The log entry list will update based on the new filter.
 
+Note that some fields cannot be added as filters; in those cases, the _Add Filter_ icon is not available.
+
 image:LogExplorer_DetailPane.png[Log Entry Detail Pane]
 
 
