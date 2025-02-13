@@ -19,14 +19,15 @@ NetApp is continually improving and enhancing its products and services. Here ar
 
 
 
-=== ONTAP Essentials for the latest generation of ASA systems
+
+=== ONTAP Essentials for the latest generation of ASA systems 
  
 ONTAP essentials now includes out-of-the-box manageability for the latest generation of link:task_dc_na_ontap_all_san_array.html[ASA] devices. This includes SAN Analyzer for VM-to-LUN topologies of workloads running on ONTAP, now also available with NetApp support as part of Data Infrastructure Insights Basic Edition.
 
 image:ontap_essentials_asa_views.png[ONTAP Essentials drop-down showing ASA as distinct from Unified]
 
 
-=== DII API Usage Tracking: Enhance Security and Efficiency
+=== DII API Usage Tracking: Enhance Security and Efficiency 
 
 Strengthen your security posture and streamline resource management with enhanced REST API Usage tracking, available for Admin users. With API usage tracking you can see which API tokens are being used, from which IP addresses, and the volume of traffic they generate.  By linking tokens to specific IP addresses and usage levels, you'll gain powerful insights into system access and usage trends, giving you the control you need to maintain a safe, efficient environment and keep operations running smoothly.
 
@@ -35,7 +36,7 @@ To view API Usage, navigate to *Observability > Admin > API Access* and select _
 image:api_usage_analytics_screenshot.png[API usage analytics example]
 
 
-=== Workload Security API to restrict users
+=== Workload Security API to restrict users 
 
 A new API has been added to manage user restriction in Workload Security. With the API you can block or unblock a user, or change the duration of their restricted access. See the Admin > API Access > API Documentation page for the _cloudsecure_actions.block_ API.
 
