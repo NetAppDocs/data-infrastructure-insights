@@ -26,28 +26,31 @@ image:san_analyzer_example_with_panel.png[SAN Analyzer topology map of a storage
 Select *Observability > Analyze > SAN Analyzer* to view the SAN Analyzer. Set a filter for Application, Host, Fabric, and/or Storage. 
 The map for the objects is displayed, showing connected objects. Hover over an object to view traffic metrics for those connections.
 
+NOTE: Most SAN Analyzer filters (including those you may add) are contextual; when you select an object in one of these filters, the choices presented in the other filter drop-downs are refreshed in context with the selected object or objects. The only exceptions to this are Application, Port and Switch; these filters are not contextual.
+
 image:san_analyzer_traffic_metrics.png[]
 
-Clicking on an object or group opens a slideout panel providing additional details about the object and its connections. The slideout includes tabs showing a Summary, Port details, and Zone information, if available.
+Clicking on an object or group opens a slideout panel providing additional details about the object and its connections. The slideout panel displays a summary, which provides details about the selected object (for example, IP, Hypervisor, Connected Fabrics, etc., depending on the type of object), and charts showing metrics for the object such as latency or IOPS, and changes and alerts if relevant. You can select to display metrics for Top Correlated objects on the charts as well, if desired. 
+
+In addition to the Summary tab, the slideout panel displays tabs for things like Port details or Zone information, as applicable to the chosen object.
 
 image:san_analyzer_slideout_example.png[]
+
+If your environment includes iSCSI devices, hovering over the _iSCSI_ object highlights the connections related to those relevant iSCSI devices.
+
+image:san_analyzer_iscsi_traffic.png[iSCSI traffic highlighted]
 
 
 
 ////
-
 Show alerts and changes for connected resources.
-
-Click a resource to open a slideout, 
 
 Grouped devices shows an overview
 Ungrouped devices show details
 
 Known Issue: sometimes a traffic line appears to pass through an object (for example, a switch), but that is an error in the visualization. Hovering over an object will show the correct traffic lines.
 
-Legend in documentation:
-CIS-15561
-ICI-15561
+
 
 ////
 
