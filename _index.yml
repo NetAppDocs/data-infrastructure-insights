@@ -1,8 +1,8 @@
 indexpage:
   title: Data Infrastructure Insights documentation
-  lead: NetApp Cloud Insights is a cloud infrastructure monitoring tool that gives you visibility into your complete infrastructure. With Cloud Insights, you can monitor, troubleshoot and optimize all your resources including your public clouds and your private data centers.
-  summary: NetApp Cloud Insights is a cloud infrastructure monitoring tool that gives you visibility into your complete infrastructure. With Cloud Insights, you can monitor, troubleshoot and optimize all your resources including your public clouds and your private data centers.
-  keywords: Data Infrastructure, insight, cloud
+  lead: Data Infrastructure Insights (DII) is a cloud infrastructure monitoring tool that gives you visibility into your complete infrastructure. With DII, you can monitor, troubleshoot and optimize all your resources including your public clouds and your private data centers.
+  summary: Data Infrastructure Insights (DII) is a cloud infrastructure monitoring tool that gives you visibility into your complete infrastructure. With DII, you can monitor, troubleshoot and optimize all your resources including your public clouds and your private data centers.
+  keywords: Data Infrastructure, insight, cloud insights, cloud
   tiles:
   tiles:
   - title: Getting started
