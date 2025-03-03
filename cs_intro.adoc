@@ -17,7 +17,6 @@ summary: Overview
 [.lead]
 Data Infrastructure Insights Storage Workload Security (formerly Cloud Secure) helps protect your data with actionable intelligence on insider threats. It provides centralized visibility and control of all corporate data access across hybrid cloud environments to ensure security and compliance goals are met. 
 
-NOTE: Workload Security is not available in Data Infrastructure Insights Federal Edition.
 
 == Visibility
 

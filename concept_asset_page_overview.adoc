@@ -6,7 +6,6 @@ keywords: asset page, objects, landing page, Virtual machine, VM, Storage Virtua
 ---
 
 = Asset Page Overview
-:toc: macro
 :hardbreaks:
 :toclevels: 1
 :nofooter:

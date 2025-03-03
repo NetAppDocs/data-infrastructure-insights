@@ -15,7 +15,7 @@ keywords: dashboard, gallery, import
 :imagesdir: ./media/
 
 [.lead]
-Data Infrastructure Insights provides a number of Recommended Dashboards to provide business insights into your data. Each dashboard contains widgets designed to help answer a particular question or solve a particular problem relevant to the data currently being collected in your environment.
+Data Infrastructure Insights provides a number of Recommended Dashboards to provide business insights into your data. Each dashboard contains widgets designed to help answer a particular question or solve a particular problem relevant to the data currently being collected on your tenant.
 
 To import a dashboard from the gallery, do the following:
 

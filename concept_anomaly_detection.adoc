@@ -15,7 +15,7 @@ summary: Monitor metrics for anomalies
 :imagesdir: ./media/
 
 [.lead]
-Anomaly Detection provides insight into unexpected changes in the patterns of data in your environment. An anomaly occurs when the pattern of an object's behavior changes in your environment, for example, if an object experiences a certain level of latency at a certain time on Wednesdays, but latency spikes above that level at that time on the subsequent Wednesday, that spike would be considered an anomaly.  Data Infrastructure Insights allows the creation of monitors to alert when anomalies such as this occur.
+Anomaly Detection provides insight into unexpected changes in the patterns of data on your tenant. An anomaly occurs when the pattern of an object's behavior changes, for example, if an object experiences a certain level of latency at a certain time on Wednesdays, but latency spikes above that level at that time on the subsequent Wednesday, that spike would be considered an anomaly.  Data Infrastructure Insights allows the creation of monitors to alert when anomalies such as this occur.
 
 Anomaly detection is suitable for object metrics that exhibit a recurring, predictable pattern. When these object metrics spike above or drop below their expected levels, Data Infrastructure Insights can generate an alert to prompt investigation.
 
@@ -44,7 +44,7 @@ Anomaly Detection monitoring can provide helpful alerts for many situations, inc
 
 * When the definition of _normal_ is unclear.  For example, SAN error rates may be expected in varying amounts depending on port. Alerting on one error is noisy and unnecessary, but a sudden or significant increase could indicate a widespread issue.
 * Where there are changes over time. Workloads that exhibit seasonality (i.e. they are busy or quiet at certain times). This could include unexpected quiet periods that may Indicate a batch stall.
-* Working with large amounts of data where manually defining and adjusting thresholds is impractical. For example, an environment with a large numbers of hosts and/or volumes with varying workloads. Each may have different SLAs, so understanding the ones that exceed the norm is important.
+* Working with large amounts of data where manually defining and adjusting thresholds is impractical. For example, a tenant with a large numbers of hosts and/or volumes with varying workloads. Each may have different SLAs, so understanding the ones that exceed the norm is important.
 
 
 // Because Anomaly Detection works by comparing a metric's data on a particular day and time to the same day and time from the previous week, once you create an Anomaly Detection monitor, Data Infrastructure Insights needs to collect data for seven days before it can alert on anomalies.

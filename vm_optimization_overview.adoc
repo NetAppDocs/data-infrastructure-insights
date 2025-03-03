@@ -1,0 +1,35 @@
+---
+sidebar: sidebar
+permalink: vm_optimization_overview.html
+summary: VM Optimization
+keywords: dashboard, widget, custom, concepts, queries, variables, rollup, roll up, grouping, aggregate, aggregation, filter, axis, group by, expressions, timeseries, exact match, theme, visibility, formatting, conditional, hide, collapse, expand
+
+---
+
+= VM Optimization
+:toc: macro
+:hardbreaks:
+:nofooter:
+:toclevels: 1
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Data Infrastructure Insights helps you manage infrastructure and licensing costs by analyzing the historical behavior of the environment and establishing short- and long-term predictions, generating detailed recommendations for host decommissioning and reclamation of powered-off and idle VMs. These recommendations help you ensure performance stability, free up unused capacity, and reduce memory and CPU allocation. 
+
+image:vm_optimization_summary.png[VM Optimization Summary Screen]
+
+To begin, navigate to Observability > Analyze > VM Optimization. You are shown a summary of potential savings broken down by number of cores and storage savings. You can set filters to focus by Data Center, Virtual Center IP, or CLuster, or set your own filters to further narrow your focus.
+
+image:vm_optimization_overview.png[vm optimization overview]
+
+The Hypervisor Decommissioning tab shows your potential cost savings based on the optimization strategy you select. Each strategy utilizes different thresholds to determine potential savings.
+
+Select a Cluster in the list to open a slideout panel with details about CPU and memory utilization for the cluster.
+
+image:vm_optimization_hypervisor_decommissioning_tab.png[hypervisor optimization tab]
+
+The VM Reclamation tab gives you details about VMs that are idle or powered-off for more than 30, 60, or 90 days, along with potential capacity, memory, and vCPU savings. Selecting a VM from the list opens the detail page for that VM.
+
+image:vm_optimization_reclamation_tab.png[vm reclamation tab]

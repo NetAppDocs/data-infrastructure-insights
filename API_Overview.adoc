@@ -17,22 +17,6 @@ summary: The Data Infrastructure Insights API enables integration with other app
 [.lead]
 The Data Infrastructure Insights API enables NetApp customers and independent software vendors (ISVs) to integrate Data Infrastructure Insights with other applications, such as CMDB's or other ticketing systems.
 
-////
-Note that Data Infrastructure Insights APIs are available based on your current Edition: 
-
-[cols="<,^s,^s,^s"]
-|===
-|API Type|Basic|Standard|Premium
-
-|Acquisition Unit|image:SmallCheckMark.png[check mark]|image:SmallCheckMark.png[check mark]|image:SmallCheckMark.png[check mark]
-|Data Collection|image:SmallCheckMark.png[check mark]|image:SmallCheckMark.png[check mark]|image:SmallCheckMark.png[check mark]
-|Alerts| |image:SmallCheckMark.png[check mark]|image:SmallCheckMark.png[check mark]
-|Assets| |image:SmallCheckMark.png[check mark]|image:SmallCheckMark.png[check mark]
-|Data Ingestion| |image:SmallCheckMark.png[check mark]|image:SmallCheckMark.png[check mark]
-|Log Ingestion| |image:SmallCheckMark.png[check mark]|image:SmallCheckMark.png[check mark]
-
-|===
-////
 
 Your Data Infrastructure Insights link:https://docs.netapp.com/us-en/cloudinsights/concept_user_roles.html#permission-levels[feature set role] will determine which APIs you can access. User and Guest roles have fewer privileges than Administrator role. For example, if you have Administrator role in Monitor and Optimize, but User role in Reporting, you can manage all API types except Data Warehouse.
 
@@ -48,11 +32,9 @@ Your Data Infrastructure Insights link:https://docs.netapp.com/us-en/cloudinsigh
 
 The latest API information is found by logging in to Data Infrastructure Insights and navigating to *Admin > API Acccess*. Click the *API Documentation* link.
 
-//image:API_Types_Example.png[API Types]
-//image:API_Documentation.png[API Documentation]
 image:API_Swagger_Types.png[API types]
 
-The API Documentation is Swagger-based, which provides a brief description and usage information for the API, and allows you to try it out in your environment. Depending on your user role and/or Data Infrastructure Insights edition, the API types available to you may vary.
+The API Documentation is Swagger-based, which provides a brief description and usage information for the API, and allows you to try it out in your tenant. Depending on your user role and/or Data Infrastructure Insights edition, the API types available to you may vary.
 
 image:API_Swagger_Example.png[API Swagger Example]
 
@@ -108,95 +90,11 @@ The Data Infrastructure Insights API is category-based, and currently contains t
 
 * LOG INGESTION is used to retrieve and manage log data
 
-//* DATA WAREHOUSE type is available for environments with Data Infrastructure Insights Reporting, and is used to manage data used with Reporting
 
 Additional types and/or APIs may become available over time. You can find the latest API information in the link:#api-documentation-swagger[API Swagger documentation]. 
 
 Note that the API types to which a user has access depend also on the link:concept_user_roles.html[User Role] they have in each Data Infrastructure Insights feature set (Monitoring, Workload Security, Reporting).
 
-////
-== API Commands
-
-Each of the REST API commands comprises the API’s URL, an HTTP action, URL parameters, and an expected API responses.
-
-The Data Infrastructure Insights APIs can be generally separated into the following sections: 
-////
-
-////
-admin::
-Provides an entry point to the system for administrative operations in Data Infrastructure Insights. Allowed roles are Any, User, and  Administrator and includes the following:
-
-** admin/acquisitionUnits
-** admin/certificates
-** admin/datasources
-** admin/licenses
-** admin/patches
-** admin/users
-////
-
-////
-=== ASSETS type
-
-Assets:: 
-Lets you enumerate top-level objects and retrieve a specific object or an object hierarchy from a system when you know the object unique ID or full name.
-
-** /assets/<asset_type>
-
-** /assets/annotations
-** /assets/applications
-** /assets/businessEntities
-** /assets/dataStores
-** /assets/devices
-** /assets/disks
-** /assets/fabrics
-** /assets/fileSystems
-** /assets/genericDevices
-** /assets/hosts
-** /assets/iSCSINetworkPortal
-** /assets/iSCSISessions
-** /assets/internalVolumes
-** /assets/paths
-** /assets/ports
-** /assets/qtrees
-** /assets/quotas
-** /assets/risks
-** /assets/shares
-** /assets/storageNodes
-** /assets/storeagePools
-** /assets/storageVirtualMachines
-** /assets/storages
-** /assets/switches
-** /assets/tapes
-** /assets/virtualMachines
-** /assets/vmdks
-** /assets/volumes
-** /assets/zones
-** /assets/zoneMembers
-
-
-Queries::
-Retrieve and manage queries.
-
-
-** /queries
-** /query (to run an ad-hoc query)
-
-login:: 
-Perform user session management.
-
-Search:: 
-Locate a specific object without knowing the object’s unique ID or full name.
-
-** /search
-
-=== DATA_COLLECTION type
-
-Data Collectors::
-Retrieve and manage data collectors
-
-** /collector/datasourceTypes
-** /collector/datasources
-////
 
 == Inventory Traversal
 
@@ -287,94 +185,22 @@ Performance summaries are available for these types of counters:
 
 == Object Performance Metrics
 
-The API can return detailed metrics for objects in your environment, for example:
+The API can return detailed metrics for objects on your tenant, for example:
 
 * Storage Performance Metrics such as IOPS (Number of input/output requests per second), Latency, or Throughput. 
 
-////
-[cols=2*,options="header",cols="25,75"]
-|===
-| Performance Metric
-| Description
-| IOPS |Number of input/output requests per second
-|Latency|Average time, in milliseconds, it takes to complete an IO request
-|Cache hit ratio|Percentage of  requests satisfied from cache
-|Utilization|Percent of theoretical maximum for average utilization of the resource in specified time frame. The range is 0 to 100.
-|Throughput|Number of bytes transferred in MB/second
-|IO density|Number of IO per second per terabyte of used capacity. IO density is used only for storage, volume and internal volume assets.
-|===
 
-The following table describes  performance metrics available for different type of objects:
-
-[cols=7*,options="header"]
-|===
-||IOPS|Latency|Throughput|Cache Hit|Utilization|IO Density
-|Disk|X||X||X|
-|Storage Pool|X||X||X||
-Internal Volume|X|X|X|||X|
-Volume|X|X|X|X||X|
-StorageNode|X|X|X|X|X||
-Storage|X|X|X|||X|
-Data Store|X|X|X||||
-VMDK |X|X|X|||| 
-VM |X|X|X||X||
-Host |X|X|X||X|| 
-|===
-////
 
 * Switch Performance Metrics, such as Traffic Utilization, BB Credit Zero data, or Port Errors. 
 
 See the link:#api-documentation-swagger[API Swagger documentation] for information on metrics for each object type.
 
-////
-The following table describes performance metrics available for switches:
 
-[cols=5*,options="header"] 
-|===
-|Type|REST Name|Unit|Range|Description 
-
-|Traffic Utilization|trafficUtilization.rx|%|0-100|Receive traffic utilization. Calculated as 100 * total bytes received / receive capacity during the sampling period.
-
-|Traffic Utilization|trafficUtilization.tx|%|0-100|Transmit traffic utilization. Calculated as 100 * total bytes transmitted / transmit capacity during the sampling period
-
-|Traffic Utilization|trafficUtilization.totaL|%|0-100|Total traffic utilization. Calculated as 100 * total bytes received and transmitted / port capacity during the sampling period.
-
-|Traffic Utilization|trafficUtilization.rxMax|%|0-100
-|Maximum of trafficUtilization.tx during the sampling period.
-|Traffic Rate|trafficRate.rx|MiB/s|≥0|Traffic received during the sampling period.
-|Traffic Rate|trafficRate.tx|MiB/s|≥0|Traffic transmitted during the sampling period.
-|Traffic Frame|trafficFrameRate.rx|frames/s|≥0|Number of FC frames received per second during the sampling period.
-|Traffic Frame|trafficFrameRate.tx|frames/s|≥0|Number of FC frames transmitted per second during the sampling period.
-|Traffic Frame|trafficFrameRate.total|frames|s≥0|Number of FC frames transmitted and received per second during the sampling period.
-|Traffic Frame|trafficFrameSizeAvg.rx|Bytes/frame|0-2,148|Average length of received FC frames during the sampling period.
-
-|Zero BB Credit|bbCreditZero.rx|none (count)|≥0|Number of times the receive buffer-to-buffer credit count transitioned to zero during the sampling period. It represents the number of times the attached port had to stop transmitting because this port was out of credits to provide.
-
-|Zero BB Credit |bbCreditZero.tx|none (count)|≥0|Number of times the transmit buffer-to-buffer credit count transitioned to zero during the sampling period.
-
-|Zero BB Credit|bbCreditZero.total|none (counnt)|≥0|Number of times the transmit and receive buffer-to-buffer credit counts transitioned to zero during the sampling period.
-
-|Zero BB Credit|bbCreditZeroMs.tx|ms|≥0|Time in milliseconds during which the transmit buffer-to-buffer credit count was zero during the sample period.
-|Port Errors|portErrors.timeoutDiscardTx|none (count)|≥0|Number of receive link resets during the sample period. Represents the number of link resets issued by the attached port to this port.
-|Port Errors|portErrors.linkResetRx|none(count)|≥0|Number of receive link resets during the sample period. Represents the number of link resets issued by the attached port to this port.
-|Port Errors|portErrors.syncLoss|none (count)|≥0|Number of loss of synchronization failures during the sample period.
-|Port Errors|portErrors.signalLoss|none (count)|≥0|Number of signal losses during the sample period.
-|Port Errors|portErrors.class3Discard|none (count)|≥0|Number of class 3 FC frames discarded during the sample period.
-|Port Errors|portErrors.frameTooLong|none(count)|≥0|Number of FC frames discarded by this port during the sample period because their length exceeded the agreed to maximum limit.
-|Port Errors|portErrors.frameTooShort|none(count)|≥0|Number of FC frames discarded by this port during the sample period because their actual length was less than the length given in the frame header.
-|Port Errors|portErrors.linkFailure|none (count)|≥0|Number of link failures detected by this port during the sample period.
-|Port Errors|portErrors.crc|none (count)|≥0|Number of frames with invalid CRCs detected by this port during the sample period.
-|Port Errors|portErrors.encIn (Brocade only)|none (count)|≥0|The number of 8b/10b encoding errors that have occurred inside frame boundaries. This counter is generally a zero value, although occasional errors may occur on a normal link and give a nonzero result.
-|Port Errors|portErrors.encOut (Brocade only)|none (count)|≥0|The number of 8b/10b encoding errors that have occurred outside frames boundaries. This counter may become a nonzero value during link initialization but indicates a problem if it increments faster than the link-bit error rate allows (approximately once every 20 minutes for 1 Gb/s). This is usually caused by corrupted primitive sequences. 
-|Port Errors|portErrors.total|none (count)|≥0|Total number of errors detected by this port during the sample period. Is equal to the sum of all error counters defined above (with portErrors. prefix in REST name).
-|===
-////
 
 == Performance History Data
 
 History data is presented in performance data as a list of timestamp and counter maps pairs.
 
-//graphic 
 
 History counters are named based on the performance metric object name. For example, the virtual machine performance object supports “diskThroughput” so the history map will contain keys named “diskThroughput.read”, “diskThroughput.write” and “diskThroughput.total”.
 
@@ -438,7 +264,7 @@ Note: If you have the latest NetApp Kubernetes Monitoring Operator installed and
 
 * Edit the the NetApp Kubernetes Monitoring Operator.
 +
- kubectl -n netapp-monitoring edit agent agent-monitoring-netapp
+ kubectl -n netapp-monitoring edit agent netapp-ci-agent-monitoring-netapp
  
 * Modify the _spec.output-sink.api-key_ value, replacing the old API token with the new API token.
 +

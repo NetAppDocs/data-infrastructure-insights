@@ -15,7 +15,7 @@ keywords: AU, acquisition unit, requirements, sizing
 :imagesdir: ./media/
 
 [.lead]
-You must install an Acquisition Unit (AU) in order to acquire information from your infrastructure data collectors (storage, VM, port, EC2, etc.). Before you install the Acquisition Unit, you should ensure that your environment meets operating system, CPU, memory, and disk space requirements.
+You must install an Acquisition Unit (AU) in order to acquire information from your infrastructure data collectors (storage, VM, port, EC2, etc.). Before you install the Acquisition Unit, you should ensure that your tenant meets operating system, CPU, memory, and disk space requirements.
 
 == Requirements
 
@@ -68,7 +68,7 @@ For Linux, disk space should be allocated in this manner:
 
 |50 GB
 
-|Network	|100 Mbps/1 Gbps Ethernet connection, static IP address, and port 80 or 443 (outbound) connectivity from Acquisition Unit to *.cloudinsights.netapp.com or your Data Infrastructure Insights environment (i.e. \https://<environment_id>.c01.cloudinsights.netapp.com) is required. For requirements between Acquisition Unit and each Data Collector, please refer to instructions for the link:data_collector_list.html[Data Collector].
+|Network	|100 Mbps/1 Gbps Ethernet connection, static IP address, and port 80 or 443 (outbound) connectivity from Acquisition Unit to *.cloudinsights.netapp.com or your Data Infrastructure Insights tenant (i.e. \https://<tenant_id>.c01.cloudinsights.netapp.com) is required. For requirements between Acquisition Unit and each Data Collector, please refer to instructions for the link:data_collector_list.html[Data Collector].
 
 If your organization requires proxy usage for internet access, you may need to understand your organization’s proxy behavior and seek certain exceptions for Data Infrastructure Insights to work. For example, does your organization block access by default, and only allow access to specific web sites/domains by exception? If so, you will need to get the following domain added to the exception list:
 
@@ -102,9 +102,7 @@ For each "Yes" answer above, it is recommend to add 8 GB of memory and 50 GB of 
 
 For additional sizing questions, contact NetApp Support.
 
-== Additional Federal Edition requirement
 
-* For Acquisition Unit installations in Data Infrastructure Insights Federal Edition clusters, the underlying operating system must have a good source of entropy. On Linux systems this is typically done by installing _rng-tools_ or by using hardware random number generation (RNG). It is the customer's responsibility to ensure this requirement is met on the Acquisition Unit machine.
 
 
 

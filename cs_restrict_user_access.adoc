@@ -10,7 +10,7 @@ summary: With Workload Security, you can restrict user access in the event of su
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media
+:imagesdir: ./media/
 
 [.lead]
 Once an attack is detected, Workload Security can stop the attack by blocking user access to the file system. Access can be blocked automatically, using Automated Response Policies or manually from the alert or user details pages.

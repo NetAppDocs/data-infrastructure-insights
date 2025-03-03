@@ -117,6 +117,9 @@ To create the new user, log in to ONTAP with the Cluster management Administrato
 
  security login create -user-or-group-name csuser -application ontapi -authmethod password -role csrole
  security login create -user-or-group-name csuser -application ssh -authmethod password -role csrole
+ security login create -user-or-group-name csuser -application http -authmethod password -role csrole
+
+
 
 
 === Permissions when adding via *Vserver Management IP*:
@@ -137,6 +140,27 @@ To create the new user, log in to ONTAP with the Cluster management Administrato
  security login role create -vserver <vservername> -role csrole -cmddirname "volume snapshot" -access all
 
  security login create -user-or-group-name csuser -application ontapi -authmethod password -role csrole -vserver <vservername>
+ security login create -user-or-group-name csuser -application http -authmethod password -role csrole -vserver <vservername>
+
+
+=== Protobuf Mode
+
+Workload Security will configure the FPolicy engine in protobuf mode when this option is enabled in the collector's _Advanced Configuration_ settings. Protobuf mode is supported in ONTAP version 9.15 and later.
+
+More details on this feature can be found in the link:https://docs.netapp.com/us-en/ontap/nas-audit/steps-setup-fpolicy-config-concept.html[ONTAP documentation].
+
+Specific permissions are required for protobuf (some or all of these may already exist):
+
+Cluster mode:
+ 
+ security login rest-role create -role csrestrole -api /api/protocols/fpolicy -access all -vserver <cluster_name>
+ security login create -user-or-group-name csuser -application http -authmethod password -role csrestrole
+ 
+Vserver mode:
+ 
+ security login rest-role create -role csrestrole -api /api/protocols/fpolicy -access all -vserver <svm_name>
+ security login create -user-or-group-name csuser -application http -authmethod password -role csrestrole -vserver <svm_name>
+
 
 
 === Permissions for ONTAP Autonomous Ransomware Protection and ONTAP Access Denied
@@ -235,11 +259,11 @@ In versions of ONTAP prior to 9.9.1, _data-fpolicy-client_ need not be set.
 
 == Play-Pause Data  Collector
 
-2 new operations are now shown on kebab menu of collector (PAUSE and RESUME).
-
 If the Data Collector is in _Running_ state, you can Pause collection. Open the "three dots" menu for the collector and select PAUSE. While the collector is paused, no data is gathered from ONTAP, and no data is sent from the collector to ONTAP. This means no Fpolicy events will flow from ONTAP to the data collector, and from there to Data Infrastructure Insights.
 
 Note that if any new volumes, etc. are created on ONTAP while the collector is Paused, Workload Security won’t gather the data and those volumes, etc. will not be reflected in dashboards or tables.
+
+NOTE: A collector cannot be paused if it has restricted users. Restore the user access before pausing the collector.
 
 Keep the following in mind:
 

@@ -6,7 +6,6 @@ keywords: subscribe, trial, subscription, contract, raw capacity, region, data r
 ---
 
 = Subscribing to Data Infrastructure Insights
-:toc: macro
 :hardbreaks:
 :toclevels: 2
 :nofooter:
@@ -18,14 +17,19 @@ keywords: subscribe, trial, subscription, contract, raw capacity, region, data r
 Getting started with Data Infrastructure Insights is as easy as three simple steps:
 
 * Sign up for an account on link:https://bluexp.netapp.com//[*NetApp BlueXP*] to get access to all of NetApp's Cloud offerings.
-* Register for a link:https://cloud.netapp.com/cloud-insights[*free trial*] of Data Infrastructure Insights to explore the features available.
-* *Subscribe* to Data Infrastructure Insights for on-going, uninterrupted access to your data via link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx[NetApp Sales] direct or link:https://aws.amazon.com/marketplace/pp/prodview-pbc3h2mkgaqxe[AWS Marketplace].
+* Register for a free trial of Data Infrastructure Insights to explore the features available. To register for a free trial:
+** Go to https://netapp.com
+** Select *How to Buy* at the top of the page.
+** Select *Request trial*. If you are not already registered with BlueXP, Enter your details and sign up. Otherwise, sign in.
+** Schedule a meeting or wait for a representative to contact you about your trial.
+
+* *Subscribe* to Data Infrastructure Insights for on-going, uninterrupted access to your data via link:https://bluexp.netapp.com/contact-cds[NetApp Sales] direct or link:https://aws.amazon.com/marketplace/pp/prodview-pbc3h2mkgaqxe[AWS Marketplace].
 
 During the registration process, you can choose the global region to host your Data Infrastructure Insights environment. 
 For more information, read about Data Infrastructure Insights link:security_information_and_region.html[Information and Region].
 
 
-For a full comparison of the features available in Data Infrastructure Insights Basic and Premium Editions, see the link:https://www.netapp.com/cloud-services/cloud-insights/editions-pricing[Data Infrastructure Insights Pricing] page.
+For a full comparison of the features available in Data Infrastructure Insights Basic and Premium Editions, see the link:https://www.netapp.com/cloud-services/cloud-insights/editions-pricing[Data Infrastructure Insights Editions] page.
 
 
 WARNING: Inactive Data Infrastructure Insights Basic Edition environments are deleted and their resources are reclaimed. An environment is considered inactive if there is no user activity for 30 consecutive days, of if there is no data ingested for 7 consecutive days. Data Infrastructure Insights will send a notification and provide a grace period of four days before an environment is deleted.
@@ -66,14 +70,6 @@ The AWS Marketplace free trial cannot be extended. At any time during your trial
 If your free trial has expired and you have not yet subscribed to Data Infrastructure Insights, you will have limited functionality until you subscribe. Data ingestion may cease, and after a few weeks, your data will be deleted per our data retention policy.
 
 
-
-== What if my Subscription has expired?
-
-If you have a subscription to Data Infrastructure Insights, but that subscription has expired, you will have a grace period of five days in order to renew your subscription. All Data Infrastructure Insights functionality will remain active during this grace period.
-
-After the grace period has elapsed, Data Infrastructure Insights functionality is suspended until you renew. To renew, see the *Admin > Subscription* page, or contact NetApp Sales.
-
-NOTE: Your Data Infrastructure Insights data collected through the end of the grace period remains intact for 30 days following the grace period. If you renew your subscription within this time, all of your data up until the time the grace period elapsed will be available to you.
 
 
 == What if my *Subscription* has expired?
@@ -138,7 +134,7 @@ Your subscription will be metered by one of these methods, depending on whether 
 ==== Capacity Metering
 [#effective-entitlement]
 
-Data Infrastructure Insights Observability meters usage according to the tier of storages in your environment. You may have storages that fall into one or more of these categories:
+Data Infrastructure Insights Observability meters usage according to the tier of storages on your tenant. You may have storages that fall into one or more of these categories:
 
 * Primary Raw 
 * Object Raw
@@ -188,7 +184,7 @@ If your Managed Unit count is less than 1,000, you can subscribe via NetApp Sale
 
 === Subscribe through NetApp Sales direct
 
-If your expected Managed Unit count is 1,000 or greater, click on the link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx[*Contact Sales*] button to subscribe though the NetApp Sales Team. 
+If your expected Managed Unit count is 1,000 or greater, click on the link:https://bluexp.netapp.com/contact-cds[*Contact Sales*] button to subscribe though the NetApp Sales Team. 
 
 You must provide your Data Infrastructure Insights *Serial Number* to your NetApp sales representative so that your paid subscription can be applied to your Data Infrastructure Insights environment. The Serial Number uniquely identifies your Data Infrastructure Insights trial environment and can be found on the *Admin > Subscription* page.
 
@@ -238,13 +234,6 @@ The Usage Management tab shows an overview of Managed Unit usage, as well as tab
 
 NOTE: The Unformatted Capacity Managed Unit count reflects a sum of the total raw capacity in the environment and is rounded up to the nearest Managed Unit. 
 
-//=== Installed Data Collectors
-
-//Click on the *View Data Collectors* button to expand the list of installed Data Collectors. 
-
-//image:Subscription_Installed_Data_Collectors.png[Data Collectors]
-
-//The Data Collectors section shows the Data Collectors installed in your environment and the breakdown of Managed Units for each. 
 
 NOTE: The sum of Managed Units may differ slightly from the Data Collectors count in the summary section. This is because Managed Unit counts are rounded up to the nearest Managed Unit. The sum of these numbers in the Data Collectors list may be slightly higher than the total Managed Units in the status section. The summary section reflects your actual Managed Unit count for your subscription.
 

@@ -16,3 +16,5 @@ Remove inefficiencies by identifying abandoned and unused resources and right-si
 End searching through vast amounts of data to find the relevant piece, by using advanced analytics and machine learning to identify issues before they become critical outages.
 
 
+
+

@@ -6,7 +6,6 @@ keywords: reporting, cognos, data warehouse, dwh
 ---
 
 = Data Infrastructure Insights Reporting Overview
-:toc: macro
 :hardbreaks:
 :toclevels: 2
 :nofooter:

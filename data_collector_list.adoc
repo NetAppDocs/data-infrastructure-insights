@@ -6,7 +6,6 @@ keywords: data collector, vendor, infrastructure, integration, service
 ---
 
 = Data Infrastructure Insights Data Collector List
-:toc: macro
 :hardbreaks:
 :toclevels: 1
 :nofooter:
@@ -103,6 +102,7 @@ Alphabetical list of Data Collectors supported by Data Infrastructure Insights:
 | link:task_dc_na_hci.html[NetApp HCI Virtual Center ] |Infrastructure 
 | link:task_dc_na_cdot.html[NetApp ONTAP Data Management Software ] |Infrastructure 
 | link:task_dc_na_ontap_rest.html[NetApp ONTAP REST collector ] |Infrastructure
+| link:task_dc_na_ontap_all_san_array.html[NetApp ONTAP All-SAN Array (ASA) collector] |Infrastructure
 | link:task_dc_na_cdot.html[NetApp ONTAP Select ] |Infrastructure 
 | link:task_dc_na_solidfire.html[NetApp SolidFire All-Flash Array ] |Infrastructure 
 | link:task_dc_na_storagegrid.html[NetApp StorageGRID ] |Infrastructure 
@@ -123,6 +123,7 @@ Alphabetical list of Data Collectors supported by Data Infrastructure Insights:
 | link:task_config_telegraf_agent.html#rhel-and-centos[RHEL & CentOS ] |Service 
 | link:task_dc_rubrik_cdm.html[Rubrik CDM Storage ] |Infrastructure 
 | link:task_config_telegraf_agent.html#ubuntu-and-debian[Ubuntu & Debian ] |Service 
+| link:task_dc_vast_datastore.html[VAST DataStore] |Infrastructure
 | link:task_dc_vmware.html[VMware vSphere ] |Infrastructure 
 | link:task_config_telegraf_agent.html#windows[Windows ] |Service 
 | link:task_config_telegraf_zookeeper.html[ZooKeeper ] |Service 

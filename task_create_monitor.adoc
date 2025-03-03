@@ -33,7 +33,7 @@ Data Infrastructure Insights provides a number of link:task_system_monitors.html
 
 == Security Best Practice
 
-Data Infrastructure Insights alerts are designed to highlight data points and trends in your environment, and Data Infrastructure Insights allows you to enter any valid email address as an alert recipient. If you are working in a secure environment, be especially mindful of who is receiving the notification or otherwise has access to the alert. 
+Data Infrastructure Insights alerts are designed to highlight data points and trends on your tenant, and Data Infrastructure Insights allows you to enter any valid email address as an alert recipient. If you are working in a secure environment, be especially mindful of who is receiving the notification or otherwise has access to the alert. 
 
 == Metric or Log Monitor? 
 
@@ -241,7 +241,7 @@ If a monitor is no longer needed, you can delete it by selecting *Delete* from t
 
 == Monitor Groups
 
-Grouping allows you to view and manage related monitors. For example, you can have a monitor group dedicated to the storage in your environment, or monitors relevant to a certain recipient list. 
+Grouping allows you to view and manage related monitors. For example, you can have a monitor group dedicated to the storage on your tenant, or monitors relevant to a certain recipient list. 
 
 image:Monitors_GroupList.png[Monitor Grouping]
 
@@ -310,190 +310,11 @@ image:Monitors_PauseGroup.png[Pause a group]
 
 
 
-////
-=== Creating a Monitor
-
-In the example below, we will create a Monitor to give a Warning alert when _Volume Node NFS Write Latency_ reaches or exceeds 200ms, and a Critical alert when it reaches or exceeds 400ms. We only want to be alerted when either threshold is exceeded for at least 15 continuous minutes.
-
-==== Requirements
-
-* Data Infrastructure Insights must be configured to collect integration data, and that data is being collected.
-////
-////
-==== Create the Monitor 
-
-. From the Data Infrastructure Insights menu, click *Alerts > Manage Monitors*
-+
-The Monitors list page is displayed, showing currently configured monitors. 
-
-. To add a monitor, Click *+ Monitor*. To modify an existing monitor, click the monitor name in the list.
-+
-The Monitor Configuration dialog is displayed.
-. In the drop-down, search for and choose an object type and metric to monitor, for example _netapp_ontap_volume_node_nfs_write_latency_.
-
-You can set filters to narrow down which object attributes or metrics to monitor. 
-
-//image:select_metric_to_monitor.png[Select Metric]
-
-image:MonitorMetricFilter.png[Metrics Filtering]
-
-//When working with integration data (Kubernetes, ONTAP Advanced Data, etc.), metric filtering works against the data samples themselves, not the objects as with infrastructure data (storage, VMs, ports, etc.).
-
-When working with integration data (Kubernetes, ONTAP Advanced Data, etc.), metric filtering removes the individual/unmatched data points from the plotted data series, unlike infrastructure data (storage, VM, ports etc.) where filters work on the aggregated value of the data series and potentially remove the entire object from the chart.
-
-//image:IntegrationMetricFilterExample.png[Integration Metric Filtering]
-
-TIP: To create a multi-condition monitor (e.g., IOPS > X and latency > Y), define the first condition as a threshold and the second condition as a filter.
-
-
-==== Define the Conditions of the Monitor. 
-
-. After choosing the object and metric to monitor, set the Warning-level and/or Critical-level thresholds.
-. For the _Warning_ level, enter 200. The dashed line indicating this Warning level displays in the example graph.
-. For the _Critical_ level, enter 400. The dashed line indicating this Critical level displays in the example graph.
-+
-The graph displays historical data. The Warning and Critical level lines on the graph are a visual representation of the Monitor, so you can easily see when the Monitor might trigger an alert in each case. 
-
-. For the occurence interval, choose _Continuously_ for a period of _15 Minutes_.
-+
-You can choose to trigger an alert the moment a threshold is breached, or wait until the threshold has been in continuous breach for a period of time. In our example, we do not want to be alerted every time the Total IOPS peaks above the Warning or Critical level, but only when a monitored object continuously exceeds one of these levels for at least 15 minutes.
-+
-image:define_monitor_conditions.png[Define Conditions]
-
-
-==== Refining the Filter
-
-When you are filtering, as you begin typing you are presented with the option to create a *wildcard filter* based on the current text. Selecting this option will return all results that match the wildcard expression. You can also create *expressions* using NOT or OR, or you can select the "None" option to filter for null values in the field.
-
-image:Type-Ahead_Monitor_1.png[Wildcard Filter]
-
-Filters based on wildcards or expressions (e.g. NOT, OR, "None", etc.) display in dark blue in the filter field. Items that you select directly from the list are displayed in light blue.
-
-image:Type-Ahead-Example-Wildcard-DirectSelect.png[Wildcard Filter Results]
-
-Note that Wildcard and Expression filtering works with text or lists but not with numerics, dates or booleans.
-
-
-
-=== Setting Corrective Actions or Additional Information
-
-You can add an optional description as well as additional insights and/or corrective actions by filling in the *Add an Alert Description* section. The description can be up to 1024 characters and will be sent with the alert. The insights/corrective action field can be up to 67,000 characters and will be displayed in the summary section of the alert landing page.
-
-In these fields you can provide notes, links, or steps to take to correct or otherwise address the alert.
-
-image:Monitors_Alert_Description.png[Alert Corrective Actions and Description]
-
-
-
-
-=== Select notification type and recipients
-
-In the _Set up team notification(s)_ section, you can choose whether to alert your team via email or Webhook.
-
-image:Webhook_Choose_Monitor_Notification.png[Choose alerting method]
-
-*Alerting via Email:*
-
-Specify the email recipients for alert notifications. If desired, you can choose different recipients for warning or critical alerts.
-
-image:email_monitor_alerts.png[Email Alert Recipients]
-
-*Alerting via Webhook:*
-
-Specify the webhook(s) for alert notifications. If desired, you can choose different webhooks for warning or critical alerts.
-
-image:Webhook_Monitor_Notifications.png[Webhook Alerting]
-
-==== Warning vs. Critical vs. Resolved alerting
-
-Whether a monitor sends a Warning, Critical, or Resolved alert notification depends on which threshold is crossed:
-
-* Crossing from non-triggered to WARNING - Send Warning Alert
-* Crossing from non-triggered to CRITICAL - Send Critical Alert
-* Crossing from WARNING to CRITICAL - Send Critical Alert
-* Crossing from CRITICAL to WARNING - Send Warning Alert
-* Crossing from WARNING to Non-Triggered - Send RESOLVED Alert
-* Crossing from CRITICAL to Non-Triggered - Send RESOLVED Alert
-
-
-=== Save your Monitor
-
-. If desired, you can add a description of the monitor. 
-+
-. Give the Monitor a meaningful name and click *Save*.
-+
-Your new monitor is added to the list of active Monitors.
-
-=== Monitor List
-
-The Monitor page lists the currently configured monitors, showing the following:
-
-* Monitor Name
-* Status 
-* Object/metric being monitored
-* Conditions of the Monitor
-
-You can view any active alerts associated with a monitor by clicking rthe "bell" icon next to the Monitor name.
-image:ViewActiveAlerts.png[Icon showing active alerts for a monitor]
-
-You can choose to temporarily suspend monitoring of an object type by clicking the menu to the right of the monitor and selecting *Pause*. When you are ready to resume monitoring, click *Resume*.
-
-You can copy a monitor by selecting *Duplicate* from the menu. You can then modify the new monitor and change the object/metric, filter, conditions, email recipients, etc.
-
-If a monitor is no longer needed, you can delete it by selecting *Delete* from the menu.
-
-
-
-== Monitor Groups
-
-Grouping allows you to view and manage related monitors. For example, you can have a monitor group dedicated to the storage in your environment, or monitors relevant to a certain recipient list. 
-
-image:Monitors_GroupList.png[Monitor Grouping]
-
-////
-////
-Two groups are shown by default:
-
-* *All Monitors* lists all monitors.
-* *Custom Monitors* lists only user-created monitors.
-* *Suspended Monitors* will be shown only if a monitor has been suspended by the system. 
-////
-
-////
-
-The number of monitors contained in a group is shown next to the group name.
-
-To create a new group, click the *"+" Create New Monitor Group* button. Enter a name for the group and click *Create Group*. An empty group is created with that name. 
-
-To add monitors to the group, go to the _All Monitors_ group (recommended) and do one of the following:
-
-* To add a single monitor, click the menu to the right of the monitor and select _Add to Group_. Choose the group to which to add the monitor.
-* Click on the monitor name to open the monitor's edit view, and select a group in the _Associate to a monitor group_ section.
-+
-image:Monitors_AssociateToGroup.png[Associate to group]
-
-//* To add multiple monitors to a group, select them by clicking the checkbox next to each monitor, then click the *Bulk Actions* button and select _Move to Group_.
-
-Remove monitors by clicking on a group and selecting _Remove from Group_ from the menu. You can not remove monitors from the _All Monitors_ or _Custom Monitors_ group. To delete a monitor from these groups, you must delete the monitor itself.
-
-NOTE: Removing a monitor from a group does not delete the monitor from Data Infrastructure Insights. To completely remove a monitor, select the monitor and click _Delete_. This also removes it from the group to which it belonged and it is no longer available to any user.
-
-You can also move a monitor to a different group in the same manner, selecting _Move to Group_. 
-
-NOTE: Each monitor can belong to only a single group at any given time.
-
-To pause or resume all monitors in a group at once, select the menu for the group and click _Pause_ or _Resume_. 
-
-Use the same menu to rename or delete a group. Deleting a group does not delete the monitors from Data Infrastructure Insights; they are still available in _All Monitors_.
-
-image:Monitors_PauseGroup.png[Pause a group]
-////
-
 
 
 == System-Defined Monitors
 
-Data Infrastructure Insights includes a number of system-defined monitors for both metrics and logs. The system monitors available are dependent on the data collectors present in your environment. Because of that, the monitors available in Data Infrastructure Insights may change as data collectors are added or their configurations changed.
+Data Infrastructure Insights includes a number of system-defined monitors for both metrics and logs. The system monitors available are dependent on the data collectors present on your tenant. Because of that, the monitors available in Data Infrastructure Insights may change as data collectors are added or their configurations changed.
 
 View the link:task_system_monitors.html[System-Defined Monitors] page for descriptions of monitors included with Data Infrastructure Insights.
 

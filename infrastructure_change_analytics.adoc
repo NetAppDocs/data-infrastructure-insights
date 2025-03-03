@@ -1,0 +1,269 @@
+---
+sidebar: sidebar
+permalink: infrastructure_change_analytics.html
+keywords: changes, management, analysis, infra, infrastructure
+summary: Cloud Insights tracks changes in infrastructure for ease of analysis and troubleshooting..
+---
+
+= Infrastructure Change Analysis
+:hardbreaks:
+:toclevels: 1
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Infrastructure Change Analysis provide you with an all-in-one view of recent changes to the infrastructure (storage, switch, etc.) on your tenant. With Change Analysis, you can track configuration changes and drill into issues both expected and unexpected.
+
+== How does Infrastructure Change Analysis help?
+
+In any environment, changes to your resources may happen because of mis-configured changes, power loss, etc. Change Analysis helps by providing a single pane to view and correlate the health of your resources with outages or planned changes. Changes are calculated with each inventory poll (following the first poll on a new collector).
+
+To analyze Infrastructure Changes, navigate to *Observability > Change Analysis*. Alerts and Configuration changes for the current time range are listed. Alert rows show the current alert status (active or resolved). 
+
+You can also navigate to a landing page for a resource. If changes have occurred to that recource or related resources, these will be shown in the Expert View section of the page. Zoom in to investigate individual changes, or leave the view wide to see all changes within the selected time range. Hovering over a change will give you a summary of the change. Clicking on that change will focus the expert view on the time of that change.
+
+image:change_analysis_on_a_landing_page.png[Change Analysis on a landing page]
+
+//image:infraChange_list_example.png[Infrastructure Change Analysis main screen].
+
+Selecting an item in the list will open a slideout pane giving more detail about the alert or change.
+
+//image:infraChange_config_detail.png[Example of config change details pane]
+
+
+== Filtering
+
+As with all features of Cloud Insights, filtering the change list is intuitive: at the top of the page, you can filter for specific asset types (_Triggered On:type_), and/or filter for only assets with specific names if desired (_Triggered On:name_), or add your own filters by selecting the {+] button.
+
+image:infraChange_filter_dropdown.png[Infrastructure Change Filtering Drop-Down]
+
+You can also go directly to key Alerts or Changes from the status section below the filter settings, including the current top three resources with the most alerts.
+
+image:Change_Analysis_filters_and_status.png[status and quick links to alerts and changes]
+
+== Which Objects are analyzed for changes?
+
+
+
+The following table lists the objects and attributes included in infrastructure change analysis. 
+
+|===
+
+|Object Type|Attributes
+
+|Disk|diskSize.total
+isVirtual
+diskGroup
+speed
+type
+location
+serialNumber
+role
+status
+vendor
+model
+storage.name
+storagePools.name
+name
+isEncrypted
+
+|Storage|
+family
+ip
+isActive
+microcodeVersion
+model
+name
+protocols
+serialNumber
+vendor
+
+|StorageNode|name
+storage.name
+nodeVersion
+model
+serialNumber
+numberOfProcessors
+state
+partner.name
+cache
+memory
+managementIpAddresses
+parentSerialNumber
+siteName
+
+|StoragePool|name
+type
+isAutoTiering
+isVirtual
+redundancy
+vendorTier
+usesFlashPools
+storage.vendor
+storage.ip
+storage.model
+storage.family
+storage.name
+storageNodes.name
+capacity.total (dynamic attribute)
+isCompactionSavingsEnabled
+isEncrypted
+objectStoreName
+objectStoreProviderType
+objectStoreSizeLimit
+objectStoreTieringFullnessThreshold
+objectStoreS3Name
+objectStoreServer
+
+|Qtree|type
+securityStyle
+isOplocksEnabled
+shares.name
+storage.name
+internalVolume.name
+storageVirtualMachine.name
+simpleName
+statusText
+name
+
+|StorageVirtualMachine|name
+storage.name
+state
+type
+ipSpace
+protocols
+internalVolumeLimit
+
+|Volume|name
+simpleName
+label
+type
+storage.name
+storage.vendor
+storage.ip
+storage.model
+storage.family
+isAutoTiering
+isThinProvisioned
+diskGroup
+isMainframe
+isMeta
+isReplicaSource
+isReplicaTarget
+isSnapshot
+isVirtual
+internalVolume.name
+internalVolume.virtualStorage
+storageNodes.name
+storageNodes.partner.name
+storagePools.name
+storageVirtualMachine.name
+storageGroups
+isEncrypted
+isCompressionEnabled
+qosBurstIOPS
+qosLimitIOPS
+qosLimitMBPS
+qosMinIOPS
+qosPolicy
+qosLimitRaw
+
+|InternalVolume|flashPoolEligibility
+name
+simpleName
+spaceGuarantee
+status
+type
+virtualStorage
+replicaSources.name
+storageNodes.name
+storageNodes.partner.name
+storage.name
+storage.vendor
+storage.ip
+storage.model
+storage.family
+storageVirtualMachine.name
+storagePool.name
+capacity.isThinProvisioned
+qosPolicy
+qosLimitRaw
+qosLimitIOPS
+qosLimitMBPS
+isEncrypted
+adaptiveQosPolicy
+junctionPath
+objectStoreTieringPolicy
+tieringMinimumCoolingDays
+
+|VirtualMachine|name
+dnsName
+ip
+os
+memory
+processors
+guestState
+powerState
+host.name
+host.clusterName
+host.ip
+host.os
+dataStore.name
+instanceType
+publicIps
+securityGroups
+virtualCenterIp
+
+|DataStore|name
+virtualCenterIp
+type
+
+|Host|name
+model
+ip
+isActive
+os
+manufacturer
+cpuCount
+memory
+isHypervisor
+clusterName
+virtualCenterIp
+
+|vmdk(VirtualMachineDisk)|name
+type
+dataStore.name
+isRdm
+virtualMachine.host.name
+virtualMachine.name
+isSnapshot
+
+|Port|name
+isActive
+wwn
+type
+portIndex
+blade
+speed
+gbicType
+connectedPorts.device.name
+connectedPorts.device.type
+connectedPorts.name
+connectedPorts.nodeWwn
+connectedPorts.wwn
+controller
+device.name
+device.type
+fabrics.name
+fabrics.vsanId
+nodeWwn
+description
+
+|===
+
+“Change Analysis” tracks alerts for the following cases:
+
+* Alerts from log monitors on the log types of _logs.vmware.events_ and _logs.netapp.ems_.
+* Alerts from metric monitors on the above object types; these must be selected in the _Group By_ field in order for Change Analysis to track them.

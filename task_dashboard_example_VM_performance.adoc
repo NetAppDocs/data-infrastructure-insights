@@ -15,7 +15,7 @@ keywords: dashboard, widget, custom, example, virtual machine, vm, performance
 :imagesdir: ./media/
 
 [.lead]
-There are many challenges facing IT operations today. Administrators are being asked to do more with less, and having full visibility into your dynamic data centers is a must. In this example, we will show you how to create a dashboard with widgets that give you operational insights into the virtual machine (VM) performance in your environment. By following this example, and creating widgets to target your own specific needs, you can do things like visualizing backend storage performance compared to frontend virtual machine performance, or viewing VM latency versus I/O demand.
+There are many challenges facing IT operations today. Administrators are being asked to do more with less, and having full visibility into your dynamic data centers is a must. In this example, we will show you how to create a dashboard with widgets that give you operational insights into the virtual machine (VM) performance on your tenant. By following this example, and creating widgets to target your own specific needs, you can do things like visualizing backend storage performance compared to frontend virtual machine performance, or viewing VM latency versus I/O demand.
 
 //Custom dashboards allow to you to prioritize efforts and identify resource availability. You can respond to the ebb and flow of workloads and minimize the time to detect and remediate emerging issues. Custom dashboards allow you the flexibility to create prioritized views into business-critical infrastructure, and are useful for identifying performance availability across multi-vendor technologies.
 
@@ -46,7 +46,7 @@ The *New dashboard* page opens.
 
 . Click the *Add Widget* icon and select *Table* to add a new table widget to the dashboard.
 +
-The Edit Widget dialog opens. The default data displayed is for all storages in your environment.
+The Edit Widget dialog opens. The default data displayed is for all storages on your tenant.
 
 image:VMDashboard-TableWidget1.png[Edit Table Widget dialog]
 
@@ -54,7 +54,7 @@ image:VMDashboard-TableWidget1.png[Edit Table Widget dialog]
 
 . Click the asset type drop-down and change _Storage_ to _Virtual Machine_.
 +
-The table data changes to show all virtual machines in your environment. 
+The table data changes to show all virtual machines on your tenant. 
 
 . Let's add a few columns to the table. Click the Gear icon on the right and select _Hypervisor name_, _IOPS - Total_, and _Latency - Total_. You can also try typing the name into the search to quickly display the desired field.
 +

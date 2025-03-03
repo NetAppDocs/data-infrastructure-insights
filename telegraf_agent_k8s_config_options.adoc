@@ -57,6 +57,7 @@ proxy:
 ||rsCpuRequest|CPU request for telegraf rs
 ||rsMemRequest|Memory request for telegraf rs
 ||runPrivileged|Run the telegraf DaemonSet's _telegraf-mountstats-poller_ container in privileged mode. Set this to true if SELinux is enabled on your Kubernetes nodes.
+||runDsPrivileged|Set runDsPrivileged to true to run the telegraf DaemonSet's telegraf container in privileged mode.
 ||batchSize|See link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent[Telegraf configuration documentation]
 ||bufferLimit|See link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent[Telegraf configuration documentation]
 ||roundInterval|See link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent[Telegraf configuration documentation]
@@ -69,12 +70,12 @@ proxy:
 ||dsTolerations	|telegraf-ds additional tolerations.
 ||rsTolerations	|telegraf-rs additional tolerations.
 
-||runDsPrivileged|Set runDsPrivileged to true to run the telegraf DaemonSet's telegraf container in privileged mode.
-
-
 ||skipProcessorsAfterAggregators |See link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent[Telegraf configuration documentation]
 
-||unprotected | See this link:https://community.influxdata.com/t/updating-telegraf-to-version-1-29-5-crashes-kubernetes-pod/33376[known Telegraf issue]. Setting _unprotected_ will instruct the Kubernetes Monitoring Operator to run Telegraf with the `--unprotected` flag.
+||unprotected | ee this link:https://community.influxdata.com/t/updating-telegraf-to-version-1-29-5-crashes-kubernetes-pod/33376[known Telegraf issue]. Setting _unprotected_ will instruct the Kubernetes Monitoring Operator to run Telegraf with the `--unprotected` flag.
+
+||insecureK8sSkipVerify |If telegraf is unable to verify certificate due to lack of IP SANs, try enabling verification skip
+
 
 |kube-state-metrics||Configuration options that can customize the kube state metrics installation of the Operator
 
@@ -104,9 +105,6 @@ persistentvolumeclaims=[*],persistentvolumes=[*],pods=[*],replicasets=[*],resour
 ||fluent-bit-tolerations|fluent-bit-ds additional tolerations.
 ||event-exporter-tolerations|event-exporter additional tolerations.
 ||event-exporter-maxEventAgeSeconds|event-exporter max event age.  See https://github.com/jkroepke/resmoio-kubernetes-event-exporter
-||runPrivileged|Set runPrivileged to true if Fluent Bit fails to start, trying to open/create its database.
-||runDsPrivileged|Set runDsPrivileged to true to run the telegraf DaemonSet's telegraf container in privileged mode.
-
 
 |workload-map||Configuration options that can customize the workload map collection and installation of the Operator.
 ||cpuLimit|CPU limit for net observer ds

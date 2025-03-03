@@ -15,11 +15,11 @@ keywords: query, queries, Application, Datastore, Disk, Fabric, Generic Device, 
 :imagesdir: ./media/
 
 [.lead]
-Queries enable you to monitor and troubleshoot your network by searching the assets and metrics in your environment at a granular level based on user-selected criteria (for example, annotations). 
+Queries enable you to monitor and troubleshoot your network by searching the assets and metrics on your tenant at a granular level based on user-selected criteria (for example, annotations). 
 
 Note that annotation rules, which automatically assign annotations to assets, _require_ a query.
 
-You can query the physical or virtual inventory assets (and their associated metrics) in your environment, or the metrics provided with integration such as Kubernetes or ONTAP Advanced Data.
+You can query the physical or virtual inventory assets (and their associated metrics) on your tenant, or the metrics provided with integration such as Kubernetes or ONTAP Advanced Data.
 
 == Inventory Assets
 

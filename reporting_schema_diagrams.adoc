@@ -6,30 +6,21 @@ summary: Reporting Schema Diagrams
 ---
 
 = Data Infrastructure Insights Reporting Schema Diagrams
-:toc: macro
 :hardbreaks:
-:toclevekls: 2
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
-
 [.lead]
-
-This document provides the schema diagrams for the Reporting Database. You can also download a file containing the link:ci_reporting_database_schema.pdf[schema tables].
+This document provides schema diagrams for the Reporting Database. 
 
 NOTE: The Reporting feature is available in Data Infrastructure Insights link:concept_subscribing_to_cloud_insights.html[Premium Edition]. 
 
 
-
-
-
 == Inventory Datamart
 
-
 The following images describe the inventory datamart.
-
 
 === Annotations
 
@@ -37,13 +28,13 @@ image:annotations.png[annotations]
 
 === Applications
 
-image:apps_annot.png[applications]
+image:apps_annot.jpg[applications]
 
 
 
 === Kubernetes Metrics
 
-image:k8s_schema.jpg[Kubernetes]
+image:k8s.jpg[Kubernetes]
 
 ==== Kubernetes Cluster Metrics Fact
 
@@ -69,31 +60,33 @@ image:k8s_workload_metrics_fact.jpg[Kubernetes Workload Metrics Fact]
 
 === NAS
 
-image:nas.png[nas]
+image:nas.jpg[nas]
 
 === Paths and Violations
 
-image:logical.png[paths and violations]
+image:logical.jpg[paths and violations]
 
 === Port Connectivity
 
-image:connectivity.png[port connectivity]
+image:connectivity.jpg[port connectivity]
 
 === SAN Fabric
 
-image:fabric.png[SAN fabric]
+image:fabric.jpg[SAN fabric]
 
 === Storage
 
-image:storage.png[storage]
+image:storage.jpg[storage]
 
 === Storage Node
 
-image:storage_node.png[storage node]
+image:storage_node.jpg[storage node]
+
+
 
 === VM
 
-image:vm.png[virtual machine]
+image:vm.jpg[virtual machine]
 
 
 
@@ -107,22 +100,22 @@ The following images describe the capacity datamart.
 
 === Chargeback 
 
-image:Chargeback_Fact.png[chargeback]
+image:Chargeback_Fact.jpg[chargeback]
 
 === Disk Group Capacity 
 
-image:Disk_Group_Capacity.png[Disk Group Capacity]
+image:Disk_Group_Capacity.jpg[Disk Group Capacity]
 
 
 === File System Utilization
 
-image:fs_util.png[File System Utilization]
+image:fs_util.jpg[File System Utilization]
 
 
 
 === Internal Volume Capacity 
 
-image:Internal_Volume_Capacity_Fact.png[Internal Volume Capacity]
+image:Internal_Volume_Capacity_Fact.jpg[Internal Volume Capacity]
 
 
 
@@ -140,18 +133,18 @@ image:ports.png[Port Capacity]
 
 === Qtree Capacity 
 
-image:Qtree_Capacity_Fact.png[Qtree Capacity]
+image:Qtree_Capacity_Fact.jpg[Qtree Capacity]
 
 
 
 
 === Storage Capacity Efficiency 
 
-image:efficiency.png[Storage Capacity Efficiency]
+image:efficiency.jpg[Storage Capacity Efficiency]
 
 === Storage and Storage Pool Capacity 
 
-image:Storage_and_Storage_Pool_Capacity_Fact.png[Storage and Storage Pool Capacity]
+image:Storage_and_Storage_Pool_Capacity_Fact.jpg[Storage and Storage Pool Capacity]
 
 === Storage Node Capacity
 
@@ -161,11 +154,11 @@ image:Storage_Node_Capacity_Fact.jpg[Storage Node Capacity]
 
 === VM Capacity 
 
-image:VM_Capacity_Fact.png[VM Capacity]
+image:VM_Capacity_Fact.jpg[VM Capacity]
 
 === Volume Capacity 
 
-image:Volume_Capacity.png[Volume Capacity]
+image:Volume_Capacity.jpg[Volume Capacity]
 
 
 
@@ -182,13 +175,18 @@ The following images describe the performance datamart.
 image:application_performance_fact.jpg[Application Volume Hourly Performance]
 
 
+=== Cluster Switch Performance 
+
+image:cluster_switch_performance_fact.jpg[cluster switch perfromance]
+
+
 === Disk Daily Performance
 
-image:disk_daily_performance_fact.png[Disk Daily Performance]
+image:disk_daily_performance_fact.jpg[Disk Daily Performance]
 
 === Disk Hourly Performance
 
-image:disk_hourly_performance_fact.png[Disk Hourly Performance]
+image:disk_hourly_performance_fact.jpg[Disk Hourly Performance]
 
 
 
@@ -196,6 +194,16 @@ image:disk_hourly_performance_fact.png[Disk Hourly Performance]
 === Host Hourly Performance
 
 image:host_performance_fact.jpg[Host Hourly Performance]
+
+
+=== Host VM Daily Performance
+
+image:host_vm_daily_performance_fact.jpg[Host VM Daily Performance]
+
+=== Host VM Hourly Performance
+
+image:host_vm_hourly_performance_fact.jpg[Host VM Hourly Performance]
+
 
 === Internal Volume Hourly Performance
 
@@ -211,7 +219,11 @@ image:internal_volume_daily_performance_fact.jpg[Internal Volume Daily Performan
 
 === Qtree Daily Performance 
 
-image:QtreeDailyPerformanceFact.png[Qtree Daily Performance]
+image:QtreeDailyPerformanceFact.jpg[Qtree Daily Performance]
+
+=== Qtree Hourly perfromance
+
+image:QtreeHourlyPerformanceFact.jpg[Qtree Hourly Performance]
 
 
 
@@ -228,20 +240,19 @@ image:storage_node_hourly_performance_fact.jpg[Storage Node Hourly Performance]
 
 === Switch Hourly Performance for Host
 
-image:switch_performance_for_host_hourly_fact.png[Switch Hourly Performance for Host]
+image:switch_performance_for_host_hourly_fact.jpg[Switch Hourly Performance for Host]
 
 === Switch Hourly Performance for Port
 
-image:switch_performance_for_port_hourly_fact.png[Switch Hourly Performance for Port]
+image:switch_performance_for_port_hourly_fact.jpg[Switch Hourly Performance for Port]
 
 === Switch Hourly Performance for Storage 
 
-image:switch_performance_for_storage_hourly_fact.png[Switch Hourly Performance for Storage]
-
+image:switch_performance_for_storage_hourly_fact.jpg[Switch Hourly Performance for Storage]
 
 === Switch Hourly Performance for Tape 
 
-image:switch_performance_for_tape_hourly_fact.png[Switch Hourly Performance for Tape]
+image:switch_performance_for_tape_hourly_fact.jpg[Switch Hourly Performance for Tape]
 
 
 
@@ -255,7 +266,9 @@ image:vm_daily_performance_fact.png[VM Daily Performance for Host]
 
 === VM Hourly Performance for Host
 
-image:vm_hourly_performance_fact.png[VM Hourly Performance for Host]
+image:vmware_host_performance_fact.jpg[VM hourly host performance]
+
+//image:vm_hourly_performance_fact.png[VM Hourly Performance for Host]
 
 
 === VM Daily Performance for Host
@@ -268,11 +281,11 @@ image:vm_hourly_performance_fact.png[VM Hourly Performance for Host]
 
 === VMDK Daily Performance
 
-image:vmdk_daily_performance_fact.png[VMDK Daily Performance]
+image:vmdk_daily_performance_fact.jpg[VMDK Daily Performance]
 
 === VMDK Hourly Performance
 
-image:vmdk_hourly_performance_fact.png[VMDK Hourly Performance]
+image:vmdk_hourly_performance_fact.jpg[VMDK Hourly Performance]
 
 
 

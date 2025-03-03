@@ -19,7 +19,7 @@ The User Data section of an asset page displays and enables you to change any us
 
 == Using the User Data section to assign or modify applications
 
-You can assign applications running in your environment to certain assets (host, virtual machines, volumes, internal volumes, qtrees, and hypervisors). The User Data section enables you to add, change, or remove the applications assigned to an asset. For all of these asset types except for volumes, you can assign more than one application.
+You can assign applications running on your tenant to certain assets (host, virtual machines, volumes, internal volumes, qtrees, and hypervisors). The User Data section enables you to add, change, or remove the applications assigned to an asset. For all of these asset types except for volumes, you can assign more than one application.
 
 .Steps
 . Locate an asset page by doing any of the following:

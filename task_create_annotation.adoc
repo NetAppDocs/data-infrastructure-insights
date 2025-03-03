@@ -73,20 +73,6 @@ If the annotation is of list type for which the _Add new values on the fly_ opti
 
 To automatically assign annotations to assets based on criteria that you define, you configure annotation rules. Data Infrastructure Insights assigns the annotations to assets based on these rules. Data Infrastructure Insights also provides two default annotation rules, which you can modify to suit your needs or remove if you do not want to use them.
 
-////
-=== Default storage annotation rules
-
-To expedite the assignment of storage annotations to your resources, Data Infrastructure Insights includes 21 default annotation rules, which associate a tier level with a storage tier model. All of your storage resources are automatically associated with a tier upon acquisition of the assets in your environment.
-
-The default annotation rules apply tier annotations in the following way:
-
-Tier 1, storage quality tier::
-The Tier 1 annotation is applied to the following vendors and their specified families: EMC (Symmetrix), HDS (HDS9500V, HDS9900, HDS9900V, R600, R700, USP r, USP V), IBM (DS8000), NetApp (FAS6000 or FAS6200), and Violin (Memory).
-Tier 2, storage quality tier::
-The Tier 2 annotation is applied to the following vendors and their specified families: HP (3PAR StoreServ or EVA), EMC (CLARiiON), HDS (AMS or D800), IBM (XIV), and NetApp (FAS3000, FAS3100, and FAS3200).
-
-You can edit the default settings of these rules to match your tier requirements, or you can remove them if you do not need them.
-////
 
 === Creating annotation rules
 

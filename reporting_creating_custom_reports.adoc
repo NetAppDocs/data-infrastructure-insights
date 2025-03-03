@@ -33,7 +33,7 @@ For example, if you do not finish the device identification process, your capaci
 Before you design your reports, complete the following tasks:
 
 * Configure all link:task_configure_data_collectors.html[data collectors] properly. 
-* Enter annotations (such as tiers, data centers, and business units) on devices and resources in your environment. It is beneficial to have annotations stable before generating reports, because Data Infrastructure Insights Reporting collects historical information.
+* Enter annotations (such as tiers, data centers, and business units) on devices and resources on your tenant. It is beneficial to have annotations stable before generating reports, because Data Infrastructure Insights Reporting collects historical information.
 //* Configure OnCommand Insight Data Warehouse to accept the data from the OnCommand Insight server in the Extract, Transform, and Load (ETL) process.
 
 == Report Creation Process
@@ -154,7 +154,7 @@ Capacities in the VM Capacity data model are taken from virtual disks (VMDKs). T
 
 ==== Volume Capacity data model
 
-Enables you to analyze all aspects of the volumes in your environment and organize data by vendor, model, tier, service level, and data center. 
+Enables you to analyze all aspects of the volumes on your tenant and organize data by vendor, model, tier, service level, and data center. 
 
 You can view the capacity related to orphaned volumes, unused volumes, and protection volumes (used for replication). You can also see different volume technologies (iSCSI or FC), and compare virtual volumes to non-virtual volumes for array virtualization issues. 
 

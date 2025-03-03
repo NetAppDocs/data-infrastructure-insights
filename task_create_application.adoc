@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_create_application.html
-summary: You define applications which you then apply to assets in your environment as needed.
+summary: You define applications which you then apply to assets on your tenant as needed.
 keywords: application, create application,
 ---
 
@@ -14,7 +14,7 @@ keywords: application, create application,
 :imagesdir: ./media/
 
 [.lead]
-To track data associated with specific applications running in your environment, you can define the applications in Data Infrastructure Insights.
+To track data associated with specific applications running on your tenant, you can define the applications in Data Infrastructure Insights.
 
 .Before you begin
 

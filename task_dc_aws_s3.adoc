@@ -85,17 +85,6 @@ The AWS S3 as Storage data collector includes an option that allows you to popul
 
 Note that AWS is case-sensitive, while Data Infrastructure Insights is case-insensitive. So if you create an annotation named "OWNER" in Data Infrastructure Insights, and tags named "OWNER", "Owner", and "owner" in S3, all of the S3 variations of "owner" will map to Cloud Insight's "OWNER" annotation. 
 
-////
-.Related Information
-
-* https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html[Managing Access Keys for IAM Users^]
-////
-
-== Include Extra Regions
-
-In the AWS Data Collector *Advanced Configuration* section, you can set the *Include extra regions* field to include additional regions, separated by comma or semi-colon. By default, this field is set to *_us-.*_*, which collects on all US AWS regions.  To collect on _all_ regions, set this field to  *_.*_*. 
-If the *Include extra regions* field is empty, the data collector will collect on assets specified in the *AWS Region* field as specified in the *Configuration* section. 
-
 == Collecting from AWS Child Accounts
 
 Data Infrastructure Insights supports collection of child accounts for AWS within a single AWS data collector. Configuration for this collection is performed in the AWS environment:

@@ -14,14 +14,14 @@ summary: Forensic entities page
 :imagesdir: ./media/
 
 [.lead]
-The Forensics Entities page provides detailed information about entity activity in your environment.
+The Forensics Entities page provides detailed information about entity activity on your tenant.
 
 
 == Examining Entity Information 
 
 Click *Forensics > Activity Forensics* and click the _Entities_ tab to access the Entities page.
 
-This page provides an overview of entity activity in your environment, highlighting the following information:
+This page provides an overview of entity activity on your tenant, highlighting the following information:
 * A graph showing _Unique Entities_ accessed per minute
 * A chart of _Entity Types Accessed_
 * A breakdown of the _Common Paths_

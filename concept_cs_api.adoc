@@ -24,7 +24,7 @@ Requirements for API Access:
 
 == API Documentation (Swagger)
 The latest API information is found by logging in to Workload Security and navigating to *Admin > API Access*. Click the *API Documentation* link.
-The API Documentation is Swagger-based, which provides a brief description and usage information for the API and allows you to try it out in your environment.
+The API Documentation is Swagger-based, which provides a brief description and usage information for the API and allows you to try it out on your tenant.
 
 NOTE: If calling the Forensics Activity API, use the cloudsecure_forensics.activities.*v2* API. If you are making multiple calls to this API, ensure that the calls occur sequentially, not in parallel. Multiple parallel calls may cause the API to time out.
 
@@ -43,7 +43,7 @@ NOTE: Your token will only be available for copying to the clipboard and saving 
 
 You can disable, enable, and revoke tokens. Tokens that are disabled can be enabled.
 
-Tokens grant general purpose access to APIs from a customer perspective, managing access to APIs in the scope of their own environment. 
+Tokens grant general purpose access to APIs from a customer perspective, managing access to APIs in the scope of their own tenant. 
 
 The application receives an Access Token after a user successfully authenticates and authorizes access, then passes the Access Token as a credential when it calls the target API. The passed token informs the API that the bearer of the token has been authorized to access the API and perform specific actions based on the scope that was granted during authorization.
 

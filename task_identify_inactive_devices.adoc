@@ -1,12 +1,10 @@
 ---
 sidebar: sidebar
 permalink: task_identify_inactive_devices.html
-keywords: inactive, device, 
-summary: Identifying inactive devices allows you to chose to delete them or allocate them to an active role. 
+keywords: inactive, device, remove, removing, identify, identifying
+summary: Identifying inactive devices allows you to choose to delete them or allocate them to an active role. 
 ---
-
 = Identifying inactive devices
-:toc: macro
 :hardbreaks:
 :toclevels: 1
 :nofooter:
@@ -21,11 +19,13 @@ Use the following steps to identify inactive assets.
 
 .Steps
 
-* Navigate to *Explore -> +New Metric Query*.
+* Navigate to *Observability > Explore -> +New Metric Query*.
 * Select _Storage_ from the drop down.
 * Click the gear and add _isActive_ as a column.
 +
 Rows showing a Check are active. "X" indicates inactive devices.
 
+
+To remove inactive devices, simply select the devices to remove and in the *Bulk Actions* drop-down, select _Delete Inactive Devices_.
 
 

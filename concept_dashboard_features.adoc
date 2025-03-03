@@ -344,7 +344,7 @@ image::SecondaryAxisExplained.png[Secondary Axis example]
 
 == Expressions in widgets
 
-In a dashboard, any time series widget (line, spline, area, stacked area) bar chart, column chart, pie chart, or table widget allows you to build expressions from metrics you choose, and show the result of those expressions in a single graph (or column in the case of the <<expressions-in-a-table-widget,table widget>>). The following examples use expressions to solve specific problems. In the first example, we want to show Read IOPS as a percentage of Total IOPS for all storage assets in our environment. The second example gives visibility into the "system" or "overhead" IOPS that occur in your environment--those IOPS that are not directly from reading or writing data.
+In a dashboard, any time series widget (line, spline, area, stacked area) bar chart, column chart, pie chart, or table widget allows you to build expressions from metrics you choose, and show the result of those expressions in a single graph (or column in the case of the <<expressions-in-a-table-widget,table widget>>). The following examples use expressions to solve specific problems. In the first example, we want to show Read IOPS as a percentage of Total IOPS for all storage assets on your tenant. The second example gives visibility into the "system" or "overhead" IOPS that occur on your tenant--those IOPS that are not directly from reading or writing data.
 
 You can use variables in expressions (for example, _$Var1 * 100_)
 
@@ -509,7 +509,7 @@ Selecting an Attribute type variable allows you to filter for widget data contai
 
 image:Variables_Node_Example_Before_Variable_Applied.png[Agent Nodes Before Variable Filter]
 
-But if you temporarily want to see only nodes on individual subnets in your environment, you can set or change the variable to a specific Agent Node IP or IPs. Here we are viewing only the nodes on the "123" subnet:
+But if you temporarily want to see only nodes on individual subnets on your tenant, you can set or change the variable to a specific Agent Node IP or IPs. Here we are viewing only the nodes on the "123" subnet:
 
 image:Variables_Node_Example_After_Variable_Applied.png[Agent Nodes After Variable Filter]
 
@@ -614,7 +614,6 @@ Clicking the link in either a single-value widget or a gauge widget will display
 
 Like single-value and gauge widgets, you can set conditional formatting in table widgets, allowing you to highlight data with colors and/or special icons.
 
-NOTE: Conditional Formatting is not currently available in Data Infrastructure Insights Federal Edition.
 
 Conditional Formatting allows you to set and highlight Warning-level and Critical-level thresholds in table widgets, bringing instant visibility to outliers and exceptional data points.
 
@@ -790,7 +789,7 @@ image:AutoRefreshPaused.png[Auto-Refresh paused]
 
 == Dashboard Groups
 
-Grouping allows you to view and manage related dashboards. For example, you can have a dashboard group dedicated to the storage in your environment. Dashboard groups are managed on the *Dashboards > Show All Dashboards* page.
+Grouping allows you to view and manage related dashboards. For example, you can have a dashboard group dedicated to the storage on your tenant. Dashboard groups are managed on the *Dashboards > Show All Dashboards* page.
 
 image:DashboardGroupNoPin.png[Dashboard Grouping]
 
@@ -803,7 +802,7 @@ The number of dashboards contained in each group is shown next to the group name
 
 To create a new group, click the *"+" Create New Dashboard Group* button. Enter a name for the group and click *Create Group*. An empty group is created with that name. 
 
-To add dashboards to the group, click the _All Dashboards_ group to show all dashboards in your environment, of click _My Dashboards_ if you only want to see the dashboards you own, and do one of the following:
+To add dashboards to the group, click the _All Dashboards_ group to show all dashboards on your tenant, of click _My Dashboards_ if you only want to see the dashboards you own, and do one of the following:
 
 * To add a single dashboard, click the menu to the right of the dashboard and select _Add to Group_.
 * To add multiple dashboards to a group, select them by clicking the checkbox next to each dashboard, then click the *Bulk Actions* button and select _Add to Group_.

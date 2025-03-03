@@ -6,7 +6,6 @@ keywords: reporting, cognos, data warehouse, dwh, users, roles, user roles
 ---
 
 = Data Infrastructure Insights Reporting User Roles
-:toc: macro
 :hardbreaks:
 :toclevels: 2
 :nofooter:
@@ -16,7 +15,7 @@ keywords: reporting, cognos, data warehouse, dwh, users, roles, user roles
 
 
 [.lead]
-If you have Data Infrastructure Insights Premium Edition with Reporting, every Data Infrastructure Insights user in your environment also has a Single Sign-On (SSO) login to the Reporting application (i.e. Cognos). Simply click the *Reports* link in the menu and you will automatically be logged in to Reporting. 
+If you have Data Infrastructure Insights Premium Edition with Reporting, every Data Infrastructure Insights user on your tenant also has a Single Sign-On (SSO) login to the Reporting application (i.e. Cognos). Simply click the *Reports* link in the menu and you will automatically be logged in to Reporting. 
 
 Your user role in Data Infrastructure Insights determines your Reporting user role:
 
@@ -67,7 +66,7 @@ If you are a current Premium Edition customer, SSO is not automatically enabled 
 
 === What steps should I take to prepare my existing environment for enabling SSO?
 
-To ensure your reports are retained, migrate all reports from _My Content_ to _Team Content_ using the following steps. You must do this prior to enabling SSO in your environment:
+To ensure your reports are retained, migrate all reports from _My Content_ to _Team Content_ using the following steps. You must do this prior to enabling SSO on your tenant:
 
 . Navigate to *Menu > Content*
 

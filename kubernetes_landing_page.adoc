@@ -17,14 +17,14 @@ summary: The Kubernetes landing page explained
 [.lead]
 The Data Infrastructure Insights Kubernetes Explorer is a powerful tool for displaying the overall health and usage of your Kubernetes clusters and allows you to easily drill down into areas of investigation. 
 
-Clicking on *Dashboards > Kubernetes Explorer* opens the Kubernetes Cluster list page. This overview page contains table of the Kubernetes clusters in your environment. 
+Clicking on *Dashboards > Kubernetes Explorer* opens the Kubernetes Cluster list page. This overview page contains table of the Kubernetes clusters on your tenant. 
 
 image:Kubernetes_List_Page_new.png[Kubernetes list page]
 
 
 === Cluster list 
 
-The cluster list displays the following information for each cluster in your environment:
+The cluster list displays the following information for each cluster on your tenant:
 
 * Cluster *Name*. Clicking on a cluster name will open the link:kubernetes_cluster_detail.html[*detail page*] for that cluster.
 * *Saturation* percentages. Overall Saturation is the highest of CPU, Memory, or Storage Saturation.

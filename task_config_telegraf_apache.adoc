@@ -15,7 +15,7 @@ summary: Apache data collector configuration
 :imagesdir: ./media/
 
 [.lead]
-This data collector allows collection of data from Apache servers in your environment.
+This data collector allows collection of data from Apache servers on your tenant.
 
 .Pre-requisites
 

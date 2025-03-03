@@ -6,7 +6,6 @@ keywords:
 ---
 
 = Data Infrastructure Insights documentation
-:toc: macro
 :hardbreaks:
 :toclevels: 2
 :nofooter:

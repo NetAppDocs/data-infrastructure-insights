@@ -128,7 +128,16 @@ Some things to try if you encounter problems with this data collector:
 |Possible solutions:
 
 * Recommended: Re-generate certificate for Virtual Center by using stronger (e.g. 1024-bit) RSA key.
-* Not Recommended: Modify the JVM java.security configuration to leverage the constraint jdk.certpath.disabledAlgorithms to allow 512-bit RSA key. See JDK 7 update 40 release notes at "http://www.oracle.com/technetwork/java/javase/7u40-relnotes-2004172.html"
+* Not Recommended: Modify the JVM java.security configuration to leverage the constraint jdk.certpath.disabledAlgorithms to allow 512-bit RSA key. See link:http://www.oracle.com/technetwork/java/javase/7u40-relnotes-2004172.html[JDK 7 update 40 release notes].
+
+|I'm seeing the message: 
+
+"VMware Logs package is not supported on VMware below version 8.0.1"
+
+|Logs collection is not supported on VMware versions prior to 8.0.1. Upgrade your VI Center Infrastructure to version 8.0.1 or later if you wish to use the Logs Collections feature within Data Infrastructure Insights.
+
+For more information, see this link:https://kb.netapp.com/Cloud/BlueXP/Cloud_Insights/VMware_Logs_package_is_not_supported_on_VMware_below_version_8.0.1___Data_Infrastructure_Insights[KB Article].
+
 |===
 
 Additional information may be found from the link:concept_requesting_support.html[Support] page or in the link:reference_data_collector_support_matrix.html[Data Collector Support Matrix].

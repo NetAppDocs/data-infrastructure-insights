@@ -38,7 +38,7 @@ When you open the Reporting Portal, the _Team Content_ folder is the starting po
 . Select *Reports* to access the pre-defined reports.
 
 image:Reporting_Menu.png[Reporting menu]
-image:Reporting_Team_Content.png[Team Content showing Reports highlighted]
+image:Reporting_Team_Content.png[Team Content showing Reports highlighted, width=800]
 
 == Using predefined reports to answer common questions
 

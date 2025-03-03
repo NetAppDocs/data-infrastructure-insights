@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: ws_manually_installing_agent_and_collector.html
 keywords:  install, configure, agent, collector, workload, security, cloud secure
-summary: Workload Security agents can be installed or updated manually, providing more control over the software installed in your environment.
+summary: Workload Security agents can be installed or updated manually, providing more control over the software installed on your tenant.
 ---
 
 = Manually Installing Workload Security Agent and Collector
@@ -14,7 +14,7 @@ summary: Workload Security agents can be installed or updated manually, providin
 :imagesdir: ./media/
 
 [.lead]
-By default, when a new version of a Workload Security agent or collector is available, a pre-upgrade notification is sent, and agents and collectors are updated automatically in your environment. However, in a secured controlled environment, automatic upgrades might not be desired. In such cases, Workload Security can be configured for manual installation/upgrade of agents and collectors, providing more control over the software installed on your systems. 
+By default, when a new version of a Workload Security agent or collector is available, a pre-upgrade notification is sent, and agents and collectors are updated automatically on your tenant. However, in a secured controlled environment, automatic upgrades might not be desired. In such cases, Workload Security can be configured for manual installation/upgrade of agents and collectors, providing more control over the software installed on your systems. 
 
 == Before You Begin
 

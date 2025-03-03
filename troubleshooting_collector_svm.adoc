@@ -82,8 +82,6 @@ g)	Open the firewall in ONTAP, so that ONTAP is able to connect the agent box.
 
 7. If it is still not working, please consult the networking team to make sure that no external firewall is blocking the connection from ONTAP to the Agent box.
 
-8. Verify that port 7 is open.
-
 9. If none of the above solves the issue, open a case with link:concept_requesting_support.html[Netapp Support] for further assistance.
 
 

@@ -11,7 +11,7 @@ summary: Add file extensions to an allowed file types list to reduce alerting.
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media
+:imagesdir: ./media/
 
 [.lead]
 If a ransomware attack is detected for a known file extension, and alerts are being generated on the Alerts screen, then that file extension can be added to an _allowed file types_ list to prevent unnecessary alerting.

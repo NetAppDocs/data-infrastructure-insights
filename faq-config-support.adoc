@@ -47,7 +47,7 @@ There are varying degrees of standardizing, commonality and nomenclature across 
 
 == Does Data Infrastructure Insights support Fibre Channel switches?
 
-Yes, In addition to gathering data from your storage assets, Data Infrastructure Insights also acquires Inventory and Performance data from Cisco, Brocade and QLogic switches in your environment.
+Yes, In addition to gathering data from your storage assets, Data Infrastructure Insights also acquires Inventory and Performance data from Cisco, Brocade and QLogic switches on your tenant.
 
 == Are topology views of the whole infrastructure available? Does Data Infrastructure Insights show “end-to-end visibility”?
 

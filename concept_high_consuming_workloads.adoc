@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept_high_consuming_workloads.html
 keywords: insight, greedy, degraded, bully, victim, impacted, impacting, impactful, impact, resources, consuming, workload
-summary: Insights give you a look into how resources impact other resources in your environment.
+summary: Insights give you a look into how resources impact other resources on your tenant.
 ---
 
 = Insights: High-Consuming Workloads
@@ -15,7 +15,7 @@ summary: Insights give you a look into how resources impact other resources in y
 :imagesdir: ./media/
 
 [.lead]
-High-impact workloads can reduce the performance of other workloads in a shared resource. Data Infrastructure Insights provides tools to help you investigate resource saturation and impact in your environment.
+High-impact workloads can reduce the performance of other workloads in a shared resource. Data Infrastructure Insights provides tools to help you investigate resource saturation and impact on your tenant.
 
 
 === Terminology
@@ -58,7 +58,7 @@ image:Insights_Impacted_Workload_Chart.png[Impacted workload chart]
 
 === What do I do to resolve saturation?
 
-There are a number of steps you can take to reduce or eliminate the chance of saturation in your environment. Here are a few things you can try.
+There are a number of steps you can take to reduce or eliminate the chance of saturation on your tenant. Here are a few things you can try.
 
 * Move high-IOPS consumers
 +

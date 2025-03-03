@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_install_manual_au.html
 keywords:  Acquisition Unit, AU, install, configure, Linux, add, remove, uninstall, delete, deleting, move, moving, manual, AU, Patch
-summary: Data Infrastructure Insights can be configured for AU software to be updated manually, providing more control over the software installed in your environment.
+summary: Data Infrastructure Insights can be configured for AU software to be updated manually, providing more control over the software installed on your tenant.
 ---
 = Manually Installing Acquisition Unit Software
 :hardbreaks:
@@ -13,7 +13,7 @@ summary: Data Infrastructure Insights can be configured for AU software to be up
 :imagesdir: ./media/
 
 [.lead]
-By default, Data Infrastructure Insights updates Acquisition Unit (AU) software automatically as updates are deployed. However, in a secure controlled environments, automatic updating may not be possible or desired.  In these cases, Data Infrastructure Insights can be configured for AU software to be updated manually, providing more control over the software installed in your environment.
+By default, Data Infrastructure Insights updates Acquisition Unit (AU) software automatically as updates are deployed. However, in a secure controlled environments, automatic updating may not be possible or desired.  In these cases, Data Infrastructure Insights can be configured for AU software to be updated manually, providing more control over the software installed on your tenant.
 
 To manually download and install the AU software, perform the following steps. Data Infrastructure Insights provides a helpful Swagger documentation page that you can use for many of these steps, or you can use your own API script/commands. Go to Admin > API Access and click the “API Documentation” link.
 

@@ -95,6 +95,8 @@ sidebar:
             url: /task_query_copy_table_values.html
           - title: Querying Logs
             url: /concept_log_explorer.html
+          - title: Identifying Inactive Devices
+            url: /task_identify_inactive_devices.html
 
       - title: Insights
         entries:
@@ -171,7 +173,8 @@ sidebar:
             url: /concept_storage_virtualization.html
           - title: Hints and Tips to Search for Assets
             url: /concept_searching_assets.html
-  
+
+ 
       - title: Reporting
         entries:
           - title: Reporting Overview
@@ -268,8 +271,7 @@ sidebar:
           entries:
             - title: Activity Forensics - All Activity
               url: /forensic_activity_history.html
-            - title: Activity Forensics - Entities
-              url: /forensic_entity_detail.html
+
             - title: Users
               url: /forensic_user_overview.html
         - title: Automated Response Policies

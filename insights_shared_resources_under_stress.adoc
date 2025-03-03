@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: insights_shared_resources_under_stress.html
 keywords: insight, greedy, degraded, impacted, impacting, impactful, impact, resources, consuming, workload
-summary: Insights give you a look into how resources impact other resources in your environment.
+summary: Insights give you a look into how resources impact other resources on your tenant.
 ---
 
 = Insights: Shared Resources Under Stress
@@ -15,7 +15,7 @@ summary: Insights give you a look into how resources impact other resources in y
 :imagesdir: ./media/
 
 [.lead]
-High-impact workloads can reduce the performance of other workloads in a shared resource. This puts the shared resource under stress. Data Infrastructure Insights provides tools to help you investigate resource saturation and impact in your environment.
+High-impact workloads can reduce the performance of other workloads in a shared resource. This puts the shared resource under stress. Data Infrastructure Insights provides tools to help you investigate resource saturation and impact on your tenant.
 
 ////
 NOTE: The _Shared Resources Under Stress_ Insight is considered a _Preview_ feature and is therefore subject to change.
@@ -68,7 +68,7 @@ Below each table is a list of workloads and/or resources affecting or affected b
 
 == What do I do to resolve saturation?
 
-There are a number of steps you can take to reduce or eliminate the chance of saturation in your environment. These are shown by expanding the *+Show Recommendations* link on the page.  Here are a few things you can try.
+There are a number of steps you can take to reduce or eliminate the chance of saturation on your tenant. These are shown by expanding the *+Show Recommendations* link on the page.  Here are a few things you can try.
 
 * Move high-IOPS consumers
 +

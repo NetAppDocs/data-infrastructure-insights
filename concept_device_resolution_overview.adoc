@@ -2,10 +2,9 @@
 sidebar: sidebar
 permalink: concept_device_resolution_overview.html
 keywords: Automatic, AR, AHR, Host, automatic device resolution
-summary: Automatic Device Resolution helps you accurately track performance and inventory in your environment.
+summary: Automatic Device Resolution helps you accurately track performance and inventory on your tenant.
 ---
 = Automatic Device Resolution Overview
-:toc: macro
 :hardbreaks:
 :toclevels: 2
 :nofooter:
@@ -14,11 +13,11 @@ summary: Automatic Device Resolution helps you accurately track performance and 
 :imagesdir: ./media/
 
 [.lead]
-You need to identify all of the devices you want to monitor with Data Infrastructure Insights. Identification is necessary in order to accurately track performance and inventory in your environment. Typically the majority of devices discovered in your environment are identified through _Automatic Device Resolution_. 
+You need to identify all of the devices you want to monitor with Data Infrastructure Insights. Identification is necessary in order to accurately track performance and inventory on your tenant. Typically the majority of devices discovered on your tenant are identified through _Automatic Device Resolution_. 
 
-After you configure data collectors, devices in your environment including switches, storage arrays, and your virtual infrastructure of hypervisors and VMs are identified. However, this does not normally identify 100% of the devices in your environment.
+After you configure data collectors, devices on your tenant including switches, storage arrays, and your virtual infrastructure of hypervisors and VMs are identified. However, this does not normally identify 100% of the devices on your tenant.
 
-After data collector type devices have been configured, best practice is to leverage device resolution rules to help identify the remaining unknown devices in your environment. Device resolution can help you resolve unknown devices as the following device types:
+After data collector type devices have been configured, best practice is to leverage device resolution rules to help identify the remaining unknown devices on your tenant. Device resolution can help you resolve unknown devices as the following device types:
 
 * Physical hosts
 * Storage arrays
@@ -55,7 +54,7 @@ You need to answer questions similar to the following to help you create accurat
 
 //* Does your environment use an SRM tool and can you use it to identify host names? What coverage does the SRM provide?
 
-* How often do naming schemes change in your environment?
+* How often do naming schemes change on your tenant?
 
 * Have there been any acquisitions or mergers that introduced different naming schemes?
 
@@ -67,7 +66,7 @@ In this example the largest number of devices are reliably represented by storag
 
 == Steps to Identifying devices
 
-Typically, you would use a workflow similar to the following to identify devices in your environment. Identification is an iterative process and might require multiple steps of planning and refining rules.
+Typically, you would use a workflow similar to the following to identify devices on your tenant. Identification is an iterative process and might require multiple steps of planning and refining rules.
 
 * Research environment
 * Plan rules 
@@ -78,7 +77,7 @@ Typically, you would use a workflow similar to the following to identify devices
 
 //image:Device_Resolution_Flowchart.png[Device Resolution Flow]
 
-NOTE: If you have unidentified devices (otherwise known as unknown or generic devices) in your environment and you subsequently configure a data source that identifies those devices upon polling, they will no longer be displayed or counted as generic devices.
+NOTE: If you have unidentified devices (otherwise known as unknown or generic devices) on your tenant and you subsequently configure a data source that identifies those devices upon polling, they will no longer be displayed or counted as generic devices.
 
 Related: 
 link:task_device_resolution_rules.html[Creating Device Resolution Rules]

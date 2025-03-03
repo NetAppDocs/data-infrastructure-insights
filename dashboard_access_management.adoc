@@ -1,0 +1,32 @@
+---
+sidebar: sidebar
+permalink: dashboard_access_management.html
+summary: You determine whether a dashboard you create is public or private.
+keywords: dashboard, public, shared, private
+
+---
+
+= Dashboard Access Management
+:toc: macro
+:hardbreaks:
+:nofooter:
+:toclevels: 1
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Data Infrastructure Insights now gives you greater control over access to the dashboards you create. You choose who can modify your graphs. You control exposure to potentially sensitive information. Keeping a dashboard Private allows you to finalize your visualizations until they are ready to be consumed by others in your organization.
+
+image:Dashboard_Sharing_Options.png[dashboard sharing options, width=300]
+
+By default, when you create a new dashboard, that dashboard is only visible to you, the creator. No other user can see or modify the dashboard.
+
+When you have finalized your dashboard, you may choose to allow others in your organization to view it. To share a dashboard, in the dashboard list, select the _Share_ from the right-hand menu.
+
+image:dashboard_access_share_menu.png[dashboard access share from the menu]
+
+You can choose to share the dashboard to Everyone or to select users, with either Edit or Read-Only permissions. 
+
+image:dashboard_access_share_drop-down.png[Drop-downs to share a dashboard with Edit or Read permission]
+

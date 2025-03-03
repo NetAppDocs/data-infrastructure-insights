@@ -23,7 +23,7 @@ A number of Insights are available. Navigate to *Dashboards > Insights* to start
 
 === Shared Resources Under Stress
 
-High-impact workloads can reduce the performance of other workloads in a shared resource. This puts the shared resource under stress. Data Infrastructure Insights provides tools to help you investigate resource saturation and impact in your environment. link:insights_shared_resources_under_stress.html[Learn More]
+High-impact workloads can reduce the performance of other workloads in a shared resource. This puts the shared resource under stress. Data Infrastructure Insights provides tools to help you investigate resource saturation and impact on your tenant. link:insights_shared_resources_under_stress.html[Learn More]
 
 //NOTE: This is a _Preview_ feature and may change over time as improvements are made. link:/concept_preview_features.html[Learn more] about Data Infrastructure Insights Preview features.
 

@@ -6,7 +6,6 @@ keywords: dwh, data warehouse, schema, reporting
 ---
 
 = Data Infrastructure Insights Schemas for Reporting
-:toc: macro
 :hardbreaks:
 :toclevels: 1
 :nofooter:
