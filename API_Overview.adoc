@@ -17,22 +17,6 @@ summary: The Data Infrastructure Insights API enables integration with other app
 [.lead]
 The Data Infrastructure Insights API enables NetApp customers and independent software vendors (ISVs) to integrate Data Infrastructure Insights with other applications, such as CMDB's or other ticketing systems.
 
-////
-Note that Data Infrastructure Insights APIs are available based on your current Edition: 
-
-[cols="<,^s,^s,^s"]
-|===
-|API Type|Basic|Standard|Premium
-
-|Acquisition Unit|image:SmallCheckMark.png[check mark]|image:SmallCheckMark.png[check mark]|image:SmallCheckMark.png[check mark]
-|Data Collection|image:SmallCheckMark.png[check mark]|image:SmallCheckMark.png[check mark]|image:SmallCheckMark.png[check mark]
-|Alerts| |image:SmallCheckMark.png[check mark]|image:SmallCheckMark.png[check mark]
-|Assets| |image:SmallCheckMark.png[check mark]|image:SmallCheckMark.png[check mark]
-|Data Ingestion| |image:SmallCheckMark.png[check mark]|image:SmallCheckMark.png[check mark]
-|Log Ingestion| |image:SmallCheckMark.png[check mark]|image:SmallCheckMark.png[check mark]
-
-|===
-////
 
 Your Data Infrastructure Insights link:https://docs.netapp.com/us-en/cloudinsights/concept_user_roles.html#permission-levels[feature set role] will determine which APIs you can access. User and Guest roles have fewer privileges than Administrator role. For example, if you have Administrator role in Monitor and Optimize, but User role in Reporting, you can manage all API types except Data Warehouse.
 
@@ -48,8 +32,6 @@ Your Data Infrastructure Insights link:https://docs.netapp.com/us-en/cloudinsigh
 
 The latest API information is found by logging in to Data Infrastructure Insights and navigating to *Admin > API Acccess*. Click the *API Documentation* link.
 
-//image:API_Types_Example.png[API Types]
-//image:API_Documentation.png[API Documentation]
 image:API_Swagger_Types.png[API types]
 
 The API Documentation is Swagger-based, which provides a brief description and usage information for the API, and allows you to try it out in your tenant. Depending on your user role and/or Data Infrastructure Insights edition, the API types available to you may vary.
@@ -282,7 +264,7 @@ Note: If you have the latest NetApp Kubernetes Monitoring Operator installed and
 
 * Edit the the NetApp Kubernetes Monitoring Operator.
 +
- kubectl -n netapp-monitoring edit agent agent-monitoring-netapp
+ kubectl -n netapp-monitoring edit agent netapp-ci-agent-monitoring-netapp
  
 * Modify the _spec.output-sink.api-key_ value, replacing the old API token with the new API token.
 +

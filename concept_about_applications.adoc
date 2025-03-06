@@ -6,6 +6,12 @@ summary: Understanding the applications used in your company's environment helps
 ---
 
 = Tracking asset usage by application
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
 [.lead]
 Understanding the applications used in your company's environment helps you to keep track of asset usage and cost.
 

@@ -23,7 +23,7 @@ Getting started with Data Infrastructure Insights is as easy as three simple ste
 ** Select *Request trial*. If you are not already registered with BlueXP, Enter your details and sign up. Otherwise, sign in.
 ** Schedule a meeting or wait for a representative to contact you about your trial.
 
-* *Subscribe* to Data Infrastructure Insights for on-going, uninterrupted access to your data via link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx[NetApp Sales] direct or link:https://aws.amazon.com/marketplace/pp/prodview-pbc3h2mkgaqxe[AWS Marketplace].
+* *Subscribe* to Data Infrastructure Insights for on-going, uninterrupted access to your data via link:https://bluexp.netapp.com/contact-cds[NetApp Sales] direct or link:https://aws.amazon.com/marketplace/pp/prodview-pbc3h2mkgaqxe[AWS Marketplace].
 
 During the registration process, you can choose the global region to host your Data Infrastructure Insights environment. 
 For more information, read about Data Infrastructure Insights link:security_information_and_region.html[Information and Region].
@@ -59,7 +59,7 @@ NOTE: If you need additional time to evaluate Data Infrastructure Insights and y
 
 You may also sign up for a free trial through the AWS Marketplace. The AWS Marketplace free trial gives you access to Data Infrastructure Insights for a trial period of 33 days, and allows up to 499 <<observability-metering, Managed Units>> (MUs). 
 
-Note: If you configure more than 499 MUs, you will enter "breached" state. While your trial is in breached state, you will lose access to some Data Infrastructure Insights functionality until the breach is resolved, either by reducing the number of MUs configured, or by subscribing to Data Infrastructure Insights.
+//Note: If you configure more than 499 MUs, you will enter "breached" state. While your trial is in breached state, you will lose access to some Data Infrastructure Insights functionality until the breach is resolved, either by reducing the number of MUs configured, or by subscribing to Data Infrastructure Insights.
 
 The AWS Marketplace free trial cannot be extended. At any time during your trial, you can downgrade to a Data Infrastructure Insights Basic Edition subscription or change to a paid Data Infrastructure Insights subscription by visiting the *Admin -> Subscription* page.
 
@@ -145,7 +145,7 @@ Each tier is metered at a different rate, with the whole calculated together to 
  Effective usage = Raw TiB + (0.1 x Object Tier Raw TiB) + (0.25 x Cloud Tier Provisioning TiB)
 
 NOTE: The sum of Managed Units may differ slightly from the Data Collectors count in the summary section. This is because Managed Unit counts are rounded up to the nearest Managed Unit. The sum of these numbers in the Data Collectors list may be slightly higher than the total Managed Units in the status section. The summary section reflects your actual Managed Unit count for your subscription.
-To facilitate this, DII calculates a single *effective entitlement* number based on _subscribed_ quantities; it then calculates that same number based on _discovered_ storage and only declares breach if the effective discovered capacity is greater than the effective entitlement. This gives you flexibility to monitor quantities that vary from the subscribed amounts for each tier, which DII allows as long as total discovered storage is within the subscribed effective entitlement. 
+To facilitate this, DII calculates a single *effective entitlement* number based on _subscribed_ quantities; it then calculates that same number based on _discovered_ storage. This gives you flexibility to monitor quantities that vary from the subscribed amounts for each tier, which DII allows as long as total discovered storage is within the subscribed effective entitlement. 
 
 //image:TBD[Table showing discovered capacity and effective entitlement]
 
@@ -184,7 +184,7 @@ If your Managed Unit count is less than 1,000, you can subscribe via NetApp Sale
 
 === Subscribe through NetApp Sales direct
 
-If your expected Managed Unit count is 1,000 or greater, click on the link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx[*Contact Sales*] button to subscribe though the NetApp Sales Team. 
+If your expected Managed Unit count is 1,000 or greater, click on the link:https://bluexp.netapp.com/contact-cds[*Contact Sales*] button to subscribe though the NetApp Sales Team. 
 
 You must provide your Data Infrastructure Insights *Serial Number* to your NetApp sales representative so that your paid subscription can be applied to your Data Infrastructure Insights environment. The Serial Number uniquely identifies your Data Infrastructure Insights trial environment and can be found on the *Admin > Subscription* page.
 
