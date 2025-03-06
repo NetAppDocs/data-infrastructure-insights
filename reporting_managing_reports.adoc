@@ -21,6 +21,13 @@ NOTE: The Reporting feature is available in Data Infrastructure Insights link:co
 
 IMPORTANT: Before making changes to reporting permissions or security, you must copy "My Content" reports to the "Team Content" folder to ensure Reports are saved.
 
+NOTE: If you have a bookmarked report and you cannot access the report, verify the report's URL and update any bookmarks.
+
+NOTE: If you are using custom queries and the “getConfigurationEntry” macro does not retrieve the tenant data warehouse database name, try using the “$account.parameters” macro.
+
+
+
+
 == Customizing a report's output format and delivery
 
 You can customize the format and delivery method of reports.
