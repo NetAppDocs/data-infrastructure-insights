@@ -17,21 +17,30 @@ keywords: features
 [.lead]
 NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in Data Infrastructure Insights (formerly Cloud Insights).
 
+
 == February 2025
+
+=== ONTAP Essentials for the latest generation of ASA systems 
+ 
+ONTAP essentials now includes out-of-the-box manageability for the latest generation of link:task_dc_na_ontap_all_san_array.html[ASA] devices. This includes SAN Analyzer for VM-to-LUN topologies of workloads running on ONTAP, now also available with NetApp support as part of Data Infrastructure Insights Basic Edition.
+
+image:ontap_essentials_asa_views.png[ONTAP Essentials drop-down showing ASA as distinct from Unified]
 
 
 === DII API Usage Tracking: Enhance Security and Efficiency
 
-Strengthen your security posture and streamline resource management with enhanced REST API Usage tracking. With API usage tracking you can see which API tokens are being used, from which IP addresses, and the volume of traffic they generate. This information, accessible to Admin users, enables you to quickly detect unusual activity patterns, identify potential threats, and optimize performance by eliminating unnecessary requests. By linking tokens to specific IP addresses and usage levels, you'll gain powerful insights into system access and usage trends, giving you the control you need to maintain a safe, efficient environment and keep operations running smoothly.
+Strengthen your security posture and streamline resource management with enhanced REST API Usage tracking, available for Admin users. With API usage tracking you can see which API tokens are being used, from which IP addresses, and the volume of traffic they generate.  By linking tokens to specific IP addresses and usage levels, you'll gain powerful insights into system access and usage trends, giving you the control you need to maintain a safe, efficient environment and keep operations running smoothly.
 
-To view API Usage, navigate to *Observability > Admin > API Access* and select _View API Usage_. Note that this API is available for DII Observability APIs only; it does not apply to Workload Security or Reporting APIs.
+To view API Usage, navigate to *Observability > Admin > API Access* and select _View API Usage_. Note that this API is available for DII Observability APIs only; it does not apply to Workload Security.
 
 image:api_usage_analytics_screenshot.png[API usage analytics example]
 
 
-=== Workload Security API to restrict users
+=== Workload Security API to restrict users 
 
 A new API has been added to manage user restriction in Workload Security. With the API you can block or unblock a user, or change the duration of their restricted access. See the Admin > API Access > API Documentation page for the _cloudsecure_actions.block_ API.
+
+
 
 
 '''
@@ -542,7 +551,7 @@ image:StorageNodeSupportData.png[Storage Node Support Information]
 
 === Map VMWare tags to Cloud Insights annotations
 
-The link:task_dc_vmware.html#mapping-vmware-tags-to-cloud-insights-annotations[VMWare] data collector allows you to populate Cloud Insights text annotations with same-name tags that are configured on VMWare. 
+The link:task_dc_vmware.html[VMWare] data collector allows you to populate Cloud Insights text annotations with same-name tags that are configured on VMWare. 
 
 === Brocade CLI collector reliability enhancements for FOS 9.1.1c and higher firmware
 
@@ -1034,7 +1043,7 @@ API Metering has moved from the Subscription page to the *Admin > API Access* pa
 
 The Cloud Connection for ONTAP 9.9+ data collector is being deprecated.  Starting April 4, 2023, Cloud Connection data collectors in your environment will no longer collect data, and will instead present an error when polling. The Cloud Connection data collector will be removed altogether from Cloud Insights in a subsequent update.
 
-Prior to April 4, 2023, it is mandatory to configure a new NetApp ONTAP Data Management Software data collector for any ONTAP systems currently collected by Cloud Connection. link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Insights/How_to_transition_from_NetApp_Cloud_Connection_to_AU_based_data_collector[Learn More].
+Prior to April 4, 2023, it is mandatory to configure a new NetApp ONTAP Data Management Software data collector for any ONTAP systems currently collected by Cloud Connection. 
 
 
 '''
@@ -1378,7 +1387,7 @@ Previous versions of the agent will continue to function with no user action req
 
 === Preview Features
 
-Cloud Insights regularly highlights a number of exciting new preview features. If you are interested in previewing one or more of these features, contact your link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx[NetApp Sales Team] for more information.
+Cloud Insights regularly highlights a number of exciting new preview features. If you are interested in previewing one or more of these features, contact your link:https://bluexp.netapp.com/contact-cds[NetApp Sales Team] for more information.
 
 |===
 
@@ -1444,7 +1453,7 @@ You can now configure Cloud Insights to alert when modification or removal of Fl
 
 === Preview Features
 
-Cloud Insights regularly highlights a number of exciting new preview features. If you are interested in previewing one or more of these features, contact your link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx[NetApp Sales Team] for more information.
+Cloud Insights regularly highlights a number of exciting new preview features. If you are interested in previewing one or more of these features, contact your link:https://bluexp.netapp.com/contact-cds[NetApp Sales Team] for more information.
 
 |===
 
@@ -1504,7 +1513,7 @@ Cloud Insights keeps you on top of changes in your Kubernetes environment by ale
 
 === Preview Features
 
-Cloud Insights regularly highlights a number of exciting new preview features. If you are interested in previewing one or more of these features, contact your link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx[NetApp Sales Team] for more information.
+Cloud Insights regularly highlights a number of exciting new preview features. If you are interested in previewing one or more of these features, contact your link:https://bluexp.netapp.com/contact-cds[NetApp Sales Team] for more information.
 
 |===
 
@@ -2265,7 +2274,7 @@ Their user role in Cloud Insights determines their link:reporting_user_roles.htm
 
 NOTE: Cloud Insights Reporting is available for environments of 500 MUs or more.
 
-IMPORTANT: If you are a current Premium Edition customer and wish to retain your reports, read this link:reporting_user_roles.html#important-note-for-existing-customers[important note for existing customers].
+IMPORTANT: If you are a current Premium Edition customer and wish to retain your reports, read this link:reporting_user_roles.html[important note for existing customers].
 
 
 
@@ -2818,7 +2827,7 @@ The link:task_config_telegraf_kubernetes.html[Kubernetes Data Collector] now col
 
 === Cloud Insights Editions
 
-Cloud Insights is available in different Editions to fit your budget and business needs. Existing NetApp customers with an active NetApp support account can enjoy 7 days of data retention and access to NetApp data collectors with the free *Basic Edition*, or get increased data retention, access to all supported data collectors, expert technical support and more with *Standard Edition*. For more information on available features, see NetApp's link:https://cloud.netapp.com/cloud-insights[Cloud Insights] site.
+Cloud Insights is available in different Editions to fit your budget and business needs. Existing NetApp customers with an active NetApp support account can enjoy 7 days of data retention and access to NetApp data collectors with the free *Basic Edition*, or get increased data retention, access to all supported data collectors, expert technical support and more with *Standard Edition*. For more information on available features, see NetApp's link:https://www.netapp.com/cloud-services/cloud-insights/[Cloud Insights] site.
 
 === New Infrastructure Data Collector: NetApp HCI
 

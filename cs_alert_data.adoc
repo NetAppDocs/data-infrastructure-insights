@@ -10,7 +10,7 @@ summary: Workload Security creates alerts in the event of abnormal user activity
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media
+:imagesdir: ./media/
 
 [.lead]
 The Workload Security Alerts page shows a timeline of recent attacks and/or warnings and allows you to view details for each issue. 

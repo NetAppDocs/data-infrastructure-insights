@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: cvm_optimization_overview.html
+permalink: vm_optimization_overview.html
 summary: VM Optimization
 keywords: dashboard, widget, custom, concepts, queries, variables, rollup, roll up, grouping, aggregate, aggregation, filter, axis, group by, expressions, timeseries, exact match, theme, visibility, formatting, conditional, hide, collapse, expand
 

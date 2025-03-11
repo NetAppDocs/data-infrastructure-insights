@@ -10,7 +10,7 @@ summary: You can set automated response policies for potential attacks (such as 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media
+:imagesdir: ./media/
 
 [.lead]
 Response Policies trigger actions such as taking a snapshot or restricting user access in the event of an attack or abnormal user behavior. 

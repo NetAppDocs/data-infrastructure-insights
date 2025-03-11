@@ -104,7 +104,7 @@ In the data collector's Advanced Configuration settings in Data Infrastructure I
 |Receive a message that more than 1 node is logged into the Access Gateway port| Check that the NPV device is operating correctly and that all connected WWNs are expected. Do not directly acquire the NPV device. Instead, acquisition of the core fabric switch will collect the NPV device data.
 
 |Performance collection fails with "Timed out during sending SNMP request".
-|Depending on query variables and switch configuration, some queries may exceed the default timeout.  link:https://kb.netapp.com/Cloud/BlueXP/Cloud_Insights/Cloud_Insight_Brocade_data_source_fails_performance_collection_with_a_timeout_due_to_default_SNMP_configuration[Learn More]. 
+|Depending on query variables and switch configuration, some queries may exceed the default timeout.  link:https://kb.netapp.com/Cloud/BlueXP/DII/Data_Infrastructure_Insights_Brocade_data_source_fails_performance_collection_with_a_timeout_due_to_default_SNMP_configuration[Learn More]. 
 
 
 |===
