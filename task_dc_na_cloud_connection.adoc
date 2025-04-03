@@ -17,56 +17,5 @@ keywords: data collector, NetApp, Cloud agent, ONTAP
 [.lead]
 This data collector creates a cloud connection to support data collection from ONTAP 9.9+ CVO, AFF, and FAS systems. 
 
-NOTE: This data collector is no longer available to install in Data Infrastructure Insights as of April 4, 2023, and will be removed from all Data Infrastructure Insights installations in July 2023. For information on transitioning to AU-based data collection, see the link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Insights/How_to_transition_from_NetApp_Cloud_Connection_to_AU_based_data_collector[Knowledgebase^].
+NOTE: This data collector is no longer available to install in Data Infrastructure Insights as of April 4, 2023, and will be removed from all Data Infrastructure Insights installations in July 2023. 
 
-////
-NOTE: This data collector is link:task_getting_started_with_cloud_insights.html#useful-definitions[deprecated] as of January 1, 2023, and is no longer available as of April 2023. For information on transitioning to AU-based data collection, see the link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Insights/How_to_transition_from_NetApp_Cloud_Connection_to_AU_based_data_collector[Knowledgebase^].
-////
-
-////
-== Configuration
-
-Data Infrastructure Insights collects data from ONTAP 9.9+ using a *cloud connection*, eliminating the need to install an external acquisition unit, simplifying troubleshooting, maintenance, and initial deployment. Configuration of the cloud connection for the ONTAP 9.9+ data collector requires you to copy a *Pairing Code* to the ONTAP System Manager, which will then establish a connection to your Data Infrastructure Insights environment. After the connection is established, the data collected is the same as it would be if it was collected through an acquisition unit.
-
-This data collector supports ONTAP 9.9+ CVO, AFF, and FAS systems.
-
-image:Cloud_Agent_DC.png[Cloud Agent Data Collector Configuration]
-
-Follow these steps to configure the connection:
-
-* Generate a unique token which will be used to establish the connection to the ONTAP system.
-
-* Copy the Pairing Code, which includes the token. You can view the pairing code by clicking on _[+] Reveal Code Snippet_.
-+
-Once you copy the pairing code, the data collector configuration screen will reveal a step 6, prompting you to wait for the connection to be established. Nothing more needs to be done on this screen until the connection is established.
-+
-image:Cloud_Agent_Step_Waiting.png[Waiting for connection]
-
-* In a new browser tab, log into the ONTAP System Manager and navigate to _Cluster > Settings > Cloud Connections_.
-
-* Click _Add Cloud Connection_ and paste the pairing code.
-
-* Return to the Data Infrastructure Insights browser tab and wait for the connection to be established. Once it is established, a _Complete_ button is revealed.
-
-* Click _Complete_.
-
-
-// The Cloud Connection data collector acquires EMS (Event Monitoring System) logs from ONTAP.
-
-           
-== Troubleshooting
-
-Some things to try if you encounter problems with this data collector:
-
-[cols=2*, options="header", cols"50,50"]
-|===
-|Problem:|Try this:
-|I'm seeing the following error while trying to connect to Azure CVO: "The certificate signing request to broker/manager CA service was not completed."
-|Verify that your Cloud manager proxy settings are set to the Cloud Manager private IP. Cloud Manager installation may set a different proxy. Once the proxy is set to the correct IP and you reference the proxy in the Cloud Connector dialog, the connection to Data Infrastructure Insights should connect successfully.
-
-|===
-
-
-
-Additional information on this Data Collector may be found from the link:concept_requesting_support.html[Support] page or in the link:reference_data_collector_support_matrix.html[Data Collector Support Matrix].
-////

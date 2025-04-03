@@ -26,6 +26,11 @@ The following are requirements to configure and use this data collector:
 * ONTAP version 9.16.0 or higher.
 * Port requirements: 443
 
+NOTE: ASA R2 denotes the latest generation models of the ONTAP ASA storage platform. This includes array models ASA A1K, A90, A70, A50, A30 and A20.
+
+For all previous generation ASA systems, please use the link:task_dc_na_ontap_rest.html[ONTAP REST] collector.
+
+
 == A Note About Permissions
 
 Since a number of Data Infrastructure Insights' ONTAP dashboards rely on advanced ONTAP counters, you should keep *Enable Advanced Counter Data Collection* enabled in the data collector Advanced Configuration section.

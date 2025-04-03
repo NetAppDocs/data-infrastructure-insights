@@ -23,16 +23,15 @@ You must link:task_cs_add_agent.html[install an Agent] in order to acquire infor
 |Component|Linux Requirement
 |Operating system|A computer running a licensed version of one of the following:
 
-
-* CentOS 8 Stream (64-bit), CentOS 9 Stream, SELinux 
+* CentOS 9 Stream (64-bit)
 * OpenSUSE Leap 15.3 through 15.5 (64-bit)
-* Oracle Linux 8.6 - 8.8, 9.1 through 9.4 (64-bit)
-* Red Hat Enterprise Linux 8.6 through 8.8, 9.1 through 9.4 (64-bit), SELinux 
-* Rocky 9.2 - 9.4 (64-bit), SELinux 
-* SUSE Linux Enterprise Server 15 SP3 through 15 SP5 (64-bit)
-* Ubuntu 20.04 LTS, 22.04 LTS, and 24,04 LTS (64-bit)
+* Oracle Linux 8.10 (64-bit), 9.1 through 9.4 (64-bit), SELinux
+* Red Hat Enterprise Linux 8.10 (64-bit), 9.1 through 9.5 (64-bit), SELinux
+* Rocky 9.4 - 9.5 (64-bit), SELinux
+* SUSE Linux Enterprise Server 15 SP4 through 15 SP6 (64-bit), SELinux
+* Ubuntu 20.04 LTS, 22.04 LTS, and 24.04 LTS (64-bit)
 * Debian 10 and 11 (64-bit)
-* AlmaLinux 9.3 and 9,4 (64-bit)
+* AlmaLinux 9.4 and 9.5 (64-bit), SELinux
 
 This computer should be running no other application-level software. A dedicated server is recommended.
 

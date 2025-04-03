@@ -83,9 +83,7 @@ Many NetApp offerings include Data Infrastructure Insights Basic Edition as part
 
 These support options are available in Trial mode and are available for free 24x7:
 
-* *https://kb.netapp.com/Special:Search?query=cloud+insights[KnowledgeBase]*
-
-// * *link:https://mysupport.netapp.com/site/search?q=cloud%20insights&offset=0&searchType=Manual&autocorrect=true&origin=CI_Suppport_KB&filter=%28content_type%3D%3D%22knowledgebase%22;product%3D%3D%22Cloud%20Insights%22%29[Knowledgebase]*
+* *https://kb.netapp.com/Cloud/BlueXP/DII[KnowledgeBase]*
 +
 Clicking the links in this section takes you to the NetApp Knowledgebase, where you can search through relevant articles, how-to's, and more.
 
@@ -116,7 +114,7 @@ You can request support by any of the following methods. You must have an active
 * *Chat* - You will be connected with NetApp support personnel for assistance (weekdays only). Chat is available in the *Help > Live Chat* menu option in the upper right of any Data Infrastructure Insights screen.
 
 
-You can also request sales support by clicking on the link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx[*Contact Sales*] link.
+You can also request sales support by clicking on the link:https://bluexp.netapp.com/contact-cds[*Contact Sales*] link.
 
 Your Data Infrastructure Insights serial number is visible within the service from the *Help > Support* menu. If you are experiencing issues accessing the service and have registered a serial number with NetApp previously, you can also view your list of Data Infrastructure Insights serial numbers from the NetApp Support Site as follows:
 
