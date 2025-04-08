@@ -154,15 +154,11 @@ To facilitate this, DII calculates a single *effective entitlement* number based
 
 Data Infrastructure Insights Infrastructure Observability and Kubernetes Observability meter usage per *Managed Unit*. Usage of your Managed Units is calculated based on the number of *hosts or virtual machines* and amount of *unformatted capacity* being managed in your infrastructure environment. 
 
-
 * 1 Managed Unit = 2 hosts (any virtual or physical machine)
 * 1 Managed Unit = 4 TiB of unformatted capacity of physical or virtual disks
 * 1 Managed Unit = 40 TiB of unformatted capacity of select secondary storage: AWS S3, Cohesity SmartFiles, Dell EMC Data Domain, Dell EMC ECS, Hitachi Content Platform, IBM Cleversafe, NetApp StorageGRID, Rubrik.
 * 1 Managed Unit = 4 vCPUs of Kuberentes. 
 ** 1 Managed Unit K8s Adjustment = 2 Nodes or Hosts also monitored by infrastructure.
-
-If your environment includes or is expected to include 1,000 or more Managed Units, you are eligible for *Volume Pricing* and will be prompted to Contact NetApp Sales to subscribe. See <<how-do-i-subscribe,below>> for more details.
-
 
 
 === Workload Security Metering
@@ -184,7 +180,9 @@ If your Managed Unit count is less than 1,000, you can subscribe via NetApp Sale
 
 === Subscribe through NetApp Sales direct
 
-If your expected Managed Unit count is 1,000 or greater, click on the link:https://bluexp.netapp.com/contact-cds[*Contact Sales*] button to subscribe though the NetApp Sales Team. 
+
+If your expected Managed Unit count is 1,000 or greater, click on the link:https://www.netapp.com/forms/cloud-insights-contact-us[*Contact Sales*] button to subscribe though the NetApp Sales Team. 
+
 
 You must provide your Data Infrastructure Insights *Serial Number* to your NetApp sales representative so that your paid subscription can be applied to your Data Infrastructure Insights environment. The Serial Number uniquely identifies your Data Infrastructure Insights trial environment and can be found on the *Admin > Subscription* page.
 

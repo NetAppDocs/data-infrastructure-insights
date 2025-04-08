@@ -81,13 +81,14 @@ InServ V800
 4.6.1 Release Type: Extended Support Release
 9.5.15 Release Type: Extended Support Release
 9.5.8 Release Type: Extended Support Release
+9.6.1 Release Type: Extended Support Release
 
 |===
 Products supported by this data collector:
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
 
-.118+|foundation .3+|Device Group|Name|Implemented|SSH|
+.119+|foundation .3+|Device Group|Name|Implemented|SSH|
 |Storage Management Id|Implemented|SSH|
 |Type|Gap|SSH|
 .14+|Disk|Capacity (GB)|Implemented|SSH|Used capacity
@@ -127,10 +128,11 @@ Products supported by this data collector:
 |DataSource Name|Implemented|SSH|Info
 |Date|Implemented|SSH|
 |Originator ID|Implemented|SSH|
-.12+|Storage|Display IP|Implemented|SSH|
+.13+|Storage|Display IP|Implemented|SSH|
 |Failed Raw Capacity|Implemented|SSH|Raw capacity of failed disks (sum of all disks that are failed)
 |Family|Implemented|SSH|The storage Family could be Clariion, Symmetrix, et al
 |IP|Implemented|SSH|
+|Manage URL|Implemented|SSH|
 |Manufacturer|Implemented|SSH|
 |Microcode Version|Implemented|SSH|
 |Model|Implemented|SSH|
@@ -205,7 +207,7 @@ Products supported by this data collector:
 |Object Type|Implemented|SSH|
 |Source|Implemented|SSH|
 |WWN|Implemented|SSH|
-.118+|performance .6+|Disk|IOPs Read|Implemented|SMI-S|Number of read IOPs on the disk
+.120+|performance .6+|Disk|IOPs Read|Implemented|SMI-S|Number of read IOPs on the disk
 |IOPs Total|Implemented|SMI-S|
 |IOPs Write|Implemented|SMI-S|
 |Throughput Read|Implemented|SMI-S|
@@ -249,17 +251,19 @@ Products supported by this data collector:
 |Throughput Total|Implemented|SMI-S|Average disk total rate (read and write across all disks) in MB/s
 |Throughput Write|Implemented|SMI-S|
 |Utilization Total|Implemented|SMI-S|
-.13+|Storage Pool|Capacity Provisioned|Implemented|SMI-S|
+.15+|Storage Pool|Capacity Provisioned|Implemented|SMI-S|
 |Raw Capacity|Implemented|SMI-S|
 |Total Capacity|Implemented|SMI-S|
 |Used Capacity|Implemented|SMI-S|
 |Over Commit Capacity Ratio|Implemented|SMI-S|Reported as a time series
 |Capacity Used Ratio|Implemented|SMI-S|
+|Total Data Capacity|Implemented|SMI-S|
 |Data Used Capacity|Implemented|SMI-S|
 |Key|Implemented|SMI-S|
 |Other Total Capacity|Implemented|SMI-S|
 |Other Used Capacity|Implemented|SMI-S|
 |Server ID|Implemented|SMI-S|
+|Snapshot Reserved Capacity|Implemented|SMI-S|
 |Snapshot Used Capacity|Implemented|SMI-S|
 |Snapshot Used Capacity Ratio|Implemented|SMI-S| Reported as a time series
 .19+|StoragePool Disk|Capacity Provisioned|Implemented|SMI-S|
@@ -356,7 +360,7 @@ Management APIs used by this data collector:
 
 Models and versions supported by this data collector:
 
-API versions:
+API versions: 
 
 * 2014-10-01
 
@@ -561,7 +565,7 @@ Products supported by this data collector:
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
 
-.72+|foundation .5+|File Share|Is InternalVolume|Implemented|HTTPS|whether the file share represents an internal volume (netapp volume) or is it a qtree/folder within the internal volume
+.76+|foundation .5+|File Share|Is InternalVolume|Implemented|HTTPS|whether the file share represents an internal volume (netapp volume) or is it a qtree/folder within the internal volume
 |Is Shared|Implemented|HTTPS|whether this fileShare has any shares associated with it
 |Name|Implemented|HTTPS|
 |Path|Implemented|HTTPS|Path of the fileShare
@@ -570,7 +574,7 @@ Products supported by this data collector:
 |DataSource Name|Implemented|HTTPS|Info
 |Date|Implemented|HTTPS|
 |Originator ID|Implemented|HTTPS|
-.18+|Internal Volume|Data Allocated Capacity|Gap|HTTPS|capacity allocated for data
+.21+|Internal Volume|Data Allocated Capacity|Gap|HTTPS|capacity allocated for data
 |Data Used Capacity|Implemented|HTTPS|
 |Dedupe Enabled|Implemented|HTTPS|Is dedupe enabled on the storage pool
 |Internal Volume Id|Implemented|HTTPS|
@@ -588,6 +592,9 @@ Products supported by this data collector:
 |Total Used Capacity (MB)|Implemented|HTTPS|place holder for the used capacity as read from the device
 |Type|Gap|HTTPS|
 |UUID|Implemented|HTTPS|
+|Comment|Gap|HTTPS|state: free text comment describing the svm
+||Implemented|HTTPS|
+|QoS - Policy|Implemented|HTTPS|
 .3+|Storage Synchronization|Source Internal Volume|Implemented|HTTPS|
 |Target Internal Volume|Implemented|HTTPS|
 |Technology|Implemented|HTTPS|technology which causes storage efficiency changed
@@ -619,7 +626,7 @@ Products supported by this data collector:
 |Serial Number|Implemented|HTTPS|
 |Spare Raw Capacity|Implemented|HTTPS|Raw capacity of spare disks (sum of all disks that are spare)
 |Virtual|Implemented|HTTPS|Is this a storage virtualization device?
-.14+|Storage Pool|Data Allocated Capacity|Gap|HTTPS|capacity allocated for data
+.15+|Storage Pool|Data Allocated Capacity|Gap|HTTPS|capacity allocated for data
 |Data Used Capacity|Implemented|HTTPS|
 |Include In Dwh Capacity|Implemented|HTTPS|A way from ACQ to control which storage pools are interesting in DWH Capacity
 |Name|Implemented|HTTPS|
@@ -633,6 +640,7 @@ Products supported by this data collector:
 |Total Used Capacity|Implemented|HTTPS|Total capacity in MB
 |Type|Gap|HTTPS|
 |Virtual|Implemented|HTTPS|Is this a storage virtualization device?
+|Comment|Gap|HTTPS|state: free text comment describing the svm
 .23+|performance .17+|Internal Volume|Total Capacity|Implemented||
 |Used Capacity|Implemented||
 |Capacity Used Ratio|Implemented||
@@ -681,8 +689,7 @@ Models and versions supported by this data collector:
 |===
 <.<|Models <.<|Firmware versions 
 
-|175.53
-176.51
+|176.51
 183.0
 Brocade 200E
 Brocade 300E
@@ -718,9 +725,7 @@ Brocade X7-4
 Brocade X7-8
 |v6.2.2b
 v6.2.2f
-v6.2.2f9
 v6.2.2g
-v6.4.1a
 v6.4.1b
 v6.4.2a
 v6.4.3
@@ -759,13 +764,12 @@ v7.4.2d
 v7.4.2e
 v7.4.2f
 v7.4.2g
-v7.4.2g2
 v7.4.2g_cvr_824494_01
 v7.4.2h
 v7.4.2j1
 v8.0.2c
 v8.0.2d
-v8.0.2f1
+v8.0.2f
 v8.1.0b
 v8.1.1a
 v8.1.2a
@@ -775,7 +779,6 @@ v8.1.2g
 v8.1.2h
 v8.1.2j
 v8.1.2k
-v8.1.2k2
 v8.2.0
 v8.2.0a
 v8.2.0a1
@@ -788,6 +791,7 @@ v8.2.2a
 v8.2.2b
 v8.2.2c
 v8.2.2d
+v8.2.2d4
 v8.2.3
 v8.2.3a
 v8.2.3a1
@@ -817,15 +821,15 @@ v9.1.1d
 v9.1.1d1
 v9.1.1d2
 v9.1.1d2_lw
-v9.1.1d3_cvr_861742_01
 v9.1.1d5
 v9.2.0a
 v9.2.0b
 v9.2.0b1_lw
-v9.2.0b_cvr_857687_01
 v9.2.0c
+v9.2.0c1
 v9.2.1a
 v9.2.1a1
+v9.2.2
 
 |===
 Products supported by this data collector:
@@ -1132,7 +1136,6 @@ Models and versions supported by this data collector:
 |183.0
 184.0
 190.0
-191.0
 Brocade 6505
 Brocade 6510
 Brocade 6520
@@ -1183,8 +1186,10 @@ v9.2.0b
 v9.2.0b1
 v9.2.0b_cvr_857687_01
 v9.2.0c
+v9.2.0c3
 v9.2.1
 v9.2.1a
+v9.2.1b
 v9.2.2
 
 |===
@@ -1356,11 +1361,13 @@ DS-C9148-32P-K9
 DS-C9148-48P-K9
 DS-C9148S-K9
 DS-C9148T-K9
+DS-C9148V-K9
 DS-C9220I-K9
 DS-C9222I-K9
 DS-C9250I-K9
 DS-C9396S-K9
 DS-C9396T-K9
+DS-C9396V-K9
 DS-C9506
 DS-C9509
 DS-C9513
@@ -1372,7 +1379,6 @@ DS-HP-FC-K9
 N5K-C5548UP
 N5K-C5596UP
 N5K-C5696Q
-N77-C7710
 UCS-FI-6248UP
 UCS-FI-6296UP
 UCS-FI-6332
@@ -1428,6 +1434,7 @@ UCS-FI-6454
 7.0(3)N2(4.13b)
 7.0(3)N2(4.13g)
 7.3(0)D1(1)
+7.3(1)DY(1)
 7.3(13)N1(1)
 7.3(8)N1(1)
 8.1(1)
@@ -1445,7 +1452,6 @@ UCS-FI-6454
 8.4(2d)
 8.4(2e)
 8.4(2f)
-8.4(5)
 8.5(1)
 9.2(1a)
 9.2(2)
@@ -1457,11 +1463,12 @@ UCS-FI-6454
 9.3(5)I42(1j)
 9.3(5)I42(1k)
 9.3(5)I42(3f)
-9.3(5)I43(4a)
+9.3(5)I43(4b)
 9.4(1)
 9.4(1a)
 9.4(2)
 9.4(2a)
+9.4(3)
 
 |===
 Products supported by this data collector:
@@ -1623,15 +1630,16 @@ C5066
 C6025
 C6035
 C6055
+CX8405
 PXG1
 UCS-C240M5H10
 Virtual ROBO
 |6.8.1_u1_release-20221022_6f58ed2a
-6.8.1_u7_release-20231213_41094bba
-6.8.2_release-20240317_97f56d9a
 6.8.2_u1_release-20240509_a5da4644
 7.1.2_u2_release-20240925_66722648
 7.1.2_u3_release-20241231_bb47fe77
+7.2.1_release-20241114_794eae46
+7.2.2_release-20250228_63e93ccf
 
 |===
 Products supported by this data collector:
@@ -1763,7 +1771,7 @@ Products supported by this data collector:
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
 
-.84+|foundation .6+|File Share|Is InternalVolume|Implemented|SSH|whether the file share represents an internal volume (netapp volume) or is it a qtree/folder within the internal volume
+.85+|foundation .6+|File Share|Is InternalVolume|Implemented|SSH|whether the file share represents an internal volume (netapp volume) or is it a qtree/folder within the internal volume
 |Is Shared|Implemented|SSH|whether this fileShare has any shares associated with it
 |Name|Implemented|SSH|
 |Path|Implemented|SSH|Path of the fileShare
@@ -1832,11 +1840,12 @@ Products supported by this data collector:
 |Serial Number|Implemented|SSH|
 |Spare Raw Capacity|Implemented|SSH|Raw capacity of spare disks (sum of all disks that are spare)
 |Virtual|Implemented|SSH|Is this a storage virtualization device?
-.15+|Storage Pool|Data Allocated Capacity|Gap|SSH|capacity allocated for data
+.16+|Storage Pool|Data Allocated Capacity|Gap|SSH|capacity allocated for data
 |Data Used Capacity|Implemented|SSH|
 |Dedupe Enabled|Implemented|SSH|Is dedupe enabled on the storage pool
 |Include In Dwh Capacity|Implemented|SSH|A way from ACQ to control which storage pools are interesting in DWH Capacity
 |Name|Implemented|SSH|
+|Physical Disk Capacity (MB)|Implemented|SSH|used as raw capacity for storage pool
 |Raid Group|Implemented|SSH|indicates whether this storagePool is a raid group
 |Raw to Usable Ratio|Implemented|SSH|ratio to convert from usable capacity to raw capacity
 |Snapshot Allocated Capacity|Gap|SSH|Allocated capacity of snapshots in MB
@@ -1900,6 +1909,7 @@ VNX7600
 05.33.009.5.184
 05.33.009.5.186
 05.33.009.5.231
+05.33.009.5.238
 05.33.021.5.256
 05.33.021.5.266
 05.33.021.5.322
@@ -2129,11 +2139,14 @@ DD6900
 DD7200
 DD9300
 DD9400
+DD9410
 DD9500
 DD9800
+DD990
 DD9900
 DD9910
-|6.1.2.051-633576
+|6.0.2.30-606339
+6.1.2.051-633576
 6.1.2.20-606786
 6.2.1.30-663869
 6.2.1.40-671977
@@ -2166,7 +2179,7 @@ Products supported by this data collector:
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
 
-.92+|foundation .14+|Disk|Capacity (GB)|Implemented|SSH|Used capacity
+.93+|foundation .14+|Disk|Capacity (GB)|Implemented|SSH|Used capacity
 |Disk Id|Implemented|SSH|Uniquely identifies this disk in the array
 |Group|Implemented|SSH|
 |Location|Gap|SSH|Where this disk is physically located in the array
@@ -2221,11 +2234,12 @@ Products supported by this data collector:
 |Protocol|Implemented|SSH|enum for share protocol
 .2+|Share Initiator|Initiator|Implemented|SSH|
 |Permission|Implemented|SSH|Permissions for this particular share
-.13+|Storage|Cpu Count|Implemented|SSH|Cpu Count of the storage
+.14+|Storage|Cpu Count|Implemented|SSH|Cpu Count of the storage
 |Display IP|Implemented|SSH|
 |Failed Raw Capacity|Implemented|SSH|Raw capacity of failed disks (sum of all disks that are failed)
 |Family|Implemented|SSH|The storage Family could be Clariion, Symmetrix, et al
 |IP|Implemented|SSH|
+|Manage URL|Implemented|SSH|
 |Manufacturer|Implemented|SSH|
 |Microcode Version|Implemented|SSH|
 |Model|Implemented|SSH|
@@ -2297,6 +2311,7 @@ Models and versions supported by this data collector:
 3.8.0.5
 3.8.0.6
 3.8.1.1
+3.8.1.2
 3.8.1.3
 
 |===
@@ -2366,7 +2381,7 @@ Products supported by this data collector:
 |Total Used Capacity|Implemented|HTTPS|Total capacity in MB
 |Type|Gap|HTTPS|
 |Virtual|Implemented|HTTPS|Is this a storage virtualization device?
-.46+|performance .4+|Internal Volume|Total Capacity|Implemented|HTTPS|
+.40+|performance .4+|Internal Volume|Total Capacity|Implemented|HTTPS|
 |Used Capacity|Implemented|HTTPS|
 |Capacity Used Ratio|Implemented|HTTPS|
 |Total Objects|Implemented|HTTPS|
@@ -2376,7 +2391,8 @@ Products supported by this data collector:
 |Key|Implemented|HTTPS|
 |Total Objects|Implemented|HTTPS|
 |Server ID|Implemented|HTTPS|
-.0+|Qtree.8+|Storage|Failed Raw Capacity|Implemented|HTTPS|
+
+.8+|Storage|Failed Raw Capacity|Implemented|HTTPS|
 |Raw Capacity|Implemented|HTTPS|
 |Spare Raw Capacity|Implemented|HTTPS|Raw capacity of spare disks (sum of all disks that are spare)
 |StoragePools Capacity|Implemented|HTTPS|
@@ -2384,12 +2400,6 @@ Products supported by this data collector:
 |Throughput Read|Implemented|HTTPS|
 |Throughput Total|Implemented|HTTPS|Average disk total rate (read and write across all disks) in MB/s
 |Throughput Write|Implemented|HTTPS|
-.6+|Storage|Key|Implemented|HTTPS|
-|Server ID|Implemented|HTTPS|
-|Raw Capacity|Implemented|HTTPS|
-|Spare Raw Capacity|Implemented|HTTPS|Raw capacity of spare disks (sum of all disks that are spare)
-|Failed Raw Capacity|Implemented|HTTPS|
-|StoragePools Capacity|Implemented|HTTPS|
 .7+|Storage Node|IOPs Total|Implemented|HTTPS|
 |Node Capacity Utilization Total|Implemented|HTTPS|
 |Node Capacity Utilization Usable|Implemented|HTTPS|
@@ -2464,7 +2474,6 @@ X410
 9.2.1.13
 9.2.1.19
 9.2.1.4
-9.2.1.6
 9.2.1.9
 9.4.0.11
 9.4.0.13
@@ -2474,6 +2483,7 @@ X410
 9.4.0.17
 9.4.0.18
 9.5.0.3
+9.5.0.5
 9.5.0.6
 9.5.0.7
 9.5.0.8
@@ -2484,6 +2494,7 @@ X410
 9.7.1.2
 9.7.1.3
 9.7.1.4
+9.7.1.5
 v8.0.0.4
 v8.0.0.6
 v8.0.0.7
@@ -2648,20 +2659,20 @@ Products supported by this data collector:
 |Throughput Read|Implemented|HTTPS|
 |Throughput Total|Implemented|HTTPS|Average disk total rate (read and write across all disks) in MB/s
 |Throughput Write|Implemented|HTTPS|
-.14+|Storage|Key|Implemented|HTTPS|
-|Server ID|Implemented|HTTPS|
+.14+|Storage|Failed Raw Capacity|Implemented|HTTPS|
 |Raw Capacity|Implemented|HTTPS|
 |Spare Raw Capacity|Implemented|HTTPS|Raw capacity of spare disks (sum of all disks that are spare)
-|Failed Raw Capacity|Implemented|HTTPS|
 |StoragePools Capacity|Implemented|HTTPS|
-|Latency Total|Implemented|HTTPS|
-|Throughput Read|Implemented|HTTPS|
-|Throughput Write|Implemented|HTTPS|
-|Throughput Total|Implemented|HTTPS|Average disk total rate (read and write across all disks) in MB/s
-|IOPs Read|Implemented|HTTPS|Number of read IOPs on the disk
-|IOPs Write|Implemented|HTTPS|
-|IOPs Total|Implemented|HTTPS|
 |Failed Disks|Implemented|HTTPS|
+|IOPs Read|Implemented|HTTPS|Number of read IOPs on the disk
+|IOPs Total|Implemented|HTTPS|
+|IOPs Write|Implemented|HTTPS|
+|Key|Implemented|HTTPS|
+|Latency Total|Implemented|HTTPS|
+|Server ID|Implemented|HTTPS|
+|Throughput Read|Implemented|HTTPS|
+|Throughput Total|Implemented|HTTPS|Average disk total rate (read and write across all disks) in MB/s
+|Throughput Write|Implemented|HTTPS|
 .13+|Storage Node|Failed Disks|Implemented|HTTPS|
 |IOPs Read|Implemented|HTTPS|Number of read IOPs on file system
 |IOPs Write|Implemented|HTTPS|IOPs write of filesystem
@@ -2734,8 +2745,7 @@ Models and versions supported by this data collector:
 |===
 <.<|Models <.<|Firmware versions 
 
-|A100
-A200
+|A200
 H400
 H500
 NL400
@@ -2745,7 +2755,6 @@ Traceback (most recent call last):
 X200
 X400
 X410
-sudo python 
 |9.1.0.18
 9.1.0.19
 9.2.1.12
@@ -2989,6 +2998,7 @@ PowerStore 9200T
 3.6.1.4
 4.0.0.1
 4.0.0.2
+4.0.1.0
 
 |===
 Products supported by this data collector:
@@ -3106,7 +3116,7 @@ Products supported by this data collector:
 |Object Type|Implemented||
 |Source|Implemented||
 |WWN|Implemented||
-.66+|performance .14+|Storage|Failed Raw Capacity|Implemented||
+.83+|performance .14+|Storage|Failed Raw Capacity|Implemented||
 |Raw Capacity|Implemented||
 |Spare Raw Capacity|Implemented||Raw capacity of spare disks (sum of all disks that are spare)
 |StoragePools Capacity|Implemented||
@@ -3146,6 +3156,8 @@ Products supported by this data collector:
 |Throughput Total|Implemented||Average disk total rate (read and write across all disks) in MB/s
 |Throughput Write|Implemented||
 |Utilization Total|Implemented||
+.2+|Storage Pool|Key|Implemented||
+|Server ID|Implemented||
 .13+|StoragePool Disk|Capacity Provisioned|Implemented||
 |Raw Capacity|Implemented||
 |Total Capacity|Implemented||
@@ -3169,6 +3181,21 @@ Products supported by this data collector:
 |Latency Read|Implemented||
 |Latency Total|Implemented||
 |Latency Write|Implemented||
+|Throughput Read|Implemented||
+|Throughput Total|Implemented||Average disk total rate (read and write across all disks) in MB/s
+|Throughput Write|Implemented||
+.15+|Volume|Raw Capacity|Implemented||
+|Total Capacity|Implemented||
+|Used Capacity|Implemented||
+|Capacity Used Ratio|Implemented||
+|IOPs Read|Implemented||Number of read IOPs on the disk
+|IOPs Total|Implemented||
+|IOPs Write|Implemented||
+|Key|Implemented||
+|Latency Read|Implemented||
+|Latency Total|Implemented||
+|Latency Write|Implemented||
+|Server ID|Implemented||
 |Throughput Read|Implemented||
 |Throughput Total|Implemented||Average disk total rate (read and write across all disks) in MB/s
 |Throughput Write|Implemented||
@@ -3202,6 +3229,7 @@ Models and versions supported by this data collector:
 5.1.SP4.P2(h.101)
 5.1.SP4.P3(h.109)
 5.1.SP4.P4(h.97)
+5.1.SP4.P5(h.138)
 
 |===
 Products supported by this data collector:
@@ -3270,7 +3298,6 @@ Models and versions supported by this data collector:
 |ScaleIO
 |R3_5.1201.101
 R3_6.1000.134
-R3_6.400.107
 
 |===
 Products supported by this data collector:
@@ -3389,6 +3416,7 @@ V9.2.4.2
 V9.2.4.3
 V9.2.4.6
 V9.2.4.7
+V9.2.4.8
 |PMax8000
 PowerMax_2000
 PowerMax_8000
@@ -3586,7 +3614,7 @@ Products supported by this data collector:
 |Object Type|Implemented||
 |Source|Implemented||
 |WWN|Implemented||
-.105+|performance .6+|Disk|IOPs Read|Implemented||Number of read IOPs on the disk
+.104+|performance .6+|Disk|IOPs Read|Implemented||Number of read IOPs on the disk
 |IOPs Total|Implemented||
 |IOPs Write|Implemented||
 |Throughput Read|Implemented||
@@ -3608,7 +3636,7 @@ Products supported by this data collector:
 |Throughput Total|Implemented||Average disk total rate (read and write across all disks) in MB/s
 |Throughput Write|Implemented||
 |Write Pending|Implemented||total write pending
-.18+|Storage|Cache Hit Ratio Read|Implemented||
+.17+|Storage|Cache Hit Ratio Read|Implemented||
 |Cache Hit Ratio Total|Implemented||
 |Cache Hit Ratio Write|Implemented||
 |Cache Utilization Total|Implemented||
@@ -3616,7 +3644,6 @@ Products supported by this data collector:
 |Raw Capacity|Implemented||
 |Spare Raw Capacity|Implemented||Raw capacity of spare disks (sum of all disks that are spare)
 |StoragePools Capacity|Implemented||
-|IOPs other|Implemented||
 |IOPs Read|Implemented||Number of read IOPs on the disk
 |IOPs Total|Implemented||
 |IOPs Write|Implemented||
@@ -3735,6 +3762,7 @@ V10.1.0.8
 V10.2.0.1
 V10.2.0.2
 V9.2.3.15
+V9.2.3.20
 V9.2.3.22
 V9.2.3.4
 V9.2.4.1
@@ -3759,6 +3787,7 @@ VMAX950F
 5978.711.711 build 205
 5978.711.711 build 335 build 335
 5978.711.711 build 365
+5978.711.711 build 416
 5978.711.711 build 436 build 436
 5978.711.711 build 438
 5978.711.711 build 448
@@ -3789,18 +3818,19 @@ VMAX950F
 6079.175.0 build 161 build 161
 6079.175.0 build 259 build 259
 6079.225.0 build 127 build 127
-6079.225.0 build 146 build 146
 6079.225.0 build 216 build 216
 6079.225.0 build 218 build 218
 6079.225.0 build 291 build 291
+6079.225.0 build 331 build 331
 6079.225.0 build 86 build 86
+6079.275.0 build 221 build 221
 
 |===
 Products supported by this data collector:
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
 
-.84+|foundation .9+|Disk|Capacity (GB)|Implemented|HTTPS|Used capacity
+.86+|foundation .9+|Disk|Capacity (GB)|Implemented|HTTPS|Used capacity
 |Disk Id|Implemented|HTTPS|Uniquely identifies this disk in the array
 |Name|Implemented|HTTPS|
 |Role|Implemented|HTTPS|
@@ -3819,10 +3849,11 @@ Products supported by this data collector:
 |Date|Implemented|HTTPS|
 |Originator ID|Implemented|HTTPS|
 |Originator Key|Implemented|HTTPS|
-.12+|Storage|Display IP|Implemented|HTTPS|
+.13+|Storage|Display IP|Implemented|HTTPS|
 |Failed Raw Capacity|Implemented|HTTPS|Raw capacity of failed disks (sum of all disks that are failed)
 |Family|Implemented|HTTPS|The storage Family could be Clariion, Symmetrix, et al
 |IP|Implemented|HTTPS|
+|Manage URL|Implemented|HTTPS|
 |Manufacturer|Implemented|HTTPS|
 |Microcode Version|Implemented|HTTPS|
 |Model|Implemented|HTTPS|
@@ -3855,10 +3886,11 @@ Products supported by this data collector:
 |Target Storage|Implemented|HTTPS|
 |Target Volume|Implemented|HTTPS|
 |Technology|Implemented|HTTPS|technology which causes storage efficiency changed
-.17+|Volume|AutoTier Policy Identifier|Implemented|HTTPS|Dynamic Tier Policy identifier
+.18+|Volume|AutoTier Policy Identifier|Implemented|HTTPS|Dynamic Tier Policy identifier
 |Auto Tiering|Implemented|HTTPS|indicates if this storagepool is participating in auto tiering with other pools
 |Capacity|Implemented|HTTPS|Snapshot Used capacity in MB
 |Disk Type|Not Available|HTTPS|
+|Junction Path|Implemented|HTTPS|
 |Name|Implemented|HTTPS|
 |Total Raw Capacity|Implemented|HTTPS|Total raw capacity (sum of all disks on the array)
 |Redundancy|Implemented|HTTPS|Redundancy level
@@ -3935,27 +3967,27 @@ Products supported by this data collector:
 |Total Disk Read Replaced|Implemented|HTTPS|
 |Cache Hit Ratio Total|Implemented|HTTPS|
 |Utilization Total|Implemented|HTTPS|
-.21+|Storage Pool|Key|Implemented|HTTPS|
-|Server ID|Implemented|HTTPS|
+.21+|Storage Pool|Capacity Provisioned|Implemented|HTTPS|
+|Raw Capacity|Implemented|HTTPS|
 |Total Capacity|Implemented|HTTPS|
 |Used Capacity|Implemented|HTTPS|
-|Raw Capacity|Implemented|HTTPS|
-|Capacity Used Ratio|Implemented|HTTPS|
-|Capacity Provisioned|Implemented|HTTPS|
 |Over Commit Capacity Ratio|Implemented|HTTPS|Reported as a time series
-|Utilization Total|Implemented|HTTPS|
-|Throughput Read|Implemented|HTTPS|
-|Throughput Write|Implemented|HTTPS|
-|Throughput Total|Implemented|HTTPS|Average disk total rate (read and write across all disks) in MB/s
-|IOPs Read|Implemented|HTTPS|Number of read IOPs on the disk
-|IOPs Write|Implemented|HTTPS|
-|IOPs Total|Implemented|HTTPS|
-|Compression Savings Space|Implemented|HTTPS|
+|Capacity Used Ratio|Implemented|HTTPS|
 |Total Compression Savings|Implemented|HTTPS|
-|Data Used Capacity|Implemented|HTTPS|
+|Compression Savings Space|Implemented|HTTPS|
 |Total Data Capacity|Implemented|HTTPS|
+|Data Used Capacity|Implemented|HTTPS|
+|IOPs Read|Implemented|HTTPS|Number of read IOPs on the disk
+|IOPs Total|Implemented|HTTPS|
+|IOPs Write|Implemented|HTTPS|
+|Key|Implemented|HTTPS|
+|Server ID|Implemented|HTTPS|
 |Snapshot Reserved Capacity|Implemented|HTTPS|
 |Snapshot Used Capacity Ratio|Implemented|HTTPS| Reported as a time series
+|Throughput Read|Implemented|HTTPS|
+|Throughput Total|Implemented|HTTPS|Average disk total rate (read and write across all disks) in MB/s
+|Throughput Write|Implemented|HTTPS|
+|Utilization Total|Implemented|HTTPS|
 .19+|StoragePool Disk|Capacity Provisioned|Implemented|HTTPS|
 |Raw Capacity|Implemented|HTTPS|
 |Total Capacity|Implemented|HTTPS|
@@ -4472,7 +4504,7 @@ Products supported by this data collector:
 |Throughput Read|Implemented|HTTPS|
 |Throughput Total|Implemented|HTTPS|Average disk total rate (read and write across all disks) in MB/s
 |Throughput Write|Implemented|HTTPS|
-.0+|Qtree.4+|Storage|Failed Raw Capacity|Implemented|HTTPS|
+.4+|Storage|Failed Raw Capacity|Implemented|HTTPS|
 |Raw Capacity|Implemented|HTTPS|
 |Spare Raw Capacity|Implemented|HTTPS|Raw capacity of spare disks (sum of all disks that are spare)
 |StoragePools Capacity|Implemented|HTTPS|
@@ -4697,10 +4729,10 @@ Models and versions supported by this data collector:
 1X10TB
 1X20TB
 1X40TB
-2 Bricks & 188TB
 2 Bricks & 83TB
 3 Bricks & 146TB
 3 Bricks & 251TB
+3 Bricks & 283TB
 4 Bricks & 628TB
 4 Bricks & 754TB
 4X20TB
@@ -4924,19 +4956,18 @@ Models and versions supported by this data collector:
 5700
 5700B
 6000
+7999
 |08.40.60.01
 08.80.00.00
+7.84.46.0
 8.20.16.0
 8.20.27.0
 8.20.30.0
 8.20.8.0
 8.25.14.0
 8.25.6.0
-8.30.20.0
 8.40.0.1
-8.40.10.1
 8.40.20.0
-8.40.30.3
 8.40.30.4
 8.40.40.0
 8.40.50.0
@@ -4967,6 +4998,7 @@ Models and versions supported by this data collector:
 8.75.0.1
 8.75.1.0
 8.80.0.0
+8.80.1.0
 8.81.0.3
 8.81.1.0
 8.81.2.0
@@ -5191,6 +5223,7 @@ Models and versions supported by this data collector:
 FlashBlade//S200
 |Purity//FB 4.1.5
 Purity//FB 4.3.0
+Purity//FB 4.3.11
 Purity//FB 4.3.6
 Purity//FB 4.4.3
 
@@ -5338,7 +5371,7 @@ Management APIs used by this data collector:
 
 Models and versions supported by this data collector:
 
-API versions:
+API versions: 
 
 * v1
 
@@ -5394,7 +5427,7 @@ Products supported by this data collector:
 |Date|Implemented|HTTPS|
 |Originator ID|Implemented|HTTPS|
 |Originator Key|Implemented|HTTPS|
-.21+|performance .18+|vm|Total Capacity|Implemented|HTTPS|
+.22+|performance .18+|vm|Total Capacity|Implemented|HTTPS|
 |Capacity Used Ratio|Implemented|HTTPS|
 |Total CPU Utilization|Implemented|HTTPS|
 |IOPs Read|Implemented|HTTPS|Number of read IOPs on the disk
@@ -5412,7 +5445,8 @@ Products supported by this data collector:
 |Swap Rate|Implemented|HTTPS|
 |Total Swap Rate|Implemented|HTTPS|
 |Schedule wait time|Implemented|HTTPS|Waiting to be scheduled time in percent
-.3+|VM|Total Capacity|Implemented|HTTPS|
+.4+|VM|Total Capacity|Implemented|HTTPS|
+|Capacity Used Ratio|Implemented|HTTPS|
 |Key|Implemented|HTTPS|
 |Server ID|Implemented|HTTPS|
 
@@ -5444,6 +5478,7 @@ Models and versions supported by this data collector:
 |9.6.2.37
 9.6.3.33
 9.7.2.27
+9.7.3.14
 
 |===
 Products supported by this data collector:
@@ -5491,7 +5526,13 @@ Products supported by this data collector:
 |Total Used Capacity|Implemented|HTTPS|Total capacity in MB
 |Type|Gap|HTTPS|
 |Virtual|Implemented|HTTPS|Is this a storage virtualization device?
-.6+|performance .6+|Storage Node Data|Key|Implemented||
+.12+|performance .6+|Storage|Failed Raw Capacity|Implemented||
+|Raw Capacity|Implemented||
+|Spare Raw Capacity|Implemented||Raw capacity of spare disks (sum of all disks that are spare)
+|StoragePools Capacity|Implemented||
+|Key|Implemented||
+|Server ID|Implemented||
+.6+|Storage Node Data|Key|Implemented||
 |Server ID|Implemented||
 |Throughput Read|Implemented||
 |Throughput Total|Implemented||Average disk total rate (read and write across all disks) in MB/s
@@ -5550,6 +5591,7 @@ DKC:80-06-91-00/00
 DKC:80-06-96-00/00
 DKC:83-05-46-60/00
 DKC:83-05-50-60/00
+DKC:83-05-53-60/00
 DKC:88-08-08-60/00
 DKC:88-08-10-60/00
 DKC:88-08-12-60/00
@@ -5569,6 +5611,7 @@ SVP:80-06-86/00
 SVP:80-06-91/00
 SVP:83-05-50-60/00
 SVP:83-05-54-60/00
+SVP:83-05-57-60/00
 SVP:88-08-10-60/00
 SVP:88-08-12-60/00
 SVP:88-08-14-60/00
@@ -5832,8 +5875,6 @@ VSP G900
 XP8
 |80-06-91-00/00:01-71-03/02
 80-06-94-00/00:01-70-03/04
-80-06-95-00/00:01-65-03/05
-80-06-96-00/00:01-70-03/04
 80-06-96-00/00:01-71-03/02
 80-06-96-00/00:01-76-03/03
 83-05-49-40/01:01-69-03/02
@@ -5849,30 +5890,33 @@ XP8
 88-08-13-60/00:01-65-03/05
 88-08-13-60/01:01-65-03/05
 88-08-13-60/01:01-70-03/04
+88-08-13-60/01:01-71-03/02
 88-08-13-60/01:01-76-03/03
 90-08-82-00/00:01-65-03/05
-90-08-82:01.72.00
+90-08-82:01.70.04
 90-09-01-00/01:01-65-03/05
 90-09-22-00/00:01-65-03/05
 90-09-22-00/00:01-70-03/04
 90-09-22-00/00:01-71-03/02
-90-09-23-00/00:01-65-03/05
 90-09-24-00/01:01-65-03/05
 90-09-24-00/01:01-71-03/02
 90-09-24-00/01:01-76-03/03
-90-09-25-00/00:01-70-03/04
+90-09-24:01.65.05
 90-09-25-00/00:01-76-03/03
-90-09-25:01.72.00
+90-09-25:01.70.04
 90-09-26-00/00:01-65-03/05
 90-09-26-00/00:01-71-03/02
+90-09-26-00/00:01-76-03/03
 93-07-01-80/00:01-70-03/04
 93-07-22-40/00:01-65-03/05
 93-07-22-40/00:01-69-03/02
 93-07-22-80/00:01-70-03/04
 93-07-22-80/00:01-71-03/02
+93-07-23-80/00:01-71-03/02
 93-07-23-80/01:01-71-03/02
 93-07-24-40/00:01-76-03/03
 93-07-24-80/00:01-70-03/04
+null:null
 
 |===
 Products supported by this data collector:
@@ -6239,6 +6283,7 @@ Models and versions supported by this data collector:
 
 |v1
 |5050
+6070
 AF1000
 AF20Q
 AF40
@@ -6252,14 +6297,14 @@ HF20
 HF20C
 HF20H
 HF40
-HF40C
 HF60
 |5.0.8.0-677726-opt
 5.2.1.1100-1027043-opt
+5.2.1.400-796142-opt
+5.2.1.700-882343-opt
 5.2.1.800-930936-opt
 6.0.0.400-991061-opt
 6.0.0.500-1005932-opt
-6.1.1.100-1013503-opt
 6.1.1.200-1020304-opt
 6.1.1.300-1028597-opt
 6.1.2.300-1042680-opt
@@ -6778,13 +6823,13 @@ Products supported by this data collector:
 |Thin Provisioned|Implemented|HTTPS|
 |Thin Provisioning Supported|Implemented|HTTPS|Whether this internal volume supports thin provisioning for the volume layer on top of it
 |Dedupe Enabled|Implemented|HTTPS|Is dedupe enabled on the storage pool
-|Status|Implemented|HTTPS|
 |Protection Type|Implemented|HTTPS|
 |UUID|Implemented|HTTPS|
 |Total Used Capacity|Implemented|HTTPS|Total capacity in MB
 |Total Allocated Capacity|Implemented|HTTPS|
 |Raw to Usable Ratio|Implemented|HTTPS|ratio to convert from usable capacity to raw capacity
 |Comment|Gap|HTTPS|state: free text comment describing the svm
+|Status|Implemented|HTTPS|
 .3+|QTree|Qtree Id|Implemented|HTTPS|unique id of the qtree
 |Name|Implemented|HTTPS|
 |Type|Gap|HTTPS|
@@ -6851,6 +6896,7 @@ Models and versions supported by this data collector:
 7.6.31.4250
 7.7.51.1400
 7.9.32.101
+7.9.33.132
 7.9.33.95
 7.9.40.251
 7.9.41.65
@@ -7185,6 +7231,7 @@ Models and versions supported by this data collector:
 4666-AH8
 4666-UH8
 4680-24H
+4680-2P4
 4680-3P4
 4680-92H
 4983-AH8
@@ -7211,7 +7258,6 @@ SVC
 7.8.1.7
 7.8.1.8
 8.2.1.10
-8.2.1.11
 8.2.1.8
 8.2.1.9
 8.3.1.10
@@ -7225,7 +7271,7 @@ SVC
 8.4.0.11
 8.4.0.13
 8.4.0.15
-8.4.0.3
+8.4.0.2
 8.4.0.5
 8.4.0.6
 8.4.0.9
@@ -7234,6 +7280,7 @@ SVC
 8.5.0.11
 8.5.0.12
 8.5.0.13
+8.5.0.14
 8.5.0.5
 8.5.0.6
 8.5.0.7
@@ -7247,7 +7294,7 @@ SVC
 8.7.0.0
 8.7.0.1
 8.7.0.2
-8.7.2.1
+8.7.0.3
 
 |===
 Products supported by this data collector:
@@ -7593,11 +7640,14 @@ Models and versions supported by this data collector:
 <.<|Models <.<|Firmware versions 
 
 |F4303
+F6230
 F6240
 |6.0.20.40
 6.0.31.0
 7.1.14.0
+7.1.15.0
 7.3.20.90
+8.1.0.280
 
 |===
 Products supported by this data collector:
@@ -7615,32 +7665,32 @@ Products supported by this data collector:
 |Status|Implemented|HTTPS|
 |Status Enum|Implemented|HTTPS|enum for disk status
 |Vendor|Implemented|HTTPS|
-.5+|File Share|Name|Implemented|HTTPS|
+.5+|File Share|Is InternalVolume|Implemented|HTTPS|whether the file share represents an internal volume (netapp volume) or is it a qtree/folder within the internal volume
+|Is Shared|Implemented|HTTPS|whether this fileShare has any shares associated with it
+|Name|Implemented|HTTPS|
 |Path|Implemented|HTTPS|Path of the fileShare
 |Qtree Id|Implemented|HTTPS|unique id of the qtree
-|Is InternalVolume|Implemented|HTTPS|whether the file share represents an internal volume (netapp volume) or is it a qtree/folder within the internal volume
-|Is Shared|Implemented|HTTPS|whether this fileShare has any shares associated with it
 .4+|Info|DataSource Name|Implemented|HTTPS|Info
 |Date|Implemented|HTTPS|
 |Originator ID|Implemented|HTTPS|
 |Originator Key|Implemented|HTTPS|
-.11+|Internal Volume|Internal Volume Id|Implemented|HTTPS|
+.11+|Internal Volume|Dedupe Enabled|Implemented|HTTPS|Is dedupe enabled on the storage pool
+|Internal Volume Id|Implemented|HTTPS|
 |Name|Implemented|HTTPS|
-|Storage Pool Id|Implemented|HTTPS|
-|Type|Gap|HTTPS|
-|Thin Provisioned|Implemented|HTTPS|
-|Thin Provisioning Supported|Implemented|HTTPS|Whether this internal volume supports thin provisioning for the volume layer on top of it
-|Dedupe Enabled|Implemented|HTTPS|Is dedupe enabled on the storage pool
-|Total Used Capacity|Implemented|HTTPS|Total capacity in MB
-|Total Allocated Capacity|Implemented|HTTPS|
 |Other Allocated Capacity|Gap|HTTPS|Capacity allocated for other (not data and not snapshot)
 |Raw to Usable Ratio|Implemented|HTTPS|ratio to convert from usable capacity to raw capacity
-.3+|QTree|Qtree Id|Implemented|HTTPS|unique id of the qtree
-|Name|Implemented|HTTPS|
+|Storage Pool Id|Implemented|HTTPS|
+|Thin Provisioned|Implemented|HTTPS|
+|Thin Provisioning Supported|Implemented|HTTPS|Whether this internal volume supports thin provisioning for the volume layer on top of it
+|Total Allocated Capacity|Implemented|HTTPS|
+|Total Used Capacity|Implemented|HTTPS|Total capacity in MB
 |Type|Gap|HTTPS|
-.3+|Share|Name|Implemented|HTTPS|
+.3+|QTree|Name|Implemented|HTTPS|
+|Qtree Id|Implemented|HTTPS|unique id of the qtree
+|Type|Gap|HTTPS|
+.3+|Share|IP Interfaces|Implemented|HTTPS|comma separated list of IP addresses on which this share is exposed
+|Name|Implemented|HTTPS|
 |Protocol|Implemented|HTTPS|enum for share protocol
-|IP Interfaces|Implemented|HTTPS|comma separated list of IP addresses on which this share is exposed
 .2+|Share Initiator|Initiator|Implemented|HTTPS|
 |Permission|Implemented|HTTPS|Permissions for this particular share
 .14+|Storage|Display IP|Implemented|HTTPS|
@@ -7678,14 +7728,14 @@ Products supported by this data collector:
 |Total Used Capacity|Implemented|HTTPS|Total capacity in MB
 |Type|Gap|HTTPS|
 |Virtual|Implemented|HTTPS|Is this a storage virtualization device?
-.9+|Storage Synchronization|Source Volume|Implemented|HTTPS|
-|Target Volume|Implemented|HTTPS|
-|Mode|Implemented|HTTPS|
+.9+|Storage Synchronization|Mode|Implemented|HTTPS|
 |Mode Enum|Implemented|HTTPS|
+|Source Storage|Implemented|HTTPS|
+|Source Volume|Implemented|HTTPS|
 |State|Implemented|HTTPS|free text describing the device state 
 |State Enum|Implemented|HTTPS|
-|Source Storage|Implemented|HTTPS|
 |Target Storage|Implemented|HTTPS|
+|Target Volume|Implemented|HTTPS|
 |Technology|Implemented|HTTPS|technology which causes storage efficiency changed
 .13+|Volume|Capacity|Implemented|HTTPS|Snapshot Used capacity in MB
 |Junction Path|Implemented|HTTPS|
@@ -7735,7 +7785,7 @@ Management APIs used by this data collector:
 
 Models and versions supported by this data collector:
 
-API versions:
+API versions: 
 
 * 2018-06-01
 
@@ -8049,6 +8099,7 @@ Models and versions supported by this data collector:
 FAS2220
 FAS2240-4
 FAS2520
+FAS2552
 FAS2554
 FAS3140
 FAS3160
@@ -8266,7 +8317,7 @@ Products supported by this data collector:
 |Protocol Controller|Implemented||
 |Storage Port|Implemented||
 |Type|Gap||
-.129+|performance .9+|Disk|IOPs Read|Implemented||Number of read IOPs on the disk
+.140+|performance .9+|Disk|IOPs Read|Implemented||Number of read IOPs on the disk
 |IOPs Total|Implemented||
 |IOPs Write|Implemented||
 |Throughput Read|Implemented||
@@ -8275,6 +8326,17 @@ Products supported by this data collector:
 |Read Utilization|Implemented||
 |Utilization Total|Implemented||
 |Utilization Write|Implemented||
+.11+|Disk|Key|Implemented||
+|Server ID|Implemented||
+|Throughput Read|Implemented||
+|Throughput Write|Implemented||
+|Throughput Total|Implemented||Average disk total rate (read and write across all disks) in MB/s
+|IOPs Read|Implemented||Number of read IOPs on the disk
+|IOPs Write|Implemented||
+|IOPs Total|Implemented||
+|Read Utilization|Implemented||
+|Utilization Write|Implemented||
+|Utilization Total|Implemented||
 .21+|Internal Volume|Total Capacity|Implemented||
 |Used Capacity|Implemented||
 |Capacity Used Ratio|Implemented||
@@ -8423,11 +8485,8 @@ Models and versions supported by this data collector:
 |2800B
 2806
 5700
-6000
-|08.62.00.02
-08.71.03.00
+|08.71.03.00
 08.73.00.00
-08.74.01.00
 08.74.02.00
 08.75.00.00
 08.75.00.01
@@ -8436,7 +8495,6 @@ Models and versions supported by this data collector:
 08.81.02.00
 08.81.03.00
 08.90.00.00
-68.80.49.74
 
 |===
 Products supported by this data collector:
@@ -8591,7 +8649,7 @@ Products supported by this data collector:
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
 
-.221+|foundation .4+|Capability|Active|Implemented|HTTPS|
+.220+|foundation .4+|Capability|Active|Implemented|HTTPS|
 |Licensed|Implemented|HTTPS|
 |Type|Gap|HTTPS|
 |Used|Implemented|HTTPS|
@@ -8745,7 +8803,7 @@ Products supported by this data collector:
 |UUID|Implemented|HTTPS|
 |Version|Implemented|HTTPS|software version
 |ManagementIp Addresses|Implemented|HTTPS|
-.30+|Storage Pool|Compression Enabled|Implemented|HTTPS|Is compression enabled on the storage pool
+.29+|Storage Pool|Compression Enabled|Implemented|HTTPS|Is compression enabled on the storage pool
 |Compression Savings|Implemented|HTTPS|ratio of compression savings in percentage
 |Data Allocated Capacity|Gap|HTTPS|capacity allocated for data
 |Data Used Capacity|Implemented|HTTPS|
@@ -8768,7 +8826,6 @@ Products supported by this data collector:
 |Type|Gap|HTTPS|
 |Uses FlashPools|Implemented|HTTPS|indicate if this storagepool uses Flash Pools(NetApp specific)
 |Virtual|Implemented|HTTPS|Is this a storage virtualization device?
-||Implemented|HTTPS|
 ||Implemented|HTTPS|
 ||Implemented|HTTPS|
 ||Implemented|HTTPS|
@@ -8812,7 +8869,7 @@ Products supported by this data collector:
 |Protocol Controller|Implemented|HTTPS|
 |Storage Port|Implemented|HTTPS|
 |Type|Gap|HTTPS|
-.100+|performance .33+|Internal Volume|Total Capacity|Implemented|HTTPS|
+.80+|performance .33+|Internal Volume|Total Capacity|Implemented|HTTPS|
 |Used Capacity|Implemented|HTTPS|
 |Capacity Used Ratio|Implemented|HTTPS|
 |Clone Saved Capacity Total|Implemented|HTTPS|
@@ -8852,11 +8909,11 @@ Products supported by this data collector:
 |Failed Disks|Implemented|HTTPS|
 .7+|Storage|Key|Implemented|HTTPS|
 |Server ID|Implemented|HTTPS|
-|Failed Disks|Implemented|HTTPS|
 |Raw Capacity|Implemented|HTTPS|
 |Spare Raw Capacity|Implemented|HTTPS|Raw capacity of spare disks (sum of all disks that are spare)
 |Failed Raw Capacity|Implemented|HTTPS|
 |StoragePools Capacity|Implemented|HTTPS|
+|Failed Disks|Implemented|HTTPS|
 .13+|Storage Node|Cache Hit Ratio Total|Implemented|HTTPS|
 |Total Disk Read Replaced|Implemented|HTTPS|
 |Failed Disks|Implemented|HTTPS|
@@ -8870,26 +8927,6 @@ Products supported by this data collector:
 |Throughput Total|Implemented|HTTPS|Average disk total rate (read and write across all disks) in MB/s
 |Throughput Write|Implemented|HTTPS|
 |Utilization Total|Implemented|HTTPS|
-.20+|Storage Pool|Key|Implemented|HTTPS|
-|Server ID|Implemented|HTTPS|
-|Throughput Read|Implemented|HTTPS|
-|Throughput Write|Implemented|HTTPS|
-|Throughput Total|Implemented|HTTPS|Average disk total rate (read and write across all disks) in MB/s
-|IOPs Read|Implemented|HTTPS|Number of read IOPs on the disk
-|IOPs Write|Implemented|HTTPS|
-|IOPs Total|Implemented|HTTPS|
-|Reserved Capacity|Implemented|HTTPS|Fractional reserved (included in data allocated capacity)
-|Total Capacity|Implemented|HTTPS|
-|Used Capacity|Implemented|HTTPS|
-|Data Used Capacity|Implemented|HTTPS|
-|Total Data Capacity|Implemented|HTTPS|
-|Raw Capacity|Implemented|HTTPS|
-|Capacity Used Ratio|Implemented|HTTPS|
-|Snapshot Used Capacity|Implemented|HTTPS|
-|Snapshot Reserved Capacity|Implemented|HTTPS|
-|Snapshot Used Capacity Ratio|Implemented|HTTPS| Reported as a time series
-|Capacity Provisioned|Implemented|HTTPS|
-|Over Commit Capacity Ratio|Implemented|HTTPS|Reported as a time series
 .18+|StoragePool Disk|Total Capacity|Implemented|HTTPS|
 |IOPs Write|Implemented|HTTPS|
 |Used Capacity|Implemented|HTTPS|
@@ -8939,6 +8976,7 @@ Models and versions supported by this data collector:
 
 |AFF-A150
 AFF-A1K
+AFF-A20
 AFF-A200
 AFF-A220
 AFF-A250
@@ -8955,6 +8993,7 @@ AFF-C190
 AFF-C250
 AFF-C400
 AFF-C60
+AFF-C80
 AFF-C800
 AFF8020
 AFF8040
@@ -9069,6 +9108,7 @@ SIMBOX
 9.12.1P14
 9.12.1P15
 9.12.1P16
+9.12.1P17
 9.12.1P2
 9.12.1P3
 9.12.1P4
@@ -9087,6 +9127,7 @@ SIMBOX
 9.13.1P11
 9.13.1P12
 9.13.1P13
+9.13.1P14
 9.13.1P2
 9.13.1P3
 9.13.1P4
@@ -9097,6 +9138,7 @@ SIMBOX
 9.13.1P9
 9.14.0
 9.14.0P1
+9.14.0P2
 9.14.1
 9.14.1P1
 9.14.1P10
@@ -9123,14 +9165,17 @@ SIMBOX
 9.15.1P5
 9.15.1P6
 9.15.1P7
+9.15.1P7D4
+9.15.1P8
 9.15.1X19
 9.15.1X27
 9.16.1
+9.16.1P1
 9.16.1X16
 9.16.1X26
 9.16.1X29
 9.17.1
-9.18.0
+9.17.1X7
 9.2.0P3
 9.2.0P4
 9.3.0P15
@@ -9140,7 +9185,6 @@ SIMBOX
 9.3.0P6
 9.3.0P7
 9.3.0P8
-9.3.0P9
 9.4.0
 9.4.0P2
 9.4.0P5
@@ -9198,6 +9242,7 @@ SIMBOX
 9.8.0P17
 9.8.0P18
 9.8.0P19
+9.8.0P2
 9.8.0P20
 9.8.0P21
 9.8.0P3
@@ -9212,6 +9257,7 @@ SIMBOX
 9.9.1P11
 9.9.1P12
 9.9.1P13
+9.9.1P14
 9.9.1P15
 9.9.1P16
 9.9.1P17
@@ -9489,7 +9535,7 @@ Products supported by this data collector:
 |Protocol Controller|Implemented|HTTPS|
 |Storage Port|Implemented|HTTPS|
 |Type|Gap|HTTPS|
-.234+|performance .9+|Disk|IOPs Read|Implemented|HTTPS|Number of read IOPs on the disk
+.222+|performance .9+|Disk|IOPs Read|Implemented|HTTPS|Number of read IOPs on the disk
 |IOPs Total|Implemented|HTTPS|
 |IOPs Write|Implemented|HTTPS|
 |Throughput Read|Implemented|HTTPS|
@@ -9690,22 +9736,10 @@ Products supported by this data collector:
 |Throughput Read|Implemented|HTTPS|
 |Throughput Total|Implemented|HTTPS|Average disk total rate (read and write across all disks) in MB/s
 |Throughput Write|Implemented|HTTPS|
-.16+|VirtualMachine|Total Capacity|Implemented|HTTPS|
+.4+|VirtualMachine|Total Capacity|Implemented|HTTPS|
 |Used Capacity|Implemented|HTTPS|
-|IO Density Read|Implemented|HTTPS|
-|IO Density Total|Implemented|HTTPS|
-|Write IO Density|Implemented|HTTPS|
-|IOPs Read|Implemented|HTTPS|Number of read IOPs on the disk
-|IOPs Total|Implemented|HTTPS|
-|IOPs Write|Implemented|HTTPS|
 |Key|Implemented|HTTPS|
-|Latency Read|Implemented|HTTPS|
-|Latency Total|Implemented|HTTPS|
-|Latency Write|Implemented|HTTPS|
 |Server ID|Implemented|HTTPS|
-|Throughput Read|Implemented|HTTPS|
-|Throughput Total|Implemented|HTTPS|Average disk total rate (read and write across all disks) in MB/s
-|Throughput Write|Implemented|HTTPS|
 .17+|Volume|Raw Capacity|Implemented|HTTPS|
 |Total Capacity|Implemented|HTTPS|
 |Used Capacity|Implemented|HTTPS|
@@ -9749,6 +9783,8 @@ Models and versions supported by this data collector:
 <.<|Models <.<|Firmware versions 
 
 |ASA-A1K
+ASA-A20
+ASA-A90
 |NetApp Release 9.16.1: Sat Jan 18 19:31:15 UTC 2025
 NetApp Release 9.16.1RC1: Mon Nov 04 10:39:46 UTC 2024
 
@@ -9757,7 +9793,7 @@ Products supported by this data collector:
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
 
-.131+|foundation .4+|Capability|Active|Implemented|HTTPS|
+.190+|foundation .4+|Capability|Active|Implemented|HTTPS|
 |Licensed|Implemented|HTTPS|
 |Type|Gap|HTTPS|
 |Used|Implemented|HTTPS|
@@ -9776,10 +9812,18 @@ Products supported by this data collector:
 |Type|Gap|HTTPS|
 |Type Enum|Implemented|HTTPS|enum for disk type
 |Vendor|Implemented|HTTPS|
-.4+|ISCSI Network Portal|OID|Implemented|HTTPS|
-|IP|Implemented|HTTPS|
-|Nic|Implemented|HTTPS|
+.8+|File Share|Name|Implemented|HTTPS|
+|Path|Implemented|HTTPS|Path of the fileShare
+|Qtree Id|Implemented|HTTPS|unique id of the qtree
+|Is InternalVolume|Implemented|HTTPS|whether the file share represents an internal volume (netapp volume) or is it a qtree/folder within the internal volume
+|Is Shared|Implemented|HTTPS|whether this fileShare has any shares associated with it
+|Status|Implemented|HTTPS|
+|Security Type|Implemented|HTTPS|
+|Is Oplocks Enabled|Implemented|HTTPS|whether opportunistic locks are enabled on the FileShare
+.4+|ISCSI Network Portal|IP|Implemented|HTTPS|
 |Listening Port|Implemented|HTTPS|
+|Nic|Implemented|HTTPS|
+|OID|Implemented|HTTPS|
 .3+|ISCSI Network Portal Group|OID|Implemented|HTTPS|
 |Portal Group Name|Implemented|HTTPS|
 |Portal Group Tag|Implemented|HTTPS|
@@ -9795,24 +9839,58 @@ Products supported by this data collector:
 |OID|Implemented|HTTPS|
 |Outbound Keyword|Implemented|HTTPS|
 |Target Node Name|Implemented|HTTPS|
-.9+|ISCSI Session|OID|Implemented|HTTPS|
+.9+|ISCSI Session|Initiator Ips|Implemented|HTTPS|
 |Initiator OID|Implemented|HTTPS|
-|Portal Group OID|Implemented|HTTPS|
-|Target Session Id|Implemented|HTTPS|
 |Initiator Session Id|Implemented|HTTPS|
-|Number Of Connections|Implemented|HTTPS|
 |Max Connections|Implemented|HTTPS|
-|Initiator Ips|Implemented|HTTPS|
+|Number Of Connections|Implemented|HTTPS|
+|OID|Implemented|HTTPS|
+|Portal Group OID|Implemented|HTTPS|
 |Security|Implemented|HTTPS|
+|Target Session Id|Implemented|HTTPS|
 .6+|Info|Api Name|Implemented|HTTPS|
 |Api Version|Implemented|HTTPS|
 |DataSource Name|Implemented|HTTPS|Info
 |Date|Implemented|HTTPS|
 |Originator ID|Implemented|HTTPS|
 |Originator Key|Implemented|HTTPS|
+.28+|Internal Volume|Internal Volume Id|Implemented|HTTPS|
+|Name|Implemented|HTTPS|
+|Storage Pool Id|Implemented|HTTPS|
+|Type|Gap|HTTPS|
+|Space Guarantee|Implemented|HTTPS|Space  Guatantee policy (file, volume or none)
+|Thin Provisioned|Implemented|HTTPS|
+|Thin Provisioning Supported|Implemented|HTTPS|Whether this internal volume supports thin provisioning for the volume layer on top of it
+|Dedupe Enabled|Implemented|HTTPS|Is dedupe enabled on the storage pool
+|Compression Enabled|Implemented|HTTPS|Is compression enabled on the storage pool
+|Dedupe Savings|Implemented|HTTPS|ratio of dedupe savings in percentage
+|Compression Savings|Implemented|HTTPS|ratio of compression savings in percentage
+|Snapshot Count|Implemented|HTTPS|Number of snapshots on the internal volumes
+|Status|Implemented|HTTPS|
+|Virtual Storage|Implemented|HTTPS|Owning virtual storage (vfiler)
+|Protection Type|Implemented|HTTPS|
+|UUID|Implemented|HTTPS|
+|Snapshot Used Capacity|Implemented|HTTPS|
+|Snapshot Allocated Capacity|Gap|HTTPS|Allocated capacity of snapshots in MB
+|Data Used Capacity|Implemented|HTTPS|
+|Data Allocated Capacity|Gap|HTTPS|capacity allocated for data
+|Total Used Capacity|Implemented|HTTPS|Total capacity in MB
+|Total Used Capacity (MB)|Implemented|HTTPS|place holder for the used capacity as read from the device
+|Total Allocated Capacity|Implemented|HTTPS|
+|Other Allocated Capacity|Gap|HTTPS|Capacity allocated for other (not data and not snapshot)
+|Raw to Usable Ratio|Implemented|HTTPS|ratio to convert from usable capacity to raw capacity
+||Implemented|HTTPS|
+||Implemented|HTTPS|
+|Encrypted|Implemented|HTTPS|
 .3+|Storage Synchronization|Source Internal Volume|Implemented|HTTPS|
 |Target Internal Volume|Implemented|HTTPS|
 |Technology|Implemented|HTTPS|technology which causes storage efficiency changed
+.6+|QTree|Qtree Id|Implemented|HTTPS|unique id of the qtree
+|Name|Implemented|HTTPS|
+|Security Style|Implemented|HTTPS|Security style of the directory: unix, ntfs, or mixed
+|Type|Gap|HTTPS|
+|Status|Implemented|HTTPS|
+|Oplocks|Implemented|HTTPS|Indicates whether opportunistic locks are enabled on the Qtree
 .18+|Storage|Cluster|Not Available|HTTPS|Whether this storage is a cluster
 |Cpu Count|Implemented|HTTPS|Cpu Count of the storage
 |Display IP|Implemented|HTTPS|
@@ -9843,20 +9921,34 @@ Products supported by this data collector:
 |Up Time|Implemented|HTTPS|time in milliseconds
 |Version|Implemented|HTTPS|software version
 |ManagementIp Addresses|Implemented|HTTPS|
-.13+|Storage Pool|Include In Dwh Capacity|Implemented|HTTPS|A way from ACQ to control which storage pools are interesting in DWH Capacity
+.25+|Storage Pool|Compression Enabled|Implemented|HTTPS|Is compression enabled on the storage pool
+|Compression Savings|Implemented|HTTPS|ratio of compression savings in percentage
+|Data Allocated Capacity|Gap|HTTPS|capacity allocated for data
+|Data Used Capacity|Implemented|HTTPS|
+|Dedupe Enabled|Implemented|HTTPS|Is dedupe enabled on the storage pool
+|Dedupe Savings|Implemented|HTTPS|ratio of dedupe savings in percentage
+|Include In Dwh Capacity|Implemented|HTTPS|A way from ACQ to control which storage pools are interesting in DWH Capacity
 |Name|Implemented|HTTPS|
 |Physical Disk Capacity (MB)|Implemented|HTTPS|used as raw capacity for storage pool
 |Raid Group|Implemented|HTTPS|indicates whether this storagePool is a raid group
 |Raw to Usable Ratio|Implemented|HTTPS|ratio to convert from usable capacity to raw capacity
+|Redundancy|Implemented|HTTPS|Redundancy level
+|Snapshot Allocated Capacity|Gap|HTTPS|Allocated capacity of snapshots in MB
+|Snapshot Used Capacity|Implemented|HTTPS|
 |Status|Implemented|HTTPS|
 |Storage Pool Id|Implemented|HTTPS|
 |Thin Provisioning Supported|Implemented|HTTPS|Whether this internal volume supports thin provisioning for the volume layer on top of it
 |Total Allocated Capacity|Implemented|HTTPS|
 |Total Used Capacity|Implemented|HTTPS|Total capacity in MB
 |Type|Gap|HTTPS|
+|Uses FlashPools|Implemented|HTTPS|indicate if this storagepool uses Flash Pools(NetApp specific)
 |Virtual|Implemented|HTTPS|Is this a storage virtualization device?
+|CompactionSavings Enabled|Implemented|HTTPS|
+|Encrypted|Implemented|HTTPS|
 |UUID|Implemented|HTTPS|
-.9+|Storage VirtualMachine|Allocated capacity (MB)|Implemented|HTTPS|Allocated capacity of snapshots
+.11+|Storage VirtualMachine|Allocated capacity (MB)|Implemented|HTTPS|Allocated capacity of snapshots
+|Compression Savings|Implemented|HTTPS|ratio of compression savings in percentage
+|Dedupe Savings|Implemented|HTTPS|ratio of dedupe savings in percentage
 |Guid Key|Implemented|HTTPS|Globally Unique Key of the storage virtual machine
 |IP Space|Implemented|HTTPS|
 |Name|Implemented|HTTPS|
@@ -9865,30 +9957,33 @@ Products supported by this data collector:
 |Type|Gap|HTTPS|
 |UUID|Implemented|HTTPS|
 |Used Capacity|Implemented|HTTPS|
+.1+|VirtualMachine Internal Volume Ref|Internal Volume Id|Implemented|HTTPS|
+.1+|VirtualMachine StoragePool lRef|Storage Pool Id|Implemented|HTTPS|
 .1+|VirtualMachine Volume Ref|Volume Name|Implemented|HTTPS|
-.14+|Volume|Name|Implemented|HTTPS|
-|Junction Path|Implemented|HTTPS|
-|Storage Pool Id|Implemented|HTTPS|
-|UUID|Implemented|HTTPS|
-|Type|Gap|HTTPS|
-|Thin Provisioned|Implemented|HTTPS|
-|Capacity|Implemented|HTTPS|Snapshot Used capacity in MB
-|Total Raw Capacity|Implemented|HTTPS|Total raw capacity (sum of all disks on the array)
-|Used Capacity|Implemented|HTTPS|
-|Disk Type|Not Available|HTTPS|
+.15+|Volume|Capacity|Implemented|HTTPS|Snapshot Used capacity in MB
 |DiskGroup|Implemented|HTTPS|Disk Group Type
-|Disk Speed|Implemented|HTTPS|comma seperated list of disk speeds (rpm)
 |Disk Size|Implemented|HTTPS|comma seperated list of disk sizes (GB)
+|Disk Speed|Implemented|HTTPS|comma seperated list of disk speeds (rpm)
+|Disk Type|Not Available|HTTPS|
+|Junction Path|Implemented|HTTPS|
+|Name|Implemented|HTTPS|
+|Qtree Id|Implemented|HTTPS|unique id of the qtree
+|Total Raw Capacity|Implemented|HTTPS|Total raw capacity (sum of all disks on the array)
+|Storage Pool Id|Implemented|HTTPS|
+|Thin Provisioned|Implemented|HTTPS|
+|Type|Gap|HTTPS|
+|UUID|Implemented|HTTPS|
+|Used Capacity|Implemented|HTTPS|
 |Encrypted|Implemented|HTTPS|
 .4+|Volume Map|LUN|Implemented|HTTPS|Name of the backend lun
+|Protocol Controller|Implemented|HTTPS|
 |Storage Port|Implemented|HTTPS|
-|Protocol Controller|Implemented|HTTPS|
 |Type|Gap|HTTPS|
-.4+|Volume Mask|Storage Port|Implemented|HTTPS|
-|Initiator|Implemented|HTTPS|
+.4+|Volume Mask|Initiator|Implemented|HTTPS|
 |Protocol Controller|Implemented|HTTPS|
+|Storage Port|Implemented|HTTPS|
 |Type|Gap|HTTPS|
-.47+|performance .11+|Disk|IOPs Read|Implemented|HTTPS|Number of read IOPs on the disk
+.11+|performance .11+|Disk|IOPs Read|Implemented|HTTPS|Number of read IOPs on the disk
 |IOPs Total|Implemented|HTTPS|
 |IOPs Write|Implemented|HTTPS|
 |Key|Implemented|HTTPS|
@@ -9899,42 +9994,6 @@ Products supported by this data collector:
 |Read Utilization|Implemented|HTTPS|
 |Utilization Total|Implemented|HTTPS|
 |Utilization Write|Implemented|HTTPS|
-.20+|Storage|Failed Raw Capacity|Implemented|HTTPS|
-|Raw Capacity|Implemented|HTTPS|
-|Spare Raw Capacity|Implemented|HTTPS|Raw capacity of spare disks (sum of all disks that are spare)
-|StoragePools Capacity|Implemented|HTTPS|
-|Failed Disks|Implemented|HTTPS|
-|IO Density Read|Implemented|HTTPS|
-|IO Density Total|Implemented|HTTPS|
-|Write IO Density|Implemented|HTTPS|
-|IOPs other|Implemented|HTTPS|
-|IOPs Read|Implemented|HTTPS|Number of read IOPs on the disk
-|IOPs Total|Implemented|HTTPS|
-|IOPs Write|Implemented|HTTPS|
-|Key|Implemented|HTTPS|
-|Latency Read|Implemented|HTTPS|
-|Latency Total|Implemented|HTTPS|
-|Latency Write|Implemented|HTTPS|
-|Server ID|Implemented|HTTPS|
-|Throughput Read|Implemented|HTTPS|
-|Throughput Total|Implemented|HTTPS|Average disk total rate (read and write across all disks) in MB/s
-|Throughput Write|Implemented|HTTPS|
-.9+|Storage Pool|Total Capacity|Implemented|HTTPS|
-|Used Capacity|Implemented|HTTPS|
-|Capacity Used Ratio|Implemented|HTTPS|
-|compactionSavingsPercent.total|Implemented|HTTPS|
-|Total Compression Savings|Implemented|HTTPS|
-|deduplicationSavingsPercent.total|Implemented|HTTPS|
-|Failed Disks|Implemented|HTTPS|
-|Key|Implemented|HTTPS|
-|Server ID|Implemented|HTTPS|
-.7+|VirtualMachine|Key|Implemented|HTTPS|
-|Server ID|Implemented|HTTPS|
-|Latency Read|Implemented|HTTPS|
-|Latency Write|Implemented|HTTPS|
-|Latency Total|Implemented|HTTPS|
-|Total Capacity|Implemented|HTTPS|
-|Used Capacity|Implemented|HTTPS|
 
 |===
 
@@ -9971,11 +10030,14 @@ AFF-A700s
 AFF-A800
 AFF-A90
 AFF-A900
+AFF-C190
 AFF-C250
 AFF-C400
 AFF-C800
 ASA-A250
 ASA-A400
+ASA-A800
+ASA-C250
 ASA-C800
 CDvM200
 FAS2720
@@ -9988,8 +10050,8 @@ FAS9000
 FAS9500
 FASDvM300
 SIMBOX
-|NetApp Release 9.14.1: Tue Jan 23 21:48:01 UTC 2024
-NetApp Release 9.14.1P10: Thu Nov 28 12:32:16 UTC 2024
+|NetApp Release 9.14.1P10: Thu Nov 28 12:32:16 UTC 2024
+NetApp Release 9.14.1P11: Wed Jan 22 11:55:28 UTC 2025
 NetApp Release 9.14.1P1: Thu Feb 15 00:45:21 UTC 2024
 NetApp Release 9.14.1P4: Thu Apr 18 15:59:10 UTC 2024
 NetApp Release 9.14.1P5: Sat May 18 19:42:16 UTC 2024
@@ -10007,12 +10069,29 @@ NetApp Release 9.15.1P6: Wed Dec 04 01:42:39 UTC 2024
 NetApp Release 9.15.1P7: Sat Jan 18 21:34:02 UTC 2025
 NetApp Release 9.15.1RC2: Mon Jun 24 04:49:55 UTC 2024
 NetApp Release 9.16.1: Sat Jan 18 19:31:15 UTC 2025
+NetApp Release 9.16.1P1: Fri Feb 14 03:53:50 UTC 2025
 NetApp Release 9.16.1RC1: Mon Nov 04 10:39:46 UTC 2024
 NetApp Release 9.16.1X26: Mon Dec 09 10:27:42 UTC 2024
 NetApp Release 9.16.1X29: Sun Jan 12 11:18:25 UTC 2025
+NetApp Release 9.17.1X7: Fri Feb 14 11:21:52 UTC 2025
+NetApp Release Clawhammer__9.14.1: Sat May 18 09:23:49 UTC 2024
+NetApp Release Cloudstream__9.16.1: Mon Nov 04 05:51:46 UTC 2024
+NetApp Release Cloudstream__9.16.1: Thu Mar 13 20:55:54 UTC 2025
+NetApp Release Electricjellyfish__9.17.1: Mon Mar 03 05:57:49 UTC 2025
+NetApp Release Electricjellyfish__9.17.1: Sun Mar 09 05:56:14 UTC 2025
+NetApp Release Electricjellyfish__9.17.1: Sun Mar 16 04:54:53 UTC 2025
+NetApp Release Electricjellyfish__9.17.1: Tue Jan 28 11:48:14 UTC 2025
+NetApp Release Electricjellyfish__9.17.1: Tue Mar 18 04:59:54 UTC 2025
+NetApp Release Electricjellyfish__9.17.1: Wed Mar 12 04:42:03 UTC 2025
 NetApp Release Mightysquirrel__9.15.1: Fri May 24 05:03:10 UTC 2024
 NetApp Release Mightysquirrel__9.15.1: Sat Jan 18 11:39:42 UTC 2025
-NetApp Release Mightysquirrel__9.15.1: Tue May 14 04:56:38 UTC 2024
+NetApp Release Tropicallightning__9.18.0: Fri Feb 21 14:02:58 UTC 2025
+NetApp Release Tropicallightning__9.18.0: Mon Feb 17 08:18:14 UTC 2025
+NetApp Release Tropicallightning__9.18.0: Thu Feb 20 08:11:55 UTC 2025
+NetApp Release Tropicallightning__9.18.0: Thu Feb 27 04:15:40 UTC 2025
+NetApp Release Tropicallightning__9.18.0: Tue Feb 18 14:00:54 UTC 2025
+NetApp Release Tropicallightning__9.18.0: Wed Feb 26 08:19:21 UTC 2025
+NetApp Release Tropicallightning__9.18.0: Wed Jan 29 08:34:06 UTC 2025
 
 |===
 Products supported by this data collector:
@@ -10305,7 +10384,6 @@ Models and versions supported by this data collector:
  SF4805
  SF9605
  SF9608
-H300S
 H410S-0
 H410S-1
 H410S-2
@@ -10320,7 +10398,6 @@ SF9605
 SF9608
 |11.1.0.72
 11.7.0.76
-11.8.0.23
 12.0.0.333
 12.2.0.777
 12.3.0.958
@@ -10634,9 +10711,12 @@ Models and versions supported by this data collector:
 11.8.0.6
 11.8.0.7
 11.8.0.8
+11.8.0.9
 11.9.0
 11.9.0.1
 11.9.0.2
+11.9.0.3
+11.9.0.4
 
 |===
 Products supported by this data collector:
@@ -10710,7 +10790,7 @@ Products supported by this data collector:
 |Used Capacity|Implemented||
 |Capacity Used Ratio|Implemented||
 |Total Objects|Implemented||
-.0+|Qtree.4+|Storage|Failed Raw Capacity|Implemented||
+.4+|Storage|Failed Raw Capacity|Implemented||
 |Raw Capacity|Implemented||
 |Spare Raw Capacity|Implemented||Raw capacity of spare disks (sum of all disks that are spare)
 |StoragePools Capacity|Implemented||
@@ -10771,8 +10851,8 @@ Models and versions supported by this data collector:
 
 | NX-3170-G7
  NX-8155-G7
-HPE DX360-10 G10
 HPE DX380 12LFF G11
+HPE DX380-24 G10
 HPE DX385-12 Gen10 Plus
 NX-3060-G6
 NX-3060-G7
@@ -10780,16 +10860,15 @@ NX-3060-G8
 NX-3155G-G7
 NX-3155G-G8
 NX-3170-G6
-NX-8035-G7
 NX-8035-G8
 NX-8150-G7
 NX-8150-G8
 NX-8155-G8
-NX-8170-G8
 XF3070
 XF8050-Core
 |5.20.1.1
 6.10
+6.10.1
 6.5.3.7
 6.5.4
 6.5.5.1
@@ -10797,8 +10876,8 @@ XF8050-Core
 6.5.6
 6.5.6.5
 6.5.6.6
+6.5.6.7
 6.7.1.6
-6.8.1.5
 7.0
 
 |===
@@ -10927,7 +11006,7 @@ Products supported by this data collector:
 |Protocol Controller|Implemented|HTTPS|
 |Storage Port|Implemented|HTTPS|
 |Type|Gap|HTTPS|
-.41+|performance .0+|Qtree.10+|Storage|Latency Total|Implemented|HTTPS|
+.41+|performance .10+|Storage|Latency Total|Implemented|HTTPS|
 |IOPs Read|Implemented|HTTPS|Number of read IOPs on the disk
 |Latency Read|Implemented|HTTPS|
 |IOPs other|Implemented|HTTPS|
@@ -11115,6 +11194,7 @@ Models and versions supported by this data collector:
 <.<|Models <.<|Firmware versions 
 
 |Sun ZFS Storage 7120
+Sun ZFS Storage 7320
 Sun ZFS Storage 7330
 Sun ZFS Storage 7335
 Sun ZFS Storage 7350
@@ -11146,6 +11226,7 @@ Sun ZFS Storage 7420
 2013.06.05.8.65
 2013.06.05.8.7
 2013.06.05.8.72
+2013.06.05.8.74
 2013.06.05.8.76
 
 |===
@@ -11243,29 +11324,29 @@ Products supported by this data collector:
 |Total Used Capacity|Implemented|HTTP/S|Total capacity in MB
 |Type|Gap|HTTP/S|
 |Virtual|Implemented|HTTP/S|Is this a storage virtualization device?
-.15+|Volume|Name|Implemented|HTTP/S|
-|Junction Path|Implemented|HTTP/S|
-|Storage Pool Id|Implemented|HTTP/S|
-|Auto Tiering|Implemented|HTTP/S|indicates if this storagepool is participating in auto tiering with other pools
-|UUID|Implemented|HTTP/S|
-|Type|Gap|HTTP/S|
-|Disk Type|Not Available|HTTP/S|
-|Virtual|Implemented|HTTP/S|Is this a storage virtualization device?
-|Thin Provisioned|Implemented|HTTP/S|
-|Disk Speed|Implemented|HTTP/S|comma seperated list of disk speeds (rpm)
-|Disk Size|Implemented|HTTP/S|comma seperated list of disk sizes (GB)
+.15+|Volume|Auto Tiering|Implemented|HTTP/S|indicates if this storagepool is participating in auto tiering with other pools
 |Capacity|Implemented|HTTP/S|Snapshot Used capacity in MB
+|Disk Size|Implemented|HTTP/S|comma seperated list of disk sizes (GB)
+|Disk Speed|Implemented|HTTP/S|comma seperated list of disk speeds (rpm)
+|Disk Type|Not Available|HTTP/S|
+|Junction Path|Implemented|HTTP/S|
+|Name|Implemented|HTTP/S|
 |Total Raw Capacity|Implemented|HTTP/S|Total raw capacity (sum of all disks on the array)
-|Used Capacity|Implemented|HTTP/S|
 |Redundancy|Implemented|HTTP/S|Redundancy level
+|Storage Pool Id|Implemented|HTTP/S|
+|Thin Provisioned|Implemented|HTTP/S|
+|Type|Gap|HTTP/S|
+|UUID|Implemented|HTTP/S|
+|Used Capacity|Implemented|HTTP/S|
+|Virtual|Implemented|HTTP/S|Is this a storage virtualization device?
 .5+|Volume Map|LUN|Implemented|HTTP/S|Name of the backend lun
-|Storage Port|Implemented|HTTP/S|
 |Masking Required|Implemented|HTTP/S|
 |Protocol Controller|Implemented|HTTP/S|
+|Storage Port|Implemented|HTTP/S|
 |Type|Gap|HTTP/S|
-.4+|Volume Mask|Storage Port|Implemented|HTTP/S|
-|Initiator|Implemented|HTTP/S|
+.4+|Volume Mask|Initiator|Implemented|HTTP/S|
 |Protocol Controller|Implemented|HTTP/S|
+|Storage Port|Implemented|HTTP/S|
 |Type|Gap|HTTP/S|
 .48+|performance .1+|Disk|IOPs Total|Implemented||
 .8+|Internal Volume|IOPs Total|Implemented||
@@ -11397,6 +11478,7 @@ OXYGEN
 6.4.2
 6.4.3
 6.4.7
+6.4.8
 6.4.9
 6.5.0
 6.5.1
@@ -11415,6 +11497,7 @@ OXYGEN
 6.6.7
 6.7.0
 6.7.1
+6.8.1
 6.8.2
 6.8.3
 
@@ -11621,13 +11704,13 @@ Products supported by this data collector:
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
 
-.73+|foundation .7+|Data Store|OID|Implemented|HTTP/S|
-|Name|Implemented|HTTP/S|
-|Capacity|Implemented|HTTP/S|Snapshot Used capacity in MB
-|Used Capacity|Implemented|HTTP/S|
-|Provisioned Capacity|Implemented|HTTP/S|
-|Virtual Center Ip|Implemented|HTTP/S|
+.75+|foundation .7+|Data Store|Capacity|Implemented|HTTP/S|Snapshot Used capacity in MB
 |MOID|Implemented|HTTP/S|
+|Name|Implemented|HTTP/S|
+|OID|Implemented|HTTP/S|
+|Provisioned Capacity|Implemented|HTTP/S|
+|Used Capacity|Implemented|HTTP/S|
+|Virtual Center Ip|Implemented|HTTP/S|
 .3+|NasShare DataStore|DataStore OID|Implemented|HTTP/S|
 |Nas Share OID|Implemented|HTTP/S|
 |OID|Implemented|HTTP/S|
@@ -11635,65 +11718,67 @@ Products supported by this data collector:
 |Nas Share OID|Implemented|HTTP/S|
 |Read Only|Implemented|HTTP/S|
 |OID|Implemented|HTTP/S|
-.4+|LUN|OID|Implemented|HTTP/S|
-|Number|Implemented|HTTP/S|
-|DataStore OID|Implemented|HTTP/S|
+.4+|LUN|DataStore OID|Implemented|HTTP/S|
 |Host OID|Implemented|HTTP/S|
+|Number|Implemented|HTTP/S|
+|OID|Implemented|HTTP/S|
 .6+|NAS Share|Filer Name|Implemented|HTTP/S|
 |Filer Ip|Implemented|HTTP/S|
 |Share Path|Implemented|HTTP/S| For a HvNasShare to be matched to a Share
 |Capacity|Implemented|HTTP/S|Allocated capacity in MB
 |Type|Gap|HTTP/S|
 |OID|Implemented|HTTP/S|
-.4+|Path|OID|Implemented|HTTP/S|
+.6+|Path|Active|Implemented|HTTP/S|
 |Lun OID|Implemented|HTTP/S|
-|Active|Implemented|HTTP/S|
+|Host Port WWPN|Implemented|HTTP/S|
+|OID|Implemented|HTTP/S|
+|Storage Port WWPN|Implemented|HTTP/S|
 |Type|Gap|HTTP/S|
-.6+|Server|OID|Implemented|HTTP/S|
-|Virtual Center Ip|Implemented|HTTP/S|
-|Cluster|Implemented|HTTP/S|Cluster name
+.6+|Server|Cluster|Implemented|HTTP/S|Cluster name
 |DataCenter Name|Implemented|HTTP/S|
 |Host OID|Implemented|HTTP/S|
 |MOID|Implemented|HTTP/S|
-.6+|Virtual Disk|OID|Implemented|HTTP/S|
+|OID|Implemented|HTTP/S|
+|Virtual Center Ip|Implemented|HTTP/S|
+.6+|Virtual Disk|Capacity|Implemented|HTTP/S|Snapshot Used capacity in MB
 |DataStore OID|Implemented|HTTP/S|
 |Name|Implemented|HTTP/S|
-|Capacity|Implemented|HTTP/S|Snapshot Used capacity in MB
-|Used Capacity|Implemented|HTTP/S|
+|OID|Implemented|HTTP/S|
 |Type|Gap|HTTP/S|
-.13+|VirtualMachine|OID|Implemented|HTTP/S|
-|Name|Implemented|HTTP/S|
-|OS|Implemented|HTTP/S|
-|Processors|Implemented|HTTP/S|
-|Memory|Implemented|HTTP/S|
+|Used Capacity|Implemented|HTTP/S|
+.13+|VirtualMachine|Guest State|Implemented|HTTP/S|
 |DataStore OID|Implemented|HTTP/S|
+|Host OID|Implemented|HTTP/S|
+|MOID|Implemented|HTTP/S|
+|Memory|Implemented|HTTP/S|
+|Name|Implemented|HTTP/S|
+|OID|Implemented|HTTP/S|
+|OS|Implemented|HTTP/S|
 |Power State|Implemented|HTTP/S|
 |State Change Time|Implemented|HTTP/S|
-|Host OID|Implemented|HTTP/S|
-|Guest State|Implemented|HTTP/S|
-|Used Capacity|Implemented|HTTP/S|
+|Processors|Implemented|HTTP/S|
 |Provisioned Capacity|Implemented|HTTP/S|
-|MOID|Implemented|HTTP/S|
+|Used Capacity|Implemented|HTTP/S|
 .3+|VirtualMachine Disk|OID|Implemented|HTTP/S|
-|VirtualMachine OID|Implemented|HTTP/S|
 |VirtualDisk OID|Implemented|HTTP/S|
-.11+|Host|OID|Implemented|HTTP/S|
-|Name|Implemented|HTTP/S|
-|IPs|Implemented|HTTP/S|
-|Platform Type|Implemented|HTTP/S|
-|Host Installed Memory|Implemented|HTTP/S|
-|Manufacturer|Implemented|HTTP/S|
-|Host Model|Implemented|HTTP/S|
-|Host Cpu Count|Implemented|HTTP/S|
+|VirtualMachine OID|Implemented|HTTP/S|
+.11+|Host|Host Cpu Count|Implemented|HTTP/S|
 |Host Cpu Speed|Implemented|HTTP/S|
+|Host Installed Memory|Implemented|HTTP/S|
+|Host Model|Implemented|HTTP/S|
 |NIC count|Implemented|HTTP/S|
 |NIC speed|Implemented|HTTP/S|
-.3+|ISCSI Node|OID|Implemented|HTTP/S|
-|Node Name|Implemented|HTTP/S|
+|IPs|Implemented|HTTP/S|
+|Manufacturer|Implemented|HTTP/S|
+|Name|Implemented|HTTP/S|
+|OID|Implemented|HTTP/S|
+|Platform Type|Implemented|HTTP/S|
+.3+|ISCSI Node|Node Name|Implemented|HTTP/S|
+|OID|Implemented|HTTP/S|
 |Type|Gap|HTTP/S|
 .3+|Info|DataSource Name|Implemented|HTTP/S|Info
-|Originator ID|Implemented|HTTP/S|
 |Date|Implemented|HTTP/S|
+|Originator ID|Implemented|HTTP/S|
 
 |===
 
@@ -11717,11 +11802,11 @@ Management APIs used by this data collector:
 
 Models and versions supported by this data collector:
 
-Firmware versions:
+Firmware versions: 
 
 * 8.1.3-p12-25506
 * 8.1.3-p13-25544
-* 8.1.3-p2-24912
+*  8.1.3-p2-24912
 * 9.0.3-p10-25744
 * 9.0.3-p5-25595
 * 9.0.3-p6-25611
@@ -11730,8 +11815,11 @@ Firmware versions:
 * 9.1.2-p1-27870
 * 9.1.2-p1-27870_HP1473894
 * 9.1.3-p1-28075
+* 9.1.3-p8-28434
 * 9.2.2-p1-29213
 * 9.2.3-29313
+* 9.2.3-p1-29368
+
 
 Products supported by this data collector:
 |===
@@ -11866,21 +11954,26 @@ Models and versions supported by this data collector:
 
 |VA2437096
 VAST Data
-| Build version :release-5.0.0-sp24-1389206
- Build version: release-5.0.0-sp24-1389206
- Build version: release-5.0.0-sp70-1532643
- Build version: release-5.1.0-sp50-1578267
-System version :5.0.0.94
+|Build version: release-5.0.0-sp24-1389206
+Build version: release-5.0.0-sp24-1389206
+Build version: release-5.0.0-sp70-1532643
+Build version: release-5.1.0-sp50-1578267
+Build version: release-5.1.0-sp51-hf3-1643358
+Build version: release-5.1.0-sp56-1630237
+Build version: release-5.1.0-sp56-hf10-1682647
+Build version: release-5.1.0-sp56-hf14-1700467
+System version: 5.0.0.94
 System version: 5.0.0.133
 System version: 5.0.0.94
 System version: 5.1.0.210
+System version: 5.1.0.231
 
 |===
 Products supported by this data collector:
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
 
-.108+|foundation .14+|Disk|Capacity (GB)|Implemented|HTTPS|Used capacity
+.110+|foundation .14+|Disk|Capacity (GB)|Implemented|HTTPS|Used capacity
 |Disk Id|Implemented|HTTPS|Uniquely identifies this disk in the array
 |Location|Gap|HTTPS|Where this disk is physically located in the array
 |Model|Implemented|HTTPS|
@@ -11924,13 +12017,15 @@ Products supported by this data collector:
 .3+|QTree|Name|Implemented|HTTPS|
 |Qtree Id|Implemented|HTTPS|unique id of the qtree
 |Type|Gap|HTTPS|
-.7+|Quota|Hard Capacity Limit (MB)|Implemented|HTTPS|max amount of disk space, allowed for the quota target (Hard limit)
+.9+|Quota|Hard Capacity Limit (MB)|Implemented|HTTPS|max amount of disk space, allowed for the quota target (Hard limit)
 |Internal Volume Id|Implemented|HTTPS|
 |Quota Id|Implemented|HTTPS|unique id of the quota
 |Soft Capacity Limit (MB)|Implemented|HTTPS|Maximum amount of disk space, allowed for the quota target
+|Soft File Limit|Implemented|HTTPS|Max number of files allowed for the quota target
 |Type|Gap|HTTPS|
 |Used Capacity|Implemented|HTTPS|
 |Used Files|Implemented|HTTPS|Number of files currently used 
+|User/Group Target|Implemented|HTTPS|user/group target this quota refers to
 .3+|Share|IP Interfaces|Implemented|HTTPS|comma separated list of IP addresses on which this share is exposed
 |Name|Implemented|HTTPS|
 |Protocol|Implemented|HTTPS|enum for share protocol
@@ -11980,12 +12075,12 @@ Products supported by this data collector:
 |Type|Gap|HTTPS|
 |Virtual|Implemented|HTTPS|Is this a storage virtualization device?
 |Encrypted|Implemented|HTTPS|
-.7+|Storage VirtualMachine|Guid Key|Implemented|HTTPS|Globally Unique Key of the storage virtual machine
-|UUID|Implemented|HTTPS|
+.7+|Storage VirtualMachine|Allocated capacity (MB)|Implemented|HTTPS|Allocated capacity of snapshots
+|Comment|Implemented|HTTPS|
+|Guid Key|Implemented|HTTPS|Globally Unique Key of the storage virtual machine
 |Name|Implemented|HTTPS|
 |Type|Gap|HTTPS|
-|Comment|Implemented|HTTPS|
-|Allocated capacity (MB)|Implemented|HTTPS|Allocated capacity of snapshots
+|UUID|Implemented|HTTPS|
 |Used Capacity|Implemented|HTTPS|
 .1+|VirtualMachine Internal Volume Ref|Internal Volume Id|Implemented|HTTPS|
 .19+|performance .19+|Storage|Failed Raw Capacity|Implemented|HTTPS|
@@ -12030,10 +12125,11 @@ Management APIs used by this data collector:
 
 Models and versions supported by this data collector:
 
-API versions:
+API versions: 
 
 * VMware vCenter Server 6.7.0 build-10244857
 * VMware vCenter Server 7.0.3 build-20395099
+
 
 Products supported by this data collector:
 |===
@@ -12237,13 +12333,15 @@ Management APIs used by this data collector:
 
 Models and versions supported by this data collector:
 
-API versions:
+API versions: 
 
 * VMware vCenter Server 7.0.3 build-21477706
 * VMware vCenter Server 7.0.3 build-24322018
 * VMware vCenter Server 8.0.0 build-22877852
 * VMware vCenter Server 8.0.1 build-22161730
 * VMware vCenter Server 8.0.1 build-23525738
+* VMware vCenter Server 8.0.3 build-24322831
+
 
 Products supported by this data collector:
 |===
@@ -12377,13 +12475,21 @@ Management APIs used by this data collector:
 
 Models and versions supported by this data collector:
 
-API versions:
+API versions: 
 
+* VMware ESXi 6.0.0 build-10474991
+* VMware ESXi 6.0.0 build-10719132
+* VMware ESXi 6.0.0 build-13635687
 * VMware ESXi 6.0.0 build-2494585
-* VMware ESXi 6.7.0 build-20497097
+* VMware ESXi 6.0.0 build-3620759
+* VMware ESXi 6.0.0 build-5050593
+* VMware ESXi 6.0.0 build-5224934
+* VMware ESXi 6.0.0 build-9239799
+* VMware ESXi 6.5.0 build-5310538
 * VMware ESXi 7.0.3 build-20036589
 * VMware ESXi 7.0.3 build-20328353
 * VMware ESXi 8.0.0 build-21203435
+* VMware ESXi 8.0.1 build-21495797
 * VMware vCenter Server 5.0.0 build-623373
 * VMware vCenter Server 5.5.0 build-1750787
 * VMware vCenter Server 5.5.0 build-2442329
@@ -12449,6 +12555,7 @@ API versions:
 * VMware vCenter Server 8.0.0 build-20519528
 * VMware vCenter Server 8.0.0 build-20920323
 * VMware vCenter Server 8.0.0 build-21216066
+* VMware vCenter Server 8.0.0 build-21457384
 * VMware vCenter Server 8.0.1 build-21560480
 * VMware vCenter Server 8.0.1 build-21815093
 * VMware vCenter Server 8.0.1 build-21860503

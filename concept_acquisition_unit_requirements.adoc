@@ -24,15 +24,15 @@ You must install an Acquisition Unit (AU) in order to acquire information from y
 |Operating system	
 |A computer running a licensed version of one of the following:
 
+* AlmaLinux 9.3 through 9.5
 * Centos (64-bit): 7.2 through 7.9, 8.1 through 8.4, Stream 8, Stream 9
-* AlmaLinux 9.3 and 9.4
-* Debian (64-bit): 9 and 10
-* OpenSUSE Leap 15.1 through 15.5
-* Oracle Enterprise Linux (64-bit): 7.5 through 7.9, 8.1 through 8.8
-* Red Hat Enterprise Linux (64-bit): 7.2 through 7.9, 8.1 through 8.10, 9.1 through 9.4
-* Rocky 9.0 through 9.4
-* SUSE Enterprise Linux Server 15, 15 SP2 through 15 SP5
-* Ubuntu Server: 18.04, 20.04, 22.04 LTS
+* Debian (64-bit): 9 through 11
+* OpenSUSE Leap 15.1 through 15.6
+* Oracle Enterprise Linux (64-bit): 7.5 through 7.9, 8.1 through 8.10, 9.3 through 9.5
+* Red Hat (64-bit): 7.2 through 7.9, 8.1 through 8.10, 9.1 through 9.5
+* Rocky 9.0 through 9.5
+* SUSE Linux Enterprise Server 15, 15 SP2 through 15 SP6
+* Ubuntu Server: 18.04, 20.04, 22.04, 24.04 LTS
 * SELinux on the above platforms
 
 This computer should be running no other application-level software. A dedicated server is recommended. 
@@ -45,12 +45,14 @@ If you are running with SELinux, it is recommended to execute the following comm
 |A computer running a licensed version of one of the following:
 
 * Microsoft Windows 10 64-bit
+* Microsoft Windows 11
 * Microsoft Windows Server 2012
 * Microsoft Windows Server 2012 R2
 * Microsoft Windows Server 2016
 * Microsoft Windows Server 2019
 * Microsoft Windows Server 2022
-* Microsoft Windows 11
+* Microsoft Windows Server 2025
+
 
 // * Microsoft Windows 11 64-bit
 // * Microsoft Windows 2022

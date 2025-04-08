@@ -439,8 +439,6 @@ sidebar:
                   url: /task_dc_na_storagegrid.html
             - title: Nutanix
               url: /task_dc_nutanix.html
-            - title: OpenStack
-              url: /task_dc_openstack.html
             - title: Oracle
               url: /task_dc_oracle_zfs.html
             - title: Pure
