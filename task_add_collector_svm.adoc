@@ -78,6 +78,34 @@ See link:concept_cs_agent_requirements.html[Agent requirements] for configuratio
 * When an Agent is installed in an AWS EC2 instance to monitor a Cloud ONTAP SVM, the Agent and Storage must be in the same VPC. If they are in separate VPCs, there must be a valid route between the VPC’s.
 
 
+
+== Test Connectivity for Data Collectors
+
+The test connectivity feature (introduced March 2025) aims to help end users identify the specific causes of failures when setting up data collectors in Data Infrastructure Insights (DII) Workload Security. This allows the users to self-correct issues related to network communication or missing roles.
+
+This feature will help users determine if all network-related checks are in place before setting up a data collector. Additionally, it will inform users about the features they can access based on the ONTAP version, roles, and permissions assigned to them in ONTAP.
+
+NOTE: Test connectivity is not supported for User Directory collectors
+
+=== Prerequisites for Connection Testing
+
+* Cluster level credentials are needed for this feature to work in full.
+* Feature access check is not supported in SVM mode.
+* If you are using cluster administration credentials, no new permissions are needed.
+* If you are using a custom user (e.g., _csuser_), provide the mandatory permissions and feature specific permissions for the features you want to use.
+
+image:ws_test_connection_button.png[workload security test connection button]
+
+Be sure to review the <<a-note-about-permissions,Permissions>> section below as well.
+
+=== Test the Connection
+
+The user can go to the add/edit collector page, enter the cluster level details (in Cluster Mode) or SVM level details (in SVM Mode), and click on the *Test Connection* button. Workload Security will then process the request and display an appropriate success or failure message.
+
+image:ws_test_connection_success_example.png[Workload Security 'Test Connection' success message]
+
+
+
 == Prerequisites for User Access Blocking
 
 Keep the following in mind for link:cs_restrict_user_access.html[User Access Blocking]:
@@ -95,6 +123,12 @@ For csuser with cluster credentials, do the following from the ONTAP command lin
  security login role create -role csrole -cmddirname "vserver cifs session" -access all
  security login role create -role csrole -cmddirname "vserver services access-check authentication translate" -access all
  security login role create -role csrole -cmddirname "vserver name-mapping" -access all
+
+
+
+
+
+
 
 
 == A Note About Permissions

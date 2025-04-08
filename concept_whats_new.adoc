@@ -18,6 +18,62 @@ keywords: features
 NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in Data Infrastructure Insights (formerly Cloud Insights).
 
 
+== March 2025
+
+=== Enhanced Contextual Navigation for Efficient Infrastructure Management
+
+Save time by leveraging Data Infrastructure Insights for operational excellence. We are now adding contextual menu links that allow you to jump directly from any object to the asset landing page for device performance insights, SAN Analyzer for network topology visualization, logs for operational awareness, or Change Analyzer for configuration management.
+
+With instant access to key data across multiple views, you gain a clearer understanding of object relationships more quickly. This streamlined workflow accelerates decision-making and issue resolution, ultimately saving you time and enhancing your overall analysis capabilities.
+
+image:contextual_menu_example.png[Contextual menu example, width=500]
+
+
+=== Preserve the History of Removed Assets
+
+Our enhanced Infra Change Feature now preserves the history of removed assets like qtrees and volumes that have moved and are no longer available. 
+
+Missing something in your troubleshooting puzzle? Not any more! You'll see everything—including deleted objects marked with a strike-through—giving you complete context even after assets were removed, ensuring you never miss critical elements from past changes or alerts across the end-to-end path.
+
+The result? Quicker resolution times and more confident infrastructure decisions, even when the assets in question no longer exist.
+
+image:infra_change_removed_assets.png[removed assets in infra change showing with a strikethrough, width=300]
+
+
+=== Kubernetes Operator Push-Button Upgrade
+
+Want to be sure you have the latest Kubernetes Operator? Upgrade the operator on-demand from the DII Kubernetes Collectors cluster menu. Simply select Upgrade from the menu, and the operator will verify the image signatures, capture a snapshot of your current installation, and perform the upgrade.
+
+The Push-Button Upgrade is an optional feature, and its activation can be managed on a per-cluster basis.
+
+image:dii_push_button_upgrade.png[push-button operator upgrade from cluster menu, width=600]
+
+
+=== Test Connectivity for Storage Workload Security Data Collectors
+
+The test connectivity feature aims to help end users identify the specific causes of failures when setting up data collectors in Data Infrastructure Insights (DII) Workload Security. This allows the users to self-correct issues related to network communication or missing roles.
+
+image:ws_test_connection_button.png[workload security test connection button]
+image:ws_test_connection_success_example.png[Workload Security 'Test Connection' success message]
+
+
+=== Operating System support
+
+The following operating systems are now supported with Data Infrastructure Insights Acquisition Units, in addition to those link:https://docs.netapp.com/us-en/cloudinsights/concept_acquisition_unit_requirements.html[already supported]:
+
+* AlmaLinux 9.5
+* Debian (64-bit) 11
+* OpenSUSE Leap 15.6
+* Oracle Enterprise Linux (64-bit) 8.9, 8.10, 9.5
+* Red Hat (64-bit) 8.9, 8.10, 9.5
+* Rocky 9.5
+* SUSE Linux Enterprise Server 15 SP6
+* Ubuntu Server 24.04 LTS
+
+
+'''
+
+
 == February 2025
 
 === ONTAP Essentials for the latest generation of ASA systems 
@@ -39,6 +95,8 @@ image:api_usage_analytics_screenshot.png[API usage analytics example]
 === Workload Security API to restrict users 
 
 A new API has been added to manage user restriction in Workload Security. With the API you can block or unblock a user, or change the duration of their restricted access. See the Admin > API Access > API Documentation page for the _cloudsecure_actions.block_ API.
+
+
 
 
 

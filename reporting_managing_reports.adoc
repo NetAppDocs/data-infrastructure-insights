@@ -15,11 +15,15 @@ keywords: reporting, cognos, data warehouse, dwh, managing, customizing, copying
 :imagesdir: ./media/
 
 [.lead]
-You can customize a report’s output format and delivery, set report properties or schedules, and email reports. 
+You can customize a report's output format and delivery, set report properties or schedules, and email reports. 
 
 NOTE: The Reporting feature is available in Data Infrastructure Insights link:concept_subscribing_to_cloud_insights.html[Premium Edition]. 
 
 IMPORTANT: Before making changes to reporting permissions or security, you must copy "My Content" reports to the "Team Content" folder to ensure Reports are saved.
+
+
+
+
 
 == Customizing a report's output format and delivery
 
@@ -28,12 +32,9 @@ You can customize the format and delivery method of reports.
 
 . In the Data Infrastructure Insights Reporting Portal, Go to *Menu > Content > My Content/Team Content*. Mouse over the report you want to customize and open the "three dots" menu.
 
-//image:ReportCustomizationMenu.png[Report Customization Menu]
 image:Reporting_Output_and_Delivery.png[Report Output and Delivery]
 
 . Click *Properties > Schedule*
-
-//image:ReportSchedule.png[Scheduling a Report]
 
 . You can set the following options:
 ** *Schedule* when you want reports to run.
