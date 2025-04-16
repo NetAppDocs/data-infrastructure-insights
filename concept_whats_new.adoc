@@ -27,7 +27,7 @@ To troubleshoot performance issues with Line or Spline chart widgets, you can no
 
 DII machine learning with seasonal data analysis establishes intelligent thresholds based on historical patterns. When metrics deviate from expected ranges, the system highlights these as anomalies, enabling quick issue identification, reducing mean time to resolution, and addressing problems before they impact operations.
 
-image:expected_bounds_example_showing_spike.png[expected bounds showing spike above, width=400]
+image:expected_bounds_example_showing_spike.png[expected bounds showing spike above, width=300]
 
 
 === Optimize VMware Costs with VSAN Storage Support
