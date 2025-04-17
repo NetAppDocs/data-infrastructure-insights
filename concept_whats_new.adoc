@@ -17,6 +17,87 @@ keywords: features
 [.lead]
 NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in Data Infrastructure Insights (formerly Cloud Insights).
 
+== April 2025
+
+=== ML-Powered Anomaly Bounds in Line Widgets for Proactive Issue Resolution
+
+To troubleshoot performance issues with Line or Spline chart widgets, you can now display expected behavior boundaries alongside actual metrics, allowing you to distinguish between normal and abnormal metric trends. 
+
+DII machine learning with seasonal data analysis establishes intelligent thresholds based on historical patterns. When metrics deviate from expected ranges, the system highlights these as anomalies, enabling quick issue identification, reducing mean time to resolution, and addressing problems before they impact operations.
+
+image:expected_bounds_example_showing_spike.png[expected bounds showing spike above, width=300]
+
+
+=== Optimize VMware Costs with VSAN Storage Support
+
+Our VM Optimization feature now includes support for VMWare environments with VSAN storage. In addition to CPU and memory usage, the analysis now considers local VSAN storage for reclamation recommendations, helping you further reduce licensing costs.
+
+image:vm_optimization_with_vsan.png[VM Optimization example with VSAN]
+
+
+=== Alert details at your fingertips
+
+Investigating alerts is easier than ever with the new slideout panel. Select an alert to view details for that alert, and easily switch between alerts without losing your place while investigating issues. 
+
+image:alert_slideout_example.png[Alert slideout for easier navigation]
+
+
+=== Workload Security Forensics Asynchronous Export
+
+Exporting forensics data can take anywhere from a few seconds to a number of hours, depending on the amount of data to export. Workload Security exports that data asynchronously, so you can continue working while the .CSV is being compiled. 
+
+
+
+=== Data Collector Notifications grouped into Rules
+
+If you have configured notifications on data collectors, starting April 15 those notifications will be handled in Notification Rules, with a single rule for collectors that have identical recipients. Collectors with different recipients will have separate rules. Existing collector notifications are migrated to notification rules.
+
+
+
+
+'''
+
+
+== April 2025
+
+=== ML-Powered Anomaly Bounds in Line Widgets for Proactive Issue Resolution
+
+To troubleshoot performance issues with Line or Spline chart widgets, you can now display expected behavior boundaries alongside actual metrics, allowing you to distinguish between normal and abnormal metric trends. 
+
+DII machine learning with seasonal data analysis establishes intelligent thresholds based on historical patterns. When metrics deviate from expected ranges, the system highlights these as anomalies, enabling quick issue identification, reducing mean time to resolution, and addressing problems before they impact operations.
+
+image:expected_bounds_example_showing_spike.png[expected bounds showing spike above, width=400]
+
+
+=== Optimize VMware Costs with VSAN Storage Support
+
+Our VM Optimization feature now includes support for VMWare environments with VSAN storage. In addition to CPU and memory usage, the analysis now considers local VSAN storage for reclamation recommendations, helping you further reduce licensing costs.
+
+image:vm_optimization_with_vsan.png[VM Optimization example with VSAN]
+
+
+=== Alert details at your fingertips
+
+Investigating alerts is easier than ever with the new slideout panel. Select an alert to view details for that alert, and easily switch between alerts without losing your place while investigating issues. 
+
+image:alert_slideout_example.png[Alert slideout for easier navigation]
+
+
+=== Workload Security Forensics Asynchronous Export
+
+Exporting forensics data can take anywhere from a few seconds to a number of hours, depending on the amount of data to export. Workload Security exports that data asynchronously, so you can continue working while the .CSV is being compiled. 
+
+
+
+=== Data Collector Notifications grouped into Rules
+
+If you have configured notifications on data collectors, starting April 15 those notifications will be handled in Notification Rules, with a single rule for collectors that have identical recipients. Collectors with different recipients will have separate rules. Existing collector notifications are migrated to notification rules.
+
+
+
+
+'''
+
 
 == March 2025
 
@@ -56,6 +137,13 @@ The test connectivity feature aims to help end users identify the specific cause
 image:ws_test_connection_button.png[workload security test connection button]
 image:ws_test_connection_success_example.png[Workload Security 'Test Connection' success message]
 
+=== Test Connectivity for Storage Workload Security Data Collectors
+
+The test connectivity feature aims to help end users identify the specific causes of failures when setting up data collectors in Data Infrastructure Insights (DII) Workload Security. This allows the users to self-correct issues related to network communication or missing roles.
+
+image:ws_test_connection_button.png[workload security test connection button]
+image:ws_test_connection_success_example.png[Workload Security 'Test Connection' success message]
+
 
 === Operating System support
 
@@ -72,7 +160,6 @@ The following operating systems are now supported with Data Infrastructure Insig
 
 
 '''
-
 
 == February 2025
 
