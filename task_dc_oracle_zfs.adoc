@@ -83,6 +83,8 @@ Some things to try if you encounter problems with this data collector:
 |Problem:|Try this:
 |"Invalid login credentials" 
 |validate Zfs user account and password 
+|"Request failed with status 404 \https://.....:215/api/access/v1" 
+|Your ZFS array may be too old to have REST API support. AK 2013.1.3.0 was the first REST API-capable ZFS OS release, and not all ZFS appliances can be upgraded to it. 
 |"Configuration error" with error message “REST Service is disabled”
 |Verify REST service is enabled on this device.
 |"Configuration error " with error message “User unauthorized for command”

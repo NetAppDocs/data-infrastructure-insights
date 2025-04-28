@@ -27,6 +27,8 @@ This will create a user “NetAppCIUser” with a password of “Qwerty!”. Thi
 
 By default, this collector will attempt to discover all the FOS devices that are a part of all the fabrics the switch is part of.
 
+Please note: FOS' default read-only user "user" does NOT have view permissions on all Virtual Fabrics, nor does it have "chassis role" permissions. This means you will have a low likelihood of success using "user" with Data Infrastructure Insights, which needs to understand both the physical and logical configuration of the FOS device. 
+
 == Terminology 
 
 Data Infrastructure Insights acquires the following inventory information from the Brocade FOS REST data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:

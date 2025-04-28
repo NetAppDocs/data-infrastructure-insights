@@ -335,6 +335,49 @@ Vserver mode:
 
 
 
+
+== Migrate Collectors
+
+You can easily migrate a Workload Security collector from one agent to another, allowing for efficient load balancing of collectors across agents. 
+
+=== Prerequisites
+
+* Source agent must be in _connected_ state.
+* Collector to be migrated must be in _running_ state.
+
+Note: 
+
+* Migrate is supported for both Data and User Directory collectors.
+* Migration of a collector is not supported for manually managed tenants.
+
+=== Migrate collector
+
+To migrate a collector, follow these steps:
+
+. Go to the "Edit Collector" page.
+. Select a destination agent from the agent dropdown.
+. Click on the "Save Collector" button.
+
+Workload Security will process the request. On successful migration, the user will be redirected to the collectors list page. In case of failure, an appropriate message will be displayed on the edit page.
+
+Note: Any configuration changes previously made on the "Edit Collector" page will be remain applied when the collector is successfully migrated to the destination agent.
+
+image:ws_migrate_collector_to_another_agent.png[migrate a collector by choosing another agent]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 == Troubleshooting
 
 See the link:troubleshooting_collector_svm.html[Troubleshooting the SVM Collector] page for troubleshooting tips.
