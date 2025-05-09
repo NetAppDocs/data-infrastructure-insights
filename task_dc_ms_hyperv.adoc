@@ -15,6 +15,8 @@ summary: Configuring Microsoft Hyper-V data collector.
 [.lead]
 The Microsoft Hyper-V data collector acquires inventory and performance data from the virtualized server computing environment. This data collector can discover a standalone Hyper-V host, or an entire cluster - create one collector per standalone host or cluster.
 
+Please note: Microsoft localizes Windows Performance Monitor, aka "perfmon" counter names on some versions of Windows. DII will default to requesting US English counter names, but DII's Hyper-V collector does have some alternative language support which works dynamically. If you are not seeing the expected performance counters (per the DII Support Matrix) populate against a non-US English locale Hyper-V cluster, please open a Support case so we can get your language/locale supported.
+
 == Terminology
 
 Data Infrastructure Insights acquires the following inventory information from the Microsoft Hyper-V (WMI). For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
