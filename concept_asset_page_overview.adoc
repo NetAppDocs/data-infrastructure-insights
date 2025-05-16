@@ -7,7 +7,6 @@ keywords: asset page, objects, landing page, Virtual machine, VM, Storage Virtua
 
 = Asset Page Overview
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
@@ -16,9 +15,40 @@ keywords: asset page, objects, landing page, Virtual machine, VM, Storage Virtua
 [.lead]
 Asset pages summarize the current status of an asset and contain links to additional information about the asset and its related assets.
 
+Landing pages give you a single-page view of the object, with Summary, Performance, and Related Resource information.
+
+image:lp_new_design.png[new LP design]
+
+=== Summary Section
+
+At the top of a landing page is the expandible Summary section, which includes several sparkline graphs displaying recent data trends for things like throughput or latency, as well as object information and attributes, user data including annotations (if any), and any alerts that may be happening related to the object.
+
+
+=== Performance Section
+
+The Performance Section (formerly known as the Expert View section) displays performance data for the object. Select _Settings_ to add additional charts to the display like Throughput or Capacity, o select correlated or contributing resources to chart their data alongside the object's. Devices that may potentially be causing contention will be listed in the Performance section.
+
+The Expert View section of an asset page enables you to view a performance sample for the base asset based on any number of applicable metrics in context with a chosen time period in the performance chart and any assets related to it.  The data in the charts refreshes automatically as data collectors poll and updated data is acquired.
+
+You can select the metrics you want to view in the performance chart for the time period selected. Click on the _Display Metrics_ drop-down and choose from the metrics listed.
+
+
+=== Additional Resources Section
+
+The Additional Resources section displays tables of data for resources related to the current object type. You can expand and collapse these tables in order to focus on specific resources.
+
+=== Add Custom Widgets
+
+You can add your own widgets to any asset page.  Widgets you add will appear on asset pages for all objects of that type. For example, adding a custom widget to a storage asset page will display that widget on asset pages for all storage assets.
+
+Custom widgets are placed at the bottom of a landing page, below the Performance and Resource sections.
+
+
+
 == Types of Asset Pages
 
 Data Infrastructure Insights provides asset pages for the following assets:
+
 
 * Virtual machine
 * Storage Virtual Machine (SVM)
@@ -36,12 +66,9 @@ Data Infrastructure Insights provides asset pages for the following assets:
 * Port
 * Switch
 * Fabric
-//* Object storage (for example, Atmos, Centera, Amazon S3)
-//* Zone
+* Host
+* Zone
 
-//Mapping and Masking information can be viewed in tables on Zone, Volume, VM, and Host/Hypervisor asset pages.
-
-//Note: Summary information is available for object storage assets; however, you can only access this information from the Data sources detail page.
 
 == Changing the Time Range of Displayed Data
 
@@ -60,13 +87,10 @@ You can change the time segment of displayed data by using an option that is loc
 * Last 2 Days
 * Last 3 Days
 * Last 7 Days
+* Last 14 Days
 * Last 30 Days
 * Custom time range
 
 The Custom time range allows you to select up to 31 consecutive days. You can also set the Start Time and End Time of day for this range. The default Start Time is 12:00 AM on the first day selected and the default End Time is 11:59 PM on the last day selected. Clicking Apply will apply the custom time range to the asset page.
 
 The information in an asset page summary section, as well as in any tables or custom widgets on the page, refreshes automatically based on the selected time range. The current refresh rate is displayed in the upper-right corner of the Summary section as well as on any relevant tables or widgets on the page. 
-
-== Add Custom Widgets
-
-You can add your own widgets to any asset page.  Widgets you add will appear on asset pages for all objects of that type. For example, adding a custom widget to a storage asset page will display that widget on asset pages for all storage assets.

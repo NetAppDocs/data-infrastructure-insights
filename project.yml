@@ -117,6 +117,7 @@ sidebar:
             url: /task_view_and_manage_alerts.html
           - title: System-Defined Monitors
             url: /task_system_monitors.html
+
           - title: Configuring Notification Recipients
             url: /concept_notifications_email.html 
 
@@ -131,8 +132,7 @@ sidebar:
               - title: Webhook Example - Slack
                 url: /task_webhook_example_slack.html
               - title: Webhook Example - Teams
-                url: /task_webhook_example_teams.html
-              
+                url: /task_webhook_example_teams.html             
 
       - title: Working with Annotations
         entries:
@@ -320,7 +320,6 @@ sidebar:
           url: /concept_cs_api.html
         - title: Troubleshooting the SVM Collector
           url: /troubleshooting_collector_svm.html
-
    
     - title: Troubleshooting
       entries:

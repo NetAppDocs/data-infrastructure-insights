@@ -18,6 +18,27 @@ keywords: features
 NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in Data Infrastructure Insights (formerly Cloud Insights).
 
 
+== May 2025
+
+
+=== Webhooks now available for Workload Security alerts
+
+Workload Security now supports out-of-the-box webhook notifications to tools like Slack, PagerDuty, Teams, and more.
+Route critical alerts directly into your existing security workflows, so your team can investigate and respond faster—no custom setup required.
+
+image:ws_webhook_slack_example.png[Webhook Slack Example for Workload Security, width=400]
+
+
+=== Migrate Workload Security collectors across agents
+
+You can easily migrate a Workload Security collector from one agent to another, allowing for efficient load balancing of collectors across agents.
+Migrating is as easy as editing the collector and selecting the destination agent from the list. 
+
+image:ws_migrate_collector_to_another_agent.png[migrate collector, width=500]
+
+''''
+
+
 
 == April 2025
 
