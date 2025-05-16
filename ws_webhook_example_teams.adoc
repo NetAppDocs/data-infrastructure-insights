@@ -35,8 +35,7 @@ image:Webhooks_Teams_Create_Webhook.png[Incoming Webhook in Teams]
 . Give the webhook a meaningful Name.
 
 . In the _Template Type_ drop-down, select *Teams*.
-
-//image:Webhooks-Teams_example.png[Teams webhook template]
++
 image:ws_webhook_teams_example.png[Workload Security teams webhook example]
 
 . Paste the URL from above into the _URL_ field.
