@@ -171,14 +171,6 @@ sidebar:
             url: /concept_asset_page_overview.html
           - title: In-Context Filtering for Objects 
             url: /concept_in_context_filters.html
-          - title: Summary & Topology Sections
-            url: /concept_asset_summary_section.html
-          - title: Expert View Section
-            url: /concept_asset_expert_view_section.html
-          - title: User Data Section
-            url: /concept_asset_user_data_section.html
-          - title: Related Alerts Section
-            url: /concept_asset_alerts_section.html
           - title: Storage Virtualization
             url: /concept_storage_virtualization.html
           - title: Hints and Tips to Search for Assets
@@ -420,6 +412,8 @@ sidebar:
               url: /task_dc_fujitsu_eternus.html
             - title: Google
               url: /task_dc_google_cloud.html
+            - title: Google Cloud NetApp Volumes
+              url: /task_dc_google_cloud_netapp_volumes.html
             - title: HP Enterprise
               entries:
                 - title: HP Alletra 9000 and Primera

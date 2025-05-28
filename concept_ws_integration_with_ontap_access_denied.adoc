@@ -7,7 +7,6 @@ keywords:  ransomware, ARP, Protection, Security, access
 
 = Integration with ONTAP Access Denied
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
@@ -18,7 +17,7 @@ The ONTAP Access Denied feature uses workload analysis in NAS environments (NFS 
 
 Data Infrastructure Insights Workload Security integrates with ONTAP to receive Access Denied events and provide an additional analytic and automatic response layer.
 
-Prerequisites
+== Prerequisites
 
 * Minimum ONTAP version: 9.13.0.
 * A Workload Security administrator must enable the Access Denied feature while adding a new collector or editing existing collector, by selecting the _Monitor Access Denied Events_ checkbox under Advanced Configuration.
@@ -32,19 +31,13 @@ If the Data Collector is added using cluster administration credentials, no new 
 
 If the Collector is added using a custom user (for example, _csuser_) with permissions given to the user, follow the steps below to give Workload Security the necessary permission to register for Access Denied events with ONTAP.
 
-For csuser with _cluster_ credentials, execute the following commands from the ONTAP command line. Note that _csrestrole_ is custom role and _csuser_ is ontap custom user.
+For csuser with _cluster_ credentials, execute the following commands from the ONTAP command line. Note that this permission may already exist. 
 
-----
- security login rest-role create -role csrestrole -api /api/protocols/fpolicy -access all -vserver <cluster_name>
- security login create -user-or-group-name csuser -application http -authmethod password -role csrestrole
-----
+ security login role create -role csrole -cmddirname "vserver fpolicy" -access all
 
-For csuser with _SVM_ credentials, execute the following commands from the ONTAP command line:
+For csuser with _SVM_ credentials, execute the following commands from the ONTAP command line. Note that this permission may already exist.
 
-----
- security login rest-role create -role csrestrole -api /api/protocols/fpolicy -access all -vserver <svm_name>
- security login create -user-or-group-name csuser -application http -authmethod password -role csrestrole -vserver <svm_name>
-----
+ security login role create -vserver <vservername> -role csrole -cmddirname "vserver fpolicy" -access all
 
 Read more about configuring other link:task_add_collector_svm.html[ONTAP permissions].
 
