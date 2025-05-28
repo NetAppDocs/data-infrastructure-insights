@@ -28,4 +28,6 @@ indexpage:
       - title: Workload Security
         url: task_cs_getting_started.html
 
+# Add sections here:
+
 #  - title: Working with Kubernetes  
