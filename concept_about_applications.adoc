@@ -6,14 +6,20 @@ summary: Understanding the applications used in your company's environment helps
 ---
 
 = Tracking asset usage by application
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
 [.lead]
 Understanding the applications used in your company's environment helps you to keep track of asset usage and cost.
 
-Before you can track data associated with the applications running in your environment, you must first define those applications and associate them with the appropriate assets. You can associate applications with the following assets: hosts, virtual machines, volumes, internal volumes, qtrees, shares, and hypervisors. 
+Before you can track data associated with the applications running on your tenant, you must first define those applications and associate them with the appropriate assets. You can associate applications with the following assets: hosts, virtual machines, volumes, internal volumes, qtrees, shares, and hypervisors. 
 
 This topic provides an example of tracking the usage of virtual machines that the Marketing Team uses for its Exchange email.
 
-You might want to create a table similar to the following to identify applications used in your environment and note the group or business unit using each applications.
+You might want to create a table similar to the following to identify applications used on your tenant and note the group or business unit using each applications.
 
 [cols=5*,options="header]
 |===

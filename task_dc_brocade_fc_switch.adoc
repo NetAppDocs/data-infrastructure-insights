@@ -6,25 +6,24 @@ summary: Configuring Brocade FC Switches data collector.
 ---
 
 = Brocade FC Switch data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead] 
-Cloud Insights uses the Brocade FC Switch (SSH) data source to discover inventory for Brocade or rebranded switch devices running Factored Operating System (FOS) firmware 4.2 and later. Devices in both FC switch and Access Gateway modes are supported.  
+Data Infrastructure Insights uses the Brocade FC Switch (SSH) data source to discover inventory for Brocade or rebranded switch devices running Factored Operating System (FOS) firmware 4.2 and later. Devices in both FC switch and Access Gateway modes are supported.  
 
 == Terminology 
 
-Cloud Insights acquires the following inventory information from the Brocade FC Switch data collector. For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires the following inventory information from the Brocade FC Switch data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 [cols=2*, options="header", cols"50,50"]
 |===
 
-|Vendor/Model Term|Cloud Insights Term
+|Vendor/Model Term|Data Infrastructure Insights Term
 
 |Switch|Switch
 |Port|Port
@@ -39,8 +38,8 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Requirements
 
-* The Cloud Insights Acquisition Unit (AU) will initiate connections to TCP Port 22 on Brocade switches to collect inventory data. The AU will also initiate connections to UDP port 161 for collection of performance data.
-* There must be IP connectivity to all switches in the fabric. If you select the Discover all switches in the fabric check box, Cloud Insights identifies all the switches in the fabric; however, it needs IP connectivity to these additional switches to discover them.
+* The Data Infrastructure Insights Acquisition Unit (AU) will initiate connections to TCP Port 22 on Brocade switches to collect inventory data. The AU will also initiate connections to UDP port 161 for collection of performance data.
+* There must be IP connectivity to all switches in the fabric. If you select the Discover all switches in the fabric check box, Data Infrastructure Insights identifies all the switches in the fabric; however, it needs IP connectivity to these additional switches to discover them.
 * The same account is needed globally across all switches in the fabric. You can use PuTTY (open source terminal emulator) to confirm access.
 * Ports 161 and 162 must be open to all switches in the fabric for SNMP performance polling.
 * SNMP read-only Community String 
@@ -97,14 +96,14 @@ Some things to try if you encounter problems with this data collector:
 
 <date> <time> ERROR [com.onaro.sanscreen.acquisition.framework.datasource.BaseDataSource]   Error 2 out of 2: <datasource name> [Internal error] - Unable to generate the model for device <IP>. Error detecting prompt ([Device name <name>]: Unable to generate the model for device <IP>. Error detecting prompt)
 |The issue may be caused when the Brocade switch takes too long to return with a prompt, exceeding the default timeout of 5 seconds.
-In the data collector's Advanced Configuration settings in Cloud Insights, try increasing the  _SSH Banner Wait Timeout (sec)_ to a higher value.
+In the data collector's Advanced Configuration settings in Data Infrastructure Insights, try increasing the  _SSH Banner Wait Timeout (sec)_ to a higher value.
 
-|Error: “Cloud Insights received Invalid Chassis Role” |Check that the user configured in this data source has been granted the chassis role permission.
+|Error: “Data Infrastructure Insights received Invalid Chassis Role” |Check that the user configured in this data source has been granted the chassis role permission.
 |Error: "Mismatched Chassis IP Address" |Change the data source configuration to use chassis IP address.
 |Receive a message that more than 1 node is logged into the Access Gateway port| Check that the NPV device is operating correctly and that all connected WWNs are expected. Do not directly acquire the NPV device. Instead, acquisition of the core fabric switch will collect the NPV device data.
 
 |Performance collection fails with "Timed out during sending SNMP request".
-|Depending on query variables and switch configuration, some queries may exceed the default timeout.  link:https://kb.netapp.com/Cloud/BlueXP/Cloud_Insights/Cloud_Insight_Brocade_data_source_fails_performance_collection_with_a_timeout_due_to_default_SNMP_configuration[Learn More]. 
+|Depending on query variables and switch configuration, some queries may exceed the default timeout.  link:https://kb.netapp.com/Cloud/BlueXP/DII/Data_Infrastructure_Insights_Brocade_data_source_fails_performance_collection_with_a_timeout_due_to_default_SNMP_configuration[Learn More]. 
 
 
 |===

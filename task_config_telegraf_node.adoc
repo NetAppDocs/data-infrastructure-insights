@@ -6,16 +6,15 @@ summary: Flink data collector configuration
 ---
 
 = Node Data Collection
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Cloud Insights gathers metrics from the node on which you install an agent.
+Data Infrastructure Insights gathers metrics from the node on which you install an agent.
 
 == Installation
 

@@ -6,9 +6,8 @@ summary: Insights give you a look into resource usage and trending.
 ---
 
 = Insights
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -23,20 +22,20 @@ A number of Insights are available. Navigate to *Dashboards > Insights* to start
 
 === Shared Resources Under Stress
 
-High-impact workloads can reduce the performance of other workloads in a shared resource. This puts the shared resource under stress. Cloud Insights provides tools to help you investigate resource saturation and impact in your environment. link:insights_shared_resources_under_stress.html[Learn More]
+High-impact workloads can reduce the performance of other workloads in a shared resource. This puts the shared resource under stress. Data Infrastructure Insights provides tools to help you investigate resource saturation and impact on your tenant. link:insights_shared_resources_under_stress.html[Learn More]
 
-//NOTE: This is a _Preview_ feature and may change over time as improvements are made. link:/concept_preview_features.html[Learn more] about Cloud Insights Preview features.
+//NOTE: This is a _Preview_ feature and may change over time as improvements are made. link:/concept_preview_features.html[Learn more] about Data Infrastructure Insights Preview features.
 
 
 === Kubernetes Namespaces Running Out of Space
 
 The Kubernetes Namespaces Running Out of Space Insight gives you a view into workloads on your Kubernetes namespaces that are at risk of running out of space, with an estimate for the number of days remaining before each space becomes full. link:insights_k8s_namespaces_running_out_of_space.html[Learn More]
 
-//NOTE: This is a _Preview_ feature and may change over time as improvements are made. link:/concept_preview_features.html[Learn more] about Cloud Insights Preview features.
+//NOTE: This is a _Preview_ feature and may change over time as improvements are made. link:/concept_preview_features.html[Learn more] about Data Infrastructure Insights Preview features.
 
 === Reclaim ONTAP Cold Storage
 
 The _Reclaim ONTAP Cold Storage_ Insight provides data about cold capacity, potential cost/power savings and recommended action items for volumes on ONTAP systems. link:insights_reclaim_ontap_cold_storage.html[Learn More]
 
-NOTE: This is a _Preview_ feature and may change over time as improvements are made. link:/concept_preview_features.html[Learn more] about Cloud Insights Preview features.
+NOTE: This is a _Preview_ feature and may change over time as improvements are made. link:/concept_preview_features.html[Learn more] about Data Infrastructure Insights Preview features.
 

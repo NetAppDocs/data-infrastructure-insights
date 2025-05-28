@@ -6,23 +6,22 @@ summary: The Log Explorer is a powerful tool for investigating issues through di
 ---
 
 = Log Explorer
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-The Cloud Insights Log Explorer is a powerful tool for querying system logs. In addition to helping with investigations, you can also save a log query in a Monitor to provide alerts when those particular log triggers are activated.
+The Data Infrastructure Insights Log Explorer is a powerful tool for querying system logs. In addition to helping with investigations, you can also save a log query in a Monitor to provide alerts when those particular log triggers are activated.
 
 To begin exploring logs, click *Log Queries > +New Log Query*.
 
 //image:LogExplorerMenu.png[Log queries menu, 480]
 
 Select an available log from the list. 
-//This list may vary based on your current Cloud Insights environment configuration.
+//This list may vary based on your current Data Infrastructure Insights environment configuration.
 
 image:LogExplorer_2022.png[Choose your log]
 
@@ -30,7 +29,7 @@ NOTE: The types of logs available for querying may vary based on your environmen
 
 You can set filters to further refine the results of the query. For example, to find all log messages showing a failure, set a filter for _Messages_ containing the word "failed".   
 
-TIP: You can begin typing the desired text in the filter field; Cloud Insights will prompt you to create a wildcard search containing the string as you type.
+TIP: You can begin typing the desired text in the filter field; Data Infrastructure Insights will prompt you to create a wildcard search containing the string as you type.
 
 The results are displayed in a graph showing the number of log instances in each time period shown. Below the graph are the log entries temselves. The graph and the entries refresh automatically based on the selected time range.
 
@@ -68,7 +67,7 @@ Note that in the case above, since both "cm-monitoring" and "eg-monitoring" cont
 
 2. The results of the current filter, including any "Filter By" values AND the Advanced Query filter, are displayed in the results list. The list can be sorted by any displayed columns. To display additional columns, select the "gear" icon.
 
-3. The graph has been zoomed in to show only log results that occurred within a specific time frame. The time range shown here reflects the current zoom level. Select the _Reset Zoom_ button to set the zoom level back to the current Cloud Insights time range.
+3. The graph has been zoomed in to show only log results that occurred within a specific time frame. The time range shown here reflects the current zoom level. Select the _Reset Zoom_ button to set the zoom level back to the current Data Infrastructure Insights time range.
 
 4. The chart results have been Grouped By the _source_ field. The chart shows results in each column grouped into colors. Hovering over a column in the chart will display some details about the specific entries.
 +
@@ -138,6 +137,8 @@ Note that when zooming the graph or scrolling the table, dashboard auto-refresh 
 Clicking anywhere in a log entry in the list will open a detail pane for that entry.  Here you can explore more information about the event. 
 
 Click on "Add Filter" to add the selected field to the current filter. The log entry list will update based on the new filter.
+
+Note that some fields cannot be added as filters; in those cases, the _Add Filter_ icon is not available.
 
 image:LogExplorer_DetailPane.png[Log Entry Detail Pane]
 

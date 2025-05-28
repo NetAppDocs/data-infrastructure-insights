@@ -6,21 +6,20 @@ summary: A summary.
 ---
 
 = Managing configured data collectors
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-The Installed Data Collectors page provides access to the data collectors that have been configured for Cloud Insights. You can use this page to modify existing data collectors.   
+The Installed Data Collectors page provides access to the data collectors that have been configured for Data Infrastructure Insights. You can use this page to modify existing data collectors.   
 
 
 .Steps
 
-. In the Cloud Insights menu, click *Observability > Collectors*
+. In the Data Infrastructure Insights menu, click *Observability > Collectors*
 +
 The Available Data Collectors screen is displayed. 
 . Click *Installed Data Collectors* 
@@ -41,7 +40,7 @@ three, or five days while you work on a problem.
 
 .Steps
 
-. In the Cloud Insights menu, click *Observability > Collectors*
+. In the Data Infrastructure Insights menu, click *Observability > Collectors*
 . Click *Installed Data Collectors*
 . Select the check box to the left of the Data Collector you want to change 
 . Click *Bulk Actions* and select the polling action you want to take. 
@@ -55,7 +54,7 @@ You can edit existing data collector setup information.
 
 .To edit a single data collector:
 
-. In the Cloud Insights menu, click *Observability > Collectors* to open the list of installed Data Collectors.
+. In the Data Infrastructure Insights menu, click *Observability > Collectors* to open the list of installed Data Collectors.
 //. Select the check box to the left of the data collector you want to change.
 . In the options menu to the right of the data collector you want to modify, click *Edit*. 
 +
@@ -83,7 +82,7 @@ instances of the same device type.
 
 .Steps
 
-. In the Cloud Insights menu, click *Observability > Collectors*.
+. In the Data Infrastructure Insights menu, click *Observability > Collectors*.
 . Click *Installed Data Collectors*.
 . Click the check box to the left of the data collector you want to copy. 
 . In the options menu to the right of the selected data collector, click *Clone*. 
@@ -102,7 +101,7 @@ You can simultaneously edit some information for multiple data collectors. This 
 
 .Steps
 
-. In the Cloud Insights menu, click *Observability > Collectors*
+. In the Data Infrastructure Insights menu, click *Observability > Collectors*
 . Click *Installed Data Collectors*
 . Click the check box to the left of the data collectors you want to modify. 
 . In the options menu to the right, click the option you want to perform. 

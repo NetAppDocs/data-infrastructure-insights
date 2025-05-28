@@ -5,24 +5,23 @@ keywords: data collector, Oracle, ZFS, storage applicance
 summary: Configuring Oracle ZFS data collector.
 ---
 = Oracle ZFS Storage Appliance data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead] 
-Cloud Insights uses the Oracle ZFS Storage Appliance data collector to gather inventory and performance data.   
+Data Infrastructure Insights uses the Oracle ZFS Storage Appliance data collector to gather inventory and performance data.   
 
 == Terminology
 
-Cloud Insights acquires inventory information with the Oracle ZFS data collector. For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires inventory information with the Oracle ZFS data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term | Cloud Insights Term
+|Vendor/Model Term | Data Infrastructure Insights Term
 |Disk (SSD)|Disk
 |Cluster|Storage
 |Controller|Storage Node
@@ -42,14 +41,14 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Required Performance metrics
 
-Oracle ZFS appliances give storage administators large amounts of flexibility to capture performance statistics. Cloud Insights expects you to have _each_ controller in a high availability pair configured to capture the following metrics: 
+Oracle ZFS appliances give storage administators large amounts of flexibility to capture performance statistics. Data Infrastructure Insights expects you to have _each_ controller in a high availability pair configured to capture the following metrics: 
 
 * smb2.ops[share] 
 * nfs3.ops[share]
 * nfs4.ops[share]
 * nfs4-1.ops[share]
 
-Failure to have the controller capture any or all of these will likely result in Cloud Insights not having, or underreporting, the workload on the "Internal Volumes".
+Failure to have the controller capture any or all of these will likely result in Data Infrastructure Insights not having, or underreporting, the workload on the "Internal Volumes".
  
 == Configuration
 
@@ -84,6 +83,8 @@ Some things to try if you encounter problems with this data collector:
 |Problem:|Try this:
 |"Invalid login credentials" 
 |validate Zfs user account and password 
+|"Request failed with status 404 \https://.....:215/api/access/v1" 
+|Your ZFS array may be too old to have REST API support. AK 2013.1.3.0 was the first REST API-capable ZFS OS release, and not all ZFS appliances can be upgraded to it. 
 |"Configuration error" with error message “REST Service is disabled”
 |Verify REST service is enabled on this device.
 |"Configuration error " with error message “User unauthorized for command”

@@ -6,9 +6,8 @@ summary:
 ---
 
 = Setting options in the Preferences tab
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:

@@ -6,16 +6,15 @@ summary: Configuring Amazon EC2 data collector.
 ---
 
 = Configuring the Amazon EC2 data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Cloud Insights uses the Amazon EC2 data collector to acquire inventory and performance data from EC2 instances. 
+Data Infrastructure Insights uses the Amazon EC2 data collector to acquire inventory and performance data from EC2 instances. 
 
 
 == Requirements
@@ -43,7 +42,7 @@ Enter data into the data collector fields according to the table below:
 |IAM Role|For use only when acquired on an AU in AWS. See below for more information on <<iam-role,IAM Role>>.
 |AWS IAM Access Key ID|Enter AWS IAM Access Key ID. Required if you do not use IAM Role.
 |AWS IAM Secret Access Key|Enter AWS IAM Secret Access Key. Required if you do not use IAM Role.
-|I understand AWS bills me for API requests|Check this to verify your understanding that AWS bills you for API requests made by Cloud Insights polling.
+|I understand AWS bills me for API requests|Check this to verify your understanding that AWS bills you for API requests made by Data Infrastructure Insights polling.
 |===
 
 == Advanced Configuration
@@ -57,10 +56,10 @@ Enter data into the data collector fields according to the table below:
 |Choose 'Exclude' or 'Include' to Apply to Filter VMs by Tags|Specify whether to include or exclude VM's by Tags when collecting data. If ‘Include’ is selected, the Tag Key field can not be empty.
 |Tag Keys and Values on which to Filter VMs|Click *+ Filter Tag* to choose which VMs (and associated disks) to include/exclude by filtering for keys and values that match keys and values of tags on the VM. Tag Key is required, Tag Value is optional. When Tag Value is empty, the VM is filtered as long as it matches the Tag Key.
 //|HTTP connection and socket timeout (sec)|The default is 300
-//|Include AWS tags|Check to enable support for AWS tags in Cloud Insights annotations.
+//|Include AWS tags|Check to enable support for AWS tags in Data Infrastructure Insights annotations.
 |Performance Poll Interval (sec)|The default is 1800
 |CloudWatch Agent Metrics Namespace
-|Namespace in EC2/EBS from which to collect data. Note that if the names of the default metrics in this namespace are changed, Cloud Insights may not be able to collect that renamed data. It is recommended to leave the default metric names.
+|Namespace in EC2/EBS from which to collect data. Note that if the names of the default metrics in this namespace are changed, Data Infrastructure Insights may not be able to collect that renamed data. It is recommended to leave the default metric names.
 
 |===
 
@@ -85,11 +84,11 @@ For more information see the Amazon documentaiton on link:https://docs.aws.amazo
 
 Note: IAM role can be used only when the Acquisition Unit is running in an AWS instance.
 
-== Mapping Amazon tags to Cloud Insights annotations
+== Mapping Amazon tags to Data Infrastructure Insights annotations
 
-The Amazon EC2 data collector includes an option that allows you to populate Cloud Insights annotations with tags configured on EC2. The annotations must be named exactly as the EC2 tags. Cloud Insights will always populate same-named text-type annotations, and will make a "best attempt" to populate annotations of other types (number, boolean, etc). If your annotation is of a different type and the data collector fails to populate it, it may be necessary to remove the annotation and re-create it as a text type.
+The Amazon EC2 data collector includes an option that allows you to populate Data Infrastructure Insights annotations with tags configured on EC2. The annotations must be named exactly as the EC2 tags. Data Infrastructure Insights will always populate same-named text-type annotations, and will make a "best attempt" to populate annotations of other types (number, boolean, etc). If your annotation is of a different type and the data collector fails to populate it, it may be necessary to remove the annotation and re-create it as a text type.
 
-Note that AWS is case-sensitive, while Cloud Insights is case-insensitive. So if you create an annotation named "OWNER" in Cloud Insights, and tags named "OWNER", "Owner", and "owner" in EC2, all of the EC2 variations of "owner" will map to Cloud Insight's "OWNER" annotation. 
+Note that AWS is case-sensitive, while Data Infrastructure Insights is case-insensitive. So if you create an annotation named "OWNER" in Data Infrastructure Insights, and tags named "OWNER", "Owner", and "owner" in EC2, all of the EC2 variations of "owner" will map to Cloud Insight's "OWNER" annotation. 
 
 ////
 .Related Information
@@ -104,16 +103,16 @@ If the *Include extra regions* field is empty, the data collector will collect o
 
 == Collecting from AWS Child Accounts
 
-Cloud Insights supports collection of child accounts for AWS within a single AWS data collector. Configuration for this collection is performed in the AWS environment:
+Data Infrastructure Insights supports collection of child accounts for AWS within a single AWS data collector. Configuration for this collection is performed in the AWS environment:
 
 * You must configure each child account to have an AWS Role that allows the main account ID to access EC2 details from the children account. 
 * Each child account must have the role name configured as the same string. 
-* Enter this role name string into the Cloud Insights AWS Data Collector *Advanced Configuration* section, in the *Cross account role* field.
+* Enter this role name string into the Data Infrastructure Insights AWS Data Collector *Advanced Configuration* section, in the *Cross account role* field.
 * The account where the collector is installed needs to have _delegate access administrator_ privileges.  See the link:https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-delegated-admin.html[AWS Documentation] for more information. 
 
 Best Practice: It is highly recommended to assign the AWS predefined _AmazonEC2ReadOnlyAccess_ policy to the EC2 main account. Also, the user configured in the data source should have at least the predefined _AWSOrganizationsReadOnlyAccess_ policy assigned, in order to query AWS. 
 
-Please see the following for information on configuring your environment to allow Cloud Insights to collect from AWS child accounts:
+Please see the following for information on configuring your environment to allow Data Infrastructure Insights to collect from AWS child accounts:
 
 link:https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html[Tutorial: Delegate Access Across AWS Accounts Using IAM Roles]
 

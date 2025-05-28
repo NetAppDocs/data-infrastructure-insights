@@ -6,9 +6,8 @@ summary: Configuring DELL EMC RecoverPoint data collector.
 ---
 
 = Dell EMC RecoverPoint data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -20,7 +19,7 @@ The EMC RecoverPoint data collector's primary use case is to discover volume-to-
 For configuration, the data collector requires the IP address of the storage processors and a read-only user name and password.
 
 
-The EMC RecoverPoint data collector gathers the volume-to-volume replication relationships that RecoverPoint coordinates across other storage arrays. Cloud Insights shows a storage array for each RecoverPoint cluster, and collects inventory data for nodes and storage ports on that cluster. No storage pool or volume data is collected. 
+The EMC RecoverPoint data collector gathers the volume-to-volume replication relationships that RecoverPoint coordinates across other storage arrays. Data Infrastructure Insights shows a storage array for each RecoverPoint cluster, and collects inventory data for nodes and storage ports on that cluster. No storage pool or volume data is collected. 
 
 == Requirements
 

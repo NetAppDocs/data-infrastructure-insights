@@ -6,9 +6,8 @@ summary: Using a script, you can simulate a Ransomware attack for testing or dem
 ---
 
 = Workload Security: Simulating an Attack 
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -17,7 +16,7 @@ summary: Using a script, you can simulate a Ransomware attack for testing or dem
 [.lead]
 You can use the instructions on this page to simulate an attack for testing or demonstrating Workload Security using the included Ransomware Simulation script.
 
-NOTE: Workload Security is not available in Cloud Insights Federal Edition.
+
  
 == Things to note before you begin
 

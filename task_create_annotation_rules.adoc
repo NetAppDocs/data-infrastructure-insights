@@ -6,23 +6,22 @@ keywords: annotate, annotation, rules
 ---
 
 = Creating annotation rules
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-You can use annotation rules to automatically apply annotations to multiple assets based on criteria that you define. Cloud Insights assigns the annotations to assets based on these rules. Annotations set manually on an individual asset pages take precedence over rule-based annotations when Cloud Insight evaluates the annotation rules.
+You can use annotation rules to automatically apply annotations to multiple assets based on criteria that you define. Data Infrastructure Insights assigns the annotations to assets based on these rules. Annotations set manually on an individual asset pages take precedence over rule-based annotations when Cloud Insight evaluates the annotation rules.
 
 .Before you begin
 You must have created a query for the annotation rule.
 
 .Steps
 
-. In the Cloud Insights menu click *Manage > Annotation rules*.
+. In the Data Infrastructure Insights menu click *Manage > Annotation rules*.
 . Click *+ Rule* to add a new annotation rule.
 +
 The Add Rule dialog is displayed.
@@ -30,7 +29,7 @@ The Add Rule dialog is displayed.
 .. In the *Name* box, enter a unique name that describes the rule.
 +
 The name appears in the Annotation Rules page.
-.. Click *Query* and select the query that Cloud Insights uses to identify the assets the annotation applies to.
+.. Click *Query* and select the query that Data Infrastructure Insights uses to identify the assets the annotation applies to.
 .. Click *Annotation* and select the annotation you want to apply.
 .. Click *Value* and select a value for the annotation.
 +
@@ -38,14 +37,14 @@ For example, if you choose Birthday as the annotation, you specify a date for th
 .. Click *Save*
 .. Click *Run all rules* if you want to run all the rules immediately; otherwise, the rules are run at a regularly scheduled interval.
 +
-NOTE: In a large Cloud Insights environment, you may notice that running annotation rules seems to take a while to complete. This is because the indexer runs first and must complete prior to running the rules. The indexer is what gives Cloud Insights the ability to search or filter for new or updated objects and counters in your data. The rules engine waits until the indexer completes its update before applying the rules.
+NOTE: In a large Data Infrastructure Insights environment, you may notice that running annotation rules seems to take a while to complete. This is because the indexer runs first and must complete prior to running the rules. The indexer is what gives Data Infrastructure Insights the ability to search or filter for new or updated objects and counters in your data. The rules engine waits until the indexer completes its update before applying the rules.
 
 == Modifying annotation rules
 
 You can modify an annotation rule to change the rule's name, its annotation, the annotation's value, or the query associated with the rule.
 
 .Steps
-. In the Cloud Insights menu, Click *Manage > Annotation rules*.
+. In the Data Infrastructure Insights menu, Click *Manage > Annotation rules*.
 +
 The Annotation Rules page displays the list of existing annotation rules.
 . Locate the Annotation Rule you want to modify.
@@ -72,7 +71,7 @@ Note that when running multiple rules that update the same annotation on an asse
 You might want to delete annotation rules that are no longer used.
 
 .Steps
-. In the Cloud Insights menu, Click *Manage > Annotation rules*.
+. In the Data Infrastructure Insights menu, Click *Manage > Annotation rules*.
 +
 The Annotation Rules page displays the list of existing annotation rules.
 . Locate the Annotation Rule you want to delete.

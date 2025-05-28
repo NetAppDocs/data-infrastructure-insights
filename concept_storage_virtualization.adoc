@@ -1,20 +1,19 @@
 ---
 sidebar: sidebar
 permalink: concept_storage_virtualization.html
-summary: Cloud Insights can provide views into both front-end and back-end virtualized storage.
+summary: Data Infrastructure Insights can provide views into both front-end and back-end virtualized storage.
 keywords: storage, virtual, virtualized, virtualization,  
 ---
 = Storage Virtualization 
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Cloud Insights can differentiate between a storage array having local storage or virtualization of other storage arrays. This gives you the ability to relate cost and distinguish performance from the front-end all the way to the back-end of your infrastructure.
+Data Infrastructure Insights can differentiate between a storage array having local storage or virtualization of other storage arrays. This gives you the ability to relate cost and distinguish performance from the front-end all the way to the back-end of your infrastructure.
 
 === Virtualization in a Table Widget
 
@@ -22,7 +21,7 @@ One of the easiest ways to begin looking at your storage virtualization is to cr
 
 image:StorageVirtualization_TableWidgetSettings.png[Basic query to show storage virtualizedTypes]
 
-The resulting table widget shows you the _Standard_, _Backend_, and _Virtual_ storages in your environment. 
+The resulting table widget shows you the _Standard_, _Backend_, and _Virtual_ storages on your tenant. 
 
 image:StorageVirtualization_TableWidgetShowingVirtualizedTypes.png[Table showing virtualized types]
 
@@ -36,7 +35,7 @@ image:StorageVirtualization_StorageSummary.png[Storage Landing Page showing Virt
 
 === Existing landing pages and dashboards 
 
-Be aware that if you currently have customized landing pages or dashboards in your environment, these will not automatically show all virtualization information by default. However, you can _Revert to Default_ any customized dashboard or landing page (you will have to re-implement your customizations), or modify the relevant widgets to include the desired virtualization attributes or metrics.
+Be aware that if you currently have customized landing pages or dashboards on your tenant, these will not automatically show all virtualization information by default. However, you can _Revert to Default_ any customized dashboard or landing page (you will have to re-implement your customizations), or modify the relevant widgets to include the desired virtualization attributes or metrics.
 
 _Revert to Default_ is available in the upper-right corner of a custom dashboard or landing page screen.
 

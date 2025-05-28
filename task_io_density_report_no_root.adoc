@@ -6,9 +6,8 @@ keywords: NetApp, root volume, high I/O,
 ---
 
 = Ensuring IO density reports describe only internal data volumes
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -27,13 +26,13 @@ This guide describes how to easily identify the NetApp root aggregates, isolate 
 
 The steps in this guide can also be applied to other vendor's storage systems. You will need to identify the volumes that contain directories and configuration files for managing the storage system and use similar steps to exclude these volumes.
 
-== Creating a query to identify NetApp root aggregates in your environment
+== Creating a query to identify NetApp root aggregates
 
-Queries provide search at a granular level, based on user-selected criteria. Using a query allows you to search for Internal volumes in your environment that contain the NetApp root aggregate.
+Queries provide search at a granular level, based on user-selected criteria. Using a query allows you to search for Internal volumes on your tenant that contain the NetApp root aggregate.
 
 .Steps
 
-. Create a query to identify NetApp root aggregates in your environment: Click *Queries > New Query > Select Resource Type* (?)
+. Create a query to identify NetApp root aggregates on your tenant: Click *Queries > New Query > Select Resource Type* (?)
 . Click *storage Pool*
 . Enter the name for the root aggregate
 +
@@ -42,14 +41,14 @@ This example uses "aggr0" for the name. When creating an aggregate, only the fol
 .. It must begin with either a letter or an underscore (_).
 .. It can contain only letters, digits, and underscores.
 .. It can be 250 characters or less.
-In most cases, the aggregate is name aggr0, aggr_0, or something similar. It might require an iterative process to identify all of the NetApp root aggregates in your environment.
+In most cases, the aggregate is name aggr0, aggr_0, or something similar. It might require an iterative process to identify all of the NetApp root aggregates on your tenant.
 . Click *Save* and enter a name for the new query.
 +
 As mentioned before, this might be an iterative process and require multiple queries to identify all of the NetApp root aggregates.
 
 == Create an annotation for the root volumes returned by your queries
 
-Annotations are specialized notes that you assign to your assets, allowing you to filter assets by their annotations. The annotation you create will be used to identify the NetApp root aggregates in your environment and ensure that they are not included in a specific report.
+Annotations are specialized notes that you assign to your assets, allowing you to filter assets by their annotations. The annotation you create will be used to identify the NetApp root aggregates on your tenant and ensure that they are not included in a specific report.
 
 .Before you begin
 
@@ -57,7 +56,7 @@ You must have identified all of the root aggregates you want to exclude from the
 
 .Steps
 
-. In the Cloud Insights menu, click *Manage > Annotations*
+. In the Data Infrastructure Insights menu, click *Manage > Annotations*
 . Click *Add*
 .. Enter the name for the annotation: *RootAggr*
 .. Enter a description of the annotation: *Remove root aggregate from "High I/O Density" report*
@@ -69,11 +68,11 @@ You must have identified all of the root aggregates you want to exclude from the
 As an alternative to manually applying annotations to individual assets, you can automatically apply annotations to multiple assets using annotation rules. Annotation rules are based on queries you create and when run on the system they add new assets to existing sets of assets. When these sets of assets are excluded from a report the new assets are automatically excluded too.
 
 .Before you begin
-You must have created and saved a query that identifies the NetApp root aggregates you identified in your environment.
+You must have created and saved a query that identifies the NetApp root aggregates you identified on your tenant.
 
 .Steps
 
-. In the Cloud Insights toolbar, Click *Manage > Annotation rules*.
+. In the Data Infrastructure Insights toolbar, Click *Manage > Annotation rules*.
 . Click *Add*. The Add Rule dialog displays.
 
 .. In the Name box, enter a unique name that describes the rule: *"RootAggrExclude"*

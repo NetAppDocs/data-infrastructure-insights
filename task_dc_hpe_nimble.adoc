@@ -6,9 +6,8 @@ summary: Configuring the HP Enterprise Alletra 6000 (formerly Nimble) data colle
 ---
 
 = HPE Alletra 6000 data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -19,11 +18,11 @@ The HP Enterprise Alletra 6000 (previously Nimble) data collector supports inven
 
 == Terminology 
 
-Cloud Insights acquires the following inventory information from this collector. For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires the following inventory information from this collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term|Cloud Insights Term 
+|Vendor/Model Term|Data Infrastructure Insights Term 
 |Array|Storage
 |Disk|Disk
 |Volume|Volume
@@ -47,7 +46,7 @@ You must have the following in order to collect inventory and configuration data
 You must have the following in order to collect performance data from the storage array:
 
 * The array must be running NimbleOS 4.0.0 or later
-* The array must have volumes configured. The only performance API NimbleOS has is for volumes, and any statistics Cloud Insights reports are derived from the statistics on volumes
+* The array must have volumes configured. The only performance API NimbleOS has is for volumes, and any statistics Data Infrastructure Insights reports are derived from the statistics on volumes
 
 == Configuration
 

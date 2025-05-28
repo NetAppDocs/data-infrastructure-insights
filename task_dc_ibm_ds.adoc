@@ -6,9 +6,8 @@ summary: Configuring System Storage DS8000 Series data collector.
 ---
 
 = IBM System Storage DS8000 Series data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -17,16 +16,16 @@ summary: Configuring System Storage DS8000 Series data collector.
 [.lead]
 The IBM DS (CLI) data collector supports inventory and performance data acquisition for DS6xxx and DS8xxx devices.
 
-DS3xxx, DS4xxx, and DS5xxx devices are supported by the link:task_dc_na_eseries.html[NetApp E-Series data collector]. You should refer to the Cloud Insights support matrix for supported models and firmware versions.
+DS3xxx, DS4xxx, and DS5xxx devices are supported by the link:task_dc_na_eseries.html[NetApp E-Series data collector]. You should refer to the Data Infrastructure Insights support matrix for supported models and firmware versions.
 
 == Terminology
 
-Cloud Insights acquires the following inventory information from the IBM DS data collector. For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires the following inventory information from the IBM DS data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term|Cloud Insights Term 
+|Vendor/Model Term|Data Infrastructure Insights Term 
 |Disk Drive Module|Disk
 |Storage Image|Storage
 |Extent Pool|Storage Node
@@ -42,7 +41,7 @@ You need the following to configure this data collector:
 
 * IP address of each DS array
 * Read-only username and password on each DS array
-* Third-party software installed on the Cloud Insights AU: IBM _dscli_
+* Third-party software installed on the Data Infrastructure Insights AU: IBM _dscli_
 * Access validation: Run _dscli_ commands using the username and password
 * Port requirements: 80, 443, & 1750 
 
@@ -85,7 +84,7 @@ Some things to try if you encounter problems with this data collector:
 |Error:
 * Cannot run program
 * Error executing command
-|* From Cloud Insights Acquisition Unit Open a CMD
+|* From Data Infrastructure Insights Acquisition Unit Open a CMD
 * Open CLI.CFG file in CLI's home dir/lib and check property JAVA_INSTALL, edit the value to match your environment
 * Display Java version installed on this machine, typing: "java -version"
 * Ping the IP address of the IBM Storage device specified in CLI command issued.

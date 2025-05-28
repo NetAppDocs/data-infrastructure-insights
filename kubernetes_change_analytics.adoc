@@ -6,9 +6,8 @@ summary: Tracking Kubernetes changes is easier than ever.
 ---
 
 = Kubernetes Change Analytics
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -26,11 +25,11 @@ To view Kubernetes Change Analytics, navigate to *Kubernetes > Change Analysis*.
 
 image:ChangeAnalytitcs_Main_Screen.png[Kubernetes Change Analytics main screen, showing warning and critical alerts, successful and failed deployments, and the top 3 workloads triggering alerts].
 
-The page automatically refreshes based on the currently-selected Cloud Insights time range.  Smaller time ranges mean more frequent screen refreshing.
+The page automatically refreshes based on the currently-selected Data Infrastructure Insights time range.  Smaller time ranges mean more frequent screen refreshing.
 
 == Filtering
 
-As with all features of Cloud Insights, filtering the change list is intuitive: at the top of the page, enter or select values for your Kubernetes Cluster, Namespace, or Workload, or add your own filters by selecting the {+] button.
+As with all features of Data Infrastructure Insights, filtering the change list is intuitive: at the top of the page, enter or select values for your Kubernetes Cluster, Namespace, or Workload, or add your own filters by selecting the {+] button.
 
 When you filter down to a specific Cluster, Namespace, and Workload (along with any other filters you set), you are shown a timeline of deployments and alerts for that workload in that namespace on that cluster. Zoom in further by clicking and dragging in the graph to focus on a more specific time range.
 

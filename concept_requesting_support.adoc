@@ -6,9 +6,8 @@ keywords: support, knowledgebase, documentation, community, chat, videos, help, 
 ---
 
 = Requesting Support
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -16,23 +15,20 @@ keywords: support, knowledgebase, documentation, community, chat, videos, help, 
 
 [.lead]
 
-toc::[] 
+toc:[] 
 
-You can access support options in Cloud Insights by clicking on *Help > Support*. The support options available to you depend on your Cloud Insights Edition.
+You can access support options in Data Infrastructure Insights by clicking on *Help > Support*. The support options available to you depend on your Data Infrastructure Insights Edition.
 
-NOTE: The Live Chat support option is not available in Cloud Insights Federal Edition.
 
-//image:SupportPageExample.png[Support Page]
-//image:SupportPageExample-NA.png[Support page]
 image:SupportPageWithLearningCenter.png[Support page]
 
 == Activating support entitlement
 
-//Once you have access to Cloud Insights Service shortly after subscribing in the AWS marketplace, it is strongly recommended that you activate support entitlement. Activating support entitlement enables you to access technical support over online chat, web ticketing system, and phone. The default support level is self-service until registration is completed.
 
-Cloud Insights offers self-service and email support when running in trial mode. Once you have subscribed to the service, it is strongly recommended that you activate support entitlement. Activating support entitlement enables you to access technical support over the online chat, the web ticketing system, and the phone. The default support mode is self-service until registration is completed. See <<obtaining-support-information,details>> below.
 
-During the initial subscription process, your Cloud Insights instance will generate a 20-digit NetApp serial number starting with "950". This NetApp serial number represents the Cloud Insights subscription associated with your account. You must register the NetApp serial number to activate support entitlement. We offer two options for support registration: 
+Data Infrastructure Insights offers self-service and email support when running in trial mode. Once you have subscribed to the service, it is strongly recommended that you activate support entitlement. Activating support entitlement enables you to access technical support over the online chat, the web ticketing system, and the phone. The default support mode is self-service until registration is completed. See <<obtaining-support-information,details>> below.
+
+During the initial subscription process, your Data Infrastructure Insights instance will generate a 20-digit NetApp serial number starting with "950". This NetApp serial number represents the Data Infrastructure Insights subscription associated with your account. You must register the NetApp serial number to activate support entitlement. We offer two options for support registration: 
 
 . User with pre-existing NetApp Support Site (NSS) SSO account (e.g. current NetApp customer)
 . New NetApp customer with no pre-existing NetApp Support Site (NSS) SSO account 
@@ -43,7 +39,7 @@ During the initial subscription process, your Cloud Insights instance will gener
 
 . Navigate to the NetApp registration website https://register.netapp.com
 
-. Select “I am already registered as NetApp Customer” and choose _Cloud Insights_ as the Product Line. Select your Billing Provider (NetApp or AWS) and provide your Serial Number and your NetApp Subscription Name or AWS Customer ID by referring to the “Help > Support” menu within the Cloud Insights user interface:
+. Select “I am already registered as NetApp Customer” and choose _Data Infrastructure Insights_ as the Product Line. Select your Billing Provider (NetApp or AWS) and provide your Serial Number and your NetApp Subscription Name or AWS Customer ID by referring to the “Help > Support” menu within the Data Infrastructure Insights user interface:
 +
 image:SupportPage_SN_Section-NA.png[SN_Screen]
 
@@ -53,7 +49,7 @@ image:ExistingCustomerRegExample.png[existing customer form]
 
 . If no errors occur, user will be directed to a “Registration Submitted Successfully” page. The email address associated with the NSS SSO username used for registration will receive an email within a couple minutes stating “your product is now eligible for support”.
 
-. This is a onetime registration for the Cloud Insights NetApp serial number. 
+. This is a onetime registration for the Data Infrastructure Insights NetApp serial number. 
 
 === Option 2: Steps for a new NetApp customer with no pre-existing NetApp Support Site (NSS) SSO account
 
@@ -65,29 +61,29 @@ image:ExistingCustomerRegExample.png[existing customer form]
 
 image:NewCustomerRegExample.png[new customer form]
 
-. Select _Cloud Insights_ as the Product Line. Select your Billing Provider (NetApp or AWS) and provide your Serial Number and your NetApp Subscription Name or AWS Customer ID by referring to the “Help > Support” menu within the Cloud Insights user interface:
+. Select _Data Infrastructure Insights_ as the Product Line. Select your Billing Provider (NetApp or AWS) and provide your Serial Number and your NetApp Subscription Name or AWS Customer ID by referring to the “Help > Support” menu within the Data Infrastructure Insights user interface:
 +
 image:SupportPage_SN_Section-NA.png[SN_Screen]
 
 . If no errors occur, user will be directed to a “Registration Submitted Successfully” page. The email address associated with the NSS SSO username used for registration will receive an email within a few hours stating “your product is now eligible for support”. 
 
-. As a new NetApp customer, you will also need to create a NetApp Support Site (NSS) user account for future registrations and access to support portal for technical support chat and web ticketing. This link is located at https://mysupport.netapp.com/eservice/public/now.do. You can provide your newly registered Cloud Insights serial number to expedite the process.
+. As a new NetApp customer, you will also need to create a NetApp Support Site (NSS) user account for future registrations and access to support portal for technical support chat and web ticketing. This link is located at https://mysupport.netapp.com/eservice/public/now.do. You can provide your newly registered Data Infrastructure Insights serial number to expedite the process.
 
-. This is a one-time registration for the Cloud Insights NetApp serial number. 
+. This is a one-time registration for the Data Infrastructure Insights NetApp serial number. 
 
 == Obtaining Support Information
 
-NetApp provides support for Cloud Insights in a variety of ways. Extensive free self-support options are available 24x7, such as knowledgebase (KB) articles or the NetApp community. For users who are subscribed to any of the Cloud Insights Editions (Basic*, Standard, Premium), technical support is available via phone or web ticketing. A NetApp Support Site (NSS) SSO account is required for web ticket along with case management.
+NetApp provides support for Data Infrastructure Insights in a variety of ways. Extensive free self-support options are available 24x7, such as knowledgebase (KB) articles or the NetApp community. For users who are subscribed* to Data Infrastructure Insights, technical support is available via phone or web ticketing. A NetApp Support Site (NSS) SSO account is required for web ticket along with case management.
 
 *Support is available with Basic Edition as long as all your NetApp storage systems are covered at least at the Premium Support level.
+
+Many NetApp offerings include Data Infrastructure Insights Basic Edition as part of the package. If you would like to upgrade to Premium Edition, contact your sales representative.
 
 === Self-Service Support:
 
 These support options are available in Trial mode and are available for free 24x7:
 
-* *https://kb.netapp.com/Special:Search?query=cloud+insights[KnowledgeBase]*
-
-// * *link:https://mysupport.netapp.com/site/search?q=cloud%20insights&offset=0&searchType=Manual&autocorrect=true&origin=CI_Suppport_KB&filter=%28content_type%3D%3D%22knowledgebase%22;product%3D%3D%22Cloud%20Insights%22%29[Knowledgebase]*
+* *https://kb.netapp.com/Cloud/BlueXP/DII[KnowledgeBase]*
 +
 Clicking the links in this section takes you to the NetApp Knowledgebase, where you can search through relevant articles, how-to's, and more.
 
@@ -98,40 +94,40 @@ Clicking on the Documentation link takes you to this documentation center.
 
 * *link:https://community.netapp.com/t5/Cloud-Insights/bd-p/CloudInsights[Community]*
 +
-Clicking on the community link takes you to the NetApp Cloud Insights community, where you can connect with peers and experts.
+Clicking on the community link takes you to the NetApp Data Infrastructure Insights community, where you can connect with peers and experts.
 
-There is also a link to provide link:mailto:ng-cloudinsights-customerfeedback@netapp.com[*Feedback*] to help us improve Cloud Insights.
+There is also a link to provide link:mailto:ng-cloudinsights-customerfeedback@netapp.com[*Feedback*] to help us improve Data Infrastructure Insights.
 
 
 === Subscription Support
 
-In addition to the self-support options above, if you have a Cloud Insights subscription or paid support for monitored NetApp products or services, you can work with a NetApp Support Engineer to resolve your problem.  
+In addition to the self-support options above, if you have a Data Infrastructure Insights subscription or paid support for monitored NetApp products or services, you can work with a NetApp Support Engineer to resolve your problem.  
 
 NOTE: You must register in order to <<activating-support-entitlement,activate support>> for NetApp Cloud products. To register, go to NetApp's link:https://register.netapp.com[Cloud Data Services Support Registration].
 
-It is highly recommended that you check the box to allow a NetApp Support Engineer access to your Cloud Insights environment during your support session. This will allow the engineer to troubleshoot the problem and help you resolve it quickly. When your issue is resolved or your support session has ended, you can un-check the box. 
+It is highly recommended that you check the box to allow a NetApp Support Engineer access to your Data Infrastructure Insights tenant during your support session. This will allow the engineer to troubleshoot the problem and help you resolve it quickly. When your issue is resolved or your support session has ended, you can un-check the box. 
 
-You can request support by any of the following methods. You must have an active Cloud Insights subscription to use these support options:
+You can request support by any of the following methods. You must have an active Data Infrastructure Insights subscription to use these support options:
 
 * link:https://www.netapp.com/us/contact-us/support.aspx[*Phone*]
 * link:https://mysupport.netapp.com/portal?_nfpb=true&_st=initialPage=true&_pageLabel=submitcase[*Support Ticket*]
-* *Chat* - You will be connected with NetApp support personnel for assistance (weekdays only). Chat is available in the *Help > Live Chat* menu option in the upper right of any Cloud Insights screen.
+* *Chat* - You will be connected with NetApp support personnel for assistance (weekdays only). Chat is available in the *Help > Live Chat* menu option in the upper right of any Data Infrastructure Insights screen.
 
 
-You can also request sales support by clicking on the link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx[*Contact Sales*] link.
+You can also request sales support by clicking on the link:https://bluexp.netapp.com/contact-cds[*Contact Sales*] link.
 
-Your Cloud Insights serial number is visible within the service from the *Help > Support* menu. If you are experiencing issues accessing the service and have registered a serial number with NetApp previously, you can also view your list of Cloud Insights serial numbers from the NetApp Support Site as follows:
+Your Data Infrastructure Insights serial number is visible within the service from the *Help > Support* menu. If you are experiencing issues accessing the service and have registered a serial number with NetApp previously, you can also view your list of Data Infrastructure Insights serial numbers from the NetApp Support Site as follows:
 
 *	Login to mysupport.netapp.com
-*	From the Products > My Products menu tab, use Product Family “SaaS Cloud Insights” to locate all your registered serial numbers:
+*	From the Products > My Products menu tab, use Product Family “SaaS Data Infrastructure Insights” to locate all your registered serial numbers:
 
 image:Support_View_SN.png[View Support SN]
 
-== Cloud Insights Data Collector Support Matrix
+== Data Infrastructure Insights Data Collector Support Matrix
 
-You can view or download information and details about supported Data Collectors in the link:reference_data_collector_support_matrix.html[*Cloud Insights Data Collector Support Matrix*, role="external"].
+You can view or download information and details about supported Data Collectors in the link:reference_data_collector_support_matrix.html[*Data Infrastructure Insights Data Collector Support Matrix*, role="external"].
 
 === Learning Center
 
-Regardless of your subscription, *Help > Support* links to several NetApp University course offerings to help you get the most out of Cloud Insights. Check them out!
+Regardless of your subscription, *Help > Support* links to several NetApp University course offerings to help you get the most out of Data Infrastructure Insights. Check them out!
 

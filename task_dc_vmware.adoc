@@ -6,24 +6,23 @@ summary: Configuring VMware  data collector.
 ---
 
 = Configuring the VMware VSphere data collector 
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-The data collector for VMware vSphere collects ESX Host information and requires read-only privileges on all objects within the Virtual Center. 
+The data collector for VMware vSphere collects VM guest and ESXi Host performance and configuration information and requires read-only privileges on all objects within vSphere. As of August 2024, the vSphere collector additionally brings in log messages from vSphere environments, and some VMware specific metrics. Please note that Data Infrastructure Insights can only retrieve VMware logs information from vSphere 8.0.1 or higher environments. Similarly, the Vendor Specific Metrics is only supported for vSphere 7+ environments. As such, you may want to disable the logs and/or Vendor Specific Metrics checkbox on a given collector if it is pointed at an older vSphere instance. 
 
 == Terminology
 
-Cloud Insights acquires the following inventory information from the VMware vSphere data collector. For each asset type acquired, the most common terminology used for the asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires the following inventory information from the VMware vSphere data collector. For each asset type acquired, the most common terminology used for the asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term | Cloud Insights Term
+|Vendor/Model Term | Data Infrastructure Insights Term
 |Virtual disk|Disk
 |Host|Host
 |Virtual machine|Virtual machine
@@ -86,25 +85,25 @@ The following fields can be configured:
 //|Tag Keys and Values on which to Filter VMs|Click *+ Filter Tag* to choose which VMs (and associated disks) to include/exclude by filtering for keys and values that match keys and values of tags on the VM. Tag Key is required, Tag Value is optional. When Tag Value is empty, the VM is filtered as long as it matches the Tag Key.
 //Tag filtering is only available in VSphere 6.0 Beta or later.
 
-|Filter Device List...|This list must consist of exact string matches - if you intend to filter by ESX_HOST, you must build a comma delimited list of the exact "names" of your ESX hosts as reported in both Cloud Insights and vSphere. These "names" may be either IP addresses, simple hostnames, or fully qualified domain names (FQDNs) - this is determined by how these hosts were named when they were originally added to vSphere.
+|Filter Device List...|This list must consist of exact string matches - if you intend to filter by ESX_HOST, you must build a comma delimited list of the exact "names" of your ESX hosts as reported in both Data Infrastructure Insights and vSphere. These "names" may be either IP addresses, simple hostnames, or fully qualified domain names (FQDNs) - this is determined by how these hosts were named when they were originally added to vSphere.
 
-When filtering by CLUSTER, use the Cloud Insights-style cluster names as reported by CI on hypervisors - Cloud Insights prepends the vSphere cluster name with the vSphere datacenter name and a forward slash - "DC1/clusterA" is the cluster name Cloud Insights would report on a hypervisor in clusterA within data center DC1.
+When filtering by CLUSTER, use the Data Infrastructure Insights-style cluster names as reported by CI on hypervisors - Data Infrastructure Insights prepends the vSphere cluster name with the vSphere datacenter name and a forward slash - "DC1/clusterA" is the cluster name Data Infrastructure Insights would report on a hypervisor in clusterA within data center DC1.
 
 |Performance poll interval (sec)|Default is 300  
 |===
 
 
-== Mapping VMware tags to Cloud Insights annotations
+== Mapping VMware tags to Data Infrastructure Insights annotations
 
-The VMware data collector allows you to populate Cloud Insights annotations with tags configured on VMware. The annotations must be named exactly as the VMware tags. Cloud Insights will always populate same-named text-type annotations, and will make a "best attempt" to populate annotations of other types (number, boolean, etc). If your annotation is of a different type and the data collector fails to populate it, it may be necessary to remove the annotation and re-create it as a text type.
+The VMware data collector allows you to populate Data Infrastructure Insights annotations with tags configured on VMware. The DII annotation name must be identical to the VMware *category* name; the tag is then applied as an annotation value of a DII annotation of the same name as the category. Data Infrastructure Insights will always populate same-named text-type annotations, and will make a "best attempt" to populate annotations of other types (number, boolean, etc). If your annotation is of a different type and the data collector fails to populate it, it may be necessary to remove the annotation and re-create it as a text type.
 
-Note that VMware tags may be case-sensitive, while Cloud Insights tags are case-insensitive. So if you create an annotation named "OWNER" in Cloud Insights, and tags named "OWNER", "Owner", and "owner" in VMware, all of those variations of "owner" would map to Cloud Insight’s "OWNER" annotation.
+Note that VMware tags may be case-sensitive, while Data Infrastructure Insights tags are case-insensitive. So if you create an annotation named "OWNER" in Data Infrastructure Insights, and tags named "OWNER", "Owner", and "owner" in VMware, all of those variations of "owner" would map to Cloud Insight’s "OWNER" annotation.
 
 Keep the following in mind:
 
-* Cloud Insights currently only auto-publishes support information for NetApp devices.
+* Data Infrastructure Insights currently only auto-publishes support information for NetApp devices.
 * Since this support information is held in annotation form, you can query it or use it in dashboards. 
-* If a user overwrites or empties the annotation value, the value is autofilled again when Cloud Insights updates annotations, which it does once a day.
+* If a user overwrites or empties the annotation value, the value is autofilled again when Data Infrastructure Insights updates annotations, which it does once a day.
 
 
 
@@ -128,7 +127,16 @@ Some things to try if you encounter problems with this data collector:
 |Possible solutions:
 
 * Recommended: Re-generate certificate for Virtual Center by using stronger (e.g. 1024-bit) RSA key.
-* Not Recommended: Modify the JVM java.security configuration to leverage the constraint jdk.certpath.disabledAlgorithms to allow 512-bit RSA key. See JDK 7 update 40 release notes at "http://www.oracle.com/technetwork/java/javase/7u40-relnotes-2004172.html"
+* Not Recommended: Modify the JVM java.security configuration to leverage the constraint jdk.certpath.disabledAlgorithms to allow 512-bit RSA key. See link:http://www.oracle.com/technetwork/java/javase/7u40-relnotes-2004172.html[JDK 7 update 40 release notes].
+
+|I'm seeing the message: 
+
+"VMware Logs package is not supported on VMware below version 8.0.1"
+
+|Logs collection is not supported on VMware versions prior to 8.0.1. Upgrade your VI Center Infrastructure to version 8.0.1 or later if you wish to use the Logs Collections feature within Data Infrastructure Insights.
+
+For more information, see this link:https://kb.netapp.com/Cloud/BlueXP/Cloud_Insights/VMware_Logs_package_is_not_supported_on_VMware_below_version_8.0.1___Data_Infrastructure_Insights[KB Article].
+
 |===
 
 Additional information may be found from the link:concept_requesting_support.html[Support] page or in the link:reference_data_collector_support_matrix.html[Data Collector Support Matrix].

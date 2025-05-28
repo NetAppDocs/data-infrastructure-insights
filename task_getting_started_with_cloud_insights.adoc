@@ -1,26 +1,25 @@
 ---
 sidebar: sidebar
 permalink: task_getting_started_with_cloud_insights.html
-summary: Getting started with Cloud Insights.
+summary: Getting started with Data Infrastructure Insights.
 keywords: invite, roles, data collector, acquisition unit, AU
 ---
 
 = Getting started gathering data
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-After you have signed up for Cloud Insights and log in to your environment for the first time, you will be guided through the following steps in order to begin collecting and managing data. 
+After you have signed up for Data Infrastructure Insights and log in to your environment for the first time, you will be guided through the following steps in order to begin collecting and managing data. 
 
 ////
 == See How It Works
 
-The first thing you see after logging in the first time is a short video explaining how Cloud Insights collects data. 
+The first thing you see after logging in the first time is a short video explaining how Data Infrastructure Insights collects data. 
 
 When you are finished watching the video, click *Continue* to proceed to the next step.
 
@@ -29,7 +28,7 @@ When you are finished watching the video, click *Continue* to proceed to the nex
 
 Data collectors discover information from your data sources, such as storage devices, network switches, and virtual machines. The information gathered is used for analysis, validation, monitoring and troubleshooting. 
 
-Cloud Insights has available three types of data collectors:
+Data Infrastructure Insights has available three types of data collectors:
 
 * Infrastructure (storage devices, network switches, compute infrastructure)
 * Operating Systems (such as VMware or Windows)
@@ -40,7 +39,7 @@ Select your first data collector from the supported vendors and models available
 
 == Install an Acquisition Unit
 
-If you selected an _Infrastructure_ data collector, an Acquisition Unit is required to inject data into Cloud Insights. You will need to download and install the Acquisition Unit software on a server or VM on the data center from which you will be collecting. A single Acquisition Unit can be used for multiple data collectors.
+If you selected an _Infrastructure_ data collector, an Acquisition Unit is required to inject data into Data Infrastructure Insights. You will need to download and install the Acquisition Unit software on a server or VM on the data center from which you will be collecting. A single Acquisition Unit can be used for multiple data collectors.
 
 image:NewLinuxAUInstall.png[Linux AU Instructions]
 
@@ -65,9 +64,9 @@ You will be able to configure additional data collectors later.
 
 === Operating System:
 
-For _Operating System_ data collectors, choose a platform (Linux, Windows) to install a Cloud Insights Agent.
+For _Operating System_ data collectors, choose a platform (Linux, Windows) to install a Data Infrastructure Insights Agent.
 You must have at least one agent to collect data from Services.
-The agent also collects data from the host itself, for use in Cloud Insights. This data is categorized as "Node" data in widgets, etc.
+The agent also collects data from the host itself, for use in Data Infrastructure Insights. This data is categorized as "Node" data in widgets, etc.
 
 //* Choose an link:concept_agent_access_key.html[Agent Access Key]. Data Collectors can be grouped by using different Keys for different groupings (by location or platform, for example).
 
@@ -87,14 +86,14 @@ For _Service_ data collectors, click on a tile to open the instructions page for
 
 == Add Dashboards
 
-Depending on the type of initial data collector you selected to configure (storage, switch, etc.), one or more relevant dashboards will be imported. For example, if you configured a storage data collector, a set of storage-related dashboards will be imported, and one will be set as your Cloud Insights Home Page. You can change the home page from the *Dashboards > Show All Dashboards* list. 
+Depending on the type of initial data collector you selected to configure (storage, switch, etc.), one or more relevant dashboards will be imported. For example, if you configured a storage data collector, a set of storage-related dashboards will be imported, and one will be set as your Data Infrastructure Insights Home Page. You can change the home page from the *Dashboards > Show All Dashboards* list. 
 
 You can import additional dashboards later, or link:concept_dashboards_overview.html[create your own].
 
 ////
 == Invite Users
 
-At any point during the onboarding process, you can click on *Admin > User Management > +User* to link:concept_user_roles.html[invite additional users] to your Cloud Insights environment. Only Administrator users can access Cloud Insights until onboarding is complete.
+At any point during the onboarding process, you can click on *Admin > User Management > +User* to link:concept_user_roles.html[invite additional users] to your Data Infrastructure Insights environment. Only Administrator users can access Data Infrastructure Insights until onboarding is complete.
 
 //It is recommended to only add _Administrator_ users until onboarding is complete and data is being acquired. Users with _Guest_ or _User_ roles will see greater benefit once sufficient data has been collected.
 ////
@@ -114,7 +113,7 @@ If your initial setup process is interrupted (for example, if you close the brow
 ////
 == Adding data collectors
 
-Data collectors discover information from your data sources, such as storage devices, network switches, and virtual machines. The information gathered is used for analysis, validation, monitoring and troubleshooting. You need to link:task_configure_data_collectors.html[configure your data collectors] before Cloud Insights can gather data from them.
+Data collectors discover information from your data sources, such as storage devices, network switches, and virtual machines. The information gathered is used for analysis, validation, monitoring and troubleshooting. You need to link:task_configure_data_collectors.html[configure your data collectors] before Data Infrastructure Insights can gather data from them.
 
 Related topics:
 Data collector link:https://docs.netapp.com/us-en/cloudinsights/task_configure_data_collectors.html[*configuration*]
@@ -126,7 +125,7 @@ Data Collector link:reference_data_collector_support_matrix.html[*support matrix
 
 == Useful definitions
 
-The following definitions may be useful when talking about Cloud Insights data collectors or features:
+The following definitions may be useful when talking about Data Infrastructure Insights data collectors or features:
 
 * Collector life cycle: A collector will belong to one of the following states in its life cycle: 
 

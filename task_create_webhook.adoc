@@ -6,9 +6,8 @@ summary: Create monitors to alert on performance or inventory thresholds
 ---
 
 = Notification using Webhooks
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -17,7 +16,7 @@ summary: Create monitors to alert on performance or inventory thresholds
 [.lead]
 Webhooks allow users to send alert notifications to various applications using a customized webhook channel.
 
-Many commercial applications support webhooks as a standard input interface, for example: Slack, PagerDuty, Teams, and Discord all support webhooks. By supporting a generic, customizable webhook channel, Cloud Insights can support many of these delivery channels. Information on webhooks can be found on these application websites. For example, Slack provides link:https://api.slack.com/messaging/webhooks[this useful guide].
+Many commercial applications support webhooks as a standard input interface, for example: Slack, PagerDuty, Teams, and Discord all support webhooks. By supporting a generic, customizable webhook channel, Data Infrastructure Insights can support many of these delivery channels. Information on webhooks can be found on these application websites. For example, Slack provides link:https://api.slack.com/messaging/webhooks[this useful guide].
 
 You can create multiple webhook channels, each channel targeted for a different purpose; separate applications, different recipients, etc.  
 
@@ -35,7 +34,7 @@ The webhook channel instance is comprised of the following elements:
 
 == Creating a Webhook
 
-To create a Cloud Insights webhook, go to *Admin > Notifications* and select the *Webhooks* tab.
+To create a Data Infrastructure Insights webhook, go to *Admin > Notifications* and select the *Webhooks* tab.
 
 The following image shows an example webhook configured for Slack:
 
@@ -45,9 +44,9 @@ Enter appropriate information for each of the fields, and click "Save" when comp
 
 You can also click the "Test Webhook" button to test the connection. Note that this will send the "Message Body" (without substitutions) to the defined URL according to the selected Method. 
 
-Cloud Insights webhooks comprise a number of default parameters. Additionally, you can create your own custom parameters or secrets. 
+Data Infrastructure Insights webhooks comprise a number of default parameters. Additionally, you can create your own custom parameters or secrets. 
 
-image:Webhook_Default_Parameters.png[Cloud Insights Default Webhook Parameters]
+image:Webhook_Default_Parameters.png[Data Infrastructure Insights Default Webhook Parameters]
 
 
 

@@ -6,9 +6,8 @@ summary:
 ---
 
 = IP device resolution
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -21,12 +20,12 @@ image:Device_Resolution_IP.png[IP Device Resolution]
 
 == Adding IP devices manually
 
-You can manually add an IP device to Cloud Insights using the manual add feature available in the IP Identify screen.
+You can manually add an IP device to Data Infrastructure Insights using the manual add feature available in the IP Identify screen.
 
 
 .Procedure
 
-. Log in to the Cloud insights web UI.
+. Log in to the Data Infrastructure Insights web UI.
 . Click *Manage > Device resolution*
 . Click the *IP Address Identify* tab.
 . Click the *Add* button.
@@ -64,7 +63,7 @@ NOTE: As a best practice, it is recommended to first export the IP Address Ident
 
 == Exporting IP device identification to a .CSV file
 
-You can export existing IP device identifications to a .CSV file from the Cloud Insights device resolution feature. You might want to export a device identification so that you can modify it and then import it back into Cloud Insights where it is then used to identify devices that are similar to those originally matching the exported identification.
+You can export existing IP device identifications to a .CSV file from the Data Infrastructure Insights device resolution feature. You might want to export a device identification so that you can modify it and then import it back into Data Infrastructure Insights where it is then used to identify devices that are similar to those originally matching the exported identification.
 
 .About this task
 .
@@ -78,7 +77,7 @@ When you export an IP device identification to a .CSV file, the file contains th
 
 .Procedure
 
-. Log into the Cloud Insights web UI.
+. Log into the Data Infrastructure Insights web UI.
 . Click *Manage > Device Resolution*
 . Select the *IP Address Identify* tab.
 . Select the IP device or devices whose identification you want to export.

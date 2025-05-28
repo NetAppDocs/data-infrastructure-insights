@@ -2,22 +2,21 @@
 sidebar: sidebar
 permalink: task_cs_user_management.html
 keywords: Workload Security, User, Login, account, cloud secure
-summary: Workload Security User accounts are managed through Cloud Insights User management
+summary: Workload Security User accounts are managed through Data Infrastructure Insights User management
 ---
 
 = User Management
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Workload Security user accounts are managed through Cloud Insights.
+Workload Security user accounts are managed through Data Infrastructure Insights.
 
-Cloud Insights provides four user account levels: Account Owner, Administrator, User, and Guest. Each account is assigned specific permission levels. A User account that has Administrator privileges can create or modify users, and assign each user one of the following Workload Security roles: 
+Data Infrastructure Insights provides four user account levels: Account Owner, Administrator, User, and Guest. Each account is assigned specific permission levels. A User account that has Administrator privileges can create or modify users, and assign each user one of the following Workload Security roles: 
 
 |===
 |Role	|Workload Security	Access
@@ -36,10 +35,10 @@ An Administrator can also invite other users but can only assign Workload Securi
 . Log into Workload Security
 . In the menu, click *Admin > User Management*
 +
-You will be forwarded to Cloud Insights’s User Management page.
+You will be forwarded to Data Infrastructure Insights’s User Management page.
 
 . Select the desired role for each user.
 
 While adding a new user, simply select the desired role (usually User or Guest).
 
-More information on User accounts and roles can be found in the Cloud Insights link:https://docs.netapp.com/us-en/cloudinsights/concept_user_roles.html[User Role] documentation.
+More information on User accounts and roles can be found in the Data Infrastructure Insights link:https://docs.netapp.com/us-en/cloudinsights/concept_user_roles.html[User Role] documentation.

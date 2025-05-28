@@ -6,24 +6,23 @@ summary: Configuring HDS Command Suite Device Manager data collector.
 ---
 
 = Hitachi Vantara Command Suite data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead] 
-The Hitachi Vantara Command Suite data collector supports the HiCommand Device Manager server. Cloud Insights communicates with the HiCommand Device Manager server using the standard HiCommand API.
+The Hitachi Vantara Command Suite data collector supports the HiCommand Device Manager server. Data Infrastructure Insights communicates with the HiCommand Device Manager server using the standard HiCommand API.
 
 == Terminology 
 
-Cloud Insights acquires the following inventory information from the Hitachi Vantara Command Suite data collector. For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires the following inventory information from the Hitachi Vantara Command Suite data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term|Cloud Insights Term 
+|Vendor/Model Term|Data Infrastructure Insights Term 
 |PDEV|Disk
 |Journal Pool|Disk Group
 |Storage Array|Storage
@@ -54,9 +53,9 @@ The following terms apply to objects or references that you might find on HDS st
 ** Thin Provisioning – if this is a HDP pool
 ** Raid Group – you will not likely see these for a few reasons:
 +
-Cloud Insights takes a strong stance to avoid double counting capacity at all costs. On HDS, one typically needs to build Raid Groups from disks, create pool volumes on those Raid Groups, and construct pools (often HDP, but could be special purpose) from those pool volumes. If Cloud Insights reported both the underlying Raid Groups as is, as well as the Pools, the sum of their raw capacity would vastly exceed the sum of the disks.
+Data Infrastructure Insights takes a strong stance to avoid double counting capacity at all costs. On HDS, one typically needs to build Raid Groups from disks, create pool volumes on those Raid Groups, and construct pools (often HDP, but could be special purpose) from those pool volumes. If Data Infrastructure Insights reported both the underlying Raid Groups as is, as well as the Pools, the sum of their raw capacity would vastly exceed the sum of the disks.
 +
-Instead, Cloud Insights’ HDS Command Suite data collector arbitrarily shrinks the size of Raid Groups by the capacity of pool volumes. This may result in Cloud Insights not reporting the Raid Group at all. Additionally, any resulting Raid Groups are flagged in a way such that they are not visible in the Cloud Insights WebUI, but they do flow into the Cloud Insights Data Warehouse (DWH). The purpose of these decisions is to avoid UI clutter for things that most users do not care about – if your HDS array has Raid Groups with 50MB free, you probably cannot use that free space for any meaningful outcome.
+Instead, Data Infrastructure Insights’ HDS Command Suite data collector arbitrarily shrinks the size of Raid Groups by the capacity of pool volumes. This may result in Data Infrastructure Insights not reporting the Raid Group at all. Additionally, any resulting Raid Groups are flagged in a way such that they are not visible in the Data Infrastructure Insights WebUI, but they do flow into the Data Infrastructure Insights Data Warehouse (DWH). The purpose of these decisions is to avoid UI clutter for things that most users do not care about – if your HDS array has Raid Groups with 50MB free, you probably cannot use that free space for any meaningful outcome.
 
 * Node - N/A, as HDS pools are not tied to any one specific node
 * Redundancy - the RAID level of the pool. Possibly multiple values for a HDP pool comprised of multiple RAID types
@@ -89,13 +88,13 @@ The following requirements must be met in order to collect performance data:
 * HDS USP, USP V, and VSP performance 
 ** Performance Monitor must be licensed.
 ** Monitoring switch must be enabled. 
-** The Export Tool (Export.exe) must be copied to the Cloud Insights AU.
+** The Export Tool (Export.exe) must be copied to the Data Infrastructure Insights AU.
 ** The Export Tool version must match the microcode version of the target array.
 
 * AMS performance:
-** NetApp strongly recommends creating a dedicated service account on AMS arrays for Cloud Insights to use to retrieve performance data. Storage Navigator only allows a user account one concurrent login to the array. Having Cloud Insights use the same user account as management scripts or HiCommand may result in Cloud Insights, management scripts, or HiCommand being unable to communicate to the array due to the one concurrent user account login limit
+** NetApp strongly recommends creating a dedicated service account on AMS arrays for Data Infrastructure Insights to use to retrieve performance data. Storage Navigator only allows a user account one concurrent login to the array. Having Data Infrastructure Insights use the same user account as management scripts or HiCommand may result in Data Infrastructure Insights, management scripts, or HiCommand being unable to communicate to the array due to the one concurrent user account login limit
 ** Performance Monitor must be licensed.
-** The Storage Navigator Modular 2 (SNM2) CLI utility needs to be installed on the Cloud Insights AU. 
+** The Storage Navigator Modular 2 (SNM2) CLI utility needs to be installed on the Data Infrastructure Insights AU. 
 
 == Configuration
 
@@ -169,12 +168,12 @@ Some things to try if you encounter problems with this data collector:
 |Error:
 * Error executing export utility
 * Error executing external command
-|* Confirm that Export Utility is installed on the Cloud Insights Acquisition Unit
+|* Confirm that Export Utility is installed on the Data Infrastructure Insights Acquisition Unit
 * Confirm that Export Utility location is correct in the data collector configuration
 * Confirm that the IP of the USP/R600 array is correct in the configuration of the data collector
 * Confirm that the User name and password are correct in the configuration of the data collector
 * Confirm that Export Utility version is compatible with storage array micro code version
-* From the Cloud Insights Acquisition Unit, open a CMD prompt and do the following:
+* From the Data Infrastructure Insights Acquisition Unit, open a CMD prompt and do the following:
 - Change the directory to the configured installation directory
 - Try to make a connection with the configured storage array by executing batch file runWin.bat
 |Error: Export tool login failed for target IP
@@ -183,7 +182,7 @@ Some things to try if you encounter problems with this data collector:
 * Confirm that no other data collectors are configured to acquire this array
 |Error: Export tools logged "Unable to get time range for monitoring".
 |* Confirm performance monitoring is enabled on the array.
-* Try invoking the export tools outside of Cloud Insights to confirm the problem lies outside of Cloud Insights.
+* Try invoking the export tools outside of Data Infrastructure Insights to confirm the problem lies outside of Data Infrastructure Insights.
 |Error:
 * Configuration error: Storage Array not supported by Export Utility
 * Configuration error: Storage Array not supported by Storage Navigator Modular CLI
@@ -200,11 +199,11 @@ Some things to try if you encounter problems with this data collector:
 * Error Storage navigator CLI
 * Error executing auperform command
 * Error executing external command
-|* Confirm that Storage Navigator Modular CLI is installed on the Cloud Insights Acquisition Unit
+|* Confirm that Storage Navigator Modular CLI is installed on the Data Infrastructure Insights Acquisition Unit
 * Confirm that Storage Navigator Modular CLI location is correct in the data collector configuration
 * Confirm that the IP of the WMS/SMS/SMS array is correct in the configuration of the data collector
 * Confirm that Storage Navigator Modular CLI version is compatible with micro code version of storage array configured in the data collector
-* From the Cloud Insights Acquisition Unit, open a CMD prompt and do the following:
+* From the Data Infrastructure Insights Acquisition Unit, open a CMD prompt and do the following:
 - Change the directory to the configured installation directory
 - Try to make a connection with the configured storage array by executing following command “auunitref.exe”
 |Error: Configuration error: Storage Array not reported by Inventory

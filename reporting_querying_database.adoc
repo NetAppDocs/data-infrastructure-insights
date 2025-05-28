@@ -1,14 +1,13 @@
 ---
 sidebar: sidebar
 permalink: reporting_querying_database.html
-summary: Use Cloud Insights APIs to query the Reporting DB directly.
+summary: Use Data Infrastructure Insights APIs to query the Reporting DB directly.
 keywords: reporting, cognos, data warehouse, dwh, API
 ---
 
 = Access the Reporting Database via API
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -16,24 +15,24 @@ keywords: reporting, cognos, data warehouse, dwh, API
 
 
 [.lead]
-Cloud Insights' powerful API allows users to query the Cloud Insights Reporting database directly, without going through the Cognos Reporting environment.
+Data Infrastructure Insights' powerful API allows users to query the Data Infrastructure Insights Reporting database directly, without going through the Cognos Reporting environment.
 
-NOTE: This documentation refers to the Cloud Insights Reporting feature, which is available in Cloud Insights Premium Edition.
+NOTE: This documentation refers to the Data Infrastructure Insights Reporting feature, which is available in Data Infrastructure Insights Premium Edition.
 
 == Odata
 
-The Cloud Insights Reporting API follows the link:https://www.odata.org/[OData v4] (Open Data Protocol) standard for its querying of the Reporting database. 
+The Data Infrastructure Insights Reporting API follows the link:https://www.odata.org/[OData v4] (Open Data Protocol) standard for its querying of the Reporting database. 
 For more information or to learn more, check out link:https://www.odata.org/getting-started/basic-tutorial/[this tutorial] on OData. 
 
-All requests will start with the url _\https://<Cloud Insights URL>/rest/v1/dwh-management/odata_
+All requests will start with the url _\https://<Data Infrastructure Insights URL>/rest/v1/dwh-management/odata_
 
 == Generating an APIKey
 
-Read more about link:API_Overview.html[Cloud Insights APIs].
+Read more about link:API_Overview.html[Data Infrastructure Insights APIs].
 
 To generate an API key, do the following:
 
-* Log into your Cloud Insights environment and select *Admin > API Access*.
+* Log into your Data Infrastructure Insights environment and select *Admin > API Access*.
 * Click “+ API Access Token”.
 * Enter a Name & Description.
 * For type, choose _Data Warehouse_.
@@ -43,29 +42,28 @@ To generate an API key, do the following:
 
 APIkeys are good for <<synchronous-or-asynchronous,_Sync_ or _Async_>>.
 
-//<TBD More information>
 
 
 == Direct query of tables
 
-With the API Key in place, direct queries of the Reporting database are now possible. Long URLs may be simplified to \https://.../odata/ for display purposes rather than the full \https://<Cloud Insights URL>/rest/v1/dwh-management/odata/
+With the API Key in place, direct queries of the Reporting database are now possible. Long URLs may be simplified to \https://.../odata/ for display purposes rather than the full \https://<Data Infrastructure Insights URL>/rest/v1/dwh-management/odata/
 
 Try simple queries like
 
-* \https://<Cloud Insights URL>/rest/v1/dwh-management/odata/dwh_custom
-* \https://<Cloud Insights URL>/rest/v1/dwh-management/odata/dwh_inventory
-* \https://<Cloud Insights URL>/rest/v1/dwh-management/odata/dwh_inventory/storage
-* \https://<Cloud Insights URL>/rest/v1/dwh-management/odata/dwh_inventory/disk
+* \https://<Data Infrastructure Insights URL>/rest/v1/dwh-management/odata/dwh_custom
+* \https://<Data Infrastructure Insights URL>/rest/v1/dwh-management/odata/dwh_inventory
+* \https://<Data Infrastructure Insights URL>/rest/v1/dwh-management/odata/dwh_inventory/storage
+* \https://<Data Infrastructure Insights URL>/rest/v1/dwh-management/odata/dwh_inventory/disk
 * \https://.../odata/dwh_custom/custom_queries
 
 
 == REST API Examples
 
-The URL for all calls is _\https://<Cloud Insights URL>/rest/v1/dwh-management/odata_. 
+The URL for all calls is _\https://<Data Infrastructure Insights URL>/rest/v1/dwh-management/odata_. 
 
 * GET /{schema}/** - Retrieves data from the Reporting Database.
 
-Format: _\https://<Cloud Insights URL>/rest/v1/dwh-management/odata/<schema_name>/<query>_
+Format: _\https://<Data Infrastructure Insights URL>/rest/v1/dwh-management/odata/<schema_name>/<query>_
 
 Example:
 
@@ -100,38 +98,7 @@ Result:
      ]
  }
 
-// Example: get all Storage Pools of storage with id 287 with expanded Internal Volume data: https://<Cloud Insights URL>/rest/v1/dwh-management/odata/dwh_inventory/storage(287)/storage_pool?$expand=internal_volume
 
-
-////
- * POST /{schema}/** - Write data and create queries in dwh_custom schema of Data Warehouse database through ODATA protocol, requires ADMIN role
-
- Format: https://<Cloud Insights URL>/rest/v1/dwh-management/odata/<schema_name>/<table_name>. The body contains the record in JSON format
-
- Example: add a new record to the storage table: https://<Cloud Insights URL>/rest/v1/dwh-management/odata/dwh_custom/storage , Request body: {"storageId": 123, "storageName": "storage123"}
-
-Creating queries: POST https://<Cloud Insights URL>/rest/v1/dwh-management/odata/dwh_custom/custom_queries -d '{"queryName": "<query_name>", "querySql": "<query_sql>"}'
-
-
-
- * PATCH /{schema}/** - Modify data and modify queries in dwh_custom schema of Data Warehouse database through ODATA protocol, requires ADMIN role
-
- Format: https://<Cloud Insights URL>/rest/v1/dwh-management/odata/<schema_name>/<table_name>('<record_id>'). The body contains the record in JSON format
-
- Example: modify a record in the storage table: https://<Cloud Insights URL>/rest/v1/dwh-management/odata/dwh_custom/storage('123') , Request body: {"storageId": 123, "storageName": "storage123"}
-
-Modifying queries: PATCH https://<Cloud Insights URL>/rest/v1/dwh-management/odata/dwh_custom/custom_queries('queryName') -d '{"queryName": "<query_name>", "querySql": "<query_sql>"}'
-
-
-
- * DELETE /{schema}/** - Delete data and delete queries in dwh_custom schema of Data Warehouse database through ODATA protocol, requires ADMIN role
-
- Format: https://<Cloud Insights URL>/rest/v1/dwh-management/odata/<schema_name>/<table_name>('<record_id>')
-
- Example: delete a record from the storage table: https://<Cloud Insights URL>/rest/v1/dwh-management/odata/dwh_custom/storage('123')
-
-Deleting queries: DELETE https://<Cloud Insights URL>/rest/v1/dwh-management/odata/dwh_custom/custom_queries('queryName')
-////
 
 
 
@@ -152,7 +119,7 @@ Additionally:
 ** Name “X-CloudInsights-ApiKey”
 ** Attribute Value “<apikey>”
 
-Your API key will be specific to your Cloud Insights environment.
+Your API key will be specific to your Data Infrastructure Insights environment.
 
 
 
@@ -164,7 +131,7 @@ To execute a query in async mode, add the header `*Prefer: respond-async*` to th
 
  Status Code: 202 (which means ACCEPTED)
  preference-applied: respond-async
- location: https://<Cloud Insights URL>/rest/v1/dwh-management/odata/dwh_custom/asyncStatus/<token>
+ location: https://<Data Infrastructure Insights URL>/rest/v1/dwh-management/odata/dwh_custom/asyncStatus/<token>
 
 Querying the location URL will return the same headers if the response is not ready yet, or will return with status 200 if the response is ready. The response content will be of type text and contains the http status of the original query and some metadata, followed by the results of the original query.
 
@@ -179,15 +146,15 @@ HTTP/1.1 200 OK
 
 To see a list of all async queries and which of them are ready, use the following command:
 
- GET https://<Cloud Insights URL>/rest/v1/dwh-management/odata/dwh_custom/asyncList
+ GET https://<Data Infrastructure Insights URL>/rest/v1/dwh-management/odata/dwh_custom/asyncList
 
 The response has the following format:
 
  {
     "queries" : [
         {
-            "Query": "https://<Cloud Insights URL>/rest/v1/dwh-management/odata/dwh_custom/heavy_left_join3?$count=true",
-            "Location": "https://<Cloud Insights URL>/rest/v1/dwh-management/odata/dwh_custom/asyncStatus/<token>",
+            "Query": "https://<Data Infrastructure Insights URL>/rest/v1/dwh-management/odata/dwh_custom/heavy_left_join3?$count=true",
+            "Location": "https://<Data Infrastructure Insights URL>/rest/v1/dwh-management/odata/dwh_custom/asyncStatus/<token>",
             "Finished": false
         }
     ]

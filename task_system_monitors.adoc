@@ -6,16 +6,15 @@ summary: Create monitors to alert on performance or inventory thresholds, as wel
 ---
 
 = System Monitors
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Cloud Insights includes a number of system-defined monitors for both metrics and logs. The system monitors available are dependent on the data collectors present in your environment. Because of that, the monitors available in Cloud Insights may change as data collectors are added or their configurations changed.
+Data Infrastructure Insights includes a number of system-defined monitors for both metrics and logs. The system monitors available are dependent on the data collectors present on your tenant. Because of that, the monitors available in Data Infrastructure Insights may change as data collectors are added or their configurations changed.
 
 NOTE: Many System Monitors are in _Paused_ state by default. You can enable a system monitor by selecting the _Resume_ option for the monitor. Ensure that _Advanced Counter Data Collection_ and _Enable ONTAP EMS log collection_ are enabled in the Data Collector. These options can be found in the ONTAP Data Collector under _Advanced Configuration_: 
 image:Enable_Log_Monitor_Collection.png[Enabling Advanced Counter and EMS Log collection for ONTAP]
@@ -23,203 +22,10 @@ image:Enable_Log_Monitor_Collection.png[Enabling Advanced Counter and EMS Log co
 
 [#top]
 
-toc::[]
+toc:[]
 
 
 
-
-////
-== Create the Monitor 
-
-. From the Cloud Insights menu, click *Alerts > Manage Monitors*
-+
-The Monitors list page is displayed, showing currently configured monitors. 
-
-. To modify an existing monitor, click the monitor name in the list.
-
-. To add a monitor, Click *+ Monitor*. 
-+
-image:Monitor_log_or_metric.png[Choose system or log monitor]
-+
-When you add a new monitor, you are prompted to create a Metric Monitor or a Log Monitor.
-
-* _Metric_ monitors alert on infrastructure- or performance-related triggers
-* _Log_ monitors alert on log-related activity
-
-+
-After you choose your monitor type, the Monitor Configuration dialog is displayed.
-
-
-==== Metric Monitor
-
-. In the drop-down, search for and choose an object type and metric to monitor.
-
-You can set filters to narrow down which object attributes or metrics to monitor. 
-
-//image:select_metric_to_monitor.png[Select Metric]
-
-image:MonitorMetricFilter.png[Metrics Filtering]
-
-//When working with integration data (Kubernetes, ONTAP Advanced Data, etc.), metric filtering works against the data samples themselves, not the objects as with infrastructure data (storage, VMs, ports, etc.).
-
-When working with integration data (Kubernetes, ONTAP Advanced Data, etc.), metric filtering removes the individual/unmatched data points from the plotted data series, unlike infrastructure data (storage, VM, ports etc.) where filters work on the aggregated value of the data series and potentially remove the entire object from the chart. 
-
-//image:IntegrationMetricFilterExample.png[Integration Metric Filtering]
-
-TIP: To create a multi-condition monitor (e.g., IOPS > X and latency > Y), define the first condition as a threshold and the second condition as a filter.
-
-
-===== Define the Conditions of the Monitor. 
-
-. After choosing the object and metric to monitor, set the Warning-level and/or Critical-level thresholds.
-. For the _Warning_ level, enter 200 for our example. The dashed line indicating this Warning level displays in the example graph.
-. For the _Critical_ level, enter 400. The dashed line indicating this Critical level displays in the example graph.
-+
-The graph displays historical data. The Warning and Critical level lines on the graph are a visual representation of the Monitor, so you can easily see when the Monitor might trigger an alert in each case. 
-
-. For the occurence interval, choose _Continuously_ for a period of _15 Minutes_.
-+
-You can choose to trigger an alert the moment a threshold is breached, or wait until the threshold has been in continuous breach for a period of time. In our example, we do not want to be alerted every time the Total IOPS peaks above the Warning or Critical level, but only when a monitored object continuously exceeds one of these levels for at least 15 minutes.
-+
-//image:define_monitor_conditions.png[Define Conditions]
-image:Monitor_metric_conditions.png[Define the monitor's conditions]
-
-
-=== Log Monitor
-
-When creating a *Log monitor*, first choose which log to monitor from the available log list. You can then filter based on the available attributes as above.
-
-For example, you might choose to filter for "object.store.unavailable" message type in the logs.netapp.ems source:
-
-NOTE: The Log Monitor filter cannot be empty. 
-
-image:Monitor_log_monitor_filter.png[choose which log to monitor, and set a filter]
-
-
-
-==== Define the alert behavior
-
-Choose how you want to alert when a log alert is triggered. You can set the monitor to alert with _Warning_, _Critical_, or _Informational_ severity, based on the filter conditions you set above.
-
-image:Monitor_log_alert_behavior.png[define the log behavior to monitor]
-
-
-==== Define the alert resolution behavior
-
-You can choose how an log monitor alert is resolved. You are presented with three choices:
-
-* *Resolve instantly*: The alert is immediately resolved with no further action needed
-* *Resolve based on time*: The alert is resolved after the specified time has passed
-* *Resolve based on log entry*: The alert is resolved when a subsequent log activity has occurred. For example, when an object is logged as "available".
-
-image:Monitor_log_monitor_resolution.png[Alert Resolution]
-
-
-
-==== Select notification type and recipients
-
-In the _Set up team notification(s)_ section, you can choose whether to alert your team via email or Webhook.
-
-image:Webhook_Choose_Monitor_Notification.png[Choose alerting method]
-
-*Alerting via Email:*
-
-Specify the email recipients for alert notifications. If desired, you can choose different recipients for warning or critical alerts.
-
-image:email_monitor_alerts.png[Email Alert Recipients]
-
-*Alerting via Webhook:*
-
-Specify the webhook(s) for alert notifications. If desired, you can choose different webhooks for warning or critical alerts.
-
-image:Webhook_Monitor_Notifications.png[Webhook Alerting]
-
-
-==== Setting Corrective Actions or Additional Information
-
-You can add an optional description as well as additional insights and/or corrective actions by filling in the *Add an Alert Description* section. The description can be up to 1024 characters and will be sent with the alert. The insights/corrective action field can be up to 67,000 characters and will be displayed in the summary section of the alert landing page.
-
-In these fields you can provide notes, links, or steps to take to correct or otherwise address the alert.
-
-image:Monitors_Alert_Description.png[Alert Corrective Actions and Description]
-
-
-==== Save your Monitor
-
-. If desired, you can add a description of the monitor. 
-+
-. Give the Monitor a meaningful name and click *Save*.
-+
-Your new monitor is added to the list of active Monitors.
-
-==== Monitor List
-
-The Monitor page lists the currently configured monitors, showing the following:
-
-* Monitor Name
-* Status 
-* Object/metric being monitored
-* Conditions of the Monitor
-
-You can choose to temporarily pause monitoring of an object type by clicking the menu to the right of the monitor and selecting *Pause*. When you are ready to resume monitoring, click *Resume*.
-
-You can copy a monitor by selecting *Duplicate* from the menu. You can then modify the new monitor and change the object/metric, filter, conditions, email recipients, etc.
-
-If a monitor is no longer needed, you can delete it by selecting *Delete* from the menu.
-////
-
-////
-== Monitor Groups
-
-Grouping allows you to view and manage related monitors. For example, you can have a monitor group dedicated to the storage in your environment, or monitors relevant to a certain recipient list. 
-
-image:Monitors_GroupList.png[Monitor Grouping]
-////
-
-////
-
-Two groups are shown by default:
-
-* *All Monitors* lists all monitors.
-* *Custom Monitors* lists only user-created monitors.
-////
-
-////
-The number of monitors contained in a group is shown next to the group name.
-
-
-NOTE: Custom monitors can be paused, resumed, deleted, or moved to another group. System-defined monitors can be paused and resumed but can not be deleted or moved.
-
-
-=== Custom Monitor Groups
-
-To create a new custom monitor group, click the *"+" Create New Monitor Group* button. Enter a name for the group and click *Create Group*. An empty group is created with that name. 
-
-
-To add monitors to the group, go to the _All Monitors_ group (recommended) and do one of the following:
-
-* To add a single monitor, click the menu to the right of the monitor and select _Move to Group_. Choose the group to which to add the monitor.
-* To add multiple monitors, select the ones you want to move, and click _Bulk Actions_. Choose _Move to group_. You cannot move system-defined monitors.
-* Click on the monitor name to open the monitor's edit view, and select a group in the _Associate to a monitor group_ section.
-+
-image:Monitors_AssociateToGroup.png[Associate to group]
-
-//* To add multiple monitors to a group, select them by clicking the checkbox next to each monitor, then click the *Bulk Actions* button and select _Move to Group_.
-
-Remove monitors by clicking on a group and selecting _Remove from Group_ from the menu. You can not remove monitors from the _All Monitors_ or _Custom Monitors_ group, or from any of the system-defined monitor groups. To delete a monitor from these groups, you must delete the monitor itself.
-
-//To remove a monitor from a group while editing the monitor, in the _Associate with a group_ section, click the *X* next to the group name.
-
-NOTE: Removing a monitor from a group does not delete the monitor from Cloud Insights. To completely remove a monitor, select the monitor and click _Delete_. This also removes it from any group to which it belonged and it is no longer available to any user.
-
-You can also move a monitor to a different group in the same manner, selecting _Move to Group_. You cannot move monitors from the system-defined monitor groups; to move a monitor from one of these groups, you must first _Duplicate_ the monitor, and then move the duplicated monitor to the desired group.
-
-To pause or resume all monitors in a group at once, select the menu for the group and click _Pause_ or _Resume_. 
-
-Use the same menu to rename or delete a group. Deleting a group does not delete the monitors from Cloud Insights; they are still available in _All Monitors_. You cannot delete system-defined monitor groups.
-
-image:Monitors_PauseGroup.png[Pause a group]
-////
 
 
 == Monitor Descriptions
@@ -236,7 +42,7 @@ The following system-defined monitors are available, in the noted groups.
 
 
 
-Below are the system monitors currently included with Cloud Insights:
+Below are the system monitors currently included with Data Infrastructure Insights:
 
 === Metric Monitors
 
@@ -561,7 +367,7 @@ Check hardware network performance
  Critical @ > 50 ms
 
 |Persistent Volume Throughput
-|MBPS thresholds on persistent volumes can be used to alert an administrator when persistent volumes exceed predefined performance expectations, potentially impacting other persistent volumes. Activating this monitor will generate alerts appropriate for the typical throughput profile of persistent volumes on SSDs. This monitor will cover all persistent volumes in your environment. The warning and critical threshold values can be adjusted based on your monitoring goals by duplicating this monitor and setting thresholds appropriate for your storage class. A duplicated monitor can be further targeted to a subset of the persistent volumes in your environment.
+|MBPS thresholds on persistent volumes can be used to alert an administrator when persistent volumes exceed predefined performance expectations, potentially impacting other persistent volumes. Activating this monitor will generate alerts appropriate for the typical throughput profile of persistent volumes on SSDs. This monitor will cover all persistent volumes on your tenant. The warning and critical threshold values can be adjusted based on your monitoring goals by duplicating this monitor and setting thresholds appropriate for your storage class. A duplicated monitor can be further targeted to a subset of the persistent volumes on your tenant.
 |**Immediate Actions**
 If critical threshold is breached, plan immediate actions to minimize service disruption:
 1. Introduce QoS MBPS limits for the volume.
@@ -623,7 +429,7 @@ If warning threshold is breached, plan to take the following immediate actions:
 |Warning
 
 |Persistent Volume IOPS
-|IOPS thresholds on persistent volumes can be used to alert an administrator when persistent volumes exceed predefined performance expectations. Activating this monitor will generate alerts appropriate for the typical IOPS profile of persistence volumes. This monitor will cover all persistent volumes in your environment. The warning and critical threshold values can be adjusted based on your monitoring goals by duplicating this monitor and setting thresholds appropriate for your workload.
+|IOPS thresholds on persistent volumes can be used to alert an administrator when persistent volumes exceed predefined performance expectations. Activating this monitor will generate alerts appropriate for the typical IOPS profile of persistence volumes. This monitor will cover all persistent volumes on your tenant. The warning and critical threshold values can be adjusted based on your monitoring goals by duplicating this monitor and setting thresholds appropriate for your workload.
 |**Immediate Actions**
 If critical threshold is breached, plan Immediate actions to minimize service disruption :
 1. Introduce QoS IOPS limits for the volume.
@@ -823,8 +629,8 @@ Right-size pods to free up CPU on nodes.
 
 |===
 Monitor Name|Description|Corrective Action
-|Acquisition Unit Shutdown|Cloud Insights Acquisition Units periodically restart as part of upgrades to introduce new features. This happens once a month or less in a typical environment. A Warning Alert that an Acquisition Unit has shutdown should be followed soon after by a Resolution noting that the newly-restarted Acquisition Unit has completed a registration with Cloud Insights. Typically this shutdown-to-registration cycle takes 5 to 15 minutes. |If the alert occurs frequently or lasts longer than 15 minutes, check on the operation of the system hosting the Acquisition Unit, the network, and any proxy connecting the AU to the Internet.
-|Collector Failed|The poll of a data collector encountered an unexpected failure situation.|Visit the data collector page in Cloud Insights to learn more about the situation.
+|Acquisition Unit Shutdown|Data Infrastructure Insights Acquisition Units periodically restart as part of upgrades to introduce new features. This happens once a month or less in a typical environment. A Warning Alert that an Acquisition Unit has shutdown should be followed soon after by a Resolution noting that the newly-restarted Acquisition Unit has completed a registration with Data Infrastructure Insights. Typically this shutdown-to-registration cycle takes 5 to 15 minutes. |If the alert occurs frequently or lasts longer than 15 minutes, check on the operation of the system hosting the Acquisition Unit, the network, and any proxy connecting the AU to the Internet.
+|Collector Failed|The poll of a data collector encountered an unexpected failure situation.|Visit the data collector page in Data Infrastructure Insights to learn more about the situation.
 |Collector Warning|This Alert typically can arise because of an erroneous configuration of the data collector or of the target system. Revisit the configurations to prevent future Alerts. It can also be due to a retrieval of less-than-complete data where the data collector gathered all the data that it could. This can happen when situations change during data collection (e.g., a virtual machine present at the beginning of data collection is deleted during data collection and before its data is captured).|Check the configuration of the data collector or target system.
 
 Note that the monitor for Collector Warning can send more alerts than other monitor types, so it is recommended to set no alert recipients unless you are troubleshooting.

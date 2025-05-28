@@ -6,18 +6,17 @@ summary: Insights can help you predict when Kubernetes spaces are likely to beco
 ---
 
 = Insights: Kubernetes Namespaces Running out of Space
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Running out of space in your environment is never a good situation. Cloud Insights helps you predict the time you have before Kubernetes persistent volumes become full.
+Running out of space on your tenant is never a good situation. Data Infrastructure Insights helps you predict the time you have before Kubernetes persistent volumes become full.
 
-//NOTE: This is a _Preview_ feature and may change over time as improvements are made. link:/concept_preview_features.html[Learn more] about Cloud Insights Preview features.
+//NOTE: This is a _Preview_ feature and may change over time as improvements are made. link:/concept_preview_features.html[Learn more] about Data Infrastructure Insights Preview features.
 
 The _Kubernetes Namespaces Running Out of Space_ Insight gives you a view into workloads on your Kubernetes namespaces that are at risk of running out of space, with an estimate for the number of days remaining before each persistent volume becomes full.
 
@@ -37,7 +36,7 @@ image:K8sRunningOutOfSpaceWorkloadTable.png[Workload table showing details]
 
 === What can I do if I'm running out of space?
 
-On the Insight page, click the *+Show Recommendations* to view possible solutions. The easiest option when running out of space is always to add more capacity, and Cloud Insights shows you the optimal capacity to add to increase time-to-full to a target 60-day prediction. Other recommendations are also shown.
+On the Insight page, click the *+Show Recommendations* to view possible solutions. The easiest option when running out of space is always to add more capacity, and Data Infrastructure Insights shows you the optimal capacity to add to increase time-to-full to a target 60-day prediction. Other recommendations are also shown.
 
 image:K8sRunningOutOfSpaceRecommendations.png[Capacity to add to return to 60-day TTF]
 

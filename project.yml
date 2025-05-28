@@ -1,6 +1,6 @@
 ---
 settings:
-  name: Cloud Insights
+  name: Data Infrastructure Insights
   harmony_integration: maestro
   rss_page: concept_whats_new.html
   internal:
@@ -10,12 +10,12 @@ settings:
     harmony_enabled: true
 sidebar:
   entries:
-    - title: Cloud Insights documentation
+    - title: Data Infrastructure Insights documentation
       url: /index.html
     - title: What's New
       url: /concept_whats_new.html
   
-    - title: Signing Up for Cloud Insights
+    - title: Signing Up for Data Infrastructure Insights
       url: /task_cloud_insights_onboarding_1.html
   
     - title: Security
@@ -59,7 +59,7 @@ sidebar:
     - title: Data Collector List
       url: /data_collector_list.html          
           
-    - title: Subscribing to Cloud Insights
+    - title: Subscribing to Data Infrastructure Insights
       url: /concept_subscribing_to_cloud_insights.html
 
     - title: Observability
@@ -95,6 +95,8 @@ sidebar:
             url: /task_query_copy_table_values.html
           - title: Querying Logs
             url: /concept_log_explorer.html
+          - title: Identifying Inactive Devices
+            url: /task_identify_inactive_devices.html
 
       - title: Insights
         entries:
@@ -119,6 +121,16 @@ sidebar:
             url: /task_system_monitors.html
           - title: Webhook Notification
             url: /task_create_webhook.html
+#            entries:
+#              -title: Webhook Example - Discord
+#                url: /task_webhook_example_discord.html
+#              -title: Webhook Example - PagerDuty
+#                url: /task_webhook_example_pagerduty.html
+#              -title: Webhook Example - Slack
+#                url: /task_webhook_example_slack.html
+#              -title: Webhook Example - Teams
+#                url: /task_webhook_example_teams.html
+              
 
       - title: Working with Annotations
         entries:
@@ -171,7 +183,8 @@ sidebar:
             url: /concept_storage_virtualization.html
           - title: Hints and Tips to Search for Assets
             url: /concept_searching_assets.html
-  
+
+ 
       - title: Reporting
         entries:
           - title: Reporting Overview
@@ -255,6 +268,8 @@ sidebar:
               url: /task_config_user_dir_connect_ldap.html
             - title: Configuring the ONTAP SVM Data Collector
               url: /task_add_collector_svm.html
+            - title: Troubleshooting the SVM Collector
+              url: /troubleshooting_collector_svm.html
             - title: Configuring the Cloud ONTAP Data Collector
               url: /task_config_cs_incloud.html
             - title: Workload Security User Management
@@ -268,8 +283,7 @@ sidebar:
           entries:
             - title: Activity Forensics - All Activity
               url: /forensic_activity_history.html
-            - title: Activity Forensics - Entities
-              url: /forensic_entity_detail.html
+
             - title: Users
               url: /forensic_user_overview.html
         - title: Automated Response Policies
@@ -284,10 +298,47 @@ sidebar:
           url: /cs_restrict_user_access.html
         - title: Simulating a Ransomware Attack
           url: /concept_cs_attack_simulator.html
-        - title: Notifications
+        - title: Email Notifications
           url: /cs_notifications_email.html
+
+        - title: Webhooks
+          entries:
+            - title: Creating Webhooks
+              url: /ws_create_webhook.html
+
+
+
+
+ #       - title: Webhook Notifications
+ #         entries:
+ #           - title: Creating Webhooks
+ #             url: /ws_create_webhook.html
+ #           -title: Webhook Example - Discord
+ #             url: /ws_webhook_example_discord.html
+ #           -title: Webhook Example - PagerDuty
+ #             url: /ws_webhook_example_pagerduty.html
+ #           -title: Webhook Example - Slack
+ #             url: /ws_webhook_example_slack.html
+ #           -title: Webhook Example - Teams
+ #             url: /ws_webhook_example_teams.html
+
+
         - title: Workload Security API
           url: /concept_cs_api.html
+        - title: Troubleshooting the SVM Collector
+          url: /troubleshooting_collector_svm.html
+        
+#        - title: Webhook Notifications
+#            url: /ws_create_webhook.html
+#            entries:
+#              -title: Webhook Example - Discord
+#                url: /ws_webhook_example_discord.html
+#              -title: Webhook Example - PagerDuty
+#                url: /ws_webhook_example_pagerduty.html
+#              -title: Webhook Example - Slack
+#                url: /ws_webhook_example_slack.html
+#              -title: Webhook Example - Teams
+#                url: /ws_webhook_example_teams.html
    
     - title: Troubleshooting
       entries:
@@ -437,8 +488,6 @@ sidebar:
                   url: /task_dc_na_storagegrid.html
             - title: Nutanix
               url: /task_dc_nutanix.html
-            - title: OpenStack
-              url: /task_dc_openstack.html
             - title: Oracle
               url: /task_dc_oracle_zfs.html
             - title: Pure

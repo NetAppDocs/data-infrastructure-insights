@@ -2,20 +2,19 @@
 sidebar: sidebar
 permalink: concept_audit.html
 keywords: audit, users, activities
-summary: Audit provides a view of system and user activities in the Cloud Insights system.
+summary: Audit provides a view of system and user activities in the Data Infrastructure Insights system.
 ---
 
 = Auditing
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-To identify changes both expected (for tracking) or unexpected (for troubleshooting), you can view an audit trail of the Cloud Insights system events and user activities.
+To identify changes both expected (for tracking) or unexpected (for troubleshooting), you can view an audit trail of the Data Infrastructure Insights system events and user activities.
 
 == Viewing Audited Events
 
@@ -23,7 +22,7 @@ To View the Audit page, click *Admin > Audit* in the menu. The Audit page is dis
 
 * *Time* - Date and time of the event or activity
 * *User* - The User who initiated the activity 
-* *Role* - The user's role in Cloud Insights (guest, user, administrator)
+* *Role* - The user's role in Data Infrastructure Insights (guest, user, administrator)
 * *IP* - The IP address associated with the event
 * *Action* - Type of activity, for example Login, Create, Update
 * *Category* - The category of activity
@@ -66,7 +65,7 @@ If you enclose a filter string in double quotes, Insight treats everything betwe
 
 == Audited Events and Actions
 
-The events and actions audited by Cloud insights can be categorized in the following broad areas:
+The events and actions audited by Data Infrastructure Insights can be categorized in the following broad areas:
 
 * *User account*: Log in, log out, role change, etc.
 +
@@ -106,7 +105,7 @@ You can export the results of your Audit display to a .CSV file, which will allo
 
 .Steps
 
-. On the Audit page, set the desired time range and any filters you want. Cloud Insights will export only the Audit entries that match the filtering and time range you have set.
+. On the Audit page, set the desired time range and any filters you want. Data Infrastructure Insights will export only the Audit entries that match the filtering and time range you have set.
 
 . Click the _Export_ button image:ExportButton.png[Export Button] in the upper right of the table.
 
@@ -115,7 +114,7 @@ The displayed Audit events will be exported to a .CSV file, up to a maximum of 1
 
 == Retention of Audit Data
 
-The amount of time Cloud Insights retains Audit data is based on your Edition:
+The amount of time Data Infrastructure Insights retains Audit data is based on your Edition:
 
 * Basic Edition: Audit data is retained for 30 days
 * Standard and Premium Editions: Audit data is retained for 1 year plus 1 day

@@ -6,9 +6,8 @@ summary: Create a webhook to alert on performance or inventory thresholds for Pa
 ---
 
 = Webhook Example for PagerDuty
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -27,18 +26,18 @@ NOTE: This page refers to third-party instructions, which could be subject to ch
 +
 image:Webhooks_PagerDutyScreen1.png[Pagerduty screen]
 
-. Click on the _Integrations_ tab to see the *Integration Key*. You will need this key when you create the Cloud Insights webhook below. 
+. Click on the _Integrations_ tab to see the *Integration Key*. You will need this key when you create the Data Infrastructure Insights webhook below. 
 
-//. On the same screen, copy or make note of the *Integration URL* under Alert Events. You will need to enter this into the Cloud Insights webhook configuration.
+//. On the same screen, copy or make note of the *Integration URL* under Alert Events. You will need to enter this into the Data Infrastructure Insights webhook configuration.
 
 . Go to *Incidents* or *Services* to view Alerts.
 +
 image:Webhooks_PagerDutyScreen2.png[Pagerduty Screen]
 
 
-== Create Cloud Insights Webhook:
+== Create Data Infrastructure Insights Webhook:
 
-. In Cloud Insights, navigate to *Admin > Notifications* and select the *Webhooks* tab. Click *+Webhook* to create a new webhook.
+. In Data Infrastructure Insights, navigate to *Admin > Notifications* and select the *Webhooks* tab. Click *+Webhook* to create a new webhook.
 
 . Give the webhook a meaningful Name, such as "PagerDuty Trigger". You will use this webhook for critical- and warning-level events.
 
@@ -53,13 +52,13 @@ image:Webhooks_Custom_Secret_Routing_Key.png[Setting the Routing Key]
 Repeat these steps to create a "PagerDuty Resolve" webhook for resolved events.  
 
 
-== PagerDuty to Cloud Insights Field Mapping
+== PagerDuty to Data Infrastructure Insights Field Mapping
 
-The following table and image show the mapping of fields between PagerDuty and Cloud insights:
+The following table and image show the mapping of fields between PagerDuty and Data Infrastructure Insights:
 
 [cols="<,<", options="header"]
 |===
-<|PagerDuty|Cloud Insights
+<|PagerDuty|Data Infrastructure Insights
 
 |Alert Key|Alert ID
 |Source|Triggered On
@@ -75,7 +74,7 @@ image:Webhooks-PagerDuty_Fields.png[PagerDuty Fields in CI]
 
 == Notifications via Webhook
 
-To notify on events via webhook, in Cloud Insights navigate to *Alerts > Monitors* and click *+Monitor* to create a new link:task_create_monitor.html[monitor].
+To notify on events via webhook, in Data Infrastructure Insights navigate to *Alerts > Monitors* and click *+Monitor* to create a new link:task_create_monitor.html[monitor].
 
 * Select a metric and define the monitor's conditions.
 

@@ -6,16 +6,15 @@ summary: Configuring Azure NetApp Files data collector.
 ---
 
 = Configuring the Azure NetApp Files data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Cloud Insights uses the Azure NetApp Files data collector to acquire inventory and performance data. 
+Data Infrastructure Insights uses the Azure NetApp Files data collector to acquire inventory and performance data. 
 
 == Requirements
 
@@ -25,9 +24,9 @@ You need the following information to configure this data collector.
 * Azure Management Rest IP (management.azure.com) 
 * Azure service principal client ID (user account)
 * Azure service principal authentication key (user password)
-* You need to set up an Azure account for Cloud Insights discovery. 
+* You need to set up an Azure account for Data Infrastructure Insights discovery. 
 +
-Once the account is properly configured and you register the application in Azure, you will have the credentials required to discover the Azure instance with Cloud Insights. The following link describes how to set up the account for discovery:
+Once the account is properly configured and you register the application in Azure, you will have the credentials required to discover the Azure instance with Data Infrastructure Insights. The following link describes how to set up the account for discovery:
 
 https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal
 
@@ -60,7 +59,7 @@ Enter data into the data collector fields according to the table below:
            
 == Troubleshooting
 
-* The credentials used by your ANF data collector must not have access to any Azure subscriptions that contain ANF volumes.
+* The credentials used by your ANF data collector must have access to any Azure subscriptions that contain ANF volumes.
 * If Reader access causes performance collection to fail, try granting contributor access on a resource group level.
 
 Additional information on this Data Collector may be found from the link:concept_requesting_support.html[Support] page or in the link:reference_data_collector_support_matrix.html[Data Collector Support Matrix].

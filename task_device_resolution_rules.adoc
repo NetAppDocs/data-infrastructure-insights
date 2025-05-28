@@ -6,16 +6,15 @@ summary: Device Resolution helps you accurately track performance and inventory 
 ---
 
 = Device Resolution rules
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-You create device resolution rules to identify hosts, storage, and tapes that are not automatically identified currently by Cloud Insights. The rules that you create identify devices currently in your environment and also identify similar devices as they are added to your environment.
+You create device resolution rules to identify hosts, storage, and tapes that are not automatically identified currently by Data Infrastructure Insights. The rules that you create identify devices currently in your environment and also identify similar devices as they are added to your environment.
 
 
 == Creating Device Resolution Rules
@@ -54,12 +53,12 @@ You can select _Host_ or _Tape_.
 
 . In the *Source* list, select the source you want to use to identify the host.
 +
-Depending on the source you chose, Cloud Insights displays the following response:
+Depending on the source you chose, Data Infrastructure Insights displays the following response:
 
-.. *Zones* lists the zones and WWN that need to be identified by Cloud Insights.
-.. *SRM* lists the unidentified aliases that need to be identified by Cloud Insights
-.. *Storage alias* lists storage aliases and WWN that need to be identified by Cloud Insights
-.. *Switch alias* lists the switch aliases that need to be identified by Cloud Insights
+.. *Zones* lists the zones and WWN that need to be identified by Data Infrastructure Insights.
+.. *SRM* lists the unidentified aliases that need to be identified by Data Infrastructure Insights
+.. *Storage alias* lists storage aliases and WWN that need to be identified by Data Infrastructure Insights
+.. *Switch alias* lists the switch aliases that need to be identified by Data Infrastructure Insights
 
 . In the *Method* list select the method you want to employ to identify the host.
 +
@@ -72,7 +71,7 @@ Depending on the source you chose, Cloud Insights displays the following respons
 |===
 +
 * Rules using Delimiters require the delimiters and the minimum length of the host name.
-The minimum length of the host name is number of characters that Cloud Insights should use to identify a host. Cloud Insights performs DNS lookups only for host names that are this long or longer.
+The minimum length of the host name is number of characters that Data Infrastructure Insights should use to identify a host. Data Infrastructure Insights performs DNS lookups only for host names that are this long or longer.
 +
 For rules using Delimiters, the input string is tokenized by the delimiter and a list of host name candidates is created by making several combinations of the adjacent token. The list is then sorted, largest to smallest. For example, for an input sring of _vipsnq03_hba3_emc3_12ep0_ the list would result in the following:
 +
@@ -99,7 +98,7 @@ A device resolution update commits manual changes that have been added since the
 
 .Procedure
 
-. Log into the Cloud Insights web UI.
+. Log into the Data Infrastructure Insights web UI.
 . Click *Manage > Device Resolution*
 . In the *Device Resolution* screen, click the down-arrow in the *Run AR* button.
 . Click *Update* to start the update.
@@ -116,7 +115,7 @@ NOTE: If your source only contains part of a host or device name, use a regular 
 
 .Procedure
 
-. Log into the Cloud Insights web UI.
+. Log into the Data Infrastructure Insights web UI.
 . Click *Manage > Device Resolution*
 . Click the *Fibre Channel Identify* tab.
 +
@@ -133,7 +132,7 @@ The order of the rules are changed in the Identify screen, but are not changed g
 
 . Select the method that that meets your needs.
 
-Cloud Insights executes the host resolution process in the order in which the methods appear, beginning with those at the top.
+Data Infrastructure Insights executes the host resolution process in the order in which the methods appear, beginning with those at the top.
 
 When rules that apply are encountered, rule names are shown in the rules column and identified as manual.
 

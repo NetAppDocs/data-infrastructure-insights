@@ -1,71 +1,70 @@
 ---
 sidebar: sidebar
 permalink: security_overview.html
-summary:  Cloud Insights follows security best practices throughout the release life cycle.
+summary:  Data Infrastructure Insights follows security best practices throughout the release life cycle.
 keywords: security, risk, protection
 ---
 
-= Cloud Insights Security
-:toc: macro
+= Data Infrastructure Insights Security
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Product and customer data security is of utmost importance at NetApp. Cloud Insights follows security best practices throughout the release life cycle to make sure customer information and data is secured in the best possible way.
+Product and customer data security is of utmost importance at NetApp. Data Infrastructure Insights follows security best practices throughout the release life cycle to make sure customer information and data is secured in the best possible way.
 
 == Security Overview
 
 === Physical security
-The Cloud Insights production infrastructure is hosted in Amazon Web Services (AWS). Physical and environmental security-related controls for Cloud Insights production servers, which include buildings as well as locks or keys used on doors, are managed by AWS. As per AWS: “Physical access is controlled both at the perimeter and at building ingress points by professional security staff utilizing video surveillance, intrusion detection systems, and other electronic means. Authorized staff utilize multi-factor authentication mechanisms to access data center floors.” 
+The Data Infrastructure Insights production infrastructure is hosted in Amazon Web Services (AWS). Physical and environmental security-related controls for Data Infrastructure Insights production servers, which include buildings as well as locks or keys used on doors, are managed by AWS. As per AWS: “Physical access is controlled both at the perimeter and at building ingress points by professional security staff utilizing video surveillance, intrusion detection systems, and other electronic means. Authorized staff utilize multi-factor authentication mechanisms to access data center floors.” 
 
-Cloud Insights follows the best practices of the link:https://aws.amazon.com/compliance/shared-responsibility-model/[Shared Responsibility model] described by AWS. 
+Data Infrastructure Insights follows the best practices of the link:https://aws.amazon.com/compliance/shared-responsibility-model/[Shared Responsibility model] described by AWS. 
 
 === Product security
-Cloud Insights follows a development lifecycle in line with Agile principles, thus allowing us to address any security-oriented software defects more rapidly, compared to longer release cycle development methodologies. Using continuous integration methodologies, we are able to rapidly respond to both functional and security changes. The change management procedures and policies define when and how changes occur and help to maintain the stability of the production environment. Any impactful changes are formally communicated, coordinated, properly reviewed, and approved prior to their release into the production environment.
+Data Infrastructure Insights follows a development lifecycle in line with Agile principles, thus allowing us to address any security-oriented software defects more rapidly, compared to longer release cycle development methodologies. Using continuous integration methodologies, we are able to rapidly respond to both functional and security changes. The change management procedures and policies define when and how changes occur and help to maintain the stability of the production environment. Any impactful changes are formally communicated, coordinated, properly reviewed, and approved prior to their release into the production environment.
 
 === Network security
-Network access to resources in the Cloud Insights environment is controlled by host-based firewalls. Each resource (such as a load balancer or virtual machine instance) has a host-based firewall that restricts inbound traffic to only the ports needed for that resource to perform its function. 
+Network access to resources in the Data Infrastructure Insights environment is controlled by host-based firewalls. Each resource (such as a load balancer or virtual machine instance) has a host-based firewall that restricts inbound traffic to only the ports needed for that resource to perform its function. 
 
-Cloud Insights uses various mechanisms including intrusion detection services to monitor the production environment for security anomalies. 
+Data Infrastructure Insights uses various mechanisms including intrusion detection services to monitor the production environment for security anomalies. 
 
 === Risk Assessment
-Cloud Insights team follows a formalized Risk Assessment process to provide a systematic, repeatable way to identify and assess the risks so that they can be appropriately managed through a Risk Treatment Plan.
+Data Infrastructure Insights team follows a formalized Risk Assessment process to provide a systematic, repeatable way to identify and assess the risks so that they can be appropriately managed through a Risk Treatment Plan.
 
 === Data protection
-The Cloud Insights production environment is set up in a highly redundant infrastructure utilizing multiple availability zones for all services and components. Along with utilizing a highly available and redundant compute infrastructure, critical data is backed up at regular intervals and restores are periodically tested. Formal backup policies and procedures minimize the impact of interruptions of business activities and protects business processes against the effects of failures of information systems or disasters and ensures their timely and adequate resumption. 
+The Data Infrastructure Insights production environment is set up in a highly redundant infrastructure utilizing multiple availability zones for all services and components. Along with utilizing a highly available and redundant compute infrastructure, critical data is backed up at regular intervals and restores are periodically tested. Formal backup policies and procedures minimize the impact of interruptions of business activities and protects business processes against the effects of failures of information systems or disasters and ensures their timely and adequate resumption. 
 
 === Authentication and access management
-All customer access to Cloud Insights is done via browser UI interactions over https. Authentication is accomplished via the 3rd party service, Auth0. NetApp has centralized on this as the authentication layer for all Cloud Data services.
+All customer access to Data Infrastructure Insights is done via browser UI interactions over https. Authentication is accomplished via the 3rd party service, Auth0. NetApp has centralized on this as the authentication layer for all Cloud Data services.
 
-Cloud Insights follows industry best practices including “Least Privilege” and “Role-based access control” around logical access to the Cloud Insights production environment. Access is controlled on a strict need basis and is only granted for select authorized personnel using multi-factor authentication mechanisms. 
+Data Infrastructure Insights follows industry best practices including “Least Privilege” and “Role-based access control” around logical access to the Data Infrastructure Insights production environment. Access is controlled on a strict need basis and is only granted for select authorized personnel using multi-factor authentication mechanisms. 
 
 === Collection and protection of customer data
-All customer data is encrypted in transit across public networks and encrypted at rest. Cloud Insights utilizes encryption at various points in the system to protect customer data using technologies that includes Transport Layer Security (TLS) and the industry-standard AES-256 algorithm. 
+All customer data is encrypted in transit across public networks and encrypted at rest. Data Infrastructure Insights utilizes encryption at various points in the system to protect customer data using technologies that includes Transport Layer Security (TLS) and the industry-standard AES-256 algorithm. 
 
 === Customer deprovisioning
 Email notifications are sent out at various intervals to inform the customer their subscription is expiring. Once the subscription has expired, the UI is restricted and a grace period begins for data collection. The customer is then notified via email. Trial subscriptions have a 14-day grace period and paid subscription accounts have a 28-day grace period. After the grace period has expired, the customer is notified via email that the account will be deleted in 2 days. A paid customer can also request directly to be off the service. 
  
-Expired tenants and all associated customer data are deleted by the Cloud Insights Operations (SRE) team at the end of the grace period or upon confirmation of a customer’s request to terminate their account. In either case, the SRE team runs an API call to delete the account. The API call deletes the tenant instance and all customer data. Customer deletion is verified by calling the same API and verifying that the customer tenant status is “DELETED.” 
+Expired tenants and all associated customer data are deleted by the Data Infrastructure Insights Operations (SRE) team at the end of the grace period or upon confirmation of a customer’s request to terminate their account. In either case, the SRE team runs an API call to delete the account. The API call deletes the tenant instance and all customer data. Customer deletion is verified by calling the same API and verifying that the customer tenant status is “DELETED.” 
 
 === Security incident management
-Cloud Insights is integrated with NetApp's Product Security Incident Response Team (PSIRT) process to find, assess, and resolve known vulnerabilities. PSIRT intakes vulnerability information from multiple channels including customer reports, internal engineering, and widely recognized sources such as the CVE database.
+Data Infrastructure Insights is integrated with NetApp's Product Security Incident Response Team (PSIRT) process to find, assess, and resolve known vulnerabilities. PSIRT intakes vulnerability information from multiple channels including customer reports, internal engineering, and widely recognized sources such as the CVE database.
 
-If an issue is detected by the Cloud Insights engineering team, the team will initiate the PSIRT process, assess, and potentially remediate the issue.
+If an issue is detected by the Data Infrastructure Insights engineering team, the team will initiate the PSIRT process, assess, and potentially remediate the issue.
 
-It is also possible that a Cloud Insights customer or researcher may identify a security issue with the Cloud Insights product and report the issue to Technical Support or directly to NetApp's incident response team. In these cases, the Cloud Insights team will initiate the PSIRT process, assess, and potentially remediate the issue.
+It is also possible that a Data Infrastructure Insights customer or researcher may identify a security issue with the Data Infrastructure Insights product and report the issue to Technical Support or directly to NetApp's incident response team. In these cases, the Data Infrastructure Insights team will initiate the PSIRT process, assess, and potentially remediate the issue.
 
 === Vulnerability and Penetration testing
-Cloud Insights follows industry best practices and performs regular vulnerability and penetration testing using internal and external security professionals and companies.
+Data Infrastructure Insights follows industry best practices and performs regular vulnerability and penetration testing using internal and external security professionals and companies.
 
 === Security awareness training
-All Cloud Insights personnel undergo security training, developed for individual roles, to make sure each employee is equipped to handle the specific security-oriented challenges of their roles.
+All Data Infrastructure Insights personnel undergo security training, developed for individual roles, to make sure each employee is equipped to handle the specific security-oriented challenges of their roles.
 
 === Compliance
-Cloud Insights performs independent third-party Audit and validations from external Licensed CPA firm of its security, processes, and services, including completion of the SOC 2 Audit.
+Data Infrastructure Insights performs independent third-party Audit and validations from external Licensed CPA firm of its security, processes, and services, including completion of the SOC 2 Audit.
 
 === NetApp Security Advisories
 

@@ -6,9 +6,8 @@ summary: Configuring HDS data collector.
 ---
 
 = Hitachi HCP data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -21,11 +20,11 @@ NOTE: Hitachi Content Platform is metered at a different Raw TB to Managed Unit 
 
 == Terminology 
 
-Cloud Insights acquires the following inventory information from the Hitachi HCP data collector. For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires the following inventory information from the Hitachi HCP data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term|Cloud Insights Term 
+|Vendor/Model Term|Data Infrastructure Insights Term 
 |HCP Cluster|Storage
 |Tenant |Storage Pool|
 |Namespace|Internal Volume
@@ -49,13 +48,13 @@ The following requirements must be met in order to collect performance data:
 * HDS USP, USP V, and VSP performance 
 ** Performance Monitor must be licensed.
 ** Monitoring switch must be enabled. 
-** The Export Tool (Export.exe) must be copied to the Cloud Insights AU.
+** The Export Tool (Export.exe) must be copied to the Data Infrastructure Insights AU.
 ** The Export Tool version must match the microcode version of the target array.
 
 * AMS performance:
-** NetApp strongly recommends creating a dedicated service account on AMS arrays for Cloud Insights to use to retrieve performance data. Storage Navigator only allows a user account one concurrent login to the array. Having Cloud Insights use the same user account as management scripts or HiCommand may result in Cloud Insights, management scripts, or HiCommand being unable to communicate to the array due to the one concurrent user account login limit
+** NetApp strongly recommends creating a dedicated service account on AMS arrays for Data Infrastructure Insights to use to retrieve performance data. Storage Navigator only allows a user account one concurrent login to the array. Having Data Infrastructure Insights use the same user account as management scripts or HiCommand may result in Data Infrastructure Insights, management scripts, or HiCommand being unable to communicate to the array due to the one concurrent user account login limit
 ** Performance Monitor must be licensed.
-** The Storage Navigator Modular 2 (SNM2) CLI utility needs to be installed on the Cloud Insights AU. 
+** The Storage Navigator Modular 2 (SNM2) CLI utility needs to be installed on the Data Infrastructure Insights AU. 
 ////
 
 == Configuration

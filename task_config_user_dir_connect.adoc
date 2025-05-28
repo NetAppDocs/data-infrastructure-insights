@@ -6,9 +6,8 @@ summary: Configuring Workload Security Active Directory User Directory Collector
 ---
 
 = Configuring an Active Directory (AD) User Directory Collector 
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -19,7 +18,7 @@ Workload Security can be configured to collect user attributes from Active Direc
 
 .Before you begin
 
-* You must be a Cloud Insights Administrator or Account Owner to perform this task. 
+* You must be a Data Infrastructure Insights Administrator or Account Owner to perform this task. 
 * You must have the IP address of the server hosting the Active Directory server.
 * An Agent must be configured before you configure a User Directory connector. 
 

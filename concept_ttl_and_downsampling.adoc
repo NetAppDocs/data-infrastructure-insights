@@ -6,20 +6,19 @@ keywords: time-to-live, TTL, downsampling, downsample, retention
 ---
 
 = Data Retention and Downsampled Data
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Because Cloud Insights retains data for a set period (per Edition), there is potential for processing of thousands of data points. Data may therefore be downsampled before being displayed in charts and tables. 
+Because Data Infrastructure Insights retains data for a set period (per Edition), there is potential for processing of thousands of data points. Data may therefore be downsampled before being displayed in charts and tables. 
 
 == Data Retention 
 
-Cloud Insights retains data for an amount of time determined by the active subscribed Edition. 
+Data Infrastructure Insights retains data for an amount of time determined by the active subscribed Edition. 
 
 |===
 |Edition|Data Retention
@@ -28,7 +27,7 @@ Cloud Insights retains data for an amount of time determined by the active subsc
 |Premium |13 Months
 |===
 
-A full list of features available in each Edition is available on the Cloud Insights link:https://bluexp.netapp.com/cloud-insights-pricing[Editions and Pricing] page.
+A full list of features available in each Edition is available on the Data Infrastructure Insights link:https://bluexp.netapp.com/cloud-insights-pricing[Editions and Pricing] page.
 
 //Premium Edition subscriptions with at least 500 Managed Units (MUs) retain Business Intelligence and Reporting data for 13 months.
 
@@ -57,7 +56,7 @@ Since we are choosing a time range of less than 7 days and we have less than 1,0
 
 image:Charts_NoDownsample.png[No Downsampling]
 
-However, if you are viewing data by choosing either 30d on the asset page time selector, or by setting a custom time range of more than 7 days (or in the event that Cloud Insights has collected more than 1,000 data samples for the time period chosen), the data is downsampled before being displayed. When you zoom in on a downsampled chart, the display continues to show the approximated data.
+However, if you are viewing data by choosing either 30d on the asset page time selector, or by setting a custom time range of more than 7 days (or in the event that Data Infrastructure Insights has collected more than 1,000 data samples for the time period chosen), the data is downsampled before being displayed. When you zoom in on a downsampled chart, the display continues to show the approximated data.
 
 NOTE: When you zoom in on a downsampled chart, the zoom is a digital zoom. The display continues to show the approximated data.
 

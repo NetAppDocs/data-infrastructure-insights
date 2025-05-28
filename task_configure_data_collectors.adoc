@@ -6,16 +6,15 @@ summary: General data collector instructions
 ---
 
 = Configuring Data Collectors
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-You configure Data Collectors in your Cloud Insights environment to collect data from devices in the data center.
+You configure Data Collectors in your Data Infrastructure Insights environment to collect data from devices in the data center.
 
 .Before you begin
 * You must have configured an Acquisition Unit before you can start collecting data.
@@ -23,7 +22,7 @@ You configure Data Collectors in your Cloud Insights environment to collect data
 * Device network addresses, account information, and passwords are required for all devices you are collecting data from.
 
 .Steps
-. From the Cloud Insights menu, click *Observability > Collectors*
+. From the Data Infrastructure Insights menu, click *Observability > Collectors*
 +
 
 The system displays the available Data Collectors arranged by vendor.
@@ -37,7 +36,7 @@ In the dialog box you can configure the data collector and add an Acquisition Un
 
 . Click *Advanced Configuration* to add additional configuration fields. (Not all data collectors require advanced configuration.)
 . Click *Test Configuration* to verify that the data collector is properly configured.
-. Click *Add Collector* to save the configuration and add the data collector to your Cloud Insights tenant.
+. Click *Add Collector* to save the configuration and add the data collector to your Data Infrastructure Insights tenant.
 
 It may take up to two poll periods before data from the service is displayed in dashboards or available for querying.
 

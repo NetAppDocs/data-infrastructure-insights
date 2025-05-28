@@ -6,27 +6,26 @@ summary: Configuring Cisco MDS Fablic Switch data collector.
 ---
 
 = Cisco MDS Fabric Switches data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead] 
-Cloud Insights uses the Cisco MDS Fabric Switches data collector to discover inventory for Cisco MDS Fabric Switches as well as a variety of Cisco Nexus FCoE switches on which the FC service is enabled. 
+Data Infrastructure Insights uses the Cisco MDS Fabric Switches data collector to discover inventory for Cisco MDS Fabric Switches as well as a variety of Cisco Nexus FCoE switches on which the FC service is enabled. 
 
 Additionally, you can discover many models of Cisco devices running in NPV mode with this data collector. 
 
 == Terminology
 
-Cloud Insights acquires the following inventory information from the Cisco FC Switch data collector. For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires the following inventory information from the Cisco FC Switch data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 [cols=2*, options="header", cols"50,50"]
 |===
 
-|Vendor/Model Term|Cloud Insights Term
+|Vendor/Model Term|Data Infrastructure Insights Term
 
 |Switch|Switch
 |Port|Port
@@ -111,7 +110,7 @@ Some things to try if you encounter problems with this data collector:
 |•	Make sure the data source IP configured for the device is correct 
 •	Login to the device using Cisco Device Manager GUI
 •	Login to the device using CLI
-|Error: Cloud Insights is not able to obtain the switch’s WWN. |This may not be a FC or FCoE switch, and as such may not be supported. Make sure the IP/FQDN configured in the datasource is truly a FC/FCoE switch.
+|Error: Data Infrastructure Insights is not able to obtain the switch’s WWN. |This may not be a FC or FCoE switch, and as such may not be supported. Make sure the IP/FQDN configured in the datasource is truly a FC/FCoE switch.
 |Error: Found more than one nodes logged into NPV switch port
 |Disable direct acquisition of the NPV switch
 |Error: Could not connect to the switch

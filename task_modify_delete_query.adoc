@@ -6,9 +6,8 @@ keywords: query, queries, modify, edit, delete, remove
 ---
 
 = Modifying or Deleting a Query
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

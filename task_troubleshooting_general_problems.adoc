@@ -1,21 +1,20 @@
 ---
 sidebar: sidebar
 permalink: task_troubleshooting_general_problems.html
-summary: General Cloud Insights Troubleshooting tips.
+summary: General Data Infrastructure Insights Troubleshooting tips.
 keywords: troubleshooting, problems, browser, login, log in, accessing, access to, Trident, qtree, quota
 ---
 
-= Troubleshooting General Cloud Insights Problems
-:toc: macro
+= Troubleshooting General Data Infrastructure Insights Problems
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Here you will find suggestions for troubleshooting Cloud insights. 
+Here you will find suggestions for troubleshooting Data Infrastructure Insights. 
 
 See also link:task_troubleshooting_linux_acquisition_unit_problems.html[Troubleshooting Linux Acquisition Unit Problems] and link:task_troubleshooting_windows_acquisition_unit_problems.html[Troubleshooting Windows Acquisition Unit Problems].
 
@@ -24,8 +23,8 @@ See also link:task_troubleshooting_linux_acquisition_unit_problems.html[Troubles
 |===
 |*Problem:* | *Try this:* 
 
-|Cloud Insights automatically logs out every 6 hours
-|This is due to disabled browser third-party cookies. Users can configure their browser to enable all 3rd party cookies, or use a narrower exception list to just enable those for Cloud Insights.
+|Data Infrastructure Insights automatically logs out every 6 hours
+|This is due to disabled browser third-party cookies. Users can configure their browser to enable all 3rd party cookies, or use a narrower exception list to just enable those for Data Infrastructure Insights.
  
 Example:
 Open your browser's settings
@@ -44,21 +43,21 @@ In Firefox, cookie exceptions are designated as simply _auth0.com_ and _netapp.c
 
 |I have a BlueXP account but am unable to login to BlueXP.
 |Open a ticket from https://mysupport.netapp.com/site/help. Select category “blueXP.netapp.com > Account/Login issues” or “bluexp.netapp.com > Federation issues”.  These are specifically for BlueXP issues or questions.
-For all other Cloud Insights technical support issues, contact link:concept_requesting_support.html[NetApp support]. 
+For all other Data Infrastructure Insights technical support issues, contact link:concept_requesting_support.html[NetApp support]. 
 
-|I got invited to Cloud Insights but I get a "not authorized" message.
+|I got invited to Data Infrastructure Insights but I get a "not authorized" message.
 |Verify that you have signed up for a BlueXP account, or that your organization uses SSO login with BlueXP.
 
-Verify your BlueXP profile email address matches email address shown in your Cloud Insights welcome email. If the email does not match, request a new invitation with the correct email address.
+Verify your BlueXP profile email address matches email address shown in your Data Infrastructure Insights welcome email. If the email does not match, request a new invitation with the correct email address.
 
-|I logged out from BlueXP and was automatically logged out from Cloud Insights. |Single Sign-On (SSO) across NetApp Cloud Services logs out all Cloud Insights sessions. If you have access to multiple Cloud Insights accounts, logging out from any one logs out all active sessions. Log back in to access your account.
+|I logged out from BlueXP and was automatically logged out from Data Infrastructure Insights. |Single Sign-On (SSO) across NetApp Cloud Services logs out all Data Infrastructure Insights sessions. If you have access to multiple Data Infrastructure Insights accounts, logging out from any one logs out all active sessions. Log back in to access your account.
 
 |I was automatically logged out after several days.
 |NetApp Cloud accounts require reauthentication every few days (current BlueXP setting is 7 days). Log back in to access your account.
 
 |I receive an error message “no longer authorized to login”.
-|Contact your account administrator to verify access to Cloud Insights. 
-Verify your BlueXP profile email address matches email address shown in your Cloud Insights welcome email
+|Contact your account administrator to verify access to Data Infrastructure Insights. 
+Verify your BlueXP profile email address matches email address shown in your Data Infrastructure Insights welcome email
 
 |Other login errors
 |Try incognito mode in Chrome, or clear browser history, cookies, and cache. 
@@ -90,15 +89,15 @@ I am able to save the report, but when I re-open the saved report, the schedule 
 
 == Resources
 
-Additional troubleshooting tips may be found in the link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Insights[NetApp Knowledgebase] (support sign-in required).
+Additional troubleshooting tips may be found in the link:https://kb.netapp.com/Cloud/BlueXP/DII[NetApp Knowledgebase] (support sign-in required).
 
-Additional support information may be found from the Cloud Insights link:concept_requesting_support.html[Support] page.
+Additional support information may be found from the Data Infrastructure Insights link:concept_requesting_support.html[Support] page.
 
-If you have an active Cloud Insights subscription you can use these support options:
+If you have an active Data Infrastructure Insights subscription you can use these support options:
 
 link:https://www.netapp.com/us/contact-us/support.aspx[Phone]
 link:https://mysupport.netapp.com/site/cases/mine/create?serialNumber=95001014387268156333[Support Ticket]
 
-For more information, see the https://docs.netapp.com/us-en/cloudinsights/concept_requesting_support.html[Cloud Insights Support Documentation].
+For more information, see the https://docs.netapp.com/us-en/cloudinsights/concept_requesting_support.html[Data Infrastructure Insights Support Documentation].
 
 

@@ -1,25 +1,24 @@
 ---
 sidebar: sidebar
 permalink: security_information_and_region.html
-summary:  Cloud Insights follows security best practices throughout the release life cycle.
+summary:  Data Infrastructure Insights follows security best practices throughout the release life cycle.
 keywords: security, risk, protection
 ---
 
 = Information and Region
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-NetApp takes the security of customer information very seriously. Here is how and where Cloud Insights stores your information. 
+NetApp takes the security of customer information very seriously. Here is how and where Data Infrastructure Insights stores your information. 
 
-== What information does Cloud Insights store?
+== What information does Data Infrastructure Insights store?
 
-Cloud Insights stores the following information:
+Data Infrastructure Insights stores the following information:
 
 * Performance data
 +
@@ -35,7 +34,7 @@ This summarizes customer-provided configuration data used to manage customer inv
 
 * Secrets
 +
-Secrets consist of the credentials used by the Cloud Insights Acquisition Unit to access customer devices and services. These credentials are encrypted using strong asymmetric encryption, and the private keys are stored only on the Acquisition Units and never leave the customer environment. Even privileged Cloud Insights SREs are unable to access customer secrets in plain-text due to this design.
+Secrets consist of the credentials used by the Data Infrastructure Insights Acquisition Unit to access customer devices and services. These credentials are encrypted using strong asymmetric encryption, and the private keys are stored only on the Acquisition Units and never leave the customer environment. Even privileged Data Infrastructure Insights SREs are unable to access customer secrets in plain-text due to this design.
 
 * Functional Data
 +
@@ -43,39 +42,39 @@ This is data generated as a result of NetApp providing the Cloud Data Service, w
 
 * User Access data
 +
-Authentication and access information that allows NetApp BlueXP to communicate with regional Cloud Insights sites, including data related to user Authorization. 
+Authentication and access information that allows NetApp BlueXP to communicate with regional Data Infrastructure Insights sites, including data related to user Authorization. 
 
 * Storage Workload Security User Directory Data
 +
 In cases where the Workload Security functionality is enabled AND the customer chooses to enable the User Directory collector, the system will store user display names, corporate email addresses, and other information collected from Active Directory.
 
-NOTE: User Directory data refers to user directory information collected by the Workload Security User Directory data collector, not to data about the users of Cloud Insights/Workload Security themselves.
+NOTE: User Directory data refers to user directory information collected by the Workload Security User Directory data collector, not to data about the users of Data Infrastructure Insights/Workload Security themselves.
  
 *No explicit personal data* is collected from infrastructure and services resources. Collected information consists of performance metrics, configuration information and infrastructure metadata only, much like many vendor phone-homes, including NetApp auto-support and ActiveIQ. However, depending on a customer's naming conventions, data for shares, volumes, VMs, qtrees, applications, etc. may contain personally identifiable information. 
  
-If Workload Security is enabled, the system additionally looks at file and directory names on SMB or other shares, which may contain personally identifiable information. Where customers enable the Workload Security User Directory Collector (which essentially maps Windows SIDs to usernames through Active Directory), the display name, corporate email address and any additional attributes selected will be collected and stored by Cloud Insights.
+If Workload Security is enabled, the system additionally looks at file and directory names on SMB or other shares, which may contain personally identifiable information. Where customers enable the Workload Security User Directory Collector (which essentially maps Windows SIDs to usernames through Active Directory), the display name, corporate email address and any additional attributes selected will be collected and stored by Data Infrastructure Insights.
  
-Additionally, access logs to Cloud Insights are maintained and contain users' IP and email addresses used to log into the service.
+Additionally, access logs to Data Infrastructure Insights are maintained and contain users' IP and email addresses used to log into the service.
 
 
 == Where is my information stored?
 
-Cloud Insights stores information according to the region in which your environment is created.
+Data Infrastructure Insights stores information according to the region in which your environment is created.
 
 The following information is stored in the host region:
 
 * Telemetry and asset/object information, including counters and performance metrics
 * Acquisition Unit information
 * Functional data
-* Audit information on user activities inside Cloud Insights
+* Audit information on user activities inside Data Infrastructure Insights
 * Workload Security Active Directory information
 * Workload Security Audit information 
 
-The following information resides in the United States, regardless of the region hosting your Cloud Insights environment:
+The following information resides in the United States, regardless of the region hosting your Data Infrastructure Insights environment:
 
 * Environment site (sometimes called "tenant") information such as site/account owner. 
-* Information that allows NetApp BlueXP to communicate with regional Cloud Insights sites, including anything to do with user Authorization.
-* Information related to the relation between the Cloud Insights user and the tenant.
+* Information that allows NetApp BlueXP to communicate with regional Data Infrastructure Insights sites, including anything to do with user Authorization.
+* Information related to the relation between the Data Infrastructure Insights user and the tenant.
  
 === Host Regions
 

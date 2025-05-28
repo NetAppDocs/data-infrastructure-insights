@@ -6,10 +6,9 @@ summary: The NetApp Kubernetes Monitoring Operator has a number of configurable 
 ---
 
 = Kubernetes Monitoring Operator Configuration Options
-:toc: macro
 :hardbreaks:
 :nofooter:
-:toclevels: 2
+
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
@@ -24,9 +23,9 @@ The table below lists the possible options for the _AgentConfiguration_ file:
 |Component|Option|Description
 
 |agent||Configuration options that are common to all components that the operator can install. These can be considered as "global" options.
-||dockerRepo|A dockerRepo override to pull images from customers private docker repos as compared to Cloud Insights docker repo. Default is cloud insights docker repo
+||dockerRepo|A dockerRepo override to pull images from customers private docker repos as compared to Data Infrastructure Insights docker repo. Default is Data Infrastructure Insights docker repo
 ||dockerImagePullSecret|Optional: A secret for the customers private repo
-||clusterName|Free text field that uniquely identifies a cluster across all customers clusters. This should be unique across a cloud insights tenant. Default is what the customer enters in the UI for the "Cluster Name" field
+||clusterName|Free text field that uniquely identifies a cluster across all customers clusters. This should be unique across a Data Infrastructure Insights tenant. Default is what the customer enters in the UI for the "Cluster Name" field
 
 ||proxy
 
@@ -56,7 +55,8 @@ proxy:
 ||rsMemLimit|Memory limit for telegraf rs
 ||rsCpuRequest|CPU request for telegraf rs
 ||rsMemRequest|Memory request for telegraf rs
-||runPrivileged|Run the telegraf container in privileged mode. Set this to true if SELinux is enabled on your k8s nodes
+||runPrivileged|Run the telegraf DaemonSet's _telegraf-mountstats-poller_ container in privileged mode. Set this to true if SELinux is enabled on your Kubernetes nodes.
+||runDsPrivileged|Set runDsPrivileged to true to run the telegraf DaemonSet's telegraf container in privileged mode.
 ||batchSize|See link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent[Telegraf configuration documentation]
 ||bufferLimit|See link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent[Telegraf configuration documentation]
 ||roundInterval|See link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent[Telegraf configuration documentation]
@@ -69,10 +69,12 @@ proxy:
 ||dsTolerations	|telegraf-ds additional tolerations.
 ||rsTolerations	|telegraf-rs additional tolerations.
 
-
 ||skipProcessorsAfterAggregators |See link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent[Telegraf configuration documentation]
 
-||unprotected | See this link:https://community.influxdata.com/t/updating-telegraf-to-version-1-29-5-crashes-kubernetes-pod/33376[known Telegraf issue]. Setting _unprotected_ will instruct the Kubernetes Monitoring Operator to run Telegraf with the `--unprotected` flag.
+||unprotected | ee this link:https://community.influxdata.com/t/updating-telegraf-to-version-1-29-5-crashes-kubernetes-pod/33376[known Telegraf issue]. Setting _unprotected_ will instruct the Kubernetes Monitoring Operator to run Telegraf with the `--unprotected` flag.
+
+||insecureK8sSkipVerify |If telegraf is unable to verify certificate due to lack of IP SANs, try enabling verification skip
+
 
 |kube-state-metrics||Configuration options that can customize the kube state metrics installation of the Operator
 
@@ -102,9 +104,8 @@ persistentvolumeclaims=[*],persistentvolumes=[*],pods=[*],replicasets=[*],resour
 ||fluent-bit-tolerations|fluent-bit-ds additional tolerations.
 ||event-exporter-tolerations|event-exporter additional tolerations.
 ||event-exporter-maxEventAgeSeconds|event-exporter max event age.  See https://github.com/jkroepke/resmoio-kubernetes-event-exporter
-||runPrivileged|Set runPrivileged to true if Fluent Bit fails to start, trying to open/create its database.
 
-|workload-map||Configuration options that can customize the workload map collection and installation of the Operator
+|workload-map||Configuration options that can customize the workload map collection and installation of the Operator.
 ||cpuLimit|CPU limit for net observer ds
 ||memLimit|mem limit for net observer ds
 ||cpuRequest|CPU request for net observer ds
@@ -157,10 +158,10 @@ spec:
   # #   To update them, uncomment the line, change the value, and apply the updated AgentConfiguration.
   agent:
     # # [Required Field] A uniquely identifiable user-friendly clustername.
-    # # clusterName must be unique across all clusters in your Cloud Insights environment.
+    # # clusterName must be unique across all clusters in your Data Infrastructure Insights environment.
     clusterName: "my_cluster"
 
-    # # Proxy settings. The proxy that the operator should use to send metrics to Cloud Insights.
+    # # Proxy settings. The proxy that the operator should use to send metrics to Data Infrastructure Insights.
     # # Please see documentation here: https://docs.netapp.com/us-en/cloudinsights/task_config_telegraf_agent_k8s.html#configuring-proxy-support
     # proxy:
     #   server:
@@ -234,8 +235,11 @@ spec:
     # If telegraf warns of insufficient lockable memory, try increasing the limit of lockable memory for Telegraf in the underlying operating system/node.  If increasing the limit is not an option, set this to true to instruct Telegraf to not attempt to reserve locked memory pages.  While this might pose a security risk as decrypted secrets might be swapped out to disk, it allows for execution in environments where reserving locked memory is not possible.
     # unprotected: 'false'
 
-    # # Set runPrivileged to true if SELinux is enabled on your Kubernetes nodes.
-    # runPrivileged: 'false'
+    # # Run the telegraf DaemonSet's telegraf-mountstats-poller container in privileged mode.  Set runPrivileged to true if SELinux is enabled on your Kubernetes nodes.
+    # runPrivileged: '{{ .Values.telegraf_installer.kubernetes.privileged_mode }}'
+
+    # # Set runDsPrivileged to true to run the telegraf DaemonSet's telegraf container in privileged mode
+    # runDsPrivileged: '{{ .Values.telegraf_installer.kubernetes.ds.privileged_mode }}'
 
     # # Collect container Block IO metrics.
     # dsBlockIOEnabled: 'true'

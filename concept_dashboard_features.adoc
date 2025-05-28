@@ -7,10 +7,8 @@ keywords: dashboard, widget, custom, concepts, queries, variables, rollup, roll 
 ---
 
 = Dashboard Features
-:toc: macro
 :hardbreaks:
 :nofooter:
-:toclevels: 1
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
@@ -18,7 +16,7 @@ keywords: dashboard, widget, custom, concepts, queries, variables, rollup, roll 
 [.lead]
 Dashboards and widgets allow great flexibility in how data is displayed. Here are some concepts to help you get the most from your custom dashboards. 
 
-toc::[]
+toc:[]
 
 == Widget Naming
 
@@ -50,24 +48,24 @@ When legends are displayed, if the landing page of the asset indicated by the le
 
 == Transforming Metrics 
 
-Cloud Insights provides different *transform* options for certain metrics in widgets (specifically, those metrics called "Custom" or Integration Metrics, such as from Kubernetes, ONTAP Advanced Data, Telegraf plugins, etc.), allowing you to display the data in a number of ways. When adding transformable metrics to a widget, you are presented with a drop-down giving the following transform choices:
+Data Infrastructure Insights provides different *transform* options for certain metrics in widgets (specifically, those metrics called "Custom" or Integration Metrics, such as from Kubernetes, ONTAP Advanced Data, Telegraf plugins, etc.), allowing you to display the data in a number of ways. When adding transformable metrics to a widget, you are presented with a drop-down giving the following transform choices:
 
-None::
+None:
 Data is displayed as is, with no manipulation.
 
-Rate::
+Rate:
 Current value divided by the time range since the previous observation.
 
-Cumulative::
+Cumulative:
 The accumulation of the sum of previous values and the current value.
 
-Delta::
+Delta:
 The difference between the previous observation value and the current value. 
 
-Delta rate::
+Delta rate:
 Delta value divided by the time range since the previous observation.
 
-Cumulative Rate::
+Cumulative Rate:
 Cumulative value divided by the time range since the previous observation.
 
 Note that transforming metrics does not change the underlying data itself, but only the way that data is displayed.
@@ -301,6 +299,10 @@ You can select the time range for your dashboard data. Only data relevant to the
 +
 The Custom time range allows you to select up to 31 consecutive days. You can also set the Start Time and End Time of day for this range. The default Start Time is 12:00 AM on the first day selected and the default End Time is 11:59 PM on the last day selected. Clicking *Apply* will apply the custom time range to the dashboard.
 
+=== Zooming in to a time range
+
+While viewing a time-series widget (Line, Spline, Area, Stacked Area)--or a graph on a landing page--you can drag the mouse over the graph to zoom in. In the upper right of the screen you can then lock that time range so that graphs on other pages reflect data for that locked time range. To unlock, select a different time range from the list.
+
 
 == Overriding Dashboard Time in Individual widgets
 
@@ -340,11 +342,11 @@ Notice that the line is displayed flat at the bottom of the chart. This is becau
 +
 The Latency line is now drawn at its own scale, which is displayed on the right side of the chart.
 
-image::SecondaryAxisExplained.png[Secondary Axis example]
+image:SecondaryAxisExplained.png[Secondary Axis example]
 
 == Expressions in widgets
 
-In a dashboard, any time series widget (line, spline, area, stacked area) bar chart, column chart, pie chart, or table widget allows you to build expressions from metrics you choose, and show the result of those expressions in a single graph (or column in the case of the <<expressions-in-a-table-widget,table widget>>). The following examples use expressions to solve specific problems. In the first example, we want to show Read IOPS as a percentage of Total IOPS for all storage assets in our environment. The second example gives visibility into the "system" or "overhead" IOPS that occur in your environment--those IOPS that are not directly from reading or writing data.
+In a dashboard, any time series widget (line, spline, area, stacked area) bar chart, column chart, pie chart, or table widget allows you to build expressions from metrics you choose, and show the result of those expressions in a single graph (or column in the case of the <<expressions-in-a-table-widget,table widget>>). The following examples use expressions to solve specific problems. In the first example, we want to show Read IOPS as a percentage of Total IOPS for all storage assets on your tenant. The second example gives visibility into the "system" or "overhead" IOPS that occur on your tenant--those IOPS that are not directly from reading or writing data.
 
 You can use variables in expressions (for example, _$Var1 * 100_)
 
@@ -451,43 +453,6 @@ image:ExpressionExample.png[Expression in a Table Widget]
 
 Variables allow you to change the data displayed in some or all widgets on a dashboard at once. By setting one or more widgets to use a common variable, changes made in one place cause the data displayed in each widget to update automatically.  
 
-////
-.Before you begin
-The example below requires the *City* annotation (also called City attribute) to be set on multiple storage assets. For best results, set different cities on different storages. See the link:https://docs.netapp.com/us-en/cloudinsights/task_defining_annotations.html[Annotations] topics for more information on using annotations.
-
-.About this task
-Variables provide a quick and simple way of filtering the data shown in some or all of the widgets on a custom dashboard. The following steps will guide you to creating widgets that use variables, and show you how to use them on your dashboard.
-
-.Steps
-. Click on *Dashboards > +New Dashboard*.
-. Before adding widgets, you must define the variables we will use to filter the dashboard data. Click on the *Add Variable* button.
-+
-The list of attributes is displayed.
-. Let's say we want to set the dashboard to filter based on City. Select the _City_ attribute from the list.
-+
-The $city variable field is created and added to the dashboard. Variables used by the dashboard are displayed above any widgets.
-
-. Next, we must tell our widgets to use this variable. The simplest way to illustrate this is to add a table widget showing the _City_ column. Click on the *Add Widget* button and select the _Table_ widget.
-. First, add the _City_ column to the table by selecting it from the "gear" button.
-+
-City is a list-type attribute, so it contains a list of previously-defined choices. You may also choose text, boolean, or date-type attributes.
-. Next, click the *Filter by +* button and choose _City_.
-. Click _Any_ to view the possible filter choices for City. Notice that the list now includes "*$city*" at the top, in addition to any previously-available choices. Select _$city_ to use this dashboard variable.
-+
-The _$city_ choice only appears here if it was defined previously on the main dashboard page. If the variable was not previously defined, only the existing choices for the filter will be shown. Only variables that are applicable to the selected attribute type will be displayed in the drop-down for that filter.
-. *Save* the widget.
-. On the dashboard page, click on _Any_ next to the _$city_ variable, and select the city or cities you want to see.
-+
-Your table widget updates to show only the cities you selected. You can change the values in the _$city_ variable at will, and all widgets on your dashboard that are set to use the $city variable will refresh automatically to show only data for the values you selected.
-
-Be sure to *Save* your dashboard when you have it configured as you want it.
-////
-
-
-//=== More on dashboard variables
-
-Dashboard variables come in several types, can be used across different fields, and must follow rules for naming. These concepts are explained here.
-
 === Variable types
 
 A variable can be one the following types:
@@ -499,7 +464,6 @@ A variable can be one the following types:
 * *Boolean*: Use for fields with values of True/False, Yes/No, etc. For the boolean variable, the choices are Yes, No, None, Any.
 * *Date*: A date value. Use as a "from" or "to" value, depending on your widget's configuration.
 
-//image:Variables_Drop-Down.png[Variable Types]
 image:Variables_Drop_Down_Showing_Annotations.png[Variable Types]
 
 
@@ -509,11 +473,11 @@ Selecting an Attribute type variable allows you to filter for widget data contai
 
 image:Variables_Node_Example_Before_Variable_Applied.png[Agent Nodes Before Variable Filter]
 
-But if you temporarily want to see only nodes on individual subnets in your environment, you can set or change the variable to a specific Agent Node IP or IPs. Here we are viewing only the nodes on the "123" subnet:
+But if you temporarily want to see only nodes on individual subnets on your tenant, you can set or change the variable to a specific Agent Node IP or IPs. Here we are viewing only the nodes on the "123" subnet:
 
 image:Variables_Node_Example_After_Variable_Applied.png[Agent Nodes After Variable Filter]
 
-You can also set a variable to filter on _all_ objects with a particular attribute regardless of object type, for example objects with an attribute of "vendor", by specifying _*.vendor_ in the variable field. You do not need to type the "*."; Cloud Insights will supply this if you select the wildcard option.
+You can also set a variable to filter on _all_ objects with a particular attribute regardless of object type, for example objects with an attribute of "vendor", by specifying _*.vendor_ in the variable field. You do not need to type the "*."; Data Infrastructure Insights will supply this if you select the wildcard option.
 
 image:Variables_Attribute_Vendor_Example.png[Attribute Variable for Vendor]
 
@@ -614,7 +578,6 @@ Clicking the link in either a single-value widget or a gauge widget will display
 
 Like single-value and gauge widgets, you can set conditional formatting in table widgets, allowing you to highlight data with colors and/or special icons.
 
-NOTE: Conditional Formatting is not currently available in Cloud Insights Federal Edition.
 
 Conditional Formatting allows you to set and highlight Warning-level and Critical-level thresholds in table widgets, bringing instant visibility to outliers and exceptional data points.
 
@@ -633,9 +596,9 @@ You can choose whether to display condition formatting as color, icons, or both.
 
 == Choosing the Unit for Displaying Data
 
-Most widgets on a dashboard allow you to specify the Units in which to display values, for example _Megabytes_, _Thousands_, _Percentage_, _Milliseconds (ms)_, etc. In many cases, Cloud Insights knows the best format for the data being acquired. In cases where the best format is not known, you can set the format you want.
+Most widgets on a dashboard allow you to specify the Units in which to display values, for example _Megabytes_, _Thousands_, _Percentage_, _Milliseconds (ms)_, etc. In many cases, Data Infrastructure Insights knows the best format for the data being acquired. In cases where the best format is not known, you can set the format you want.
 
-In the line chart example below, the data selected for the widget is known to be in _bytes_ (the base IEC Data unit: see the table below), so the Base Unit is automatically selected as 'byte (B)'. However, the data values are large enough to be presented as gibibytes (GiB), so Cloud Insights by default auto-formats the values as GiB. The Y-axis on the graph shows 'GiB' as the display unit, and all values are displayed in terms of that unit.
+In the line chart example below, the data selected for the widget is known to be in _bytes_ (the base IEC Data unit: see the table below), so the Base Unit is automatically selected as 'byte (B)'. However, the data values are large enough to be presented as gibibytes (GiB), so Data Infrastructure Insights by default auto-formats the values as GiB. The Y-axis on the graph shows 'GiB' as the display unit, and all values are displayed in terms of that unit.
 
 //image:WidgetBaseUnitKnown.png[Widget with known base unit]
 image:used_memory_in_bytes.png[Base Unit Byte shown in Gigabytes,width=640]
@@ -654,13 +617,11 @@ To clear out your settings and start again, click on *Reset Defaults*.
 
 === A word about Auto-Format
 
-Most metrics are reported by data collectors in the smallest unit, for example as a whole number such as 1,234,567,890 bytes. By default, Cloud Insights will automatically format the value for the most readable display. For example a data value of 1,234,567,890 bytes would be auto formatted to 1.23 _Gibibytes_. You can choose to display it in another format, such as _Mebibytes_. The value will display accordingly.
+Most metrics are reported by data collectors in the smallest unit, for example as a whole number such as 1,234,567,890 bytes. By default, Data Infrastructure Insights will automatically format the value for the most readable display. For example a data value of 1,234,567,890 bytes would be auto formatted to 1.23 _Gibibytes_. You can choose to display it in another format, such as _Mebibytes_. The value will display accordingly.
 
-NOTE: Cloud Insights uses American English number naming standards. American "billion" is equivalent to "thousand million".
+NOTE: Data Infrastructure Insights uses American English number naming standards. American "billion" is equivalent to "thousand million".
 
-////
-Depending on the widget and the range of values displayed, Cloud Insights will typically use the highest value as the basis for auto-formatting the units. So if your range goes from one million (1,000,000) to one billion (1,000,000,000), your chart might auto-format to the billion (bn) level, which means lower values might display as .001bn.
-////
+
 
 === Widgets with multiple queries
 
@@ -776,9 +737,9 @@ Each widget displays its auto-refresh interval in the upper-right corner of the 
 
 Auto-refresh is not available for Custom dashboard time range.
 
-When combined with *TV Mode*, auto-refresh allows for near-real-time display of data on a dashboard or asset page. TV Mode provides an uncluttered display; the navigation menu is hidden, providing more screen real estate for your data display, as is the Edit button. TV Mode ignores typical Cloud Insights timeouts, leaving the display live until logged out manually or automatically by authorization security protocols.
+When combined with *TV Mode*, auto-refresh allows for near-real-time display of data on a dashboard or asset page. TV Mode provides an uncluttered display; the navigation menu is hidden, providing more screen real estate for your data display, as is the Edit button. TV Mode ignores typical Data Infrastructure Insights timeouts, leaving the display live until logged out manually or automatically by authorization security protocols.
 
-NOTE: Because NetApp BlueXP has its own user login timeout of 7 days, Cloud Insights must log out with that event as well. You can simply log in again and your dashboard will continue to display.
+NOTE: Because NetApp BlueXP has its own user login timeout of 7 days, Data Infrastructure Insights must log out with that event as well. You can simply log in again and your dashboard will continue to display.
 
 * To activate TV Mode, click the TV Mode button.
 * To disable TV Mode, click the *Exit* button in the upper left of the screen. 
@@ -790,7 +751,7 @@ image:AutoRefreshPaused.png[Auto-Refresh paused]
 
 == Dashboard Groups
 
-Grouping allows you to view and manage related dashboards. For example, you can have a dashboard group dedicated to the storage in your environment. Dashboard groups are managed on the *Dashboards > Show All Dashboards* page.
+Grouping allows you to view and manage related dashboards. For example, you can have a dashboard group dedicated to the storage on your tenant. Dashboard groups are managed on the *Dashboards > Show All Dashboards* page.
 
 image:DashboardGroupNoPin.png[Dashboard Grouping]
 
@@ -803,14 +764,14 @@ The number of dashboards contained in each group is shown next to the group name
 
 To create a new group, click the *"+" Create New Dashboard Group* button. Enter a name for the group and click *Create Group*. An empty group is created with that name. 
 
-To add dashboards to the group, click the _All Dashboards_ group to show all dashboards in your environment, of click _My Dashboards_ if you only want to see the dashboards you own, and do one of the following:
+To add dashboards to the group, click the _All Dashboards_ group to show all dashboards on your tenant, of click _My Dashboards_ if you only want to see the dashboards you own, and do one of the following:
 
 * To add a single dashboard, click the menu to the right of the dashboard and select _Add to Group_.
 * To add multiple dashboards to a group, select them by clicking the checkbox next to each dashboard, then click the *Bulk Actions* button and select _Add to Group_.
 
 Remove dashboards from the current group in the same manner by selecting _Remove From Group_. You can not remove dashboards from the _All Dashboards_ or _My Dashboards_ group. 
 
-NOTE: Removing a dashboard from a group does not delete the dashboard from Cloud Insights. To completely remove a dashboard, select the dashboard and click _Delete_. This removes it from any groups to which it belonged and it is no longer available to any user.
+NOTE: Removing a dashboard from a group does not delete the dashboard from Data Infrastructure Insights. To completely remove a dashboard, select the dashboard and click _Delete_. This removes it from any groups to which it belonged and it is no longer available to any user.
 
 == Pin your Favorite Dashboards
 
@@ -825,7 +786,7 @@ image:DashboardPin.png[Pinned Dashboards]
 
 == Dark Theme
 
-You can choose to display Cloud Insights using either a light theme (the default), which displays most screens using a light background with dark text, or a dark theme which displays most screens using a dark background with light text.
+You can choose to display Data Infrastructure Insights using either a light theme (the default), which displays most screens using a light background with dark text, or a dark theme which displays most screens using a dark background with light text.
 
 To switch between light and dark themes, click the username button in the upper right corner of the screen and choose the desired theme.
 
@@ -844,7 +805,7 @@ NOTE: Some screen areas, such as certain widget charts, still show light backgro
 
 Different data collectors often poll their data at different intervals. For example, data collector A may poll every 15 minutes while data collector B polls every five minutes. When a line chart widget (also spline, area, and stacked area charts) is aggregating this data from multiple data collectors into a single line (for example, when the widget is grouping by "all"), and refreshing the line every five minutes, data from collector B may be shown accurately while data from collector A may have gaps, thus affecting the aggregate until collector A polls again.
 
-To alleviate this, Cloud Insights interpolates data when aggregating, using the surrounding data points to take a "best guess" at data until data collectors poll again. You can always view each data collector's object data individually by adjusting the widget's grouping.
+To alleviate this, Data Infrastructure Insights interpolates data when aggregating, using the surrounding data points to take a "best guess" at data until data collectors poll again. You can always view each data collector's object data individually by adjusting the widget's grouping.
 
 === Interpolation Methods
 
@@ -866,4 +827,21 @@ image:Interpolation_Linear.png[Simple straight line showing linear interpolation
 
 
 
+=== Anomaly Bounds in Line Widgets
 
+When including a Line or Spline chart widget on a dashboard or landing page, you may choose to view the chart in context of the *expected bounds* for the data. You can think of this as looking for anomalies in the patterns of your data.
+
+DII uses seasonal data (hourly or daily) to set upper and lower bounds on where it _expects_ the data to fall at a given time. If the data spikes above or falls below those expected bounds, the chart will highlight that as an anomaly.
+
+image:expected_bounds_example_showing_spike.png[anomaly bounds example - showing a spike where the actual data spikes above the expected bound, width=600]
+
+To view anomaly bounds, edit the widget and choose _Show Anomaly Bounds_. You may choose from among two detection algorithms:
+
+* *Adaptive Detector* adapts to changes quickly, making it helpful for detailed investigations.
+* *Smooth Detector* minimizes noise and false positives, filtering out short-term fluctuations while still detecting significant shifts.
+
+Additionally, you may choose to show either _Hourly_ or _Daily_ seasonality, as well as set the sensitivity of detection. _High_ sensitivity detects more boundary crossing, _Low_ sensitivity detects less.
+
+image:expected_bounds_settings.png[settings for Anomaly bounds, including the detection algorithm, seasonality, and sensitivity]
+
+Keep in mind that you may only view expected bounds when the chart is set to display a single line. If your Group By settings or filters show multiple lines, or if you have set multiple queries for the widget, the option to show expected bounds will be disabled.

@@ -6,22 +6,21 @@ summary: Configuring the Brocade Sphereon/Intrepid Switch data collector
 ---
 
 = Configuring the Brocade Sphereon/Intrepid Switch data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead] 
-Cloud Insights uses the Brocade Sphereon/Intrepid Switch (SNMP) data collector to discover inventory for Brocade Sphereon or Intrepid switches. 
+Data Infrastructure Insights uses the Brocade Sphereon/Intrepid Switch (SNMP) data collector to discover inventory for Brocade Sphereon or Intrepid switches. 
 
 == Requirements
 
 The following requirements must be met in order to configure this data collector:
 
-* There must be IP connectivity to all switches in the fabric. If you select the Discover all switches in the fabric check box, Cloud Insights identifies all the switches in the fabric; however, it needs IP connectivity to these additional switches to discover them.
+* There must be IP connectivity to all switches in the fabric. If you select the Discover all switches in the fabric check box, Data Infrastructure Insights identifies all the switches in the fabric; however, it needs IP connectivity to these additional switches to discover them.
 * Read-only community string if using SNMP V1 or SNMP V2.
 * HTTP access to the switch to obtain zoning information.
 * Access validation by running the snmpwalk utility to the switch (see _<install_path>\bin\_).

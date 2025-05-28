@@ -6,9 +6,8 @@ keywords: reporting, cognos, data warehouse, dwh, smd, storage manager dashboard
 ---
 
 = Storage Manager Dashboard
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -17,7 +16,7 @@ keywords: reporting, cognos, data warehouse, dwh, smd, storage manager dashboard
 [.lead]
 The Storage Manager Dashboard provides you with a centralized visualization that enables you to compare and contrast resource usage over time against the acceptable ranges and previous days of activity. Showing only the key performance metrics for your storage services, you can make decisions about how to maintain your data centers.
 
-NOTE: The Reporting feature is available in Cloud Insights link:concept_subscribing_to_cloud_insights.html[Premium Edition]. 
+NOTE: The Reporting feature is available in Data Infrastructure Insights link:concept_subscribing_to_cloud_insights.html[Premium Edition]. 
 
 
 

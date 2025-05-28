@@ -6,22 +6,21 @@ summary: Acquisition Unit installing, uninstalling, configuring proxy support, a
 ---
 
 = Configuring Acquisition Units
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Cloud Insights collects device data using one or more Acquisition Units installed on local servers. Each Acquisition Unit can host multiple Data Collectors, which send device metrics to Cloud Insights for analysis. 
+Data Infrastructure Insights collects device data using one or more Acquisition Units installed on local servers. Each Acquisition Unit can host multiple Data Collectors, which send device metrics to Data Infrastructure Insights for analysis. 
 
 This topic describes how to add Acquisition Units and describes additional steps required when your environment uses a proxy. 
 
 NOTE: For accurate audit and data reporting, it is strongly recommended to synchronize the time on the Acquisition Unit machine using *Network Time Protocol (NTP)* or *Simple Network Time Protocol (SNTP)*.
 
-Read about Cloud Insights security link:security_overview.html[here].
+Read about Data Infrastructure Insights security link:security_overview.html[here].
 
 == Adding a Linux Acquisition Unit
 
@@ -32,7 +31,7 @@ Read about Cloud Insights security link:security_overview.html[here].
 
 .Steps for Linux Acquisition Unit Installation 
 
-. Log in as Administrator or Account Owner to your Cloud Insights environment. 
+. Log in as Administrator or Account Owner to your Data Infrastructure Insights environment. 
 . Click *Observability > Collectors > Acquisition Units > +Acquisition Unit* 
 +
 The system displays the _Install Acquisition Unit_ dialog. Choose Linux.
@@ -71,15 +70,15 @@ Note: Be aware of restrictions on special characters in proxy username and passw
 
 === Proxy Configuration
 
-The Acquisition Unit uses 2-way/mutual authentication to connect to the Cloud Insights server. The client certificate must be passed to the Cloud Insights server to be authenticated. To accomplish this, the proxy must be set up to forward the https request to the Cloud Insights server without decrypting the data.
+The Acquisition Unit uses 2-way/mutual authentication to connect to the Data Infrastructure Insights server. The client certificate must be passed to the Data Infrastructure Insights server to be authenticated. To accomplish this, the proxy must be set up to forward the https request to the Data Infrastructure Insights server without decrypting the data.
 
-The simplest way to do this is to specify wildcard configuration in your proxy/firewall to communicate with Cloud Insights, for example:
+The simplest way to do this is to specify wildcard configuration in your proxy/firewall to communicate with Data Infrastructure Insights, for example:
 
  *.cloudinsights.netapp.com
 
 NOTE: The use of an asterisk (*) for wildcard is common, but your proxy/firewall configuration may use a different format. Check with your proxy documentation to ensure correct wildcard specification in your environment.
 
-More information on proxy configuration can be found in the NetApp link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Insights/Where_is_the_proxy_information_saved_to_in_the_Cloud_Insights_Acquisition_Unit[Knowledgbase].
+More information on proxy configuration can be found in the NetApp link:https://kb.netapp.com/Cloud/BlueXP/DII/Where_is_the_proxy_information_saved_to_in_the_Cloud_Insights_Acquisition_Unit[Knowledgbase].
 
 ==== Viewing Proxy URLs
 
@@ -87,32 +86,21 @@ You can view your proxy endpoint URLs by clicking the *Proxy Settings* link when
 
 image:ProxyEndpoints_NewTable.png[Proxy Endpoints Table]
 
-If you have Workload Security in your environment, the configured endpoint URLs will also be displayed in this list.
+If you have Workload Security on your tenant, the configured endpoint URLs will also be displayed in this list.
 
-////
-* Acquisition unit login endpoint: _aulogin.<Cloud Insights Domain>_
-* Cloud Insights site: _<Site Name>.<Cloud Insights Domain>_
- 
-For example:
- 
- https://aulogin.c01.cloudinsights.netapp.com
- https://nane1234.c01.cloudinsights.netapp.com
-
-TIP: The Cloud Insights _Site Name_ is also sometimes called the _Tenant_.
-////
 
 == Adding a Windows Acquisition Unit
 
 .Steps for Windows Acquisition Unit Installation 
 
 . Log in to the Acquisition Unit server/VM as a user with Administrator permissions.
-. On that server, open a browser window and log in to your Cloud Insights environment as Administrator or Account Owner. 
+. On that server, open a browser window and log in to your Data Infrastructure Insights environment as Administrator or Account Owner. 
 . Click *Observability > Collectors > Acquisition Units > +Acquisition Unit* .
 +
 The system displays the _Install Acquisition Unit_ dialog. Choose Windows.
 
 [.thumb]
-image::NewWindowsAUInstall.png[Windows AU Install]
+image:NewWindowsAUInstall.png[Windows AU Install]
 
 . Verify that the server or VM hosting the Acquisition Unit meets the recommended system requirements. 
 . Verify that the server is running a supported version of Windows. Click _OS Versions Supported (i)_ for a list of supported versions.
@@ -136,21 +124,18 @@ image::NewWindowsAUInstall.png[Windows AU Install]
 +
  cloudinsights-service.sh 
  
-//* Use the following script to uninstall the Acquisition Unit:
-
-//** cloudinsights-uninstall.sh
 
 === Proxy Configuration
 
-The Acquisition Unit uses 2-way/mutual authentication to connect to the Cloud Insights server. The client certificate must be passed to the Cloud Insights server to be authenticated. To accomplish this, the proxy must be set up to forward the https request to the Cloud Insights server without decrypting the data.
+The Acquisition Unit uses 2-way/mutual authentication to connect to the Data Infrastructure Insights server. The client certificate must be passed to the Data Infrastructure Insights server to be authenticated. To accomplish this, the proxy must be set up to forward the https request to the Data Infrastructure Insights server without decrypting the data.
 
-The simplest way to do this is to specify wildcard configuration in your proxy/firewall to communicate with Cloud Insights, for example:
+The simplest way to do this is to specify wildcard configuration in your proxy/firewall to communicate with Data Infrastructure Insights, for example:
 
  *.cloudinsights.netapp.com
 
 NOTE: The use of an asterisk (*) for wildcard is common, but your proxy/firewall configuration may use a different format. Check with your proxy documentation to ensure correct wildcard specification in your environment.
 
-More information on proxy configuration can be found in the NetApp link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Insights/Where_is_the_proxy_information_saved_to_in_the_Cloud_Insights_Acquisition_Unit[Knowledgbase].
+More information on proxy configuration can be found in the NetApp link:https://kb.netapp.com/Cloud/BlueXP/DII/Where_is_the_proxy_information_saved_to_in_the_Cloud_Insights_Acquisition_Unit[Knowledgbase].
 
 
 
@@ -160,19 +145,8 @@ You can view your proxy endpoint URLs by clicking the *Proxy Settings* link when
 
 image:ProxyEndpoints_NewTable.png[Proxy Endpoints Table]
 
-If you have Workload Security in your environment, the configured endpoint URLs will also be displayed in this list.
+If you have Workload Security on your tenant, the configured endpoint URLs will also be displayed in this list.
 
-////
-* Acquisition unit login endpoint: _aulogin.<Cloud Insights Domain>_
-* Cloud Insights site: _<Site Name>.<Cloud Insights Domain>_
- 
-For example:
- 
- https://aulogin.c01.cloudinsights.netapp.com
- https://nane1234.c01.cloudinsights.netapp.com
-
-TIP: The Cloud Insights _Site Name_ is also sometimes called the _Tenant_.
-////
 
 == Uninstalling an Acquisition Unit
 
@@ -184,7 +158,7 @@ To uninstall the Acquisition Unit software, do the following:
 
 If you are uninstalling a *Windows* acquisition unit:
 
-. On the Acquisition Unit server/VM, open Control Panel and choose *Uninstall a Program*. Select the Cloud Insights Acquisition Unit program for removal.
+. On the Acquisition Unit server/VM, open Control Panel and choose *Uninstall a Program*. Select the Data Infrastructure Insights Acquisition Unit program for removal.
 . Click Uninstall and follow the prompts.
 
 '''
@@ -207,7 +181,7 @@ If you are uninstalling a *Linux* acquisition unit:
 
 *After* uninstalling the AU:
 
-. In Cloud Insights, go to *Observability > Collectors and select the *Acquisition Units* tab.
+. In Data Infrastructure Insights, go to *Observability > Collectors and select the *Acquisition Units* tab.
 . Click the Options button to the right of the Acquisition Unit you wish to uninstall, and select _Delete_. You can delete an Acquisition Unit only if there are no data collectors assigned to it.
 
 NOTE: You cannot delete an Acquisition Unit (AU) that has data collectors connected to it. Move all of the AU's data collectors to another AU (edit the collector and simply select a different AU) before deleting the original AU.  
@@ -229,7 +203,7 @@ You must have a temporary Acquisition Unit configured on a separate server/VM be
 
 .Steps
 . Log in to the Acquisition Unit server/VM and uninstall the AU software.
-. Log into your Cloud Insights environment and go to *Observability > Collectors*. 
+. Log into your Data Infrastructure Insights environment and go to *Observability > Collectors*. 
 . For each data collector, click the Options menu on the right and select _Edit_. Assign the data collector to the temporary Acquisition Unit and click *Save*.
 +
 You can also select multiple data collectors of the same type and click the *Bulk Actions* button. Choose _Edit_ and assign the data collectors to the temporary Acquisition Unit.

@@ -6,16 +6,15 @@ summary: Configuring AWS S3 as Storage data collector.
 ---
 
 = Configuring the AWS S3 as Storage data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Cloud Insights uses the AWS S3 as Storage data collector to acquire inventory and performance data from AWS S3 instances. 
+Data Infrastructure Insights uses the AWS S3 as Storage data collector to acquire inventory and performance data from AWS S3 instances. 
 
 
 == Requirements
@@ -43,7 +42,7 @@ Enter data into the data collector fields according to the table below:
 |IAM Role|For use only when acquired on an AU in AWS. See below for more information on <<iam-role,IAM Role>>.
 |AWS IAM Access Key ID|Enter AWS IAM Access Key ID. Required if you do not use IAM Role.
 |AWS IAM Secret Access Key|Enter AWS IAM Secret Access Key. Required if you do not use IAM Role.
-|I understand AWS bills me for API requests|Check this to verify your understanding that AWS bills you for API requests made by Cloud Insights polling.
+|I understand AWS bills me for API requests|Check this to verify your understanding that AWS bills you for API requests made by Data Infrastructure Insights polling.
 |===
 
 == Advanced Configuration
@@ -79,35 +78,24 @@ For more information see the Amazon documentaiton on link:https://docs.aws.amazo
 
 Note: IAM role can be used only when the Acquisition Unit is running in an AWS instance.
 
-== Mapping Amazon tags to Cloud Insights annotations
+== Mapping Amazon tags to Data Infrastructure Insights annotations
 
-The AWS S3 as Storage data collector includes an option that allows you to populate Cloud Insights annotations with tags configured on S3. The annotations must be named exactly as the AWS tags. Cloud Insights will always populate same-named text-type annotations, and will make a "best attempt" to populate annotations of other types (number, boolean, etc). If your annotation is of a different type and the data collector fails to populate it, it may be necessary to remove the annotation and re-create it as a text type.
+The AWS S3 as Storage data collector includes an option that allows you to populate Data Infrastructure Insights annotations with tags configured on S3. The annotations must be named exactly as the AWS tags. Data Infrastructure Insights will always populate same-named text-type annotations, and will make a "best attempt" to populate annotations of other types (number, boolean, etc). If your annotation is of a different type and the data collector fails to populate it, it may be necessary to remove the annotation and re-create it as a text type.
 
-Note that AWS is case-sensitive, while Cloud Insights is case-insensitive. So if you create an annotation named "OWNER" in Cloud Insights, and tags named "OWNER", "Owner", and "owner" in S3, all of the S3 variations of "owner" will map to Cloud Insight's "OWNER" annotation. 
-
-////
-.Related Information
-
-* https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html[Managing Access Keys for IAM Users^]
-////
-
-== Include Extra Regions
-
-In the AWS Data Collector *Advanced Configuration* section, you can set the *Include extra regions* field to include additional regions, separated by comma or semi-colon. By default, this field is set to *_us-.*_*, which collects on all US AWS regions.  To collect on _all_ regions, set this field to  *_.*_*. 
-If the *Include extra regions* field is empty, the data collector will collect on assets specified in the *AWS Region* field as specified in the *Configuration* section. 
+Note that AWS is case-sensitive, while Data Infrastructure Insights is case-insensitive. So if you create an annotation named "OWNER" in Data Infrastructure Insights, and tags named "OWNER", "Owner", and "owner" in S3, all of the S3 variations of "owner" will map to Cloud Insight's "OWNER" annotation. 
 
 == Collecting from AWS Child Accounts
 
-Cloud Insights supports collection of child accounts for AWS within a single AWS data collector. Configuration for this collection is performed in the AWS environment:
+Data Infrastructure Insights supports collection of child accounts for AWS within a single AWS data collector. Configuration for this collection is performed in the AWS environment:
 
 * You must configure each child account to have an AWS Role that allows the main account ID to access S3 details from the children account. 
 * Each child account must have the role name configured as the same string. 
-* Enter this role name string into the Cloud Insights AWS Data Collector *Advanced Configuration* section, in the *Cross account role* field.
+* Enter this role name string into the Data Infrastructure Insights AWS Data Collector *Advanced Configuration* section, in the *Cross account role* field.
 * The account where the collector is installed needs to have _delegate access administrator_ privileges.  See the link:https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-delegated-admin.html[AWS Documentation] for more information. 
 
 Best Practice: It is highly recommended to assign the AWS predefined _AmazonS3ReadOnlyAccess_ policy to the S3 main account. Also, the user configured in the data source should have at least the predefined _AWSOrganizationsReadOnlyAccess_ policy assigned, in order to query AWS. 
 
-Please see the following for information on configuring your environment to allow Cloud Insights to collect from AWS child accounts:
+Please see the following for information on configuring your environment to allow Data Infrastructure Insights to collect from AWS child accounts:
 
 link:https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html[Tutorial: Delegate Access Across AWS Accounts Using IAM Roles]
 

@@ -10,12 +10,11 @@ summary: With Workload Security, you can restrict user access in the event of su
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media
+:imagesdir: ./media/
 
 [.lead]
 Once an attack is detected, Workload Security can stop the attack by blocking user access to the file system. Access can be blocked automatically, using Automated Response Policies or manually from the alert or user details pages.
 
-NOTE: Workload Security is not available in Cloud Insights Federal Edition.
 
 When blocking user access, you should define a blocking time period. After the selected time period ends, user access is automatically restored.
 Access blocking is supported for both SMB and NFS protocols.
@@ -87,7 +86,7 @@ Use the following steps to manually restore any IPs from ONTAP if your Workload 
  
 . List all export policies on an SVM.
  
- contrail-qa-fas8020::> export-policy rule show -vserver <svm name>
+ contrail-qa-fas8020:> export-policy rule show -vserver <svm name>
               Policy          Rule    Access   Client                RO
  Vserver      Name            Index   Protocol Match                 Rule
  ------------ --------------- ------  -------- --------------------- ---------
@@ -108,14 +107,14 @@ Use the following steps to manually restore any IPs from ONTAP if your Workload 
  
 . Delete the rules across all policies on the SVM which have “cloudsecure_rule” as Client Match by specifying its respective RuleIndex. Workload Security rule will usually be at 1.
  
- contrail-qa-fas8020::*> export-policy rule delete -vserver <svm name> -policyname * -ruleindex 1
+ contrail-qa-fas8020:*> export-policy rule delete -vserver <svm name> -policyname * -ruleindex 1
  
  
  
  
 .	Ensure Workload Security rule is deleted (optional step to confirm).
  
- contrail-qa-fas8020::*> export-policy rule show -vserver <svm name>
+ contrail-qa-fas8020:*> export-policy rule show -vserver <svm name>
               Policy          Rule    Access   Client                RO
  Vserver      Name            Index   Protocol Match                 Rule
  ------------ --------------- ------  -------- --------------------- ---------

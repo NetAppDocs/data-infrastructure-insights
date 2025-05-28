@@ -6,9 +6,8 @@ summary: Configuring ECS data collector.
 ---
 
 = Configuring the EMC ECS data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -21,11 +20,11 @@ NOTE: Dell EMC ECS is metered at a different Raw TB to Managed Unit rate. Every 
 
 == Terminology
 
-Cloud Insights acquires the following inventory information from the ECS data collector. For each asset type acquired, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires the following inventory information from the ECS data collector. For each asset type acquired, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term | Cloud Insights Term
+|Vendor/Model Term | Data Infrastructure Insights Term
 |Cluster|Storage
 |Tenant|Storage Pool
 |Bucket|Internal Volume

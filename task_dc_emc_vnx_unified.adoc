@@ -6,9 +6,8 @@ summary: Configuring VNX data collector.
 ---
 
 = Configuring the Dell EMC VNX Unified data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -19,12 +18,12 @@ For configuration, the Dell EMC VNX Unified (SSH) data collector requires the IP
 
 == Terminology
 
-Cloud Insights acquires the following inventory information from this data collector. For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires the following inventory information from this data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 [cols=2*, options="header", cols"50,50"]
 |===
 
-|Vendor/Model Term|Cloud Insights Term
+|Vendor/Model Term|Data Infrastructure Insights Term
 
 |Disk|Disk
 |Disk Folder|Disk Group

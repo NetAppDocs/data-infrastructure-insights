@@ -6,50 +6,49 @@ summary:
 ---
 
 = Configuration and Supported Devices
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-This FAQ answers common questions about Cloud Insights configuration and supported devices.
+This FAQ answers common questions about Data Infrastructure Insights configuration and supported devices.
 
 
-== Does Cloud Insights make changes to my environment?
+== Does Data Infrastructure Insights make changes to my environment?
 
-No. Cloud Insights is a read-only tool that gathers information about your environment. Cloud Insights never makes any changes to your assets or configurations.
+No. Data Infrastructure Insights is a read-only tool that gathers information about your environment. Data Infrastructure Insights never makes any changes to your assets or configurations.
 
-== What permission-level access does Cloud Insights need to my devices?
+== What permission-level access does Data Infrastructure Insights need to my devices?
 
 In most cases where the device supports it, a read-only access is all that is required. There are some solutions that do not permit read-only access and thus would require the appropriate elevated permissions.
 
-== How often does Cloud Insights collect information?
+== How often does Data Infrastructure Insights collect information?
 
-Cloud Insights typically collects performance data every 5 minutes and discovery of logical and physical constructs every ½ hr. Cloud Insights sets the default polling intervals according to suggested best practices and scalability but does permit the user complete control over these intervals.
+Data Infrastructure Insights typically collects performance data every 5 minutes and discovery of logical and physical constructs every ½ hr. Data Infrastructure Insights sets the default polling intervals according to suggested best practices and scalability but does permit the user complete control over these intervals.
 
-== What is Cloud Insights's impact to my Environment?
+== What is Data Infrastructure Insights's impact to my Environment?
 
-Cloud Insights's agentless, out-of-band and passive IP communications help minimize setup, maintenance and impact to the data center ecosystem. Cloud Insights's performance development team takes great measures to minimize any impact to the Data center's performance in activities of monitoring performance itself. Impact is considered negligible in normal operating environments and can be relaxed or tightened in highly utilized or underperforming technology platforms. See the Cloud Insights Installation Guide for more information.
+Data Infrastructure Insights's agentless, out-of-band and passive IP communications help minimize setup, maintenance and impact to the data center ecosystem. Data Infrastructure Insights's performance development team takes great measures to minimize any impact to the Data center's performance in activities of monitoring performance itself. Impact is considered negligible in normal operating environments and can be relaxed or tightened in highly utilized or underperforming technology platforms. See the Data Infrastructure Insights Installation Guide for more information.
 
-== How can I list all the hosts/VM’s in Cloud Insights?
+== How can I list all the hosts/VM’s in Data Infrastructure Insights?
 
-Cloud Insights’s compliment of widgets and query-listing possibilities can be used to provide inventory style listings for Data Center assets. Listings of Virtual Machines down to the spindles and numerous constructs in between can all be made available to queries, widgets, dashboards, and data warehouse reporting, and are accessible through the RESTful API.
+Data Infrastructure Insights’s compliment of widgets and query-listing possibilities can be used to provide inventory style listings for Data Center assets. Listings of Virtual Machines down to the spindles and numerous constructs in between can all be made available to queries, widgets, dashboards, and data warehouse reporting, and are accessible through the RESTful API.
 
-== Does Cloud Insights provide the same type of support for related non-hypervisor hosts (i.e. physical servers)?
+== Does Data Infrastructure Insights provide the same type of support for related non-hypervisor hosts (i.e. physical servers)?
 
-Hypervisors such as VMware provide detailed information on the ESXI hosts and their virtual machines (VMs). For physical servers, Cloud Insights collects metrics up to the host HBA. Cloud Insights employs a unique method in which it discovers physical servers using a patent-pending technology. Once storage and/or switches are discovered, host names for physical servers are contained within the fabric alias information. Cloud Insights selects these host names, matches them in DNS, and automatically brings the hosts into Cloud Insights. This technique greatly minimizes the need for manual entry updates and tool inventory maintenance.
+Hypervisors such as VMware provide detailed information on the ESXI hosts and their virtual machines (VMs). For physical servers, Data Infrastructure Insights collects metrics up to the host HBA. Data Infrastructure Insights employs a unique method in which it discovers physical servers using a patent-pending technology. Once storage and/or switches are discovered, host names for physical servers are contained within the fabric alias information. Data Infrastructure Insights selects these host names, matches them in DNS, and automatically brings the hosts into Data Infrastructure Insights. This technique greatly minimizes the need for manual entry updates and tool inventory maintenance.
 
-== Does Cloud Insights provide the same device metric depth (parity) across heterogenous environments?
+== Does Data Infrastructure Insights provide the same device metric depth (parity) across heterogenous environments?
 
-There are varying degrees of standardizing, commonality and nomenclature across 3rd party platforms and vendor technologies. Cloud Insights attempts to normalize capacity and performance information into a consistent framework. Some capacity and performance metrics are provided natively from the device's counters, such as IOPs, latency and raw capacity. When counters are not provided, Cloud Insights can attempt to summarize the values (for example, by totaling the IOPs or capacities of underlying volumes), and in cases where neither is available, Cloud Insights will attempt to derive the metric values through various computational algorithms. Cloud Insights provides a generic SNMP integration capability to incorporate additional metrics not currently collected by Cloud Insights today.
+There are varying degrees of standardizing, commonality and nomenclature across 3rd party platforms and vendor technologies. Data Infrastructure Insights attempts to normalize capacity and performance information into a consistent framework. Some capacity and performance metrics are provided natively from the device's counters, such as IOPs, latency and raw capacity. When counters are not provided, Data Infrastructure Insights can attempt to summarize the values (for example, by totaling the IOPs or capacities of underlying volumes), and in cases where neither is available, Data Infrastructure Insights will attempt to derive the metric values through various computational algorithms. Data Infrastructure Insights provides a generic SNMP integration capability to incorporate additional metrics not currently collected by Data Infrastructure Insights today.
 
-== Does Cloud Insights support Fibre Channel switches?
+== Does Data Infrastructure Insights support Fibre Channel switches?
 
-Yes, In addition to gathering data from your storage assets, Cloud Insights also acquires Inventory and Performance data from Cisco, Brocade and QLogic switches in your environment.
+Yes, In addition to gathering data from your storage assets, Data Infrastructure Insights also acquires Inventory and Performance data from Cisco, Brocade and QLogic switches on your tenant.
 
-== Are topology views of the whole infrastructure available? Does Cloud Insights show “end-to-end visibility”?
+== Are topology views of the whole infrastructure available? Does Data Infrastructure Insights show “end-to-end visibility”?
 
-Yes, Cloud Insights dynamically discovers and maps the logical and physical constructs, providing an interactive end-to-end topology view of Compute, Fabrics, Virtualizers and back-end Storage. Topology icons allow quick launch navigation to impacted resources and aid in identification of workloads & violations in shared storage environments.
+Yes, Data Infrastructure Insights dynamically discovers and maps the logical and physical constructs, providing an interactive end-to-end topology view of Compute, Fabrics, Virtualizers and back-end Storage. Topology icons allow quick launch navigation to impacted resources and aid in identification of workloads & violations in shared storage environments.

@@ -6,26 +6,25 @@ summary: Amazon FSx for NetApp ONTAP Data Collector
 --- 
 
 = Amazon FSx for NetApp ONTAP data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-This data collector acquires inventory and performance data from Amazon FSx for NetApp ONTAP. This data collector will be made available incrementally throughout the Cloud Insights service regions. Contact your sales person if you do not see the Icon for this collector in your Cloud Insights Environment.
+This data collector acquires inventory and performance data from Amazon FSx for NetApp ONTAP. This data collector will be made available incrementally throughout the Data Infrastructure Insights service regions. Contact your sales person if you do not see the Icon for this collector in your Data Infrastructure Insights Environment.
 
-NOTE: This Cloud Insights collector requires an ONTAP user with a _Filesystem-Scoped_ role. Please review the AWS link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/roles-and-users.html[Roles and Rules] documentation for available options. At this time AWS supports only one kind of user role with Filesystem Scope, which is _fsxadmin_. This is the appropriate role to be used for the Cloud Insights collector. The user should also have all three of these applications assigned to it: http, ontapi, ssh.
+NOTE: This Data Infrastructure Insights collector requires an ONTAP user with a _Filesystem-Scoped_ role. Please review the AWS link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/roles-and-users.html[Roles and Rules] documentation for available options. At this time AWS supports only one kind of user role with Filesystem Scope, which is _fsxadmin_. This is the appropriate role to be used for the Data Infrastructure Insights collector. The user should also have all three of these applications assigned to it: http, ontapi, ssh.
 
 == Terminology
 
-Cloud Insights acquires inventory and performance data from the FSx-NetApp data collector. For each asset type acquired, the most common terminology used for the asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires inventory and performance data from the FSx-NetApp data collector. For each asset type acquired, the most common terminology used for the asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term | Cloud Insights Term
+|Vendor/Model Term | Data Infrastructure Insights Term
 |Cluster|Storage
 |LUN|Volume
 |Volume|Internal Volume
@@ -43,9 +42,9 @@ The following terms apply to objects or references that you might find on FSx-Ne
 * IP – generally will be the IP(s) or hostname(s) as configured in the data source.
 //* Microcode version – firmware.
 * Raw Capacity – base 2 summation of all the SSD storage assigned to the FSx filesystem.
-* Latency – a representation of what the host facing workloads are experiencing, across both reads and writes. Ideally, Cloud Insights is sourcing this value directly, but this is often not the case. In lieu of the array offering this up, Cloud Insights is generally performing an IOPs-weighted calculation derived from the individual internal volumes’ statistics.
+* Latency – a representation of what the host facing workloads are experiencing, across both reads and writes. Ideally, Data Infrastructure Insights is sourcing this value directly, but this is often not the case. In lieu of the array offering this up, Data Infrastructure Insights is generally performing an IOPs-weighted calculation derived from the individual internal volumes’ statistics.
 * Throughput – aggregated from internal volumes.
-Management – this may contain a hyperlink for the management interface of the device. Created programmatically by the Cloud Insights data source as part of inventory reporting.
+Management – this may contain a hyperlink for the management interface of the device. Created programmatically by the Data Infrastructure Insights data source as part of inventory reporting.
 
 === Storage Pool
 
@@ -93,7 +92,7 @@ This data collector collects the following advanced metrics from the FSx for Net
 * workload_volume 
 
 
-Note that FSx CLI and API commands retrieve some capacity values that Cloud Insights ZAPI doesn't collect, so certain capacity values (such as those for storage pools) may be different in Cloud Insights than they are on the FSx itself. 
+Note that FSx CLI and API commands retrieve some capacity values that Data Infrastructure Insights ZAPI doesn't collect, so certain capacity values (such as those for storage pools) may be different in Data Infrastructure Insights than they are on the FSx itself. 
 
 == Troubleshooting
 Some things to try if you encounter problems with this data collector:

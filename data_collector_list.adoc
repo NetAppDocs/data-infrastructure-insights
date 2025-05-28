@@ -5,24 +5,23 @@ summary: List of supported data collectors.
 keywords: data collector, vendor, infrastructure, integration, service
 ---
 
-= Cloud Insights Data Collector List
-:toc: macro
+= Data Infrastructure Insights Data Collector List
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ./media/The alerting page redesign will also be ready by the of the month. Need to add it to what’s new as wellopens
 
 [.lead]
-Cloud Insights supports a variety of Data Collectors from many vendors and services. 
+Data Infrastructure Insights supports a variety of Data Collectors from many vendors and services. 
 
 Data Collectors are categorized by these types:
 
 * Infrastructure: Acquired from vendor devices such as storage arrays, switches, hypervisors, or backup devices.
 * Service: Acquired from services such as Kubernetes or Docker. Also called _Integration_.
 
-Alphabetical list of Data Collectors supported by Cloud Insights:
+Alphabetical list of Data Collectors supported by Data Infrastructure Insights:
 
 [cols="<,<", options="header"]
 |===
@@ -103,6 +102,7 @@ Alphabetical list of Data Collectors supported by Cloud Insights:
 | link:task_dc_na_hci.html[NetApp HCI Virtual Center ] |Infrastructure 
 | link:task_dc_na_cdot.html[NetApp ONTAP Data Management Software ] |Infrastructure 
 | link:task_dc_na_ontap_rest.html[NetApp ONTAP REST collector ] |Infrastructure
+| link:task_dc_na_ontap_all_san_array.html[NetApp ONTAP All-SAN Array (ASA) collector] |Infrastructure
 | link:task_dc_na_cdot.html[NetApp ONTAP Select ] |Infrastructure 
 | link:task_dc_na_solidfire.html[NetApp SolidFire All-Flash Array ] |Infrastructure 
 | link:task_dc_na_storagegrid.html[NetApp StorageGRID ] |Infrastructure 
@@ -110,7 +110,6 @@ Alphabetical list of Data Collectors supported by Cloud Insights:
 | link:task_config_telegraf_nginx.html[Nginx ] |Service 
 | link:task_config_telegraf_node.html[Node ] |Service 
 | link:task_dc_nutanix.html[Nutanix NX Series ] |Infrastructure 
-| link:task_dc_openstack.html[OpenStack ] |Infrastructure 
 | link:task_config_telegraf_openzfs.html[OpenZFS ] |Service 
 | link:task_dc_oracle_zfs.html[Oracle ZFS Storage Appliance ] |Infrastructure 
 | link:task_config_telegraf_postgresql.html[PostgreSQL ] |Service 
@@ -123,6 +122,7 @@ Alphabetical list of Data Collectors supported by Cloud Insights:
 | link:task_config_telegraf_agent.html#rhel-and-centos[RHEL & CentOS ] |Service 
 | link:task_dc_rubrik_cdm.html[Rubrik CDM Storage ] |Infrastructure 
 | link:task_config_telegraf_agent.html#ubuntu-and-debian[Ubuntu & Debian ] |Service 
+| link:task_dc_vast_datastore.html[VAST DataStore] |Infrastructure
 | link:task_dc_vmware.html[VMware vSphere ] |Infrastructure 
 | link:task_config_telegraf_agent.html#windows[Windows ] |Service 
 | link:task_config_telegraf_zookeeper.html[ZooKeeper ] |Service 

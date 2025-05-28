@@ -6,9 +6,8 @@ summary: A few simple steps will get you started using Workload Security
 ---
 
 = Getting Started with Workload Security
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -17,7 +16,6 @@ summary: A few simple steps will get you started using Workload Security
 [.lead]
 There are configuration tasks that need to be completed before you can start using Workload Security to monitor user activity. 
 
-NOTE: Workload Security is not available in Cloud Insights Federal Edition.
 
 //not complete? 4/17 
 

@@ -6,16 +6,15 @@ summary: Configuring VNXe data collector.
 ---
 
 = Configuring the EMC Unity data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead] 
-The DELL EMC Unity (formerly VNXe) data collector provides inventory support for VNXe unified storage arrays. Cloud Insights currently supports iSCSI and NAS protocols. 
+The DELL EMC Unity (formerly VNXe) data collector provides inventory support for VNXe unified storage arrays. Data Infrastructure Insights currently supports iSCSI and NAS protocols. 
 
 == Requirements
 
@@ -25,16 +24,16 @@ The DELL EMC Unity (formerly VNXe) data collector provides inventory support for
 * You must have at least a read-only user for use by the data collector. 
 //* IP address of the managing Solutions enabler server.
 * HTTPS on Port 443 is required 
-* The EMC Unity data collector provides NAS and iSCSI support for inventory; fibre channel volumes will be discovered, but Cloud Insights does not report on FC mapping, masking, or storage ports.
+* The EMC Unity data collector provides NAS and iSCSI support for inventory; fibre channel volumes will be discovered, but Data Infrastructure Insights does not report on FC mapping, masking, or storage ports.
 
 == Terminology
 
-Cloud Insights acquires the following inventory information from the Unity data collector. For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires the following inventory information from the Unity data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term|Cloud Insights Term 
+|Vendor/Model Term|Data Infrastructure Insights Term 
 |Disk|Disk
 |Storage Array|Storage
 |Processor|Storage Node
@@ -78,9 +77,9 @@ Some things to try if you encounter problems with this data collector:
 |Problem:|Try this:
 |"Failed to execute external utility" with error messages “Failed to find Unisphere executable uemcli”
 |* Verify correct IP address, username, and password
-* Confirm that Unisphere CLI is installed on the Cloud Insights Acquisition Unit
+* Confirm that Unisphere CLI is installed on the Data Infrastructure Insights Acquisition Unit
 * Confirm that Unisphere CLI installation directory is correct in the datasource configuration
-* Confirm that the IP of the VNXe is correct in the configuration of the datasource. From the Cloud Insights Acquisition Unit, open a CMD and change to to the configured installation directory: ${INSTALLDIR. Try to make a connection with the VNXe device by typing: uemcli -d <Your IP> -u <Your ID> /sys/general show
+* Confirm that the IP of the VNXe is correct in the configuration of the datasource. From the Data Infrastructure Insights Acquisition Unit, open a CMD and change to to the configured installation directory: ${INSTALLDIR. Try to make a connection with the VNXe device by typing: uemcli -d <Your IP> -u <Your ID> /sys/general show
 |===
 
 Additional information may be found from the link:concept_requesting_support.html[Support] page or in the link:reference_data_collector_support_matrix.html[Data Collector Support Matrix].

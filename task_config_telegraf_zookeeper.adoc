@@ -6,16 +6,15 @@ summary: Apache Zookeeper data collector configuration
 ---
 
 = Zookeeper Data Collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Cloud Insights uses this data collector to gather metrics from Apache Zookeeper.
+Data Infrastructure Insights uses this data collector to gather metrics from Apache Zookeeper.
 
 == Installation
 

@@ -6,9 +6,8 @@ summary: Configuring DELL EMC Celerra data collector.
 ---
 
 = DELL EMC VNX File (formerly Celerra Unified Storage System) data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -19,11 +18,11 @@ This data collector acquires inventory information from the VNX File Storage Sys
 
 == Terminology 
 
-Cloud Insights acquires the following inventory information from the VNX File data collector. For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires the following inventory information from the VNX File data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term|Cloud Insights Term 
+|Vendor/Model Term|Data Infrastructure Insights Term 
 |Celerra Network Server/Celerra Storage Pool|Storage Pool
 |File System|Internal Volume
 |Data Mover|Controller

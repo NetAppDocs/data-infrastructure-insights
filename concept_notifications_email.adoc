@@ -6,9 +6,8 @@ keywords: email, notifications, signature, recipient, list, subscription
 ---
 
 = Configuring Email Notifications
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -39,14 +38,22 @@ The following are examples of the types of notifications that might be sent, and
 |Trial or subscription has been updated|Review subscription details on the link:concept_subscribing_to_cloud_insights.html[Subscription] page
 |Subscription will expire in 90 days
 Subscription will expire in 30 days|No action needed if “Auto Renewal” is enabled
-Contact link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx[NetApp sales] to renew the subscription
+Contact NetApp sales to renew the subscription
 |Trial ends in 2 days|Renew trial from the link:concept_subscribing_to_cloud_insights.html[Subscription] page. You can renew a trial one time.
-Contact link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx[NetApp sales] to purchase a subscription
+Contact NetApp sales to purchase a subscription
 |Trial or subscription has expired
 Account will stop collecting data in 48 hours 
-Account will be deleted after 48 hours|Contact link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx[NetApp sales] to purchase a subscription
+Account will be deleted after 48 hours|Contact NetApp sales to purchase a subscription
 |===
 
+
+[NOTE]
+====
+To ensure your recipients receive notifications from Data Infrastructure Insights, add the following email addresses to  any "allow" lists:
+
+* \accounts@service.cloudinsights.netapp.com
+* \DoNotReply@cloudinsights.netapp.com
+====
 
 == Global Recipient List for Alerts
 
@@ -71,3 +78,5 @@ image:EditONTAPNotifications.png[ONTAP Edit Notifications]
 From here, you can set notifications for Critical, Warning, Informational, and/or Resolved alerts. Each scenario can notify the Global Recipient list or other recipients you choose.
 
 image:EditONTAPNotifications_MultipleScenarios.png[ONTAP Notifications for different scenarios]
+
+

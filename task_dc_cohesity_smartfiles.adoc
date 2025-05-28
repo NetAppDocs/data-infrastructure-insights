@@ -8,16 +8,15 @@ summary: Configuring the Cohesity SmartFiles data collector.
 ---
 
 = Cohesity SmartFiles data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead] 
-This REST API-based collector will acquire a Cohesity cluster, discovering the “Views” (as Cloud Insights Internal Volumes), the various nodes, as well as collecting performance metrics.
+This REST API-based collector will acquire a Cohesity cluster, discovering the “Views” (as Data Infrastructure Insights Internal Volumes), the various nodes, as well as collecting performance metrics.
 
 == Configuration
 

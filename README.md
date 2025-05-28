@@ -1,7 +1,7 @@
 # cloudinsights
-Cloud Insights Documentation
+Data Infrastructure Insights Documentation
 
-NetApp Cloud Insights is a cloud infrastructure monitoring tool that gives you visibility into your complete infrastructure. With Cloud Insights, you can monitor, troubleshoot and optimize all your resources including your public clouds and your private data centers. Cloud Insights helps you:
+NetApp Data Infrastructure Insights is a cloud infrastructure monitoring tool that gives you visibility into your complete infrastructure. With Data Infrastructure Insights, you can monitor, troubleshoot and optimize all your resources including your public clouds and your private data centers. Data Infrastructure Insights helps you:
 
 *Reduce mean time to resolution by as much as 90%*
 
@@ -14,5 +14,7 @@ Remove inefficiencies by identifying abandoned and unused resources and right-si
 *Prevent as much as 80% of cloud issues from impacting end users*
 
 End searching through vast amounts of data to find the relevant piece, by using advanced analytics and machine learning to identify issues before they become critical outages.
+
+
 
 

@@ -6,9 +6,8 @@ summary: Configuring Fujitsu Eternus data collector.
 ---
 
 = Fujitsu Eternus data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -19,11 +18,11 @@ The Fujitsu Eternus data collector acquires inventory data using administration-
 
 == Terminology
 
-Cloud Insights acquires the following inventory information from the Fujitsu Eternus storage. For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires the following inventory information from the Fujitsu Eternus storage. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term|Cloud Insights Term 
+|Vendor/Model Term|Data Infrastructure Insights Term 
 |Disk|Disk
 |Storage|Storage
 |Thin Pool, Flexible Tier Pool, Raid Group|Storage Pool

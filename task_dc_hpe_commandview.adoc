@@ -6,24 +6,23 @@ summary: Configuring HP Enterprise Command View data collector.
 ---
 
 = HP Enterprise Command View data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead] 
-The HP Enterprise Command View Advanced Edition data collector supports discovering XP and P9500 arrays via Command View Advanced Edition (CVAE) server. Cloud Insights communicates with CVAE using the standard Command View API to collect inventory and performance data. 
+The HP Enterprise Command View Advanced Edition data collector supports discovering XP and P9500 arrays via Command View Advanced Edition (CVAE) server. Data Infrastructure Insights communicates with CVAE using the standard Command View API to collect inventory and performance data. 
 
 == Terminology 
 
-Cloud Insights acquires the following inventory information from the HP  Enterprise Command View data collector. For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires the following inventory information from the HP  Enterprise Command View data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term|Cloud Insights Term 
+|Vendor/Model Term|Data Infrastructure Insights Term 
 |PDEV|Disk
 |Journal Pool|Disk Group
 |Storage Array|Storage
@@ -49,12 +48,12 @@ The following requirements must be met in order to collect performance data:
 * HDS USP, USP V, and VSP performance 
 ** Performance Monitor must be licensed.
 ** Monitoring switch must be enabled. 
-** The Export Tool (Export.exe) must be copied to the Cloud Insights AU and extracted to a location. On CI Linux AUs, ensure "cisys" has read and execute permissions.
+** The Export Tool (Export.exe) must be copied to the Data Infrastructure Insights AU and extracted to a location. On CI Linux AUs, ensure "cisys" has read and execute permissions.
 ** The Export Tool version must match the microcode version of the target array.
 
 * AMS performance:
 ** Performance Monitor must be licensed.
-** The Storage Navigator Modular 2 (SNM2) CLI utility be installed on the Cloud Insights AU. 
+** The Storage Navigator Modular 2 (SNM2) CLI utility be installed on the Data Infrastructure Insights AU. 
 
 * Network requirements
 ** The Export Tools are Java based, and use RMI to speak to the array. These tools may not be firewall-friendly as they may dynamically negotiate source and destination TCP ports on each invocation. Also, different model array's Export Tools may behave differently across the network - consult HPE for your model's requirements
@@ -129,12 +128,12 @@ Some things to try if you encounter problems with this data collector:
 |Error:
 * Error executing export utility
 * Error executing external command
-|* Confirm that Export Utility is installed on the Cloud Insights Acquisition Unit
+|* Confirm that Export Utility is installed on the Data Infrastructure Insights Acquisition Unit
 * Confirm that Export Utility location is correct in the data collector configuration
 * Confirm that the IP of the USP/R600 array is correct in the configuration of the data collector
 * Confirm that the User name and password are correct in the configuration of the data collector
 * Confirm that Export Utility version is compatible with storage array micro code version
-* From the Cloud Insights Acquisition Unit, open a CMD prompt and do the following:
+* From the Data Infrastructure Insights Acquisition Unit, open a CMD prompt and do the following:
 - Change the directory to the configured installation directory
 - Try to make a connection with the configured storage array by executing batch file runWin.bat
 |Error: Export tool login failed for target IP
@@ -143,7 +142,7 @@ Some things to try if you encounter problems with this data collector:
 * Confirm that no other data collectors are configured to acquire this array
 |Error: Export tools logged "Unable to get time range for monitoring".
 |* Confirm performance monitoring is enabled on the array.
-* Try invoking the export tools outside of Cloud Insights to confirm the problem lies outside of Cloud Insights.
+* Try invoking the export tools outside of Data Infrastructure Insights to confirm the problem lies outside of Data Infrastructure Insights.
 |Error:
 * Configuration error: Storage Array not supported by Export Utility
 * Configuration error: Storage Array not supported by Storage Navigator Modular CLI
@@ -160,11 +159,11 @@ Some things to try if you encounter problems with this data collector:
 * Error Storage navigator CLI
 * Error executing auperform command
 * Error executing external command
-|* Confirm that Storage Navigator Modular CLI is installed on the Cloud Insights Acquisition Unit
+|* Confirm that Storage Navigator Modular CLI is installed on the Data Infrastructure Insights Acquisition Unit
 * Confirm that Storage Navigator Modular CLI location is correct in the data collector configuration
 * Confirm that the IP of the WMS/SMS/SMS array is correct in the configuration of the data collector
 * Confirm that Storage Navigator Modular CLI version is compatible with micro code version of storage array configured in the data collector
-* From the Cloud Insights Acquisition Unit, open a CMD prompt and do the following:
+* From the Data Infrastructure Insights Acquisition Unit, open a CMD prompt and do the following:
 - Change the directory to the configured installation directory
 - Try to make a connection with the configured storage array by executing following command “auunitref.exe”
 |Error: Configuration error: Storage Array not reported by Inventory

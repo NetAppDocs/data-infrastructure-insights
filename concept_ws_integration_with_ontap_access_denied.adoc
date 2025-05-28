@@ -6,9 +6,8 @@ keywords:  ransomware, ARP, Protection, Security, access
 ---
 
 = Integration with ONTAP Access Denied
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -17,7 +16,7 @@ keywords:  ransomware, ARP, Protection, Security, access
 [.lead]
 The ONTAP Access Denied feature uses workload analysis in NAS environments (NFS and SMB) to proactively detect and warn about failed file operations (i.e., a user trying to perform an operation for which they do not have permission). These failed file operation notifications--especially in cases of security-related failures--will further help in blocking insider attacks at early stages.
 
-Cloud Insights Workload Security integrates with ONTAP to receive Access Denied events and provide an additional analytic and automatic response layer.
+Data Infrastructure Insights Workload Security integrates with ONTAP to receive Access Denied events and provide an additional analytic and automatic response layer.
 
 Prerequisites
 

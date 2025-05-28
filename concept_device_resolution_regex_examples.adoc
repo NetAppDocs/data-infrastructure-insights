@@ -6,19 +6,18 @@ summary:
 ---
 
 = Regular expression examples
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-If you have selected the regular expression approach as your source naming strategy, you can use the regular expression examples as guides for your own expressions used in the Cloud Insights automatic resolution methods.
+If you have selected the regular expression approach as your source naming strategy, you can use the regular expression examples as guides for your own expressions used in the Data Infrastructure Insights automatic resolution methods.
 
 == Formatting regular expressions
-When creating regular expressions for Cloud Insights automatic resolution, you can configure output format by entering values in a field named _FORMAT_.
+When creating regular expressions for Data Infrastructure Insights automatic resolution, you can configure output format by entering values in a field named _FORMAT_.
 
 The default setting is \1, which means that a zone name that matches the regular expression is replaced by the contents of the first variable created by the regular expression. In a regular expression, variable values are created by parenthetical statements. If multiple parenthetical statements occur, the variables are referenced numerically, from left to right. The variables can be used in the output format in any order. Constant text can also be inserted in the output, by adding it to the FORMAT field.
 
@@ -243,8 +242,8 @@ The ^ (circumflex or caret) *inside square brackets* negates the expression, for
 
 *Hostname:* mhs-apps44-d
 
-*RegExp:* ([^_]+)_([AB]).*Format in Cloud Insights: \1-\2 ([^_]+)_
-([^_]+)_([^_]+).*Format in Cloud Insights: \1-\2-\3
+*RegExp:* ([^_]+)_([AB]).*Format in Data Infrastructure Insights: \1-\2 ([^_]+)_
+([^_]+)_([^_]+).*Format in Data Infrastructure Insights: \1-\2-\3
 
 === Example 13
 

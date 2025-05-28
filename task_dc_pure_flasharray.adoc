@@ -6,24 +6,23 @@ summary: Configuring Pure Storage data collector.
 ---
 
 = Pure Storage FlashArray data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead] 
-Cloud Insights uses the Pure Storage FlashArray data collector to gather inventory and performance data.   
+Data Infrastructure Insights uses the Pure Storage FlashArray data collector to gather inventory and performance data.   
 
 == Terminology
 
-For each asset type acquired by Cloud Insights, the most common terminology used for the asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+For each asset type acquired by Data Infrastructure Insights, the most common terminology used for the asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term | Cloud Insights Term
+|Vendor/Model Term | Data Infrastructure Insights Term
 |Drive (SSD)|Disk
 |Array|Storage
 |Controller|Storage Node

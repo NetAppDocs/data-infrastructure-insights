@@ -6,16 +6,15 @@ summary: MySQL data collector configuration
 ---
 
 = MySQL Data Collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Cloud Insights uses this data collector to gather metrics from MySQL. 
+Data Infrastructure Insights uses this data collector to gather metrics from MySQL. 
 
 == Installation 
 

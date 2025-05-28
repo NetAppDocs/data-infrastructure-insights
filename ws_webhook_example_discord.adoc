@@ -1,0 +1,65 @@
+---
+sidebar: sidebar
+permalink: ws_webhook_example_discord.html
+keywords: webhook, notification, Discord, integration
+summary: Create a Workload Security webhook for Discord to alert on security
+---
+
+= Workload Security Webhook Example for Discord
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Webhooks allow users to send alert notifications to various applications using a customized webhook channel. This page provides an example for setting up webhooks for Discord.
+
+NOTE: This page refers to third-party instructions, which care subject to change. Refer to the link:https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks[Discord documentation] for the most up-to-date information. 
+
+== Discord Setup:
+
+* In Discord, select the Server, under Text Channels, select Edit Channel (gear icon)
+
+* Select *Integrations > View Webhooks* and click *New Webhook*
+
+* Copy the Webhook URL. You will need to paste this into the Data Infrastructure Insights webhook configuration.
+
+
+== Create Workload Security Insights Webhook:
+
+. Navigate to Admin > Notifications and select the _Workload Security Webhooks_ tab. Click '+ Webhook' to create a new webhook.
+
+. Give the webhook a meaningful Name. 
+
+. In the _Template Type_ drop-down, select *Discord*.
+
+. Paste the Discord URL from above into the _URL_ field.
+
+//image:Webhooks-Discord_example.png[Discord webhook template]
+image:ws_webhook_discord_example.png[workload security webhook discord example]
+
+
+In order to test the webhook, temporarily replace the URL value in the message body with any valid URL (such as _https://netapp.com_) then click the _Test Webhook_ button. Discord requires that a valid URL be supplied in order for Test Webhook functionality to work. 
+
+Be sure to set the message body back once the test completes. 
+
+== Notifications via Webhook
+
+To notify on events via webhook, navigate to _Workload Security > Policies_. Click on _+Attack Policy_ or  _+Warning Policy_.
+
+* Enter a meaningful policy name.
+
+* Select the required Attack Type(s), Devices to which policy should be attached, and required Actions.
+
+* Under the _Webhooks Notifications_ dropdown, select the required Discord webhooks and save.
+
+Note: Webhooks can also be attached to existing policies by editing them. 
+
+//image:Webhooks_Discord_Notifications.png[Webhook Notifications]
+image:ws_add_attack_policy.png[Attack policy dialog showing webhook dropdown]
+
+
+
+
+

@@ -6,9 +6,8 @@ keywords: data collector, queries, create
 ---
 
 = NetApp SolidFire All-Flash Array data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -21,11 +20,11 @@ The SolidFire data collector utilizes the SolidFire REST API. The acquisition un
 
 == Terminology 
 
-Cloud Insights acquires the following inventory information from the NetApp SolidFire All-Flash Array data collector. For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires the following inventory information from the NetApp SolidFire All-Flash Array data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term | Cloud Insights Term
+|Vendor/Model Term | Data Infrastructure Insights Term
 |Drive|Disk
 |Cluster|Storage
 |Node|Storage Node
@@ -68,7 +67,7 @@ The following are requirements for configuring this data collector:
            
 == Troubleshooting
 
-When SolidFire reports an error it is displayed in Cloud Insights as follows:
+When SolidFire reports an error it is displayed in Data Infrastructure Insights as follows:
 
 _An error message was received from a SolidFire device while trying to retrieve data. The call was <method> (<parameterString> ). The error message from the device was (check the device manual): <message>_
 

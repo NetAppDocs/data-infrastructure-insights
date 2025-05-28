@@ -6,24 +6,23 @@ summary: Adding Workload Security agents
 ---
 
 = Workload Security Agent Installation
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Workload Security (formerly Cloud Secure) collects user activity data using one or more agents. Agents connect to devices in your environment and collect data that is sent to the Workload Security SaaS layer for analysis. See link:concept_cs_agent_requirements.html[Agent Requirements] to configure an agent VM.
+Workload Security (formerly Cloud Secure) collects user activity data using one or more agents. Agents connect to devices on your tenant and collect data that is sent to the Workload Security SaaS layer for analysis. See link:concept_cs_agent_requirements.html[Agent Requirements] to configure an agent VM.
 
-NOTE: Workload Security is not available in Cloud Insights Federal Edition.
+
 
 == Before You Begin
 
 * The sudo privilege is required for installation, running scripts, and uninstall. 
 * While installing the agent, a local user _cssys_ and a local group _cssys_ are created on the machine. If permission settings do not allow creation of a local user, and instead require Active Directory, a user with the username _cssys_ must be created in the Active Directory server.
-* You can read about Cloud Insights security link:security_overview.html[here].
+* You can read about Data Infrastructure Insights security link:security_overview.html[here].
 
 
 == Steps to Install Agent 
@@ -33,7 +32,7 @@ NOTE: Workload Security is not available in Cloud Insights Federal Edition.
 + 
 The system displays the Add an Agent page:
 +
-image::Add-agent-1.png[Adding a workload security agent]
+image:Add-agent-1.png[Adding a workload security agent]
 
 . Verify that the agent server meets the minimum system requirements. 
 
@@ -49,7 +48,7 @@ image:CloudSecureAgentWithProxy_Instructions.png[Agent Install with Proxy Note]
 
 . The system displays the following message when the installation completes successfully:
 + 
-image::new-agent-detect.png[Message for successful agent installation]
+image:new-agent-detect.png[Message for successful agent installation]
 
 //cd /var NEW
 //Grep /var/
@@ -116,7 +115,8 @@ Sample output:
 
 == "Pinning" an Agent at the current version
 
-By default, Cloud Insights Workload Security updates agents automatically. Some customers may wish to pause automatic updating, which leaves an Agent at its current version until one of the following occurs:
+By default, Data Infrastructure Insights Workload Security updates agents automatically. Some customers may wish to pause automatic updating, which leaves an Agent at its current version until one of the following occurs:
+
 
 * The customer resumes automatic Agent updates. 
 * 30 days have passed. Note that the 30 days starts on the day of the most recent Agent update, not at the day the Agent is paused.
@@ -132,6 +132,7 @@ Note that it may take up to five minutes for the pause or resume action to take 
 You can view your current Agent versions on the *Workload Security > Collectors* page, in the *Agents* tab.
 
 image:ws_agent_version.png[WS Agent versions shown in the agents table]
+
 
 
 == Troubleshooting Agent Errors
@@ -190,7 +191,7 @@ The command fails when the agent installation command is being run by a non-root
 3.	Copy and paste the full “token=…… … ./cloudsecure-agent-install.sh" installation command and press enter.
 4.	Installation should be able to proceed.
 
-|If the Agent is still not able to connect to Saas, please open a case with NetApp Support. Provide the Cloud Insights serial number to open a case, and attach logs to the case as noted.
+|If the Agent is still not able to connect to Saas, please open a case with NetApp Support. Provide the Data Infrastructure Insights serial number to open a case, and attach logs to the case as noted.
 |To attach logs to the case:
  1.	Execute the following script with root permission and share the output file (cloudsecure-agent-symptoms.zip).
     a.	/opt/netapp/cloudsecure/agent/bin/cloudsecure-agent-symptom-collector.sh

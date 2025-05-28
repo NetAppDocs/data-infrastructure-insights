@@ -6,16 +6,15 @@ summary: Configuring Azure compute data collector.
 ---
 
 = Configuring the Azure compute data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Cloud Insights uses the Azure compute data collector to acquire inventory and performance data from Azure compute instances. 
+Data Infrastructure Insights uses the Azure compute data collector to acquire inventory and performance data from Azure compute instances. 
 
 == Requirements
 
@@ -27,9 +26,9 @@ You need the following information to configure this data collector.
 * Azure Resource Manager IP (management.core.windows.net)
 * Azure Service Principal Application (Client) ID (Reader role required)
 * Azure service principal authentication key (user password)
-* You need to set up an Azure account for Cloud Insights discovery. 
+* You need to set up an Azure account for Data Infrastructure Insights discovery. 
 +
-Once the account is properly configured and you register the application in Azure, you will have the credentials required to discover the Azure instance with Cloud Insights. The following link describes how to set up the account for discovery.
+Once the account is properly configured and you register the application in Azure, you will have the credentials required to discover the Azure instance with Data Infrastructure Insights. The following link describes how to set up the account for discovery.
 https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal
 
 == Configuration

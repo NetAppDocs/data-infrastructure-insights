@@ -6,7 +6,7 @@ summary: Generic DB Host Resolver collector
 --- 
 = NetApp Generic DB Host resolver
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -17,14 +17,14 @@ This data collector acquires inventory
 
 == Terminology
 
-Cloud Insights acquires inventory from this collector. 
+Data Infrastructure Insights acquires inventory from this collector. 
 
 ////
 For each asset type acquired, the most common terminology used for the asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term | Cloud Insights Term
+|Vendor/Model Term | Data Infrastructure Insights Term
 |Disk|Disk
 |Raid Group|Disk Group
 |Cluster|Storage

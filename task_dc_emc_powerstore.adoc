@@ -6,9 +6,8 @@ summary: Configuring DELL EMC PowerStore data collector.
 ---
 
 = Dell EMC PowerStore data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -17,15 +16,15 @@ summary: Configuring DELL EMC PowerStore data collector.
 [.lead]
 The EMC PowerStore data collector gathers inventory information from EMC PowerStore storage. For configuration, the data collector requires the IP address of the storage processors and a read-only user name and password.
 
-The EMC PowerStore data collector gathers the volume-to-volume replication relationships that PowerStore coordinates across other storage arrays. Cloud Insights shows a storage array for each PowerStore cluster, and collects inventory data for nodes and storage ports on that cluster. No storage pool or volume data is collected. 
+The EMC PowerStore data collector gathers the volume-to-volume replication relationships that PowerStore coordinates across other storage arrays. Data Infrastructure Insights shows a storage array for each PowerStore cluster, and collects inventory data for nodes and storage ports on that cluster. No storage pool or volume data is collected. 
 
 == Terminology 
 
-Cloud Insights acquires the following inventory information from this data collector. For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires the following inventory information from this data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term|Cloud Insights Term 
+|Vendor/Model Term|Data Infrastructure Insights Term 
 |host|host
 |host_volume_mapping|host_volume_mapping
 |hardware (it has Drives under "extra_details" object): Drives|Disk
@@ -66,7 +65,7 @@ The following information is required to configure this data collector:
 |Inventory Poll Interval (minutes)|Interval between inventory polls. The default is 60 minutes.
 |===
 
-Cloud Insight's PowerStore performance collection makes use of PowerStore's 5-minute granularity source data. As such, Cloud Insights polls for that data every five minutes, and this is not configurable.
+Cloud Insight's PowerStore performance collection makes use of PowerStore's 5-minute granularity source data. As such, Data Infrastructure Insights polls for that data every five minutes, and this is not configurable.
            
 == Troubleshooting
 

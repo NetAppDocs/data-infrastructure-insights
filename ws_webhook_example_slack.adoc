@@ -1,0 +1,55 @@
+---
+sidebar: sidebar
+permalink: ws_webhook_example_slack.html
+keywords: webhook, notification, Slack, integration, 
+summary: Create a Workload Security webhook for Slack to alert on security
+---
+
+= Workload Security Webhook Example for Slack
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Webhooks allow users to send alert notifications to various applications using a customized webhook channel. This page provides an example for setting up webhooks for Slack.
+
+This page refers to third-party instructions, which are subject to change. Refer to the Slack documentation for the most up-to-date information.
+
+==== Slack Example
+
+* Go to https://api.slack.com/apps and Create a new App. Give it a meaningful name and select a Workspace.
+
+image:ws_create_slack_app.png[create a slack app, width=400]
+
+* Go to Incoming Webhooks, click on _Activate Incoming Webhooks_, select _Add New Webhook_, and select the Channel on which to Post.
+* Copy the Webhook URL. This URL will be given when creating a Workload Security webhook.
+
+==== Create Workload Security Slack Webhook
+
+. Navigate to Admin > Notifications and select the _Workload Security Webhooks_ tab. Select _+ Webhook_ to create a new webhook.
+
+. Give the webhook a meaningful name.
+
+. In the _Template Type_ dropdown, select _Slack_.
+
+. Paste the URL copied from above.
+
+image:ws_webhook_slack_example.png[webhook slack example for Workload Security, width=400]
+
+==== Notifications via webhook
+
+* To notify on events via webhook, navigate to _Workload Security > Policies_. Click on _+Attack Policy_ or  _+Warning Policy_.
+
+* Enter a meaningful policy name.
+
+* Select required Attack Type(s), Devices to which the policy should be attached, and required Actions.
+
+* Under the _Webhooks Notifications_ dropdown, select the required webhooks. Save the policy.
+
+Note: Webhooks can also be attached to existing policies by editing them. 
+
+image:ws_add_attack_policy.png[add attack policy dialog, width=400]
+
+

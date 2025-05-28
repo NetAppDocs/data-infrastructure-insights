@@ -6,20 +6,19 @@ keywords: Assets, landing page, filtering, context, related
 ---
 
 = Filtering for Objects In-Context
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-When configuring a widget on an asset's landing page, you can set _in-context_ filters to show only objects directly related to the current asset. By default, when you add a widget, _all_ objects of the selected type in your environment are displayed. In-context filters allow you to display only the data relevant to your current asset.
+When configuring a widget on an asset's landing page, you can set _in-context_ filters to show only objects directly related to the current asset. By default, when you add a widget, _all_ objects of the selected type on your tenant are displayed. In-context filters allow you to display only the data relevant to your current asset.
 
 On most asset landing pages, widgets allow you to filter for objects related to the current asset. In filter drop-downs, object types that display a link icon can be filtered in-context to the current asset.
 
-For example, on a Storage asset page, you can add a Bar Chart widget to show the top IOPS on internal volumes only on that storage. By default, when you add a widget, _all_ internal volumes in your environment are displayed. 
+For example, on a Storage asset page, you can add a Bar Chart widget to show the top IOPS on internal volumes only on that storage. By default, when you add a widget, _all_ internal volumes on your tenant are displayed. 
 
 To show only internal volumes on the current storage asset, do the following:
 
@@ -39,6 +38,6 @@ The bar chart shows only the internal volumes that reside on the current storage
 
 The widget will be displayed on the asset pages for all storage objects. When the in-context link is enabled in the widget, the bar chart shows data for internal volumes related only to the currently-displayed storage asset.
 
-To unlink the object data, edit the widget and click the link icon next to the object type. The link becomes disabled and the chart displays data for _all_ objects in your environment.
+To unlink the object data, edit the widget and click the link icon next to the object type. The link becomes disabled and the chart displays data for _all_ objects on your tenant.
 
 You can also use link:concept_dashboard_features.html#variables[*special variables in widgets*] to display asset-related information on landing pages.

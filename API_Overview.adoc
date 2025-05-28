@@ -2,66 +2,44 @@
 sidebar: sidebar 
 permalink: API_Overview.html
 keywords: API, customer API, premium, JSON, Swagger, Access Token, token, rotate, expired
-summary: The Cloud Insights API enables integration with other applications, such as monitoring and reporting systems.
+summary: The Data Infrastructure Insights API enables integration with other applications, such as monitoring and reporting systems.
 ---
 
-= Cloud Insights API 
-:toc: macro
+= Data Infrastructure Insights API 
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-The Cloud Insights API enables NetApp customers and independent software vendors (ISVs) to integrate Cloud Insights with other applications, such as CMDB's or other ticketing systems.
-
-//NOTE: This documentation is considered *Preview Documentation* and is therefore subject to change.
-
-//NOTE: The Cloud Insights API is available in *Cloud Insights Premium Edition*. 
-
-Note that Cloud Insights APIs are available based on your current Edition: 
-
-[cols="<,^s,^s,^s"]
-|===
-|API Type|Basic|Standard|Premium
-
-|Acquisition Unit|image:SmallCheckMark.png[check mark]|image:SmallCheckMark.png[check mark]|image:SmallCheckMark.png[check mark]
-|Data Collection|image:SmallCheckMark.png[check mark]|image:SmallCheckMark.png[check mark]|image:SmallCheckMark.png[check mark]
-|Alerts| |image:SmallCheckMark.png[check mark]|image:SmallCheckMark.png[check mark]
-|Assets| |image:SmallCheckMark.png[check mark]|image:SmallCheckMark.png[check mark]
-|Data Ingestion| |image:SmallCheckMark.png[check mark]|image:SmallCheckMark.png[check mark]
-|Log Ingestion| |image:SmallCheckMark.png[check mark]|image:SmallCheckMark.png[check mark]
-
-|===
+The Data Infrastructure Insights API enables NetApp customers and independent software vendors (ISVs) to integrate Data Infrastructure Insights with other applications, such as CMDB's or other ticketing systems.
 
 
-Additionally, your Cloud Insights link:https://docs.netapp.com/us-en/cloudinsights/concept_user_roles.html#permission-levels[feature set role] will determine which APIs you can access. User and Guest roles have fewer privileges than Administrator role. For example, if you have Administrator role in Monitor and Optimize, but User role in Reporting, you can manage all API types except Data Warehouse.
+Your Data Infrastructure Insights link:https://docs.netapp.com/us-en/cloudinsights/concept_user_roles.html#permission-levels[feature set role] will determine which APIs you can access. User and Guest roles have fewer privileges than Administrator role. For example, if you have Administrator role in Monitor and Optimize, but User role in Reporting, you can manage all API types except Data Warehouse.
 
 
 == Requirements for API Access
 
 * An API Access Token model is used to grant access. 
 
-* API Token management is performed by Cloud Insights users with the Administrator role. 
+* API Token management is performed by Data Infrastructure Insights users with the Administrator role. 
 
 
 == API Documentation (Swagger)
 
-The latest API information is found by logging in to Cloud Insights and navigating to *Admin > API Acccess*. Click the *API Documentation* link.
+The latest API information is found by logging in to Data Infrastructure Insights and navigating to *Admin > API Acccess*. Click the *API Documentation* link.
 
-//image:API_Types_Example.png[API Types]
-//image:API_Documentation.png[API Documentation]
 image:API_Swagger_Types.png[API types]
 
-The API Documentation is Swagger-based, which provides a brief description and usage information for the API, and allows you to try it out in your environment. Depending on your user role and/or Cloud Insights edition, the API types available to you may vary.
+The API Documentation is Swagger-based, which provides a brief description and usage information for the API, and allows you to try it out in your tenant. Depending on your user role and/or Data Infrastructure Insights edition, the API types available to you may vary.
 
 image:API_Swagger_Example.png[API Swagger Example]
 
 == API Access Tokens
 
-Before using the Cloud Insights API, you must create one or more *API Access Tokens*. Access tokens are used for specified API types, and can grant read and/or write permissions. You can also set the expiration for each access token. All APIs under the specified types are valid for the access token. Each token is void of a username or password. 
+Before using the Data Infrastructure Insights API, you must create one or more *API Access Tokens*. Access tokens are used for specified API types, and can grant read and/or write permissions. You can also set the expiration for each access token. All APIs under the specified types are valid for the access token. Each token is void of a username or password. 
 
 To create an Access Token:
 
@@ -81,7 +59,7 @@ NOTE: Your token will only be available for copying to the clipboard and saving 
 
 You can disable, enable, and revoke tokens. Tokens that are disabled can be enabled. 
       
-Tokens grant general purpose access to APIs from a customer perspective;  managing access to APIs in the scope of their own tenant. Customer administrators may grant and revoke these tokens without direct involvement from Cloud Insights back end personnel.
+Tokens grant general purpose access to APIs from a customer perspective;  managing access to APIs in the scope of their own tenant. Customer administrators may grant and revoke these tokens without direct involvement from Data Infrastructure Insights back end personnel.
 
 The application receives an Access Token after a user successfully authenticates and authorizes access, then passes the Access Token as a credential when it calls the target API. The passed token informs the API that the bearer of the token has been authorized to access the API and perform specific actions specified by the scope that was granted during authorization.
 
@@ -97,11 +75,11 @@ See the swagger pages for examples specific to the API you wish to use.
 
 == API Type
 
-The Cloud Insights API is category-based, and currently contains the following types:
+The Data Infrastructure Insights API is category-based, and currently contains the following types:
 
 * ASSETS type contains asset, query, and search APIs. 
 ** Assets: Enumerate top-level objects and retrieve a specific object or an object hierarchy.
-** Query: Retrieve and manage Cloud Insights queries.
+** Query: Retrieve and manage Data Infrastructure Insights queries.
 ** Import: Import annotations or applications and assign them to objects
 ** Search: Locate a specific object without knowing the object’s unique ID or full name.
 
@@ -111,99 +89,15 @@ The Cloud Insights API is category-based, and currently contains the following t
 
 * LOG INGESTION is used to retrieve and manage log data
 
-//* DATA WAREHOUSE type is available for environments with Cloud Insights Reporting, and is used to manage data used with Reporting
 
 Additional types and/or APIs may become available over time. You can find the latest API information in the link:#api-documentation-swagger[API Swagger documentation]. 
 
-Note that the API types to which a user has access depend also on the link:concept_user_roles.html[User Role] they have in each Cloud Insights feature set (Monitoring, Workload Security, Reporting).
+Note that the API types to which a user has access depend also on the link:concept_user_roles.html[User Role] they have in each Data Infrastructure Insights feature set (Monitoring, Workload Security, Reporting).
 
-////
-== API Commands
-
-Each of the REST API commands comprises the API’s URL, an HTTP action, URL parameters, and an expected API responses.
-
-The Cloud Insights APIs can be generally separated into the following sections: 
-////
-
-////
-admin::
-Provides an entry point to the system for administrative operations in Cloud Insights. Allowed roles are Any, User, and  Administrator and includes the following:
-
-** admin/acquisitionUnits
-** admin/certificates
-** admin/datasources
-** admin/licenses
-** admin/patches
-** admin/users
-////
-
-////
-=== ASSETS type
-
-Assets:: 
-Lets you enumerate top-level objects and retrieve a specific object or an object hierarchy from a system when you know the object unique ID or full name.
-
-** /assets/<asset_type>
-
-** /assets/annotations
-** /assets/applications
-** /assets/businessEntities
-** /assets/dataStores
-** /assets/devices
-** /assets/disks
-** /assets/fabrics
-** /assets/fileSystems
-** /assets/genericDevices
-** /assets/hosts
-** /assets/iSCSINetworkPortal
-** /assets/iSCSISessions
-** /assets/internalVolumes
-** /assets/paths
-** /assets/ports
-** /assets/qtrees
-** /assets/quotas
-** /assets/risks
-** /assets/shares
-** /assets/storageNodes
-** /assets/storeagePools
-** /assets/storageVirtualMachines
-** /assets/storages
-** /assets/switches
-** /assets/tapes
-** /assets/virtualMachines
-** /assets/vmdks
-** /assets/volumes
-** /assets/zones
-** /assets/zoneMembers
-
-
-Queries::
-Retrieve and manage queries.
-
-
-** /queries
-** /query (to run an ad-hoc query)
-
-login:: 
-Perform user session management.
-
-Search:: 
-Locate a specific object without knowing the object’s unique ID or full name.
-
-** /search
-
-=== DATA_COLLECTION type
-
-Data Collectors::
-Retrieve and manage data collectors
-
-** /collector/datasourceTypes
-** /collector/datasources
-////
 
 == Inventory Traversal
 
-This section describes how to traverse a hierarchy of Cloud Insights objects.
+This section describes how to traverse a hierarchy of Data Infrastructure Insights objects.
 
 === Top Level Objects 
 
@@ -250,7 +144,7 @@ To discourage this, requests for top-level collections cannot be expanded. For e
 
 == Performance Data
 
-Performance data is gathered across many devices as separate samples. Every hour (the default), Cloud Insights aggregates and summarizes performance samples.
+Performance data is gathered across many devices as separate samples. Every hour (the default), Data Infrastructure Insights aggregates and summarizes performance samples.
 
 The API allows access to both the samples and the summarized data. For an object with performance data, a performance summary is available as _expand=performance_. Performance history time series are available through nested _expand=performance.history_.
 
@@ -277,7 +171,7 @@ The resulting Performance Data dictionary has the following keys:
 * “history” is the list of pairs of timestamp and map of counters values
 * Every other dictionary key (“diskThroughput” and so on) is the name of a performance metric.
 
-Each performance data object type has a unique set of performance metrics. For example, the Virtual Machine performance object supports “diskThroughput” as a performance metric. Each supported performance metric is of a certain “performanceCategory” presented in the metric dictionary. Cloud Insights supports several performance metric type listed later in this document. Each performance metric dictionary will also have the “description” field that is a human-readable description of this performance metric and a set of performance summary counter entries.
+Each performance data object type has a unique set of performance metrics. For example, the Virtual Machine performance object supports “diskThroughput” as a performance metric. Each supported performance metric is of a certain “performanceCategory” presented in the metric dictionary. Data Infrastructure Insights supports several performance metric type listed later in this document. Each performance metric dictionary will also have the “description” field that is a human-readable description of this performance metric and a set of performance summary counter entries.
 
 The Performance Summary counter is the summarization of performance counters. It presents typical aggregated values like min, max, and avg for a counter and also the latest observed value, time range for summarized data, unit type for counter and thresholds for data. Only thresholds are optional; the rest of attributes are mandatory.
 
@@ -290,94 +184,22 @@ Performance summaries are available for these types of counters:
 
 == Object Performance Metrics
 
-The API can return detailed metrics for objects in your environment, for example:
+The API can return detailed metrics for objects on your tenant, for example:
 
 * Storage Performance Metrics such as IOPS (Number of input/output requests per second), Latency, or Throughput. 
 
-////
-[cols=2*,options="header",cols="25,75"]
-|===
-| Performance Metric
-| Description
-| IOPS |Number of input/output requests per second
-|Latency|Average time, in milliseconds, it takes to complete an IO request
-|Cache hit ratio|Percentage of  requests satisfied from cache
-|Utilization|Percent of theoretical maximum for average utilization of the resource in specified time frame. The range is 0 to 100.
-|Throughput|Number of bytes transferred in MB/second
-|IO density|Number of IO per second per terabyte of used capacity. IO density is used only for storage, volume and internal volume assets.
-|===
 
-The following table describes  performance metrics available for different type of objects:
-
-[cols=7*,options="header"]
-|===
-||IOPS|Latency|Throughput|Cache Hit|Utilization|IO Density
-|Disk|X||X||X|
-|Storage Pool|X||X||X||
-Internal Volume|X|X|X|||X|
-Volume|X|X|X|X||X|
-StorageNode|X|X|X|X|X||
-Storage|X|X|X|||X|
-Data Store|X|X|X||||
-VMDK |X|X|X|||| 
-VM |X|X|X||X||
-Host |X|X|X||X|| 
-|===
-////
 
 * Switch Performance Metrics, such as Traffic Utilization, BB Credit Zero data, or Port Errors. 
 
 See the link:#api-documentation-swagger[API Swagger documentation] for information on metrics for each object type.
 
-////
-The following table describes performance metrics available for switches:
 
-[cols=5*,options="header"] 
-|===
-|Type|REST Name|Unit|Range|Description 
-
-|Traffic Utilization|trafficUtilization.rx|%|0-100|Receive traffic utilization. Calculated as 100 * total bytes received / receive capacity during the sampling period.
-
-|Traffic Utilization|trafficUtilization.tx|%|0-100|Transmit traffic utilization. Calculated as 100 * total bytes transmitted / transmit capacity during the sampling period
-
-|Traffic Utilization|trafficUtilization.totaL|%|0-100|Total traffic utilization. Calculated as 100 * total bytes received and transmitted / port capacity during the sampling period.
-
-|Traffic Utilization|trafficUtilization.rxMax|%|0-100
-|Maximum of trafficUtilization.tx during the sampling period.
-|Traffic Rate|trafficRate.rx|MiB/s|≥0|Traffic received during the sampling period.
-|Traffic Rate|trafficRate.tx|MiB/s|≥0|Traffic transmitted during the sampling period.
-|Traffic Frame|trafficFrameRate.rx|frames/s|≥0|Number of FC frames received per second during the sampling period.
-|Traffic Frame|trafficFrameRate.tx|frames/s|≥0|Number of FC frames transmitted per second during the sampling period.
-|Traffic Frame|trafficFrameRate.total|frames|s≥0|Number of FC frames transmitted and received per second during the sampling period.
-|Traffic Frame|trafficFrameSizeAvg.rx|Bytes/frame|0-2,148|Average length of received FC frames during the sampling period.
-
-|Zero BB Credit|bbCreditZero.rx|none (count)|≥0|Number of times the receive buffer-to-buffer credit count transitioned to zero during the sampling period. It represents the number of times the attached port had to stop transmitting because this port was out of credits to provide.
-
-|Zero BB Credit |bbCreditZero.tx|none (count)|≥0|Number of times the transmit buffer-to-buffer credit count transitioned to zero during the sampling period.
-
-|Zero BB Credit|bbCreditZero.total|none (counnt)|≥0|Number of times the transmit and receive buffer-to-buffer credit counts transitioned to zero during the sampling period.
-
-|Zero BB Credit|bbCreditZeroMs.tx|ms|≥0|Time in milliseconds during which the transmit buffer-to-buffer credit count was zero during the sample period.
-|Port Errors|portErrors.timeoutDiscardTx|none (count)|≥0|Number of receive link resets during the sample period. Represents the number of link resets issued by the attached port to this port.
-|Port Errors|portErrors.linkResetRx|none(count)|≥0|Number of receive link resets during the sample period. Represents the number of link resets issued by the attached port to this port.
-|Port Errors|portErrors.syncLoss|none (count)|≥0|Number of loss of synchronization failures during the sample period.
-|Port Errors|portErrors.signalLoss|none (count)|≥0|Number of signal losses during the sample period.
-|Port Errors|portErrors.class3Discard|none (count)|≥0|Number of class 3 FC frames discarded during the sample period.
-|Port Errors|portErrors.frameTooLong|none(count)|≥0|Number of FC frames discarded by this port during the sample period because their length exceeded the agreed to maximum limit.
-|Port Errors|portErrors.frameTooShort|none(count)|≥0|Number of FC frames discarded by this port during the sample period because their actual length was less than the length given in the frame header.
-|Port Errors|portErrors.linkFailure|none (count)|≥0|Number of link failures detected by this port during the sample period.
-|Port Errors|portErrors.crc|none (count)|≥0|Number of frames with invalid CRCs detected by this port during the sample period.
-|Port Errors|portErrors.encIn (Brocade only)|none (count)|≥0|The number of 8b/10b encoding errors that have occurred inside frame boundaries. This counter is generally a zero value, although occasional errors may occur on a normal link and give a nonzero result.
-|Port Errors|portErrors.encOut (Brocade only)|none (count)|≥0|The number of 8b/10b encoding errors that have occurred outside frames boundaries. This counter may become a nonzero value during link initialization but indicates a problem if it increments faster than the link-bit error rate allows (approximately once every 20 minutes for 1 Gb/s). This is usually caused by corrupted primitive sequences. 
-|Port Errors|portErrors.total|none (count)|≥0|Total number of errors detected by this port during the sample period. Is equal to the sum of all error counters defined above (with portErrors. prefix in REST name).
-|===
-////
 
 == Performance History Data
 
 History data is presented in performance data as a list of timestamp and counter maps pairs.
 
-//graphic 
 
 History counters are named based on the performance metric object name. For example, the virtual machine performance object supports “diskThroughput” so the history map will contain keys named “diskThroughput.read”, “diskThroughput.write” and “diskThroughput.total”.
 
@@ -398,7 +220,7 @@ Objects with capacity attributes use basic data types and the CapacityItem for r
 
 CapacityItem is a single logical unit of capacity. It has “value” and “highThreshold” in units defined by its parent object. It also supports an optional breakdown map that explains how the capacity value is constructed. For example, the total capacity of a 100 TB storagePool would be a CapacityItem with a value of 100. The breakdown may show 60 TB allocated for “data” and 40 TB for “snapshots”.
 
-Note:: “highThreshold” represents system defined thresholds for the corresponding metrics, which a client can use to generate alerts or visual cues on values that are out of acceptable configured ranges.
+Note: “highThreshold” represents system defined thresholds for the corresponding metrics, which a client can use to generate alerts or visual cues on values that are out of acceptable configured ranges.
 
 //Graphic
 
@@ -413,7 +235,7 @@ image:StoragePoolCapacity.png[Storage Pool Capacity Example]
 
 The search API is a simple entry point to the system. The only input parameter to the API is a free-form string and the resulting JSON contains a categorized list of results. Types are different asset types from the Inventory, such as storages, hosts, dataStores, and so on. Each type would contain a list of objects of the type that match the search criteria.
 
-Cloud Insights is an extensible (wide open) solution that allows integrations with third party orchestration, business management, change control and ticketing systems as well as custom CMDB integrations. 
+Data Infrastructure Insights is an extensible (wide open) solution that allows integrations with third party orchestration, business management, change control and ticketing systems as well as custom CMDB integrations. 
 
 Cloud Insight’s RESTful API is a primary point of integration that allows simple and effective movement of data as well as allows users to gain seamless access to their data. 
 
@@ -441,7 +263,7 @@ Note: If you have the latest NetApp Kubernetes Monitoring Operator installed and
 
 * Edit the the NetApp Kubernetes Monitoring Operator.
 +
- kubectl -n netapp-monitoring edit agent agent-monitoring-netapp
+ kubectl -n netapp-monitoring edit agent netapp-ci-agent-monitoring-netapp
  
 * Modify the _spec.output-sink.api-key_ value, replacing the old API token with the new API token.
 +

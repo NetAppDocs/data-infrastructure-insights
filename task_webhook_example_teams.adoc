@@ -6,9 +6,8 @@ summary: Create a webhook to alert on performance or inventory thresholds for Mi
 ---
 
 = Webhook Example for Microsoft Teams
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -27,12 +26,12 @@ image:Webhooks_Teams_Create_Webhook.png[Incoming Webhook in Teams]
 
 . Select *Add to a Team > Select a Team > Setup a Connector*.
 
-. Copy the Webhook URL. You will need to paste this into the Cloud Insights webhook configuration.
+. Copy the Webhook URL. You will need to paste this into the Data Infrastructure Insights webhook configuration.
 
 
-== Create Cloud Insights Webhook:
+== Create Data Infrastructure Insights Webhook:
 
-. In Cloud Insights, navigate to *Admin > Notifications* and select the *Webhooks* tab. Click *+Webhook* to create a new webhook.
+. In Data Infrastructure Insights, navigate to *Admin > Notifications* and select the *Webhooks* tab. Click *+Webhook* to create a new webhook.
 
 . Give the webhook a meaningful Name, such as "Teams Webhook". 
 
@@ -45,7 +44,7 @@ image:Webhooks-Teams_example.png[Teams webhook template]
 
 == Notifications via Webhook
 
-To notify on events via webhook, in Cloud Insights navigate to *Alerts > Monitors* and click *+Monitor* to create a new link:task_create_monitor.html[monitor].
+To notify on events via webhook, in Data Infrastructure Insights navigate to *Alerts > Monitors* and click *+Monitor* to create a new link:task_create_monitor.html[monitor].
 
 * Select a metric and define the monitor's conditions.
 

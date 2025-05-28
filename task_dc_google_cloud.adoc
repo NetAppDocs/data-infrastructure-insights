@@ -6,16 +6,21 @@ keywords: data collector, queries, create
 ---
 
 = NetApp Google Compute data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-This data collector supports inventory and performance collection from Google Compute cloud platform configurations. This collector will seek to discover all the Compute resources within all the Projects within one Google organization. If you have multiple Google organizations you want to discover with Cloud Insights, you will want to deploy one Cloud Insights collector per organization. 
+This data collector supports inventory and performance collection from Google Compute cloud platform configurations. This collector will seek to discover all the Compute resources within all the Projects within one Google organization. If you have multiple Google organizations you want to discover with Data Infrastructure Insights, you will want to deploy one Data Infrastructure Insights collector per organization. 
+
+== Service Account Requirements
+
+* You must create a service account by following the instructions in link:https://cloud.google.com/iam/docs/creating-managing-service-accounts[Creating/Managing Service Accounts]. Such service account is identified by a unique ID, known as its _clientId_, which will be used as a username. 
+* Additionally, create a service account key by following the instructions in link:https://cloud.google.com/iam/docs/creating-managing-service-account-keys[Creating/Managing Service Account Keys]. This key can be downloaded as a json file, whose content will be used as a password.
+* The service account must be scoped for _compute.readonly_, _monitoring.read_, and _cloud-platform_.
 
 == Configuration
 
@@ -23,7 +28,7 @@ This data collector supports inventory and performance collection from Google Co
 |===
 |Field|Description
 |Organization ID|The organization ID you want to discover with this collector. This field is required if your service account is able to see more than one organization
-|Choose 'Exclude' or 'Include' to filter GCP Projects by IDs| If you want to limit what projects' resources are brought into Cloud Insights. 
+|Choose 'Exclude' or 'Include' to filter GCP Projects by IDs| If you want to limit what projects' resources are brought into Data Infrastructure Insights. 
 |Project IDs |The list of Project IDs that you want to filter in, or out from discovery, depending on the value of the "Choose 'Exclude"...." value. The default list is empty
 |Client ID |Client ID for the Google Cloud Platform configuration
 |Copy and paste the contents of your Google Credential File here|Copy your Google credentials for the Cloud Platform account to this field

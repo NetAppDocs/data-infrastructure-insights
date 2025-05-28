@@ -6,18 +6,17 @@ summary: Monitor metrics for anomalies
 ---
 
 = Anomaly Detection Monitors
-:toc: macro
 :hardbreaks:
 :nofooter:
-:toclevels: 1
+
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Anomaly Detection provides insight into unexpected changes in the patterns of data in your environment. An anomaly occurs when the pattern of an object's behavior changes in your environment, for example, if an object experiences a certain level of latency at a certain time on Wednesdays, but latency spikes above that level at that time on the subsequent Wednesday, that spike would be considered an anomaly.  Cloud Insights allows the creation of monitors to alert when anomalies such as this occur.
+Anomaly Detection provides insight into unexpected changes in the patterns of data on your tenant. An anomaly occurs when the pattern of an object's behavior changes, for example, if an object experiences a certain level of latency at a certain time on Wednesdays, but latency spikes above that level at that time on the subsequent Wednesday, that spike would be considered an anomaly.  Data Infrastructure Insights allows the creation of monitors to alert when anomalies such as this occur.
 
-Anomaly detection is suitable for object metrics that exhibit a recurring, predictable pattern. When these object metrics spike above or drop below their expected levels, Cloud Insights can generate an alert to prompt investigation.
+Anomaly detection is suitable for object metrics that exhibit a recurring, predictable pattern. When these object metrics spike above or drop below their expected levels, Data Infrastructure Insights can generate an alert to prompt investigation.
 
 image:anomaly_detection_expert_view.png[graph showing detected anomaly]
 
@@ -25,7 +24,7 @@ image:anomaly_detection_expert_view.png[graph showing detected anomaly]
 
 == What is Anomaly Detection?
 
-An anomaly occurs when the mean value of a metric is a number of standard deviations away from the weighted mean of that metric for the previous few weeks, with recent weeks having more weight than previous weeks. Cloud Insights provides the ability to monitor data and alert when anomalies are detected. You have a choice to set the "sensitivity" levels of detection. For example, a higher sensitivity would be when the mean value is fewer standard deviations from the mean, thus causing more alerts to be generated. Conversely, lower sensitivity = more standard deviations from mean = fewer alerts.
+An anomaly occurs when the mean value of a metric is a number of standard deviations away from the weighted mean of that metric for the previous few weeks, with recent weeks having more weight than previous weeks. Data Infrastructure Insights provides the ability to monitor data and alert when anomalies are detected. You have a choice to set the "sensitivity" levels of detection. For example, a higher sensitivity would be when the mean value is fewer standard deviations from the mean, thus causing more alerts to be generated. Conversely, lower sensitivity = more standard deviations from mean = fewer alerts.
 
 === Anomaly Detection monitoring differs from Threshold Monitoring.
 
@@ -44,10 +43,10 @@ Anomaly Detection monitoring can provide helpful alerts for many situations, inc
 
 * When the definition of _normal_ is unclear.  For example, SAN error rates may be expected in varying amounts depending on port. Alerting on one error is noisy and unnecessary, but a sudden or significant increase could indicate a widespread issue.
 * Where there are changes over time. Workloads that exhibit seasonality (i.e. they are busy or quiet at certain times). This could include unexpected quiet periods that may Indicate a batch stall.
-* Working with large amounts of data where manually defining and adjusting thresholds is impractical. For example, an environment with a large numbers of hosts and/or volumes with varying workloads. Each may have different SLAs, so understanding the ones that exceed the norm is important.
+* Working with large amounts of data where manually defining and adjusting thresholds is impractical. For example, a tenant with a large numbers of hosts and/or volumes with varying workloads. Each may have different SLAs, so understanding the ones that exceed the norm is important.
 
 
-// Because Anomaly Detection works by comparing a metric's data on a particular day and time to the same day and time from the previous week, once you create an Anomaly Detection monitor, Cloud Insights needs to collect data for seven days before it can alert on anomalies.
+// Because Anomaly Detection works by comparing a metric's data on a particular day and time to the same day and time from the previous week, once you create an Anomaly Detection monitor, Data Infrastructure Insights needs to collect data for seven days before it can alert on anomalies.
 
 == Creating an Anomaly Detection Monitor
 

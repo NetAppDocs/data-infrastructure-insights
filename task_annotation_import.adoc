@@ -2,22 +2,21 @@
 sidebar: sidebar
 permalink: task_annotation_import.html
 keywords: annotations, import, api
-summary: You can import annotations and applications using the Cloud Insights API.
+summary: You can import annotations and applications using the Data Infrastructure Insights API.
 ---
 
 = Importing Annotations
-:toc: macro
 :hardbreaks: 
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Cloud Insights includes an API for importing annotations or applications from a CSV file, and assigning them to objects you specify.
+Data Infrastructure Insights includes an API for importing annotations or applications from a CSV file, and assigning them to objects you specify.
 
-NOTE: The Cloud Insights API is available in *Cloud Insights Premium Edition*. 
+NOTE: The Data Infrastructure Insights API is available in *Data Infrastructure Insights Premium Edition*. 
 
 //The export and import functions are supported only between servers that are running the same version of OnCommand Insight.
 

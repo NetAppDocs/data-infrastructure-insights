@@ -6,16 +6,15 @@ keywords: collector, acquisition, status
 ---
 
 = Determining data collector acquisition status
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/ 
 
 [.lead]
-Because data collectors are the primary source of information for Cloud Insights, it is imperative that you ensure that they remain in a running state.
+Because data collectors are the primary source of information for Data Infrastructure Insights, it is imperative that you ensure that they remain in a running state.
 
 Data collector status is displayed in the upper right corner of any asset page as the message "Acquired N minutes ago", where N indicates the most recent acquisition time of the asset's data collector(s). The acquisition time/date is also displayed.
 

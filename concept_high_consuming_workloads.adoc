@@ -2,20 +2,19 @@
 sidebar: sidebar
 permalink: concept_high_consuming_workloads.html
 keywords: insight, greedy, degraded, bully, victim, impacted, impacting, impactful, impact, resources, consuming, workload
-summary: Insights give you a look into how resources impact other resources in your environment.
+summary: Insights give you a look into how resources impact other resources on your tenant.
 ---
 
 = Insights: High-Consuming Workloads
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-High-impact workloads can reduce the performance of other workloads in a shared resource. Cloud Insights provides tools to help you investigate resource saturation and impact in your environment.
+High-impact workloads can reduce the performance of other workloads in a shared resource. Data Infrastructure Insights provides tools to help you investigate resource saturation and impact on your tenant.
 
 
 === Terminology
@@ -24,7 +23,7 @@ When talking about workload or resource impact, the following definitions are us
 
 An *Impactful* or _Greedy_ resource is one that causes a negative impact on another resource. For example, a volume experiencing very high IOPS may cause increased latency in other volumes (i.e. _Impacted_ or _Degraded_ resources). Impactful and Impacted resources are “peers” that utilize the same shared resource, for example, a storage pool or Volume.
 
-A *High-Consuming Workload* is a workload that is currently identified as impacting other resources in the shared storage pool. These workloads drive higher IOPS, reducing IOPS in the Impacted Workloads. In Cloud Insights these are identified as *Demanding Workloads*.
+A *High-Consuming Workload* is a workload that is currently identified as impacting other resources in the shared storage pool. These workloads drive higher IOPS, reducing IOPS in the Impacted Workloads. In Data Infrastructure Insights these are identified as *Demanding Workloads*.
 
 An *Impacted Workload* is a workload affected by a high-consuming workload in the shared Storage Pool. These workloads are experiencing reduced IOPS and/or higher latency, caused by the Demanding Workloads.
 
@@ -37,11 +36,11 @@ A *Contention* occurs when IOPS are determined to be affecting other resources o
 
 === High-Consuming Workloads
 
-Any High-Consuming Workloads that Cloud Insights detects are shown in the _Shared Resources Under Stress_ Insight. Navigate to *Observability > Infrastructure Insights* to view these Insights.
+Any High-Consuming Workloads that Data Infrastructure Insights detects are shown in the _Shared Resources Under Stress_ Insight. Navigate to *Observability > Infrastructure Insights* to view these Insights.
 
 image:Impacts_Workloads_Menu.png[Shares Resources]
 
-//Cloud Insights displays a list of any workloads where a saturation has been detected. Click on a workload to open the workload dashboard.
+//Data Infrastructure Insights displays a list of any workloads where a saturation has been detected. Click on a workload to open the workload dashboard.
 
 //image:Impacts_High_Consuming_Workloads.png[Workloads List]
 
@@ -58,7 +57,7 @@ image:Insights_Impacted_Workload_Chart.png[Impacted workload chart]
 
 === What do I do to resolve saturation?
 
-There are a number of steps you can take to reduce or eliminate the chance of saturation in your environment. Here are a few things you can try.
+There are a number of steps you can take to reduce or eliminate the chance of saturation on your tenant. Here are a few things you can try.
 
 * Move high-IOPS consumers
 +

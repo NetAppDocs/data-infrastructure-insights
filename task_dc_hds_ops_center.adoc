@@ -6,9 +6,8 @@ summary: Configuring HDS Ops Center data collector.
 ---
 
 = Hitachi Ops Center data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -19,11 +18,11 @@ This data collector uses Hitachi Ops Center's integrated suite of applications t
 
 == Terminology 
 
-Cloud Insights acquires the following inventory information from this data collector. For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires the following inventory information from this data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term|Cloud Insights Term 
+|Vendor/Model Term|Data Infrastructure Insights Term 
 |Storage Systems|Storage
 |Volume|Volume
 |Parity Groups|Storage Pool(RAID), Disk Groups

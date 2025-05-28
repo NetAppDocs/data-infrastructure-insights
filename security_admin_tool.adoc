@@ -1,25 +1,24 @@
 ---
 sidebar: sidebar
 permalink: security_admin_tool.html
-summary:  Cloud Insights follows security best practices throughout the release life cycle.
+summary:  Data Infrastructure Insights follows security best practices throughout the release life cycle.
 keywords: security, risk, protection
 ---
 
 = SecurityAdmin Tool
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Cloud Insights Includes security features that allow your environment to operate with enhanced security. The features include improvements to encryption, password hashing, and the ability to change internal user passwords as well as key pairs that encrypt and decrypt passwords. 
+Data Infrastructure Insights Includes security features that allow your environment to operate with enhanced security. The features include improvements to encryption, password hashing, and the ability to change internal user passwords as well as key pairs that encrypt and decrypt passwords. 
 
 To protect sensitive data, NetApp recommends you change the default keys and the _Acquisition_ user password after an installation or upgrade.
 
-Data source encrypted passwords are stored in Cloud Insights, which uses a a public key to encrypt passwords when a user enters them in a data collector configuration page. Cloud Insights does not have the private keys required to decrypt the data collector passwords; only Acquisition Units (AUs) have the data collector private key required to decrypt data collector passwords.  
+Data source encrypted passwords are stored in Data Infrastructure Insights, which uses a a public key to encrypt passwords when a user enters them in a data collector configuration page. Data Infrastructure Insights does not have the private keys required to decrypt the data collector passwords; only Acquisition Units (AUs) have the data collector private key required to decrypt data collector passwords.  
 
 
 == Upgrade and installation considerations
@@ -28,7 +27,7 @@ When your Insight system contains non-default security configurations (i.e. you 
 
 == Managing security on the acquisition unit
 
-The SecurityAdmin tool allows you to manage security options for Cloud Insights, and is run on the acquisition unit system. Security management includes managing keys and passwords, saving and restoring security configurations you create or restoring configurations to the default settings.
+The SecurityAdmin tool allows you to manage security options for Data Infrastructure Insights, and is run on the acquisition unit system. Security management includes managing keys and passwords, saving and restoring security configurations you create or restoring configurations to the default settings.
 
 == Before you begin
 
@@ -150,7 +149,7 @@ usage: securityadmin -pr -ap <arg> | -h | -rp | -upr <arg>
 
 The purpose of this tool is to enable reconfiguration of security aspects
 of the Acquisition Unit such as encryption keys, and proxy configuration,
-etc. For more information about this tool, please check the Cloud Insights
+etc. For more information about this tool, please check the Data Infrastructure Insights
 Documentation.
 
 -ap,--add-proxy <arg>       add a proxy server.  Arguments: ip=ip
@@ -193,7 +192,7 @@ To update a proxy, the command is
 
 If you provide a UNIX shell script, it can be executed by the acquisition unit to retrieve the *private key* and the *public key* from your key management system. 
 
-To retrieve the key, Cloud Insights will execute the script, passing in two parameters: _key id_ and _key type_. _Key id_ can be used to identify the key in your key management system. _Key type_ is either "public" or "private". When the key type is "public", the script must return the public key. When the key type is "private", the private key must be returned. 
+To retrieve the key, Data Infrastructure Insights will execute the script, passing in two parameters: _key id_ and _key type_. _Key id_ can be used to identify the key in your key management system. _Key type_ is either "public" or "private". When the key type is "public", the script must return the public key. When the key type is "private", the private key must be returned. 
 
 To send the key back to the acquisition unit, the script must print the key to standard output. The script must print _only_ the key to standard output; no other text must be printed to standard output. Once the requested key is printed to the standard output, the script must exit with an exit code of 0; any other return code is considered an error. 
 
@@ -251,39 +250,6 @@ image:SecurityAdmin_Encrypt_Key_Swagger_API.png[API for data collection]
 If you set the _preEncrypted_ option to _True_, any password you pass through the API command will be treated as *already encrypted*; the API will not re-encrypt the password(s). When building your API, simply paste the previously-encrypted password in the appropriate location. 
 
 image:SecurityAdmin_Encrypt_Key_API_Example.png[API Example, width=600]
-
-
-
-
-
-== Encrypting a Password for use in API
-
-Option 8 allows you to encrypt a password, which you can then pass to a data collector via API.
-
-Start the SecurityAdmin tool in interactive mode and select option 8: _Encrypt Password_.
-
- securityadmin.sh -i
-
-You are prompted to enter the password you want to encrypt. Note that the characters you type are not shown on screen.  Re-enter the password when prompted.
-
-Alternatively, if you will use the command in a script, on a command line use _securityadmin.sh_ with the "-enc" parameter, passing in your unencrypted password:
-
- securityadmin -enc mypassword
-
-image:SecurityAdmin_Encrypt_Key_API_CLI_Example.png[CLI Example]
-
-The encrypted password is displayed on screen. Copy the entire string including any leading or trailing symbols.
-
-image:SecurityAdmin_Encrypt_Key_1.png[Interactive Mode Encrypt Password, width=640]
-
-To send the encrypted password to a data collector, you can use the Data Collection API. The swagger for this API can be found at *Admin > API Access* and click the "API Documentation" link. Select the "Data Collection" API type.  Under the _data_collection.data_collector_ heading, choose the _/collector/datasources_ POST API for this example.
-
-image:SecurityAdmin_Encrypt_Key_Swagger_API.png[API for data collection]
-
-If you set the _preEncrypted_ option to _True_, any password you pass through the API command will be treated as *already encrypted*; the API will not re-encrypt the password(s). When building your API, simply paste the previously-encrypted password in the appropriate location. 
-
-image:SecurityAdmin_Encrypt_Key_API_Example.png[API Example, width=600]
-
 
 
 

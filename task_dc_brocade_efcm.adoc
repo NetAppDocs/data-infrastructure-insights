@@ -6,16 +6,15 @@ summary: Configuring Brocade data collector.
 ---
 
 = Configuring the Brocade Enterprise Fabric Connectivity Manager data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead] 
-Cloud Insights uses the Brocade Enterprise Fabric Connectivity Manager (EFCM) data collector to discover inventory for Brocade EFCM switches. Cloud Insights  supports EFCM versions 9.5, 9.6, and 9.7.
+Data Infrastructure Insights uses the Brocade Enterprise Fabric Connectivity Manager (EFCM) data collector to discover inventory for Brocade EFCM switches. Data Infrastructure Insights  supports EFCM versions 9.5, 9.6, and 9.7.
 
 == Requirements 
 
@@ -23,7 +22,7 @@ Cloud Insights uses the Brocade Enterprise Fabric Connectivity Manager (EFCM) da
 * EFCM version must be 9.5, 9.6, or 9.7
 * IP address of the EFCM server
 * Read-only username and password for the EFCM server
-* Validated access to the Connectrix switch by Telnet from the Cloud Insights server, using the read-only username and password over port 51512
+* Validated access to the Connectrix switch by Telnet from the Data Infrastructure Insights server, using the read-only username and password over port 51512
 
 == Configuration 
 
@@ -48,6 +47,6 @@ Cloud Insights uses the Brocade Enterprise Fabric Connectivity Manager (EFCM) da
 |Inactive Zonesets|Comma-separated list of inactive Zonesets on which to perform acquisition, in addition to performing acquisition on the active zone sets
 |NIC to Use|Specify which network interface should be used on the RAU when reporting on SAN devices
 |Exclude Devices|Comma-separated list of unit names to include or exclude from polling
-|Use the EFCM switch nickname as the switch name|	Select to use the EFCM switch nickname as the Cloud Insights switch name.
+|Use the EFCM switch nickname as the switch name|	Select to use the EFCM switch nickname as the Data Infrastructure Insights switch name.
 |Performance Poll Interval (sec)|Interval between performance polls. The default is 300 seconds.
 |===

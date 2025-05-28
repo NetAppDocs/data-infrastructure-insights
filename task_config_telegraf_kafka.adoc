@@ -6,16 +6,15 @@ summary: Kafka data collector configuration
 ---
 
 = Kafka Data Collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Cloud Insights uses this data collector to gather metrics from Kafka.
+Data Infrastructure Insights uses this data collector to gather metrics from Kafka.
 
 == Installation 
 
@@ -63,9 +62,9 @@ You can choose a different port for JMX (9999 above) and Jolokia (8778). If you 
 
 The following objects and their counters are collected:
 
-[cols="<.<,<.<,<.<,<.<"]
+[cols="<.<,<.<,<.<"]
 |===
-|Object:|Identifiers:|Attributes: |Datapoints:
+|Object:|Identifiers:|Attributes:
 
 |Kafka Broker
 
@@ -76,155 +75,6 @@ Broker
 |Node Name
 Node IP
 
-|Replica Manager Fetcher Max Lag
-Zookeeper Client Connections
-Zookeeper Client Connections (15m rate)
-Zookeeper Client Connections (5m rate)
-Zookeeper Client Connections (mean rate)
-Zookeeper Client Connections (1m rate)
-Replica Manager Partition Count
-Thread Count Daemon
-Thread Count Peak
-Thread Count Current
-Thread Count Total Started
-Offline Partitions
-Produce Requests Total Time (50th Percentile)
-Produce Requests Total Time (75th Percentile)
-Produce Requests Total Time (95th Percentile)
-Produce Requests Total Time (98 Percentile)
-Produce Requests Total Time (999th Percentile)
-Produce Requests Total Time (99th Percentile)
-Produce Requests Total Time
-Produce Requests Total Time Max
-Produce Requests Total Time Mean
-Produce Requests Total Time Min
-Produce Requests Total Time Stddev
-Replica Manager ISR Shrinks
-Replica Manager ISR Shrinks (15m rate)
-Replica Manager ISR Shrinks (5m rate)
-Replica Manager ISR Shrinks (mean rate)
-Replica Manager ISR Shrinks (1m rate)
-Request Handler Avg Idle
-Request Handler Avg Idle (15m rate)
-Request Handler Avg Idle (5m rate)
-Request Handler Avg Idle (mean rate)
-Request Handler Avg Idle (1m rate)
-Garbage Collection G1 Old Generation Count
-Garbage Collection G1 Old Generation Time
-Garbage Collection G1 Young Generation Count
-Garbage Collection G1 Young Generation Time
-Zookeeper Read Only Connects
-Zookeeper Read Only Connects (15m rate)
-Zookeeper Read Only Connects (5m rate)
-Zookeeper Read Only Connects (mean rate)
-Zookeeper Read Only Connects (1m rate)
-Network Processor Avg Idle
-Requests Fetch Follower Total Time (50th percentile)
-Requests Fetch Follower Total Time (75th percentile)
-Requests Fetch Follower Total Time (95th percentile)
-Requests Fetch Follower Total Time (98th percentile)
-Requests Fetch Follower Total Time (999th percentile)
-Requests Fetch Follower Total Time (99th percentile)
-Requests Fetch Follower Total Time
-Requests Fetch Follower Total Time Max
-Requests Fetch Follower Total Time Mean
-Requests Fetch Follower Total Time Min
-Requests Fetch Follower Total Time Stddev
-Requests Waiting in Produce Purgatory
-Network Requests Fetch Consumer
-Network Requests Fetch Consumer (5m rate)
-Network Requests Fetch Consumer (15m rate)
-Network Requests Fetch Consumer (mean rate)
-Network Requests Fetch Consumer (1m rate)
-Unclean Leader Elections
-Unclean Leader Elections (15m rate)
-Unclean Leader Elections (5m rate)
-Unclean Leader Elections (mean rate)
-Unclean Leader Elections (1m rate)
-Active Controllers
-Heap Memory Committed
-Heap Memory Init
-Heap Memory Max
-Heap Memory Used
-Zookeeper Session Expires
-Zookeeper Session Expires (15m rate)
-Zookeeper Session Expires (5m rate)
-Zookeeper Session Expires (mean rate)
-Zookeeper Session Expires (1m rate)
-Zookeeper Authentication Failures
-Zookeeper Authentication Failures (15m rate)
-Zookeeper Authentication Failures (5m rate)
-Zookeeper Authentication Failures (mean rate)
-Zookeeper Authentication Failures (1m rate)
-Leader Election Time (50th percentile)
-Leader Election Time (75th percentile)
-Leader Election Time (95th percentile)
-Leader Election Time (98th percentile)
-Leader Election Time (999th percentile)
-Leader Election Time (99th percentile)
-Leader Election Count
-Leader Election Time (15m rate)
-Leader Election Time (5m rate)
-Leader Election Time Max
-Leader Election Time Mean
-Leader Election Time (mean rate)
-Leader Election Time Min
-Leader Election Time (1m rate)
-Leader Election Time (stddev)
-Network Requests Fetch Follower
-Network Requests Fetch Follower (15m rate)
-Network Requests Fetch Follower (5m rate)
-Network Requests Fetch Follower (mean rate)
-Network Requests Fetch Follower (1m rate)
-Broker Topic Messages
-Broker Topic Messages (15m rate)
-Broker Topic Messages (5m rate)
-Broker Topic Messages (mean rate)
-Broker Topic Messages (1m rate)
-Broker Topic Bytes In
-Broker Topic Bytes In (15m rate)
-Broker Topic Bytes In (5m rate)
-Broker Topic Bytes In (mean rate)
-Broker Topic Bytes In (1m rate)
-Zookeeper Disconnects Count
-Zookeeper Disconnects (15m rate)
-Zookeeper Disconnects (5m rate)
-Zookeeper Disconnects (mean rate)
-Zookeeper Disconnects (1m rate)
-Network Requests Fetch Consumer Total Time (50th percentile)
-Network Requests Fetch Consumer Total Time (75th percentile)
-Network Requests Fetch Consumer Total Time (95th percentile)
-Network Requests Fetch Consumer Total Time (98th percentile)
-Network Requests Fetch Consumer Total Time (999th percentile)
-Network Requests Fetch Consumer Total Time (99th percentile)
-Network Requests Fetch Consumer Total Time
-Network Requests Fetch Consumer Total Time Max
-Network Requests Fetch Consumer Total Time Mean
-Network Requests Fetch Consumer Total Time Min
-Network Requests Fetch Consumer Total Time Stddev
-LeaderCount
-Requests Waiting in Fetch Purgatory
-Broker Topic Bytes Out
-Broker Topic Bytes Out (15m rate)
-Broker Topic Bytes Out (5m rate)
-Broker Topic Bytes Out (mean rate)
-Broker Topic Bytes Out (1m rate)
-Zookeeper Authentications
-Zookeeper Authentications (15m rate)
-Zookeeper Authentications (5m rate)
-Zookeeper Authentications (mean rate)
-Zookeeper Authentications (1m rate)
-Requests Produce Count
-Requests Produce (15m rate)
-Requests Produce (5m rate)
-Requests Produce (mean rate)
-Requests Produce (1m rate)
-Replica Manager ISR Expands
-Replica Manager ISR Expands (15m rate)
-Replica Manager ISR Expands (5m rate)
-Replica Manager ISR Expands (mean rate)
-Replica Manager ISR Expands (1m rate)
-Replica Manager Under Replicated Partitions
 |===
 
 

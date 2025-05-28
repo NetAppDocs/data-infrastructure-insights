@@ -6,9 +6,8 @@ summary: Configuring NetApp 7-mode data collector.
 ---
 
 = NetApp Data ONTAP operating in 7-Mode data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -19,13 +18,13 @@ For storage systems using Data ONTAP software operating in 7-Mode, you use the 7
 
 == Terminology
 
-Cloud Insights acquires the following inventory information from the NetApp 7-mode data collector. For each asset type acquired, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires the following inventory information from the NetApp 7-mode data collector. For each asset type acquired, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 NOTE: This data collector is link:task_getting_started_with_cloud_insights.html#useful-definitions[deprecated].
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term | Cloud Insights Term
+|Vendor/Model Term | Data Infrastructure Insights Term
 |Disk|Disk
 |Raid Group|Disk Group
 |Filer|Storage
@@ -87,13 +86,13 @@ Connecting to NetApp storage systems requires that the user, who is specified wh
 Storage systems are acquired when acquiring the main pfiler.
 
 * The following commands define the user role capabilities:
-** "api-*": Use this to allow Cloud Insights to execute all NetApp storage API commands. 
+** "api-*": Use this to allow Data Infrastructure Insights to execute all NetApp storage API commands. 
 +
 This command is required to use the ZAPI.
 
-** "login-http-admin": Use this to allow Cloud Insights to connect to the NetApp storage via HTTP. This command is required to use the ZAPI.
+** "login-http-admin": Use this to allow Data Infrastructure Insights to connect to the NetApp storage via HTTP. This command is required to use the ZAPI.
 
-** "security-api-vfiler": Use this to allow Cloud Insights to execute NetApp storage API commands to retrieve vFiler unit information.
+** "security-api-vfiler": Use this to allow Data Infrastructure Insights to execute NetApp storage API commands to retrieve vFiler unit information.
 
 ** "cli-options": For "options" command and used for partner IP and enabled licenses.
 
@@ -133,7 +132,7 @@ Some things to try if you encounter problems with this data collector:
 •	cli-snap
 •	login-http-admin
 •	security-api-vfiler
-Also check if the ONTAP version is supported by Cloud Insights and verify if the credentials used match device credentials
+Also check if the ONTAP version is supported by Data Infrastructure Insights and verify if the credentials used match device credentials
 
 |Cluster version is < 8.1| Cluster minimum supported version is 8.1. Upgrade to minimum supported version.
 |ZAPI returns "cluster role is not cluster_mgmt LIF"|AU needs to talk to cluster management IP. Check the IP and change to a different IP if necessary

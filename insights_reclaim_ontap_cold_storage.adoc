@@ -2,12 +2,11 @@
 sidebar: sidebar
 permalink: insights_reclaim_ontap_cold_storage.html
 keywords: insight, greedy, degraded, impacted, impacting, impactful, impact, resources, consuming, workload
-summary: Insights give you a look into how resources impact other resources in your environment.
+summary: Insights give you a look into how resources impact other resources on your tenant.
 ---
 = Insights: Reclaim ONTAP Cold Storage
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -16,7 +15,7 @@ summary: Insights give you a look into how resources impact other resources in y
 [.lead]
 The _Reclaim ONTAP Cold Storage_ Insight provides data about cold capacity, potential cost/power savings and recommended action items for volumes on ONTAP systems.
 
-To view these Insights, navigate to *Dashboards > Insights* and take a look at the _Reclaim ONTAP Cold Storage_ Insight. Note that this Insight will only list affected storages if Cloud Insights has detected cold storage, otherwise you will see an "all clear" message.
+To view these Insights, navigate to *Dashboards > Insights* and take a look at the _Reclaim ONTAP Cold Storage_ Insight. Note that this Insight will only list affected storages if Data Infrastructure Insights has detected cold storage, otherwise you will see an "all clear" message.
 
 Keep in mind that cold data less than 30 days old is not shown.
 

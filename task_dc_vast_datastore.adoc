@@ -1,0 +1,84 @@
+---
+sidebar: sidebar
+permalink: task_dc_vast_datastore.html
+keywords: data collector, VAST storage, VAST data
+summary: Configuring VAST Data DataStore storage data collector.
+---
+
+= VAST DataStore data collector
+:hardbreaks:
+
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead] 
+Data Infrastructure Insights uses the VAST DataStore data collector to gather inventory and performance data. 
+
+== Terminology
+
+For each asset type acquired by Data Infrastructure Insights, the most common terminology used for the asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+
+[cols=2*, options="header"]
+|===
+|Vendor/Model Term |Data Infrastructure Insights Term
+|Carriers|Disks (disk shelf part of location field)
+|Cluster|Storage
+|CNodes|StorageNode (type = cnode)
+|DNodes|StorageNode (type = dnode)
+|NVRAMs|Disks
+|Protected Paths|Internal Volume Sync
+|QOS Policies|Internal Volume (QOS limits)
+|Quotas|Quota
+|SSDs|Disks
+|Tenants|Storage Virtual Machine
+|ViewPolicies|FileShare (for permissions)
+|Views|Internal Volume
+|===
+
+Note: These are common terminology mappings only and might not represent every case for this data collector.
+
+== Requirements
+
+* VAST DataStore system IP address or Fully Qualified Domain Name 
+* Username / Password to access the VAST system
+* Port requirement: HTTPs 443
+
+== Configuration
+
+[cols=2*, options="header", cols"50,50"]
+|===
+|Field | Description
+|VAST DataStore Storage IP/Hostname|IP address or FQDN of the storage system 
+|User |VAST Storage User Name
+|Password|VAST Storage Password
+|===
+
+
+
+== Advanced configuration 
+
+[cols=2*, options="header", cols"50,50"]
+|===
+|Field | Description
+|Connection type|Choose HTTP or HTTPS. Also displays the default port.
+|Override TCP port|If blank, use the default port in the Connection Type field, otherwise enter the connection port to use
+|Inventory poll interval (min)|The default is 60 minutes
+//|Connection Timeout (sec)|The default is 60
+|Performance Poll Interval (sec)|The default is 300 
+|===
+
+== Troubleshooting
+Some things to try if you encounter problems with this data collector:
+
+=== Inventory
+
+[cols=2*, options="header", cols"50,50"]
+|===
+|Problem:|Try this:
+|"Invalid login credentials" with error messages “Policy doesn't allow” or “You are not authorized”
+|Validate Pure user account and password via Pure http interface
+|===
+
+Additional information may be found from the link:concept_requesting_support.html[Support] page or in the link:reference_data_collector_support_matrix.html[Data Collector Support Matrix].

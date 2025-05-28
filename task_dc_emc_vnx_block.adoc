@@ -6,24 +6,23 @@ summary: Configuring DELL EMC VNX Block Storage (formerly CLARiiON).
 ---
 
 = Dell EMC VNX Block Storage (NaviCLI) data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Cloud Insights uses the Dell EMC VNX Block Storage (NaviSec) data collector (formerly CLARiiON) to acquire inventory and performance data.
+Data Infrastructure Insights uses the Dell EMC VNX Block Storage (NaviSec) data collector (formerly CLARiiON) to acquire inventory and performance data.
 
 == Terminology
 
-Cloud Insights acquires the following inventory information from the EMC VNX Block Storage data collector. For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires the following inventory information from the EMC VNX Block Storage data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term|Cloud Insights Term 
+|Vendor/Model Term|Data Infrastructure Insights Term 
 |Disk|Disk
 |Storage|Storage
 |Storage Processor|Storage Node
@@ -39,8 +38,8 @@ The following requirements must be met in order to collect data:
 
 * An IP address of each VNX block storage processor
 * Read-only Navisphere username and password to the VNX block storage arrays
-* NaviSecCli must be installed on the Cloud Insights AU
-* Access validation: Run NaviSecCLI from the Cloud Insights AU to each array using the username and password.
+* NaviSecCli must be installed on the Data Infrastructure Insights AU
+* Access validation: Run NaviSecCLI from the Data Infrastructure Insights AU to each array using the username and password.
 * Port requirements: 80, 443
 * NaviSecCLI version should correspond with the newest FLARE code on your array
 * For performance, statistics logging must be enabled.
@@ -91,7 +90,7 @@ Some things to try if you encounter problems with this data collector:
 * You have not selected the "Use secure client" option in the data collector configuration wizard and do not have a non-secure version of Naviphere CLI installed.
 * Confirm that NaviSphere CLI installation directory is correct in the data collector configuration
 * Confirm that the IP of the VNX block storage is correct in the data collector configuration:
-* From the Cloud Insights Acquisition Unit:
+* From the Data Infrastructure Insights Acquisition Unit:
 ** Open a CMD.
 ** Change the directory to the configured installation directory
 ** Try to make a connection with the VNX block storage device by typing “navicli -h {ip} getagent” (replace the {ip} with the actual IP)
@@ -107,7 +106,7 @@ Some things to try if you encounter problems with this data collector:
 |Error: Revision mismatch error
 |* This is usually caused by updating the firmware on the VNX block storage device, but not updating the installation of NaviCLI.exe. This also might be caused by having different devices with different firmwares, but only one CLI installed (with a different firmware version).
 * Verify that the device and the host are both running identical versions of the software:
-** From the Cloud Insights Acquisition Unit, open a command line window
+** From the Data Infrastructure Insights Acquisition Unit, open a command line window
 ** Change the directory to the configured installation directory
 ** Make a connection with the CLARiiON device by typing “navicli -h <ip> getagent”
 ** Look for the version number on the first couple of lines. Example: “Agent Rev:           6.16.2 (0.1)”

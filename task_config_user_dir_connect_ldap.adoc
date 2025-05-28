@@ -6,9 +6,8 @@ summary: Configuring Workload Security LDAP User Directory Collector
 ---
 
 = Configuring an LDAP Directory Server Collector 
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -19,7 +18,7 @@ You configure Workload Security to collect user attributes from LDAP Directory s
 
 .Before you begin
 
-* You must be a Cloud Insights Administrator or Account Owner to perform this task. 
+* You must be a Data Infrastructure Insights Administrator or Account Owner to perform this task. 
 * You must have the IP address of the server hosting the LDAP Directory server.
 * An Agent must be configured before you configure an LDAP Directory connector. 
 

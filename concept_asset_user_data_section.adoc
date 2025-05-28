@@ -6,9 +6,8 @@ keywords: asset page, user data, applications, annotations
 ---
 
 = User Data Section
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -19,7 +18,7 @@ The User Data section of an asset page displays and enables you to change any us
 
 == Using the User Data section to assign or modify applications
 
-You can assign applications running in your environment to certain assets (host, virtual machines, volumes, internal volumes, qtrees, and hypervisors). The User Data section enables you to add, change, or remove the applications assigned to an asset. For all of these asset types except for volumes, you can assign more than one application.
+You can assign applications running on your tenant to certain assets (host, virtual machines, volumes, internal volumes, qtrees, and hypervisors). The User Data section enables you to add, change, or remove the applications assigned to an asset. For all of these asset types except for volumes, you can assign more than one application.
 
 .Steps
 . Locate an asset page by doing any of the following:
@@ -37,7 +36,7 @@ To remove an application, drop down the application list and un-check the applic
 
 == Using the User Data section to assign or modify annotations
 
-When customizing Cloud Insights to track data for your corporate requirements, you can define specialized notes called annotations, and assign them to your assets. The User Data section of an asset page displays annotations assigned to an asset and also enables you to change the annotations assigned to that asset.
+When customizing Data Infrastructure Insights to track data for your corporate requirements, you can define specialized notes called annotations, and assign them to your assets. The User Data section of an asset page displays annotations assigned to an asset and also enables you to change the annotations assigned to that asset.
 
 .Steps
 

@@ -6,9 +6,8 @@ summary: Puppet data collector configuration
 ---
 
 = Puppet Agent Data Collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -16,7 +15,7 @@ summary: Puppet data collector configuration
 
 [.lead]
 
-Cloud Insights uses this data collector to gather metrics from Puppet Agent.
+Data Infrastructure Insights uses this data collector to gather metrics from Puppet Agent.
 
 == Installation
 

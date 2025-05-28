@@ -6,9 +6,8 @@ summary: alert details
 ---
 
 = Alert Details
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

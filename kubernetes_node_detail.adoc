@@ -6,9 +6,8 @@ summary: The Kubernetes node detail page provides insight into back-end PV and P
 ---
 
 = Kubernetes Node Detail Page
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -21,9 +20,9 @@ image:KubernetesNodeFiltering.png[Kubernetes Node Detail page showing filtering]
 
 == Exploring the Node's Pods and Persistent Volumes
 
-Cloud Insights provides visibility into the back-end storage for your Kubernetes environments, giving you insight to your Kubernetes Pods and Persistent Volumes (PVs). You can track PV counters such as IOPS, latency, and throughput from a single Pod’s usage through a PV counter to a PV and all the way to the back-end storage device. 
+Data Infrastructure Insights provides visibility into the back-end storage for your Kubernetes environments, giving you insight to your Kubernetes Pods and Persistent Volumes (PVs). You can track PV counters such as IOPS, latency, and throughput from a single Pod’s usage through a PV counter to a PV and all the way to the back-end storage device. 
 
-At the PV level, Cloud Insights collects back-end (internal volume or volume depending on PV type) capacity information (total, used, used percent), as well as internal volume snapshot count. On the Pod to storage level it collects back-end capacity and internal volume snapshot count.
+At the PV level, Data Infrastructure Insights collects back-end (internal volume or volume depending on PV type) capacity information (total, used, used percent), as well as internal volume snapshot count. On the Pod to storage level it collects back-end capacity and internal volume snapshot count.
 
 On a Volume or Internal Volume landing page, two tables are displayed:
 

@@ -6,26 +6,25 @@ summary: Configuring Rubrik CDM data collector.
 ---
 
 = Rubrik CDM Data Collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead] 
-Cloud Insights uses the Rubrik data collector to acquire inventory and performance data from Rubrik storage appliances.
+Data Infrastructure Insights uses the Rubrik data collector to acquire inventory and performance data from Rubrik storage appliances.
 
 
 == Terminology
 
-Cloud Insights acquires the following inventory information from the Rubrik data collector. For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires the following inventory information from the Rubrik data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term | Cloud Insights Term
+|Vendor/Model Term | Data Infrastructure Insights Term
 |Cluster|Storage, Storage Pool
 |Node|Storage Node
 |Disk|Disk
@@ -40,7 +39,7 @@ Note: These are common terminology mappings only and might not represent every c
 
 The following are required to configure this data collector:
 
-* The Cloud Insights Acquisition Unit will initiate connections to TCP port 443 to Rubrik cluster. One collector per cluster.
+* The Data Infrastructure Insights Acquisition Unit will initiate connections to TCP port 443 to Rubrik cluster. One collector per cluster.
 * Rubrik cluster IP address.
 * User name and password to the cluster.
 * Rubrik cluster IP address or hostname.

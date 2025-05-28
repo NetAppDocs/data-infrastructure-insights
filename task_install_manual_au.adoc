@@ -2,27 +2,26 @@
 sidebar: sidebar
 permalink: task_install_manual_au.html
 keywords:  Acquisition Unit, AU, install, configure, Linux, add, remove, uninstall, delete, deleting, move, moving, manual, AU, Patch
-summary: Cloud Insights can be configured for AU software to be updated manually, providing more control over the software installed in your environment.
+summary: Data Infrastructure Insights can be configured for AU software to be updated manually, providing more control over the software installed on your tenant.
 ---
 = Manually Installing Acquisition Unit Software
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-By default, Cloud Insights updates Acquisition Unit (AU) software automatically as updates are deployed. However, in a secure controlled environments, automatic updating may not be possible or desired.  In these cases, Cloud Insights can be configured for AU software to be updated manually, providing more control over the software installed in your environment.
+By default, Data Infrastructure Insights updates Acquisition Unit (AU) software automatically as updates are deployed. However, in a secure controlled environments, automatic updating may not be possible or desired.  In these cases, Data Infrastructure Insights can be configured for AU software to be updated manually, providing more control over the software installed on your tenant.
 
-To manually download and install the AU software, perform the following steps. Cloud Insights provides a helpful Swagger documentation page that you can use for many of these steps, or you can use your own API script/commands. Go to Admin > API Access and click the “API Documentation” link.
+To manually download and install the AU software, perform the following steps. Data Infrastructure Insights provides a helpful Swagger documentation page that you can use for many of these steps, or you can use your own API script/commands. Go to Admin > API Access and click the “API Documentation” link.
 
 The process is similar for Linux and Windows.
 
 == Performing a NEW AU install on Linux:
 
-. In Cloud Insights, create an API Token.
+. In Data Infrastructure Insights, create an API Token.
 .. Navigate to *Admin > API Access* and select *+API Access Token*. 
 ... Set a *Name* and *Description* that are easy to identify
 ... Type: Choose *Acquisition Unit* and *Data Collection*
@@ -33,7 +32,7 @@ The process is similar for Linux and Windows.
 
 image:Manual_AU_Create_API_Token.png[Create API Token]
 
-. In Swagger (Admin > API Access > API Documentation), use the token to Authorize Cloud Insights APIs
+. In Swagger (Admin > API Access > API Documentation), use the token to Authorize Data Infrastructure Insights APIs
 .. Click _Authorize_ at the top right of the Swagger screen
 .. Paste the copied token from above to the Customer APIKey field
 .. Click *Authorize*
@@ -59,7 +58,7 @@ NOTE: If you are not downloading the latest version, confirm with NetApp the AU 
 
 IMPORTANT: The next steps require the use of a temporary token. Do not use the API Access token you created above.
 
-. In the Cloud Insights API Swagger, create a one-time token using the _/au/oneTimeToken_ API.
+. In the Data Infrastructure Insights API Swagger, create a one-time token using the _/au/oneTimeToken_ API.
 .. Copy the resulting one-use token.
 
 image:Manual_AU_one_time_token.png[Create one-time-use API token]
@@ -134,7 +133,7 @@ At this point, the AU software is installed on the system and is accessible by t
 
 . Restart the AU. 
 
-.. In Cloud Insights, navigate to *Observability > Collectors* and select the *Acquisition Units* tab. Choose _Restart_ from the “three dots” menu to the right of the AU.
+.. In Data Infrastructure Insights, navigate to *Observability > Collectors* and select the *Acquisition Units* tab. Choose _Restart_ from the “three dots” menu to the right of the AU.
 ////
 
 
@@ -175,7 +174,7 @@ Note: If using the “cisys” user and group, those will be displayed in the ou
 +
 Note: If you plan to install using different custom users, ensure group permissions are set to read and write for both owner and group (chmod 660 …) 
 
-. Restart the AU. In Cloud Insights, navigate to Observability > Collectors and select the Acquisition Units tab. Choose Restart from the “three dots” menu to the right of the AU. 
+. Restart the AU. In Data Infrastructure Insights, navigate to Observability > Collectors and select the Acquisition Units tab. Choose Restart from the “three dots” menu to the right of the AU. 
 
 
 
@@ -216,7 +215,7 @@ Note: If using the “cisys” user and group, those will be displayed in the ou
 +
 Note: If you plan to install using different custom users, ensure group permissions are set to read and write for both owner and group (chmod 660 …) 
 
-. Restart the AU. In Cloud Insights, navigate to Observability > Collectors and select the Acquisition Units tab. Choose Restart from the “three dots” menu to the right of the AU. 
+. Restart the AU. In Data Infrastructure Insights, navigate to Observability > Collectors and select the Acquisition Units tab. Choose Restart from the “three dots” menu to the right of the AU. 
 
 
 
@@ -224,7 +223,7 @@ Note: If you plan to install using different custom users, ensure group permissi
 
 If you provide a UNIX shell script, it can be executed by the acquisition unit to retrieve the *private key* and the *public key* from your key management system. 
 
-To retrieve the key, Cloud Insights will execute the script, passing in two parameters: _key id_ and _key type_. _Key id_ can be used to identify the key in your key management system. _Key type_ is either "public" or "private". When the key type is "public", the script must return the public key. When the key type is "private", the private key must be returned. 
+To retrieve the key, Data Infrastructure Insights will execute the script, passing in two parameters: _key id_ and _key type_. _Key id_ can be used to identify the key in your key management system. _Key type_ is either "public" or "private". When the key type is "public", the script must return the public key. When the key type is "private", the private key must be returned. 
 
 To send the key back to the acquisition unit, the script must print the key to standard output. The script must print _only_ the key to standard output; no other text must be printed to standard output. Once the requested key is printed to the standard output, the script must exit with an exit code of 0; any other return code is considered an error. 
 

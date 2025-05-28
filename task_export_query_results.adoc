@@ -6,9 +6,8 @@ keywords: query, queries, export, csv
 ---
 
 = Exporting query results to a .CSV file
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -18,7 +17,7 @@ keywords: query, queries, export, csv
 You can export the results of any query to a .CSV file, which will allow you to analyze the data or import it into another application.
 
 .Steps
-. Log in to Cloud Insights.
+. Log in to Data Infrastructure Insights.
 . Click *Queries* and select *Show all queries*.
 +
 The Queries page is displayed.

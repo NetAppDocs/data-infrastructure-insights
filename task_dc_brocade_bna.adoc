@@ -6,25 +6,24 @@ summary: Configuring Brocade BNA collector.
 ---
 
 = Brocade Network Advisor data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead] 
-Cloud Insights uses the Brocade Network Advisor data collector to acquire inventory and performance data from Brocade switches. 
+Data Infrastructure Insights uses the Brocade Network Advisor data collector to acquire inventory and performance data from Brocade switches. 
 
 == Terminology 
 
-Cloud Insights acquires the following inventory information from the Brocade Network Advisor data collector. For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires the following inventory information from the Brocade Network Advisor data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 [cols=2*, options="header", cols"50,50"]
 |===
 
-|Vendor/Model Term|Cloud Insights Term
+|Vendor/Model Term|Data Infrastructure Insights Term
 
 |Switch|Switch
 |Port|Port
@@ -38,7 +37,7 @@ Note: These are common terminology mappings only and might not represent every c
 
 The following are required to configure this data collector: 
 
-* The Cloud Insights Acquisition Unit will initate connections to TCP port 443 on the BNA server. BNA server must be running version 14.2.1 or higher.
+* The Data Infrastructure Insights Acquisition Unit will initate connections to TCP port 443 on the BNA server. BNA server must be running version 14.2.1 or higher.
 * Brocade Network Advisor Server IP address
 * User name and password to an administrator account
 * Port requirement: HTTP/HTTPS 443

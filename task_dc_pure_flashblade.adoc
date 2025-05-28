@@ -6,24 +6,23 @@ summary: Configuring Pure Storage data collector.
 ---
 
 = Pure Storage FlashBlade data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead] 
-Cloud Insights uses the Pure Storage FlashBlade data collector to gather inventory and performance data from FlashBlade clusters that expose version 2 of their REST API
+Data Infrastructure Insights uses the Pure Storage FlashBlade data collector to gather inventory and performance data from FlashBlade clusters that expose version 2 of their REST API
 
 == Terminology
 
-For each asset type acquired by Cloud Insights, the most common terminology used for the asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+For each asset type acquired by Data Infrastructure Insights, the most common terminology used for the asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term | Cloud Insights Term
+|Vendor/Model Term | Data Infrastructure Insights Term
 |Drive (SSD)|Disk
 |Array|Storage
 |Blade|Storage Node
@@ -46,7 +45,7 @@ Note: These are common terminology mappings only and might not represent every c
 |===
 |Field | Description
 |FlashBlade Host IP Address|IP address of the storage system 
-|User name |User name to help Cloud Insights admins remember for which user their API token belongs to
+|User name |User name to help Data Infrastructure Insights admins remember for which user their API token belongs to
 |API token|API token
 |===
 

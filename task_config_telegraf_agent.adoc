@@ -2,28 +2,25 @@
 sidebar: sidebar
 permalink: task_config_telegraf_agent.html
 keywords: telegraf, agent, telegraf agent
-summary: Cloud Insights supports Telegraf as its agent for collection of integration data and can be configured on Windows or Linux. 
+summary: Data Infrastructure Insights supports Telegraf as its agent for collection of integration data and can be configured on Windows or Linux. 
 ---
 
 = Configuring an Agent to Collect Data (Windows/Linux)
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Cloud Insights uses link:https://docs.influxdata.com/telegraf[Telegraf] as its agent for collection of integration data. Telegraf is a plugin-driven server agent that can be used to collect and report metrics, events, and logs. Input plugins are used to collect the desired information into the agent by accessing the system/OS directly, by calling third-party APIs, or by listening to configured streams (i.e. Kafka, statsD, etc). Output plugins are used to send the collected metrics, events, and logs from the agent to Cloud Insights. 
-
-The current Telegraf version for Cloud Insights is *1.24.0*.
+Data Infrastructure Insights uses link:https://docs.influxdata.com/telegraf[Telegraf] as its agent for collection of integration data. Telegraf is a plugin-driven server agent that can be used to collect and report metrics, events, and logs. Input plugins are used to collect the desired information into the agent by accessing the system/OS directly, by calling third-party APIs, or by listening to configured streams (i.e. Kafka, statsD, etc). Output plugins are used to send the collected metrics, events, and logs from the agent to Data Infrastructure Insights. 
 
 For information on installing on Kubernetes, see the link:task_config_telegraf_agent_k8s.html[NetApp Kubernetes Monitoring Operator] page.
 
 NOTE: For accurate audit and data reporting, it is strongly recommended to synchronize the time on the Agent machine using *Network Time Protocol (NTP)* or *Simple Network Time Protocol (SNTP)*.
 
-NOTE: If you want to verify the installation files before instaling the Agent, see the section below on <<Verifying Checksums>>.
+NOTE: If you want to verify the installation files before installing the Agent, see the section below on <<Verifying Telegraf Package Checksums>>.
 
 == Installing an Agent
 
@@ -36,7 +33,7 @@ If you are installing a Service data collector and have not yet configured an Ag
 To install an agent, regardless of the platform you are using, you must first do the following:
 
 . Log into the host you will use for your agent. 
-. Log in to your Cloud Insights environment and navigate to *Observability > Collectors*.
+. Log in to your Data Infrastructure Insights environment and navigate to *Observability > Collectors*.
 . Click on *+Data Collector* and choose a data collector to install. 
 
 . Choose the appropriate platform for your host (Windows, Linux)
@@ -44,7 +41,7 @@ To install an agent, regardless of the platform you are using, you must first do
 
 NOTE: Once you have installed an agent on a host, you do not need to install an agent again on that host. 
 
-TIP: Once you have installed an agent on a server/VM, Cloud Insights collects metrics from that system in addition to collecting from any data collectors you configure. These metrics are gathered as link:task_config_telegraf_node.html["Node" metrics].
+TIP: Once you have installed an agent on a server/VM, Data Infrastructure Insights collects metrics from that system in addition to collecting from any data collectors you configure. These metrics are gathered as link:task_config_telegraf_node.html["Node" metrics].
 
 NOTE: If you are using a proxy, read the proxy instructions for your platform before installing the Telegraf agent.
 
@@ -73,7 +70,7 @@ NOTE: The steps below outline the actions needed to set the _http_proxy/https_pr
 
 For systems residing behind a proxy, perform the following to set the _https_proxy_ and/or _http_proxy_ environment variable(s) *PRIOR* to installing the Telegraf agent:
 
- [System.Environment]::SetEnvironmentVariable(“https_proxy”, “<proxy_server>:<proxy_port>”, [System.EnvironmentVariableTarget]::Machine)
+ [System.Environment]:SetEnvironmentVariable(“https_proxy”, “<proxy_server>:<proxy_port>”, [System.EnvironmentVariableTarget]:Machine)
 
 ==== Installing the agent
 
@@ -319,17 +316,21 @@ To upgrade the telegraf agent, do the following:
 . link:#ubuntu-and-debian[Install the new agent].
 
 
-== Verifying Checksums
 
-The Cloud Insights agent installer performs integrity checks, but some users may want to perform their own verifications before installing or applying downloaded artifacts. This can be done by downloading the installer and generating a checksum for the downloaded package, then comparing the checksum to the value shown in the install instructions.
+[#verifying-checksums]
+== Verifying Telegraf Package Checksums
+
+
+The Data Infrastructure Insights agent installer performs integrity checks, but some users may want to perform their own verifications before installing the downloaded Telegraf binary. This can be done by downloading the installer and generating a checksum for the downloaded package, then comparing the checksum to the value shown in the install instructions.
 
 
 
 === Download the installer package without installing
 
-To perform a download-only operation (as opposed to the default download-and-install), users can edit the agent installation command obtained from the UI and remove the trailing “install” option.
+To perform a download-only operation (as opposed to the default download-and-install), users can edit the agent installation command obtained from the UI and remove the “install” option.
 
 Follow these steps:
+
 
 . Copy the Agent Installer snippet as directed.
 . Instead of pasting the snippet into a command window, paste it into a text editor.
@@ -341,36 +342,39 @@ Non-Windows (these examples are for Kubernetes; actual script names may vary):
 
 * Download and install (default):
 
- installerName=cloudinsights-kubernetes.sh … && sudo -E -H ./$installerName --download –-install
+ installerName=cloudinsights-ubuntu_debian.sh … && ./$installerName --download --verify && sudo -E -H ./$installerName --install
 
 * Download-only:
 
- installerName=cloudinsights-kubernetes.sh … && sudo -E -H ./$installerName --download
+ installerName=cloudinsights-ubuntu_debian.sh … && ./$installerName --download --verify
+
 
 Windows:
 
 * Download and install (default):
 
- !$($installerName=".\cloudinsights-windows.ps1") … -and $(&$installerName -download -install)
+ !$($installerName=".\cloudinsights-windows.ps1") … -and $(if(((Get-FileHash $installerName).Hash).ToLower() -eq "INSTALLER_CHECKSUM ") { &$installerName -download -verify -install } else { Write-Host "Install script checksum does not match"})"
+
 
 *	Download-only:
 
- !$($installerName=".\cloudinsights-windows.ps1") … -and $(&$installerName -download)
+ !$($installerName=".\cloudinsights-windows.ps1") … -and $(if(((Get-FileHash $installerName).Hash).ToLower() -eq "INSTALLER_CHECKSUM ") { &$installerName -download -verify } else { Write-Host "Install script checksum does not match"})"
 
 
-The download-only command will download all required artifacts from Cloud Insights to the working directory. The artifacts include, but may not be limited to: 
+The download-only command will download all required artifacts from Data Infrastructure Insights to the working directory. The artifacts include, but may not be limited to: 
 
 * an installation script
 * an environment file
-* YAML files
-* a checksum file (ending in sha256.signed or sha256.ps1)
+* a Telegraf binary
+* a signature for the Telegraf binary
+* a public certificate to verify the binary signature
 
-The installation script, environment file, and YAML files can be verified using visual inspection. 
+The install snippet downloaded and copied from DII automatically checksums the installation script, and the telegraf binary’s signature is verified by the installation script.
 
-//The PEM file can be verified by confirming its fingerprint to be the following:
+//Automatically the installation script is checksumed by the download and install snippet copied from DII, and the telegraf binary’s signature is verified by the installation script.
 
 
-=== Generate checksum value
+=== Verify checksum value
 
 To generate the checksum value, perform the following command for your appropriate platform:
 
@@ -385,20 +389,6 @@ To generate the checksum value, perform the following command for your appropria
 
 
 
-=== Verify checksum
-
-Extract the expected checksum from the checksum file
-
-*	Non-Windows:
-
- openssl smime -verify -in telegraf*.sha256.signed -CAfile netapp_cert.pem -purpose any -nosigs -noverify 
-
-
-*	Windows:
-
- (Get-Content telegraf.zip.sha256.ps1 -First 1).toUpper() 
-
-
 === Install the downloaded package
 
 Once all of the artifacts have been satisfactorily verified, the agent installation can be initiated by running:
@@ -411,6 +401,33 @@ Windows:
 
  .\cloudinsights-windows.ps1 -install
  
+
+== Creating and Using API Access Tokens
+
+To create an API access token for Telegraf data ingestion please do one of the following:
+
+=== Create through the Data Collector Installation Page
+
+. Navigate to the Data Collector install page for the platform you wish to use (Windows, Linux).
+. Create a token with the + API Access Token button.
+. Input a name and click save.
+. The token name should now be selected in the dropdown, and will be used when installing the collector.
+
+=== Manually create an API access token
+
+. Navigate to Admin>API Access.
+. Click + API Access Token.
+. Input a name and optionally a description.
+. Under “What type of APIs will this token be used to call?” select “Data Ingestion” only and then unselect “Acquisition Unit”.
+. Under “Permissions” select Read/Write.
+. Unselect “Automatically rotate tokens for Kubernetes”.
+
+To use your newly created API access token, select it from the “Select existing API Access Token or create a new one” dropdown on the installer page. 
+Please note that only tokens with the following properties can be used:
+
+* API Type: “Data Ingestion” only
+* Permissions: Read/Write
+* Kubernetes Auto Rotation: Off
 
 
 
@@ -433,9 +450,9 @@ Some things to try if you encounter problems setting up an agent:
 
 
 
-|I already installed an agent using Cloud Insights| If you have already installed an agent on your host/VM, you do not need to install the agent again. In this case, simply choose the appropriate Platform and Key in the Agent Installation screen, and click on *Continue* or *Finish*. 
+|I already installed an agent using Data Infrastructure Insights| If you have already installed an agent on your host/VM, you do not need to install the agent again. In this case, simply choose the appropriate Platform and Key in the Agent Installation screen, and click on *Continue* or *Finish*. 
 
-|I already have an agent installed but not by using the Cloud Insights installer|Remove the previous agent and run the Cloud Insights Agent installation, to ensure proper default configuration file settings. When complete, click on *Continue* or *Finish*.
+|I already have an agent installed but not by using the Data Infrastructure Insights installer|Remove the previous agent and run the Data Infrastructure Insights Agent installation, to ensure proper default configuration file settings. When complete, click on *Continue* or *Finish*.
 
 |===
 

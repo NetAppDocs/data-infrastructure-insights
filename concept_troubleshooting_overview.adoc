@@ -1,22 +1,21 @@
 ---
 sidebar: sidebar
 permalink: concept_troubleshooting_overview.html
-summary: In this section you will find tips and tricks to help you troubleshoot issues in your Cloud Insights environment.
+summary: In this section you will find tips and tricks to help you troubleshoot issues in your Data Infrastructure Insights environment.
 keywords: 
 ---
 
-= Troubleshooting Cloud Insights Problems
-:toc: macro
+= Troubleshooting Data Infrastructure Insights Problems
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-The topics in this section provide troubleshooting advice in the event of problems with your Cloud Insights environment. 
+The topics in this section provide troubleshooting advice in the event of problems with your Data Infrastructure Insights environment. 
 
 Click on a category in the menu to the left to see troubleshooting information for that category.
 
-You can find more troubleshooting and other link:concept_requesting_support.html[support] information on the Cloud Insights *Help > Support* page.
+You can find more troubleshooting and other link:concept_requesting_support.html[support] information on the Data Infrastructure Insights *Help > Support* page.

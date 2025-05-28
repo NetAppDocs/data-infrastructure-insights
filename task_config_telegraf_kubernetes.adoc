@@ -7,14 +7,14 @@ summary: Data collector for Kubernetes
 
 = Data Collector: Kubernetes
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Cloud Insights uses this data collector to gather Kubernetes Pod, Node, and Container metrics. 
+Data Infrastructure Insights uses this data collector to gather Kubernetes Pod, Node, and Container metrics. 
 
 
 == Installation

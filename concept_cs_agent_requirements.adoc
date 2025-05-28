@@ -6,9 +6,8 @@ keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cl
 ---
 
 = Workload Security Agent Requirements
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -17,21 +16,21 @@ keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cl
 [.lead]
 You must link:task_cs_add_agent.html[install an Agent] in order to acquire information from your data collectors. Before you install the Agent, you should ensure that your environment meets operating system, CPU, memory, and disk space requirements.
 
-NOTE: Storage Workload Security is not available in Cloud Insights Federal Edition.
 
 [cols=2*,options="header",cols="36,60"]
 |===
 |Component|Linux Requirement
 |Operating system|A computer running a licensed version of one of the following:
 
-
-* CentOS 8 Stream (64-bit), SELinux 
+* CentOS 9 Stream (64-bit)
 * OpenSUSE Leap 15.3 through 15.5 (64-bit)
-* Oracle Linux 8.6 - 8.8, 9.1 through 9.2 (64-bit)
-* Red Hat Enterprise Linux 8.6 through 8.8, 9.1 through 9.2 (64-bit), SELinux 
-* Rocky 9.2 (64-bit), SELinux 
-* SUSE Linux Enterprise Server 15 SP3 through 15 SP3 (64-bit)
-* Ubuntu 20.04 LTS and 22.04 LTS (64-bit)
+* Oracle Linux 8.10 (64-bit), 9.1 through 9.4 (64-bit), SELinux
+* Red Hat Enterprise Linux 8.10 (64-bit), 9.1 through 9.5 (64-bit), SELinux
+* Rocky 9.4 - 9.5 (64-bit), SELinux
+* SUSE Linux Enterprise Server 15 SP4 through 15 SP6 (64-bit), SELinux
+* Ubuntu 20.04 LTS, 22.04 LTS, and 24.04 LTS (64-bit)
+* Debian 10 and 11 (64-bit)
+* AlmaLinux 9.4 and 9.5 (64-bit), SELinux
 
 This computer should be running no other application-level software. A dedicated server is recommended.
 
@@ -55,7 +54,7 @@ If /opt is a mounted folder from a NAS storage, make sure that local users have 
 
 |===
 
-Please note: The Workload Security agent can be installed in the same machine as a Cloud Insights acquisition unit and/or agent. However, it is a best practice to install these in separate machines. In the event that these are installed on the same machine, please allocate disk space as shown below:
+Please note: The Workload Security agent can be installed in the same machine as a Data Infrastructure Insights acquisition unit and/or agent. However, it is a best practice to install these in separate machines. In the event that these are installed on the same machine, please allocate disk space as shown below:
 
 |===
 |Available disk space	|50-55 GB
@@ -96,7 +95,7 @@ For *US-based* Workload Security environments:
 |Protocol|Port|Source	|Destination |Description
 |TCP|443|Workload Security Agent|<site_name>.cs01.cloudinsights.netapp.com 
 <site_name>.c01.cloudinsights.netapp.com 
-<site_name>.c02.cloudinsights.netapp.com|Access to Cloud Insights
+<site_name>.c02.cloudinsights.netapp.com|Access to Data Infrastructure Insights
 |TCP|443|Workload Security Agent|gateway.c01.cloudinsights.netapp.com
 agentlogin.cs01.cloudinsights.netapp.com|Access to authentication services
 |===
@@ -109,7 +108,7 @@ For *Europe-based* Workload Security environments:
 |TCP|443|Workload Security Agent|<site_name>.cs01-eu-1.cloudinsights.netapp.com
 <site_name>.c01-eu-1.cloudinsights.netapp.com
 <site_name>.c02-eu-1.cloudinsights.netapp.com
-|Access to Cloud Insights
+|Access to Data Infrastructure Insights
 |TCP|443|Workload Security Agent|gateway.c01.cloudinsights.netapp.com
 agentlogin.cs01-eu-1.cloudinsights.netapp.com
 |Access to authentication services
@@ -123,7 +122,7 @@ For *APAC-based* Workload Security environments:
 |TCP|443|Workload Security Agent|<site_name>.cs01-ap-1.cloudinsights.netapp.com
 <site_name>.c01-ap-1.cloudinsights.netapp.com
 <site_name>.c02-ap-1.cloudinsights.netapp.com
-|Access to Cloud Insights
+|Access to Data Infrastructure Insights
 |TCP|443|Workload Security Agent|gateway.c01.cloudinsights.netapp.com
 agentlogin.cs01-ap-1.cloudinsights.netapp.com
 |Access to authentication services
@@ -144,16 +143,9 @@ agentlogin.cs01-ap-1.cloudinsights.netapp.com
 
 NOTE that you do not need to reserve *all* of these ports, but the ports you reserve for this must be within this range. It is recommended to start by reserving ~100 ports, and increasing if necessary.
 
-|TCP|7|Workload Security Agent|SVM data LIF IP Addresses|Echo from Agent to SVM Data LIFs
 |SSH |22|Workload Security Agent| Cluster management |Needed for CIFS/SMB user blocking.
 |===
 
-//link:task_cs_add_agent.html[Configure an Agent]
-
-// Supported browsers a
-// * Internet Explorer 11 
-// * Firefox ESR 60 
-// * Chrome latest nightly (73.0)6
 
 == System Sizing
 

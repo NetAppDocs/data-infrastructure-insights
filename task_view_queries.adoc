@@ -6,9 +6,8 @@ keywords: query, queries, viewing
 ---
 
 = Viewing queries
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -18,7 +17,7 @@ keywords: query, queries, viewing
 You can view your queries to monitor your assets and change how your queries display the data related to your assets.
 
 .Steps
-. Log in to your Cloud Insights tenant.
+. Log in to your Data Infrastructure Insights tenant.
 . Click *Queries* and select *Show all queries*.
 You can change how queries display by doing any of the following:
 . You can enter text in the filter box to search to display specific queries.
@@ -26,4 +25,4 @@ You can change how queries display by doing any of the following:
 . To resize a column, hover the mouse over the column header until a blue bar appears. Place the mouse over the bar and drag it right or left.
 . To move a column, click on the column header and drag it right or left.
 
-When scrolling through the query results, be aware that the results may change as Cloud Insights automatically polls your data collectors. This may result in some items being missing, or some items appearing out of order depending on how they are sorted.
+When scrolling through the query results, be aware that the results may change as Data Infrastructure Insights automatically polls your data collectors. This may result in some items being missing, or some items appearing out of order depending on how they are sorted.

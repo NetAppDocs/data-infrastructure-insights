@@ -3,27 +3,24 @@ sidebar: sidebar
 permalink: concept_user_roles.html
 
 keywords: roles, guest, user, administrator, SSO, Federate, federation, identity, single sign-on, Account Owner, Reporting, Cloud Secure, Monitor and Optimize, security, observability
-summary: Cloud Insights provides multiple user accounts with different permission levels.
+summary: Data Infrastructure Insights provides multiple user accounts with different permission levels.
 
 ---
 
 = User Accounts and Roles
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Cloud Insights provides up to four user account roles: Account Owner, Administrator, User, and Guest. Each account is assigned specific permission levels as noted in the table below.  Users are either link:#creating-accounts-by-inviting-users[invited] to Cloud Insights and assigned a specific role, or can sign in via link:#single-sign-on-sso-and-identity-federation[Single Sign-On (SSO) Authorization] with a default role. SSO Authorization is available as a feature in Cloud Insights Premium Edition.
+Data Infrastructure Insights provides up to four user account roles: Account Owner, Administrator, User, and Guest. Each account is assigned specific permission levels as noted in the table below.  Users are either link:#creating-accounts-by-inviting-users[invited] to Data Infrastructure Insights and assigned a specific role, or can sign in via link:#single-sign-on-sso-and-identity-federation[Single Sign-On (SSO) Authorization] with a default role. SSO Authorization is available as a feature in Data Infrastructure Insights Premium Edition.
 
-//NOTE: User logins in Cloud Insights Federal Edition are limited to configured identity providers (with their specified email domains). When a new user is invited to a Cloud Insights Federal environment, their email address must match the domain configured for that environment.
 
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -31,7 +28,7 @@ Cloud Insights provides up to four user account roles: Account Owner, Administra
 
 == Permission levels
 
-You use an account that has Administrator privileges to create or modify user accounts. Each user account is assigned a role for each Cloud Insights feature from the following permission levels.
+You use an account that has Administrator privileges to create or modify user accounts. Each user account is assigned a role for each Data Infrastructure Insights feature from the following permission levels.
 
 ////
 * *Guest* can view asset pages, dashboards, and queries, and run queries.
@@ -47,9 +44,9 @@ You use an account that has Administrator privileges to create or modify user ac
 //|Account Owner	
 //4+<|Can modify subscriptions, view billing and usage information, and perform all Administrator functions for Observability, Security, and Reporting. Can perform all Admin functions including API management, view audit, set notification recipient lists, and invite and manage users as well as manage SSO Authentication and Identity Federation configuration. 
 
-//The first Account Owner is created when you register for Cloud Insights.
+//The first Account Owner is created when you register for Data Infrastructure Insights.
 
-//It is strongly recommended to have at least two Account Owners for each Cloud Insights environment.
+//It is strongly recommended to have at least two Account Owners for each Data Infrastructure Insights environment.
 
 
 |Account Owner
@@ -88,9 +85,9 @@ An Administrator can also invite other users but can only assign Reporting roles
 Best practice is to limit the number of users with Administrator permissions. The greatest number of accounts should be user or guest accounts.
 
 
-=== Cloud Insights Permissions by User Role
+=== Data Infrastructure Insights Permissions by User Role
 
-The following table shows the Cloud Insights permissions granted to each user role.
+The following table shows the Data Infrastructure Insights permissions granted to each user role.
 
 |===
 |Feature|Administrator/
@@ -134,7 +131,7 @@ Creating a new user account is achieved through BlueXP. A user can respond to th
 
 .Steps
 
-. Log into Cloud Insights
+. Log into Data Infrastructure Insights
 . In the menu, click *Admin > User Management*
 +
 The User Management screen is displayed. The screen contains a list of all of the accounts on the system.
@@ -148,7 +145,7 @@ The *Invite User* screen is displayed.
 
 //. Enter the user's e-mail address.
 
-. Select the user's role for each feature of Cloud Insights. 
+. Select the user's role for each feature of Data Infrastructure Insights. 
 +
 NOTE: The features and roles you can choose from depend on which features you have access to in your particular Administrator role. For example, if you have Admin role only for Reporting, you will be able to assign users to any role in Reporting, but will not be able to assign roles for Observability or Security.
 +
@@ -157,7 +154,7 @@ image:UserRoleChoices.png[User Role Choices]
 
 . Click *Invite*
 +
-The invitation is sent to the user. Users will have 14 days to accept the invitation. Once a user accepts the invitation, they will be taken to the NetApp Cloud Portal, where they will sign up using the email address in the invitation. If they have an existing account for that email address, they can simply sign in and will then be able to access their Cloud Insights environment.
+The invitation is sent to the user. Users will have 14 days to accept the invitation. Once a user accepts the invitation, they will be taken to the NetApp Cloud Portal, where they will sign up using the email address in the invitation. If they have an existing account for that email address, they can simply sign in and will then be able to access their Data Infrastructure Insights environment.
 
 
 == Modifying an existing user's role
@@ -166,7 +163,7 @@ To modify an existing user's role, including adding them as a *secondary account
 
 . Click *Admin > User Management*. The screen displays a list of all of the accounts on the system.
 . Click the user name of the account you want to change.
-. Modify the user's role in each Cloud Insights feature set as needed.
+. Modify the user's role in each Data Infrastructure Insights feature set as needed.
 . Click _Save Changes_.
 
 === To assign a Secondary Account Owner
@@ -185,9 +182,9 @@ You can have as many account owners as you wish, but best practice is to limit t
 
 == Deleting Users
 
-A user with the Administrator role can delete a user (for example, someone no longer with the company) by clicking on the user's name and clicking _Delete User_ in the dialog. The user will be removed from the Cloud Insights environment. 
+A user with the Administrator role can delete a user (for example, someone no longer with the company) by clicking on the user's name and clicking _Delete User_ in the dialog. The user will be removed from the Data Infrastructure Insights environment. 
 
-Note that any dashboards, queries, etc. that were created by the user will remain available in the Cloud Insights environment even after the user is removed. 
+Note that any dashboards, queries, etc. that were created by the user will remain available in the Data Infrastructure Insights environment even after the user is removed. 
 
 
 
@@ -208,7 +205,7 @@ User accounts are managed in NetApp BlueXP for all Cloud Services. By default, a
 //image:CloudCentralAuthentication.png[BlueXP Authentication]
 image:BlueXP_Authentication_Local.png[BlueXP Authentication using Local]
 
-However, some customers would like to use their own identity provider to authenticate their users for Cloud Insights and their other NetApp BlueXP Services. With Identity Federation, NetApp BlueXP accounts are authenticated using credentials from your corporate directory.  
+However, some customers would like to use their own identity provider to authenticate their users for Data Infrastructure Insights and their other NetApp BlueXP Services. With Identity Federation, NetApp BlueXP accounts are authenticated using credentials from your corporate directory.  
 
 The following is a simplified example of that process: 
 
@@ -216,15 +213,15 @@ The following is a simplified example of that process:
 //image:IdentityFederationDiagram-2.png[Identity Federation Illustrated]
 image:BlueXP_Authentication_Federated.png[BlueXP Authentication using Federation]
 
-In the above diagram, when a user accesses Cloud Insights, that user is directed to the customer’s identity management system for authentication. Once the account is authenticated, the user is directed to the Cloud Insights tenant URL.  
+In the above diagram, when a user accesses Data Infrastructure Insights, that user is directed to the customer’s identity management system for authentication. Once the account is authenticated, the user is directed to the Data Infrastructure Insights tenant URL.  
 
 === Enabling Identity Federation
 
 BlueXP uses Auth0 to implement Identity Federation and integrate with services like Active Directory Federation Services (ADFS) and Microsoft Azure Active Directory (AD). To configure Identity Federation, see the link:https://services.cloud.netapp.com/misc/federation-support[BlueXP Federation instructions]. 
 
-NOTE: You must configure BlueXP Identity Federation before you can use SSO with Cloud Insights.
+NOTE: You must configure BlueXP Identity Federation before you can use SSO with Data Infrastructure Insights.
 
-It is important to understand that changing identity federation in BlueXP will apply not only to Cloud Insights but to all NetApp BlueXP Services. The customer should discuss this change with the NetApp team of each BlueXP product they own to make sure the configuration they are using will work with Identity Federation or if adjustments need to be made on any accounts. The customer will need to involve their internal SSO team in the change to identity federation as well. 
+It is important to understand that changing identity federation in BlueXP will apply not only to Data Infrastructure Insights but to all NetApp BlueXP Services. The customer should discuss this change with the NetApp team of each BlueXP product they own to make sure the configuration they are using will work with Identity Federation or if adjustments need to be made on any accounts. The customer will need to involve their internal SSO team in the change to identity federation as well. 
 
 It is also important to realize that once identity federation is enabled, that any changes to the company’s identity provider (such moving from SAML to Microsoft AD) will likely require troubleshooting/changes/attention in BlueXP to update the profiles of the users. 
 
@@ -232,18 +229,18 @@ For this or any other federation issues, you can open a support ticket at https:
 
 === Single Sign-On (SSO) User Auto-Provisioning 
 
-In addition to inviting users, administrators can enable *Single Sign-On (SSO) User Auto-Provisioning* access to Cloud Insights for all users in their corporate domain, without having to invite them individually. With SSO enabled, any user with the same domain email address can log into Cloud Insights using their corporate credentials.
+In addition to inviting users, administrators can enable *Single Sign-On (SSO) User Auto-Provisioning* access to Data Infrastructure Insights for all users in their corporate domain, without having to invite them individually. With SSO enabled, any user with the same domain email address can log into Data Infrastructure Insights using their corporate credentials.
 
-NOTE: _SSO User Auto-Provisioning_ is available in Cloud Insights Premium Edition, and must be configured before it can be enabled for Cloud Insights. SSO User Auto-Provisioning configuration includes link:https://services.cloud.netapp.com/misc/federation-support[Identity Federation] through NetApp BlueXP as described in the section above. Federation allows single sign-on users to access your NetApp BlueXP accounts using credentials from your corporate directory, using open standards such as Security Assertion Markup Language 2.0 (SAML) and OpenID Connect (OIDC). 
+NOTE: _SSO User Auto-Provisioning_ is available in Data Infrastructure Insights Premium Edition, and must be configured before it can be enabled for Data Infrastructure Insights. SSO User Auto-Provisioning configuration includes link:https://services.cloud.netapp.com/misc/federation-support[Identity Federation] through NetApp BlueXP as described in the section above. Federation allows single sign-on users to access your NetApp BlueXP accounts using credentials from your corporate directory, using open standards such as Security Assertion Markup Language 2.0 (SAML) and OpenID Connect (OIDC). 
 
-To configure _SSO User Auto-Provisioning_, on the *Admin > User Management* page, You must first have set up BlueXP Identity Federation. Select the *Set Up Federation* link in the banner to proceed to BlueXP Federation. Once that is configured, Cloud Insights administrators can then enable SSO user login. When an administrator enables _SSO User Auto-Provisioning_, they choose a default role for all SSO users (such as Guest or User). Users who log in through SSO will have that default role.
+To configure _SSO User Auto-Provisioning_, on the *Admin > User Management* page, You must first have set up BlueXP Identity Federation. Select the *Set Up Federation* link in the banner to proceed to BlueXP Federation. Once that is configured, Data Infrastructure Insights administrators can then enable SSO user login. When an administrator enables _SSO User Auto-Provisioning_, they choose a default role for all SSO users (such as Guest or User). Users who log in through SSO will have that default role.
 
 //image:SSOBanner.jpg[User Management with SSO]
 image:Roles_federation_Banner.png[User management with Federation]
 
-Occasionally, an administrator will want to promote a single user out of the default SSO role (for example, to make them an administrator). They can accomplish this on the *Admin > User Management* page by clicking on the right-side menu for the user and selecting _Assign Role_. Users who are assigned an explicit role in this way continue to have access to Cloud Insights even if _SSO User Auto-Provisioning_ is subsequently disabled. 
+Occasionally, an administrator will want to promote a single user out of the default SSO role (for example, to make them an administrator). They can accomplish this on the *Admin > User Management* page by clicking on the right-side menu for the user and selecting _Assign Role_. Users who are assigned an explicit role in this way continue to have access to Data Infrastructure Insights even if _SSO User Auto-Provisioning_ is subsequently disabled. 
 
-If the user no longer requires the elevated role, you can click the menu to _Remove User_. The user will be removed from the list. If _SSO User Auto-Provisioning_ is enabled, the user can continue log in to Cloud Insights through SSO, with the default role.
+If the user no longer requires the elevated role, you can click the menu to _Remove User_. The user will be removed from the list. If _SSO User Auto-Provisioning_ is enabled, the user can continue log in to Data Infrastructure Insights through SSO, with the default role.
 
 You can choose to hide SSO users by unchecking the *Show SSO Users* checkbox. 
 
@@ -251,22 +248,22 @@ You can choose to hide SSO users by unchecking the *Show SSO Users* checkbox.
 
 However, do not enable _SSO User Auto-Provisioning_ if either of these are true: 
 
-* Your organization has more than one Cloud Insights tenant 
-* Your organization does not want any/every user in the federated domain to have some level of automatic access to the Cloud Insights tenant. _At this point in time, we do not have the ability to use groups to control role access with this option_. 
+* Your organization has more than one Data Infrastructure Insights tenant 
+* Your organization does not want any/every user in the federated domain to have some level of automatic access to the Data Infrastructure Insights tenant. _At this point in time, we do not have the ability to use groups to control role access with this option_. 
 
 
 
 == Restricting Access by Domain
 
-Cloud Insights can restrict user access to only the domains you specify. On the *Admin > User Management* page, select "Restrict Domains".  
+Data Infrastructure Insights can restrict user access to only the domains you specify. On the *Admin > User Management* page, select "Restrict Domains".  
 
 image:Restrict_Domains_Modal.png[Restricting domains to only default domains, defaults plus additional domains you specify, or no restrictions]
 
 You are presented with these choices:
 
-* No restrictions: Cloud Insights remains accessible to users regardless of their domain.
-* Limit access to default domains: default domains are those used by your Cloud Insights environment account owners. These domains are always accessible.
-* Limit access to defaults plus domains you specify. List any domains you want to have access to your Cloud Insights environment, in addition to the default domains.
+* No restrictions: Data Infrastructure Insights remains accessible to users regardless of their domain.
+* Limit access to default domains: default domains are those used by your Data Infrastructure Insights environment account owners. These domains are always accessible.
+* Limit access to defaults plus domains you specify. List any domains you want to have access to your Data Infrastructure Insights environment, in addition to the default domains.
 
 
 

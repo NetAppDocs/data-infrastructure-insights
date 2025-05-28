@@ -1,13 +1,13 @@
 ---
 sidebar: sidebar
 permalink: concept_whats_new.html
-summary: New features and functionality available in Cloud Insights. 
+summary: New features and functionality available in Data Infrastructure Insights.
 keywords: features
 ---
 
-= What\'s New with Cloud Insights 
+= What\'s New with Data Infrastructure Insights
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -15,7 +15,332 @@ keywords: features
 
 [#whats-new]
 [.lead]
-NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in the commercial Editions of Cloud Insights.   
+NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in Data Infrastructure Insights (formerly Cloud Insights).
+
+
+== May 2025
+
+
+
+=== Webhooks now available for Workload Security alerts
+
+Workload Security now supports out-of-the-box webhook notifications to tools like Slack, PagerDuty, Teams, and more.
+Route critical alerts directly into your existing security workflows, so your team can investigate and respond faster—no custom setup required.
+
+image:ws_webhook_slack_example.png[Webhook Slack Example for Workload Security, width=400]
+
+
+=== Migrate Workload Security collectors across agents
+
+You can easily migrate a Workload Security collector from one agent to another, allowing for efficient load balancing of collectors across agents.
+Migrating is as easy as editing the collector and selecting the destination agent from the list. 
+
+image:ws_migrate_collector_to_another_agent.png[migrate collector, width=500]
+
+''''
+
+== April 2025
+
+=== ML-Powered Anomaly Bounds in Line Widgets for Proactive Issue Resolution
+
+To troubleshoot performance issues with Line or Spline chart widgets, you can now display expected behavior boundaries alongside actual metrics, allowing you to distinguish between normal and abnormal metric trends. 
+
+DII machine learning with seasonal data analysis establishes intelligent thresholds based on historical patterns. When metrics deviate from expected ranges, the system highlights these as anomalies, enabling quick issue identification, reducing mean time to resolution, and addressing problems before they impact operations.
+
+image:expected_bounds_example_showing_spike.png[expected bounds showing spike above, width=300]
+
+
+=== Optimize VMware Costs with VSAN Storage Support
+
+Our VM Optimization feature now includes support for VMWare environments with VSAN storage. In addition to CPU and memory usage, the analysis now considers local VSAN storage for reclamation recommendations, helping you further reduce licensing costs.
+
+image:vm_optimization_with_vsan.png[VM Optimization example with VSAN]
+
+
+=== Alert details at your fingertips
+
+Investigating alerts is easier than ever with the new slideout panel. Select an alert to view details for that alert, and easily switch between alerts without losing your place while investigating issues. 
+
+image:alert_slideout_example.png[Alert slideout for easier navigation]
+
+
+=== Workload Security Forensics Asynchronous Export
+
+Exporting forensics data can take anywhere from a few seconds to a number of hours, depending on the amount of data to export. Workload Security exports that data asynchronously, so you can continue working while the .CSV is being compiled. 
+
+
+
+=== Data Collector Notifications grouped into Rules
+
+If you have configured notifications on data collectors, starting April 15 those notifications will be handled in Notification Rules, with a single rule for collectors that have identical recipients. Collectors with different recipients will have separate rules. Existing collector notifications are migrated to notification rules.
+
+
+'''
+
+
+== April 2025
+
+=== ML-Powered Anomaly Bounds in Line Widgets for Proactive Issue Resolution
+
+To troubleshoot performance issues with Line or Spline chart widgets, you can now display expected behavior boundaries alongside actual metrics, allowing you to distinguish between normal and abnormal metric trends. 
+
+DII machine learning with seasonal data analysis establishes intelligent thresholds based on historical patterns. When metrics deviate from expected ranges, the system highlights these as anomalies, enabling quick issue identification, reducing mean time to resolution, and addressing problems before they impact operations.
+
+image:expected_bounds_example_showing_spike.png[expected bounds showing spike above, width=300]
+
+
+=== Optimize VMware Costs with VSAN Storage Support
+
+Our VM Optimization feature now includes support for VMWare environments with VSAN storage. In addition to CPU and memory usage, the analysis now considers local VSAN storage for reclamation recommendations, helping you further reduce licensing costs.
+
+image:vm_optimization_with_vsan.png[VM Optimization example with VSAN]
+
+
+=== Alert details at your fingertips
+
+Investigating alerts is easier than ever with the new slideout panel. Select an alert to view details for that alert, and easily switch between alerts without losing your place while investigating issues. 
+
+image:alert_slideout_example.png[Alert slideout for easier navigation]
+
+
+=== Workload Security Forensics Asynchronous Export
+
+Exporting forensics data can take anywhere from a few seconds to a number of hours, depending on the amount of data to export. Workload Security exports that data asynchronously, so you can continue working while the .CSV is being compiled. 
+
+
+
+=== Data Collector Notifications grouped into Rules
+
+If you have configured notifications on data collectors, starting April 15 those notifications will be handled in Notification Rules, with a single rule for collectors that have identical recipients. Collectors with different recipients will have separate rules. Existing collector notifications are migrated to notification rules.
+
+'''
+
+
+
+== March 2025
+
+=== Enhanced Contextual Navigation for Efficient Infrastructure Management
+
+Save time by leveraging Data Infrastructure Insights for operational excellence. We are now adding contextual menu links that allow you to jump directly from any object to the asset landing page for device performance insights, SAN Analyzer for network topology visualization, logs for operational awareness, or Change Analyzer for configuration management.
+
+With instant access to key data across multiple views, you gain a clearer understanding of object relationships more quickly. This streamlined workflow accelerates decision-making and issue resolution, ultimately saving you time and enhancing your overall analysis capabilities.
+
+image:contextual_menu_example.png[Contextual menu example, width=500]
+
+
+=== Preserve the History of Removed Assets
+
+Our enhanced Infra Change Feature now preserves the history of removed assets like qtrees and volumes that have moved and are no longer available. 
+
+Missing something in your troubleshooting puzzle? Not any more! You'll see everything—including deleted objects marked with a strike-through—giving you complete context even after assets were removed, ensuring you never miss critical elements from past changes or alerts across the end-to-end path.
+
+The result? Quicker resolution times and more confident infrastructure decisions, even when the assets in question no longer exist.
+
+image:infra_change_removed_assets.png[removed assets in infra change showing with a strikethrough, width=300]
+
+
+=== Kubernetes Operator Push-Button Upgrade
+
+Want to be sure you have the latest Kubernetes Operator? Upgrade the operator on-demand from the DII Kubernetes Collectors cluster menu. Simply select Upgrade from the menu, and the operator will verify the image signatures, capture a snapshot of your current installation, and perform the upgrade.
+
+The Push-Button Upgrade is an optional feature, and its activation can be managed on a per-cluster basis.
+
+image:dii_push_button_upgrade.png[push-button operator upgrade from cluster menu, width=600]
+
+
+=== Test Connectivity for Storage Workload Security Data Collectors
+
+The test connectivity feature aims to help end users identify the specific causes of failures when setting up data collectors in Data Infrastructure Insights (DII) Workload Security. This allows the users to self-correct issues related to network communication or missing roles.
+
+image:ws_test_connection_button.png[workload security test connection button]
+image:ws_test_connection_success_example.png[Workload Security 'Test Connection' success message]
+
+
+
+=== Operating System support
+
+The following operating systems are now supported with Data Infrastructure Insights Acquisition Units, in addition to those link:https://docs.netapp.com/us-en/cloudinsights/concept_acquisition_unit_requirements.html[already supported]:
+
+* AlmaLinux 9.5
+* Debian (64-bit) 11
+* OpenSUSE Leap 15.6
+* Oracle Enterprise Linux (64-bit) 8.9, 8.10, 9.5
+* Red Hat (64-bit) 8.9, 8.10, 9.5
+* Rocky 9.5
+* SUSE Linux Enterprise Server 15 SP6
+* Ubuntu Server 24.04 LTS
+
+
+'''
+
+== February 2025
+
+ 
+ONTAP essentials now includes out-of-the-box manageability for the latest generation of link:task_dc_na_ontap_all_san_array.html[ASA] devices. This includes SAN Analyzer for VM-to-LUN topologies of workloads running on ONTAP, now also available with NetApp support as part of Data Infrastructure Insights Basic Edition.
+
+image:ontap_essentials_asa_views.png[ONTAP Essentials drop-down showing ASA as distinct from Unified]
+
+
+=== DII API Usage Tracking: Enhance Security and Efficiency
+
+Strengthen your security posture and streamline resource management with enhanced REST API Usage tracking, available for Admin users. With API usage tracking you can see which API tokens are being used, from which IP addresses, and the volume of traffic they generate.  By linking tokens to specific IP addresses and usage levels, you'll gain powerful insights into system access and usage trends, giving you the control you need to maintain a safe, efficient environment and keep operations running smoothly.
+
+To view API Usage, navigate to *Observability > Admin > API Access* and select _View API Usage_. Note that this API is available for DII Observability APIs only; it does not apply to Workload Security.
+
+image:api_usage_analytics_screenshot.png[API usage analytics example]
+
+
+=== Workload Security API to restrict users 
+
+A new API has been added to manage user restriction in Workload Security. With the API you can block or unblock a user, or change the duration of their restricted access. See the Admin > API Access > API Documentation page for the _cloudsecure_actions.block_ API.
+
+
+
+
+
+
+'''
+== January 2025
+
+=== Proactively manage risk with Forensics Grouping
+
+Introducing our latest feature designed to enhance your security and resource management capabilities! With advanced group-by functionality and hierarchical multiple group-by support, you can now easily identify users who accessed specific folders, determine the most active users and shares, and proactively manage risk by tracking active client IP addresses. Optimize your storage and bandwidth usage by pinpointing the most accessed files and folders, and gain increased control over system access by identifying users.
+
+image:forensics_activity_example.png[forensics activity tracking example screen]
+
+=== Dashboard Access Control
+
+Data Infrastructure Insights now gives you greater control over access to the dashboards you create. You choose who can modify your graphs. You control exposure to potentially sensitive information. Still working on a dashboard that isn’t ready for general visibility? You can keep it private until you are ready to share it.
+
+image:Dashboard_Sharing_Options.png[dashboard sharing options]
+
+
+
+'''
+== December 2024
+
+
+=== Introducing SAN Analyzer: Enhanced Visibility for Block Workloads
+
+SAN plays a crucial role in handling vital workloads, but its complexity can result in significant outages and customer disruptions. With DII's *SAN Analyzer*, managing SAN becomes simpler and more efficient. This powerful tool offers end-to-end visibility, mapping dependencies from VM/Host to network to LUN and storage.
+By providing an interactive topology map, SAN Analyzer enables you to pinpoint issues, understand changes, and enhance comprehension of data flow. Streamline SAN management in complex IT environments with SAN Analyzer and increase your visibility into block workloads. 
+
+image:san_analyzer_example_with_panel.png[SAN Analyzer topology map of a storage system]
+
+
+=== Optimize VM Costs with Intelligent Host Decommissioning and VM Reclamation
+
+Data Infrastructure Insights helps you manage infrastructure and licensing costs by analyzing the historical behavior of the environment and establishing short- and long-term predictions, generating detailed recommendations for host decommissioning and reclamation of powered-off and idle VMs. These recommendations help you ensure performance stability, free up unused capacity, and reduce memory and CPU allocation. 
+
+
+image:vm_optimization_summary.png[VM Optimization Summary Screen]
+
+
+
+=== Uncover Log Insights with Time Charts and Table Widget Support
+
+Now you can leverage time charts (bar, line, area) to identify trends and patterns in log data, such as recurring errors or spikes in activity, providing valuable insights into system behavior over time. Additionally, with tables, you can now include log messages directly in the dashboard, enabling a more comprehensive view of log details. 
+
+image:log_insights_dashboard_example.png[log insights on a dashboard]
+
+
+'''
+
+== November 2024
+
+=== New Workload Security Alerts API
+
+Retrieve forensics alert details with the new Workload Security link:concept_cs_api.html[*cloudsecure_forensics.alerts* API].  
+
+image:ws_forensics_alerts_api.png[Workload Security Forensics Alerts API]
+
+
+
+=== Analyze Configuration Changes in your Environment
+ 
+Configuration changes are one of the most common causes of issues in modern IT. Data Infrastructure Insights' (DII’s) new link:infrastructure_change_analytics.html[change analysis] capability lets you clearly understand changes that cause issues in your environment. Accelerate troubleshooting time by showing all changes in devices and  related infrastructure components that may have led to an issue. Additionally, when you or your team perform planned changes, you can validate those changes quickly and ensure there are no unexpected effects before service levels are impacted.
+
+
+image:Change_Analysis_Example_showing_alert-change_correlation.png[Infrastructure Change Analytics example]
+
+
+
+=== KubeVirt Support: Monitor Virtual Machine workloads running within your Kubernetes Cluster 
+
+DII now fully supports KubeVirt, the Kubernetes-native virtualization solution used by platforms like OpenShift Virtualization and Harvester. Gain full visibility into the metrics, events, configuration changes, and network traffic of both Virtual Machines and Container workloads within your Kubernetes clusters. 
+
+'''
+
+== October 2024
+
+
+
+=== Unlock New Insights with Custom Expressions in Monitors
+
+Expressions enable you to perform arithmetic operations in Metric and Anomaly Detection Monitors. Here are some examples:
+
+* Ratio: IOPS/TB to detect where service level limits are being reached on cloud storage providers.
+* Percentage: Used/Available to calculate utilization
+* Aggregation: Combine multiple types of physical port errors into one monitor
+* Comparison: Compare current resource headroom utilization with the optimal headroom point to identify resources that are not running at full capacity.
+
+
+image:Expressions_In_Monitors.png[Creating an expression in a metric monitor]
+
+=== Minimize Alert Disruptions During Maintenance Period
+
+Maintenance Windows allow you to suppress alert notifications during scheduled maintenance periods, helping you avoid unnecessary disruptions.
+
+With Maintenance Windows, you can schedule specific maintenance periods during which alert notifications are suppressed, for the objects and metrics you choose. For example, you can suppress alert notifications triggered by specific storage systems, when those storage systems are in a planned upgrade period.
+
+Note that only alert notifications are suppressed (email, webhook); the alerts themselves are still shown on the Observability > Alerts > All Alerts page.
+
+image:Maintenance_Windows_example.png[Maintenance Windows Example]
+
+=== Streamline Alert Management with New Alert Notification Rules
+
+Alert Notification Rules simplify notification management across monitors and teams.
+
+Control alert delivery across your organization's channels, ensuring the right information reaches the right team. No need to manage separate monitors for different teams; route alerts based on related object attributes (storage name, data center, application name) or monitor attributes (group, severity).
+
+image:notification_rule_configure.png[setting filters for notification rule]
+
+
+=== Log Analytics in dashboards
+You can now include log events in your dashboards, to visualize event data and have more comprehensive and contextual understanding of your environment. Investigate logs and view related metrics without leaving the dashboard!
+
+image:log_analytics_bar_graph_example.png[Log Analysis example]
+
+
+=== Better VMware Observability with VMware Events
+
+Proactively manage and troubleshoot your VMware environment with real-time events. VMware events provide insights on VM migrations, resource allocations, and host health. Now available for use in Queries, Dashboards, and Monitors. Requires VMware version 8 or higher. Simply select the _logs.vmware.events_ source.
+
+VMware Events are also used for DII's new Configuration Change Analysis noted above.
+
+image:vmware_log_events.png[vmware log selection in the drop-down]
+
+
+
+
+
+=== Data Collector updates:
+
+* *Pure FlashBlade*: This collector gathers inventory and performance data from FlashBlade clusters that expose version 2 of their REST API.
+
+
+
+'''
+
+== September 2024
+
+=== Introducing Data Infrastructure Insights, formerly Cloud Insights
+ 
+On Tuesday, September 24, 2024, NetApp has officially changed the name of Cloud Insights to *Data Infrastructure Insights* (DII). This has been announced during the Insight user conference by Haiyan Song in her main stage keynote presentation and in an Insight conference product press release.
+
+The DII service remains the same; there are no feature changes or modifications. This is a name change to better align the service name with its capabilities for all IT infrastructure.
+
+
 
 
 
@@ -382,7 +707,7 @@ image:StorageNodeSupportData.png[Storage Node Support Information]
 
 === Map VMWare tags to Cloud Insights annotations
 
-The link:task_dc_vmware.html#mapping-vmware-tags-to-cloud-insights-annotations[VMWare] data collector allows you to populate Cloud Insights text annotations with same-name tags that are configured on VMWare. 
+The link:task_dc_vmware.html[VMWare] data collector allows you to populate Cloud Insights text annotations with same-name tags that are configured on VMWare. 
 
 === Brocade CLI collector reliability enhancements for FOS 9.1.1c and higher firmware
 
@@ -874,7 +1199,7 @@ API Metering has moved from the Subscription page to the *Admin > API Access* pa
 
 The Cloud Connection for ONTAP 9.9+ data collector is being deprecated.  Starting April 4, 2023, Cloud Connection data collectors in your environment will no longer collect data, and will instead present an error when polling. The Cloud Connection data collector will be removed altogether from Cloud Insights in a subsequent update.
 
-Prior to April 4, 2023, it is mandatory to configure a new NetApp ONTAP Data Management Software data collector for any ONTAP systems currently collected by Cloud Connection. link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Insights/How_to_transition_from_NetApp_Cloud_Connection_to_AU_based_data_collector[Learn More].
+Prior to April 4, 2023, it is mandatory to configure a new NetApp ONTAP Data Management Software data collector for any ONTAP systems currently collected by Cloud Connection. 
 
 
 '''
@@ -1218,7 +1543,7 @@ Previous versions of the agent will continue to function with no user action req
 
 === Preview Features
 
-Cloud Insights regularly highlights a number of exciting new preview features. If you are interested in previewing one or more of these features, contact your link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx[NetApp Sales Team] for more information.
+Cloud Insights regularly highlights a number of exciting new preview features. If you are interested in previewing one or more of these features, contact your link:https://bluexp.netapp.com/contact-cds[NetApp Sales Team] for more information.
 
 |===
 
@@ -1284,7 +1609,7 @@ You can now configure Cloud Insights to alert when modification or removal of Fl
 
 === Preview Features
 
-Cloud Insights regularly highlights a number of exciting new preview features. If you are interested in previewing one or more of these features, contact your link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx[NetApp Sales Team] for more information.
+Cloud Insights regularly highlights a number of exciting new preview features. If you are interested in previewing one or more of these features, contact your link:https://bluexp.netapp.com/contact-cds[NetApp Sales Team] for more information.
 
 |===
 
@@ -1344,7 +1669,7 @@ Cloud Insights keeps you on top of changes in your Kubernetes environment by ale
 
 === Preview Features
 
-Cloud Insights regularly highlights a number of exciting new preview features. If you are interested in previewing one or more of these features, contact your link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx[NetApp Sales Team] for more information.
+Cloud Insights regularly highlights a number of exciting new preview features. If you are interested in previewing one or more of these features, contact your link:https://bluexp.netapp.com/contact-cds[NetApp Sales Team] for more information.
 
 |===
 
@@ -2105,7 +2430,7 @@ Their user role in Cloud Insights determines their link:reporting_user_roles.htm
 
 NOTE: Cloud Insights Reporting is available for environments of 500 MUs or more.
 
-IMPORTANT: If you are a current Premium Edition customer and wish to retain your reports, read this link:reporting_user_roles.html#important-note-for-existing-customers[important note for existing customers].
+IMPORTANT: If you are a current Premium Edition customer and wish to retain your reports, read this link:reporting_user_roles.html[important note for existing customers].
 
 
 
@@ -2658,7 +2983,7 @@ The link:task_config_telegraf_kubernetes.html[Kubernetes Data Collector] now col
 
 === Cloud Insights Editions
 
-Cloud Insights is available in different Editions to fit your budget and business needs. Existing NetApp customers with an active NetApp support account can enjoy 7 days of data retention and access to NetApp data collectors with the free *Basic Edition*, or get increased data retention, access to all supported data collectors, expert technical support and more with *Standard Edition*. For more information on available features, see NetApp's link:https://cloud.netapp.com/cloud-insights[Cloud Insights] site.
+Cloud Insights is available in different Editions to fit your budget and business needs. Existing NetApp customers with an active NetApp support account can enjoy 7 days of data retention and access to NetApp data collectors with the free *Basic Edition*, or get increased data retention, access to all supported data collectors, expert technical support and more with *Standard Edition*. For more information on available features, see NetApp's link:https://www.netapp.com/cloud-services/cloud-insights/[Cloud Insights] site.
 
 === New Infrastructure Data Collector: NetApp HCI
 

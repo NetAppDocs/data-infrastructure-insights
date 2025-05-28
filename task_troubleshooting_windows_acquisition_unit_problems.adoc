@@ -6,9 +6,8 @@ keywords: AU, acquisition unit, trioubleshooting
 ---
 
 = Troubleshooting Acquisition Unit Problems on Windows
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -32,12 +31,14 @@ Here you will find suggestions for troubleshooting problems with Acquisition Uni
 
 |Server Requirements not met | Ensure that your Acquisition Unit server or VM meets link:concept_acquisition_unit_requirements.html[requirements]
 
-|Network Requirements not met |Ensure that your Acquisition Unit server/VM can access your Cloud Insights environment (<environment-name>.c01.cloudinsights.netapp.com) through SSL connection over port 443. Try the following commands:
+|Network Requirements not met |Ensure that your Acquisition Unit server/VM can access your Data Infrastructure Insights environment (<environment-name>.c01.cloudinsights.netapp.com) through SSL connection over port 443. Try the following commands:
 
  _ping <environment-name>.c01.cloudinsights.netapp.com_
 _traceroute <environment-name>.c01.cloudinsights.netapp.com_
 _curl \https://<environment-name>.c01.cloudinsights.netapp.com_
 _wget \https://<environment-name>.c01.cloudinsights.netapp.com_
+
+Note that port 443 needs to be opened "outbound" from the AU to Data Infrastructure Insights.
 
 |Proxy Server not configured properly | Verify your proxy settings, and uninstall/re-install the Acquisition Unit software if necessary to enter the correct proxy settings. 
 
@@ -45,7 +46,7 @@ _wget \https://<environment-name>.c01.cloudinsights.netapp.com_
 2. Try "wget".  Check documentation for proxy options.
 
 
-|Acquisition unit installation failed in Cloud insights with credential errors while starting acquisition service (and visible in the acq.log).|This can be caused by the inclusion of special characters in the proxy credentials. Uninstall the AU (_sudo cloudinsights-uninstall.sh_) and reinstall without using special characters.
+|Acquisition unit installation failed in Data Infrastructure Insights with credential errors while starting acquisition service (and visible in the acq.log).|This can be caused by the inclusion of special characters in the proxy credentials. Uninstall the AU (_sudo cloudinsights-uninstall.sh_) and reinstall without using special characters.
 
 |Permission issues| Be sure you are logged in as a user with administrator permissions
 
@@ -57,7 +58,7 @@ Restart the Acquisition via Windows Services
 |Send an Error Report from the Data Collector landing page by clicking the "Send Error Report" button
 
 |Status: Heartbeat Failed
-|The Acquisition Unit (AU) sends a heartbeat to Cloud Insights every 60 seconds to renew its lease. If the heartbeat call fails due to network issue or unresponsive Cloud Insights, the AU's lease time isn't updated. When the AU's lease time expires, Cloud Insights shows a status of "Heartbeat Failed".
+|The Acquisition Unit (AU) sends a heartbeat to Data Infrastructure Insights every 60 seconds to renew its lease. If the heartbeat call fails due to network issue or unresponsive Data Infrastructure Insights, the AU's lease time isn't updated. When the AU's lease time expires, Data Infrastructure Insights shows a status of "Heartbeat Failed".
 
 Troubleshoot steps:
 
@@ -66,22 +67,22 @@ Troubleshoot steps:
 * Check the Acquisition Unit log (<Install dir>:\Program Files\Cloud Insights\Acquisition Unit\log\acq.log) to see whether there are any errors.
 
 |I'm seeing a "Heartbeat Error: message
-|This error can occur if there is a network interruption that causes communication between the Acquisition Unit and the Cloud Insights environment to be interrupted for more than one minute. Verify the connection between the AU and Cloud Insights is stable and active.
+|This error can occur if there is a network interruption that causes communication between the Acquisition Unit and the Data Infrastructure Insights environment to be interrupted for more than one minute. Verify the connection between the AU and Data Infrastructure Insights is stable and active.
 
 |===
 
 
 == Considerations about Proxies and Firewalls
 
-If your organization requires proxy usage for internet access, you may need to understand your organization’s proxy behavior and seek certain exceptions for Cloud Insights to work. Keep the following in mind:
+If your organization requires proxy usage for internet access, you may need to understand your organization’s proxy behavior and seek certain exceptions for Data Infrastructure Insights to work. Keep the following in mind:
 
 * First, does your organization block access by default, and only allow access to specific web sites/domains by exception? If so, you will need to add the following domain to your exception list:
 +
  *.cloudinsights.netapp.com
 +
-Your Cloud Insights Acquisition Unit, as well as your interactions in a web browser with Cloud Insights, will all go to hosts with that domain name. 
+Your Data Infrastructure Insights Acquisition Unit, as well as your interactions in a web browser with Data Infrastructure Insights, will all go to hosts with that domain name. 
 
-* Second, some proxies attempt to perform TLS/SSL inspection by impersonating Cloud Insights web sites with digital certificates not generated from NetApp. The Cloud Insights Acquisition Unit’s security model is fundamentally incompatible with these technologies. You would also need the above domain name excepted from this functionality in order for the Cloud Insights Acquisition Unit to successfully login to Cloud Insights and facilitate data discovery.
+* Second, some proxies attempt to perform TLS/SSL inspection by impersonating Data Infrastructure Insights web sites with digital certificates not generated from NetApp. The Data Infrastructure Insights Acquisition Unit’s security model is fundamentally incompatible with these technologies. You would also need the above domain name excepted from this functionality in order for the Data Infrastructure Insights Acquisition Unit to successfully login to Data Infrastructure Insights and facilitate data discovery.
 
 === Viewing Proxy endpoints
 
@@ -91,7 +92,7 @@ image:ProxyEndpoints_NewTable.png[Proxy Endpoints Table]
 
 == Resources
 
-Additional troubleshooting tips may be found in the link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Insights[NetApp Knowledgebase] (support sign-in required).
+Additional troubleshooting tips may be found in the link:https://kb.netapp.com/Cloud/BlueXP/DII[NetApp Knowledgebase] (support sign-in required).
 
-Additional support information may be found from the Cloud Insights link:concept_requesting_support.html[Support] page.
+Additional support information may be found from the Data Infrastructure Insights link:concept_requesting_support.html[Support] page.
 

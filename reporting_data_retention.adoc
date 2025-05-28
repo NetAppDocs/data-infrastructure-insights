@@ -1,21 +1,20 @@
 ---
 sidebar: sidebar
 permalink: reporting_data_retention.html
-summary: Cloud Insights data retention for Reporting
+summary: Data Infrastructure Insights data retention for Reporting
 keywords: reporting, cognos, data warehouse, dwh, managing, customizing, copying, retention
 ---
 
 = How historical data is retained for Reporting
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Cloud Insights retains historical data for use in Reporting based on the data marts and granularity of the data, as shown in the following table.
+Data Infrastructure Insights retains historical data for use in Reporting based on the data marts and granularity of the data, as shown in the following table.
 
 |===
 |Data mart | Measured object | Granularity | Retention period

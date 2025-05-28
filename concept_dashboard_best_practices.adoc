@@ -6,9 +6,8 @@ keywords: dashboard, hints, tips, best practice, widgets, metrics,
 ---
 
 = Best Practices for Dashboards and Widgets
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -19,9 +18,9 @@ Tips and tricks to help you get the most out of the powerful features of dashboa
 
 == Finding the Right Metric
 
-Cloud Insights acquires counters and metrics using names that sometimes differ from data collector to data collector.
+Data Infrastructure Insights acquires counters and metrics using names that sometimes differ from data collector to data collector.
 
-When searching for the right metric or counter for your dashboard widget, keep in mind that the metric you want could be under a different name from the one you are thinking of. While drop-down lists in Cloud Insights are usually alphabetical, sometimes a term may not show up in the list where you think it should. For example, terms like "raw capacity" and "used capacity" do not appear together in most lists.
+When searching for the right metric or counter for your dashboard widget, keep in mind that the metric you want could be under a different name from the one you are thinking of. While drop-down lists in Data Infrastructure Insights are usually alphabetical, sometimes a term may not show up in the list where you think it should. For example, terms like "raw capacity" and "used capacity" do not appear together in most lists.
 
 *Best practice*: Use the search feature in fields such as Filter by or places like the column selector to find what you are looking for. For example, searching for "cap" will show all metrics with "capacity" in their names, no matter where they occur in the list. You can then easily select the metrics you want from that shorter list.
 

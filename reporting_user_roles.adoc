@@ -1,14 +1,13 @@
 ---
 sidebar: sidebar
 permalink: reporting_user_roles.html
-summary: What you can do with Cloud Insights Reporting depends on your user role.
+summary: What you can do with Data Infrastructure Insights Reporting depends on your user role.
 keywords: reporting, cognos, data warehouse, dwh, users, roles, user roles
 ---
 
-= Cloud Insights Reporting User Roles
-:toc: macro
+= Data Infrastructure Insights Reporting User Roles
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -16,12 +15,12 @@ keywords: reporting, cognos, data warehouse, dwh, users, roles, user roles
 
 
 [.lead]
-If you have Cloud Insights Premium Edition with Reporting, every Cloud Insights user in your environment also has a Single Sign-On (SSO) login to the Reporting application (i.e. Cognos). Simply click the *Reports* link in the menu and you will automatically be logged in to Reporting. 
+If you have Data Infrastructure Insights Premium Edition with Reporting, every Data Infrastructure Insights user on your tenant also has a Single Sign-On (SSO) login to the Reporting application (i.e. Cognos). Simply click the *Reports* link in the menu and you will automatically be logged in to Reporting. 
 
-Your user role in Cloud Insights determines your Reporting user role:
+Your user role in Data Infrastructure Insights determines your Reporting user role:
 
 |===
-|Cloud Insights Role|Reporting Role|Reporting Permissions
+|Data Infrastructure Insights Role|Reporting Role|Reporting Permissions
 |Guest|Consumer|Can view, schedule, and run reports and set personal preferences such as those for languages and time zones. Consumers cannot create reports or perform administrative tasks.
 |User|Author|Can perform all Consumer functions as well as create and manage reports and dashboards.
 |Administrator|Administrator|Can perform all Author functions as well as all administrative tasks such as configuration of reports and the shutdown and restart of reporting tasks.
@@ -53,13 +52,13 @@ The following table shows the functions available to each Reporting role.
 
 == Setting Reporting (Cognos) email preferences
 
-NOTE: If you change your user email preferences within Cloud Insights Reporting (i.e. the Cognos application), those preferences are active _only for the current session_. Logging out of Cognos and back in again will reset your email preferences.
+NOTE: If you change your user email preferences within Data Infrastructure Insights Reporting (i.e. the Cognos application), those preferences are active _only for the current session_. Logging out of Cognos and back in again will reset your email preferences.
 
 
 ////
 == Important note for existing customers
 
-If you are new to Cloud Insights with Reporting, welcome!  There is nothing more you need to do to begin enjoying Reporting.
+If you are new to Data Infrastructure Insights with Reporting, welcome!  There is nothing more you need to do to begin enjoying Reporting.
 
 If you are a current Premium Edition customer, SSO is not automatically enabled for your environment. When you enable SSO, the administrator user for the reporting portal (Cognos) ceases to exist. This means that any reports that are in the _My Content_ folder are removed and must be reinstalled or re-created in _Team Content_. Additionally, scheduled reports will need to be configured once SSO is enabled.
 ////
@@ -67,7 +66,7 @@ If you are a current Premium Edition customer, SSO is not automatically enabled 
 
 === What steps should I take to prepare my existing environment for enabling SSO?
 
-To ensure your reports are retained, migrate all reports from _My Content_ to _Team Content_ using the following steps. You must do this prior to enabling SSO in your environment:
+To ensure your reports are retained, migrate all reports from _My Content_ to _Team Content_ using the following steps. You must do this prior to enabling SSO on your tenant:
 
 . Navigate to *Menu > Content*
 
@@ -87,7 +86,7 @@ image:Reporting_Menu.png[Cognos upper-left Menu]
 
 . Paste the reports to the newly created folder using the "Copy to" or "Move to" buttons
 
-. Once SSO is enabled for Cognos, log into Cloud Insights with the email address used to create your account.
+. Once SSO is enabled for Cognos, log into Data Infrastructure Insights with the email address used to create your account.
 
 . Navigate to the _Team Content_ folder within Cognos, and Copy or Move the previously saved reports back to _My Content_.
 

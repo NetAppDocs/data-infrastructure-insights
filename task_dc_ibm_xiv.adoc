@@ -6,9 +6,8 @@ summary: Configuring IBM XIV/A9000 data collector.
 ---
 
 = Configuring the IBM XIV/A9000 data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -21,7 +20,7 @@ IBM XIV and A9000 (CLI) data collector uses the XIV command-line interface to co
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term | Cloud Insights Term
+|Vendor/Model Term | Data Infrastructure Insights Term
 |Disk|Disk
 |Storage System|Storage
 |Storage Pool|Storage Pool

@@ -6,9 +6,8 @@ summary: Workload Security uses data collectors to collect file and user access 
 ---
 
 = Configuring the Cloud Volumes ONTAP and Amazon FSx for NetApp ONTAP collector 
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -92,7 +91,7 @@ https://download.docker.com/linux/centos/7/x86_64/stable/Packages/
 
 == Install the Workload Security Agent
 
-. Log in as Administrator or Account Owner to your Cloud Insights environment. 
+. Log in as Administrator or Account Owner to your Data Infrastructure Insights environment. 
 
 . Navigate to Workload Security *Collectors* and click the *Agents* tab. 
 

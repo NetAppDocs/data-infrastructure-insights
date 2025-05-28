@@ -6,9 +6,8 @@ keywords: data collector, NetApp, Cloud, ONTAP
 ---
 
 = NetApp Cloud Volumes ONTAP data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -45,7 +44,7 @@ This data collector supports inventory collection from Cloud Volumes ONTAP confi
 
 |Performance Poll Interval (min) |Default is 900 seconds.
 |Performance Concurrent Thread Count|Number of concurrent threads.
-|Advanced Counter Data Collection  |Check this to have Cloud Insights collect the advanced metrics from the list below.
+|Advanced Counter Data Collection  |Check this to have Data Infrastructure Insights collect the advanced metrics from the list below.
 |===
 
            

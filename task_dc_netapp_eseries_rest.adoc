@@ -6,9 +6,8 @@ summary: Configuring NetApp E-Series REST data collector.
 ---
 
 = NetApp E-Series REST data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -23,7 +22,7 @@ Cloud insight acquires the following inventory information from the NetApp E-Ser
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term | Cloud Insights Term
+|Vendor/Model Term | Data Infrastructure Insights Term
 |Disk|Disk
 |Volume Group|Disk Group
 |Storage Array|Storage
@@ -39,7 +38,7 @@ Note: These are common terminology mappings only and might not represent every c
 
 * The IP address of each controller on the array
 
-* This collector supports only E-Series model arrays with *native REST API capabilities*. The E-Series org ships an off-array, installable REST API distribution for older E-Series arrays: this collector does not support that scenario. Users with older arrays should continue to use Cloud Insights' link:task_dc_na_eseries.html[E-Series SANtricity API] collector.
+* This collector supports only E-Series model arrays with *native REST API capabilities*. The E-Series org ships an off-array, installable REST API distribution for older E-Series arrays: this collector does not support that scenario. Users with older arrays should continue to use Data Infrastructure Insights' link:task_dc_na_eseries.html[E-Series SANtricity API] collector.
 
 * The "E-Series Controller IP Addresses" field supports a comma delimited string of 2 IP/hostnames; the collector will intelligently try the second IP/hostname if the first is inaccessible.
 
@@ -76,9 +75,9 @@ The following terms apply to objects or references that you might find on NetApp
 * IP – generally will be the IP(s) or hostname(s) as configured in the data source
 * Microcode version – firmware 
 * Raw Capacity – base 2 summation of all the physical disks in the system, regardless of their role
-* Latency – a representation of what the host facing workloads are experiencing, across both reads and writes. Ideally, Cloud Insights is sourcing this value directly, but this is often not the case. In lieu of the array offering this up, Cloud Insights is generally performing an IOPs-weighted calculation derived from the individual volumes’ statistics. 
-* Throughput – the array’s total host facing throughput. Ideally sourced directly from the array, if unavailable, Cloud Insights is summing the volumes’ throughput to derive this value
-* Management – this may contain a hyperlink for the management interface of the device. Created programmatically by the Cloud Insights datasource as part of inventory reporting
+* Latency – a representation of what the host facing workloads are experiencing, across both reads and writes. Ideally, Data Infrastructure Insights is sourcing this value directly, but this is often not the case. In lieu of the array offering this up, Data Infrastructure Insights is generally performing an IOPs-weighted calculation derived from the individual volumes’ statistics. 
+* Throughput – the array’s total host facing throughput. Ideally sourced directly from the array, if unavailable, Data Infrastructure Insights is summing the volumes’ throughput to derive this value
+* Management – this may contain a hyperlink for the management interface of the device. Created programmatically by the Data Infrastructure Insights datasource as part of inventory reporting
  
 
 === Storage Pool

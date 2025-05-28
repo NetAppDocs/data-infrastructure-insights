@@ -1,22 +1,21 @@
 ---
 sidebar: sidebar
 permalink: concept_asset_alerts_section.html
-summary: Overview of the asset page Related Alerts section in Cloud Insights.
+summary: Overview of the asset page Related Alerts section in Data Infrastructure Insights.
 keywords: asset, landing page, violations, Alerts, 
 
 ---
 
 = Asset Page Related Alerts section
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-You can use the Related Alerts section of an asset page to see any alerts that occur in your environment as a result of a monitor assigned to an asset. Monitors generate alerts based on conditions you set, and enable you to identify the implication and analyze the impact and root cause of the problem in a manner that enables rapid and effective correction.
+You can use the Related Alerts section of an asset page to see any alerts that occur on your tenant as a result of a monitor assigned to an asset. Monitors generate alerts based on conditions you set, and enable you to identify the implication and analyze the impact and root cause of the problem in a manner that enables rapid and effective correction.
 
 The following example shows a typical Related Alerts section that displays on an asset page:
 

@@ -6,16 +6,15 @@ summary: Hadoop data collector configuration
 ---
 
 = Hadoop Data Collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Cloud Insights uses this data collector to gather metrics from Hadoop.
+Data Infrastructure Insights uses this data collector to gather metrics from Hadoop.
 
 == Installation
 
@@ -107,9 +106,9 @@ You can choose a different port for JMX (8005 above) and Jolokia (7805). If you 
 
 The following objects and their counters are collected:
 
-[cols="<.<,<.<,<.<,<.<"]
+[cols="<.<,<.<,<.<"]
 |===
-|Object:|Identifiers:|Attributes: |Datapoints:
+|Object:|Identifiers:|Attributes:
 
 |Hadoop Secondary NameNode
 
@@ -122,32 +121,7 @@ Node IP
 Compile Info
 Version
 
-|GC Count
-GC Copies Count
-GC Marks Sweep Compact Count
-GC Number Info Threshold Exceeded
-GC Number Warning Threshold Exceeded
-GC Time
-GC Copy Time
-GC Marks Sweep Compact Time
-GC Total Extra Sleep Time
-Logs Error Count
-Logs Fatal Count
-Logs Info Count
-Logs Warn Count
-Memory Heap Committed
-Memory Heap Max
-Memory Heap Used
-Memory Max
-Memory Non Heap Committed
-Memory Non Heap Max
-Memory Non Heap Used
-Threads Blocked
-Threads New
-Threads Runnable
-Threads Terminated
-Threads Timed Waiting
-Threads Waiting
+
 
 |Hadoop NodeManager
 
@@ -158,62 +132,7 @@ Server
 |Node Name
 Node IP
 
-|Containers Allocated
-Memory Allocate
-Memory Allocated Oportunistic
-Virtual Cores Allocated Oportunistic
-Virtual Cores Allocated
-Memory Available
-Virtual Cores Available
-Directories Bad Local
-Directories Bad Log
-Cache Size Before Clean
-Container Launch Duration Avg Time
-Container Launch Duration Number Of Operations
-Containers Completed
-Containers Failed
-Containers Initing
-Containers Killed
-Containers Launched
-Containers Reiniting
-ContaIners Rolled Back on Failure
-Containers Running
-Disk Utilization Good Local Directories
-Disk Utilization Good Log Directories
-Bytes Deleted Private
-Bytes Deleted Public
-Containers Running Opportunistic
-Bytes Deleted Total
-Shuffle Connections
-Shuffle Output Bytes
-Shuffle Outputs Failed
-Shuffle Outputs Ok
-GC Count
-GC Copies Count
-GC Marks Sweep Compact Count
-GC Number Info Threshold Exceeded
-GC Number Warning Threshold Exceeded
-GC Time
-GC Copy Time
-GC Marks Sweep Compact Time
-GC Total Extra Sleep Time
-Logs Error Count
-Logs Fatal Count
-Logs Info Count
-Logs Warn Count
-Memory Heap Committed
-Memory Heap Max
-Memory Heap Used
-Memory Max
-Memory Non Heap Committed
-Memory Non Heap Max
-Memory Non Heap Used
-Threads Blocked
-Threads New
-Threads Runnable
-Threads Terminated
-Threads Timed Waiting
-Threads Waiting
+
 
 |Hadoop ResourceManager
 
@@ -224,78 +143,7 @@ Server
 |Node Name
 Node IP
 
-|ApplicationMaster Launch Delay Avg
-ApplicationMaster Launch Delay Number
-ApplicationMaster Register Delay Avg
-ApplicationMaster Register Delay Number
-NodeManager Active Number
-NodeManager Decomissioned Number
-NodeManager Decomissioning Number
-NodeManager Lost Number
-NodeManager Rebooted Number
-NodeManager Shutdown Number
-NodeManager Healthy Number
-NodeManager Memory Limit
-NodeManager Virtual Cores Limit
-Used Capacity
-Active Applications
-Active Users
-Aggregate Containers Allocated
-Aggregate Containers Preempted
-Aggregate Containers Released
-Aggregate Memory Seconds Preempted
-Aggregate Node Local Containers Allocated
-Aggregate Off Switch Containers Allocated
-Aggregate Ack Local Containers Allocated
-Aggregate Virtual Cores Seconds Preempted
-Containers Allocated
-Memory Allocated
-Virtual Cores Allocated
-Application Attempt First Container Allocation Delay Avg Time
-Application Attempt First Container Allocation Delay Number
-Applications Completed
-Applications Failed
-Applications Killed
-Applications Pending
-Applications Running
-Applications Submitted
-Memory Available
-Virtual Cores Available
-Containers Pending
-Memory Pending
-Virtual Cores Pending
-Containers Reserved
-Memory Reserved
-Virtual Cores Reserved
-Memory ApplicationMaster Used
-Virtual Cores ApplicationMaster Used
-Capacity Used
-GC Count
-GC Copies Count
-GC Marks Sweep Compact Count
-GC Number Info Threshold Exceeded
-GC Number Warning Threshold Exceeded
-GC Time
-GC Copy Time
-GC Marks Sweep Compact Time
-GC Total Extra Sleep Time
-Logs Error Count
-Logs Fatal Count
-Logs Info Count
-Logs Warn Count
-Memory Heap Committed
-Memory Heap Max
-Memory Heap Used
-Memory Max
-Memory Non Heap Committed
-Memory Non Heap Max
-Memory Non Heap Used
-Threads Blocked
-Threads New
-Threads Runnable
-Threads Terminated
-Threads Timed Waiting
-Threads Waiting
+
 
 |Hadoop DataNode
 
@@ -308,45 +156,7 @@ Node IP
 Cluster ID
 Version
 
-|Transceiver Count
-Transmits in Progress
-Cache Capacity
-Cache Used
-Capacity
-DFS Used
-Estimated Capacity Lost Total
-Last Volume Failure Rate
-Blocks Number Cached
-Blocks Number Failed to Cache
-Blocks Number Failed to Uncache
-Volumes Number Failed
-Capacity Remaining
-GC Count
-GC Copies Count
-GC Marks Sweep Compact Count
-GC Number Info Threshold Exceeded
-GC Number Warning Threshold Exceeded
-GC Time
-GC Copy Time
-GC Marks Sweep Compact Time
-GC Total Extra Sleep Time
-Logs Error Count
-Logs Fatal Count
-Logs Info Count
-Logs Warn Count
-Memory Heap Committed
-Memory Heap Max
-Memory Heap Used
-Memory Max
-Memory Non Heap Committed
-Memory Non Heap Max
-Memory Non Heap Used
-Threads Blocked
-Threads New
-Threads Runnable
-Threads Terminated
-Threads Timed Waiting
-Threads Waiting
+
 
 |Hadoop NameNode
 
@@ -366,136 +176,7 @@ Compile Info
 Distinct Version Count
 Version
 
-|Block Capacity
-Blocks Total
-Capacity Total
-Capacity Used
-Capacity Used Non DFS
-Blocks Corrupt
-Estimated Capacity Lost Total
-Blocks Excess
-Heartbeats Expired
-Files Total
-File System Lock Queue Length
-Blocks Missing
-Blocks Missing Replication with Factor One
-Clients Active
-Data Nodes Dead
-Data Nodes Decommissioning Dead
-Data Nodes Decommissioning Live
-Data Nodes Decomissioning
-Encryption Zones Number
-Data Nodes Entering Maintenance
-Files Under Construction
-Data Nodes Dead in Maintenance
-Data Nodes Live in Maintenance
-Data Nodes Live
-Storages Stale
-Replication Pending Timeouts
-Data Node Message Pending
-Blocks Pending Deletion
-Blocks Pending Replication
-Blocks Misreplicated Postponed
-Blocks Scheduled Replication
-Snapshots
-Snapshottable Directories
-Data Nodes Stale
-Files Total
-Load Total
-Sync Count Total
-Transactions Since Last Checkpoint
-Transactions Since Last Log Roll
-Blocks Underreplicated
-Volume Failures Total
-Sync Times Total
-Objects Max
-Operations Block Add
-Operations Allow Snapshots
-Operations Block Batched
-Operations Block Queued
-Operations Block Received and Deleted
-Operations Report Avg Time
-Operations Block Report Number
-Cache Report Avg Time
-Cache Report Number
-Operations Create File
-Operations Create Snapshots
-Operations Create SymLink
-Operations Delete File
-Operations Delete Snapshot
-Operations Disallow Snapshot
-Operations File In/Out
-Files Appended
-Files Created
-Files Deleted
-Files Listing
-Files Renamed
-Files Truncated
-File System Load Time
-Operations Generate EDEK Avg Time
-Operations Generate EDEK 
-Operations Get Additional Data Node
-Blocks Get Locations
-Get Edit Avg Time
-Get Edit Number
-Get Image Avg Time
-Get Image Number
-Operations Get Link Target
-Operations Get Listing
-Operations List Snapshottable Dir
-Replication Not Scheduled Number
-Put Image Avg Time
-Put Image Number
-Operations Rename Snapshots
-Resource Check Time Avg Time
-Resource Check Time Number
-Safe Mode Time
-Operations Snapshot Diff Report
-Operations Storage Block Report
-Replication Successful
-Sync Avg Time
-Operations Sync Number
-Replication Timeout
-Operations Total
-Transaction Avg Time
-Transaction Batchd In Sync
-Transaction Number
-EDEK Warmup Time Avg
-EDEK Warmup Number
-Block Pool Used Space
-Cache Capacity
-Cache Used
-Capacity Free
-Block Pool Used Percent
-Percent Remaining
-Percent Used
-Threads
-GC Count
-GC Copies Count
-GC Marks Sweep Compact Count
-GC Number Info Threshold Exceeded
-GC Number Warning Threshold Exceeded
-GC Time
-GC Copy Time
-GC Marks Sweep Compact Time
-GC Total Extra Sleep Time
-Logs Error Count
-Logs Fatal Count
-Logs Info Count
-Logs Warn Count
-Memory Heap Committed
-Memory Heap Max
-Memory Heap Used
-Memory Max
-Memory Non Heap Committed
-Memory Non Heap Max
-Memory Non Heap Used
-Threads Blocked
-Threads New
-Threads Runnable
-Threads Terminated
-Threads Timed Waiting
-Threads Waiting
+
 
 |Hadoop JobHistoryServer
 
@@ -506,32 +187,7 @@ Server
 |Node Name
 Node IP
 
-|GC Count
-GC Copies Count
-GC Marks Sweep Compact Count
-GC Number Info Threshold Exceeded
-GC Number Warning Threshold Exceeded
-GC Time
-GC Copy Time
-GC Marks Sweep Compact Time
-GC Total Extra Sleep Time
-Logs Error Count
-Logs Fatal Count
-Logs Info Count
-Logs Warn Count
-Memory Heap Committed
-Memory Heap Max
-Memory Heap Used
-Memory Max
-Memory Non Heap Committed
-Memory Non Heap Max
-Memory Non Heap Used
-Threads Blocked
-Threads New
-Threads Runnable
-Threads Terminated
-Threads Timed Waiting
-Threads Waiting
+
 |===
 
 

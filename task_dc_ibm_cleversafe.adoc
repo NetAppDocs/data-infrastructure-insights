@@ -6,26 +6,25 @@ summary: Configuring IBM Cleversafe data collector.
 ---
 
 = IBM Cleversafe data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead] 
-Cloud Insights uses this data collector to discover inventory and performance data for IBM Cleversafe storage systems.
+Data Infrastructure Insights uses this data collector to discover inventory and performance data for IBM Cleversafe storage systems.
 
 NOTE: IBM Cleversafe is metered at a different Raw TB to Managed Unit rate. Every 40 TB of unformatted IBM Cleversafe capacity is charged as 1 link:concept_subscribing_to_cloud_insights.html#pricing[Managed Unit (MU)].
 
 == Terminology
 
-Cloud Insights acquires the following inventory information from the IBM Cleversafe data collector. For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires the following inventory information from the IBM Cleversafe data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term |Cloud Insights Term
+|Vendor/Model Term |Data Infrastructure Insights Term
 |Storage Pool|Storage Pool
 |Container|Internal Volume
 |Container|File Share

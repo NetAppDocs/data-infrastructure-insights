@@ -6,9 +6,8 @@ summary: Configuring IBM SAN Volume Controller data collector.
 ---
 
 = Configuring the IBM SAN Volume Controller data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -17,15 +16,15 @@ summary: Configuring IBM SAN Volume Controller data collector.
 [.lead]
 The IBM SAN Volume Controller (SVC) data collector collects inventory and performance data using SSH, supporting a variety of devices that run the SVC operating system.
 
-The list of supported devices includes models such as the SVC, the v7000, the v5000, and the v3700. Refer to the Cloud Insights support matrix for supported models and firmware versions.
+The list of supported devices includes models such as the SVC, the v7000, the v5000, and the v3700. Refer to the Data Infrastructure Insights support matrix for supported models and firmware versions.
 
 == Terminology
 
-Cloud Insights acquires the following inventory information from the IBM SVC data collector. For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires the following inventory information from the IBM SVC data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term | Cloud Insights Term
+|Vendor/Model Term | Data Infrastructure Insights Term
 |Drive|Disk
 |Cluster|Storage
 |Node|Storage Node
@@ -51,7 +50,7 @@ Note: Alternatively, enable data collection using the SVC management user interf
 ////
 * IP address of each SVC cluster
 * Port 22 available 
-* Public and private key pair that you either generate with Cloud Insights or reuse a keypair already in use on your SVC
+* Public and private key pair that you either generate with Data Infrastructure Insights or reuse a keypair already in use on your SVC
 +
 If you are reusing an existing keypair, you must convert them from Putty format to OpenSSH format.
 

@@ -2,20 +2,19 @@
 sidebar: sidebar
 permalink: insights_shared_resources_under_stress.html
 keywords: insight, greedy, degraded, impacted, impacting, impactful, impact, resources, consuming, workload
-summary: Insights give you a look into how resources impact other resources in your environment.
+summary: Insights give you a look into how resources impact other resources on your tenant.
 ---
 
 = Insights: Shared Resources Under Stress
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-High-impact workloads can reduce the performance of other workloads in a shared resource. This puts the shared resource under stress. Cloud Insights provides tools to help you investigate resource saturation and impact in your environment.
+High-impact workloads can reduce the performance of other workloads in a shared resource. This puts the shared resource under stress. Data Infrastructure Insights provides tools to help you investigate resource saturation and impact on your tenant.
 
 ////
 NOTE: The _Shared Resources Under Stress_ Insight is considered a _Preview_ feature and is therefore subject to change.
@@ -31,7 +30,7 @@ A *Demanding Workload* is a workload that is currently identified as impacting o
 
 An *Impacted Workload* is a workload that is affected by a high-consuming workload in the shared Storage Pool. These workloads are experiencing reduced IOPS and/or higher latency, caused by the Demanding Workloads.
 
-Note that if Cloud Insights has not discovered the leading compute workload, the volume or internal volume itself will be recognized as the workload. This applies to both demanding and impacted workloads.
+Note that if Data Infrastructure Insights has not discovered the leading compute workload, the volume or internal volume itself will be recognized as the workload. This applies to both demanding and impacted workloads.
 
 *Shared Resource Saturation* is the ratio of impacting IOPS to _baseline_.
 
@@ -47,7 +46,7 @@ To start looking into Demanding and impacted workloads in your shared resources,
 //image:Shared_resources_Under_Stress_menu.png[Workloads List]
 image:InsightsMenu.png[Insights Menu]
 
-Cloud Insights displays a list of any workloads where a saturation has been detected. Note that Cloud Insights will show workloads where at least one _demanding resource_ *or* _impacted resource_ has been detected.
+Data Infrastructure Insights displays a list of any workloads where a saturation has been detected. Note that Data Infrastructure Insights will show workloads where at least one _demanding resource_ *or* _impacted resource_ has been detected.
 
 Click on a workload to view the details page for it. The top chart shows the activity on the shared resource (for example, a storage pool) on which the contention/saturation is occurring.
 
@@ -68,7 +67,7 @@ Below each table is a list of workloads and/or resources affecting or affected b
 
 == What do I do to resolve saturation?
 
-There are a number of steps you can take to reduce or eliminate the chance of saturation in your environment. These are shown by expanding the *+Show Recommendations* link on the page.  Here are a few things you can try.
+There are a number of steps you can take to reduce or eliminate the chance of saturation on your tenant. These are shown by expanding the *+Show Recommendations* link on the page.  Here are a few things you can try.
 
 * Move high-IOPS consumers
 +

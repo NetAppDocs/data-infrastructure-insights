@@ -6,9 +6,8 @@ summary: How to create an annotation.
 ---
 
 = Using annotations
-:toc: macro
 :hardbreaks: AA
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -21,9 +20,9 @@ You create annotations and assign them to assets you monitor. Annotations are no
 
 == Defining annotations
 
-Using annotations, you can add custom business-specific data that matches your business needs to assets. While Cloud Insights provides a set of default annotations, such as asset life cycle (birthday or end of life), building or data center location, and tier, you might find that you want to view data in other ways.
+Using annotations, you can add custom business-specific data that matches your business needs to assets. While Data Infrastructure Insights provides a set of default annotations, such as asset life cycle (birthday or end of life), building or data center location, and tier, you might find that you want to view data in other ways.
 
-The data in custom annotations supplements device data already collected, such as switch manufacturer, number of ports, and performance statistics. The data you add using annotations is not discovered by Cloud Insights.
+The data in custom annotations supplements device data already collected, such as switch manufacturer, number of ports, and performance statistics. The data you add using annotations is not discovered by Data Infrastructure Insights.
 
 .Before you begin
 
@@ -36,7 +35,7 @@ Use the following steps to create an annotation.
 
 .Steps
 
-. In the Cloud Insights menu, click *Manage > Annotations*
+. In the Data Infrastructure Insights menu, click *Observability > Enrich > Annotations*
 . Click *+ Annotation* to create a new annotation.
 . Enter a Name, Description, and type for the new annotation.
 +
@@ -56,7 +55,7 @@ Assigning annotations to assets helps you sort, group, and report on assets in w
 
 .Steps
 
-. Log in to your Cloud Insights environment.
+. Log in to your Data Infrastructure Insights environment.
 . Locate the asset to which you want to apply the annotation.
 ** You can locate assets by querying, choosing from a dashoard widget, or search. When you have located the asset you want, click the link to open the asset's landing page.
 . On the asset page, in the User Data section, click *+ Annotation*.
@@ -72,22 +71,8 @@ If the annotation is of list type for which the _Add new values on the fly_ opti
 
 == Assigning annotations using annotation rules
 
-To automatically assign annotations to assets based on criteria that you define, you configure annotation rules. Cloud Insights assigns the annotations to assets based on these rules. Cloud Insights also provides two default annotation rules, which you can modify to suit your needs or remove if you do not want to use them.
+To automatically assign annotations to assets based on criteria that you define, you configure annotation rules. Data Infrastructure Insights assigns the annotations to assets based on these rules. Data Infrastructure Insights also provides two default annotation rules, which you can modify to suit your needs or remove if you do not want to use them.
 
-////
-=== Default storage annotation rules
-
-To expedite the assignment of storage annotations to your resources, Cloud Insights includes 21 default annotation rules, which associate a tier level with a storage tier model. All of your storage resources are automatically associated with a tier upon acquisition of the assets in your environment.
-
-The default annotation rules apply tier annotations in the following way:
-
-Tier 1, storage quality tier::
-The Tier 1 annotation is applied to the following vendors and their specified families: EMC (Symmetrix), HDS (HDS9500V, HDS9900, HDS9900V, R600, R700, USP r, USP V), IBM (DS8000), NetApp (FAS6000 or FAS6200), and Violin (Memory).
-Tier 2, storage quality tier::
-The Tier 2 annotation is applied to the following vendors and their specified families: HP (3PAR StoreServ or EVA), EMC (CLARiiON), HDS (AMS or D800), IBM (XIV), and NetApp (FAS3000, FAS3100, and FAS3200).
-
-You can edit the default settings of these rules to match your tier requirements, or you can remove them if you do not need them.
-////
 
 === Creating annotation rules
 

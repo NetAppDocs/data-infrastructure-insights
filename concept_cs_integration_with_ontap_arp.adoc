@@ -6,9 +6,8 @@ keywords:  ransomware, ARP, Protection, Security
 ---
 
 = Integration with ONTAP Autonomous Ransomware Protection
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -77,8 +76,8 @@ Known problems and their resolutions are described in the following table.
 
 |===
 |Problem: | Resolution:
-|Email alerts are received 24 hrs after an attack is detected. In the UI, the alerts are shown 24 hrs before that when the emails are received by Cloud Insights Workload Security.
-|When ONTAP sends the _Ransomware Detected_ Event to Cloud Insights Workload Security (i.e. Workload Security), the email is sent. The Event contains a list of attacks and its timestamps. The Workload Security UI displays the alert timestamp of the first file attacked. ONTAP sends the _Ransomware Detected_ Event to Cloud Insights when a certain number of files are encoded.
+|Email alerts are received 24 hrs after an attack is detected. In the UI, the alerts are shown 24 hrs before that when the emails are received by Data Infrastructure Insights Workload Security.
+|When ONTAP sends the _Ransomware Detected_ Event to Data Infrastructure Insights Workload Security (i.e. Workload Security), the email is sent. The Event contains a list of attacks and its timestamps. The Workload Security UI displays the alert timestamp of the first file attacked. ONTAP sends the _Ransomware Detected_ Event to Data Infrastructure Insights when a certain number of files are encoded.
 Therefore, there may be a difference between the time the alert is displayed in the UI and the time the email is sent.
 
 

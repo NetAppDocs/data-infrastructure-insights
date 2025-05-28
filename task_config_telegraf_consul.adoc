@@ -6,22 +6,21 @@ summary: Consul data collector configuration
 ---
 
 = Consul Data Collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Cloud Insights uses this data collector to gather metrics from Consul.
+Data Infrastructure Insights uses this data collector to gather metrics from Consul.
 
 == Installation
 
 . From *Observability > Collectors*, click *+Data Collector*. Choose Consul.
 +
-If you haven't configured an Agent for collection, you are prompted to link:task_config_telegraf_agent.html[install an agent] in your environment.
+If you haven't configured an Agent for collection, you are prompted to link:task_config_telegraf_agent.html[install an agent] on your tenant.
 +
 If you have an agent already configured, select the appropriate Operating System or Platform and click *Continue*.
 

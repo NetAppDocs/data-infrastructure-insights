@@ -6,9 +6,8 @@ summary: Configuring DELL EMC ScaleIO/PowerFlex data collector.
 ---
 
 = DELL EMC ScaleIO / PowerFlex data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -19,11 +18,11 @@ The ScaleIO/PowerFlex data collector collects inventory information from ScaleIO
 
 == Terminology 
 
-Cloud Insights acquires the following inventory information from the ScaleIO/PowerFlex data collector. For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires the following inventory information from the ScaleIO/PowerFlex data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term|Cloud Insights Term 
+|Vendor/Model Term|Data Infrastructure Insights Term 
 |MDM (Meta Data Manager) Cluster|Storage
 |SDS (ScaleIO/PowerFlex Data Server)|Storage Node
 |Storage Pool|Storage Pool

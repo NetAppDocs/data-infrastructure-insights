@@ -1,33 +1,31 @@
 ---
 sidebar: sidebar
 permalink: task_create_application.html
-summary: You define applications which you then apply to assets in your environemnt as needed.
+summary: You define applications which you then apply to assets on your tenant as needed.
 keywords: application, create application,
 ---
 
 = Creating Applications
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-To track data associated with specific applications running in your environment, you can define the applications in Cloud Insights.
+To track data associated with specific applications running on your tenant, you can define the applications in Data Infrastructure Insights.
 
-.Before you begin
-
-If you want to associate the application with a business entity, you must create the business entity before you define the application.
 
 .About this task
 
-Cloud Insights allows you to track data from assets associated with applications for things like usage or cost reporting. 
+Data Infrastructure Insights allows you to track data from assets associated with applications for things like usage or cost reporting. 
 
 .Steps
 
-. In the Cloud Insights menu, click *Manage > Applications*.
+
+. In the Data Infrastructure Insights menu, click *Observability > Enrich > Applications*. Select 
+
 +
 The Add Application dialog box displays.
 

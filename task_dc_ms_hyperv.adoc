@@ -5,9 +5,8 @@ keywords: data collector, Microsoft, Hyper-V
 summary: Configuring Microsoft Hyper-V data collector.
 ---
 = Microsoft Hyper-V data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -18,11 +17,11 @@ The Microsoft Hyper-V data collector acquires inventory and performance data fro
 
 == Terminology
 
-Cloud Insights acquires the following inventory information from the Microsoft Hyper-V (WMI). For each asset type acquired by Cloud Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires the following inventory information from the Microsoft Hyper-V (WMI). For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term|Cloud Insights Term 
+|Vendor/Model Term|Data Infrastructure Insights Term 
 |Virtual Hard Disk|Virtual Disk
 |Host|Host
 |Virtual Machine|Virtual Machine
@@ -43,7 +42,7 @@ The following are required to configure this data collector:
 * WinRM needs to be enabled and listening on all hypervisors
 * Port requirements: Port 135 via WMI & Dynamic TCP ports assigned 1024-65535 for Windows 2003 and older and 49152-65535 for Windows 2008. 
 * DNS resolution must succeed, even if the data collector is pointed at only an IP address
-* Each Hyper-V hypervisor must have “Resource Metering” turned on for every VM, on every host. This allows each hypervisor to have more data available for Cloud Insights on each guest. If this is not set, fewer performance metrics are acquired for each guest. More information on Resource metering can be found in the Microsoft documentation:
+* Each Hyper-V hypervisor must have “Resource Metering” turned on for every VM, on every host. This allows each hypervisor to have more data available for Data Infrastructure Insights on each guest. If this is not set, fewer performance metrics are acquired for each guest. More information on Resource metering can be found in the Microsoft documentation:
 +
 link:https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831661(v=ws.11)[Hyper-V Resource Metering Overview]
 +
@@ -52,7 +51,7 @@ link:https://docs.microsoft.com/en-us/powershell/module/hyper-v/enable-vmresourc
 NOTE: The Hyper-V data collector requires a Windows Acquisition Unit. 
 
 ////
-Best Practice: It is highly recommended for each Hyper-V hypervisor to have “Resource Metering” turned on for every VM, on every host. This allows each hypervisor to have more data available for Cloud Insights on each guest. If this is not set, fewer performance metrics are acquired for each guest. More information on Resource metering can be found in the link:https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831661(v=ws.11)[Microsoft documentation]. 
+Best Practice: It is highly recommended for each Hyper-V hypervisor to have “Resource Metering” turned on for every VM, on every host. This allows each hypervisor to have more data available for Data Infrastructure Insights on each guest. If this is not set, fewer performance metrics are acquired for each guest. More information on Resource metering can be found in the link:https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831661(v=ws.11)[Microsoft documentation]. 
 ////
 
 == Configuration

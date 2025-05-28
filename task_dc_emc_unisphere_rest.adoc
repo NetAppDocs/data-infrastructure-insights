@@ -6,9 +6,8 @@ summary: Configuring Dell EMC Unisphere REST data collector.
 ---
 
 = Configuring the Dell EMC Unisphere REST data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -19,18 +18,18 @@ This data collector acquires inventory and performance data from Dell EMC Unisph
 
 Please note that Dell/EMC did not introduce per volume statistics until Unisphere 10.0 - this data collector support 9.2.0+, but will not be able to collect volume statistics as they do not exist.
 
-One Unisphere for Vmax/PowerMax instance may be managing one or more Symmetrix Vmax 3 or higher storage arrays - this collector will default to attempting to discover all of them which are "local" to that Unisphere instance. If a Unisphere instance sees "remote" arrays (i.e those connected via SRDF replication), they will be ignored, and to discover those you should create an additional Unisphere collector in Cloud Insights pointed at whichever Unisphere instance in that site sees them as local.
+One Unisphere for Vmax/PowerMax instance may be managing one or more Symmetrix Vmax 3 or higher storage arrays - this collector will default to attempting to discover all of them which are "local" to that Unisphere instance. If a Unisphere instance sees "remote" arrays (i.e those connected via SRDF replication), they will be ignored, and to discover those you should create an additional Unisphere collector in Data Infrastructure Insights pointed at whichever Unisphere instance in that site sees them as local.
 
 For configuration, the data collector requires an IP address/FQDN of the Unisphere server, TCP connectivity to port 8443, and a username and password.
 
 ////
 == Terminology
 
-Cloud Insights acquires the following inventory information from the Unisphere data collector. For each asset type acquired, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires the following inventory information from the Unisphere data collector. For each asset type acquired, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 [cols=2*, options="header", cols"50,50"]
 |===
-|Vendor/Model Term | Cloud Insights Term
+|Vendor/Model Term | Data Infrastructure Insights Term
 |Cluster|Storage
 |Port controller|Storage Node
 |Masking View|Volume Map, Volume Mask

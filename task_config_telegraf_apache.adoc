@@ -6,16 +6,15 @@ summary: Apache data collector configuration
 ---
 
 = Apache Data Collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-This data collector allows collection of data from Apache servers in your environment.
+This data collector allows collection of data from Apache servers on your tenant.
 
 .Pre-requisites
 

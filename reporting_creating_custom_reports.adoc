@@ -6,9 +6,8 @@ keywords: reporting, cognos, data warehouse, dwh, ad-hoc, custom
 ---
 
 = Creating Custom Reports
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -18,9 +17,9 @@ keywords: reporting, cognos, data warehouse, dwh, ad-hoc, custom
 
 You can use the report authoring tools to create custom reports. After creating reports, you can save them and run them on a regular schedule. The results of reports can be automatically sent by email to yourself and others.
 
-NOTE: The Reporting feature is available in Cloud Insights link:concept_subscribing_to_cloud_insights.html[Premium Edition].
+NOTE: The Reporting feature is available in Data Infrastructure Insights link:concept_subscribing_to_cloud_insights.html[Premium Edition].
 
-The examples in this section show the following process, which can be used for any of the Cloud Insights Reporting data models:
+The examples in this section show the following process, which can be used for any of the Data Infrastructure Insights Reporting data models:
 
 * Identifying a question to be answered with a report
 * Determining the data needed to support the results
@@ -33,7 +32,7 @@ For example, if you do not finish the device identification process, your capaci
 Before you design your reports, complete the following tasks:
 
 * Configure all link:task_configure_data_collectors.html[data collectors] properly. 
-* Enter annotations (such as tiers, data centers, and business units) on devices and resources in your environment. It is beneficial to have annotations stable before generating reports, because Cloud Insights Reporting collects historical information.
+* Enter annotations (such as tiers, data centers, and business units) on devices and resources on your tenant. It is beneficial to have annotations stable before generating reports, because Data Infrastructure Insights Reporting collects historical information.
 //* Configure OnCommand Insight Data Warehouse to accept the data from the OnCommand Insight server in the Extract, Transform, and Load (ETL) process.
 
 == Report Creation Process
@@ -70,16 +69,16 @@ Several tips might be helpful when you are designing reports.
 
 * Determine whether you need to use current or historical data. 
 +
-Most reports only need to report on the latest data available in the Cloud Insights.
+Most reports only need to report on the latest data available in the Data Infrastructure Insights.
 
-* Cloud Insights Reporting provides historical information on capacity and performance, but not on inventory.
+* Data Infrastructure Insights Reporting provides historical information on capacity and performance, but not on inventory.
 * Everybody sees all data; however, you might need to limit data to specific audiences.
 +
 To segment the information for different users, you can create reports and set access permissions on them.
 
 == Reporting data models
 
-Cloud Insights includes several data models from which you can either select predefined reports or create your own custom report.
+Data Infrastructure Insights includes several data models from which you can either select predefined reports or create your own custom report.
 
 Each data model contains a simple data mart and an advanced data mart:
 
@@ -150,11 +149,11 @@ Enables you to report your virtual environment and its capacity usage. This data
 * What do we need to purchase based on consumption trends?
 * What are my storage efficiency savings achieved by using storage thin provisioning and deduplication technologies?
 
-Capacities in the VM Capacity data model are taken from virtual disks (VMDKs). This means that the provisioned size of a VM using the VM Capacity data model is the size of its virtual disks. This is different from the provisioned capacity in the Virtual Machines view in Cloud Insights, which shows the provisioned size for the VM itself.
+Capacities in the VM Capacity data model are taken from virtual disks (VMDKs). This means that the provisioned size of a VM using the VM Capacity data model is the size of its virtual disks. This is different from the provisioned capacity in the Virtual Machines view in Data Infrastructure Insights, which shows the provisioned size for the VM itself.
 
 ==== Volume Capacity data model
 
-Enables you to analyze all aspects of the volumes in your environment and organize data by vendor, model, tier, service level, and data center. 
+Enables you to analyze all aspects of the volumes on your tenant and organize data by vendor, model, tier, service level, and data center. 
 
 You can view the capacity related to orphaned volumes, unused volumes, and protection volumes (used for replication). You can also see different volume technologies (iSCSI or FC), and compare virtual volumes to non-virtual volumes for array virtualization issues. 
 
@@ -258,7 +257,7 @@ The Performance data model includes information that helps you determine the app
 
 === Storage Efficiency data model
 
-Enables you to track the storage efficiency score and potential over time. This data model stores measurements of not only the provisioned capacity, but also the amount that is used or consumed (the physical measurement). For example, when thin provisioning is enabled, Cloud Insights indicates how much capacity is taken from the device. You can also use this model to determine efficiency when deduplication is enabled. You can answer various questions using the Storage Efficiency data mart: 
+Enables you to track the storage efficiency score and potential over time. This data model stores measurements of not only the provisioned capacity, but also the amount that is used or consumed (the physical measurement). For example, when thin provisioning is enabled, Data Infrastructure Insights indicates how much capacity is taken from the device. You can also use this model to determine efficiency when deduplication is enabled. You can answer various questions using the Storage Efficiency data mart: 
 
 * What is our storage efficiency savings as a result of implementing thin provisioning and deduplication technologies?
     

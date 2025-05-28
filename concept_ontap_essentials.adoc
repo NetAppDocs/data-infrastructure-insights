@@ -6,9 +6,8 @@ keywords: dashboard, widget, ontap, overview, insight
 ---
 
 = ONTAP Essentials
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -28,12 +27,12 @@ ONTAP Essentials requires at least one working ONTAP data collector with data co
 
 == Overview 
 
-To begin exploring, select *ONTAP Essentials* from the main Cloud Insights menu.
+To begin exploring, select *ONTAP Essentials* from the main Data Infrastructure Insights menu.
 
 //image:ONTAP_Essentials_Overview_Sept.png[Overview dashboard for ONTAP Essentials]
 image:OE_Overview.png[Overview dashboard for ONTAP Essentials]
 
-The *Overview* dashboard displays useful information like the number of clusters in your environment with their overall capacity and performance percentages. You will also see predictive data regarding the number of expected days until storage capacity or performance capacity runs out of space. Additionally, if any controllers in your infrastructure are running with their CPU at more than 65%--potentially putting your cluster at risk in case of failover--ONTAP Essentials shows those as "Hot" controllers.
+The *Overview* dashboard displays useful information like the number of clusters on your tenant with their overall capacity and performance percentages. You will also see predictive data regarding the number of expected days until storage capacity or performance capacity runs out of space. Additionally, if any controllers in your infrastructure are running with their CPU at more than 65%--potentially putting your cluster at risk in case of failover--ONTAP Essentials shows those as "Hot" controllers.
 
 Informative graphs give you a look into performance over time as well as breakdowns of capacity usage. Each of these graphs or data points can be used as a starting point for exploration or investigation. 
 
@@ -131,7 +130,7 @@ image:OE_Cluster_Slideout.png[Cluster Detail Slideout Panel]
 Storage VM details show audit and SSH information:
 image:OE_Storage_Slideout.png[Storage tab]
 
-Anti-Ransomware details show whether a storage VM is protected by ONTAP's Anti-Ransomware Protection or Cloud Insights Workload Security. Note that the ONTAP ARP column displays the current status of ONTAP's on-board Anti-Ransomware Protection, which is configured on the ONTAP system. Cloud Insights Workload Security can be enabled by selecting "Protect" in that column.
+Anti-Ransomware details show whether a storage VM is protected by ONTAP's Anti-Ransomware Protection or Data Infrastructure Insights Workload Security. Note that the ONTAP ARP column displays the current status of ONTAP's on-board Anti-Ransomware Protection, which is configured on the ONTAP system. Data Infrastructure Insights Workload Security can be enabled by selecting "Protect" in that column.
 image:OE_Anti-Ransomware_Slideout.png[Anti-Ransomware tab]
 
 
@@ -140,7 +139,7 @@ image:OE_Anti-Ransomware_Slideout.png[Anti-Ransomware tab]
 
 == Alerts
 
-Here you can view the Active alerts in your environment and quickly drill down into potential problems. Select the _Resolved_ tab to view alerts that have been resolved.
+Here you can view the Active alerts on your tenant and quickly drill down into potential problems. Select the _Resolved_ tab to view alerts that have been resolved.
 
 //image:ONTAP_Essentials_Alerts_Menu.png[ONTAP Alerts Menu]
 //image:ONTAP_Essentials_Alerts_Page.png[ONTAP Alerts page example showing active alerts]
@@ -166,7 +165,7 @@ image:ONTAP_Essentials_Alerts_Page.png[ONTAP Essentials Networking FC page showi
 
 == Workloads
 
-View and explore workloads on LUNs/Volumes, NFS or SMB Shares, or Qtrees in your environment. 
+View and explore workloads on LUNs/Volumes, NFS or SMB Shares, or Qtrees on your tenant. 
 
 image:ONTAP_Essentials_Workloads_Menu.png[Workloads Menu]
 

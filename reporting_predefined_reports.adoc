@@ -6,20 +6,19 @@ keywords: reporting, cognos, data warehouse, dwh, pre-defined
 ---
 
 = Predefined Reports Made Easy
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Cloud Insights Reporting includes predefined reports that address a number of common reporting requirements, providing critical insight that stakeholders need to make informed decisions about their storage infrastructure.
+Data Infrastructure Insights Reporting includes predefined reports that address a number of common reporting requirements, providing critical insight that stakeholders need to make informed decisions about their storage infrastructure.
 
-NOTE: The Reporting feature is available in Cloud Insights link:concept_subscribing_to_cloud_insights.html[Premium Edition]. 
+NOTE: The Reporting feature is available in Data Infrastructure Insights link:concept_subscribing_to_cloud_insights.html[Premium Edition]. 
 
-You can generate pre-defined reports from the Cloud Insights Reporting Portal, email them to other users, and even modify them. Several reports enable you to filter by device, business entity, or tier. The reporting tools use IBM Cognos as a foundation and give you many data presentation options.
+You can generate pre-defined reports from the Data Infrastructure Insights Reporting Portal, email them to other users, and even modify them. Several reports enable you to filter by device, business entity, or tier. The reporting tools use IBM Cognos as a foundation and give you many data presentation options.
 
 The pre-defined reports show your inventory, storage capacity, chargeback, performance, storage efficiency, and cloud cost data. You can modify these pre-defined reports and save your modifications.
 
@@ -27,18 +26,18 @@ The pre-defined reports show your inventory, storage capacity, chargeback, perfo
 You can generate reports in various formats, including HTML, PDF, CSV, XML, and Excel.
 
 ////
-Cloud Insights accommodates multiple tenancy in reporting by enabling you to associate users with business units. With this feature, administrators can separate data or reports according to the attributes of a user or his/her affiliation.
+Data Infrastructure Insights accommodates multiple tenancy in reporting by enabling you to associate users with business units. With this feature, administrators can separate data or reports according to the attributes of a user or his/her affiliation.
 ////
 
 == Navigating to Pre-defined Reports
 
-When you open the Reporting Portal, the _Team Content_ folder is the starting point for you to select the type of information that you require in the Cloud Insights reports.
+When you open the Reporting Portal, the _Team Content_ folder is the starting point for you to select the type of information that you require in the Data Infrastructure Insights reports.
 
 . In the left navigation pane, select *Content > Team Content*.
 . Select *Reports* to access the pre-defined reports.
 
 image:Reporting_Menu.png[Reporting menu]
-image:Reporting_Team_Content.png[Team Content showing Reports highlighted]
+image:Reporting_Team_Content.png[Team Content showing Reports highlighted, width=800]
 
 == Using predefined reports to answer common questions
 
@@ -84,7 +83,7 @@ The Mapped but not Masked Volumes report lists the volumes whose logical unit nu
 The NetApp Capacity and Performance report provides global data for allocated, utilized, and committed capacity with trending and performance data for NetApp capacity.
 
 === Scorecard
-The Scorecard report provides a summary and general status of all assets acquired by Cloud Insights. Status is indicated with green, yellow, and red flags:
+The Scorecard report provides a summary and general status of all assets acquired by Data Infrastructure Insights. Status is indicated with green, yellow, and red flags:
 
 * Green indicates normal condition
 * Yellow indicates a potential issue in the environment

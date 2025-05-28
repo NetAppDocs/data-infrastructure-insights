@@ -1,0 +1,58 @@
+---
+sidebar: sidebar
+permalink: index.html
+summary: Welcome to the documentation portal for Data Infrastructure Insights.
+keywords: 
+---
+
+= Data Infrastructure Insights documentation
+:hardbreaks:
+
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+NetApp Data Infrastructure Insights (formerly Cloud Insights) is a cloud infrastructure monitoring tool that gives you visibility into your complete infrastructure. With Data Infrastructure Insights, you can monitor, troubleshoot and optimize all your resources including your public clouds and your private data centers. 
+
+
+== What can Data Infrastructure Insights do for me?
+
+Data Infrastructure Insights provides hybrid multicloud monitoring, giving you full-stack observability of infrastructure and workloads.
+
+* Data collectors for heterogeneous infrastructure and workloads, including Kubernetes
+* Open Telegraf collector and open APIs for easy integration
+* Comprehensive alerting and notifications
+* Machine learning for intelligent insights
+* Optimize resource utilization
+* Built-in or customizable dashboards with advanced filters to minimize display noise to answer questions
+* Discover the health of your ONTAP storage operations 
+* Protect your most valuable business asset – data - from ransomware or data destruction attack
+
+
+
+'''
+
+== Getting Started
+
+* How do I link:task_cloud_insights_onboarding_1.html[*get started*] with Data Infrastructure Insights?
+
+* I'm signed up. Now what do I do? 
+        link:task_getting_started_with_cloud_insights.html[Acquiring Data]
+        link:concept_user_roles.html[Setting up users]
+        
+* Awesome! What's Next?
+        link:task_defining_annotations.html[Preparing Assets: Annotating]
+        link:concept_querying_assets.html[Finding the Assets You Want: Querying]
+        link:concept_dashboards_overview.html[Seeing the Data You want: Dashboards]
+        link:task_create_monitor.html[Monitoring and Alerts]
+        link:task_cs_getting_started.html[Securing Data]
+        
+* This is great stuff! I'm ready to link:concept_subscribing_to_cloud_insights.html[*subscribe*].
+        
+
+        
+
+
+

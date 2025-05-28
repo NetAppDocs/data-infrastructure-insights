@@ -6,16 +6,15 @@ summary: Elasticsearch data collector configuration
 ---
 
 = Elasticsearch Data Collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Cloud Insights uses this data collector to gather metrics from Elasticsearch.
+Data Infrastructure Insights uses this data collector to gather metrics from Elasticsearch.
 
 
 . From *Observability > Collectors*, click *+Data Collector*. Choose Elasticsearch.
@@ -37,9 +36,9 @@ Information may be found in the link:https://www.elastic.co/guide/index.html[Ela
 
 The following objects and their counters are collected:
 
-[cols="<.<,<.<,<.<,<.<"]
+[cols="<.<,<.<,<.<"]
 |===
-|Object:|Identifiers:|Attributes: |Datapoints:
+|Object:|Identifiers:|Attributes:
 
 |Elasticsearch Cluster
 
@@ -50,42 +49,7 @@ Cluster
 Node Name
 Cluster Status
 
-|Master Node Count
-Total Node Count
-Filesystem Data Available (bytes)
-Filesystem Data Free (bytes)
-Filesystem Data Total (bytes)
-JVM Threads
-OS Allocated Proccessors
-OS Available Processors
-OS Mem Free (bytes)
-OS Mem Free
-OS Mem Total (bytes)
-OS Mem Used (bytes)
-OS Mem Used
-Process CPU
-Indices Completion Size (bytes)
-Indices Count
-Indices Docs Count
-Indices Docs Deleted
-Indices Field Data Evictions
-Indices Field Data Memory Size (bytes)
-Indices Query Cache Count
-Indices Cache Size
-Indices Segments Count
-Indices Segments Doc Values Memory (bytes)
-Indices Shards Index Primaries Avg
-Indices Shards Index Primaries Max
-Indices Shards Index Primaries Min
-Indices Shards Index Replication Avg
-Indices Shards Index Replication Max
-Indices Shards Index Replication Min
-Indices Shards Avg
-Indices Shards Max
-Indices Shards Primaries
-Indices Shards Replication
-Indices Shards Total
-Indices Store Size (bytes)
+
 
 |Elasticsearch Node
 
@@ -97,101 +61,7 @@ ES Node
 
 |Zone ID
 
-|Machine Learning Enabled
-Machine Learning Memory
-Machine Learning Max Open Jobs
-X-Pack Installed
-Breakers Accounting Estimated Size (bytes)
-Breakers Accounting Limit Size (bytes)
-Breakers Accounting Overhead
-Breakers Accounting Tripped
-Breakers Field Data Estimated Size (bytes)
-Breakers Field Data Limit Size (bytes)
-Breakers Field Data Overhead
-Breakers Field Data Tripped
-Breakers In-Flight Sstimated Size (bytes)
-Breakers In-Flight Limit Size (bytes)
-Breakers In-Flight Overhead
-Breakers In-Flight Tripped
-Breakers Parent Estimated Size (bytes)
-Breakers Parent Limit Size (bytes)
-Breakers Parent Overhead
-Breakers Parent Tripped
-Breakers Request Estimated Size (bytes)
-Breakers Request Limit Size (bytes)
-Breakers Request Overhead
-Breakers Request Tripped
-Filesystem Data Available (bytes)
-Filesystem Data Free (bytes)
-Filesystem Data Total (bytes)
-Filesystem IO Stats Devices Ops
-Filesystem IO Stats Devices Read (kb)
-Filesystem IO Stats Devices Read Ops
-Filesystem IO Stats Devices Erite (kb)
-Filesystem IO Stats Devices Write Ops
-Filesystem IO Stats Total Ops
-Filesystem IO Stats Total Read (kb)
-Filesystem IO Stats Read Ops
-Filesystem IO Stats Total Write (kb)
-Filesystem IO Stats Write Ops
-Filesystem Least Usage Estimate Available (bytes)
-Filesystem Least Usage Estimate Total (bytes)
-Filesystem Least Usage Used Disk
-Filesystem Most Usage Estimate Available (bytes)
-Filesystem Most Usage Estimate Total (bytes)
-Filesystem Most Usage Used Disk
-Filesystem Total Available (bytes)
-Filesystem Total Free (bytes)
-Filesystem Total (bytes)
-Indices Completion Size (bytes)
-Indices Docs Count
-Indices Docs Deleted
-Indices Field Data Evictions
-Indices Field Data Memory Size (bytes)
-Indices Flush Periodic
-Indices Flush Total
-Indices Flush Total Time
-Indices Get Current
-Indices Get Exists Time
-Indices Get Exists Total
-Indices Get Total
-Indices Indexing Delete Total
-Indices Indexing Index Total
-Indices Indexing Noop Update Total
-Indices Indexing Throttle Time
-HTTP Current Open
-HTTP Total Opened
-JVM Buffer Pool Direct Count
-JVM Classes Current Loaded Count
-JVM GC Collectors Old Collection Count
-JVM Mem Heap Committed (bytes)
-OS CPU Load Average 15m
-OS CPU
-OS Mem Free (bytes)
-OS Swap Free (bytes)
-Process CPU
-Process CPU Total
-Process Max File Descriptors
-Process Mem Total Virtual (bytes)
-Thread Pool Analyze Active
-Thread Pool Analyze Completed
-Thread Pool Analyze Largest
-Thread Pool Analyze Queue
-Thread Pool Analyze Rejected
-Thread Pool Analyze Threads
-Thread Pool Fetch Shard Started Active
-Thread Pool Fetch Shard Started Completed
-Thread Pool Fetch Shard Started Largest
-Thread Pool Fetch Shard Started Queue
-Thread Pool Fetch Shard Started Rejected
-Thread Pool Fetch Shard Started Shreads
-Thread Pool Fetch Shard Store Active
-Thread Pool Fetch Shard Store Completed
-Transport RX (per sec)
-Transport RX Bytes (per sec)
-Transport Server Open
-Transport TX (per sec)
-Transport TX Bytes (per sec)
+
 |===
 
 
