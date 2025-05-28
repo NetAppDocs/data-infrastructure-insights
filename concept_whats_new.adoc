@@ -17,25 +17,45 @@ keywords: features
 [.lead]
 NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in Data Infrastructure Insights (formerly Cloud Insights).
 
-
 == May 2025
 
+=== New Landing Pages keep you in the flow
+
+The redesigned Landing Pages surface everything you need--summary data, performance charts, correlations, alerts and changes, and key resources--in one view.
+
+Now you can troubleshoot faster and stay in flow, without jumping between tabs or losing context.
+
+image:lp_new_design.png[new landing page design showing placement of summary and performance and additional resources sections]
 
 
-=== Webhooks now available for Workload Security alerts
+=== Workload Security Improvements
 
-Workload Security now supports out-of-the-box webhook notifications to tools like Slack, PagerDuty, Teams, and more.
-Route critical alerts directly into your existing security workflows, so your team can investigate and respond faster—no custom setup required.
+*Webhooks now available for Workload Security alerts*
+
+Workload Security now supports out-of-the-box webhook notifications to tools like Slack, PagerDuty, Teams, and more. Additionally, we offer customizable templates that allow you to tailor the message or integrate with any other SIEM or third-party application. Route critical alerts directly into your existing security workflows, so your team can investigate and respond faster.
 
 image:ws_webhook_slack_example.png[Webhook Slack Example for Workload Security, width=400]
 
 
-=== Migrate Workload Security collectors across agents
+*Migrate Workload Security collectors across agents*
 
 You can easily migrate a Workload Security collector from one agent to another, allowing for efficient load balancing of collectors across agents.
 Migrating is as easy as editing the collector and selecting the destination agent from the list. 
 
 image:ws_migrate_collector_to_another_agent.png[migrate collector, width=500]
+
+
+
+=== .CSV Asynchronous Export
+
+Exporting data to .CSV can take anywhere from a few seconds to a number of hours, depending on the amount of data to export. Data Infrastructure Insights now exports that data asynchronously, so you can continue working while the .CSV is being compiled. 
+
+View your .CSV exports by selecting the "Bell" icon in the upper-right toolbar.
+
+image:csv_export_async.png[bell icon ith list of .csv exports ready for download, width=400]
+
+
+
 
 ''''
 
