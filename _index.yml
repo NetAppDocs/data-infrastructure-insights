@@ -16,7 +16,6 @@ indexpage:
       - title: Subscribing to Data Infrastructure Insights
         url: /concept_subscribing_to_cloud_insights.html
       
-
   - title: Monitoring your Infrastructure
     links:
       - title: Creating Dashboards
@@ -27,12 +26,20 @@ indexpage:
         url: task_defining_annotations.html
       - title: Querying your Data
         url: concept_querying_assets.html
-      - title: Querying Logs
-        url: /concept_log_explorer.html
       - title: Working with Applications
         url: /concept_about_applications.html
       - title: Device Resolution
         url: /concept_device_resolution_overview.html
+
+  - title: Insights and Analysis
+    links:
+      - title: Infrastructure Change Analysis
+        url: /infrastructure_change_analytics.html
+      - title: SAN Analyzer
+        url: /san_analyzer_overview.html
+      - title: Insights
+        url: /insights_overview.html 
+
 
   - title: Securing your Data
     links:
@@ -49,7 +56,6 @@ indexpage:
       - title: Automated Response Policies
         url: /cs_automated_response_policies.html
 
-
   - title: Reporting
     links:
       - title: Reporting Overview
@@ -61,19 +67,24 @@ indexpage:
       - title: Storage Manager Dashboard
         url: /reporting_storage_manager_dashboard.html   
 
+  - title: Kubernetes
+    links:
+
+
   - title: References and Support
     links:
       - title: Data Collector Support Matrix
         url: /reference_data_collector_support_matrix.html
+
+
+
+  - title: More Resources
+    links:
       - title: Requesting Support
         url: /concept_requesting_support.html
       - title: Legal notices
         url: /legal-notices.html
 
-  - title: Blogs and Community
-    links:
-      - title: TBD
-        url: /TBD.html     
 
 # Add sections here:
 
