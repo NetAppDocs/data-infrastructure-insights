@@ -69,12 +69,38 @@ indexpage:
 
   - title: Kubernetes
     links:
+      - title: Kubernetes Overview
+        url: /kubernetes_landing_page.html
+      - title: Before Installing or Upgrading the Operator
+        url: /pre-requisites_for_k8s_operator.html
+      - title: Installing the Monitoring Operator
+        url: /task_config_telegraf_agent_k8s.html
+      - title: Monitoring Operator Options
+        url: /telegraf_agent_k8s_config_options.html
+      - title: Kubernetes Cluster Page
+        url: /kubernetes_cluster_detail.html
+      - title: Network Monitoring and Map
+        url: /concept_kubernetes_network_monitoring_and_map.html
+      - title: Kubernetes Change Analytics
+        url: /kubernetes_change_analytics.html
 
 
-  - title: References and Support
+  - title: ONTAP Essentials
+    links:
+      - title: ONTAP Essentials Dashboards
+        url: /concept_ontap_essentials.html
+
+
+  - title: References and Troubleshooting
     links:
       - title: Data Collector Support Matrix
         url: /reference_data_collector_support_matrix.html
+      - title: General Troubleshooting
+        url: /task_troubleshooting_general_problems.html
+      - title: Troubleshooting Linux Acquisition Unit Problems
+        url: /task_troubleshooting_linux_acquisition_unit_problems.html
+      - title: Troubleshooting Windows Acquisition Unit Problems
+        url: /task_troubleshooting_windows_acquisition_unit_problems.html
 
 
 
