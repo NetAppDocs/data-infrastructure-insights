@@ -1,0 +1,61 @@
+---
+sidebar: sidebar
+permalink: ws_webhook_example_teams.html
+keywords: webhook, notification, Microsoft, Teams, integration
+summary: Create a Workload Security webhook for Microsoft Teams to alert on security
+---
+
+= Workload Security Webhook Example for Microsoft Teams
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Webhooks allow users to send alert notifications to various applications using a customized webhook channel. This page provides an example for setting up webhooks for Teams.
+
+NOTE: This page refers to third-party instructions, which are subject to change. Refer to the link:https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook[Teams documentation] for the most up-to-date information. 
+
+== Teams Setup:
+
+. In Teams, select the kebab, and search for Incoming Webhook.
++
+image:Webhooks_Teams_Create_Webhook.png[Incoming Webhook in Teams]
+
+. Select *Add to a Team > Select a Team > Setup a Connector*.
+
+. Copy the Webhook URL. You will need to paste this into the Workload Security webhook configuration.
+
+
+== Create Workload Security Teams Webhook:
+
+. Navigate to Admin > Notifications and select the _“Workload Security Webhooks_ tab. Select _+ Webhook_ to create a new webhook.
+
+. Give the webhook a meaningful Name.
+
+. In the _Template Type_ drop-down, select *Teams*.
++
+image:ws_webhook_teams_example.png[Workload Security teams webhook example]
+
+. Paste the URL from above into the _URL_ field.
+
+
+== Notifications via Webhook
+
+To notify on events via webhook, navigate to _Workload Security > Policies_. Select _+Attack Policy_ or _+Warning Policy_.
+
+* Enter a meaningful policy name.
+
+* Select required Attack Type(s), Devices to which policy should be attached, and required Actions.
+
+* Under the _Webhooks Notifications_ dropdown, select the required Teams webhooks. Save the policy.
+
+Note: Webhooks can also be attached to existing policies by editing them. 
+
+//image:Webhooks_Teams_Notifications.png[Webhook Notifications]
+image:ws_add_attack_policy.png[Add attack policy dialog showing webhook]
+
+
+
+

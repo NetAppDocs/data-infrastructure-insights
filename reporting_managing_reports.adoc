@@ -90,4 +90,11 @@ Here you will find suggestions for troubleshooting problems with Reporting.
 |When scheduling a report to be sent via email, the name of the user logged in is pre-populated to the email's “To” field. However, the name is in the form of "firstname lastname" (first name, space, last name). Since this is not a valid email address, the email will fail to send when the scheduled report is run.
 |When scheduling the report to be sent via email, clear the pre-populated name and enter a valid, properly-formatted email address in the “To” field.
 
+|My scheduled report sends out via email, but the report can not be accessed if the origination is from the “My Content” folder.
+|In order to avoid this, the report or report-view must be saved to the “Team Content > Custom Reports - xxxxxx" folder, and the schedule created from that saved version. The "Custom Reports - xxxxxx" folder is visible to all users on the tenant.
+
+|when saving a Job, the folder may show “Team Content” with the list of content from “Custom Reports - xxxxxx”, however you can not save the Job here because Cognos thinks this is the “Team Content” folder where you don't have access to write.
+|The work around is to create a new folder with a unique name (i.e. “NewFolder”) and save there, or to save to “My Content” and then copy/move to “Custom Reports - xxxxxx”.
+
+
 |===

@@ -26,18 +26,22 @@ The Queries page is displayed.
 
 NOTE: Export to .CSV is also available in the "three dots" menu in dashboard table widgets as well as most landing page tables.
 
-////
-. When prompted, do one of the following:
+== Asynchronous export
 
-.. Click *Open with* and then *OK* to open the file with Microsoft Excel and save the file to a specific location.
-.. Click *Save file* and then *OK* to save the file to your Downloads folder.
-////
+Exporting data to .CSV can take anywhere from a few seconds to a number of hours, depending on the amount of data to export. Data Infrastructure Insights exports that data asynchronously, so you can continue working while the .CSV is being compiled. 
 
-//All of the attributes for the objects in the columns currently selected for display are exported to the file, regardless of whether those attributes are being displayed. 
+View and download your .CSV exports by selecting the "Bell" icon in the upper-right toolbar.
+
+image:csv_export_async.png[bell icon with list of .csv exports ready for download, width=400]
 
 The exported data will reflect the current filtering, columns, and column names displayed. 
 
+
+== Commas in asset names
+
 Note: When a comma appears in an asset name, the export encloses the name in quotes, preserving the asset name and the proper .csv format.
+
+== Time format, or not time format?
 
 When opening an exported .CSV file with Excel, if you have an object name or other field that is in the format NN:NN (two digits followed by a colon followed by two more digits), Excel will sometimes interpret that name as a Time format, instead of Text format. This can result in Excel displaying incorrect values in those columns. For example, an object named "81:45" would show in Excel as "81:45:00".
 

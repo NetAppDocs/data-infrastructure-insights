@@ -1,0 +1,121 @@
+---
+sidebar: sidebar
+permalink: ws_notifications_using_webhooks.html
+keywords: alert, webhook, notification
+summary: Create a webhook for workload security alert notifications.
+---
+
+= Workload Security notifications using webhooks
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+
+Webhooks allow users to send critical or warning alert notifications to various applications using a customized webhook channel.	
+
+Many commercial applications support webhooks as a standard input interface, for example: Slack, PagerDuty, Teams, and Discord. By supporting a generic, customizable webhook channel, Workload Security can support many of these delivery channels. Information about configuring the webhooks can be found on the respective application's websites. For example, Slack provides link:https://api.slack.com/messaging/webhooks[this useful guide].
+
+
+You can create multiple webhook channels, each channel targeted for a different purpose, separate applications, different recipients, etc.
+
+The webhook channel instance is comprised of the following elements
+
+|===
+|Name|Description
+
+|URL	|Webhook target URL, including the http:// or https:// prefix along with the url params
+|Method	|GET/POST - Default is POST
+|Custom Header	|Specify any custom headers here
+|Message Body	|Put the body of your message here
+|Default Alert Parameters	|Lists the default parameters for the webhook
+|Custom Parameters and Secrets	|Custom parameters and secrets allows you to add unique parameters and secure elements such as passwords
+|===
+
+== Creating a webhook
+To create a Workload Security Webhook, go to Admin > Notifications and select “Workload Security Webhooks” tab. The following image shows a sample slack webhook creation screen.
+
+Note: User must be a Workload Security _Admin_ in order to create and manage Workload Security Webhooks.
+
+
+image:ws_webhook_slack_example.png[webhook slack example for Workload Security, width=500]
+
+
+* Enter appropriate information for each of the fields, and click "Save".
+* You can also click the "Test Webhook" button to test the connection. Note that this will send the "Message Body" (without substitutions) to the defined URL according to the selected Method.
+* SWS webhooks comprise a number of default parameters. Additionally, you can create your own custom parameters or secrets.
+
+== Parameters: What are they and how to use them?
+
+Alert Parameters are dynamic values populated per alert. For example, the _%%severity%%_ parameter will be replaced with the severity type of the alert.
+
+Note that substitutions are not performed when clicking the "Test Webhook" button; the test sends a payload that shows the parameter's placeholders (_%%<param-name>%%_) but does not replace them with data.
+
+=== Custom Parameters and Secrets
+
+In this section you can add any custom parameters and/or secrets you wish. A custom parameter or secret can be in the URL or message body. Secrets allow user to configure a secure custom parameter like password, apiKey etc.
+
+The following sample image shows how custom parameters are used in webhook creation.
+
+
+image:ws_webhook_parameters_example.png[workload security webhook with parameters, width=800]
+
+
+== Workload Security Webhooks List Page
+
+On the Webhooks list page, displayed are the Name, Created By, Created On, Status, Secure, and Last Reported fields.  
+Note: The value of 'status' column will keep changing based on the result of last webhook trigger result. The following are examples of status results.
+
+|===
+|Status	|Description
+|OK	|Successfully sent notification.
+
+|403	|Forbidden.
+|404	|URL not found.
+
+|400  	a|Bad Request. You might see this status if there is any error in the message body, for example:
+
+* Badly formatted json.
+* Providing invalid value for reserved keys. For example, PagerDuty accepts only critical/warning/error/info for “Severity”. Any other result may yield a 400 status.
+* Application specific validation errors. For example, Slack allows a maximum of 10 fields inside a section. Including more than 10 may result in a 400 status.
+
+|410 	|Resource is no longer available
+|===
+
+“Last Reported” column indicates the time when the webhook was last triggered.
+
+From the webhooks listing page users can also Edit/Duplicate/Delete webhooks.
+
+== Configure Webhook notification in alert policy
+
+To add a webhook notification to an alert policy, go to -Workload Security > Policies- and select an existing policy or add a new policy. In the _Actions_ section > _Webhook Notifications_ dropdown, select the required webhooks.
+
+
+image:ws_edit_attack_policy.png[Edit Attack Policy dialog showing webhook dropdown, width=500]
+
+
+Webhook notifications are tied to policies. When the attack (RW/DD/WARN) happens, the action configured (Take snapshot / user blocking) will be taken and then the associated webhook notification will be triggered.
+
+Note: Email notifications are independent of policies, they will be triggered as usual.
+
+* If a policy is paused, webhook notifications will not be triggered.
+
+
+* Multiple webhooks can be attached to a single policy but it is recommended to attach no more than 5 webhooks to a policy.
+
+
+
+=== Workload Security Webhook Examples  
+
+Webhooks for link:ws_webhook_example_slack.html[Slack]
+
+Webhooks for link:ws_webhook_example_pagerduty.html[PagerDuty]
+Webhooks for link:ws_webhook_example_teams.html[Teams]
+Webhooks for link:ws_webhook_example_discord.html[Discord] 
+
+
+
+
+

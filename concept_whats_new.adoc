@@ -17,6 +17,50 @@ keywords: features
 [.lead]
 NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in Data Infrastructure Insights (formerly Cloud Insights).
 
+
+== May 2025
+
+=== New Landing Pages keep you in the flow
+
+The redesigned Landing Pages surface everything you need--summary data, performance charts, correlations, alerts and changes, and key resources--in one view.
+
+Now you can troubleshoot faster and stay in flow, without jumping between tabs or losing context.
+
+image:lp_new_design.png[new landing page design showing placement of summary and performance and additional resources sections]
+
+
+=== Workload Security Improvements
+
+*Webhooks now available for Workload Security alerts*
+
+Workload Security now supports out-of-the-box webhook notifications to tools like Slack, PagerDuty, Teams, and more. Additionally, we offer customizable templates that allow you to tailor the message or integrate with any other SIEM or third-party application. Route critical alerts directly into your existing security workflows, so your team can investigate and respond faster.
+
+image:ws_webhook_slack_example.png[Webhook Slack Example for Workload Security, width=400]
+
+
+*Migrate Workload Security collectors across agents*
+
+You can easily migrate a Workload Security collector from one agent to another, allowing for efficient load balancing of collectors across agents.
+Migrating is as easy as editing the collector and selecting the destination agent from the list. 
+
+image:ws_migrate_collector_to_another_agent.png[migrate collector, width=500]
+
+
+
+=== .CSV Asynchronous Export
+
+Exporting data to .CSV can take anywhere from a few seconds to a number of hours, depending on the amount of data to export. Data Infrastructure Insights now exports that data asynchronously, so you can continue working while the .CSV is being compiled. 
+
+View your .CSV exports by selecting the "Bell" icon in the upper-right toolbar.
+
+image:csv_export_async.png[bell icon ith list of .csv exports ready for download, width=400]
+
+
+
+
+''''
+
+
 == April 2025
 
 === ML-Powered Anomaly Bounds in Line Widgets for Proactive Issue Resolution
@@ -26,6 +70,7 @@ To troubleshoot performance issues with Line or Spline chart widgets, you can no
 DII machine learning with seasonal data analysis establishes intelligent thresholds based on historical patterns. When metrics deviate from expected ranges, the system highlights these as anomalies, enabling quick issue identification, reducing mean time to resolution, and addressing problems before they impact operations.
 
 image:expected_bounds_example_showing_spike.png[expected bounds showing spike above, width=300]
+
 
 
 === Optimize VMware Costs with VSAN Storage Support
@@ -52,8 +97,9 @@ Exporting forensics data can take anywhere from a few seconds to a number of hou
 
 If you have configured notifications on data collectors, starting April 15 those notifications will be handled in Notification Rules, with a single rule for collectors that have identical recipients. Collectors with different recipients will have separate rules. Existing collector notifications are migrated to notification rules.
 
-
 '''
+
+
 
 
 == March 2025
@@ -111,6 +157,7 @@ The following operating systems are now supported with Data Infrastructure Insig
 
 
 '''
+
 
 == February 2025
 

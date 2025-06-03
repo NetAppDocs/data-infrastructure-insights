@@ -165,7 +165,7 @@ Workload Security is metered by Cluster using the same approach as Observability
 
 You can view your Workload Security usage in the *Admin > Subscription* page on the *Workload Security* tab.
 
-image:ws_metering_example_page.png['Admin > Subscription > Workload Security tab showing high-end, mid-range, and entry-level node counts']
+image:ws_metering_example_page.png["Admin > Subscription > Workload Security tab showing high-end, mid-range, and entry-level node counts"]
 
 NOTE: Existing Workload Security subscriptions have their MU usage adjusted so that node usage does not consume managed units. Data Infrastructure Insights meters usage to ensure compliance with licensed usage.
 

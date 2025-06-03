@@ -64,6 +64,7 @@ Alphabetical list of Data Collectors supported by Data Infrastructure Insights:
 | link:task_config_telegraf_flink.html[Flink ] |Service 
 | link:task_dc_fujitsu_eternus.html[Fujitsu ETERNUS DX ] |Infrastructure 
 | link:task_dc_google_cloud.html[Google Compute and Storage ] |Infrastructure 
+| link:task_dc_google_cloud_netapp_volumes.html[Google Cloud NetApp Volumes] |Infrastructure
 | link:task_config_telegraf_hadoop.html[Hadoop ] |Service 
 | link:task_config_telegraf_haproxy.html[HAProxy ] |Service 
 | link:task_dc_hds_hcp.html[Hitachi Content Platform (HCP)] |Infrastructure
