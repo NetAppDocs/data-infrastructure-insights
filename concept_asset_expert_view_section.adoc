@@ -6,9 +6,8 @@ keywords: asset page, expert view, metrics, greedy, degraded, correlated, contri
 ---
 
 = Expert View
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

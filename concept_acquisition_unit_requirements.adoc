@@ -6,9 +6,8 @@ keywords: AU, acquisition unit, requirements, sizing
 ---
 
 = Acquisition Unit Requirements
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -77,6 +76,8 @@ If your organization requires proxy usage for internet access, you may need to u
 *.cloudinsights.netapp.com
 
 For more information, read about Proxies link:task_troubleshooting_linux_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls[here (Linux)] or link:task_troubleshooting_windows_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls[here (Windows)].
+
+Note that port 443 must be opened "outbound" from the AU to Data Infrastructure Insights.
 
 |Same 
 |Permissions	|Sudo permissions on the Acquisition Unit server.  

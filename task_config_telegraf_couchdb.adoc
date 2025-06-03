@@ -6,9 +6,8 @@ summary: CouchDB data collector configuration
 ---
 
 = CouchDB Data Collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

@@ -6,9 +6,8 @@ summary: Configuring Red Hat Virtualization data collector.
 ---
 
 = Red Hat Virtualization data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:

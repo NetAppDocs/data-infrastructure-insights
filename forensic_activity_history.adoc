@@ -6,7 +6,6 @@ summary: forensic activity history data
 ---
 
 = Forensics - All Activity
-:toc: macro
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -313,7 +312,7 @@ If it still does not get resolved, check if you have added the correct User Data
 2.	Any user doing NFS access should be seen when searched in the user page from UI
 3.	Raw events (Events for whom the user is not yet discovered) are not supported for NFS
 4.	Anonymous access to the NFS export will not be monitored.
-5.	Make sure NFS version used in lesser than NFS4.1.
+5.	Make sure NFS version used is version 4.1 or less. (Note that NFS 4.1 is supported with ONTAP 9.15 or later.)
 
 
 |After typing some letters containing a wildcard character like asterisk (*) in the filters on the Forensics _All Activity_ or  _Entities_ pages, the pages load very slowly.

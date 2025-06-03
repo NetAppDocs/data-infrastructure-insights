@@ -7,7 +7,7 @@ keywords:
 
 = Data Infrastructure Insights documentation
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:

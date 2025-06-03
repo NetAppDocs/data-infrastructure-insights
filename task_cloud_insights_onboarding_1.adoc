@@ -7,7 +7,7 @@ keywords: onboarding, new user
 
 = Data Infrastructure Insights Onboarding
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -18,7 +18,7 @@ keywords: onboarding, new user
 Before you can start working with Data Infrastructure Insights, you must sign up on the *NetApp BlueXP* portal. If you already have a NetApp BlueXP login, you can start a free trial of Data Infrastructure Insights with a few quick steps.
 
 
-toc::[]
+toc:[]
 
 == Creating your NetApp BlueXP account
 

@@ -7,7 +7,7 @@ summary: How to create an annotation.
 
 = Using annotations
 :hardbreaks: AA
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

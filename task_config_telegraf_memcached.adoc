@@ -6,9 +6,8 @@ summary: Memcached data collector configuration
 ---
 
 = Memcached Data Collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

@@ -6,9 +6,8 @@ summary: Kafka data collector configuration
 ---
 
 = Kafka Data Collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

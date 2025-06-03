@@ -7,7 +7,7 @@ keywords: support, knowledgebase, documentation, community, chat, videos, help, 
 
 = Requesting Support
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -15,7 +15,7 @@ keywords: support, knowledgebase, documentation, community, chat, videos, help, 
 
 [.lead]
 
-toc::[] 
+toc:[] 
 
 You can access support options in Data Infrastructure Insights by clicking on *Help > Support*. The support options available to you depend on your Data Infrastructure Insights Edition.
 

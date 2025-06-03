@@ -7,7 +7,7 @@ summary:
 
 = Configuration and Supported Devices
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

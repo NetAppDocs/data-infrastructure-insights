@@ -8,9 +8,8 @@ summary: Data Infrastructure Insights provides multiple user accounts with diffe
 ---
 
 = User Accounts and Roles
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -20,9 +19,8 @@ summary: Data Infrastructure Insights provides multiple user accounts with diffe
 Data Infrastructure Insights provides up to four user account roles: Account Owner, Administrator, User, and Guest. Each account is assigned specific permission levels as noted in the table below.  Users are either link:#creating-accounts-by-inviting-users[invited] to Data Infrastructure Insights and assigned a specific role, or can sign in via link:#single-sign-on-sso-and-identity-federation[Single Sign-On (SSO) Authorization] with a default role. SSO Authorization is available as a feature in Data Infrastructure Insights Premium Edition.
 
 
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

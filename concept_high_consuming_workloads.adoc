@@ -6,9 +6,8 @@ summary: Insights give you a look into how resources impact other resources on y
 ---
 
 = Insights: High-Consuming Workloads
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:

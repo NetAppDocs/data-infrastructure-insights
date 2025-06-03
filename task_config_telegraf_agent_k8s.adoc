@@ -7,7 +7,7 @@ summary: The Kubernetes Monitoring Operator collects Kubernetes data for use in 
 = Kubernetes Monitoring Operator Installation and Configuration
 :hardbreaks:
 :nofooter:
-:toclevels: 2
+
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
@@ -159,9 +159,20 @@ If the monitoring operator was deployed in its own dedicated namespace, delete t
 
  kubectl delete ns <NAMESPACE> 
 
-If the first command returns “No resources found”, use the following instructions to uninstall older versions of the monitoring operator.
+Note: If the first command returns “No resources found”, use the following instructions to uninstall older versions of the monitoring operator.
 
-Execute each of the following commands in order. Depending on your current installation, some of these commands may return ‘object not found’ messages. These messages may be safely ignored.
+Execute each of the following commands in order. Depending on your current installation, some of these commands may return 'object not found' messages. These messages may be safely ignored.
+
+
+////
+ kubectl -n <NAMESPACE> delete agent netapp-ci-agent-monitoring-netapp 
+ kubectl delete crd agents.monitoring.netapp.com 
+ kubectl -n <NAMESPACE> delete role netapp-ci-agent-manager netapp-ci-kube-state-metrics
+ kubectl delete clusterrole netapp-ci-<NAMESPACE>-additional-permissions netapp-ci-<NAMESPACE>-agent-manager netapp-ci-<NAMESPACE>-agent-secret netapp-ci-<NAMESPACE>-agent-view-plus netapp-ci-<NAMESPACE>-change-observer-view-plkubectl get us netapp-ci-<NAMESPACE>-kube-state-metrics netapp-ci-<NAMESPACE>-net-observerkubectl 
+ kubectl delete clusterrolebinding netapp-ci-<NAMESPACE>-additional-permissions netapp-ci-<NAMESPACE>-agent-manager netapp-ci-<NAMESPACE>-agent-secret netapp-ci-<NAMESPACE>-agent-view netapp-ci-<NAMESPACE>-agent-view-plus netapp-ci-<NAMESPACE>-change-observer-additional-permissions netapp-ci-<NAMESPACE>-change-observer-secret netapp-ci-<NAMESPACE>-change-observer-view netapp-ci-<NAMESPACE>-change-observer-view-plus netapp-ci-<NAMESPACE>-event-exporter netapp-ci-<NAMESPACE>-kube-state-metrics netapp-ci-<NAMESPACE>-net-observer
+ kubectl delete netapp-ci-<NAMESPACE>-psp-nkmo 
+ kubectl delete ns <NAMESPACE> 
+////
 
   kubectl -n <NAMESPACE> delete agent agent-monitoring-netapp
   kubectl delete crd agents.monitoring.netapp.com
@@ -177,7 +188,6 @@ If a Security Context Constraint was previously-created:
  kubectl delete scc telegraf-hostaccess
  
  
-
 == About Kube-state-metrics
 
 The NetApp Kubernetes Monitoring Operator installs its own kube-state-metrics to avoid conflict with any other instances.

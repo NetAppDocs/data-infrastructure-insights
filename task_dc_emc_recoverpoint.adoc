@@ -6,9 +6,8 @@ summary: Configuring DELL EMC RecoverPoint data collector.
 ---
 
 = Dell EMC RecoverPoint data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

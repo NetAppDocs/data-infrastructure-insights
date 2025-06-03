@@ -7,7 +7,7 @@ summary: Workload Security agents can be installed or updated manually, providin
 
 = Manually Installing Workload Security Agent and Collector
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:

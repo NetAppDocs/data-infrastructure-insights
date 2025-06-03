@@ -6,9 +6,8 @@ keywords:  ransomware, ARP, Protection, Security
 ---
 
 = Integration with ONTAP Autonomous Ransomware Protection
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -44,9 +43,10 @@ If you are using a custom user (for example, _csuser_) with permissions given to
 
 For _csuser_ with cluster credentials, do the following from the ONTAP command line:
 
- security login rest-role create -role arwrole -api /api/storage/volumes -access readonly -vserver <cluster_name>
- security login rest-role create -api /api/security/anti-ransomware -access readonly  -role arwrole -vserver <cluster_name>
- security login create -user-or-group-name csuser -application http -authmethod password -role arwrole
+
+ security login role create -role csrole -cmddirname "volume" -access readonly
+ security login role create -role csrole -cmddirname "security anti-ransomware volume" -access readonly
+
 
 Read more about configuring other link:task_add_collector_svm.html[ONTAP permissions].
 

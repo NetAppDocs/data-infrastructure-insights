@@ -6,9 +6,8 @@ keywords: reporting, cognos, data warehouse, dwh, ad-hoc, custom
 ---
 
 = Creating Custom Reports
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:

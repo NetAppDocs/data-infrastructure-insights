@@ -6,9 +6,8 @@ summary: Configuring VPLEX data collector.
 ---
 
 = Configuring the EMC VPLEX data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:

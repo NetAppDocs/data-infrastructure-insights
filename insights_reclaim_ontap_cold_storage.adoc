@@ -5,9 +5,8 @@ keywords: insight, greedy, degraded, impacted, impacting, impactful, impact, res
 summary: Insights give you a look into how resources impact other resources on your tenant.
 ---
 = Insights: Reclaim ONTAP Cold Storage
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:

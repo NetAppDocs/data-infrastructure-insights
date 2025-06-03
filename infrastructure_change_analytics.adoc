@@ -7,7 +7,7 @@ summary: Cloud Insights tracks changes in infrastructure for ease of analysis an
 
 = Infrastructure Change Analysis
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

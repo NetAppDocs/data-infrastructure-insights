@@ -5,9 +5,8 @@ summary: Data Infrastructure Insights can provide views into both front-end and 
 keywords: storage, virtual, virtualized, virtualization,  
 ---
 = Storage Virtualization 
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:

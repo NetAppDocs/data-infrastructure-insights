@@ -6,9 +6,8 @@ summary: Apache data collector configuration
 ---
 
 = Apache Data Collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

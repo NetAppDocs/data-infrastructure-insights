@@ -6,9 +6,8 @@ summary: Configuring Rubrik CDM data collector.
 ---
 
 = Rubrik CDM Data Collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -55,8 +54,9 @@ The following are required to configure this data collector:
 |Field | Description
 
 |IP|IP address of the Rubrik cluster
-|User name|User name for the cluster
-|Password|Password for the cluster
+|Username / Service account|User name for the cluster
+|Password / Secret |Password for the cluster
+|Organization ID for the service-account|This needs to be the full string like "Organization:::nnnnnn-nnnn....."
 |===
 
 == Advanced configuration 
@@ -78,8 +78,8 @@ Some things to try if you encounter problems with this data collector:
 |Problem:|Try this:
 |I received a message that more than one storage is created.
 |Check that the cluster is configured correctly, and the collector is pointing to a single cluster.
-|I received a warning that disk API returned more data
-|Check with support to get additional data.
+|Poll fails with 400 [Bad Request]....Invalid ManagedId....
+|You have populated the Organization ID field with a value, but the Rubrik cluster does NOT believe that is a valid Organization ID, despite the error message from Rubrik referring to it as a "ManagedId"
 |===
 
 Additional information may be found from the link:concept_requesting_support.html[Support] page or in the link:reference_data_collector_support_matrix.html[Data Collector Support Matrix].

@@ -6,9 +6,8 @@ summary: Configuring Huawei OceanStor (REST/HTTPS) data collector.
 ---
 
 = Huawei OceanStor data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

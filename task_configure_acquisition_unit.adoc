@@ -6,9 +6,8 @@ summary: Acquisition Unit installing, uninstalling, configuring proxy support, a
 ---
 
 = Configuring Acquisition Units
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -101,7 +100,7 @@ If you have Workload Security on your tenant, the configured endpoint URLs will 
 The system displays the _Install Acquisition Unit_ dialog. Choose Windows.
 
 [.thumb]
-image::NewWindowsAUInstall.png[Windows AU Install]
+image:NewWindowsAUInstall.png[Windows AU Install]
 
 . Verify that the server or VM hosting the Acquisition Unit meets the recommended system requirements. 
 . Verify that the server is running a supported version of Windows. Click _OS Versions Supported (i)_ for a list of supported versions.

@@ -6,9 +6,8 @@ summary: Configuring Brocade data collector.
 ---
 
 = Configuring the Brocade Enterprise Fabric Connectivity Manager data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:

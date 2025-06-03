@@ -6,9 +6,8 @@ keywords: data collector, queries, create
 ---
 
 = NetApp SolidFire All-Flash Array data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:

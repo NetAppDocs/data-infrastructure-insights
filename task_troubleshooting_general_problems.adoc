@@ -7,7 +7,7 @@ keywords: troubleshooting, problems, browser, login, log in, accessing, access t
 
 = Troubleshooting General Data Infrastructure Insights Problems
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

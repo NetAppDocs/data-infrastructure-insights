@@ -6,9 +6,8 @@ summary: Adding Workload Security agents
 ---
 
 = Workload Security Agent Installation
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -33,7 +32,7 @@ Workload Security (formerly Cloud Secure) collects user activity data using one 
 + 
 The system displays the Add an Agent page:
 +
-image::Add-agent-1.png[Adding a workload security agent]
+image:Add-agent-1.png[Adding a workload security agent]
 
 . Verify that the agent server meets the minimum system requirements. 
 
@@ -49,7 +48,7 @@ image:CloudSecureAgentWithProxy_Instructions.png[Agent Install with Proxy Note]
 
 . The system displays the following message when the installation completes successfully:
 + 
-image::new-agent-detect.png[Message for successful agent installation]
+image:new-agent-detect.png[Message for successful agent installation]
 
 //cd /var NEW
 //Grep /var/

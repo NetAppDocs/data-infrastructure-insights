@@ -7,7 +7,7 @@ keywords:
 
 = Troubleshooting Data Infrastructure Insights Problems
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

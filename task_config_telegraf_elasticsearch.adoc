@@ -6,9 +6,8 @@ summary: Elasticsearch data collector configuration
 ---
 
 = Elasticsearch Data Collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

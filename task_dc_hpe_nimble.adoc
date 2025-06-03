@@ -6,9 +6,8 @@ summary: Configuring the HP Enterprise Alletra 6000 (formerly Nimble) data colle
 ---
 
 = HPE Alletra 6000 data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:

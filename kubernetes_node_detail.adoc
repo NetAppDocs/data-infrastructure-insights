@@ -7,7 +7,7 @@ summary: The Kubernetes node detail page provides insight into back-end PV and P
 
 = Kubernetes Node Detail Page
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

@@ -7,7 +7,7 @@ summary: ONTAP All-San Array Data Collector
 
 = NetApp ONTAP All-SAN Array (ASA) data collector
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:

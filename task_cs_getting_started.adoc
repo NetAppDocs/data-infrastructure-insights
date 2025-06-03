@@ -6,9 +6,8 @@ summary: A few simple steps will get you started using Workload Security
 ---
 
 = Getting Started with Workload Security
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

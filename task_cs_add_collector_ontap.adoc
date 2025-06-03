@@ -6,9 +6,8 @@ summary: Adding data collectors
 ---
 
 = Configuring the NetApp ONTAP Data Collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

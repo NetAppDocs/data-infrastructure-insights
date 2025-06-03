@@ -6,9 +6,8 @@ summary: Track data using annotations.
 ---
 
 = Defining annotations
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -89,9 +88,9 @@ You can enter up to 255 characters in these fields.
 . Click *Type* and then select one of the following options that represents the type of data allowed in this annotation:
 
 .Annotation types
-Boolean:: Creates a drop-down list with the choices of yes and no. For example, the "Direct Attached" annotation is Boolean.
-Date:: This creates a field that holds a date. For example, if the annotation will be a date, select this.
-List:: Creates either of the following: 
+Boolean: Creates a drop-down list with the choices of yes and no. For example, the "Direct Attached" annotation is Boolean.
+Date: This creates a field that holds a date. For example, if the annotation will be a date, select this.
+List: Creates either of the following: 
 * A drop-down fixed list
 +
 When others are assigning this annotation type on a device, they cannot add more values to the list. 
@@ -99,9 +98,9 @@ When others are assigning this annotation type on a device, they cannot add more
 +
 If you select the Add new values on the fly option when you create this list, when others are assigning this annotation type on a device, they can add more values to the list.
 
-Number:: Creates a field where the user assigning the annotation can enter a number. For example, if the annotation type is "Floor", the user could select the Value Type of "number" and enter the floor number.
+Number: Creates a field where the user assigning the annotation can enter a number. For example, if the annotation type is "Floor", the user could select the Value Type of "number" and enter the floor number.
 
-Text:: Creates a field that allows free-form text. For example, you might enter "Language" as the annotation type, select "Text" as the value type, and enter a language as a value.
+Text: Creates a field that allows free-form text. For example, you might enter "Language" as the annotation type, select "Text" as the value type, and enter a language as a value.
 
 NOTE: After you set the type and save your changes, you cannot change the type of the annotation. If you need to change the type, you have to delete the annotation and create a new one.
 

@@ -6,9 +6,8 @@ summary: Redis data collector configuration
 ---
 
 = Redis Data Collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

@@ -7,7 +7,7 @@ keywords: query, queries, viewing
 
 = Viewing queries
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

@@ -6,9 +6,8 @@ keywords: dashboard, gallery, import
 ---
 
 = Importing from the Dashboard Gallery
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

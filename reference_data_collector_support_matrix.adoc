@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference_data_collector_support_matrix.html
 summary: The Data Collector Support Matrix contains detailed information on supported data collectors. 
-keywords: support matrix, vendor, NetApp, IBM, EMC, Dell, HP, Hitachi, VMware, Huawei, OpenStack
+keywords: support matrix, vendor, NetApp, IBM, EMC, Dell, HP, Hitachi, VMware, Huawei
 ---
 
 = Data Infrastructure Insights Data Collector Support Matrix 
@@ -359,10 +359,10 @@ Management APIs used by this data collector:
 == Amazon AWS EC2
 
 Models and versions supported by this data collector:
-
 API versions: 
 
 * 2014-10-01
+
 
 Products supported by this data collector:
 |===
@@ -2391,7 +2391,6 @@ Products supported by this data collector:
 |Key|Implemented|HTTPS|
 |Total Objects|Implemented|HTTPS|
 |Server ID|Implemented|HTTPS|
-
 .8+|Storage|Failed Raw Capacity|Implemented|HTTPS|
 |Raw Capacity|Implemented|HTTPS|
 |Spare Raw Capacity|Implemented|HTTPS|Raw capacity of spare disks (sum of all disks that are spare)
@@ -4559,7 +4558,7 @@ Management APIs used by this data collector:
 
 Models and versions supported by this data collector:
 |===
-<.<|Models <.<|Firmware versions 
+<.<|Models <.<|Firmware versions
 
 |VPLEX
 |6.2.0.04.00.07
@@ -4590,7 +4589,7 @@ Products supported by this data collector:
 |Virtual|Implemented|HTTP/S|Is this a storage virtualization device?
 .4+|Storage Node|Name|Implemented|HTTP/S|
 |Serial Number|Implemented|HTTP/S|
-|State|Implemented|HTTP/S|free text describing the device state 
+|State|Implemented|HTTP/S|free text describing the device state
 |UUID|Implemented|HTTP/S|
 .14+|Storage Pool|Dedupe Enabled|Implemented|HTTP/S|Is dedupe enabled on the storage pool
 |Name|Implemented|HTTP/S|
@@ -5370,10 +5369,10 @@ Management APIs used by this data collector:
 == Google Cloud Compute
 
 Models and versions supported by this data collector:
-
 API versions: 
 
 * v1
+
 
 Products supported by this data collector:
 |===
@@ -7784,10 +7783,10 @@ Management APIs used by this data collector:
 == Microsoft Azure Compute
 
 Models and versions supported by this data collector:
-
 API versions: 
 
 * 2018-06-01
+
 
 Products supported by this data collector:
 |===
@@ -9036,240 +9035,240 @@ FAS9000
 FAS9500
 FASDvM300
 SIMBOX
-|8.2.3P4
-8.2.3P5
-8.3.1P2
-8.3.2
-8.3.2P12
-8.3.2P5
-9.0.0
-9.1.0
-9.1.0P1
-9.1.0P11
-9.1.0P15
-9.1.0P17
-9.1.0P19
-9.1.0P2
-9.1.0P20
-9.1.0P3
-9.1.0P6
-9.1.0P7
-9.1.0P8
-9.1.0P9
-9.10.0
-9.10.1
-9.10.1P1
-9.10.1P10
-9.10.1P11
-9.10.1P12
-9.10.1P13
-9.10.1P14
-9.10.1P15
-9.10.1P16
-9.10.1P17
-9.10.1P18
-9.10.1P19
-9.10.1P2
-9.10.1P20
-9.10.1P3
-9.10.1P4
-9.10.1P5
-9.10.1P6
-9.10.1P7
-9.10.1P8
-9.10.1P9
-9.11.0P1
-9.11.1
-9.11.1P1
-9.11.1P10
-9.11.1P11
-9.11.1P12
-9.11.1P13
-9.11.1P14
-9.11.1P15
-9.11.1P16
-9.11.1P17
-9.11.1P18
-9.11.1P2
-9.11.1P3
-9.11.1P4
-9.11.1P5
-9.11.1P6
-9.11.1P7
-9.11.1P8
-9.11.1P9
-9.11.1X12
-9.12.1
-9.12.1P1
-9.12.1P10
-9.12.1P11
-9.12.1P12
-9.12.1P13
-9.12.1P14
-9.12.1P15
-9.12.1P16
-9.12.1P17
-9.12.1P2
-9.12.1P3
-9.12.1P4
-9.12.1P5
-9.12.1P6
-9.12.1P7
-9.12.1P8
-9.12.1P9
-9.13.0
-9.13.0P1
-9.13.0P3
-9.13.1
-9.13.1D1
-9.13.1P1
-9.13.1P10
-9.13.1P11
-9.13.1P12
-9.13.1P13
-9.13.1P14
-9.13.1P2
-9.13.1P3
-9.13.1P4
-9.13.1P5
-9.13.1P6
-9.13.1P7
-9.13.1P8
-9.13.1P9
-9.14.0
-9.14.0P1
-9.14.0P2
-9.14.1
-9.14.1P1
-9.14.1P10
-9.14.1P11
-9.14.1P2
-9.14.1P4
-9.14.1P5
-9.14.1P6
-9.14.1P7
-9.14.1P8
-9.14.1P8D5
-9.14.1P9
-9.14.1X14
-9.14.1X20
-9.14.1X24
-9.15.0P1
-9.15.0P2
-9.15.1
-9.15.1P1
-9.15.1P2
-9.15.1P2D2
-9.15.1P3
-9.15.1P4
-9.15.1P5
-9.15.1P6
-9.15.1P7
-9.15.1P7D4
-9.15.1P8
-9.15.1X19
-9.15.1X27
-9.16.1
-9.16.1P1
-9.16.1X16
-9.16.1X26
-9.16.1X29
-9.17.1
-9.17.1X7
-9.2.0P3
-9.2.0P4
-9.3.0P15
-9.3.0P18
-9.3.0P20
-9.3.0P21
-9.3.0P6
-9.3.0P7
-9.3.0P8
-9.4.0
-9.4.0P2
-9.4.0P5
-9.5.0
-9.5.0P1
-9.5.0P10
-9.5.0P14
-9.5.0P16
-9.5.0P17
-9.5.0P18
-9.5.0P19
-9.5.0P2
-9.5.0P3
-9.5.0P6
-9.5.0P7
-9.5.0P9
-9.6.0
-9.6.0P11
-9.6.0P18
-9.6.0P2
-9.6.0P3
-9.6.0P5
-9.7.0
-9.7.0P10
-9.7.0P11
-9.7.0P12
-9.7.0P13
-9.7.0P14
-9.7.0P15
-9.7.0P16
-9.7.0P17
-9.7.0P18
-9.7.0P19
-9.7.0P20
-9.7.0P21
-9.7.0P22
-9.7.0P23
-9.7.0P4
-9.7.0P5
-9.7.0P6
-9.7.0P7
-9.7.0P8
-9.7.0P9
-9.7.0X17
-9.8.0
-9.8.0P1
-9.8.0P10
-9.8.0P11
-9.8.0P12
-9.8.0P13
-9.8.0P14
-9.8.0P14X5
-9.8.0P15
-9.8.0P16
-9.8.0P17
-9.8.0P18
-9.8.0P19
-9.8.0P2
-9.8.0P20
-9.8.0P21
-9.8.0P3
-9.8.0P4
-9.8.0P6
-9.8.0P7
-9.8.0P8
-9.8.0P9
-9.9.0
-9.9.1
-9.9.1P10
-9.9.1P11
-9.9.1P12
-9.9.1P13
-9.9.1P14
-9.9.1P15
-9.9.1P16
-9.9.1P17
-9.9.1P18
-9.9.1P19
-9.9.1P2
-9.9.1P20
-9.9.1P3
-9.9.1P5X2
-9.9.1P6
-9.9.1P7
-9.9.1P9
+a|* 8.2.3P4
+* 8.2.3P5
+* 8.3.1P2
+* 8.3.2
+* 8.3.2P12
+* 8.3.2P5
+* 9.0.0
+* 9.1.0
+* 9.1.0P1
+* 9.1.0P11
+* 9.1.0P15
+* 9.1.0P17
+* 9.1.0P19
+* 9.1.0P2
+* 9.1.0P20
+* 9.1.0P3
+* 9.1.0P6
+* 9.1.0P7
+* 9.1.0P8
+* 9.1.0P9
+* 9.10.0
+* 9.10.1
+* 9.10.1P1
+* 9.10.1P10
+* 9.10.1P11
+* 9.10.1P12
+* 9.10.1P13
+* 9.10.1P14
+* 9.10.1P15
+* 9.10.1P16
+* 9.10.1P17
+* 9.10.1P18
+* 9.10.1P19
+* 9.10.1P2
+* 9.10.1P20
+* 9.10.1P3
+* 9.10.1P4
+* 9.10.1P5
+* 9.10.1P6
+* 9.10.1P7
+* 9.10.1P8
+* 9.10.1P9
+* 9.11.0P1
+* 9.11.1
+* 9.11.1P1
+* 9.11.1P10
+* 9.11.1P11
+* 9.11.1P12
+* 9.11.1P13
+* 9.11.1P14
+* 9.11.1P15
+* 9.11.1P16
+* 9.11.1P17
+* 9.11.1P18
+* 9.11.1P2
+* 9.11.1P3
+* 9.11.1P4
+* 9.11.1P5
+* 9.11.1P6
+* 9.11.1P7
+* 9.11.1P8
+* 9.11.1P9
+* 9.11.1X12
+* 9.12.1
+* 9.12.1P1
+* 9.12.1P10
+* 9.12.1P11
+* 9.12.1P12
+* 9.12.1P13
+* 9.12.1P14
+* 9.12.1P15
+* 9.12.1P16
+* 9.12.1P17
+* 9.12.1P2
+* 9.12.1P3
+* 9.12.1P4
+* 9.12.1P5
+* 9.12.1P6
+* 9.12.1P7
+* 9.12.1P8
+* 9.12.1P9
+* 9.13.0
+* 9.13.0P1
+* 9.13.0P3
+* 9.13.1
+* 9.13.1D1
+* 9.13.1P1
+* 9.13.1P10
+* 9.13.1P11
+* 9.13.1P12
+* 9.13.1P13
+* 9.13.1P14
+* 9.13.1P2
+* 9.13.1P3
+* 9.13.1P4
+* 9.13.1P5
+* 9.13.1P6
+* 9.13.1P7
+* 9.13.1P8
+* 9.13.1P9
+* 9.14.0
+* 9.14.0P1
+* 9.14.0P2
+* 9.14.1
+* 9.14.1P1
+* 9.14.1P10
+* 9.14.1P11
+* 9.14.1P2
+* 9.14.1P4
+* 9.14.1P5
+* 9.14.1P6
+* 9.14.1P7
+* 9.14.1P8
+* 9.14.1P8D5
+* 9.14.1P9
+* 9.14.1X14
+* 9.14.1X20
+* 9.14.1X24
+* 9.15.0P1
+* 9.15.0P2
+* 9.15.1
+* 9.15.1P1
+* 9.15.1P2
+* 9.15.1P2D2
+* 9.15.1P3
+* 9.15.1P4
+* 9.15.1P5
+* 9.15.1P6
+* 9.15.1P7
+* 9.15.1P7D4
+* 9.15.1P8
+* 9.15.1X19
+* 9.15.1X27
+* 9.16.1
+* 9.16.1P1
+* 9.16.1X16
+* 9.16.1X26
+* 9.16.1X29
+* 9.17.1
+* 9.17.1X7
+* 9.2.0P3
+* 9.2.0P4
+* 9.3.0P15
+* 9.3.0P18
+* 9.3.0P20
+* 9.3.0P21
+* 9.3.0P6
+* 9.3.0P7
+* 9.3.0P8
+* 9.4.0
+* 9.4.0P2
+* 9.4.0P5
+* 9.5.0
+* 9.5.0P1
+* 9.5.0P10
+* 9.5.0P14
+* 9.5.0P16
+* 9.5.0P17
+* 9.5.0P18
+* 9.5.0P19
+* 9.5.0P2
+* 9.5.0P3
+* 9.5.0P6
+* 9.5.0P7
+* 9.5.0P9
+* 9.6.0
+* 9.6.0P11
+* 9.6.0P18
+* 9.6.0P2
+* 9.6.0P3
+* 9.6.0P5
+* 9.7.0
+* 9.7.0P10
+* 9.7.0P11
+* 9.7.0P12
+* 9.7.0P13
+* 9.7.0P14
+* 9.7.0P15
+* 9.7.0P16
+* 9.7.0P17
+* 9.7.0P18
+* 9.7.0P19
+* 9.7.0P20
+* 9.7.0P21
+* 9.7.0P22
+* 9.7.0P23
+* 9.7.0P4
+* 9.7.0P5
+* 9.7.0P6
+* 9.7.0P7
+* 9.7.0P8
+* 9.7.0P9
+* 9.7.0X17
+* 9.8.0
+* 9.8.0P1
+* 9.8.0P10
+* 9.8.0P11
+* 9.8.0P12
+* 9.8.0P13
+* 9.8.0P14
+* 9.8.0P14X5
+* 9.8.0P15
+* 9.8.0P16
+* 9.8.0P17
+* 9.8.0P18
+* 9.8.0P19
+* 9.8.0P2
+* 9.8.0P20
+* 9.8.0P21
+* 9.8.0P3
+* 9.8.0P4
+* 9.8.0P6
+* 9.8.0P7
+* 9.8.0P8
+* 9.8.0P9
+* 9.9.0
+* 9.9.1
+* 9.9.1P10
+* 9.9.1P11
+* 9.9.1P12
+* 9.9.1P13
+* 9.9.1P14
+* 9.9.1P15
+* 9.9.1P16
+* 9.9.1P17
+* 9.9.1P18
+* 9.9.1P19
+* 9.9.1P2
+* 9.9.1P20
+* 9.9.1P3
+* 9.9.1P5X2
+* 9.9.1P6
+* 9.9.1P7
+* 9.9.1P9
 
 |===
 Products supported by this data collector:
@@ -10016,6 +10015,7 @@ Management APIs used by this data collector:
 == NetApp ONTAP REST
 
 Models and versions supported by this data collector:
+
 |===
 <.<|Models <.<|Firmware versions 
 
@@ -10050,48 +10050,28 @@ FAS9000
 FAS9500
 FASDvM300
 SIMBOX
-|NetApp Release 9.14.1P10: Thu Nov 28 12:32:16 UTC 2024
-NetApp Release 9.14.1P11: Wed Jan 22 11:55:28 UTC 2025
-NetApp Release 9.14.1P1: Thu Feb 15 00:45:21 UTC 2024
-NetApp Release 9.14.1P4: Thu Apr 18 15:59:10 UTC 2024
-NetApp Release 9.14.1P5: Sat May 18 19:42:16 UTC 2024
-NetApp Release 9.14.1P6: Tue Jun 18 16:11:44 UTC 2024
-NetApp Release 9.14.1P7: Thu Aug 01 03:07:44 UTC 2024
-NetApp Release 9.14.1P8: Fri Sep 13 07:12:27 UTC 2024
-NetApp Release 9.14.1P9: Mon Oct 21 18:04:05 UTC 2024
-NetApp Release 9.15.1: Thu Jul 04 12:21:07 UTC 2024
-NetApp Release 9.15.1P1: Tue Jul 30 05:15:49 UTC 2024
-NetApp Release 9.15.1P2: Tue Aug 27 16:35:16 UTC 2024
-NetApp Release 9.15.1P3: Wed Sep 25 22:33:44 UTC 2024
-NetApp Release 9.15.1P4: Sun Oct 27 20:15:53 UTC 2024
-NetApp Release 9.15.1P5: Sun Nov 24 16:31:37 UTC 2024
-NetApp Release 9.15.1P6: Wed Dec 04 01:42:39 UTC 2024
-NetApp Release 9.15.1P7: Sat Jan 18 21:34:02 UTC 2025
-NetApp Release 9.15.1RC2: Mon Jun 24 04:49:55 UTC 2024
-NetApp Release 9.16.1: Sat Jan 18 19:31:15 UTC 2025
-NetApp Release 9.16.1P1: Fri Feb 14 03:53:50 UTC 2025
-NetApp Release 9.16.1RC1: Mon Nov 04 10:39:46 UTC 2024
-NetApp Release 9.16.1X26: Mon Dec 09 10:27:42 UTC 2024
-NetApp Release 9.16.1X29: Sun Jan 12 11:18:25 UTC 2025
-NetApp Release 9.17.1X7: Fri Feb 14 11:21:52 UTC 2025
-NetApp Release Clawhammer__9.14.1: Sat May 18 09:23:49 UTC 2024
-NetApp Release Cloudstream__9.16.1: Mon Nov 04 05:51:46 UTC 2024
-NetApp Release Cloudstream__9.16.1: Thu Mar 13 20:55:54 UTC 2025
-NetApp Release Electricjellyfish__9.17.1: Mon Mar 03 05:57:49 UTC 2025
-NetApp Release Electricjellyfish__9.17.1: Sun Mar 09 05:56:14 UTC 2025
-NetApp Release Electricjellyfish__9.17.1: Sun Mar 16 04:54:53 UTC 2025
-NetApp Release Electricjellyfish__9.17.1: Tue Jan 28 11:48:14 UTC 2025
-NetApp Release Electricjellyfish__9.17.1: Tue Mar 18 04:59:54 UTC 2025
-NetApp Release Electricjellyfish__9.17.1: Wed Mar 12 04:42:03 UTC 2025
-NetApp Release Mightysquirrel__9.15.1: Fri May 24 05:03:10 UTC 2024
-NetApp Release Mightysquirrel__9.15.1: Sat Jan 18 11:39:42 UTC 2025
-NetApp Release Tropicallightning__9.18.0: Fri Feb 21 14:02:58 UTC 2025
-NetApp Release Tropicallightning__9.18.0: Mon Feb 17 08:18:14 UTC 2025
-NetApp Release Tropicallightning__9.18.0: Thu Feb 20 08:11:55 UTC 2025
-NetApp Release Tropicallightning__9.18.0: Thu Feb 27 04:15:40 UTC 2025
-NetApp Release Tropicallightning__9.18.0: Tue Feb 18 14:00:54 UTC 2025
-NetApp Release Tropicallightning__9.18.0: Wed Feb 26 08:19:21 UTC 2025
-NetApp Release Tropicallightning__9.18.0: Wed Jan 29 08:34:06 UTC 2025
+a|* NetappRelease 9.14.1P10: Thu Nov 28 12:32:16 UTC 2024
+* NetappRelease 9.14.1P11: Wed Jan 22 11:55:28 UTC 2025
+* NetappRelease 9.14.1P1: Thu Feb 15 00:45:21 UTC 2024
+* NetappRelease 9.14.1P4: Thu Apr 18 15:59:10 UTC 2024
+* NetappRelease 9.14.1P5: Sat May 18 19:42:16 UTC 2024
+* NetappRelease 9.14.1P6: Tue Jun 18 16:11:44 UTC 2024
+* NetappRelease 9.14.1P7: Thu Aug 01 03:07:44 UTC 2024
+* NetappRelease 9.14.1P8: Fri Sep 13 07:12:27 UTC 2024
+* NetappRelease 9.14.1P9: Mon Oct 21 18:04:05 UTC 2024
+* NetappRelease 9.15.1: Thu Jul 04 12:21:07 UTC 2024
+* NetappRelease 9.15.1P1: Tue Jul 30 05:15:49 UTC 2024
+* NetappRelease 9.15.1P2: Tue Aug 27 16:35:16 UTC 2024
+* NetappRelease 9.15.1P3: Wed Sep 25 22:33:44 UTC 2024
+* NetappRelease 9.15.1P4: Sun Oct 27 20:15:53 UTC 2024
+* NetappRelease 9.15.1P5: Sun Nov 24 16:31:37 UTC 2024
+* NetappRelease 9.15.1P6: Wed Dec 04 01:42:39 UTC 2024
+* NetappRelease 9.15.1P7: Sat Jan 18 21:34:02 UTC 2025
+* NetappRelease 9.15.1RC2: Mon Jun 24 04:49:55 UTC 2024
+* NetappRelease 9.16.1: Sat Jan 18 19:31:15 UTC 2025
+* NetappRelease 9.16.1P1: Fri Feb 14 03:53:50 UTC 2025
+
+
 
 |===
 Products supported by this data collector:
@@ -11066,126 +11046,6 @@ Management APIs used by this data collector:
 
 |===
 
-== OpenStack (REST API / SSH)
-
-
-|===
-
-
-
-|===
-Products supported by this data collector:
-|===
-^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
-
-.76+|foundation .7+|Data Store|Capacity|Implemented|HTTPS|Snapshot Used capacity in MB
-|MOID|Implemented|HTTPS|
-|Name|Implemented|HTTPS|
-|OID|Implemented|HTTPS|
-|Provisioned Capacity|Implemented|HTTPS|
-|Used Capacity|Implemented|HTTPS|
-|Virtual Center Ip|Implemented|HTTPS|
-.3+|NasShare DataStore|DataStore OID|Implemented|HTTPS|
-|Nas Share OID|Implemented|HTTPS|
-|OID|Implemented|HTTPS|
-.4+|NasShare Host|Nas Share OID|Implemented|HTTPS|
-|Host OID|Implemented|HTTPS|
-|OID|Implemented|HTTPS|
-|Read Only|Implemented|HTTPS|
-.6+|LUN|OID|Implemented|HTTPS|
-|Number|Implemented|HTTPS|
-|DataStore OID|Implemented|HTTPS|
-|Host OID|Implemented|HTTPS|
-|Disk Name|Implemented|HTTPS|
-|TID|Implemented|HTTPS|
-.6+|NAS Share|Capacity|Implemented|HTTPS|Allocated capacity in MB
-|Filer Ip|Implemented|HTTPS|
-|Filer Name|Implemented|HTTPS|
-|OID|Implemented|HTTPS|
-|Share Path|Implemented|HTTPS| For a HvNasShare to be matched to a Share
-|Type|Gap|HTTPS|
-.6+|Path|OID|Implemented|HTTPS|
-|Lun OID|Implemented|HTTPS|
-|Host Port WWPN|Implemented|HTTPS|
-|Storage Port WWPN|Implemented|HTTPS|
-|Active|Implemented|HTTPS|
-|Type|Gap|HTTPS|
-.6+|Server|Cluster|Implemented|HTTPS|Cluster name
-|DataCenter Name|Implemented|HTTPS|
-|Host OID|Implemented|HTTPS|
-|MOID|Implemented|HTTPS|
-|OID|Implemented|HTTPS|
-|Virtual Center Ip|Implemented|HTTPS|
-.7+|Virtual Disk|Capacity|Implemented|HTTPS|Snapshot Used capacity in MB
-|DataStore OID|Implemented|HTTPS|
-|Lun OID|Implemented|HTTPS|
-|Name|Implemented|HTTPS|
-|OID|Implemented|HTTPS|
-|Type|Gap|HTTPS|
-|Used Capacity|Implemented|HTTPS|
-.13+|VirtualMachine|Guest State|Implemented|HTTPS|
-|DataStore OID|Implemented|HTTPS|
-|Host OID|Implemented|HTTPS|
-|IPs|Implemented|HTTPS|
-|MOID|Implemented|HTTPS|
-|Memory|Implemented|HTTPS|
-|Name|Implemented|HTTPS|
-|OID|Implemented|HTTPS|
-|Power State|Implemented|HTTPS|
-|State Change Time|Implemented|HTTPS|
-|Processors|Implemented|HTTPS|
-|Provisioned Capacity|Implemented|HTTPS|
-|Used Capacity|Implemented|HTTPS|
-.3+|VirtualMachine Disk|OID|Implemented|HTTPS|
-|VirtualDisk OID|Implemented|HTTPS|
-|VirtualMachine OID|Implemented|HTTPS|
-.7+|Host|Host Cpu Count|Implemented|HTTPS|
-|Host Domain|Implemented|HTTPS|
-|Host Installed Memory|Implemented|HTTPS|
-|Host OS|Implemented|HTTPS|
-|IPs|Implemented|HTTPS|
-|Name|Implemented|HTTPS|
-|OID|Implemented|HTTPS|
-.4+|ISCSI Node|Host Aliases|Implemented|HTTPS|
-|Node Name|Implemented|HTTPS|
-|OID|Implemented|HTTPS|
-|Type|Gap|HTTPS|
-.4+|Info|DataSource Name|Implemented|HTTPS|Info
-|Date|Implemented|HTTPS|
-|Originator ID|Implemented|HTTPS|
-|Originator Key|Implemented|HTTPS|
-.4+|performance .4+|Host|Total CPU Utilization|Implemented||
-|Key|Implemented||
-|Total Memory Utilization|Implemented||
-|Server ID|Implemented||
-
-|===
-
-Management APIs used by this data collector:
-|===
-^|API ^|Protocol Used ^|Transport layer protocol used ^|Incoming ports used ^|Outgoing ports used ^|Supports authentication ^|Requires only 'Read-only' credentials ^|Supports Encryption ^|Firewall friendly (static ports) 
-
-|OpenStack REST API
-|HTTPS
-|HTTPS
-|443
-|
-|true
-|false
-|true
-|true
-
-|OpenStack SSH
-|SSH
-|SSH
-|22
-|
-|true
-|false
-|true
-|true
-
-|===
 
 == Oracle ZFS (HTTPS)
 
@@ -11801,12 +11661,11 @@ Management APIs used by this data collector:
 == Rubrik Storage
 
 Models and versions supported by this data collector:
-
 Firmware versions: 
 
 * 8.1.3-p12-25506
 * 8.1.3-p13-25544
-*  8.1.3-p2-24912
+* 8.1.3-p2-24912
 * 9.0.3-p10-25744
 * 9.0.3-p5-25595
 * 9.0.3-p6-25611
@@ -11954,15 +11813,15 @@ Models and versions supported by this data collector:
 
 |VA2437096
 VAST Data
-|Build version: release-5.0.0-sp24-1389206
-Build version: release-5.0.0-sp24-1389206
-Build version: release-5.0.0-sp70-1532643
-Build version: release-5.1.0-sp50-1578267
-Build version: release-5.1.0-sp51-hf3-1643358
-Build version: release-5.1.0-sp56-1630237
-Build version: release-5.1.0-sp56-hf10-1682647
-Build version: release-5.1.0-sp56-hf14-1700467
-System version: 5.0.0.94
+| Build version :release-5.0.0-sp24-1389206
+ Build version: release-5.0.0-sp24-1389206
+ Build version: release-5.0.0-sp70-1532643
+ Build version: release-5.1.0-sp50-1578267
+ Build version: release-5.1.0-sp51-hf3-1643358
+ Build version: release-5.1.0-sp56-1630237
+ Build version: release-5.1.0-sp56-hf10-1682647
+ Build version: release-5.1.0-sp56-hf14-1700467
+System version :5.0.0.94
 System version: 5.0.0.133
 System version: 5.0.0.94
 System version: 5.1.0.210
@@ -12124,7 +11983,6 @@ Management APIs used by this data collector:
 == NetApp HCI Virtual Center
 
 Models and versions supported by this data collector:
-
 API versions: 
 
 * VMware vCenter Server 6.7.0 build-10244857
@@ -12332,7 +12190,6 @@ Management APIs used by this data collector:
 == VMware Cloud on AWS
 
 Models and versions supported by this data collector:
-
 API versions: 
 
 * VMware vCenter Server 7.0.3 build-21477706
@@ -12474,7 +12331,6 @@ Management APIs used by this data collector:
 == VMware vSphere (Web Services)
 
 Models and versions supported by this data collector:
-
 API versions: 
 
 * VMware ESXi 6.0.0 build-10474991
@@ -12573,6 +12429,7 @@ API versions:
 * VMware vCenter Server 8.0.3 build-24262322
 * VMware vCenter Server 8.0.3 build-24305161
 * VMware vCenter Server 8.0.3 build-24322831
+
 
 Products supported by this data collector:
 |===

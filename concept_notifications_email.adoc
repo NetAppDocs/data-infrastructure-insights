@@ -6,9 +6,8 @@ keywords: email, notifications, signature, recipient, list, subscription
 ---
 
 = Configuring Email Notifications
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

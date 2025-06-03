@@ -6,9 +6,8 @@ summary: Configuring HDS NAS (HNAS) data collector.
 ---
 
 = Configuring the Hitachi Vantara NAS data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:

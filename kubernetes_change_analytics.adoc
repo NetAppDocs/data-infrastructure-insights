@@ -6,9 +6,8 @@ summary: Tracking Kubernetes changes is easier than ever.
 ---
 
 = Kubernetes Change Analytics
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

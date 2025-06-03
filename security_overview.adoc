@@ -6,9 +6,8 @@ keywords: security, risk, protection
 ---
 
 = Data Infrastructure Insights Security
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:

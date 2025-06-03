@@ -6,9 +6,8 @@ summary: Data Infrastructure Insights supports Telegraf as its agent for collect
 ---
 
 = Configuring an Agent to Collect Data (Windows/Linux)
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -71,7 +70,7 @@ NOTE: The steps below outline the actions needed to set the _http_proxy/https_pr
 
 For systems residing behind a proxy, perform the following to set the _https_proxy_ and/or _http_proxy_ environment variable(s) *PRIOR* to installing the Telegraf agent:
 
- [System.Environment]::SetEnvironmentVariable(“https_proxy”, “<proxy_server>:<proxy_port>”, [System.EnvironmentVariableTarget]::Machine)
+ [System.Environment]:SetEnvironmentVariable(“https_proxy”, “<proxy_server>:<proxy_port>”, [System.EnvironmentVariableTarget]:Machine)
 
 ==== Installing the agent
 

@@ -6,9 +6,8 @@ summary: A summary.
 ---
 
 = Managing configured data collectors
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
