@@ -17,6 +17,20 @@ keywords: features
 [.lead]
 NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in Data Infrastructure Insights (formerly Cloud Insights).
 
+== June 2025
+
+//=== VM Analyzer
+
+
+//=== Fabric Analyzer 
+
+=== Operating System support
+
+The following operating system is now supported with Data Infrastructure Insights Acquisition Units, in addition to those link:https://docs.netapp.com/us-en/cloudinsights/concept_acquisition_unit_requirements.html[already supported]:
+
+* Debian (64-bit) 12
+
+
 == May 2025
 
 === New Landing Pages keep you in the flow
