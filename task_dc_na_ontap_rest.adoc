@@ -55,6 +55,8 @@ If AD/LDAP account is used, the command should be
 
  security login create -user-or-group-name DOMAIN\aduser/adgroup -application http -authentication-method domain -role ci_readonly
  
+
+
 The resulting role and user login will look something like the following. Your actual output may vary:
 
 

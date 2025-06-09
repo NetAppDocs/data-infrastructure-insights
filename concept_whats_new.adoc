@@ -26,9 +26,11 @@ NetApp is continually improving and enhancing its products and services. Here ar
 
 === Operating System support
 
-The following operating system is now supported with Data Infrastructure Insights Acquisition Units, in addition to those link:https://docs.netapp.com/us-en/cloudinsights/concept_acquisition_unit_requirements.html[already supported]:
+The following operating systems are now supported with Data Infrastructure Insights Acquisition Units, in addition to those link:concept_acquisition_unit_requirements.html[already supported]:
 
 * Debian (64-bit) 12
+* Oracle Enterprise Linux (64-bit) 9.6
+* Red Hat (64-bit) 9.6
 
 
 == May 2025
