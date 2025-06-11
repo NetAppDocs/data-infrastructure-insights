@@ -13,9 +13,11 @@ summary: Create a webhook for workload security alert notifications.
 :imagesdir: ./media/
 
 [.lead]
-Webhooks allow users to send critical or warning   alert noti   fications to various applications using a customized webhook channel.	
 
-Many commercial applications support webhooks as a standard input interface, for example: Slack, PagerDuty, Teams, and Discord. By supporting a generic, customizable webhook channel, Workload Security can support many of these delivery channels . Information about configuring the webhooks can be found on the respective application's websites. For example, Slack provides this useful guide.
+Webhooks allow users to send critical or warning alert notifications to various applications using a customized webhook channel.	
+
+Many commercial applications support webhooks as a standard input interface, for example: Slack, PagerDuty, Teams, and Discord. By supporting a generic, customizable webhook channel, Workload Security can support many of these delivery channels. Information about configuring the webhooks can be found on the respective application's websites. For example, Slack provides link:https://api.slack.com/messaging/webhooks[this useful guide].
+
 
 You can create multiple webhook channels, each channel targeted for a different purpose, separate applications, different recipients, etc.
 
@@ -37,7 +39,9 @@ To create a Workload Security Webhook, go to Admin > Notifications and select â€
 
 Note: User must be a Workload Security _Admin_ in order to create and manage Workload Security Webhooks.
 
-image:ws_webhook_slack_example.png[webhook slack example for Workload Security]
+
+image:ws_webhook_slack_example.png[webhook slack example for Workload Security, width=500]
+
 
 * Enter appropriate information for each of the fields, and click "Save".
 * You can also click the "Test Webhook" button to test the connection. Note that this will send the "Message Body" (without substitutions) to the defined URL according to the selected Method.
@@ -55,7 +59,9 @@ In this section you can add any custom parameters and/or secrets you wish. A cus
 
 The following sample image shows how custom parameters are used in webhook creation.
 
-image:ws_webhook_parameters_example.png[workload security webhook with parameters]
+
+image:ws_webhook_parameters_example.png[workload security webhook with parameters, width=800]
+
 
 == Workload Security Webhooks List Page
 
@@ -65,8 +71,10 @@ Note: The value of 'status' column will keep changing based on the result of las
 |===
 |Status	|Description
 |OK	|Successfully sent notification.
-|403	|Forbidden. For example, an incorrect URL.
-|404	|URL not found
+
+|403	|Forbidden.
+|404	|URL not found.
+
 |400  	a|Bad Request. You might see this status if there is any error in the message body, for example:
 
 * Badly formatted json.
@@ -84,7 +92,9 @@ From the webhooks listing page users can also Edit/Duplicate/Delete webhooks.
 
 To add a webhook notification to an alert policy, go to -Workload Security > Policies- and select an existing policy or add a new policy. In the _Actions_ section > _Webhook Notifications_ dropdown, select the required webhooks.
 
-image:ws_edit_attack_policy.png[Edit Attack Policy dialog showing webhook dropdown]
+
+image:ws_edit_attack_policy.png[Edit Attack Policy dialog showing webhook dropdown, width=500]
+
 
 Webhook notifications are tied to policies. When the attack (RW/DD/WARN) happens, the action configured (Take snapshot / user blocking) will be taken and then the associated webhook notification will be triggered.
 
@@ -92,15 +102,19 @@ Note: Email notifications are independent of policies, they will be triggered as
 
 * If a policy is paused, webhook notifications will not be triggered.
 
-* Multiple webhooks can be attached to a single policy but it is recommended to attach no more than 10 webhooks to a policy.
+
+* Multiple webhooks can be attached to a single policy but it is recommended to attach no more than 5 webhooks to a policy.
+
 
 
 === Workload Security Webhook Examples  
 
 Webhooks for link:ws_webhook_example_slack.html[Slack]
-Webhooks for link:[PagerDuty]
-Webhooks for link:[Teams]
-Webhooks for link:[Discord] 
+
+Webhooks for link:ws_webhook_example_pagerduty.html[PagerDuty]
+Webhooks for link:ws_webhook_example_teams.html[Teams]
+Webhooks for link:ws_webhook_example_discord.html[Discord] 
+
 
 
 

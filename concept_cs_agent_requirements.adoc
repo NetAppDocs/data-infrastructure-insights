@@ -68,21 +68,6 @@ For Linux, disk space should be allocated in this manner:
 == Additional recommendations
 * It is strongly recommended to synchronize the time on both the ONTAP system and the Agent machine using *Network Time Protocol (NTP)* or *Simple Network Time Protocol (SNTP)*.
 
-////
-
-Removed from Table:
-
-|Agent outbound URLs (port 433)|
-
-\https://<site_name>.cs01.cloudinsights.netapp.com 
-//You can get the site ID from the product URL. For example: https://*ab1234*.cs01.cloudinsights.netapp.com
-You can use a broader range to specify the tenant ID: \https://*.cs01.cloudinsights.netapp.com/
-
-\https://gateway.c01.cloudinsights.netapp.com 
-
-\https://agentlogin.cs01.cloudinsights.netapp.com 
-
-////
 
 
 
@@ -130,8 +115,6 @@ agentlogin.cs01-ap-1.cloudinsights.netapp.com
 
 == In-network rules
 
-//Note that when adding _link:task_add_collector_svm.html#permissions-when-adding-via-cluster-management-ip[csuser]_, that user requires SSH access to the ONTAP management LIF.
-
 
 [cols=5*,options="header"]
 |===
@@ -143,7 +126,13 @@ agentlogin.cs01-ap-1.cloudinsights.netapp.com
 
 NOTE that you do not need to reserve *all* of these ports, but the ports you reserve for this must be within this range. It is recommended to start by reserving ~100 ports, and increasing if necessary.
 
+|TCP|35000-55000|Cluster Management IP|Workload Security Agent
+|Communication from ONTAP Cluster Management IP to the Workload Security Agent for *EMS events*. These ports must be opened towards the Workload Security Agent in order for ONTAP to send *EMS events* to it, including any firewall on the Workload Security Agent itself (if present).
+
+NOTE that you do not need to reserve *all* of these ports, but the ports you reserve for this must be within this range. It is recommended to start by reserving ~100 ports, and increasing if necessary.
+
 |SSH |22|Workload Security Agent| Cluster management |Needed for CIFS/SMB user blocking.
+
 |===
 
 

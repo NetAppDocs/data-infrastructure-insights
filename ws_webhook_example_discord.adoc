@@ -23,10 +23,12 @@ NOTE: This page refers to third-party instructions, which care subject to change
 
 * Select *Integrations > View Webhooks* and click *New Webhook*
 
-* Copy the Webhook URL. You will need to paste this into the Data Infrastructure Insights webhook configuration.
+
+* Copy the Webhook URL. You will need to paste this into the Workload Security webhook configuration.
 
 
-== Create Workload Security Insights Webhook:
+== Create Workload Security Webhook:
+
 
 . Navigate to Admin > Notifications and select the _Workload Security Webhooks_ tab. Click '+ Webhook' to create a new webhook.
 
