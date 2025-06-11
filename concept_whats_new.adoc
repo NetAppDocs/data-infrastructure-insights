@@ -19,10 +19,13 @@ NetApp is continually improving and enhancing its products and services. Here ar
 
 == June 2025
 
-//=== VM Analyzer
 
+=== VM Analyzer: Holistic VM-to-Storage Visibility & Troubleshooting
 
-//=== Fabric Analyzer 
+DII's *VM Analyzer* feature provides a comprehensive, end-to-end view of your virtualized environments. The VM Analyzer streamlines troubleshooting by mapping the entire path from virtual machines to storage, allowing users to quickly pinpoint performance issues across virtual disks, VMs, hosts, datastores, volumes, and storage. With an intuitive topology view, filtering, and detailed performance metrics, administrators can easily identify bottlenecks, analyze traffic imbalances, and optimize overall storage performance.
+
+image:vm_analyzer_example_with_panel.png[VM Analyzer topology map of a storage system]
+
 
 === Operating System support
 
@@ -33,45 +36,28 @@ The following operating systems are now supported with Data Infrastructure Insig
 * Red Hat (64-bit) 9.6
 
 
+
+'''
+
+
 == May 2025
 
-=== New Landing Pages keep you in the flow
-
-The redesigned Landing Pages surface everything you need--summary data, performance charts, correlations, alerts and changes, and key resources--in one view.
-
-Now you can troubleshoot faster and stay in flow, without jumping between tabs or losing context.
-
-image:lp_new_design.png[new landing page design showing placement of summary and performance and additional resources sections]
 
 
-=== Workload Security Improvements
+=== Webhooks now available for Workload Security alerts
 
-*Webhooks now available for Workload Security alerts*
-
-Workload Security now supports out-of-the-box webhook notifications to tools like Slack, PagerDuty, Teams, and more. Additionally, we offer customizable templates that allow you to tailor the message or integrate with any other SIEM or third-party application. Route critical alerts directly into your existing security workflows, so your team can investigate and respond faster.
+Workload Security now supports out-of-the-box webhook notifications to tools like Slack, PagerDuty, Teams, and more.
+Route critical alerts directly into your existing security workflows, so your team can investigate and respond faster—no custom setup required.
 
 image:ws_webhook_slack_example.png[Webhook Slack Example for Workload Security, width=400]
 
 
-*Migrate Workload Security collectors across agents*
+=== Migrate Workload Security collectors across agents
 
 You can easily migrate a Workload Security collector from one agent to another, allowing for efficient load balancing of collectors across agents.
 Migrating is as easy as editing the collector and selecting the destination agent from the list. 
 
 image:ws_migrate_collector_to_another_agent.png[migrate collector, width=500]
-
-
-
-=== .CSV Asynchronous Export
-
-Exporting data to .CSV can take anywhere from a few seconds to a number of hours, depending on the amount of data to export. Data Infrastructure Insights now exports that data asynchronously, so you can continue working while the .CSV is being compiled. 
-
-View your .CSV exports by selecting the "Bell" icon in the upper-right toolbar.
-
-image:csv_export_async.png[bell icon ith list of .csv exports ready for download, width=400]
-
-
-
 
 ''''
 
@@ -112,45 +98,6 @@ If you have configured notifications on data collectors, starting April 15 those
 
 
 '''
-
-
-== April 2025
-
-=== ML-Powered Anomaly Bounds in Line Widgets for Proactive Issue Resolution
-
-To troubleshoot performance issues with Line or Spline chart widgets, you can now display expected behavior boundaries alongside actual metrics, allowing you to distinguish between normal and abnormal metric trends. 
-
-DII machine learning with seasonal data analysis establishes intelligent thresholds based on historical patterns. When metrics deviate from expected ranges, the system highlights these as anomalies, enabling quick issue identification, reducing mean time to resolution, and addressing problems before they impact operations.
-
-image:expected_bounds_example_showing_spike.png[expected bounds showing spike above, width=300]
-
-
-=== Optimize VMware Costs with VSAN Storage Support
-
-Our VM Optimization feature now includes support for VMWare environments with VSAN storage. In addition to CPU and memory usage, the analysis now considers local VSAN storage for reclamation recommendations, helping you further reduce licensing costs.
-
-image:vm_optimization_with_vsan.png[VM Optimization example with VSAN]
-
-
-=== Alert details at your fingertips
-
-Investigating alerts is easier than ever with the new slideout panel. Select an alert to view details for that alert, and easily switch between alerts without losing your place while investigating issues. 
-
-image:alert_slideout_example.png[Alert slideout for easier navigation]
-
-
-=== Workload Security Forensics Asynchronous Export
-
-Exporting forensics data can take anywhere from a few seconds to a number of hours, depending on the amount of data to export. Workload Security exports that data asynchronously, so you can continue working while the .CSV is being compiled. 
-
-
-
-=== Data Collector Notifications grouped into Rules
-
-If you have configured notifications on data collectors, starting April 15 those notifications will be handled in Notification Rules, with a single rule for collectors that have identical recipients. Collectors with different recipients will have separate rules. Existing collector notifications are migrated to notification rules.
-
-'''
-
 
 
 == March 2025
