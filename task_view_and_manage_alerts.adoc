@@ -47,11 +47,12 @@ You can manage multiple alerts by selecting the checkbox to the left of each Ale
 
 Clicking on an Alert ID opens the Alert Detail Page.
 
-== Alert Detail Page
+== Alert Detail Panel
 
-The Alert Detail Page provides additional detail about the alert, including a _Summary_, an _Expert View_ showing graphs related to the object's data, any _Related Assets_, and _Comments_ entered by alert investigators.
+Select any alert row to open the alert's detail panel. The alert detail panel provides additional detail about the alert, including a _Summary_, an _Expert View_ showing graphs related to the object's data, any _Related Assets_, and _Comments_ entered by alert investigators.
 
-image:alert_detail_page.png[Alert Detail Page] 
+//image:alert_detail_page.png[Alert Detail Page] 
+image:metric_alert_detail_pane.png[metric alert detail panel]
 
 == Alerts When Data Is Missing
 

@@ -5,9 +5,8 @@ summary: SAN Analyzer provides topology for assets on your tenant
 keywords: topology, analyze, analysis, map
 ---
 
-= San Analyzer Overview
+= SAN Analyzer Overview
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
@@ -36,6 +35,10 @@ Clicking on an object or group opens a slideout panel providing additional detai
 In addition to the Summary tab, the slideout panel displays tabs for things like Port details or Zone information, as applicable to the chosen object.
 
 image:san_analyzer_slideout_example.png[SAN Analyzer slideout panel]
+
+If your environment has different protocols, you can filter by iSCSI or FC:
+
+image:san_analyzer_protocols.png[SAN Analyzer protocols]
 
 If your environment includes iSCSI devices, hovering over the _iSCSI_ object highlights the connections related to those relevant iSCSI devices.
 

@@ -25,7 +25,9 @@ NOTE: This page refers to third-party instructions, which are subject to change.
 +
 image:Webhooks_PagerDutyScreen1.png[Pagerduty screen]
 
-. Select the _Integrations_ tab to see the *Integration Key*. You will need this key when you create the Data Infrastructure Insights webhook below. 
+
+. Select the _Integrations_ tab to see the *Integration Key*. You will need this key when you create the Workload Security webhook below. 
+
 
 //. On the same screen, copy or make note of the *Integration URL* under Alert Events. You will need to enter this into the Data Infrastructure Insights webhook configuration.
 

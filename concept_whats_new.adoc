@@ -17,6 +17,7 @@ keywords: features
 [.lead]
 NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in Data Infrastructure Insights (formerly Cloud Insights).
 
+
 == June 2025
 
 
@@ -59,7 +60,8 @@ Migrating is as easy as editing the collector and selecting the destination agen
 
 image:ws_migrate_collector_to_another_agent.png[migrate collector, width=500]
 
-''''
+'''
+
 
 == April 2025
 
@@ -70,6 +72,7 @@ To troubleshoot performance issues with Line or Spline chart widgets, you can no
 DII machine learning with seasonal data analysis establishes intelligent thresholds based on historical patterns. When metrics deviate from expected ranges, the system highlights these as anomalies, enabling quick issue identification, reducing mean time to resolution, and addressing problems before they impact operations.
 
 image:expected_bounds_example_showing_spike.png[expected bounds showing spike above, width=300]
+
 
 
 === Optimize VMware Costs with VSAN Storage Support
@@ -95,7 +98,6 @@ Exporting forensics data can take anywhere from a few seconds to a number of hou
 === Data Collector Notifications grouped into Rules
 
 If you have configured notifications on data collectors, starting April 15 those notifications will be handled in Notification Rules, with a single rule for collectors that have identical recipients. Collectors with different recipients will have separate rules. Existing collector notifications are migrated to notification rules.
-
 
 '''
 
@@ -155,6 +157,7 @@ The following operating systems are now supported with Data Infrastructure Insig
 
 
 '''
+
 
 == February 2025
 

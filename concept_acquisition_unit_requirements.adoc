@@ -25,10 +25,10 @@ You must install an Acquisition Unit (AU) in order to acquire information from y
 
 * AlmaLinux 9.3 through 9.5
 * Centos (64-bit): 7.2 through 7.9, 8.1 through 8.4, Stream 8, Stream 9
-* Debian (64-bit): 9 through 11
+* Debian (64-bit): 9 through 12
 * OpenSUSE Leap 15.1 through 15.6
-* Oracle Enterprise Linux (64-bit): 7.5 through 7.9, 8.1 through 8.10, 9.3 through 9.5
-* Red Hat (64-bit): 7.2 through 7.9, 8.1 through 8.10, 9.1 through 9.5
+* Oracle Enterprise Linux (64-bit): 7.5 through 7.9, 8.1 through 8.10, 9.3 through 9.6
+* Red Hat (64-bit): 7.2 through 7.9, 8.1 through 8.10, 9.1 through 9.6
 * Rocky 9.0 through 9.5
 * SUSE Linux Enterprise Server 15, 15 SP2 through 15 SP6
 * Ubuntu Server: 18.04, 20.04, 22.04, 24.04 LTS

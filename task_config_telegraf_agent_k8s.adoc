@@ -163,6 +163,7 @@ Note: If the first command returns “No resources found”, use the following i
 
 Execute each of the following commands in order. Depending on your current installation, some of these commands may return 'object not found' messages. These messages may be safely ignored.
 
+
 ////
  kubectl -n <NAMESPACE> delete agent netapp-ci-agent-monitoring-netapp 
  kubectl delete crd agents.monitoring.netapp.com 
@@ -180,6 +181,7 @@ Execute each of the following commands in order. Depending on your current insta
   kubectl delete clusterrolebinding agent-manager-rolebinding agent-proxy-rolebinding agent-cluster-admin-rolebinding <NAMESPACE>-agent-manager-rolebinding <NAMESPACE>-agent-proxy-rolebinding <NAMESPACE>-cluster-role-binding-privileged
   kubectl delete <NAMESPACE>-psp-nkmo
   kubectl delete ns <NAMESPACE>
+
 
 If a Security Context Constraint was previously-created:
 

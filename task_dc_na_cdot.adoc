@@ -137,7 +137,9 @@ Data Infrastructure Insights has the ability to collect ONTAP cluster switch dat
 
 == ONTAP Power Metrics
 
-Several ONTAP models provide power metrics for Data Infrastructure Insights that can be used for monitoring or alerting. The lists of supported and unsupported models below are not comprehensive but should provide some guidance; in general, if a model is in the same family as one on the list, the support should be the same.
+Several ONTAP models provide power metrics for Data Infrastructure Insights that can be used for monitoring or alerting. 
+
+NOTE: These lists are not comprehensive, and are subject to change. In general, if a model is in the same family as one on the list, the support should be the same but is not guaranteed to be. If you are unsure whether your model supports power metrics, contact ONTAP support.
 
 Supported Models:
 

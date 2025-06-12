@@ -15,7 +15,9 @@ summary: Create a Workload Security webhook for Slack to alert on security
 [.lead]
 Webhooks allow users to send alert notifications to various applications using a customized webhook channel. This page provides an example for setting up webhooks for Slack.
 
+
 This page refers to third-party instructions, which are subject to change. Refer to the Slack documentation for the most up-to-date information.
+
 
 ==== Slack Example
 
