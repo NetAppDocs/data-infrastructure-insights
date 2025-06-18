@@ -36,7 +36,7 @@ The SecurityAdmin tool allows you to manage security options for Data Infrastruc
 
 After AU install, the SecurityAdmin tool is found on the acquisition unit system at either of these locations:
 
- Windows - C:\Program Files\SANscreen\securityadmin\bin\securityadmin.bat
+ Windows - <install_path>\Cloud Insights\Acquisition Unit\acq\securityadmin\bin\securityadmin.bat
  Linux - /bin/oci-securityadmin.sh
 
 == Using the SecurityAdmin Tool
@@ -54,7 +54,7 @@ image:SecurityAdminMenuChoices.png[Options for SecurityAdmin Tool (Linux)]
 +
 Creates a backup zip file of the vault containing all passwords and keys and places the file in a location specified by the user, or in the following default locations:
 +
- Windows - C:\Program Files\SANscreen\backup\vault
+ Windows - <install_path>\Cloud Insights\Acquisition Unit\acq\securityadmin\backup\vault
  Linux - /var/log/netapp/oci/backup/vault
 +
 It is recommended that vault backups be kept secure, as they include sensitive information.
