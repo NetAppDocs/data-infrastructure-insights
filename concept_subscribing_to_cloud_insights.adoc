@@ -67,8 +67,7 @@ NOTE: If you need additional time to evaluate Data Infrastructure Insights and y
 You may also sign up for a free trial through the AWS Marketplace. The AWS Marketplace free trial gives you access to Data Infrastructure Insights for a trial period of 33 days. 
 
 
-The AWS Marketplace free trial cannot be extended. At any time during your trial, you can downgrade to a Data Infrastructure Insights Basic Edition subscription or change to a paid Data Infrastructure Insights subscription by visiting the *Admin -> Subscription* page.
-
+The AWS Marketplace free trial cannot be extended. 
 
 
 === What if My Trial has Expired?
