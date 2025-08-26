@@ -13,7 +13,7 @@ summary: Adding Workload Security data collectors
 :imagesdir: ./media/
 
 [.lead]
-Workload Security uses data collectors to collect file and user access data from devices.
+The ONTAP SVM Data Collector enables Workload Security to monitor file and user access activities on NetApp ONTAP storage virtual machines (SVMs). This guide walks you through the prerequisites, configuration, and management of the SVM data collector to provide comprehensive security monitoring of your ONTAP environment.
 
 == Before you begin
 
@@ -114,6 +114,7 @@ Cluster level credentials are needed for this feature to work.
 
 If you are using cluster administration credentials, no new permissions are needed.
 
+
 If you are using a custom user (for example, _csuser_) with permissions given to the user, then follow the steps in link:cs_restrict_user_access.html[User Access Blocking] to give permissions to Workload Security to block user.
 
 
@@ -146,8 +147,6 @@ To create the new user, log in to ONTAP with the Cluster management Administrato
  security login create -user-or-group-name csuser -application ontapi -authmethod password -role csrole
  security login create -user-or-group-name csuser -application ssh -authmethod password -role csrole
  security login create -user-or-group-name csuser -application http -authmethod password -role csrole
-
-
 
 
 === Permissions when adding via *Vserver Management IP*:
@@ -258,22 +257,15 @@ When adding via SVM IP the options are:
 * In the Installed Data Collectors page, use the options menu on the right of each collector to edit the data collector. You can restart the data collector or edit data collector configuration attributes.
 
 
-
-
-
 == Recommended Configuration for MetroCluster
 
 The following is recommended for MetroCluster:
 
-1.	Connect two data collectors, one to the source SVM and another to the destination SVM.
-2.	The data collectors should be connected by _Cluster IP_.
-3.	At any moment of time, one data collector should be in running, another will be in error.
-+
-The current 'running' SVM's data collector will show as _Running_. The current 'stopped' SVM's
-data collector will show as _Error_.
-
-4.	Whenever there is a switchover, the state of the data collector will change from 'running' to 'error' and vice versa.
-5.	It will take up to two minutes for the data collector to move from Error state to Running state.
+1. Connect two data collectors, one to the source SVM and another to the destination SVM.
+2. The data collectors should be connected by _Cluster IP_.
+3. At any moment in time, the current 'running' SVM's data collector will show as _Running_. The current 'stopped' SVM's data collector will show as _Stopped_.
+4. Whenever there is a switchover, the state of the data collector will change from _Running_ to _Stopped_ and vice versa.
+5. It will take up to two minutes for the data collector to move from _Stopped_ state to _Running_ state.
 
 
 == Service Policy

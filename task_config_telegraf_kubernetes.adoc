@@ -7,7 +7,6 @@ summary: Data collector for Kubernetes
 
 = Data Collector: Kubernetes
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
@@ -30,6 +29,7 @@ The Kubernetes Monitoring Operator installs kube-state-metrics automatically; no
 === Kube-state-metrics Counters
 
 The NetApp Kubernetes Monitoring Operator extracts the kube-state-metrics counters listed below. More details about each counter can be found at: https://github.com/kubernetes/kube-state-metrics/tree/main/docs#exposed-metrics.
+
 
 . DaemonSet Metrics
 . Deployment Metrics

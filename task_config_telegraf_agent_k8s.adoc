@@ -7,13 +7,11 @@ summary: The Kubernetes Monitoring Operator collects Kubernetes data for use in 
 = Kubernetes Monitoring Operator Installation and Configuration
 :hardbreaks:
 :nofooter:
-
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-
 Data Infrastructure Insights offers the *Kubernetes Monitoring Operator* for Kubernetes collection. Navigate to *Kubernetes > Collectors > +Kubernetes Collector* to deploy a new operator.
 
 
@@ -101,7 +99,7 @@ If you upgraded using the push-button upgrades feature and encounter any difficu
 
 Determine whether an AgentConfiguration exists with the existing Operator (if your namespace is not the default _netapp-monitoring_, substitute the appropriate namespace):
 
- kubectl -n netapp-monitoring get agentconfiguration netapp-monitoring-configuration
+ kubectl -n netapp-monitoring get agentconfiguration netapp-ci-monitoring-configuration
  
 If an AgentConfiguration exists:
 
@@ -365,8 +363,8 @@ Return to the link:task_config_telegraf_agent_k8s.html[*NetApp Kubernetes Monito
 To remove permission for the Kubernetes Monitoring Operator to view secrets cluster-wide, delete the following resources from the _operator-setup.yaml_ file before installing:
 
 ----
- ClusterRole/netapp-ci-<namespace>-agent-secret-clusterrole
- ClusterRoleBinding/netapp-ci-<namespace>-agent-secret-clusterrolebinding 
+ ClusterRole/netapp-ci<namespace>-agent-secret
+ ClusterRoleBinding/netapp-ci<namespace>-agent-secret
 ----
 
 If this is an upgrade, also delete the resources from your cluster:
@@ -374,11 +372,12 @@ If this is an upgrade, also delete the resources from your cluster:
 ----
  kubectl delete ClusterRole/netapp-ci-<namespace>-agent-secret-clusterrole
  kubectl delete ClusterRoleBinding/netapp-ci-<namespace>-agent-secret-clusterrolebinding
+ 
 ----
 
 If Change Analysis is enabled, modify the _AgentConfiguration_ or _operator-config.yaml_ to uncomment the change-management section and include _kindsToIgnoreFromWatch: '"secrets"'_ under the change-management section. Note the presence and position of single and double quotes in this line.
 
-  # change-management:
+  change-management:
     ...
     # # A comma separated list of kinds to ignore from watching from the default set of kinds watched by the collector
     # # Each kind will have to be prefixed by its apigroup

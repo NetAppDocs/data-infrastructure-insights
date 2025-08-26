@@ -19,15 +19,3 @@ Data Infrastructure Insights highlights new features and functionality in a _Pre
 
 If you are interested in previewing one or more of these features, contact your link:https://bluexp.netapp.com/contact-cds[NetApp Sales Team] for more information.
 
-//All current Data Infrastructure Insights functionality is available. Watch this space for future Previews.
-
-|===
-
-|*Feature* |*Description*
-
-|Reclaim ONTAP Cold Storage
-|Provides visualizations of ONTAP volume workloads with cold capacity as well as other related metrics.
-
-|===
-
-

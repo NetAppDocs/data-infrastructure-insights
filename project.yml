@@ -90,7 +90,7 @@ sidebar:
           - title: Modifying or Deleting a Query
             url: /task_modify_delete_query.html
           - title: Assigning Multiple Applications/annotations to Objects
-            url: /task_query_assign_multiple_applicationss.html
+            url: /task_query_assign_multiple_applications.html
           - title: Copying table values to the Clipboard
             url: /task_query_copy_table_values.html
           - title: Querying Logs
@@ -189,6 +189,8 @@ sidebar:
             url: /san_analyzer_overview.html
           - title: VM Analyzer
             url: /vm_analyzer_overview.html
+          - title: Monitor Infrastructure Health
+            url: /monitor_infrastructure_health.html
  
       - title: Reporting
         entries:

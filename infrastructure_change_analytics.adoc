@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: infrastructure_change_analytics.html
 keywords: changes, management, analysis, infra, infrastructure
-summary: Cloud Insights tracks changes in infrastructure for ease of analysis and troubleshooting..
+summary: Data Infrastructure Insights tracks changes in infrastructure for ease of analysis and troubleshooting.
 ---
 
 = Infrastructure Change Analysis
