@@ -7,7 +7,6 @@ summary: Configuring Amazon EC2 data collector.
 
 = Configuring the Amazon EC2 data collector
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:

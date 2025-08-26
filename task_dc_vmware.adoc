@@ -7,14 +7,13 @@ summary: Configuring VMware  data collector.
 
 = Configuring the VMware VSphere data collector 
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-The data collector for VMware vSphere collects VM guest and ESXi Host performance and configuration information and requires read-only privileges on all objects within vSphere. As of August 2024, the vSphere collector additionally brings in log messages from vSphere environments, and some VMware specific metrics. Please note that Data Infrastructure Insights can only retrieve VMware logs information from vSphere 8.0.1 or higher environments. Similarly, the Vendor Specific Metrics is only supported for vSphere 7+ environments. As such, you may want to disable the logs and/or Vendor Specific Metrics checkbox on a given collector if it is pointed at an older vSphere instance. 
+Configure the VMware vSphere data collector to gather comprehensive inventory and performance data from your virtualization environment, including VMs, ESXi hosts, datastores, and related infrastructure components.
 
 == Terminology
 
