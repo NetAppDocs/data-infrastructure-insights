@@ -3,6 +3,7 @@ sidebar: sidebar
 permalink: monitor_infrastructure_health.html
 keywords: infra, infrastructure, health, monitor
 summary: Monitor infrastructure health with unified scoring based on performance, capacity, configuration, and component alerts for proactive issue resolution.
+---
 
 = Monitor Infrastructure Health
 :hardbreaks:
