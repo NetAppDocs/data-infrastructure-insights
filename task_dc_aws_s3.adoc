@@ -7,14 +7,13 @@ summary: Configuring AWS S3 as Storage data collector.
 
 = Configuring the AWS S3 as Storage data collector
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Data Infrastructure Insights uses the AWS S3 as Storage data collector to acquire inventory and performance data from AWS S3 instances. 
+Configure the AWS S3 data collector to gather inventory and performance data from S3 buckets and objects across your AWS environment.
 
 
 == Requirements

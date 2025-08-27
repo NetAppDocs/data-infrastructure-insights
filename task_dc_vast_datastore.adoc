@@ -7,14 +7,13 @@ summary: Configuring VAST Data DataStore storage data collector.
 
 = VAST DataStore data collector
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead] 
-Data Infrastructure Insights uses the VAST DataStore data collector to gather inventory and performance data. 
+The VAST DataStore data collector gathers inventory and performance data from VAST Data storage systems.
 
 == Terminology
 
