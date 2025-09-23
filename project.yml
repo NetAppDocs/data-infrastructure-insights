@@ -337,8 +337,65 @@ sidebar:
         - title: Researching Data Collector Errors
           url: /task_research_failed_collector.html
           
+#    - title: Data Collector Support Matrix
+#      url: /reference_data_collector_support_matrix.html
+
     - title: Data Collector Support Matrix
-      url: /reference_data_collector_support_matrix.html
+      entries:
+        - title: Amazon
+          url: /dc_matrix_amazon.html
+        - title: ASA
+          url: /dc_matrix_asa.html
+        - title: Brocade
+          url: /dc_matrix_brocade.html
+        - title: Cisco
+          url: /dc_matrix_cisco.html
+        - title: Cohesity
+          url: /dc_matrix_cohesity.html
+        - title: Dell
+          url: /dc_matrix_dell.html
+        - title: Dell EMC
+          url: /dc_matrix_emc.html
+        - title: Fujitsu
+          url: /dc_matrix_fujitsu.html
+        - title: Google
+          url: /dc_matrix_google.html
+        - title: Hitachi
+          url: /dc_matrix_hitachi.html
+        - title: HDS
+          url: /dc_matrix_hds.html
+        - title: HiCommand
+          url: /dc_matrix_hicommand.html
+        - title: HP
+          url: /dc_matrix_hp.html
+        - title: HPE
+          url: /dc_matrix_hpe.html
+        - title: Huawei
+          url: /dc_matrix_huawei.html
+        - title: IBM
+          url: /dc_matrix_ibm.html
+        - title: Infinidat
+          url: /dc_matrix_infinidat.html
+        - title: Microsoft
+          url: /dc_matrix_microsoft.html
+        - title: NetApp
+          url: /dc_matrix_netapp.html
+        - title: Nutanix
+          url: /dc_matrix_nutanix.html
+        - title: OpenStack
+          url: /dc_matrix_openstack.html
+        - title: Oracle
+          url: /dc_matrix_oracle.html
+        - title: Pure
+          url: /dc_matrix_pure.html
+        - title: Red Hat
+          url: /dc_matrix_red.html
+        - title: Rubrik
+          url: /dc_matrix_rubrik.html
+        - title: Vast
+          url: /dc_matrix_vast.html
+        - title: VMware
+          url: /dc_matrix_vmware.html
 
     - title: Reference & Support
       entries:

@@ -1,0 +1,284 @@
+---
+sidebar: sidebar
+permalink: dc_matrix_infinidat.html
+summary: The Data Collector Support Matrix contains detailed information on Infinidat data collectors.
+keywords: support matrix, infinidat, collector, matrix
+---
+
+= Data Collector Support Matrix for Infinidat
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The Data Collector Support Matrix provides reference for Infinidat Data Collectors.
+
+== Infinidat Infinibox (HTTP)
+
+Models and versions supported by this data collector:
+
+
+=== Models
+
+* F4303
+* F6230
+* F6240
+
+
+=== Firmware Versions
+
+* 6.0.20.40
+* 6.0.31.0
+* 7.1.14.0
+* 7.1.15.0
+* 7.3.20.90
+* 8.1.0.280
+
+
+=== Foundation
+
+==== Disk
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Capacity (GB)|Implemented|HTTPS|Used capacity
+|Disk Id|Implemented|HTTPS|Uniquely identifies this disk in the array
+|Location|Gap|HTTPS|Where this disk is physically located in the array
+|Model|Implemented|HTTPS|
+|Name|Implemented|HTTPS|
+|Role|Implemented|HTTPS|
+|Role Enum|Implemented|HTTPS|enum for disk role
+|Serial Number|Implemented|HTTPS|
+|Status|Implemented|HTTPS|
+|Status Enum|Implemented|HTTPS|enum for disk status
+|Vendor|Implemented|HTTPS|
+|===
+
+
+==== File Share
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Is InternalVolume|Implemented|HTTPS|whether the file share represents an internal volume (netapp volume) or is it a qtree/folder within the internal volume
+|Is Shared|Implemented|HTTPS|whether this fileShare has any shares associated with it
+|Name|Implemented|HTTPS|
+|Path|Implemented|HTTPS|Path of the fileShare
+|Qtree Id|Implemented|HTTPS|unique id of the qtree
+|===
+
+
+==== Info
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|DataSource Name|Implemented|HTTPS|Info
+|Date|Implemented|HTTPS|
+|Originator ID|Implemented|HTTPS|
+|Originator Key|Implemented|HTTPS|
+|===
+
+
+==== Internal Volume
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Dedupe Enabled|Implemented|HTTPS|Is dedupe enabled on the storage pool
+|Internal Volume Id|Implemented|HTTPS|
+|Name|Implemented|HTTPS|
+|Other Allocated Capacity|Gap|HTTPS|Capacity allocated for other (not data and not snapshot)
+|Raw to Usable Ratio|Implemented|HTTPS|ratio to convert from usable capacity to raw capacity
+|Storage Pool Id|Implemented|HTTPS|
+|Thin Provisioned|Implemented|HTTPS|
+|Thin Provisioning Supported|Implemented|HTTPS|Whether this internal volume supports thin provisioning for the volume layer on top of it
+|Total Allocated Capacity|Implemented|HTTPS|
+|Total Used Capacity|Implemented|HTTPS|Total capacity in MB
+|Type|Gap|HTTPS|
+|===
+
+
+==== QTree
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Name|Implemented|HTTPS|
+|Qtree Id|Implemented|HTTPS|unique id of the qtree
+|Type|Gap|HTTPS|
+|===
+
+
+==== Share
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|IP Interfaces|Implemented|HTTPS|comma separated list of IP addresses on which this share is exposed
+|Name|Implemented|HTTPS|
+|Protocol|Implemented|HTTPS|enum for share protocol
+|===
+
+
+==== Share Initiator
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Initiator|Implemented|HTTPS|
+|Permission|Implemented|HTTPS|Permissions for this particular share
+|===
+
+
+==== Storage
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Display IP|Implemented|HTTPS|
+|Failed Raw Capacity|Implemented|HTTPS|Raw capacity of failed disks (sum of all disks that are failed)
+|Family|Implemented|HTTPS|The storage Family could be Clariion, Symmetrix, et al
+|IP|Implemented|HTTPS|
+|Manage URL|Implemented|HTTPS|
+|Manufacturer|Implemented|HTTPS|
+|Microcode Version|Implemented|HTTPS|
+|Model|Implemented|HTTPS|
+|Name|Implemented|HTTPS|
+|Total Raw Capacity|Implemented|HTTPS|Total raw capacity (sum of all disks on the array)
+|Serial Number|Implemented|HTTPS|
+|Spare Raw Capacity|Implemented|HTTPS|Raw capacity of spare disks (sum of all disks that are spare)
+|SupportActive Active|Implemented|HTTPS|Specified if the storage supports active-active configurations
+|Virtual|Implemented|HTTPS|Is this a storage virtualization device?
+|===
+
+
+==== Storage Node
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Model|Implemented|HTTPS|
+|Name|Implemented|HTTPS|
+|State|Implemented|HTTPS|free text describing the device state
+|UUID|Implemented|HTTPS|
+|===
+
+
+==== Storage Pool
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Data Allocated Capacity|Gap|HTTPS|capacity allocated for data
+|Data Used Capacity|Implemented|HTTPS|
+|Include In Dwh Capacity|Implemented|HTTPS|A way from ACQ to control which storage pools are interesting in DWH Capacity
+|Name|Implemented|HTTPS|
+|Physical Disk Capacity (MB)|Implemented|HTTPS|used as raw capacity for storage pool
+|Raid Group|Implemented|HTTPS|indicates whether this storagePool is a raid group
+|Raw to Usable Ratio|Implemented|HTTPS|ratio to convert from usable capacity to raw capacity
+|Redundancy|Implemented|HTTPS|Redundancy level
+|Reserved Capacity|Implemented|HTTPS|Reserved Capacity in MB
+|Soft Limit (MB)|Implemented|HTTPS|logical volume size that is defined during volume creation or resizing operations
+|Status|Implemented|HTTPS|
+|Storage Pool Id|Implemented|HTTPS|
+|Thin Provisioning Supported|Implemented|HTTPS|Whether this internal volume supports thin provisioning for the volume layer on top of it
+|Total Allocated Capacity|Implemented|HTTPS|
+|Total Used Capacity|Implemented|HTTPS|Total capacity in MB
+|Type|Gap|HTTPS|
+|Virtual|Implemented|HTTPS|Is this a storage virtualization device?
+|===
+
+
+==== Storage Synchronization
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Mode|Implemented|HTTPS|
+|Mode Enum|Implemented|HTTPS|
+|Source Storage|Implemented|HTTPS|
+|Source Volume|Implemented|HTTPS|
+|State|Implemented|HTTPS|free text describing the device state
+|State Enum|Implemented|HTTPS|
+|Target Storage|Implemented|HTTPS|
+|Target Volume|Implemented|HTTPS|
+|Technology|Implemented|HTTPS|technology which causes storage efficiency changed
+|===
+
+
+==== Volume
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Capacity|Implemented|HTTPS|Snapshot Used capacity in MB
+|Junction Path|Implemented|HTTPS|
+|Name|Implemented|HTTPS|
+|Total Raw Capacity|Implemented|HTTPS|Total raw capacity (sum of all disks on the array)
+|Replica Source|Implemented|HTTPS|
+|Replica Target|Implemented|HTTPS|
+|Snapshot|Implemented|HTTPS|
+|Storage Pool Id|Implemented|HTTPS|
+|Thin Provisioned|Implemented|HTTPS|
+|Type|Gap|HTTPS|
+|UUID|Implemented|HTTPS|
+|Used Capacity|Implemented|HTTPS|
+|Virtual|Implemented|HTTPS|Is this a storage virtualization device?
+|===
+
+
+==== Volume Map
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|LUN|Implemented|HTTPS|Name of the backend lun
+|Protocol Controller|Implemented|HTTPS|
+|Storage Port|Implemented|HTTPS|
+|Type|Gap|HTTPS|
+|===
+
+
+==== Volume Mask
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Initiator|Implemented|HTTPS|
+|Protocol Controller|Implemented|HTTPS|
+|Storage Port|Implemented|HTTPS|
+|Type|Gap|HTTPS|
+|===
+
+
+==== WWN Alias
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Host Aliases|Implemented|HTTPS|
+|Object Type|Implemented|HTTPS|
+|Source|Implemented|HTTPS|
+|WWN|Implemented|HTTPS|
+|===
+
+
+==== Management APIs used by this data collector:
+
+|===
+^|API ^|Protocol Used ^|Transport layer protocol used ^|Incoming ports used ^|Outgoing ports used ^|Supports authentication ^|Requires only 'Read-only' credentials ^|Supports Encryption ^|Firewall friendly (static ports) 
+
+|Infinidat REST API
+|HTTPS
+|HTTPS
+|443
+|
+|true
+|true
+|true
+|true
+

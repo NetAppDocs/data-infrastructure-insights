@@ -1,0 +1,1017 @@
+---
+sidebar: sidebar
+permalink: dc_matrix_brocade.html
+summary: The Data Collector Support Matrix contains detailed information on Brocade data collectors.
+keywords: support matrix, brocade, collector, matrix
+---
+
+= Data Collector Support Matrix for Brocade
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The Data Collector Support Matrix provides reference for Brocade Data Collectors.
+
+== Brocade Fibre Channel Switches
+
+Models and versions supported by this data collector:
+
+
+=== Models
+
+* 176.51
+* 183.0
+* Brocade 200E
+* Brocade 300E
+* Brocade 4024 Embedded
+* Brocade 5000
+* Brocade 5100
+* Brocade 5300
+* Brocade 5480 Embedded
+* Brocade 6505
+* Brocade 6510
+* Brocade 6520
+* Brocade 6546
+* Brocade 6547 Embedded
+* Brocade 6548
+* Brocade 6558
+* Brocade 7800
+* Brocade 7810 Extension Switch
+* Brocade 7840
+* Brocade DCX
+* Brocade DCX-4S Backbone
+* Brocade DCX8510-4
+* Brocade DCX8510-8
+* Brocade G610
+* Brocade G620
+* Brocade G630
+* Brocade G720
+* Brocade G730
+* Brocade M5424 Embedded
+* Brocade VA-40FC
+* Brocade X6-4
+* Brocade X6-8
+* Brocade X7-4
+* Brocade X7-8
+
+
+=== Firmware Versions
+
+* v6.2.2b
+* v6.2.2f
+* v6.2.2g
+* v6.4.1b
+* v6.4.2a
+* v6.4.3
+* v6.4.3d
+* v6.4.3f3
+* v7.0.1
+* v7.0.1b
+* v7.0.2
+* v7.0.2b1
+* v7.0.2c
+* v7.0.2e
+* v7.0.2e1
+* v7.1.0a
+* v7.1.0b
+* v7.2.0a
+* v7.2.0d
+* v7.2.1
+* v7.2.1c
+* v7.2.1c1
+* v7.2.1d
+* v7.3.0a
+* v7.3.0c
+* v7.3.1
+* v7.3.1c
+* v7.3.1d
+* v7.3.2a
+* v7.4.0a
+* v7.4.1
+* v7.4.1d
+* v7.4.1e
+* v7.4.2
+* v7.4.2a
+* v7.4.2a4
+* v7.4.2c
+* v7.4.2d
+* v7.4.2e
+* v7.4.2f
+* v7.4.2g
+* v7.4.2g_cvr_824494_01
+* v7.4.2h
+* v7.4.2j1
+* v8.0.2c
+* v8.0.2d
+* v8.0.2f
+* v8.1.0b
+* v8.1.1a
+* v8.1.2a
+* v8.1.2d
+* v8.1.2f
+* v8.1.2g
+* v8.1.2h
+* v8.1.2j
+* v8.1.2k
+* v8.2.0
+* v8.2.0a
+* v8.2.0a1
+* v8.2.0b
+* v8.2.1
+* v8.2.1a
+* v8.2.1c
+* v8.2.1d
+* v8.2.2a
+* v8.2.2b
+* v8.2.2c
+* v8.2.2d
+* v8.2.2d4
+* v8.2.3
+* v8.2.3a
+* v8.2.3a1
+* v8.2.3a_cvr_855776_01
+* v8.2.3b
+* v8.2.3c
+* v8.2.3c1
+* v8.2.3d
+* v8.2.3e
+* v8.2.3e1
+* v8.2.3e2
+* v9.0.0a
+* v9.0.1a
+* v9.0.1b
+* v9.0.1b4
+* v9.0.1c
+* v9.0.1d
+* v9.0.1e
+* v9.0.1e1
+* v9.1.0b
+* v9.1.1
+* v9.1.1a
+* v9.1.1b
+* v9.1.1b_lw
+* v9.1.1c
+* v9.1.1d
+* v9.1.1d1
+* v9.1.1d2
+* v9.1.1d2_lw
+* v9.1.1d5
+* v9.2.0a
+* v9.2.0b
+* v9.2.0b1_lw
+* v9.2.0c
+* v9.2.0c1
+* v9.2.1a
+* v9.2.1a1
+* v9.2.2
+
+
+=== Foundation
+
+==== FC Name Server Entry
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|FC ID|Implemented|SSH|
+|Nx Port WWN|Implemented|SSH|
+|Physical Port WWN|Implemented|SSH|
+|Switch Port WWN|Implemented|SSH|
+|===
+
+
+==== Fabric
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Name|Implemented|Manual Entry|
+|VSAN Enabled|Implemented|SSH|
+|VSANId|Implemented|SSH|
+|WWN|Implemented|SSH|
+|===
+
+
+==== IVR Physical Fabric
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|IVR Chassis WWNs|Implemented|SSH|Comma seperated list of IVR enabled chassis WWNs
+|Lowest IVR Chassis WWN|Implemented|SSH|identifier of the IVR fabric
+|===
+
+
+==== Info
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|DataSource Name|Implemented|SSH|Info
+|Date|Implemented|SSH|
+|Originator ID|Implemented|SSH|
+|Originator Key|Implemented|SSH|
+|===
+
+
+==== Logical Switch
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Chassis WWN|Implemented|SSH|
+|Domain Id|Implemented|SSH|
+|Firmware Version|Implemented|SSH|
+|IP|Implemented|SSH|
+|Manufacturer|Implemented|SSH|
+|Model|Implemented|SSH|
+|Name|Implemented|Manual Entry|
+|Serial Number|Implemented|SSH|
+|Switch Role|Implemented|SSH|
+|Switch State|Implemented|SSH|
+|Switch Status|Implemented|SSH|
+|Type|Gap|SSH|
+|WWN|Implemented|SSH|
+|===
+
+
+==== Port
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Blade|Implemented|SSH|
+|FC4 Protocol|Implemented|SSH|
+|GBIC Type|Implemented|SSH|
+|Generated|Implemented|SSH|
+|Name|Implemented|Manual Entry|
+|Node WWN|Implemented|SSH|Mandatory to report with PortId if WWN is not present
+|Port ID|Implemented|SSH|
+|Port Number|Implemented|SSH|
+|Port Speed|Implemented|SSH|
+|Port State|Implemented|SSH|
+|Port Status|Implemented|SSH|
+|Port Type|Implemented|SSH|
+|Raw Port Status|Implemented|SSH|
+|Raw Speed GigaBits|Implemented|SSH|
+|Unknown Connectivity|Implemented|SSH|
+|WWN|Implemented|SSH|
+|===
+
+
+==== Switch
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Domain Id|Implemented|SSH|
+|Firmware Version|Implemented|SSH|
+|IP|Implemented|SSH|
+|Manage URL|Implemented|SSH|
+|Manufacturer|Implemented|SSH|
+|Model|Implemented|SSH|
+|Name|Implemented|Manual Entry|
+|Serial Number|Implemented|SSH|
+|Switch Role|Implemented|SSH|
+|Switch State|Implemented|SSH|
+|Switch Status|Implemented|SSH|
+|Type|Gap|SSH|
+|VSAN Enabled|Implemented|SSH|
+|WWN|Implemented|SSH|
+|===
+
+
+==== Unknown
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Driver|Implemented|SSH|
+|Firmware|Implemented|SSH|
+|Generated|Implemented|SSH|
+|Manufacturer|Implemented|SSH|
+|Model|Implemented|SSH|
+|Name|Implemented|Manual Entry|
+|WWN|Implemented|SSH|
+|===
+
+
+==== WWN Alias
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Host Aliases|Implemented|SSH|
+|Object Type|Implemented|SSH|
+|Source|Implemented|SSH|
+|WWN|Implemented|SSH|
+|===
+
+
+==== Zone
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Zone Name|Implemented|SSH|
+|===
+
+
+==== Zone Member
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Type|Gap|SSH|
+|WWN|Implemented|SSH|
+|===
+
+
+==== Zoning Capabilities
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Active Configuration|Implemented|SSH|
+|Configuration Name|Implemented|SSH|
+|Default Zoning Behavior|Implemented|SSH|
+|WWN|Implemented|SSH|
+|===
+
+
+=== Performance
+
+==== port
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|BB Credit Zero Received|Implemented|SNMP|BB Credit Zero Received
+|BB Credit Zero Total|Implemented|SNMP|BB Credit Zero Total
+|BB Credit Zero Transmitted|Implemented|SNMP|BB Credit Zero Transmitted
+|BB Credit Zero Ms Transmitted|Implemented|SNMP|BB Credit Zero Ms Transmitted
+|Port Errors Class3 Discard|Implemented|SNMP|
+|Port Errors Crc|Implemented|SNMP|Port Errors Crc
+|Port Errors Enc In|Implemented|SNMP|Port Errors Enc In
+|portErrors.encOut|Implemented|SNMP|
+|Port Error Long Frame|Implemented|SNMP|Port errors due to long frame
+|Port Error Short Frame|Implemented|SNMP|Port errors due to short frame
+|Port Errors Link Failure|Implemented|SNMP|Port Errors link failure
+|Port Errors Link Reset Rx|Implemented|SNMP|Port Errors Link Reset Rx
+|Port Error Transmit Link Reset |Implemented|SNMP|Port Error due to link reset
+|Port Error Signal Loss|Implemented|SNMP|Port errors signal loss
+|Port Error Sync Loss|Implemented|SNMP|Port error sync loss
+|Port Error Transmit Discard Timeout|Implemented|SNMP|Port errors timeout discard
+|Total Port Errors|Implemented|SNMP|Total port errors
+|Traffic Frame Rate|Implemented|SNMP|
+|Total Traffic Frame Rate|Implemented|SNMP|
+|Traffic Frame Rate|Implemented|SNMP|
+|Average Frame Size|Implemented|SNMP|Average Frame size of traffic
+|TX Frames|Implemented|SNMP|traffic average frame size
+|Traffic Recieved Rate|Implemented|SNMP|
+|Total Traffic Rate|Implemented|SNMP|
+|Traffic Transmit Rate|Implemented|SNMP|
+|Traffic Recieved Utilization|Implemented|SNMP|
+|Total Traffic Utilization|Implemented|SNMP|Total traffic utilization
+|Traffic Transmit Utilization|Implemented|SNMP|
+|===
+
+
+==== Port Data
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|BB Credit Zero Received|Implemented|SNMP|BB Credit Zero Received
+|BB Credit Zero Total|Implemented|SNMP|BB Credit Zero Total
+|BB Credit Zero Transmitted|Implemented|SNMP|BB Credit Zero Transmitted
+|BB Credit Zero Ms Transmitted|Implemented|SNMP|BB Credit Zero Ms Transmitted
+|Key|Implemented|SNMP|
+|Port Errors Class3 Discard|Implemented|SNMP|
+|Port Errors Crc|Implemented|SNMP|Port Errors Crc
+|Port Errors Enc In|Implemented|SNMP|Port Errors Enc In
+|portErrors.encOut|Implemented|SNMP|
+|Port Error Long Frame|Implemented|SNMP|Port errors due to long frame
+|Port Error Short Frame|Implemented|SNMP|Port errors due to short frame
+|Port Errors Link Failure|Implemented|SNMP|Port Errors link failure
+|Port Errors Link Reset Rx|Implemented|SNMP|Port Errors Link Reset Rx
+|Port Error Transmit Link Reset |Implemented|SNMP|Port Error due to link reset
+|Port Error Signal Loss|Implemented|SNMP|Port errors signal loss
+|Port Error Sync Loss|Implemented|SNMP|Port error sync loss
+|Port Error Transmit Discard Timeout|Implemented|SNMP|Port errors timeout discard
+|Total Port Errors|Implemented|SNMP|Total port errors
+|Server ID|Implemented|SNMP|
+|Traffic Frame Rate|Implemented|SNMP|
+|Total Traffic Frame Rate|Implemented|SNMP|
+|Traffic Frame Rate|Implemented|SNMP|
+|Average Frame Size|Implemented|SNMP|Average Frame size of traffic
+|TX Frames|Implemented|SNMP|traffic average frame size
+|Traffic Recieved Rate|Implemented|SNMP|
+|Total Traffic Rate|Implemented|SNMP|
+|Traffic Transmit Rate|Implemented|SNMP|
+|Traffic Recieved Utilization|Implemented|SNMP|
+|Total Traffic Utilization|Implemented|SNMP|Total traffic utilization
+|Traffic Transmit Utilization|Implemented|SNMP|
+|===
+
+
+==== Management APIs used by this data collector:
+
+|===
+^|API ^|Protocol Used ^|Transport layer protocol used ^|Incoming ports used ^|Outgoing ports used ^|Supports authentication ^|Requires only 'Read-only' credentials ^|Supports Encryption ^|Firewall friendly (static ports) 
+
+|Brocade SNMP
+|SNMP
+|SNMPv1, SNMPv2, SNMPv3
+|161
+|
+|true
+|true
+|true
+|true
+
+|Brocade SSH
+|SSH
+|SSH
+|22
+|
+|false
+|false
+|true
+|true
+
+|Data source wizard configuration
+|Manual Entry
+|
+|
+|
+|true
+|true
+|true
+|true
+
+
+
+
+|===
+
+== Brocade Network Advisor HTTP
+
+Models and versions supported by this data collector:
+
+
+=== API Versions
+
+* 14.4.3
+* 14.4.4
+
+
+=== Models
+
+* Brocade 6520
+* Brocade DCX 8510-4
+* Brocade G620
+* Brocade X6-8
+* EMC Connectrix DS-6510B
+
+
+=== Firmware Versions
+
+* v7.3.0b
+* v7.4.1b
+* v8.2.3c1
+* v9.0.1e1
+
+=== Foundation
+
+==== FC Name Server Entry
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Nx Port WWN|Implemented|HTTP/S|
+|Switch Port WWN|Implemented|HTTP/S|
+|FC ID|Implemented|HTTP/S|
+|Physical Port WWN|Implemented|HTTP/S|
+|===
+
+
+==== Fabric
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Name|Implemented|HTTP/S|
+|VSAN Enabled|Implemented|HTTP/S|
+|VSANId|Implemented|HTTP/S|
+|WWN|Implemented|HTTP/S|
+|===
+
+
+==== IVR Physical Fabric
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Lowest IVR Chassis WWN|Implemented|HTTP/S|identifier of the IVR fabric
+|IVR Chassis WWNs|Implemented|HTTP/S|Comma seperated list of IVR enabled chassis WWNs
+|===
+
+
+==== Info
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Api Description|Implemented|HTTP/S|
+|Api Name|Implemented|HTTP/S|
+|Api Version|Implemented|HTTP/S|
+|DataSource Name|Implemented|HTTP/S|Info
+|Date|Implemented|HTTP/S|
+|Originator ID|Implemented|HTTP/S|
+|Originator Key|Implemented|HTTP/S|
+|===
+
+
+==== Logical Switch
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|WWN|Implemented|HTTP/S|
+|IP|Implemented|HTTP/S|
+|Firmware Version|Implemented|HTTP/S|
+|Manufacturer|Implemented|HTTP/S|
+|Model|Implemented|HTTP/S|
+|Name|Implemented|HTTP/S|
+|Switch Role|Implemented|HTTP/S|
+|Type|Gap|HTTP/S|
+|Serial Number|Implemented|HTTP/S|
+|Switch State|Implemented|HTTP/S|
+|Switch Status|Implemented|HTTP/S|
+|Domain Id|Implemented|HTTP/S|
+|Chassis WWN|Implemented|HTTP/S|
+|===
+
+
+==== Port
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|WWN|Implemented|HTTP/S|
+|Port State|Implemented|HTTP/S|
+|Port Number|Implemented|HTTP/S|
+|Port ID|Implemented|HTTP/S|
+|Name|Implemented|HTTP/S|
+|Port Speed|Implemented|HTTP/S|
+|Raw Speed GigaBits|Implemented|HTTP/S|
+|Port Type|Implemented|HTTP/S|
+|Raw Port Status|Implemented|HTTP/S|
+|Port Status|Implemented|HTTP/S|
+|FC4 Protocol|Implemented|HTTP/S|
+|Generated|Implemented|HTTP/S|
+|Unknown Connectivity|Implemented|HTTP/S|
+|Blade|Implemented|HTTP/S|
+|GBIC Type|Implemented|HTTP/S|
+|===
+
+
+==== Switch
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|WWN|Implemented|HTTP/S|
+|IP|Implemented|HTTP/S|
+|Firmware Version|Implemented|HTTP/S|
+|Manufacturer|Implemented|HTTP/S|
+|Model|Implemented|HTTP/S|
+|Name|Implemented|HTTP/S|
+|Switch Role|Implemented|HTTP/S|
+|Type|Gap|HTTP/S|
+|Serial Number|Implemented|HTTP/S|
+|Manage URL|Implemented|HTTP/S|
+|Switch State|Implemented|HTTP/S|
+|Switch Status|Implemented|HTTP/S|
+|Domain Id|Implemented|HTTP/S|
+|VSAN Enabled|Implemented|HTTP/S|
+|===
+
+
+==== Unknown
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|WWN|Implemented|HTTP/S|
+|Manufacturer|Implemented|HTTP/S|
+|Firmware|Implemented|HTTP/S|
+|Driver|Implemented|HTTP/S|
+|Model|Implemented|HTTP/S|
+|===
+
+
+==== WWN Alias
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Host Aliases|Implemented|HTTP/S|
+|Object Type|Implemented|HTTP/S|
+|Source|Implemented|HTTP/S|
+|WWN|Implemented|HTTP/S|
+|===
+
+
+==== Zone
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Zone Name|Implemented|HTTP/S|
+|===
+
+
+==== Zone Member
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Type|Gap|HTTP/S|
+|WWN|Implemented|HTTP/S|
+|===
+
+
+==== Zoning Capabilities
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Active Configuration|Implemented|HTTP/S|
+|Configuration Name|Implemented|HTTP/S|
+|WWN|Implemented|HTTP/S|
+|===
+
+
+=== Performance
+
+==== port
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|BB Credit Zero Transmitted|Implemented|HTTP/S|BB Credit Zero Transmitted
+|BB Credit Zero Total|Implemented|HTTP/S|BB Credit Zero Total
+|BB Credit Zero Ms Transmitted|Implemented|HTTP/S|BB Credit Zero Ms Transmitted
+|===
+
+
+==== Management APIs used by this data collector:
+
+|===
+^|API ^|Protocol Used ^|Transport layer protocol used ^|Incoming ports used ^|Outgoing ports used ^|Supports authentication ^|Requires only 'Read-only' credentials ^|Supports Encryption ^|Firewall friendly (static ports) 
+
+|Brocade Network Advisor REST API
+|HTTP/HTTPS
+|HTTP/HTTPS
+|80/443
+|
+|true
+|true
+|true
+|true
+
+
+
+
+|===
+
+== Brocade FOS REST
+
+Models and versions supported by this data collector:
+
+
+=== Models
+
+* 183.0
+* 184.0
+* 190.0
+* Brocade 6505
+* Brocade 6510
+* Brocade 6520
+* Brocade 7810 Extension Switch
+* Brocade 7840
+* Brocade DCX8510-4
+* Brocade DCX8510-8
+* Brocade G610
+* Brocade G620
+* Brocade G630
+* Brocade G720
+* Brocade G730
+* Brocade X6-4
+* Brocade X6-8
+* Brocade X7-4
+* Brocade X7-8
+
+
+=== Firmware Versions
+
+* v8.2.2a
+* v8.2.2d
+* v8.2.2d4
+* v8.2.3
+* v8.2.3a
+* v8.2.3b
+* v8.2.3c
+* v8.2.3c1
+* v8.2.3d
+* v8.2.3e
+* v8.2.3e1
+* v9.0.0b
+* v9.0.1a
+* v9.0.1b
+* v9.0.1b4
+* v9.0.1c
+* v9.0.1d
+* v9.0.1e
+* v9.0.1e1
+* v9.1.0b
+* v9.1.1a
+* v9.1.1b
+* v9.1.1c
+* v9.1.1c3
+* v9.1.1d
+* v9.1.1d1
+* v9.1.1d1_lw
+* v9.1.1d2
+* v9.1.1d3_cvr_861742_01
+* v9.2.0a
+* v9.2.0b
+* v9.2.0b1
+* v9.2.0b_cvr_857687_01
+* v9.2.0c
+* v9.2.0c3
+* v9.2.1
+* v9.2.1a
+* v9.2.1b
+* v9.2.2
+
+
+=== Foundation
+
+==== FC Name Server Entry
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|FC ID|Implemented|HTTPS|
+|Nx Port WWN|Implemented|HTTPS|
+|Physical Port WWN|Implemented|HTTPS|
+|Switch Port WWN|Implemented|HTTPS|
+|===
+
+
+==== Fabric
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Name|Implemented|HTTPS|
+|VSAN Enabled|Implemented|HTTPS|
+|VSANId|Implemented|HTTPS|
+|WWN|Implemented|HTTPS|
+|===
+
+
+==== Info
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Api Description|Implemented|HTTPS|
+|Api Name|Implemented|HTTPS|
+|Api Version|Implemented|HTTPS|
+|DataSource Name|Implemented|HTTPS|Info
+|Date|Implemented|HTTPS|
+|Originator ID|Implemented|HTTPS|
+|Originator Key|Implemented|HTTPS|
+|===
+
+
+==== Logical Switch
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Chassis WWN|Implemented|HTTPS|
+|Domain Id|Implemented|HTTPS|
+|Firmware Version|Implemented|HTTPS|
+|IP|Implemented|HTTPS|
+|Manufacturer|Implemented|HTTPS|
+|Model|Implemented|HTTPS|
+|Name|Implemented|HTTPS|
+|Serial Number|Implemented|HTTPS|
+|Switch Role|Implemented|HTTPS|
+|Switch State|Implemented|HTTPS|
+|Switch Status|Implemented|HTTPS|
+|Type|Gap|HTTPS|
+|WWN|Implemented|HTTPS|
+|===
+
+
+==== Port
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Blade|Implemented|HTTPS|
+|GBIC Type|Implemented|HTTPS|
+|Generated|Implemented|HTTPS|
+|Name|Implemented|HTTPS|
+|Node WWN|Implemented|HTTPS|Mandatory to report with PortId if WWN is not present
+|Port ID|Implemented|HTTPS|
+|Port Number|Implemented|HTTPS|
+|Port Speed|Implemented|HTTPS|
+|Port State|Implemented|HTTPS|
+|Port Status|Implemented|HTTPS|
+|Port Type|Implemented|HTTPS|
+|Raw Port Status|Implemented|HTTPS|
+|Raw Speed GigaBits|Implemented|HTTPS|
+|Unknown Connectivity|Implemented|HTTPS|
+|WWN|Implemented|HTTPS|
+|Description|Implemented|HTTPS|
+|===
+
+
+==== Switch
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Domain Id|Implemented|HTTPS|
+|Firmware Version|Implemented|HTTPS|
+|IP|Implemented|HTTPS|
+|Manage URL|Implemented|HTTPS|
+|Manufacturer|Implemented|HTTPS|
+|Model|Implemented|HTTPS|
+|Name|Implemented|HTTPS|
+|Serial Number|Implemented|HTTPS|
+|Switch Role|Implemented|HTTPS|
+|Switch State|Implemented|HTTPS|
+|Switch Status|Implemented|HTTPS|
+|Type|Gap|HTTPS|
+|VSAN Enabled|Implemented|HTTPS|
+|WWN|Implemented|HTTPS|
+|===
+
+
+==== Unknown
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Driver|Implemented|HTTPS|
+|Firmware|Implemented|HTTPS|
+|Generated|Implemented|HTTPS|
+|Manufacturer|Implemented|HTTPS|
+|Model|Implemented|HTTPS|
+|WWN|Implemented|HTTPS|
+|===
+
+
+==== WWN Alias
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Host Aliases|Implemented|HTTPS|
+|Object Type|Implemented|HTTPS|
+|Source|Implemented|HTTPS|
+|WWN|Implemented|HTTPS|
+|===
+
+
+==== Zone
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Zone Name|Implemented|HTTPS|
+|===
+
+
+==== Zone Member
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Type|Gap|HTTPS|
+|WWN|Implemented|HTTPS|
+|===
+
+
+==== Zoning Capabilities
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Active Configuration|Implemented|HTTPS|
+|Configuration Name|Implemented|HTTPS|
+|Default Zoning Behavior|Implemented|HTTPS|
+|WWN|Implemented|HTTPS|
+|===
+
+
+=== Performance
+
+==== port
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|BB Credit Zero Received|Implemented|HTTPS|BB Credit Zero Received
+|BB Credit Zero Total|Implemented|HTTPS|BB Credit Zero Total
+|BB Credit Zero Transmitted|Implemented|HTTPS|BB Credit Zero Transmitted
+|BB Credit Zero Ms Transmitted|Implemented|HTTPS|BB Credit Zero Ms Transmitted
+|Port Errors Class3 Discard|Implemented|HTTPS|
+|Port Errors Crc|Implemented|HTTPS|Port Errors Crc
+|Port Errors Enc In|Implemented|HTTPS|Port Errors Enc In
+|portErrors.encOut|Implemented|HTTPS|
+|Port Error Long Frame|Implemented|HTTPS|Port errors due to long frame
+|Port Error Short Frame|Implemented|HTTPS|Port errors due to short frame
+|Port Errors Link Failure|Implemented|HTTPS|Port Errors link failure
+|Port Errors Link Reset Rx|Implemented|HTTPS|Port Errors Link Reset Rx
+|Port Error Transmit Link Reset |Implemented|HTTPS|Port Error due to link reset
+|Port Error Signal Loss|Implemented|HTTPS|Port errors signal loss
+|Port Error Sync Loss|Implemented|HTTPS|Port error sync loss
+|Total Port Errors|Implemented|HTTPS|Total port errors
+|Traffic Frame Rate|Implemented|HTTPS|
+|Total Traffic Frame Rate|Implemented|HTTPS|
+|Traffic Frame Rate|Implemented|HTTPS|
+|Average Frame Size|Implemented|HTTPS|Average Frame size of traffic
+|TX Frames|Implemented|HTTPS|traffic average frame size
+|Traffic Recieved Rate|Implemented|HTTPS|
+|Total Traffic Rate|Implemented|HTTPS|
+|Traffic Transmit Rate|Implemented|HTTPS|
+|Traffic Recieved Utilization|Implemented|HTTPS|
+|Total Traffic Utilization|Implemented|HTTPS|Total traffic utilization
+|Traffic Transmit Utilization|Implemented|HTTPS|
+|===
+
+
+==== Port Data
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|BB Credit Zero Received|Implemented|HTTPS|BB Credit Zero Received
+|BB Credit Zero Total|Implemented|HTTPS|BB Credit Zero Total
+|BB Credit Zero Transmitted|Implemented|HTTPS|BB Credit Zero Transmitted
+|BB Credit Zero Ms Transmitted|Implemented|HTTPS|BB Credit Zero Ms Transmitted
+|Key|Implemented|HTTPS|
+|Port Errors Class3 Discard|Implemented|HTTPS|
+|Port Errors Crc|Implemented|HTTPS|Port Errors Crc
+|Port Errors Enc In|Implemented|HTTPS|Port Errors Enc In
+|portErrors.encOut|Implemented|HTTPS|
+|Port Error Long Frame|Implemented|HTTPS|Port errors due to long frame
+|Port Error Short Frame|Implemented|HTTPS|Port errors due to short frame
+|Port Errors Link Failure|Implemented|HTTPS|Port Errors link failure
+|Port Errors Link Reset Rx|Implemented|HTTPS|Port Errors Link Reset Rx
+|Port Error Transmit Link Reset |Implemented|HTTPS|Port Error due to link reset
+|Port Error Signal Loss|Implemented|HTTPS|Port errors signal loss
+|Port Error Sync Loss|Implemented|HTTPS|Port error sync loss
+|Total Port Errors|Implemented|HTTPS|Total port errors
+|Server ID|Implemented|HTTPS|
+|Traffic Frame Rate|Implemented|HTTPS|
+|Total Traffic Frame Rate|Implemented|HTTPS|
+|Traffic Frame Rate|Implemented|HTTPS|
+|Average Frame Size|Implemented|HTTPS|Average Frame size of traffic
+|TX Frames|Implemented|HTTPS|traffic average frame size
+|Traffic Recieved Rate|Implemented|HTTPS|
+|Total Traffic Rate|Implemented|HTTPS|
+|Traffic Transmit Rate|Implemented|HTTPS|
+|Traffic Recieved Utilization|Implemented|HTTPS|
+|Total Traffic Utilization|Implemented|HTTPS|Total traffic utilization
+|Traffic Transmit Utilization|Implemented|HTTPS|
+|===
+
+
+==== Management APIs used by this data collector:
+
+|===
+^|API ^|Protocol Used ^|Transport layer protocol used ^|Incoming ports used ^|Outgoing ports used ^|Supports authentication ^|Requires only 'Read-only' credentials ^|Supports Encryption ^|Firewall friendly (static ports) 
+
+|Brocade FOS REST API
+|HTTPS
+|
+|443
+|
+|true
+|true
+|true
+|true
+
