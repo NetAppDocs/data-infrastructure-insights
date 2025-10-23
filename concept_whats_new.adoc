@@ -16,8 +16,15 @@ keywords: features
 [.lead]
 NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in Data Infrastructure Insights (formerly Cloud Insights).
 
-== October 2025
+== November 2025
 
+=== Personalize Your Workflow with Custom Home Pages
+
+Maximize your productivity by setting any Data Infrastructure Insights page as your personalized home page. Whether you need immediate access to critical dashboards, frequently used queries, or Kubernetes cluster overviews, you can now streamline your daily workflow by starting each session exactly where you need to be. Simply navigate to your preferred page and select the "Set as Home Page" icon in the navigation trail to create a tailored experience that matches your monitoring priorities.
+
+image:home_page_set.png[Home Icon in page breadcrumb, width=400]
+
+== October 2025
 
 === Infrastructure Health: Instant Visibility Into Storage and Fabric Risk
 
