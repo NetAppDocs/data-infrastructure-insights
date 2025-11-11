@@ -26,6 +26,8 @@ NOTE: Global changes may have a potential impact on your ONTAP systems. It is st
 ** NFS versions up to and including NFS 4.1 (Note that NFS 4.1 is supported with  ONTAP 9.15 or later).
 
 ** Flexgroup is supported from ONTAP 9.4 and later versions
+** FlexCache is supported for NFS with ONTAP 9.7 and later versions. 
+** FlexCache is supported for SMB with ONTAP 9.14.1 and later versions. 
 ** ONTAP Select is supported
 
 * Only data type SVMs are supported. SVMs with infinite volumes are not supported.

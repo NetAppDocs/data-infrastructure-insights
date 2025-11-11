@@ -92,7 +92,7 @@ image:ProxyEndpoints_NewTable.png[Proxy Endpoints Table]
 
 == Resources
 
-Additional troubleshooting tips may be found in the link:https://kb.netapp.com/Cloud/BlueXP/DII[NetApp Knowledgebase] (support sign-in required).
+Additional troubleshooting tips may be found in the link:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs[NetApp Knowledgebase] (support sign-in required).
 
 Additional support information may be found from the Data Infrastructure Insights link:concept_requesting_support.html[Support] page.
 

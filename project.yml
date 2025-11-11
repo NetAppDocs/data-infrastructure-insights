@@ -33,6 +33,8 @@ sidebar:
           entries:
             - title: Overview
               url: /task_getting_started_with_cloud_insights.html
+            - title: Feature Tutorials
+              url: /concept_feature_tutorials.html
             - title: Acquisition Unit Requirements
               url: /concept_acquisition_unit_requirements.html
             - title: Configuring an Acquisition Unit
@@ -340,6 +342,63 @@ sidebar:
     - title: Data Collector Support Matrix
       url: /reference_data_collector_support_matrix.html
 
+#    - title: Data Collector Support Matrix
+#      entries:
+#        - title: Amazon
+#          url: /dc_matrix_amazon.html
+#        - title: ASA
+#          url: /dc_matrix_asa.html
+#        - title: Brocade
+#          url: /dc_matrix_brocade.html
+#        - title: Cisco
+#          url: /dc_matrix_cisco.html
+#        - title: Cohesity
+#          url: /dc_matrix_cohesity.html
+#        - title: Dell
+#          url: /dc_matrix_dell.html
+#        - title: Dell EMC
+#          url: /dc_matrix_emc.html
+#        - title: Fujitsu
+#          url: /dc_matrix_fujitsu.html
+#        - title: Google
+#          url: /dc_matrix_google.html
+#        - title: Hitachi
+#          url: /dc_matrix_hitachi.html
+#        - title: HDS
+#          url: /dc_matrix_hds.html
+#        - title: HiCommand
+#          url: /dc_matrix_hicommand.html
+#        - title: HP
+#          url: /dc_matrix_hp.html
+#        - title: HPE
+#          url: /dc_matrix_hpe.html
+#        - title: Huawei
+#          url: /dc_matrix_huawei.html
+#        - title: IBM
+#          url: /dc_matrix_ibm.html
+#        - title: Infinidat
+#          url: /dc_matrix_infinidat.html
+#        - title: Microsoft
+#          url: /dc_matrix_microsoft.html
+#        - title: NetApp
+#          url: /dc_matrix_netapp.html
+#        - title: Nutanix
+#          url: /dc_matrix_nutanix.html
+#        - title: OpenStack
+#          url: /dc_matrix_openstack.html
+#        - title: Oracle
+#          url: /dc_matrix_oracle.html
+#        - title: Pure
+#          url: /dc_matrix_pure.html
+#        - title: Red Hat
+#          url: /dc_matrix_red.html
+#        - title: Rubrik
+#          url: /dc_matrix_rubrik.html
+#        - title: Vast
+#          url: /dc_matrix_vast.html
+#        - title: VMware
+#          url: /dc_matrix_vmware.html
+
     - title: Reference & Support
       entries:
         - title: Requesting Support
@@ -435,8 +494,6 @@ sidebar:
                   url: /task_dc_ibm_cs.html
                 - title: System Storage DS8000 Series
                   url: /task_dc_ibm_ds.html
-                - title: PowerVM
-                  url: /task_dc_ibm_powervm.html
                 - title: San Volume Controller (SVC)
                   url: /task_dc_ibm_svc.html
                 - title: XIV/A9000
@@ -453,8 +510,8 @@ sidebar:
               entries:
                 - title: Cloud Volumes ONTAP
                   url: /task_dc_na_cloud_volumes_ontap.html
-                - title: Cloud Volumes Services for AWS
-                  url: /task_dc_na_cloud_volumes.html
+                - title: ONTAP AFX 
+                  url: /task_dc_na_ontap_afx.html
                 - title: ONTAP ASA (All-SAN Array) r2
                   url: /task_dc_na_ontap_all_san_array.html
                 - title: ONTAP Data Management Software 

@@ -6,7 +6,6 @@ summary: Insights give you a look into how resources impact other resources on y
 ---
 = Insights: Reclaim ONTAP Cold Storage
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:

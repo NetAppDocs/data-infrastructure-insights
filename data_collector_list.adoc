@@ -1,17 +1,16 @@
 ---
 sidebar: sidebar
 permalink: data_collector_list.html
-summary: List of supported data collectors.
+summary: Alphabetical reference list of all data collectors supported by Data Infrastructure Insights, organized by infrastructure and service types.
 keywords: data collector, vendor, infrastructure, integration, service
 ---
 
-= Data Infrastructure Insights Data Collector List
+= Data Infrastructure Insights Data Collector Reference List
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/The alerting page redesign will also be ready by the of the month. Need to add it to what’s new as wellopens
+:imagesdir: ./media/
 
 [.lead]
 Data Infrastructure Insights supports a variety of Data Collectors from many vendors and services. 
@@ -77,7 +76,6 @@ Alphabetical list of Data Collectors supported by Data Infrastructure Insights:
 | link:task_dc_huawei_oceanstor.html[Huawei OceanStor and Dorado Devices ] |Infrastructure 
 | link:task_dc_ibm_cleversafe.html[IBM Cleversafe ] |Infrastructure 
 | link:task_dc_ibm_cs.html[IBM CS Series ] |Infrastructure 
-| link:task_dc_ibm_powervm.html[IBM PowerVM ] |Infrastructure 
 | link:task_dc_ibm_svc.html[IBM SAN Volume Controller (SVC) ] |Infrastructure 
 | link:task_dc_ibm_ds.html[IBM System Storage DS8000 Series ] |Infrastructure 
 | link:task_dc_ibm_xiv.html[IBM XIV and A9000 Storages ] |Infrastructure 
@@ -94,7 +92,6 @@ Alphabetical list of Data Collectors supported by Data Infrastructure Insights:
 | link:task_config_telegraf_mongodb.html[MongoDB ] |Service 
 | link:task_config_telegraf_mysql.html[MySQL ] |Service 
 | link:task_dc_na_cloud_volumes_ontap.html[NetApp Cloud Volumes ONTAP ] |Infrastructure 
-| link:task_dc_na_cloud_volumes.html[NetApp Cloud Volumes Services for AWS ] |Infrastructure 
 | link:task_dc_na_cloud_connection.html[NetApp Cloud Connection for ONTAP 9.9+ ] |Infrastructure 
 | link:task_dc_na_7mode.html[NetApp Data ONTAP 7-Mode ] |Infrastructure 
 | link:task_dc_na_eseries.html[NetApp E-Series ] |Infrastructure 
@@ -103,6 +100,7 @@ Alphabetical list of Data Collectors supported by Data Infrastructure Insights:
 | link:task_dc_na_hci.html[NetApp HCI Virtual Center ] |Infrastructure 
 | link:task_dc_na_cdot.html[NetApp ONTAP Data Management Software ] |Infrastructure 
 | link:task_dc_na_ontap_rest.html[NetApp ONTAP REST collector ] |Infrastructure
+| link:task_dc_na_ontap_afx.html[NetApp ONTAP AFX ] |Infrastructure
 | link:task_dc_na_ontap_all_san_array.html[NetApp ONTAP ASA r2 (All-SAN Array) collector] |Infrastructure
 | link:task_dc_na_cdot.html[NetApp ONTAP Select ] |Infrastructure 
 | link:task_dc_na_solidfire.html[NetApp SolidFire All-Flash Array ] |Infrastructure 
