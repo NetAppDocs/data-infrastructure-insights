@@ -18,6 +18,13 @@ NetApp is continually improving and enhancing its products and services. Here ar
 
 == November 2025
 
+=== Accelerate Team Problem-Solving with Shared Queries
+
+Now queries you create can be shared with colleagues and teams to enable faster troubleshooting and consistent analysis across your organization. Boost team efficiency by reusing proven queries, eliminate errors from manual recreation, and establish standardized investigation workflows that help your team solve issues faster. Share queries in read-only Viewer mode for safe distribution or Edit mode for collaborative refinement. Shared queries can also be leveraged in Annotation Rules and duplicated for specialized use cases, enabling your team to respond to issues more quickly and make smarter decisions.
+
+image:query_sharing_dialog.png[setting permissions on a query]
+
+
 === Personalize Your Workflow with Custom Home Pages
 
 Maximize your productivity by setting any Data Infrastructure Insights page as your personalized home page. Whether you need immediate access to critical dashboards, frequently used queries, or Kubernetes cluster overviews, you can now streamline your daily workflow by starting each session exactly where you need to be. Simply navigate to your preferred page and select the "Set as Home Page" icon in the navigation trail to create a tailored experience that matches your monitoring priorities.
