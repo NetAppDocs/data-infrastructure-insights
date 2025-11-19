@@ -15,6 +15,8 @@ summary: Configure the NetApp Kubernetes Monitoring Operator using AgentConfigur
 [.lead]
 The link:task_config_telegraf_agent_k8s.html#configuringcustomizing-the-operator[Kubernetes Monitoring Operator] provides extensive customization options through the AgentConfiguration file. You can configure resource limits, collection intervals, proxy settings, tolerations, and component-specific settings to optimize monitoring for your Kubernetes environment. Use these options to customize telegraf, kube-state-metrics, logs collection, workload mapping, change management, and other monitoring components.
 
+
+////
 The table below lists the possible options for the _AgentConfiguration_ file:
 
 [cols="1,1,2"]
@@ -138,10 +140,11 @@ Example terms:"pwd", "password", "token", "apikey", "api-key", "jwt"
 Example: '{key: taint1, operator: Exists, effect: NoSchedule},{key: taint2, operator: Exists, effect: NoExecute}'
 
 |===
+////
 
 == Sample AgentConfiguration file
 
-Below is a sample _AgentConfiguration_ file. 
+Below is a sample _AgentConfiguration_ file, with descriptions for each option.
 
 ----
 apiVersion: monitoring.netapp.com/v1alpha1
@@ -336,6 +339,10 @@ spec:
     # Kubernetes container logs.  If Kubernetes has been configured to place container logs in a non-default location, use 
     # this option to modify the Fluentbit DaemonSet to mount the non-default path.
     # fluent-bit-containerLogPath
+
+
+    # By default, fluent-bit is configured to use /var/log/netapp-monitoring_flb_kube.db. This path usually requires escalated privileges for ReadWrite. Users who want to avoid privilege escalation or want to avoid mounting files in /var/log as ReadWrite can use this option to specify a different DB file path/location. The custom path/location should allow non-root users to ReadWrite. And, ideally, the path/location should be persistent.
+    # fluent-bit-dbFile
 
   # # Settings for the Network Performance and Map feature.
   # workload-map:
