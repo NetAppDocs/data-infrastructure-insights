@@ -2,20 +2,18 @@
 sidebar: sidebar
 permalink: task_cs_add_agent.html
 keywords: agent, Workload Security, installation, Cloud Secure
-summary: Adding Workload Security agents
+summary: Workload Security agents monitor user activity and detect security threats in your storage environment.
 ---
 
-= Workload Security Agent Installation
+= Deploy Workload Security Agents
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Workload Security (formerly Cloud Secure) collects user activity data using one or more agents. Agents connect to devices on your tenant and collect data that is sent to the Workload Security SaaS layer for analysis. See link:concept_cs_agent_requirements.html[Agent Requirements] to configure an agent VM.
-
+Workload Security agents are essential for monitoring user activity and detecting potential security threats across your storage infrastructure. This guide provides step-by-step instructions to deploy agents in your environment. Before you begin, ensure your agent server meets the link:concept_cs_agent_requirements.html[system requirements].
 
 
 == Before You Begin
@@ -24,7 +22,24 @@ Workload Security (formerly Cloud Secure) collects user activity data using one 
 * While installing the agent, a local user _cssys_ and a local group _cssys_ are created on the machine. If permission settings do not allow creation of a local user, and instead require Active Directory, a user with the username _cssys_ must be created in the Active Directory server.
 * You can read about Data Infrastructure Insights security link:security_overview.html[here].
 
-NOTE: Global changes may have a potential impact on your ONTAP systems. It is strongly recommended to make changes affecting a large number of data collectors during off-peak hours.
+== Best Practices
+
+Keep the following in mind before configuring your Workload Security agent.
+
+[cols="1,3"]
+|=== 
+| Pause and Resume | Pause: Removes fpolicies from ONTAP. Typically used when customers perform extended maintenance activities which may take significant time, such as agent VM reboots or storage replacements. 
+Resume: Adds fpolicies back to ONTAP.
+
+| Pin and Unpin
+| Unpin immediately fetches the latest version (if available) and upgrades the agent and collector. During this upgrade, fpolicies will disconnect and reconnect.
+This feature is designed for customers who want to control the timing of automatic upgrades.
+
+| Recommended Approach
+| For large configurations, it is advisable to use Pin and Unpin rather than pausing collectors. There is no need to pause and resume while using unpin and unpin.
+Customers can keep their agents and collectors pinned, and upon receiving an email notification about a new version, have a 30-day window to selectively upgrade agents one by one.
+This approach minimizes latency impact on fpolicies and provides greater control over the upgrade process.
+|===
 
 
 == Steps to Install Agent 
@@ -34,7 +49,7 @@ NOTE: Global changes may have a potential impact on your ONTAP systems. It is st
 + 
 The system displays the Add an Agent page:
 +
-image:Add-agent-1.png[Adding a workload security agent]
+image::Add-agent-1.png[Adding a workload security agent]
 
 . Verify that the agent server meets the minimum system requirements. 
 
@@ -50,10 +65,8 @@ image:CloudSecureAgentWithProxy_Instructions.png[Agent Install with Proxy Note]
 
 . The system displays the following message when the installation completes successfully:
 + 
-image:new-agent-detect.png[Message for successful agent installation]
+image::new-agent-detect.png[Message for successful agent installation]
 
-//cd /var NEW
-//Grep /var/
 
 .After You Finish
 

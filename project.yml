@@ -29,6 +29,8 @@ sidebar:
           
     - title: Getting Started
       entries:
+        - title: Feature Tutorials
+          url: /concept_feature_tutorials.html
         - title: Collecting Data
           entries:
             - title: Overview
@@ -492,8 +494,6 @@ sidebar:
                   url: /task_dc_ibm_cs.html
                 - title: System Storage DS8000 Series
                   url: /task_dc_ibm_ds.html
-                - title: PowerVM
-                  url: /task_dc_ibm_powervm.html
                 - title: San Volume Controller (SVC)
                   url: /task_dc_ibm_svc.html
                 - title: XIV/A9000
@@ -510,8 +510,6 @@ sidebar:
               entries:
                 - title: Cloud Volumes ONTAP
                   url: /task_dc_na_cloud_volumes_ontap.html
-                - title: Cloud Volumes Services for AWS
-                  url: /task_dc_na_cloud_volumes.html
                 - title: ONTAP AFX 
                   url: /task_dc_na_ontap_afx.html
                 - title: ONTAP ASA (All-SAN Array) r2
