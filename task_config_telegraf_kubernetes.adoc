@@ -7,7 +7,6 @@ summary: Data collector for Kubernetes
 
 = Data Collector: Kubernetes
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:
@@ -31,6 +30,7 @@ The Kubernetes Monitoring Operator installs kube-state-metrics automatically; no
 
 The NetApp Kubernetes Monitoring Operator extracts the kube-state-metrics counters listed below. More details about each counter can be found at: https://github.com/kubernetes/kube-state-metrics/tree/main/docs#exposed-metrics.
 
+
 . DaemonSet Metrics
 . Deployment Metrics
 . Namespace Metrics
@@ -38,7 +38,10 @@ The NetApp Kubernetes Monitoring Operator extracts the kube-state-metrics counte
 . Persistent Volume Metrics
 . Persistent Volume Claim Metrics
 . Pod Metrics
-. ReplicaSet metrics
-. Service metrics
-. StatefulSet metrics
-
+. ReplicaSet Metrics
+. Service Metrics
+. StatefulSet Metrics
+. Horizontal Pod AutoScaler Metrics
+. Cronjob Metrics
+. Job Metrics
+. Resource Quota Metrics

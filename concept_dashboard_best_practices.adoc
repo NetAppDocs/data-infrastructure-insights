@@ -6,9 +6,7 @@ keywords: dashboard, hints, tips, best practice, widgets, metrics,
 ---
 
 = Best Practices for Dashboards and Widgets
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:

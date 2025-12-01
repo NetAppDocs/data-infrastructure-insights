@@ -6,29 +6,29 @@ keywords: time-to-live, TTL, downsampling, downsample, retention
 ---
 
 = Data Retention and Downsampled Data
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Because Data Infrastructure Insights retains data for a set period (per Edition), there is potential for processing of thousands of data points. Data may therefore be downsampled before being displayed in charts and tables. 
+Data Infrastructure Insights retains data for periods ranging from 7 days to 13 months depending on your subscription. When displaying large datasets, data may be downsampled to ensure charts and graphs load efficiently while maintaining statistical accuracy.
 
 == Data Retention 
 
-Data Infrastructure Insights retains data for an amount of time determined by the active subscribed Edition. 
+Data Infrastructure Insights retains data for an amount of time determined by your subscription type.
 
 |===
-|Edition|Data Retention
+|Subscription Type|Data Retention
 
-|Basic |7 Days
-|Premium |13 Months
+|Trial |7 Days
+|Subscribed |13 Months
 |===
 
-A full list of features available in each Edition is available on the Data Infrastructure Insights link:https://bluexp.netapp.com/cloud-insights-pricing[Editions and Pricing] page.
+
+For detailed information about Data Infrastructure Insights features and pricing options, see the link:https://bluexp.netapp.com/cloud-insights-pricing[Data Infrastructure Insights Pricing] page.
 
 //Premium Edition subscriptions with at least 500 Managed Units (MUs) retain Business Intelligence and Reporting data for 13 months.
 

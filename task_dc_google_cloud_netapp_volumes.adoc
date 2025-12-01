@@ -1,0 +1,58 @@
+---
+sidebar: sidebar
+permalink: task_dc_google_cloud_netapp_volumes.html
+summary: Configure Google Cloud NetApp Volumes data collector.
+keywords: data collector, queries, create, google, cloud, volumes,
+---
+
+= Google Cloud NetApp Volumes data collector
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+This data collector supports inventory and performance collection from Google Cloud NetApp Volumes configurations. The collector discovers NetApp volumes and storage resources across all projects within a Google organization. If you have multiple Google organizations that you want to monitor with Data Infrastructure Insights, deploy one collector per organization. 
+
+== Service Account Requirements
+
+* You must create a service account by following the instructions in link:https://cloud.google.com/iam/docs/creating-managing-service-accounts[Creating/Managing Service Accounts]. This service account is identified by a unique ID, known as its _clientId_, which will be used as a username. 
+* Additionally, create a service account key by following the instructions in link:https://cloud.google.com/iam/docs/creating-managing-service-account-keys[Creating/Managing Service Account Keys]. This key can be downloaded as a json file, whose content will be used as a password.
+* The service account must be scoped for _compute.readonly_, _monitoring.read_, and _cloud-platform_.
+
+== Configuration
+
+[cols=2*, options="header", cols="50,50"]
+|===
+|Field|Description
+|Organization ID|The organization ID you want to discover with this collector. This field is required if your service account is able to see more than one organization
+|Choose 'Exclude' or 'Include' to filter GCNV assets by Location
+|This defaults to Exclude, as this collector by default intends to discover all GCNV volumes worldwide within your organization.
+
+|GCNV Exclude/Include Locations
+|This defaults to being empty, and is used in conjunction with the "Choose 'Exclude' or 'Include' option. If you want to discover assets only within certain regions, use these two options to limit the scope of this collector.
+|Project IDs |The list of Project IDs that you want to filter in, or out from discovery, depending on the value of the "Choose 'Exclude"...." value. The default list is empty
+|Client ID |Client ID for the Google Cloud Platform configuration
+|Copy and paste the contents of your Google Credential File here|Copy your Google credentials for the Cloud Platform account to this field
+|===
+
+== Advanced configuration
+
+[cols=2*, options="header", cols="50,50"]
+|===
+|Field|Description
+|Inventory Poll Interval (min) |Default is 60 minutes
+
+|Use AU Proxy for REST API calls|Select this option to have the collector use the same proxy as the Acquisition Unit on which the collector resides. By default, this is disabled, which means the collector attempts to send HTTPS API calls directly to Google.
+|Label Keys and Values on which to Filter VMs|Click *+ Filter Label* to choose which VMs (and associated disks) to include/exclude by filtering for keys and values that match keys and values of labels on the VM. Label Key is required, Label Value is optional. When Label Value is empty, the VM is filtered as long as it matches the Label Key.
+
+|Performance Poll Interval (sec)|Default is 300 seconds
+
+|===
+
+           
+== Troubleshooting
+
+Additional information on this Data Collector may be found from the link:concept_requesting_support.html[Support] page or in the link:reference_data_collector_support_matrix.html[Data Collector Support Matrix].
+

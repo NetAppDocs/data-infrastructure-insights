@@ -5,9 +5,8 @@ keywords: data collector, Microsoft, Hyper-V
 summary: Configuring Microsoft Hyper-V data collector.
 ---
 = Microsoft Hyper-V data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

@@ -7,7 +7,7 @@ summary: Workload Security User accounts are managed through Data Infrastructure
 
 = User Management
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

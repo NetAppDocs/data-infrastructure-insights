@@ -7,13 +7,11 @@ summary: The Kubernetes Monitoring Operator collects Kubernetes data for use in 
 = Kubernetes Monitoring Operator Installation and Configuration
 :hardbreaks:
 :nofooter:
-:toclevels: 2
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-
 Data Infrastructure Insights offers the *Kubernetes Monitoring Operator* for Kubernetes collection. Navigate to *Kubernetes > Collectors > +Kubernetes Collector* to deploy a new operator.
 
 
@@ -47,7 +45,7 @@ image:NKMO-Instructions-2.png[Monitoring Operator Instructions]
 
 
 
-If you are using a proxy, read about <<configuring-proxy-support, configuring proxy>>.
+//If you are using a proxy, read about <<configuring-proxy-support, configuring proxy>>.
 
 If you are have a custom repository, read about <<using-a-custom-or-private-docker-repository, using a custom/private docker repository>>.
 
@@ -101,7 +99,7 @@ If you upgraded using the push-button upgrades feature and encounter any difficu
 
 Determine whether an AgentConfiguration exists with the existing Operator (if your namespace is not the default _netapp-monitoring_, substitute the appropriate namespace):
 
- kubectl -n netapp-monitoring get agentconfiguration netapp-monitoring-configuration
+ kubectl -n netapp-monitoring get agentconfiguration netapp-ci-monitoring-configuration
  
 If an AgentConfiguration exists:
 
@@ -159,9 +157,20 @@ If the monitoring operator was deployed in its own dedicated namespace, delete t
 
  kubectl delete ns <NAMESPACE> 
 
-If the first command returns “No resources found”, use the following instructions to uninstall older versions of the monitoring operator.
+Note: If the first command returns “No resources found”, use the following instructions to uninstall older versions of the monitoring operator.
 
-Execute each of the following commands in order. Depending on your current installation, some of these commands may return ‘object not found’ messages. These messages may be safely ignored.
+Execute each of the following commands in order. Depending on your current installation, some of these commands may return 'object not found' messages. These messages may be safely ignored.
+
+
+////
+ kubectl -n <NAMESPACE> delete agent netapp-ci-agent-monitoring-netapp 
+ kubectl delete crd agents.monitoring.netapp.com 
+ kubectl -n <NAMESPACE> delete role netapp-ci-agent-manager netapp-ci-kube-state-metrics
+ kubectl delete clusterrole netapp-ci-<NAMESPACE>-additional-permissions netapp-ci-<NAMESPACE>-agent-manager netapp-ci-<NAMESPACE>-agent-secret netapp-ci-<NAMESPACE>-agent-view-plus netapp-ci-<NAMESPACE>-change-observer-view-plkubectl get us netapp-ci-<NAMESPACE>-kube-state-metrics netapp-ci-<NAMESPACE>-net-observerkubectl 
+ kubectl delete clusterrolebinding netapp-ci-<NAMESPACE>-additional-permissions netapp-ci-<NAMESPACE>-agent-manager netapp-ci-<NAMESPACE>-agent-secret netapp-ci-<NAMESPACE>-agent-view netapp-ci-<NAMESPACE>-agent-view-plus netapp-ci-<NAMESPACE>-change-observer-additional-permissions netapp-ci-<NAMESPACE>-change-observer-secret netapp-ci-<NAMESPACE>-change-observer-view netapp-ci-<NAMESPACE>-change-observer-view-plus netapp-ci-<NAMESPACE>-event-exporter netapp-ci-<NAMESPACE>-kube-state-metrics netapp-ci-<NAMESPACE>-net-observer
+ kubectl delete netapp-ci-<NAMESPACE>-psp-nkmo 
+ kubectl delete ns <NAMESPACE> 
+////
 
   kubectl -n <NAMESPACE> delete agent agent-monitoring-netapp
   kubectl delete crd agents.monitoring.netapp.com
@@ -177,17 +186,16 @@ If a Security Context Constraint was previously-created:
  kubectl delete scc telegraf-hostaccess
  
  
-
 == About Kube-state-metrics
 
 The NetApp Kubernetes Monitoring Operator installs its own kube-state-metrics to avoid conflict with any other instances.
 
 For information about Kube-State-Metrics, see link:task_config_telegraf_kubernetes.html[this page].
 
-
 ////
-=== kube-state-metrics Counters
+=== Kube-state-metrics Counters
 
+Refer to the link:https://github.com/kubernetes/kube-state-metrics/tree/main/docs[Kube-state-metrics documentation] for more information on the metric counters.
 
 Use the following links to access information for these kube state metrics counters:
 
@@ -355,8 +363,8 @@ Return to the link:task_config_telegraf_agent_k8s.html[*NetApp Kubernetes Monito
 To remove permission for the Kubernetes Monitoring Operator to view secrets cluster-wide, delete the following resources from the _operator-setup.yaml_ file before installing:
 
 ----
- ClusterRole/netapp-ci-<namespace>-agent-secret-clusterrole
- ClusterRoleBinding/netapp-ci-<namespace>-agent-secret-clusterrolebinding 
+ ClusterRole/netapp-ci<namespace>-agent-secret
+ ClusterRoleBinding/netapp-ci<namespace>-agent-secret
 ----
 
 If this is an upgrade, also delete the resources from your cluster:
@@ -364,11 +372,12 @@ If this is an upgrade, also delete the resources from your cluster:
 ----
  kubectl delete ClusterRole/netapp-ci-<namespace>-agent-secret-clusterrole
  kubectl delete ClusterRoleBinding/netapp-ci-<namespace>-agent-secret-clusterrolebinding
+ 
 ----
 
 If Change Analysis is enabled, modify the _AgentConfiguration_ or _operator-config.yaml_ to uncomment the change-management section and include _kindsToIgnoreFromWatch: '"secrets"'_ under the change-management section. Note the presence and position of single and double quotes in this line.
 
-  # change-management:
+  change-management:
     ...
     # # A comma separated list of kinds to ignore from watching from the default set of kinds watched by the collector
     # # Each kind will have to be prefixed by its apigroup
@@ -461,7 +470,7 @@ Oct 11 14:23:41 ip-172-31-39-47 telegraf[1827]: 2021-10-11T14:23:41Z I! Starting
 
 |On Kubernetes, my Telegraf pod(s) are reporting the following error:
 "Error in processing mountstats info: failed to open mountstats file: /hostfs/proc/1/mountstats, error: open /hostfs/proc/1/mountstats: permission denied"
-|If SELinux is enabled and enforcing, it is likely preventing the Telegraf pod(s) from accessing the /proc/1/mountstats file on the Kubernetes node. To overcome this restriction, edit the agentconfiguration, and enable the runPrivileged setting. For more details, refer to the link:task_config_telegraf_agent_k8s.html#openshift-instructions[OpenShift Instructions].
+|If SELinux is enabled and enforcing, it is likely preventing the Telegraf pod(s) from accessing the /proc/1/mountstats file on the Kubernetes node. To overcome this restriction, edit the agentconfiguration, and enable the runPrivileged setting. For more details, refer to the OpenShift Instructions.
 
 
 |On Kubernetes, my Telegraf ReplicaSet pod is reporting the following error:

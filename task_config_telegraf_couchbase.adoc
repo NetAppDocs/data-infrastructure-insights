@@ -6,9 +6,8 @@ summary: Couchbase data collector configuration
 ---
 
 = Couchbase Data Collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

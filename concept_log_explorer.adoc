@@ -6,9 +6,8 @@ summary: The Log Explorer is a powerful tool for investigating issues through di
 ---
 
 = Log Explorer
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

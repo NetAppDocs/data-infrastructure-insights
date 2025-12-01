@@ -7,10 +7,8 @@ keywords: dashboard, widget, custom, concepts, queries, variables, rollup, roll 
 ---
 
 = Dashboard Features
-:toc: macro
 :hardbreaks:
 :nofooter:
-:toclevels: 1
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
@@ -18,7 +16,7 @@ keywords: dashboard, widget, custom, concepts, queries, variables, rollup, roll 
 [.lead]
 Dashboards and widgets allow great flexibility in how data is displayed. Here are some concepts to help you get the most from your custom dashboards. 
 
-toc::[]
+toc:[]
 
 == Widget Naming
 
@@ -52,22 +50,22 @@ When legends are displayed, if the landing page of the asset indicated by the le
 
 Data Infrastructure Insights provides different *transform* options for certain metrics in widgets (specifically, those metrics called "Custom" or Integration Metrics, such as from Kubernetes, ONTAP Advanced Data, Telegraf plugins, etc.), allowing you to display the data in a number of ways. When adding transformable metrics to a widget, you are presented with a drop-down giving the following transform choices:
 
-None::
+None:
 Data is displayed as is, with no manipulation.
 
-Rate::
+Rate:
 Current value divided by the time range since the previous observation.
 
-Cumulative::
+Cumulative:
 The accumulation of the sum of previous values and the current value.
 
-Delta::
+Delta:
 The difference between the previous observation value and the current value. 
 
-Delta rate::
+Delta rate:
 Delta value divided by the time range since the previous observation.
 
-Cumulative Rate::
+Cumulative Rate:
 Cumulative value divided by the time range since the previous observation.
 
 Note that transforming metrics does not change the underlying data itself, but only the way that data is displayed.
@@ -179,45 +177,36 @@ The objects returned by queries and filters look similar to those shown in the f
 image:ObjectsReturnedByFilters.png[Objects returned by filters]
 
 
-== Grouping and Aggregation
+== Grouping, Identifying, and Aggregating
 
 === Grouping (Rolling Up)
 
-Data displayed in a widget is grouped (sometimes called rolled-up) from the underlying data points collected during acquisition. For example, if you have a line chart widget showing Storage IOPS over time, you might want to see a separate line for each of your data centers, for a quick comparison. You can choose to group this data in one of several ways:
+Data displayed in a widget is grouped (sometimes called rolled-up) from the underlying data points collected during acquisition. For example, if you have a line chart widget showing Storage IOPS over time, you might want to see a separate line for each of your data centers, for a quick comparison. In the "Group by" field, select the object type itself to view individual lines, areas, bars, columns, etc. (depending on the widget type) for each object. You can choose to group by any attribute available in the list for that object. For example, when viewing data for an Internal Volume, you may want to group data by the storage name.
+
+To view the consolidated data, remove any Group By attribute, which will default to grouping by "All".
+
+You can choose to aggregate this data in one of several ways:
 
 * *Average*: displays each line as the _average_ of the underlying data.
 * *Maximum*: displays each line as the _maximum_ of the underlying data.
 * *Minimum*: displays each line as the _minimum_ of the underlying data.
 * *Sum*: displays each line as the _sum_ of the underlying data.
-* *Count*: displays a _count_ of objects that have reported data within the specified time frame. You can choose the _Entire Time Window_ as determined by the dashboard time range.
 
-// You can choose to include _all_ objects that have reported data, or only those objects whose data is reported as _Not Null_. 
-
-.Steps
-
-To set the grouping method, do the following.
-
-. In your widget's query, choose an asset type and metric (for example, _Storage_) and metric (such as _Performance IOPS Total_).
-
-. For *Group*, choose a roll up method (such as _Average_) and select the attributes or metrics by which to roll up the data (for example, _Data Center_).
-+
-The widget updates automatically and shows data for each of your data centers.
-
-You can also choose to group _all_ of the underlying data into the chart or table. In this case, you will get a single line for each query in the widget, which will show the average, min, max, sum, or count of the chosen metric or metrics for all of the underlying assets.
-
-Clicking the legend for any widget whose data is grouped by "All" opens a query page showing the results of the first query used in the widget.
+When viewing the dashboard, selecting the legend for any widget whose data is grouped by "All" opens a query page showing the results of the first query used in the widget.
 
 If you have set a filter for the query, the data is grouped based on the filtered data.
 
-Note that when you choose to group a widget by any field (for example, _Model_), you will still need to Filter by that field in order to properly display the data for that field on the chart or table.
+=== Identifying custom data
+
+When you are creating or modifying a widget that is built on your own custom data, your data may not be represented properly in the widget without an identifying attribute. If DII cannot identify the object you have selected for your widget, it will present you with an _Advanced Configuration_ link in the "Group By" area. Expand this to select the attribute by which you wish to identify your data.
+
+image:unmodeled_data_identify_by.png[identify by drop-down for unknown data]
 
 === Aggregating data
 
-You can further align your time-series charts (line, area, etc.) by aggregating data points into minute, hour, or day buckets before that data is subsequently rolled up by attribute (if chosen). You can choose to aggregate data points according to their _Average, Maximum, Minimum, Sum_, or _Count_. 
+You can further align your charts by aggregating data points into minute, hour, or day buckets before that data is subsequently rolled up by attribute (if chosen). You can choose to aggregate data points according to their _Average, Maximum, Minimum, Sum_, or _Count_. 
 
 A small interval combined with a long time range may result in an "Aggregation interval resulted in too many data points." warning. You might see this if you have a small interval and increase the dashboard time frame to 7 days. In this case, Insight will temporarily increase the aggregation interval until you select a smaller time frame.
-
-You can also aggregate data in the bar chart widget and single-value widget.
 
 Most asset counters aggregate to _Average_ by default. Some counters aggregate to _Max, Min_, or _Sum_ by default. For example, port errors aggregate to _Sum_ by default, where storage IOPS aggregate to _Average_.
 
@@ -301,6 +290,10 @@ You can select the time range for your dashboard data. Only data relevant to the
 +
 The Custom time range allows you to select up to 31 consecutive days. You can also set the Start Time and End Time of day for this range. The default Start Time is 12:00 AM on the first day selected and the default End Time is 11:59 PM on the last day selected. Clicking *Apply* will apply the custom time range to the dashboard.
 
+=== Zooming in to a time range
+
+While viewing a time-series widget (Line, Spline, Area, Stacked Area)--or a graph on a landing page--you can drag the mouse over the graph to zoom in. In the upper right of the screen you can then lock that time range so that graphs on other pages reflect data for that locked time range. To unlock, select a different time range from the list.
+
 
 == Overriding Dashboard Time in Individual widgets
 
@@ -340,7 +333,7 @@ Notice that the line is displayed flat at the bottom of the chart. This is becau
 +
 The Latency line is now drawn at its own scale, which is displayed on the right side of the chart.
 
-image::SecondaryAxisExplained.png[Secondary Axis example]
+image:SecondaryAxisExplained.png[Secondary Axis example]
 
 == Expressions in widgets
 
@@ -451,43 +444,6 @@ image:ExpressionExample.png[Expression in a Table Widget]
 
 Variables allow you to change the data displayed in some or all widgets on a dashboard at once. By setting one or more widgets to use a common variable, changes made in one place cause the data displayed in each widget to update automatically.  
 
-////
-.Before you begin
-The example below requires the *City* annotation (also called City attribute) to be set on multiple storage assets. For best results, set different cities on different storages. See the link:https://docs.netapp.com/us-en/cloudinsights/task_defining_annotations.html[Annotations] topics for more information on using annotations.
-
-.About this task
-Variables provide a quick and simple way of filtering the data shown in some or all of the widgets on a custom dashboard. The following steps will guide you to creating widgets that use variables, and show you how to use them on your dashboard.
-
-.Steps
-. Click on *Dashboards > +New Dashboard*.
-. Before adding widgets, you must define the variables we will use to filter the dashboard data. Click on the *Add Variable* button.
-+
-The list of attributes is displayed.
-. Let's say we want to set the dashboard to filter based on City. Select the _City_ attribute from the list.
-+
-The $city variable field is created and added to the dashboard. Variables used by the dashboard are displayed above any widgets.
-
-. Next, we must tell our widgets to use this variable. The simplest way to illustrate this is to add a table widget showing the _City_ column. Click on the *Add Widget* button and select the _Table_ widget.
-. First, add the _City_ column to the table by selecting it from the "gear" button.
-+
-City is a list-type attribute, so it contains a list of previously-defined choices. You may also choose text, boolean, or date-type attributes.
-. Next, click the *Filter by +* button and choose _City_.
-. Click _Any_ to view the possible filter choices for City. Notice that the list now includes "*$city*" at the top, in addition to any previously-available choices. Select _$city_ to use this dashboard variable.
-+
-The _$city_ choice only appears here if it was defined previously on the main dashboard page. If the variable was not previously defined, only the existing choices for the filter will be shown. Only variables that are applicable to the selected attribute type will be displayed in the drop-down for that filter.
-. *Save* the widget.
-. On the dashboard page, click on _Any_ next to the _$city_ variable, and select the city or cities you want to see.
-+
-Your table widget updates to show only the cities you selected. You can change the values in the _$city_ variable at will, and all widgets on your dashboard that are set to use the $city variable will refresh automatically to show only data for the values you selected.
-
-Be sure to *Save* your dashboard when you have it configured as you want it.
-////
-
-
-//=== More on dashboard variables
-
-Dashboard variables come in several types, can be used across different fields, and must follow rules for naming. These concepts are explained here.
-
 === Variable types
 
 A variable can be one the following types:
@@ -499,7 +455,6 @@ A variable can be one the following types:
 * *Boolean*: Use for fields with values of True/False, Yes/No, etc. For the boolean variable, the choices are Yes, No, None, Any.
 * *Date*: A date value. Use as a "from" or "to" value, depending on your widget's configuration.
 
-//image:Variables_Drop-Down.png[Variable Types]
 image:Variables_Drop_Down_Showing_Annotations.png[Variable Types]
 
 
@@ -657,9 +612,7 @@ Most metrics are reported by data collectors in the smallest unit, for example a
 
 NOTE: Data Infrastructure Insights uses American English number naming standards. American "billion" is equivalent to "thousand million".
 
-////
-Depending on the widget and the range of values displayed, Data Infrastructure Insights will typically use the highest value as the basis for auto-formatting the units. So if your range goes from one million (1,000,000) to one billion (1,000,000,000), your chart might auto-format to the billion (bn) level, which means lower values might display as .001bn.
-////
+
 
 === Widgets with multiple queries
 
@@ -777,7 +730,7 @@ Auto-refresh is not available for Custom dashboard time range.
 
 When combined with *TV Mode*, auto-refresh allows for near-real-time display of data on a dashboard or asset page. TV Mode provides an uncluttered display; the navigation menu is hidden, providing more screen real estate for your data display, as is the Edit button. TV Mode ignores typical Data Infrastructure Insights timeouts, leaving the display live until logged out manually or automatically by authorization security protocols.
 
-NOTE: Because NetApp BlueXP has its own user login timeout of 7 days, Data Infrastructure Insights must log out with that event as well. You can simply log in again and your dashboard will continue to display.
+NOTE: Because NetApp Console has its own user login timeout of 7 days, Data Infrastructure Insights must log out with that event as well. You can simply log in again and your dashboard will continue to display.
 
 * To activate TV Mode, click the TV Mode button.
 * To disable TV Mode, click the *Exit* button in the upper left of the screen. 
@@ -865,4 +818,22 @@ image:Interpolation_Linear.png[Simple straight line showing linear interpolation
 
 
 
+=== Anomaly Bounds in Line Widgets
+
+When including a Line or Spline chart widget on a dashboard or landing page, you may choose to view the chart in context of the *expected bounds* for the data. You can think of this as looking for anomalies in the patterns of your data.
+
+DII uses seasonal data (hourly or daily) to set upper and lower bounds on where it _expects_ the data to fall at a given time. If the data spikes above or falls below those expected bounds, the chart will highlight that as an anomaly.
+
+image:expected_bounds_example_showing_spike.png[anomaly bounds example - showing a spike where the actual data spikes above the expected bound, width=600]
+
+To view anomaly bounds, edit the widget and choose _Show Anomaly Bounds_. You may choose from among two detection algorithms:
+
+* *Adaptive Detector* adapts to changes quickly, making it helpful for detailed investigations.
+* *Smooth Detector* minimizes noise and false positives, filtering out short-term fluctuations while still detecting significant shifts.
+
+Additionally, you may choose to show either _Hourly_ or _Daily_ seasonality, as well as set the sensitivity of detection. _High_ sensitivity detects more boundary crossing, _Low_ sensitivity detects less.
+
+image:expected_bounds_settings.png[settings for Anomaly bounds, including the detection algorithm, seasonality, and sensitivity]
+
+Keep in mind that you may only view expected bounds when the chart is set to display a single line. If your Group By settings or filters show multiple lines, or if you have set multiple queries for the widget, the option to show expected bounds will be disabled.
 

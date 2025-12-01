@@ -6,9 +6,7 @@ summary: Track data using annotations.
 ---
 
 = Defining annotations
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :nofooter:
 :icons: font
 :linkattrs:
@@ -47,31 +45,21 @@ The following table lists the Data Infrastructure Insights-provided annotation t
 |Annotation types
 |Description
 |Type
-|Alias|User-friendly name for a resource|Text
-//|Birthday|Date device was/will be brought online|Date
-//|Building|Physical location of assets|List
 
-//|City|Municipality location of assets|List
+|Alias|User-friendly name for a resource|Text
 |Compute Resource Group|Group assignment used by the Host and VM Filesystems data collector|List
-//|Continent|Geographic location of assets|List
-//|Country|National location of assets|List
 |Data Center|Physical location|List
-//|Direct Attached|Indicates (Yes or No) if a storage resource is connected directly to hosts|Boolean
-//|End of Life |Date when a device will be taken offline|Date
-//|Fabric Alias|User-friendly name for a fabric|Text
-//|Floor|Location of a device on a floor of a building (hosts, storage arrays, switches, and tapes)|List
 |Hot|Devices under heavy use on a regular basis or at the threshold of capacity|Boolean
 |Note|Comments associated with a resource|Test
-//|Rack|Rack in which the resource resides|List
-//|SAN|Logical partition of the network for hosts, storage arrays, tapes, switches, and applications.|List
 |Service Level|A set of supported service levels that you can assign to resources. Provides an ordered options list for internal volumes, qtree, and volumes. Edit service levels to set performance policies for different levels.|List
-//|State/Province|State or province where the resource is located.|List
 |Sunset|Threshold set after which no new allocations can be made to that device. Useful for planned migrations and other pending network changes.|Date
 |Switch Level|Predefined options for setting up categories for switches. Typically, these designations remain for the life of the device, although you can edit them. Available only for switches.|List
 |Tier|Can be used to define different levels of service within your environment. Tiers can define the type of level, such as speed needed (for example, gold or silver). This feature is available only on internal volumes, qtrees, storage arrays, storage pools, and volumes.|List
 |Violation Severity|Rank (for example, major) of a violation (for example, missing host ports or missing redundancy), in a hierarchy of highest to lowest importance.|List
+
 |===
-NOTE: Alias, Data Center, Hot, Service Level, Sunset, Switch Level,  Tier, and Violation Severity are system-level annotations, which you cannot delete or rename; you can change only their assigned values.
+
+NOTE: Alias, Data Center, Hot, Service Level, Sunset, Switch Level, Tier, and Violation Severity are system-level annotations, which you cannot delete or rename; you can change only their assigned values.
 
 == Creating custom annotations
 
@@ -89,19 +77,22 @@ You can enter up to 255 characters in these fields.
 . Click *Type* and then select one of the following options that represents the type of data allowed in this annotation:
 
 .Annotation types
-Boolean:: Creates a drop-down list with the choices of yes and no. For example, the "Direct Attached" annotation is Boolean.
-Date:: This creates a field that holds a date. For example, if the annotation will be a date, select this.
-List:: Creates either of the following: 
-* A drop-down fixed list
+
+* Boolean: Creates a drop-down list with the choices of yes and no. For example, the "Direct Attached" annotation is Boolean.
+* Date: This creates a field that holds a date. For example, if the annotation will be a date, select this.
+* List: Creates either of the following: 
++
+** A drop-down fixed list
 +
 When others are assigning this annotation type on a device, they cannot add more values to the list. 
-* A drop-down flexible list 
++
+** A drop-down flexible list 
 +
 If you select the Add new values on the fly option when you create this list, when others are assigning this annotation type on a device, they can add more values to the list.
 
-Number:: Creates a field where the user assigning the annotation can enter a number. For example, if the annotation type is "Floor", the user could select the Value Type of "number" and enter the floor number.
+* Number: Creates a field where the user assigning the annotation can enter a number. For example, if the annotation type is "Floor", the user could select the Value Type of "number" and enter the floor number.
 
-Text:: Creates a field that allows free-form text. For example, you might enter "Language" as the annotation type, select "Text" as the value type, and enter a language as a value.
+* Text: Creates a field that allows free-form text. For example, you might enter "Language" as the annotation type, select "Text" as the value type, and enter a language as a value.
 
 NOTE: After you set the type and save your changes, you cannot change the type of the annotation. If you need to change the type, you have to delete the annotation and create a new one.
 
@@ -119,6 +110,18 @@ For example, suppose you are on an asset page and the asset has the City annotat
 . Click *Save* 
 +
 Your annotations appear in the list on the Annotations page.
+
+.A Note About Boolean Annotations
+
+When filtering on a Boolean annotation, you may be presented with the following values on which to filter:
+
+* *Any*: This will return _all_ results, including results set to "Yes", "No", or not set at all.
+* *Yes*: Returns only "Yes" results. Note that DII shows "Yes" as a check mark in most tables. Values may be set to "True", "On", etc.; DII treats all of these as "Yes".
+* *No*: Returns only "No" results. Note that DII shows "No" as an "X" in most tables. Values may be set to "False", "Off", etc.; DII treats all of these as "No".
+* *None*: Returns only results where the annotation has not been set at all. Also referred to as "Null" values.
+
+
+
 
 .After you finish 
 In the UI, the annotation is available immediately for use. 

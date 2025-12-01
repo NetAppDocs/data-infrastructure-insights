@@ -6,7 +6,7 @@ summary: Generic DB Host Resolver collector
 --- 
 = NetApp Generic DB Host resolver
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:

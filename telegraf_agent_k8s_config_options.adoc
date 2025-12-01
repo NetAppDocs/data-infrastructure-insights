@@ -2,20 +2,18 @@
 sidebar: sidebar
 permalink: telegraf_agent_k8s_config_options.html
 keywords: telegraf, installation, install, agent, telegraf agent, kubernetes, eks, operator, k8s, options, configuration
-summary: The NetApp Kubernetes Monitoring Operator has a number of configurable options.  
+summary: Configure the NetApp Kubernetes Monitoring Operator using AgentConfiguration options.
 ---
 
 = Kubernetes Monitoring Operator Configuration Options
-:toc: macro
 :hardbreaks:
 :nofooter:
-:toclevels: 2
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-The link:task_config_telegraf_agent_k8s.html#configuringcustomizing-the-operator[Kubernetes Monitoring Operator] configuration can be customized. 
+The link:task_config_telegraf_agent_k8s.html#configuringcustomizing-the-operator[Kubernetes Monitoring Operator] provides extensive customization options through the AgentConfiguration file. You can configure resource limits, collection intervals, proxy settings, tolerations, and component-specific settings to optimize monitoring for your Kubernetes environment. Use these options to customize telegraf, kube-state-metrics, logs collection, workload mapping, change management, and other monitoring components.
 
 The table below lists the possible options for the _AgentConfiguration_ file:
 
@@ -24,9 +22,9 @@ The table below lists the possible options for the _AgentConfiguration_ file:
 |Component|Option|Description
 
 |agent||Configuration options that are common to all components that the operator can install. These can be considered as "global" options.
-||dockerRepo|A dockerRepo override to pull images from customers private docker repos as compared to Data Infrastructure Insights docker repo. Default is Data Infrastructure Insights docker repo
-||dockerImagePullSecret|Optional: A secret for the customers private repo
-||clusterName|Free text field that uniquely identifies a cluster across all customers clusters. This should be unique across a Data Infrastructure Insights tenant. Default is what the customer enters in the UI for the "Cluster Name" field
+||dockerRepo|A dockerRepo override to pull images from customer's private docker repositories instead of the Data Infrastructure Insights docker repository. Default is the Data Infrastructure Insights docker repository.
+||dockerImagePullSecret|Optional: A secret for the customer's private repository.
+||clusterName|Free text field that uniquely identifies a cluster across all customer clusters. This should be unique across a Data Infrastructure Insights tenant. Default is what the customer enters in the UI for the "Cluster Name" field.
 
 ||proxy
 
@@ -72,7 +70,7 @@ proxy:
 
 ||skipProcessorsAfterAggregators |See link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent[Telegraf configuration documentation]
 
-||unprotected | ee this link:https://community.influxdata.com/t/updating-telegraf-to-version-1-29-5-crashes-kubernetes-pod/33376[known Telegraf issue]. Setting _unprotected_ will instruct the Kubernetes Monitoring Operator to run Telegraf with the `--unprotected` flag.
+||unprotected |See this link:https://community.influxdata.com/t/updating-telegraf-to-version-1-29-5-crashes-kubernetes-pod/33376[known Telegraf issue]. Setting _unprotected_ will instruct the Kubernetes Monitoring Operator to run Telegraf with the `--unprotected` flag.
 
 ||insecureK8sSkipVerify |If telegraf is unable to verify certificate due to lack of IP SANs, try enabling verification skip
 
@@ -91,7 +89,7 @@ persistentvolumes,pods,replicasets,resourcequotas,services,statefulsets
 ||tolerations	|kube-state-metrics additional tolerations.
 
 
-||labels|a comma separated list of resources that kube-state-metrics should capture
+||labels|a comma separated list of resources for which kube-state-metrics should capture labels
 
 +++
 example: cronjobs=[*],daemonsets=[*],deployments=[*],ingresses=[*],jobs=[*],namespaces=[*],nodes=[*],
@@ -105,6 +103,7 @@ persistentvolumeclaims=[*],persistentvolumes=[*],pods=[*],replicasets=[*],resour
 ||fluent-bit-tolerations|fluent-bit-ds additional tolerations.
 ||event-exporter-tolerations|event-exporter additional tolerations.
 ||event-exporter-maxEventAgeSeconds|event-exporter max event age.  See https://github.com/jkroepke/resmoio-kubernetes-event-exporter
+||fluent-bit-containerLogPath|By default, the Fluentbit DaemonSet will mount the /var/log and /var/lib/docker/containers host paths to access/read the Kubernetes container logs. If Kubernetes has been configured to place container logs in a non-default location, use this option to modify the Fluentbit DaemonSet to mount the non-default path.
 
 |workload-map||Configuration options that can customize the workload map collection and installation of the Operator.
 ||cpuLimit|CPU limit for net observer ds
@@ -127,9 +126,9 @@ persistentvolumeclaims=[*],persistentvolumes=[*],pods=[*],replicasets=[*],resour
 ||cpuRequest|CPU request for change-observer-watch-rs 
 ||memRequest|mem request for change-observer-watch-rs 
 
-||failureDeclarationIntervalMins|Interval in minutes after which a non-successful deployment of a workload will be marked as failed
-||deployAggrIntervalSeconds|Frequency at which workload deployment in-progress events are sent
-||nonWorkloadAggrIntervalSeconds|Frequency at which non-workload deployments are combined and sent
+||workloadFailureDeclarationIntervalSeconds|Interval after which a non-successful deployment of a workload will be marked as failed, in seconds
+||workloadDeployAggrIntervalSeconds|Frequency at which workload deployments are combined and sent, in seconds
+||nonWorkloadDeployAggrIntervalSeconds|Frequency at which non-workload deployments are combined and sent, in seconds
 ||termsToRedact|A set of regular expressions used in env names and data maps whose value will be redacted
 Example terms:"pwd", "password", "token", "apikey", "api-key", "jwt"
 ||additionalKindsToWatch|A comma separated list of additional kinds to watch from the default set of kinds watched by the collector
@@ -333,6 +332,11 @@ spec:
     # fluent-bit-cpuRequest: '50m'
     # fluent-bit-memRequest: '100Mi'
 
+    # By default, the Fluentbit DaemonSet will mount the /var/log and /var/lib/docker/containers host paths to access/read the 
+    # Kubernetes container logs.  If Kubernetes has been configured to place container logs in a non-default location, use 
+    # this option to modify the Fluentbit DaemonSet to mount the non-default path.
+    # fluent-bit-containerLogPath
+
   # # Settings for the Network Performance and Map feature.
   # workload-map:
     # # netapp-ci-net-observer-l4-ds CPU/Mem limits and requests.
@@ -368,14 +372,14 @@ spec:
     # cpuRequest: '500m'
     # memRequest: '500Mi'
 
-    # # Interval in minutes after which a non-successful deployment of a workload will be marked as failed
-    # failureDeclarationIntervalMins: '30'
+    # # Interval after which a non-successful deployment of a workload will be marked as failed, in seconds
+    # workloadFailureDeclarationIntervalSeconds: '30'
 
-    # # Frequency at which workload deployment in-progress events are sent
-    # deployAggrIntervalSeconds: '300'
+    # # Frequency at which workload deployments are combined and sent, in seconds
+    # workloadDeployAggrIntervalSeconds: '300'
 
-    # # Frequency at which non-workload deployments are combined and sent
-    # nonWorkloadAggrIntervalSeconds: '15'
+    # # Frequency at which non-workload deployments are combined and sent, in seconds
+    # nonWorkloadDeployAggrIntervalSeconds: '15'
 
     # # A set of regular expressions used in env names and data maps whose value will be redacted
     # termsToRedact: '"pwd", "password", "token", "apikey", "api-key", "api_key", "jwt", "accesskey", "access_key", "access-key", "ca-file", "key-file", "cert", "cafile", "keyfile", "tls", "crt", "salt", ".dockerconfigjson", "auth", "secret"'

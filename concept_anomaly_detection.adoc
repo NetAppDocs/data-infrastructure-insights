@@ -6,10 +6,9 @@ summary: Monitor metrics for anomalies
 ---
 
 = Anomaly Detection Monitors
-:toc: macro
 :hardbreaks:
 :nofooter:
-:toclevels: 1
+
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
@@ -21,7 +20,7 @@ Anomaly detection is suitable for object metrics that exhibit a recurring, predi
 
 image:anomaly_detection_expert_view.png[graph showing detected anomaly]
 
-//is a variation in a metric value for an object or group of objects, compared to historical information week over week. For example, if a a storage's latency was at 5 on Tuesday at 12:05 PM in the previous weeks, but is at 10 this Tuesday at 12:05 PM, that would be considered an anomaly.
+
 
 == What is Anomaly Detection?
 
@@ -74,7 +73,7 @@ Save the monitor with a meaningful name, and you're done.
 Upon creation, the monitor analyzes data from the previous week to establish an initial baseline. Anomaly detection becomes more accurate as time passes and more history occurs. 
 
 
-// NOTE: Remember that once the monitor is created or modified, it will take seven days before you will see any alerts.
+NOTE: When a monitor is created, DII looks at any existing data for the week prior for significant data spikes or drops; these are considered anomalies. During the first week after monitor creation (the "learning" phase), there is a chance for increased "noise" in alerts. To mitigate this noise, only spikes or drops lasting longer than 30 minutes are considered anomalies and generate alerts. In the subsequent week as more data is analyzed the noise will typically reduce and a significant spike or drop lasting any period of time will be considered an anomaly..
 
 
 == Viewing the Anomalies

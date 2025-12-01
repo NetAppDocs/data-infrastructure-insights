@@ -6,24 +6,20 @@ keywords: reporting, cognos, data warehouse, dwh, managing, customizing, copying
 ---
 
 = Managing Reports
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-You can customize a report’s output format and delivery, set report properties or schedules, and email reports. 
+You can customize a report's output format and delivery, set report properties or schedules, and email reports. 
 
 NOTE: The Reporting feature is available in Data Infrastructure Insights link:concept_subscribing_to_cloud_insights.html[Premium Edition]. 
 
 IMPORTANT: Before making changes to reporting permissions or security, you must copy "My Content" reports to the "Team Content" folder to ensure Reports are saved.
 
-NOTE: If you have a bookmarked report and you cannot access the report, verify the report's URL and update any bookmarks.
-
-NOTE: If you are using custom queries and the “getConfigurationEntry” macro does not retrieve the tenant data warehouse database name, try using the “$account.parameters” macro.
 
 
 
@@ -35,12 +31,9 @@ You can customize the format and delivery method of reports.
 
 . In the Data Infrastructure Insights Reporting Portal, Go to *Menu > Content > My Content/Team Content*. Mouse over the report you want to customize and open the "three dots" menu.
 
-//image:ReportCustomizationMenu.png[Report Customization Menu]
 image:Reporting_Output_and_Delivery.png[Report Output and Delivery]
 
 . Click *Properties > Schedule*
-
-//image:ReportSchedule.png[Scheduling a Report]
 
 . You can set the following options:
 ** *Schedule* when you want reports to run.
@@ -96,5 +89,12 @@ Here you will find suggestions for troubleshooting problems with Reporting.
 |*Problem:* |*Try this:* 
 |When scheduling a report to be sent via email, the name of the user logged in is pre-populated to the email's “To” field. However, the name is in the form of "firstname lastname" (first name, space, last name). Since this is not a valid email address, the email will fail to send when the scheduled report is run.
 |When scheduling the report to be sent via email, clear the pre-populated name and enter a valid, properly-formatted email address in the “To” field.
+
+|My scheduled report sends out via email, but the report can not be accessed if the origination is from the “My Content” folder.
+|In order to avoid this, the report or report-view must be saved to the “Team Content > Custom Reports - xxxxxx" folder, and the schedule created from that saved version. The "Custom Reports - xxxxxx" folder is visible to all users on the tenant.
+
+|when saving a Job, the folder may show “Team Content” with the list of content from “Custom Reports - xxxxxx”, however you can not save the Job here because Cognos thinks this is the “Team Content” folder where you don't have access to write.
+|The work around is to create a new folder with a unique name (i.e. “NewFolder”) and save there, or to save to “My Content” and then copy/move to “Custom Reports - xxxxxx”.
+
 
 |===

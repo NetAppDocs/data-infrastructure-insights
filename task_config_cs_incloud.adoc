@@ -6,9 +6,8 @@ summary: Workload Security uses data collectors to collect file and user access 
 ---
 
 = Configuring the Cloud Volumes ONTAP and Amazon FSx for NetApp ONTAP collector 
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

@@ -6,9 +6,8 @@ summary: Create a webhook to alert on performance or inventory thresholds for Di
 ---
 
 = Webhook Example for Discord
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

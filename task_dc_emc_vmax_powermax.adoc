@@ -6,9 +6,8 @@ summary: Configuring Dell EMC VMAX and PowerMax Family of Devices data collector
 ---
 
 =  Dell EMC VMAX and PowerMax Family of Devices data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

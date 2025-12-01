@@ -1,13 +1,12 @@
 ---
 sidebar: sidebar
 permalink: data_collector_list.html
-summary: List of supported data collectors.
+summary: Alphabetical reference list of all data collectors supported by Data Infrastructure Insights, organized by infrastructure and service types.
 keywords: data collector, vendor, infrastructure, integration, service
 ---
 
-= Data Infrastructure Insights Data Collector List
+= Data Infrastructure Insights Data Collector Reference List
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:
@@ -64,6 +63,7 @@ Alphabetical list of Data Collectors supported by Data Infrastructure Insights:
 | link:task_config_telegraf_flink.html[Flink ] |Service 
 | link:task_dc_fujitsu_eternus.html[Fujitsu ETERNUS DX ] |Infrastructure 
 | link:task_dc_google_cloud.html[Google Compute and Storage ] |Infrastructure 
+| link:task_dc_google_cloud_netapp_volumes.html[Google Cloud NetApp Volumes] |Infrastructure
 | link:task_config_telegraf_hadoop.html[Hadoop ] |Service 
 | link:task_config_telegraf_haproxy.html[HAProxy ] |Service 
 | link:task_dc_hds_hcp.html[Hitachi Content Platform (HCP)] |Infrastructure
@@ -76,7 +76,6 @@ Alphabetical list of Data Collectors supported by Data Infrastructure Insights:
 | link:task_dc_huawei_oceanstor.html[Huawei OceanStor and Dorado Devices ] |Infrastructure 
 | link:task_dc_ibm_cleversafe.html[IBM Cleversafe ] |Infrastructure 
 | link:task_dc_ibm_cs.html[IBM CS Series ] |Infrastructure 
-| link:task_dc_ibm_powervm.html[IBM PowerVM ] |Infrastructure 
 | link:task_dc_ibm_svc.html[IBM SAN Volume Controller (SVC) ] |Infrastructure 
 | link:task_dc_ibm_ds.html[IBM System Storage DS8000 Series ] |Infrastructure 
 | link:task_dc_ibm_xiv.html[IBM XIV and A9000 Storages ] |Infrastructure 
@@ -93,7 +92,6 @@ Alphabetical list of Data Collectors supported by Data Infrastructure Insights:
 | link:task_config_telegraf_mongodb.html[MongoDB ] |Service 
 | link:task_config_telegraf_mysql.html[MySQL ] |Service 
 | link:task_dc_na_cloud_volumes_ontap.html[NetApp Cloud Volumes ONTAP ] |Infrastructure 
-| link:task_dc_na_cloud_volumes.html[NetApp Cloud Volumes Services for AWS ] |Infrastructure 
 | link:task_dc_na_cloud_connection.html[NetApp Cloud Connection for ONTAP 9.9+ ] |Infrastructure 
 | link:task_dc_na_7mode.html[NetApp Data ONTAP 7-Mode ] |Infrastructure 
 | link:task_dc_na_eseries.html[NetApp E-Series ] |Infrastructure 
@@ -102,7 +100,7 @@ Alphabetical list of Data Collectors supported by Data Infrastructure Insights:
 | link:task_dc_na_hci.html[NetApp HCI Virtual Center ] |Infrastructure 
 | link:task_dc_na_cdot.html[NetApp ONTAP Data Management Software ] |Infrastructure 
 | link:task_dc_na_ontap_rest.html[NetApp ONTAP REST collector ] |Infrastructure
-| link:task_dc_na_ontap_all_san_array.html[NetApp ONTAP All-SAN Array (ASA) collector] |Infrastructure
+| link:task_dc_na_ontap_all_san_array.html[NetApp ONTAP ASA r2 (All-SAN Array) collector] |Infrastructure
 | link:task_dc_na_cdot.html[NetApp ONTAP Select ] |Infrastructure 
 | link:task_dc_na_solidfire.html[NetApp SolidFire All-Flash Array ] |Infrastructure 
 | link:task_dc_na_storagegrid.html[NetApp StorageGRID ] |Infrastructure 
@@ -110,7 +108,6 @@ Alphabetical list of Data Collectors supported by Data Infrastructure Insights:
 | link:task_config_telegraf_nginx.html[Nginx ] |Service 
 | link:task_config_telegraf_node.html[Node ] |Service 
 | link:task_dc_nutanix.html[Nutanix NX Series ] |Infrastructure 
-| link:task_dc_openstack.html[OpenStack ] |Infrastructure 
 | link:task_config_telegraf_openzfs.html[OpenZFS ] |Service 
 | link:task_dc_oracle_zfs.html[Oracle ZFS Storage Appliance ] |Infrastructure 
 | link:task_config_telegraf_postgresql.html[PostgreSQL ] |Service 

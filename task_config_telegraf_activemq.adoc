@@ -6,9 +6,8 @@ summary: HTTP data collector configuration
 ---
 
 = ActiveMQ Data Collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

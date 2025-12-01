@@ -6,7 +6,7 @@ summary: Automatic Device Resolution helps you accurately track performance and 
 ---
 = Automatic Device Resolution Overview
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:

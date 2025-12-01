@@ -7,7 +7,6 @@ keywords: dashboard, widget, custom, view, data
 
 = Dashboards Overview
 :hardbreaks:
-:toclevels: 2
 :nofooter:
 :icons: font
 :linkattrs:
@@ -18,33 +17,38 @@ Data Infrastructure Insights provides users the flexibility to create operationa
 
 IMPORTANT: The examples in these sections are for explanation purposes only and do not cover every possible scenario. The concepts and steps herein can be used to create your own dashboards to highlight the data specific to your particular needs.
 
-toc::[]
+
 
 == Creating a Dashboard
 
 You create a new dashboard in one of two places:
 
-•	*Dashboards > [+New dashboard]*
+* *Dashboards > [+New dashboard]*
 
-•	*Dashboards > Show all dashboards >* click the *[+Dashboard]* button
+* *Dashboards > Show all dashboards >* click the *[+Dashboard]* button
+
+
+== See it in Action
+
+link:https://media.netapp.com/video-detail/5a293f3c-c655-5879-9133-1a32aaa140e8[Create Powerful Dashboards with NetApp (Video),window=read-later]
 
 == Dashboard Controls
 
 The Dashboard screen has several controls:
 
-•	*Time selector*: allows you to view dashboard data for a range of time from the last 15 minutes to the last 30 days, or a custom time range of up to 31 days. You can choose to override this global time range in individual widgets.
+* *Time selector*: allows you to view dashboard data for a range of time from the last 15 minutes to the last 30 days, or a custom time range of up to 31 days. You can choose to override this global time range in individual widgets.
 
-•	*Edit* button: Selecting this will enable Edit mode, which allows you to make changes to the dashboard. New dashboards open in Edit mode by default.
-
-•	*Save* button: Allows you to save or delete the dashboard. 
+* *Save* button: Allows you to save or delete the dashboard. 
 +
-You can rename the current dashboard by typing a new name before clicking *Save*.
+You can rename the current dashboard by clicking *Rename* from the Save menu.
 
-//•	Variable button: Variables can be added to dashboards. Changing the variable updates all of your widgets at once. For more information on variables, see Custom Dashboard concepts
-
-•	*Add Widget* button, which allows you to add any number of tables, charts, or other widgets to the dashboard.
+* *+ Add Widget* button, which allows you to add any number of tables, charts, or other widgets to the dashboard.
 +
 Widgets can be resized and relocated to different positions within the dashboard, to give you the best view of your data according to your current needs.
+
+* *+ Add Variable* button, which allows you to use variables to actively filter the dashboard data.
+
+
 
 == Widget types
 
@@ -52,8 +56,6 @@ You can choose from the following widget types:
 
 * *Table widget*: A table displaying data according to filters and columns you choose. Table data can be combined in groups that can be collapsed and expanded.
 +
-//image:Table-Grouped.png[Table Widget]
-//image:TableWidgetPerformanceData.png[Table Widget showing grouping]
 image:TableWidgetPerformanceData.png[Table Widget]
 
 * *Line, Spline, Area, Stacked Area Charts*: These are time-series chart widgets on which you can display performance and other data over time.
@@ -88,9 +90,15 @@ image:PieChart.png[Pie Chart]
 +
 image:NoteWidget.png[Note Widget]
 
+* *Time Bar Chart*: Displays log or metric data over time.
+
+image:time_bar_chart.png[time bar chart example showing log data, width=200]
+
 * *Alerts Table*: Displays up to the last 1,000 alerts. 
 
 For more detailed explanations of these and other Dashboard Features, link:concept_dashboard_features.html[click here].
+
+
 
 
 

@@ -2,12 +2,11 @@
 sidebar: sidebar
 permalink: infrastructure_change_analytics.html
 keywords: changes, management, analysis, infra, infrastructure
-summary: Cloud Insights tracks changes in infrastructure for ease of analysis and troubleshooting..
+summary: Data Infrastructure Insights tracks changes in infrastructure for ease of analysis and troubleshooting.
 ---
 
 = Infrastructure Change Analysis
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:
@@ -43,9 +42,14 @@ You can also go directly to key Alerts or Changes from the status section below 
 
 image:Change_Analysis_filters_and_status.png[status and quick links to alerts and changes]
 
+
+== A Note about Long-Term Alerts
+
+Note that alerts that remain active for longer than 24 hours will be visible in the Alerts and Changes list once every 24 hours, so you may notice the same alert listed multiple times. Each of these alerts will have the same alert ID, same start time, etc., and will have a status of "Alerting" until the alert is resolved.
+
+
+
 == Which Objects are analyzed for changes?
-
-
 
 The following table lists the objects and attributes included in infrastructure change analysis. 
 

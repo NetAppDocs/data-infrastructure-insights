@@ -6,7 +6,6 @@ summary: Forensic entities page
 ---
 
 = Forensic Entities Page
-:toc: macro
 :hardbreaks:
 :nofooter:
 :icons: font

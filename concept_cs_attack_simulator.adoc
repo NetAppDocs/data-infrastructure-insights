@@ -6,9 +6,7 @@ summary: Using a script, you can simulate a Ransomware attack for testing or dem
 ---
 
 = Workload Security: Simulating an Attack 
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:
@@ -17,138 +15,181 @@ summary: Using a script, you can simulate a Ransomware attack for testing or dem
 [.lead]
 You can use the instructions on this page to simulate an attack for testing or demonstrating Workload Security using the included Ransomware Simulation script.
 
-
- 
 == Things to note before you begin
 
-* The ransomware simulation script works on Linux only.
+* The ransomware simulation script works on Linux only. The simulation script should also generate High Confidence Alerts in the event that the user has integrated ONTAP ARP with Workload Security.
+
+* Workload Security will detect events and alerts generated with NFS 4.1 only if ONTAP version is 9.15 or higher. 
+
+
 * The script is provided with the Workload Security agent installation files. It is available on any machine that has a Workload Security agent installed.
-* You can run the script on the Workload Security agent machine itself; there is no need to prepare another Linux machine. However, if you prefer to run the script on another system, simply copy the script and run it there. 
 
-== Have at least 1,000 sample files
+* You can run the script on the Workload Security agent machine itself; there is no need to prepare another Linux machine. However, if you prefer to run the script on another system, simply copy the script and run it there.
 
-This script should run on an SVM with a folder that has files to encrypt. We recommend having at least 1,000 files within that folder and any sub-folders. The files must not be empty.
-Do not create the files and encrypt them using the same user. Workload Security considers this a low-risk activity and will therefore not generate an alert (i.e. the same user modifies files he/she/they just created).
-
-See below for instructions to link:#create-files-programmatically[programmatically create non-empty files].
-
-== Guidelines before you run the simulator:
-
-. Make sure encrypted files are not empty.
-. Make sure you encrypt > 50 files. A small number of files will be ignored.
-. Do not run an attack with the same user multiple times. After a few times, Workload Security will learn this user behavior and assume it is the user's normal behavior.
-. Do not encrypt files the same user has just created. Changing a file that was just created by a user is not considered a risky activity. Instead, use files created by another user OR wait for a few hours between creating the files and encrypting them.
+* Users can opt for either the Python or shell script based on their preferences and system requirements.
 
 
-== Prepare the system
+* The Python script has pre-requisite installations. If you don't want to use python, use the shell script. 
 
-First, mount the target volume to machine. You can mount either an NFS mount or CIFs export. 
+== Guidelines:
 
-To mount NFS export in Linux: 
+This script should be executed on an SVM containing a folder with a substantial number of files for encryption, ideally 100 or more, including files in sub-folders. Ensure that the files are not empty. 
 
- mount -t nfs -o vers=4.0 10.193.177.158:/svmvol1 /mntpt 
- mount -t nfs -o vers=4.0 Vserver data IP>:/nfsvol /destinationlinuxfolder 
+To generate the alert, temporarily pause the collector before test data creation. Once the sample files are generated, resume the collector and initiate the encryption process.
+
+
+== Steps:
+
+=== Prepare the system:
+
+First, mount the target volume to the machine. You can mount either an NFS or CIFS export.
+
+==== To mount NFS export in Linux:
+
+----
+mount -t nfs -o vers=4.0 10.193.177.158:/svmvol1 /mntpt
+mount -t nfs -o vers=4.0 Vserver data IP>:/nfsvol /destinationlinuxfolder
+----
 
 Do not mount NFS version 4.1; it is not supported by Fpolicy.
 
-To mount CIFs in Linux: 
+==== To mount CIFS in Linux:
 
- mount -t cifs //10.193.77.91/sharedfolderincluster /root/destinationfolder/ -o username=raisa 
+----
+mount -t cifs //10.193.77.91/sharedfolderincluster /root/destinationfolder/ -o username=raisa
+----
 
+==== Enable ONTAP Autonomous ransomware protection (Optional):
+
+If your ONTAP cluster version is 9.11.1 or higher you may enable the ONTAP Ransomware Protection service by executing the following command on the ONTAP command console.
+
+ security anti-ransomware volume enable -volume [volume_name] -vserver [svm_name]
 
 Next, set up a Data Collector:
 
 . Configure the Workload Security agent if not already done.
-. Configure SVM data collector if not already done.
 
-== Run the Ransomware Simulator script
+. Configure an SVM data collector if not already done.
+. Make sure the mount protocol is selected while configuring the data collector.
 
-. Log in (ssh) to the Workload Security agent machine.
-. Navigate to: _/opt/netapp/cloudsecure/agent/install_
-. Call the simulator script without parameters to see usage:
+== Generate the sample files programmatically:
+
+Before creating the files, you must first stop or link:task_add_collector_svm.html#play-pause-data-collector[pause the data collector] processing.
+
+Before running the simulation, you must first add files to be encrypted. You can either manually copy the files to be encrypted into the target folder, or use one of the included scripts to programmatically create the files. Whichever method you use, make sure at least 100 files are present to encrypt.
+
+If you choose to programmatically create the files, you can use the Shell or Python:
+
+=== Shell:
+
+. Log into the Agent box.
+
+. Mount an NFS or CIFS share from the SVM of the filer to the Agent machine. Cd to that folder.
+
+. Copy the script from Agent installation directory (%AGENT_INSTALL_DIR/ agent/install/ransomware_simulation/shell/create_dataset.sh) to the target mount location.
+
+. Execute the following command using the scripts within the mounted directory (e.g. /root/demo) to create the test dataset folder and files:
+
+ './create_dataset.sh'
+
+. This will create 100 non empty files with various extensions inside the mount folder under a directory called "test_dataset".
+
+
+=== Python: 
+
+==== Python script Prerequisite:
+
+* Install Python (if not already installed.)
+** Download Python 3.5.2 or above from https://www.python.org/.
+** To check Python installation, run `python --version`.
+** The Python script has been tested on versions as early as 3.5.2.
+
+* Install pip if not already installed:
+** Download the get-pip.py script from https://bootstrap.pypa.io/.
+** Install pip using `python get-pip.py`.
+** Verify pip installation with `pip --version`.
+
+* PyCryptodome Library:
+** The script uses the PyCryptodome library.
+** Install PyCryptodome with `pip install pycryptodome`.
+** Confirm PyCryptodome installation by running `pip show pycryptodome`.
+
+==== Python create file script:
+
+. Log into the Agent box.
+
+. Mount an NFS or CIFS share from the SVM of the filer to the Agent machine. Cd to that folder.
+
+. Copy the script from Agent installation directory (%AGENT_INSTALL_DIR/agent/install/ransomware_simulation/python/create_dataset.py) to the target mount location.
+
+. Execute the following command using the scripts within the mounted directory (for e.g. /root/demo) to create the test dataset folder and files:
+
+ 'python create_dataset.py'
+
+. This will create 100 non empty files with various extensions inside the mount folder under a directory called “test_dataset"
+
+== Resume the collector
+
+If you paused the collector before following these steps, please be sure to resume the collector once the sample files are created.
+
+
+
+== Generate the sample files programmatically:
+Before creating the files, you must first stop or link:task_add_collector_svm.html#play-pause-data-collector[pause the data collector] processing.
+
+To generate a Ransomware alert, you can execute the included script which will simulate a ransomware alert in Workload Security.
+
+=== Shell:
+
+. Copy the script from Agent installation directory (%AGENT_INSTALL_DIR/agent/install/ransomware_simulation/shell/simulate_attack.sh) to the target mount location.
+
+. Execute the following command using the scripts within the mounted directory (for e.g. /root/demo) to encrypt the test dataset:
+
+ './simulate_attack.sh'
+
+. This will encrypt the sample files created under the "test_dataset" directory.
+
+=== Python: 
+
+. Copy the script from Agent installation directory (%AGENT_INSTALL_DIR/agent/install/ransomware_simulation/python/simulate_attack.py) to the target mount location.
+
+. Please note that python prerequisites are installed as per Python script Prerequisite section
+
+. Execute the following command using the scripts within the mounted directory (for e.g. /root/demo) to encrypt the test dataset:
+
+ 'python simulate_attack.py'
  
- # pwd 
- /opt/netapp/cloudsecure/agent/install 
- # ./ransomware_simulator.sh 
- Error: Invalid directory  provided. 
- Usage: ./ransomware_simulator.sh [-e] [-d] [-i <input_directory>] 
-        -e to encrypt files (default) 
-        -d to restore files 
-        -i <input_directory> - Files under the directory to be encrypted 
-
- Encrypt command example: ./ransomware_simulator.sh -e -i /mnt/audit/reports/ 
- Decrypt command example: ./ransomware_simulator.sh -d -i /mnt/audit/reports/ 
-
- 
-== Encrypt your test files
-
-To encrypt the files, run the following command: 
- 
- # ./ransomware_simulator.sh -e -i /root/for/ 
- Encryption key is saved in /opt/netapp/cloudsecure/cloudsecure-agent-1.251.0/install/encryption-key, 
- which can be used for restoring the files. 
- Encrypted /root/for/File000.txt 
- Encrypted /root/for/File001.txt 
- Encrypted /root/for/File002.txt 
- ...
+. This will encrypt the sample files created under the "test_dataset" directory.
 
 
-== Restore files
+== Generate an Alert in Workload Security
 
-To decrypt, run the following command: 
- 
- [root@scspa2527575001 install]# ./ransomware_simulator.sh -d -i /root/for/ 
- File /root/for/File000.txt is restored. 
- File /root/for/File001.txt is restored. 
- File /root/for/File002.txt is restored. 
- ...
- 
+Once the simulator script execution has finished, an alert will be seen on the Web UI within a few minutes.
 
-== Run the script multiple times
+Note: In the event that all of the following conditions are met, a High Confidence Alert will be generated.
 
-After generating a ransomware attack for a user, switch to another user in order to generate an additional attack. 
-Workload Security learns user behavior and will not alert on repeated ransomware attacks within a short duration for the same user. 
+. Monitored SVM's ONTAP version higher than 9.11.1
+. ONTAP Autonomous Ransomware Protection configured
+. Workload Security Data collector is added in Cluster mode.
+
+Workload Security detects ransomware patterns based on user behaviour while ONTAP ARP detects ransomware activity based on encryption activities in files.
+
+If the conditions are met, Workload Security marks the alerts as High Confidence Alert. 
+
+Example of High Confidence Alert on the Alerts list page:
+
+image:ws_high_confidence_alert.png[High Confidence Alert example, list page]
+
+Example of High Confidence Alert detail:
 
 
-== Create files programmatically
+image:ws_high_confidence_alert_detail.png[High Confidence Alert example, detail page]
 
-Before creating the files, you must first stop or pause the data collector processing. 
-Perform the steps below before you add the data collector to the Agent. If you have already added the data collector, just edit the data collector, enter an invalid password, and save it. This will temporarily put the data collector in error state. NOTE: Be sure you note the original password!
+== Triggering alert multiple times
 
-NOTE: The recommended option is to link:task_add_collector_svm.html#play-pause-data-collector[pause the collector] before creating your files.]
+Workload Security learns user behavior and will not generate alerts on repeated ransomware attacks within 24 hours for the same user. 
 
-Before running the simulation, you must first add files to be encrypted. You can either manually copy the files to be encrypted into the target folder, or use a script (see the example below) to programmatically create the files. Whichever method you use, copy at least 1,000 files.
-
-If you choose to programmatically create the files, do the following:
-
-. Log into the Agent box. 
-. Mount an NFS export from the SVM of the filer to the Agent machine. Cd to that folder. 
-. In that folder create a file named createfiles.sh 
-. Copy the following lines to that file. 
- 
- for i in {000..1000} 
- do 
-    echo hello > "File${i}.txt" 
- done 
- echo 3 > /proc/sys/vm/drop_caches ; sync 
- 
-. Save the file.
-
-. Ensure execute permission on the file:
-
- chmod 777 ./createfiles.sh 
- 
-. Execute the script:
-
- ./createfiles.sh  
-+
-1000 files will be created in the current folder. 
-
-. Re-enable the data collector
-+
-If you disabled the data collector in step 1, edit the data collector, enter the correct password, and save. Make sure that the data collector is back in running state.
-
-. If you paused the collector before following these steps, be sure to link:task_add_collector_svm.html#play-pause-data-collector[resume the collector].
+To generate a new alert with a different user, please follow the same steps again (creating test data and then encrypting the test data).
 
 
 

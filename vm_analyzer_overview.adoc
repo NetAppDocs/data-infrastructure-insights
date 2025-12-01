@@ -1,0 +1,50 @@
+---
+sidebar: sidebar
+permalink: vm_analyzer_overview.html
+summary: VM Analyzer provides topology for virtual assets on your tenant
+keywords: topology, analyze, analysis, map, virtual, vm, vmware
+---
+
+= VM Analyzer Overview
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+
+[.lead]
+With DII's *VM Analyzer*, managing your virtual assets becomes simpler and more efficient. This powerful tool offers end-to-end visibility, mapping dependencies from VMDK/VM to Host to Datastore to Internal Volume/Volume to Storage.
+
+By providing an interactive topology map, VM Analyzer enables you to pinpoint issues, understand changes, and enhance comprehension of data flow. Streamline VM management and increase your visibility into virtual workloads. 
+
+image:vm_analyzer_example_with_panel_a.png[VM Analyzer topology map of a storage system]
+
+== Explore connections among your assets
+
+Select *Observability > Analyze > VM Analyzer* to view the VM Analyzer. Set a filter for Application, Virtual Machine, Volume, Internal Volume, or add your own filters.  The map for the objects is displayed, showing connected objects. Hover over an object to view traffic metrics for those connections.
+
+image:vm_analyzer_performance_metrics.png[VM Analyzer Performance Metrics example]
+
+NOTE: Most VM Analyzer filters (including those you may add) are contextual; when you select an object in one of these filters, the choices presented in the other filter drop-downs are refreshed in context with the selected object or objects. 
+
+Clicking on an object or group opens a slideout panel providing additional details about the object and its connections. The slideout panel displays a summary, which provides details about the selected object (for example, throughput or utilization, depending on the type of object), and charts showing metrics for the object such as latency or IOPS. Additional tabs allow you to explore related additional resources or changes and alerts. You can select to display metrics for Top Correlated or contending objects on the charts as well, if desired. 
+
+
+== See it in Action
+
+link:https://media.netapp.com/video-detail/0e62b784-8456-5ef7-8879-f0352135a0f1/simplified-troubleshooting-with-vm-analyzer[Simplified troubleshooting with VM Analyzer (Video),window=read-later]
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -6,16 +6,14 @@ keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cl
 ---
 
 = Workload Security Agent Requirements
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-You must link:task_cs_add_agent.html[install an Agent] in order to acquire information from your data collectors. Before you install the Agent, you should ensure that your environment meets operating system, CPU, memory, and disk space requirements.
+You must link:task_cs_add_agent.html[install a Workload Security Agent] in order to acquire information from your data collectors. Before installing the Agent, ensure that your environment meets operating system, CPU, memory, and disk space requirements.
 
 
 [cols=2*,options="header",cols="36,60"]
@@ -23,15 +21,17 @@ You must link:task_cs_add_agent.html[install an Agent] in order to acquire infor
 |Component|Linux Requirement
 |Operating system|A computer running a licensed version of one of the following:
 
-* CentOS 9 Stream (64-bit)
-* OpenSUSE Leap 15.3 through 15.5 (64-bit)
-* Oracle Linux 8.10 (64-bit), 9.1 through 9.4 (64-bit), SELinux
-* Red Hat Enterprise Linux 8.10 (64-bit), 9.1 through 9.5 (64-bit), SELinux
-* Rocky 9.4 - 9.5 (64-bit), SELinux
-* SUSE Linux Enterprise Server 15 SP4 through 15 SP6 (64-bit), SELinux
-* Ubuntu 20.04 LTS, 22.04 LTS, and 24.04 LTS (64-bit)
-* Debian 10 and 11 (64-bit)
-* AlmaLinux 9.4 and 9.5 (64-bit), SELinux
+* AlmaLinux 9.4 (64bit) thru 9.5 (64bit), 10 (64bit), including SELinux
+* CentOS Stream 9 (64-bit)
+* Debian 11 (64-bit), 12 (64-bit), including SELinux
+* OpenSUSE Leap 15.3 (64-bit) through 15.6 (64-bit)
+* Oracle Linux 8.10 (64-bit), 9.1 (64-bit) through 9.6 (64-bit), including  SELinux
+* Red Hat Enterprise Linux 8.10 (64bit), 9.1 (64bit) thru 9.6 (64bit), 10 (64bit), including SELinux
+* Rocky 9.4 (64bit) thru 9.6 (64bit), including SELinux
+* SUSE Linux Enterprise Server 15 SP4 (64-bit) through 15 SP6 (64-bit), including  SELinux
+* Ubuntu 20.04 LTS (64-bit), 22.04 LTS (64-bit), 24.04 LTS (64-bit)
+
+
 
 This computer should be running no other application-level software. A dedicated server is recommended.
 
@@ -69,21 +69,6 @@ For Linux, disk space should be allocated in this manner:
 == Additional recommendations
 * It is strongly recommended to synchronize the time on both the ONTAP system and the Agent machine using *Network Time Protocol (NTP)* or *Simple Network Time Protocol (SNTP)*.
 
-////
-
-Removed from Table:
-
-|Agent outbound URLs (port 433)|
-
-\https://<site_name>.cs01.cloudinsights.netapp.com 
-//You can get the site ID from the product URL. For example: https://*ab1234*.cs01.cloudinsights.netapp.com
-You can use a broader range to specify the tenant ID: \https://*.cs01.cloudinsights.netapp.com/
-
-\https://gateway.c01.cloudinsights.netapp.com 
-
-\https://agentlogin.cs01.cloudinsights.netapp.com 
-
-////
 
 
 
@@ -97,8 +82,7 @@ For *US-based* Workload Security environments:
 |TCP|443|Workload Security Agent|<site_name>.cs01.cloudinsights.netapp.com 
 <site_name>.c01.cloudinsights.netapp.com 
 <site_name>.c02.cloudinsights.netapp.com|Access to Data Infrastructure Insights
-|TCP|443|Workload Security Agent|gateway.c01.cloudinsights.netapp.com
-agentlogin.cs01.cloudinsights.netapp.com|Access to authentication services
+|TCP|443|Workload Security Agent|agentlogin.cs01.cloudinsights.netapp.com|Access to authentication services
 |===
 
 For *Europe-based* Workload Security environments:
@@ -110,8 +94,7 @@ For *Europe-based* Workload Security environments:
 <site_name>.c01-eu-1.cloudinsights.netapp.com
 <site_name>.c02-eu-1.cloudinsights.netapp.com
 |Access to Data Infrastructure Insights
-|TCP|443|Workload Security Agent|gateway.c01.cloudinsights.netapp.com
-agentlogin.cs01-eu-1.cloudinsights.netapp.com
+|TCP|443|Workload Security Agent|agentlogin.cs01-eu-1.cloudinsights.netapp.com
 |Access to authentication services
 |===
 
@@ -124,14 +107,11 @@ For *APAC-based* Workload Security environments:
 <site_name>.c01-ap-1.cloudinsights.netapp.com
 <site_name>.c02-ap-1.cloudinsights.netapp.com
 |Access to Data Infrastructure Insights
-|TCP|443|Workload Security Agent|gateway.c01.cloudinsights.netapp.com
-agentlogin.cs01-ap-1.cloudinsights.netapp.com
+|TCP|443|Workload Security Agent|agentlogin.cs01-ap-1.cloudinsights.netapp.com
 |Access to authentication services
 |===
 
 == In-network rules
-
-//Note that when adding _link:task_add_collector_svm.html#permissions-when-adding-via-cluster-management-ip[csuser]_, that user requires SSH access to the ONTAP management LIF.
 
 
 [cols=5*,options="header"]
@@ -144,7 +124,13 @@ agentlogin.cs01-ap-1.cloudinsights.netapp.com
 
 NOTE that you do not need to reserve *all* of these ports, but the ports you reserve for this must be within this range. It is recommended to start by reserving ~100 ports, and increasing if necessary.
 
+|TCP|35000-55000|Cluster Management IP|Workload Security Agent
+|Communication from ONTAP Cluster Management IP to the Workload Security Agent for *EMS events*. These ports must be opened towards the Workload Security Agent in order for ONTAP to send *EMS events* to it, including any firewall on the Workload Security Agent itself (if present).
+
+NOTE that you do not need to reserve *all* of these ports, but the ports you reserve for this must be within this range. It is recommended to start by reserving ~100 ports, and increasing if necessary.
+
 |SSH |22|Workload Security Agent| Cluster management |Needed for CIFS/SMB user blocking.
+
 |===
 
 

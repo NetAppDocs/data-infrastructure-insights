@@ -6,7 +6,7 @@ summary: Data Infrastructure Insights can be configured for AU software to be up
 ---
 = Manually Installing Acquisition Unit Software
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

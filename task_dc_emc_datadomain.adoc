@@ -6,9 +6,8 @@ summary: Configuring DELL EMC Data Domain data collector.
 ---
 
 = DELL EMC Data Domain data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

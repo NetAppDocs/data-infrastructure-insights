@@ -5,9 +5,8 @@ keywords: data collector, changes, failures
 summary: Data collector errors 
 ---
 = Researching a failed data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

@@ -7,7 +7,7 @@ keywords: application, create application,
 
 = Creating Applications
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -16,9 +16,6 @@ keywords: application, create application,
 [.lead]
 To track data associated with specific applications running on your tenant, you can define the applications in Data Infrastructure Insights.
 
-.Before you begin
-
-If you want to associate the application with a business entity, you must create the business entity before you define the application.
 
 .About this task
 

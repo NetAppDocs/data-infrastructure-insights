@@ -7,7 +7,6 @@ summary: Create monitors to alert on performance or inventory thresholds
 
 = Notification using Webhooks
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:
@@ -55,6 +54,8 @@ image:Webhook_Default_Parameters.png[Data Infrastructure Insights Default Webhoo
 
 Alert Parameters are dynamic values populated per alert. For example, the _%%TriggeredOn%%_ parameter will be replaced with the object on which the alert was triggered.
 
+You can add any object attribute (for example, storage name) as a parameter to a webhook. For example, you can set parameters for volume name and storage name in a webhook description like: "High Latency for Volume: _%%relatedObject.volume.name%%_, Storage: _%%relatedObject.storage.name%%_".
+
 Note that in this section, substitutions are _not_ performed when clicking the "Test Webhook" button; the button sends a payload that shows the _%%_ substitutions but does not replace them with data.
 
 
@@ -63,6 +64,8 @@ Note that in this section, substitutions are _not_ performed when clicking the "
 === Custom Parameters and Secrets
 
 In this section you can add any custom parameters and/or secrets you wish. For security reasons, if a secret is defined only the webhook creator can modify this webhook channel. It is read-only for others. You can use secrets in URL/Headers as _%%<secret_name>%%_.
+
+
 
 
 

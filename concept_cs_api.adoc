@@ -51,9 +51,9 @@ The HTTP header where the Access Token is passed is *X-CloudInsights-ApiKey:*
 
 For example, use the following to retrieve storages assets:
 
- curl https://<tenant_host_name>/rest/v1/cloudsecure/activities -H 'X-CloudInsights-ApiKey: <API_Access_Token>'
+ curl https://<Workload Security tenant>/rest/v1/cloudsecure/activities -H 'X-CloudInsights-ApiKey: <API_Access_Token>'
  
-Where _<API_Access_Token>_ is the token you saved during API access key creation.
+Where _<API_Access_Token>_ is the token you saved during API access key creation and _<Workload Security Tenant>_ is the tenant URL of your Workload Security environment.
 
 Detailed information can be found in the _API Documentation_ link under *Admin > API Access*. 
 
@@ -66,8 +66,9 @@ The script is located at _/opt/netapp/cloudsecure/agent/export-script_. A README
 Here is an example command to invoke the script:
 
 ```
-python3 data-export.py --tenant_url <tenant id>.cs01.cloudinsights.netapp.com --access_key %ACCESS_KEY% --path_filter "<dir path>" --user_name "<user>" --from_time "01-08-2024 00:00:00" --to_time "31-08-2024 23:59:59" --iteration_interval 12 --num_workers 3
+python3 data-export.py --tenant_url <Workload Security tenant> --access_key %ACCESS_KEY% --path_filter "<dir path>" --user_name "<user>" --from_time "01-08-2024 00:00:00" --to_time "31-08-2024 23:59:59" --iteration_interval 12 --num_workers 3
 ```
+
 
 Key Parameters:
 - `--iteration_interval 12`: Splits the requested time range into intervals of 12 hours.

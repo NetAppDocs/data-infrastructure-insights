@@ -6,9 +6,8 @@ summary: Configuring Workload Security Active Directory User Directory Collector
 ---
 
 = Configuring an Active Directory (AD) User Directory Collector 
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

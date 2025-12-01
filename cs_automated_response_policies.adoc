@@ -18,7 +18,8 @@ Response Policies trigger actions such as taking a snapshot or restricting user 
 
 You can set policies on specific devices or all devices. To set a response policy, select *Admin > Automated Response Policies* and click the appropriate *+Policy* button. You can create policies for Attacks or for Warnings.
 
-image:Automated_Response_Screenshot.png[Create Attack Policy]
+//image:Automated_Response_Screenshot.png[Create Attack Policy]
+image:ws_add_attack_policy.png[Add an Attack Policy dialog showing webhook dropdown]
 
 You must save the policy with a unique name. 
 
@@ -28,12 +29,12 @@ When an alert is triggered against the specified devices (or all devices, if sel
 
 See the link:cs_restrict_user_access.html[Restrict User Access] page for more details on restricting user access by IP.
 
-You can modify or pause an Automated Response Policy by choosing the option in the policy's drop-down menu.
+You can attach one or more webhooks to a policy to get notified when an alert is created and action is taken. It is recommended to add no more than 10 webhooks to a policy.Keep in mind that if a policy is paused, webhook notifications will not be triggered. 
+
+You can modify or pause an Automated Response Policy by choosing the option in the policy's drop-down menu. 
 
 Workload Security will automatically delete snapshots once per day based on the Snapshot Purge settings. 
 
-//image:AutomatedResponsePolicyList.png[Automated Response Policy Pause]
-//image:CloudSecure_AutomatedResponsePolicies_WithSnapshotPurge.png[Automated Response Policy Settings]
 image:CloudSecure_SnapshotPurgeSettings.png[Snapshot Purge Settings]
 
 

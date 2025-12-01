@@ -6,9 +6,8 @@ keywords: invite, roles, data collector, acquisition unit, AU
 ---
 
 = Getting started gathering data
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:

@@ -6,10 +6,9 @@ summary: An Example YAML file for NKMO Clusterrole
 ---
 
 = NKMO Clusterrole YAML Example
-:toc: macro
 :hardbreaks:
 :nofooter:
-:toclevels: 2
+
 :icons: font
 :linkattrs:
 :imagesdir: ./media/

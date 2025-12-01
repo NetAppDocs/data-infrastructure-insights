@@ -7,7 +7,6 @@ summary: You can import annotations and applications using the Data Infrastructu
 
 = Importing Annotations
 :hardbreaks: 
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:

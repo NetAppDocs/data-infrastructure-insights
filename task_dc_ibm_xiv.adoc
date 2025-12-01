@@ -6,9 +6,8 @@ summary: Configuring IBM XIV/A9000 data collector.
 ---
 
 = Configuring the IBM XIV/A9000 data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:

@@ -1,51 +1,50 @@
 ---
 sidebar: sidebar
 permalink: concept_activeiq.html
-keywords: Active IQ, risks, svm, AIQ, risk
-summary: Data Infrastructure Insights collects Risk data from NetApp Active IQ
+keywords: Active IQ, risks, svm, AIQ, risk, ADigital Advisor
+summary: Data Infrastructure Insights collects Risk data from NetApp Active IQ Digital Advisor (also known as Digital Advisor)
 ---
 
-= Active IQ
-:toc: macro
+= Active IQ Digital Advisor
 :hardbreaks:
 :nofooter:
-:toclevels: 1
+
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-NetApp link:https://www.netapp.com/us/products/data-infrastructure-management/active-iq.aspx[Active IQ] provides a series of visualizations, analytics, and other support-related services to NetApp customers for their hardware / software systems. The data reported by Active IQ can enhance troubleshooting of system problems and also provide insight into optimization and predictive analysis related to your devices.   
+NetApp link:https://docs.netapp.com/us-en/active-iq/[Active IQ Digital Advisor] (also known as Digital Advisor) provides a series of visualizations, analytics, and other support-related services to NetApp customers for their hardware / software systems. The data reported by Digital Advisor can enhance troubleshooting of system problems and also provide insight into optimization and predictive analysis related to your devices.   
 
 
-Data Infrastructure Insights collects the *Risks* for any NetApp Clustered Data ONTAP storage system that is monitored and reported by Active IQ. Risks reported for the storage systems are collected automatically by Data Infrastructure Insights as part of its data collection from those devices. You must add the appropriate data collector to Data Infrastructure Insights to collect Active IQ risk information.
+Data Infrastructure Insights collects the *Risks* for any NetApp Clustered Data ONTAP storage system that is monitored and reported by Digital Advisor. Risks reported for the storage systems are collected automatically by Data Infrastructure Insights as part of its data collection from those devices. You must add the appropriate data collector to Data Infrastructure Insights to collect Digital Advisor risk information.
 
-Data Infrastructure Insights will not show risk data for ONTAP systems that are not monitored and reported by Active IQ. 
+Data Infrastructure Insights will not show risk data for ONTAP systems that are not monitored and reported by Digital Advisor. 
 
-The risks reported are shown in Data Infrastructure Insights on the _storage_ and _storage node_ asset landing pages, in the "Risks" table. The table shows Risk Detail, Category of risk, and Potential Impact of the risk, and also provides a link to the Active IQ page summarizing all risks for the storage node (NetApp Support account sign-in required). 
-
-
-image:AIQ_Risks_Table_Example.png[Active IQ Risks Table] 
+The risks reported are shown in Data Infrastructure Insights on the _storage_ and _storage node_ asset landing pages, in the "Risks" table. The table shows Risk Detail, Category of risk, and Potential Impact of the risk, and also provides a link to the Digital Advisor page summarizing all risks for the storage node (NetApp Support account sign-in required). 
 
 
-A count of reported risks is also shown in the landing page's Summary widget, with a link to the appropriate Active IQ page. On a _storage_ landing page, the count is a sum of risks from all underlying storage nodes.
+image:AIQ_Risks_Table_Example.png[Digital Advisor Risks Table] 
+
+
+A count of reported risks is also shown in the landing page's Summary widget, with a link to the appropriate Digital Advisor page. On a _storage_ landing page, the count is a sum of risks from all underlying storage nodes.
 
 image:AIQ_Summary_Example.png[Storage Page Summary]
 
-== Opening the Active IQ page
+== Opening the Digital Advisor page
 
-When clicking on the link to an Active IQ page, if you are not currently signed in to your Active IQ account, you must perform the following steps to view the Active IQ page for the storage node.
+When clicking on the link to an Digital Advisor page, if you are not currently signed in to your Digital Advisor account, you must perform the following steps to view the Digital Advisor page for the storage node.
 
-. In the Data Infrastructure Insights Summary widget or Risks table, click the "Active IQ' link.
-. Sign in to your NetApp Support account. You are taken directly to the storage node page in Active IQ.
+. In the Data Infrastructure Insights Summary widget or Risks table, click the "Digital Advisor' link.
+. Sign in to your NetApp Support account. You are taken directly to the storage node page in Digital Advisor.
 
 == Querying for Risks
 
-In Data Infrastructure Insights, you can add the *monitoring.count* column to a storage or storage node query. If the returned result includes Active IQ-Monitored storage systems, the monitoring.count column will display the number of risks for the storage system or node.
+In Data Infrastructure Insights, you can add the *monitoring.count* column to a storage or storage node query. If the returned result includes Digital Advisor-Monitored storage systems, the monitoring.count column will display the number of risks for the storage system or node.
 
 == Dashboards
 
-You can build widgets (e.g. pie chart, table widget, bar, column, scatter plot, and single value widgets) in order to visualize object risks for storage and storage nodes for NetApp Clustered Data ONTAP systems monitored by Active IQ. "Object Risks" can be selected as a column or metric in these widgets where Storage or Storage Node is the object of focus.  
+You can build widgets (e.g. pie chart, table widget, bar, column, scatter plot, and single value widgets) in order to visualize object risks for storage and storage nodes for NetApp Clustered Data ONTAP systems monitored by Digital Advisor. "Object Risks" can be selected as a column or metric in these widgets where Storage or Storage Node is the object of focus.  
 
 //Additionally, you can filter on "Object Risks" in widgets or queries.
 

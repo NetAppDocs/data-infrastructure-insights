@@ -6,9 +6,8 @@ summary: Configuring the HP Enterprise Alletra 9000 / Primera (formerly 3PAR) da
 ---
 
 = HP Enterprise Alletra 9000 / Primera Storage data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:

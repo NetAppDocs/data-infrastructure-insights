@@ -6,9 +6,8 @@ keywords: reporting, cognos, data warehouse, dwh, managing, customizing, copying
 ---
 
 = How historical data is retained for Reporting
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:

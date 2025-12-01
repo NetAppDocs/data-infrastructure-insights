@@ -6,9 +6,7 @@ summary: Audit provides a view of system and user activities in the Data Infrast
 ---
 
 = Auditing
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:
@@ -69,8 +67,6 @@ If you enclose a filter string in double quotes, Insight treats everything betwe
 The events and actions audited by Data Infrastructure Insights can be categorized in the following broad areas:
 
 * *User account*: Log in, log out, role change, etc.
-+
-Example: _User *Tony Lavoie* logged in from *10.1.120.15*, user agent *Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36*, login method(s) *BlueXP Portal Login_* 
 
 * *Acquisition Unit*: create, delete, etc.
 +
@@ -113,14 +109,24 @@ You can export the results of your Audit display to a .CSV file, which will allo
 The displayed Audit events will be exported to a .CSV file, up to a maximum of 10,000 rows.
 
 
+
+
+
+
 == Retention of Audit Data
 
-The amount of time Data Infrastructure Insights retains Audit data is based on your Edition:
+The amount of time Data Infrastructure Insights retains Audit data is based on your subscription:
 
-* Basic Edition: Audit data is retained for 30 days
-* Standard and Premium Editions: Audit data is retained for 1 year plus 1 day
+* Trial environments: Audit data is retained for 30 days
+* Subscribed environments: Audit data is retained for 1 year plus 1 day
 
 Audit entries older than the retention time are automatically purged. No user interaction is needed.
+
+Audit entries older than the retention time are automatically purged. No user interaction is needed.
+
+
+
+
 
 
 == Troubleshooting

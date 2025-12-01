@@ -6,9 +6,8 @@ summary: Hadoop data collector configuration
 ---
 
 = Hadoop Data Collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

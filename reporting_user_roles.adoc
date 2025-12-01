@@ -7,7 +7,7 @@ keywords: reporting, cognos, data warehouse, dwh, users, roles, user roles
 
 = Data Infrastructure Insights Reporting User Roles
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:

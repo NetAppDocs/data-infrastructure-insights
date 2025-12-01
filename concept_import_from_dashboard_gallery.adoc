@@ -1,32 +1,42 @@
 ---
 sidebar: sidebar
 permalink: concept_import_from_dashboard_gallery.html
-summary: You can import recommended dashboards to assist with answering business insight questions.
-keywords: dashboard, gallery, import
+summary: You can import recommended dashboards to assist with answering business insight questions. You can also import custom dashboards that you have previously exported.
+keywords: dashboard, gallery, import, export
 ---
 
-= Importing from the Dashboard Gallery
-:toc: macro
+= Importing Dashboards
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Data Infrastructure Insights provides a number of Recommended Dashboards to provide business insights into your data. Each dashboard contains widgets designed to help answer a particular question or solve a particular problem relevant to the data currently being collected on your tenant.
+Data Infrastructure Insights provides a number of Recommended Dashboards to provide business insights into your data. Each dashboard contains widgets designed to help answer a particular question or solve a particular problem relevant to the data currently being collected on your tenant. DII also allows you to export a useful dashboard and import it to another tenant.
+
+== Importing from the Dashboard Gallery
 
 To import a dashboard from the gallery, do the following:
 
-. Select *Dashboards > Dashboards*
+. Select *Observability > Explore > All Dashboards*
 
-. Click on *+From Gallery*
+. Click on *+Import Dashboard* and choose _Import From Gallery_.
 +
-A list of *Recommended Dashboards* is displayed. Each dashboard is named with a particular question the dashboard can help you solve. Dashboards are available to help answer questions around different types of objects, including AWS, NetApp, Storage, VMware, and others
+A list of *Recommended Dashboards* is displayed, based on the data collectors in your environment. Dashboards are available to help answer questions around different types of objects, including AWS, NetApp, Storage, VMware, and others. 
 
-. Select one or more dashboards from the list and click *Add Dashboards*. These dashboards now show in your dashboard list.
+. Select one or more dashboards from the list and click *Add Dashboards*. These dashboards will show in your dashboard list.
 
 In addition to the Recommended Dashboards, you can also choose to import *Additional Dashboards* that are not relevant to your current data. For example, if you have no storage data collectors currently installed but are planning on configuring some in the future, you may still choose to import the storage-relevant dashboards. These dashboards will be available for display but may not show any relevant data until at least one storage data collector is configured.
 
 Importing from the dashboard gallery is available to users with Administrator or Account Owner role.
+
+== Importing an Exported Dashboard
+
+To *export* a dashboard, on the *Observability > Explore > All Dashboards* page, click on the menu to the right of the dashboard and choose _Export_.  You can also select multiple dashboards and choose _Export_ from the _Bulk Actions_ drop-down. The dashboards are saved in a .ZIP file on your local system.
+
+To *import* the dashboard, navigate to the desired tenant and do the following:
+
+. Select *Observability > Explore > All Dashboards*
+
+. Click on *+Import Dashboard* and choose _Import From File_. Select the .ZIP of the file you previously exported. The dashboard(s) will be imported and will show in your dashboard list. Note that if you are importing a dashboard with the same name as an existing dashboard, a "(2)" will appended to the dashboard name.

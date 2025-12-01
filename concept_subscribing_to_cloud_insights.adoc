@@ -7,7 +7,6 @@ keywords: subscribe, trial, subscription, contract, raw capacity, region, data r
 
 = Subscribing to Data Infrastructure Insights
 :hardbreaks:
-:toclevels: 2
 :nofooter:
 :icons: font
 :linkattrs:
@@ -16,31 +15,37 @@ keywords: subscribe, trial, subscription, contract, raw capacity, region, data r
 [.lead]
 Getting started with Data Infrastructure Insights is as easy as three simple steps:
 
-* Sign up for an account on link:https://bluexp.netapp.com//[*NetApp BlueXP*] to get access to all of NetApp's Cloud offerings.
-* Register for a free trial of Data Infrastructure Insights to explore the features available. To register for a free trial:
+. Sign up for an account on link:https://console.netapp.com//[*NetApp Console*] to get access to all of NetApp's Cloud offerings.
+. Register for a free trial of Data Infrastructure Insights to explore the features available. To register for a free trial:
 ** Go to https://netapp.com
 ** Select *How to Buy* at the top of the page.
-** Select *Request trial*. If you are not already registered with BlueXP, Enter your details and sign up. Otherwise, sign in.
+** Select *Request trial*. If you are not already registered with Console, Enter your details and sign up. Otherwise, sign in.
 ** Schedule a meeting or wait for a representative to contact you about your trial.
 
-* *Subscribe* to Data Infrastructure Insights for on-going, uninterrupted access to your data via link:https://bluexp.netapp.com/contact-cds[NetApp Sales] direct or link:https://aws.amazon.com/marketplace/pp/prodview-pbc3h2mkgaqxe[AWS Marketplace].
 
-During the registration process, you can choose the global region to host your Data Infrastructure Insights environment. 
-For more information, read about Data Infrastructure Insights link:security_information_and_region.html[Information and Region].
+. *Subscribe* to Data Infrastructure Insights for on-going, uninterrupted access to your data though a variety of flexible subscription options:
+
+** link:https://console.netapp.com/contact-cds[NetApp Sales direct]
+** AWS Marketplace:
+*** link:https://aws.amazon.com/marketplace/pp/prodview-axhuy7muvzfx2[Fixed term subscription]
+*** link:https://aws.amazon.com/marketplace/pp/prodview-rn4qwencpjpge[Pay-as-you-go subscription]
+*** link:https://aws.amazon.com/marketplace/pp/prodview-nku57vjsqdwzu[Fixed base + Pay-as-you-go overages subscription]
+** link:https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.dii_premium[Azure Marketplace] (all subscription options)
 
 
-For a full comparison of the features available in Data Infrastructure Insights Basic and Premium Editions, see the link:https://www.netapp.com/cloud-services/cloud-insights/editions-pricing[Data Infrastructure Insights Editions] page.
+During the registration process, you can choose the global region to host your Data Infrastructure Insights environment. For more information, read about Data Infrastructure Insights link:security_information_and_region.html[Information and Region].
 
 
+For detailed information about Data Infrastructure Insights features and pricing options, see the link:https://www.netapp.com/cloud-services/cloud-insights/editions-pricing[Data Infrastructure Insights Editions] page.
+
+
+
+
+////
 WARNING: Inactive Data Infrastructure Insights Basic Edition environments are deleted and their resources are reclaimed. An environment is considered inactive if there is no user activity for 30 consecutive days, of if there is no data ingested for 7 consecutive days. Data Infrastructure Insights will send a notification and provide a grace period of four days before an environment is deleted.
-
-
-
-
-
+////
 
 While using Data Infrastructure Insights, if you see a padlock icon image:padlock.png[Padlock], it means the feature is not available in your current Subscription, or is available in a limited form. Subscribe to that feature for full access. Some features are available as a <<module-evaluation, Module Evaluation>> prior to subscribing.
-
 
 
 == Trial Edition
@@ -53,22 +58,17 @@ Data Infrastructure Insights displays a banner when your free trial is nearing i
 NOTE: If you need additional time to evaluate Data Infrastructure Insights and your trial is set to expire in 4 days or less, you can extend your trial for an additional 30 days. You can extend the trial only once. You cannot extend if your trial has expired.
 
 
-
-
 === Trial through AWS Marketplace
 
-You may also sign up for a free trial through the AWS Marketplace. The AWS Marketplace free trial gives you access to Data Infrastructure Insights for a trial period of 33 days, and allows up to 499 <<observability-metering, Managed Units>> (MUs). 
+You may also sign up for a free trial through the AWS Marketplace. The AWS Marketplace free trial gives you access to Data Infrastructure Insights for a trial period of 33 days. 
 
-//Note: If you configure more than 499 MUs, you will enter "breached" state. While your trial is in breached state, you will lose access to some Data Infrastructure Insights functionality until the breach is resolved, either by reducing the number of MUs configured, or by subscribing to Data Infrastructure Insights.
 
-The AWS Marketplace free trial cannot be extended. At any time during your trial, you can downgrade to a Data Infrastructure Insights Basic Edition subscription or change to a paid Data Infrastructure Insights subscription by visiting the *Admin -> Subscription* page.
-
+The AWS Marketplace free trial cannot be extended. 
 
 
 === What if My Trial has Expired?
 
 If your free trial has expired and you have not yet subscribed to Data Infrastructure Insights, you will have limited functionality until you subscribe. Data ingestion may cease, and after a few weeks, your data will be deleted per our data retention policy.
-
 
 
 
@@ -83,7 +83,6 @@ NOTE: Your Data Infrastructure Insights data remains intact for 30 days followin
 
 == Module Evaluation
 
-
 You may also take advantage of *Module Evaluations*. For example, if you are already subscribed to Infrastructure Observability but are adding Kubernetes to your environment, you will automatically enter into a 30-day evaluation of Kubernetes Observability, starting from when you install the NetApp Kubernetes Monitoring Operator. You will only be charged for your Kubernetes Observability managed unit usage at the end of the evaluation period.
 
 NOTE: Keep in mind that you will be charged for new managed unit (MU) usage following the evaluation, so be sure to plan accordingly. When your module evaluation is ending, you will be notified if you will need to add more MUs to avoid service interruption.
@@ -93,8 +92,6 @@ You can monitor your managed unit usage on the *Admin > Subscription* page in th
 image:Module_Trials_UsageTab.png[MU Usage Screen]
 
 NOTE: A _Module Evaluation_ is not a _Trial_ - we use the term trial when we provide customers a free trial period of using the Data Infrastructure Insights service to confirm fit and enable purchase. A module evaluation is different - this is when we allow a paid customer to try out a module of Data Infrastructure Insights that they have not used in recent months of their paid subscription. When evaluation is active, charges for just the newly configured module are waived. The customers working environment is still under subscription and has not reverted to free trial. The subscription has not changed. 
-
-
 
 
 === Estimator
@@ -114,10 +111,6 @@ Note that customers are only eligible for a module evaluation once per subscript
 
 To subscribe, go to *Admin -> Subscription*. In addition to the *Subscribe* buttons, you will be able to see your installed data collectors and calculate your estimated metering. For a typical environment, you can click the self-serve AWS Marketplace button. If your environment includes or is expected to include 1,000 or more Managed Units, you are eligible for Volume Pricing. 
 
-//image:SubscriptionCompareTable-2.png[Subscription Options]
-
-
-
 
 === Observability Metering
 [#pricing]
@@ -133,6 +126,7 @@ Your subscription will be metered by one of these methods, depending on whether 
 
 ==== Capacity Metering
 [#effective-entitlement]
+[#weighted-capacity]
 
 Data Infrastructure Insights Observability meters usage according to the tier of storages on your tenant. You may have storages that fall into one or more of these categories:
 
@@ -140,29 +134,22 @@ Data Infrastructure Insights Observability meters usage according to the tier of
 * Object Raw
 * Cloud Consumed
 
-Each tier is metered at a different rate, with the whole calculated together to give you an _effective entitlement_. The formula for calculating effective usage is as follows:
+Each tier is metered at a different rate, with the whole calculated together to give you a weighted entitlement. The formula for calculating weighted usage is as follows:
 
- Effective usage = Raw TiB + (0.1 x Object Tier Raw TiB) + (0.25 x Cloud Tier Provisioning TiB)
+ Weighted Capacity = Raw TiB + (0.1 x Object Tier Raw TiB) + (0.25 x Cloud Tier Provisioned TiB)
 
-NOTE: The sum of Managed Units may differ slightly from the Data Collectors count in the summary section. This is because Managed Unit counts are rounded up to the nearest Managed Unit. The sum of these numbers in the Data Collectors list may be slightly higher than the total Managed Units in the status section. The summary section reflects your actual Managed Unit count for your subscription.
-To facilitate this, DII calculates a single *effective entitlement* number based on _subscribed_ quantities; it then calculates that same number based on _discovered_ storage. This gives you flexibility to monitor quantities that vary from the subscribed amounts for each tier, which DII allows as long as total discovered storage is within the subscribed effective entitlement. 
-
-//image:TBD[Table showing discovered capacity and effective entitlement]
+To facilitate this, DII calculates a single *weighted entitlement* number based on _subscribed_ quantities; it then calculates that same number based on _discovered_ storage and only declares breach if the discovered capacity is greater than the weighted entitlement. This gives you flexibility to monitor quantities that vary from the subscribed amounts for each tier, which DII allows as long as total discovered storage is within the subscribed weighted entitlement. 
 
 
 ==== Managed Unit Metering (Legacy)
 
 Data Infrastructure Insights Infrastructure Observability and Kubernetes Observability meter usage per *Managed Unit*. Usage of your Managed Units is calculated based on the number of *hosts or virtual machines* and amount of *unformatted capacity* being managed in your infrastructure environment. 
 
-
 * 1 Managed Unit = 2 hosts (any virtual or physical machine)
 * 1 Managed Unit = 4 TiB of unformatted capacity of physical or virtual disks
 * 1 Managed Unit = 40 TiB of unformatted capacity of select secondary storage: AWS S3, Cohesity SmartFiles, Dell EMC Data Domain, Dell EMC ECS, Hitachi Content Platform, IBM Cleversafe, NetApp StorageGRID, Rubrik.
 * 1 Managed Unit = 4 vCPUs of Kuberentes. 
 ** 1 Managed Unit K8s Adjustment = 2 Nodes or Hosts also monitored by infrastructure.
-
-If your environment includes or is expected to include 1,000 or more Managed Units, you are eligible for *Volume Pricing* and will be prompted to Contact NetApp Sales to subscribe. See <<how-do-i-subscribe,below>> for more details.
-
 
 
 === Workload Security Metering
@@ -171,7 +158,7 @@ Workload Security is metered by Cluster using the same approach as Observability
 
 You can view your Workload Security usage in the *Admin > Subscription* page on the *Workload Security* tab.
 
-image:ws_metering_example_page.png['Admin > Subscription > Workload Security tab showing high-end, mid-range, and entry-level node counts']
+image:ws_metering_example_page.png["Admin > Subscription > Workload Security tab showing high-end, mid-range, and entry-level node counts"]
 
 NOTE: Existing Workload Security subscriptions have their MU usage adjusted so that node usage does not consume managed units. Data Infrastructure Insights meters usage to ensure compliance with licensed usage.
 
@@ -184,7 +171,9 @@ If your Managed Unit count is less than 1,000, you can subscribe via NetApp Sale
 
 === Subscribe through NetApp Sales direct
 
-If your expected Managed Unit count is 1,000 or greater, click on the link:https://bluexp.netapp.com/contact-cds[*Contact Sales*] button to subscribe though the NetApp Sales Team. 
+
+If your expected Managed Unit count is 1,000 or greater, click on the link:https://www.netapp.com/forms/cloud-insights-contact-us[*Contact Sales*] button to subscribe though the NetApp Sales Team. 
+
 
 You must provide your Data Infrastructure Insights *Serial Number* to your NetApp sales representative so that your paid subscription can be applied to your Data Infrastructure Insights environment. The Serial Number uniquely identifies your Data Infrastructure Insights trial environment and can be found on the *Admin > Subscription* page.
 
@@ -197,7 +186,7 @@ Clicking on the Amazon Marketplace link opens the AWS https://aws.amazon.com/mar
 
 After you have entered the total Managed Units count and chosen either 12-month or 36-month subscription term, click on *Set Up Your Account* to finish the subscription process.
 
-Once the AWS subscription process is complete, you will be taken back to your Data Infrastructure Insights environment. Or, if the environment is no longer active (for example, you have logged out), you will be taken to the NetAPp BlueXP sign-in page. When you sign in to Data Infrastructure Insights again, your subscription will be active. 
+Once the AWS subscription process is complete, you will be taken back to your Data Infrastructure Insights environment. Or, if the environment is no longer active (for example, you have logged out), you will be taken to the NetAPp Console sign-in page. When you sign in to Data Infrastructure Insights again, your subscription will be active. 
 
 NOTE: After clicking on *Set Up Your account* on the AWS Marketplace page, you must complete the AWS subscription process within one hour. If you do not complete it within one hour, you will need to click on *Set Up Your Account* again to complete the process.
 

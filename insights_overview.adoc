@@ -6,9 +6,8 @@ summary: Insights give you a look into resource usage and trending.
 ---
 
 = Insights
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:

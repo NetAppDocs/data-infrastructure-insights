@@ -6,7 +6,7 @@ summary: Identifying inactive devices allows you to choose to delete them or all
 ---
 = Identifying inactive devices
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

@@ -6,9 +6,8 @@ keywords: NetApp, root volume, high I/O,
 ---
 
 = Ensuring IO density reports describe only internal data volumes
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

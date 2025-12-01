@@ -6,9 +6,8 @@ summary: Configuring NetApp 7-mode data collector.
 ---
 
 = NetApp Data ONTAP operating in 7-Mode data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:

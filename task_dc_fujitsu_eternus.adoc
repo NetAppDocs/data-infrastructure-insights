@@ -6,9 +6,8 @@ summary: Configuring Fujitsu Eternus data collector.
 ---
 
 = Fujitsu Eternus data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
+
 :nofooter:
 :icons: font
 :linkattrs:

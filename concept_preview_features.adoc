@@ -6,9 +6,8 @@ keywords: coming soon, preview,
 ---
 
 = Preview Features and Functionality
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -18,17 +17,5 @@ keywords: coming soon, preview,
 [.lead]
 Data Infrastructure Insights highlights new features and functionality in a _Preview_ manner. Preview features are made available in limited environments or at limited capacity. 
 
-If you are interested in previewing one or more of these features, contact your link:https://bluexp.netapp.com/contact-cds[NetApp Sales Team] for more information.
-
-//All current Data Infrastructure Insights functionality is available. Watch this space for future Previews.
-
-|===
-
-|*Feature* |*Description*
-
-|Reclaim ONTAP Cold Storage
-|Provides visualizations of ONTAP volume workloads with cold capacity as well as other related metrics.
-
-|===
-
+If you are interested in previewing one or more of these features, contact your NetApp Sales Team for more information.
 

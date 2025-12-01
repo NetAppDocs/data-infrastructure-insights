@@ -7,14 +7,13 @@ summary: ONTAP REST Data Collector
 
 = NetApp ONTAP REST data collector
 :hardbreaks:
-:toclevels: 2
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-This data collector acquires inventory, EMS logs, and performance data from storage systems running ONTAP 9.14.1 and higher using REST API calls. For Ontap systems on earlier releases, use the ZAPI-based "NetApp ONTAP Data Management Software" collector type. 
+This data collector acquires inventory, EMS logs, and performance data from storage systems running ONTAP 9.14.1 and higher using REST API calls. For ONTAP systems on earlier releases, use the ZAPI-based "NetApp ONTAP Data Management Software" collector type. 
 
 NOTE: The ONTAP REST collector may be used as a replacement for the previous ONTAPI-based collector. As such, there may be differences in the metrics that are collected or reported. For more information about the differences between ONTAPI and REST, see the link:https://docs.netapp.com/us-en/ontap-restmap-9141/index.html[ONTAP 9.14.1 ONTAPI-to-REST mapping] documentation. 
 
@@ -26,6 +25,7 @@ The following are requirements to configure and use this data collector:
 ** Functionally, Data Infrastructure Insights primarily makes read requests, but some write permissions are required for Data Infrastructure Insights to register with the ONTAP array. See the _Note About Permissions_ immediately below.
 * ONTAP version 9.14.1 or higher.
 * Port requirements: 443
+* Note that Fpolicy metrics are not supported in the ONTAP REST collector (Workload Security data collectors use FPolicy servers, and FPolicy metrics allow you to monitor Workload Security data collection activity). To support Fpolicy metrics, use the link:task_dc_na_cdot.html[ONTAP Data Management] collector.
 
 == A Note About Permissions
 
@@ -44,12 +44,13 @@ To create a local account for Data Infrastructure Insights at the cluster level,
  security login rest-role create -role {role name} -api /api -access readonly
  security login rest-role create -role {role name} -api /api/cluster/agents -access all
  vserver services web access create -name spi -role {role name} -vserver {vserver name as retrieved above}
+
+. Create the read-only user using the following command. Once you have executed the create command, you will be prompted to enter a password for this user. Note that in the following command we show the role set to _ci_readonly_. If you create a role with different name in step  3 above, use that custom role name instead.
+
+// security login create -username ci_user -application http -authentication-method password -role ci_readonly
+ 
  security login create -user-or-group-name {username} -application http -authentication-method password -role {role name}
 
-. Create the read-only user using the following command. Once you have executed the create command, you will be prompted to enter a password for this user.
-
- security login create -username ci_user -application http -authentication-method password -role ci_readonly
- 
 If AD/LDAP account is used, the command should be 
 
  security login create -user-or-group-name DOMAIN\aduser/adgroup -application http -authentication-method domain -role ci_readonly
@@ -76,6 +77,18 @@ User/Group                 Authentication                 Acct   Authentication
 Name           Application Method        Role Name        Locked Method
 -------------- ----------- ------------- ---------------- ------ --------------
 restUser       http        password      restRole         no     none
+----
+
+You can check for spi access if needed:
+
+----
+**Vserver:> vserver services web access show -name spi
+ Vserver                      Type     Service Name     Role
+-------------- -------- ---------------- ----------------
+<vserver name >     admin             spi           admin
+<vserver name >     admin             spi           csrestrole
+
+2 entries were displayed.**
 ----
 
 

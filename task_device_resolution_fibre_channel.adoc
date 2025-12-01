@@ -6,9 +6,8 @@ summary:
 ---
 
 = Fibre Channel device resolution
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:

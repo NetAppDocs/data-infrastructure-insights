@@ -90,7 +90,7 @@ sidebar:
           - title: Modifying or Deleting a Query
             url: /task_modify_delete_query.html
           - title: Assigning Multiple Applications/annotations to Objects
-            url: /task_query_assign_multiple_applicationss.html
+            url: /task_query_assign_multiple_applications.html
           - title: Copying table values to the Clipboard
             url: /task_query_copy_table_values.html
           - title: Querying Logs
@@ -117,10 +117,27 @@ sidebar:
             url: /task_view_and_manage_alerts.html
           - title: Configuring Notification Recipients
             url: /concept_notifications_email.html 
+          - title: Anomaly Detection Monitors
+            url: /concept_anomaly_detection.html
           - title: System-Defined Monitors
             url: /task_system_monitors.html
-          - title: Webhook Notification
-            url: /task_create_webhook.html
+
+          - title: Configuring Notification Recipients
+            url: /concept_notifications_email.html 
+
+          - title: Webhook Notifications
+            entries:
+              - title: Configuring Webhooks
+                url: /task_create_webhook.html
+              - title: Webhook Example - Discord
+                url: /task_webhook_example_discord.html
+              - title: Webhook Example - PagerDuty
+                url: /task_webhook_example_pagerduty.html
+              - title: Webhook Example - Slack
+                url: /task_webhook_example_slack.html
+              - title: Webhook Example - Teams
+                url: /task_webhook_example_teams.html
+
 
       - title: Working with Annotations
         entries:
@@ -161,19 +178,19 @@ sidebar:
             url: /concept_asset_page_overview.html
           - title: In-Context Filtering for Objects 
             url: /concept_in_context_filters.html
-          - title: Summary & Topology Sections
-            url: /concept_asset_summary_section.html
-          - title: Expert View Section
-            url: /concept_asset_expert_view_section.html
-          - title: User Data Section
-            url: /concept_asset_user_data_section.html
-          - title: Related Alerts Section
-            url: /concept_asset_alerts_section.html
           - title: Storage Virtualization
             url: /concept_storage_virtualization.html
           - title: Hints and Tips to Search for Assets
             url: /concept_searching_assets.html
 
+      - title: Analyzing Data
+        entries:
+          - title: SAN Analyzer
+            url: /san_analyzer_overview.html
+          - title: VM Analyzer
+            url: /vm_analyzer_overview.html
+          - title: Monitor Infrastructure Health
+            url: /monitor_infrastructure_health.html
  
       - title: Reporting
         entries:
@@ -258,6 +275,8 @@ sidebar:
               url: /task_config_user_dir_connect_ldap.html
             - title: Configuring the ONTAP SVM Data Collector
               url: /task_add_collector_svm.html
+            - title: Troubleshooting the SVM Collector
+              url: /troubleshooting_collector_svm.html
             - title: Configuring the Cloud ONTAP Data Collector
               url: /task_config_cs_incloud.html
             - title: Workload Security User Management
@@ -286,10 +305,27 @@ sidebar:
           url: /cs_restrict_user_access.html
         - title: Simulating a Ransomware Attack
           url: /concept_cs_attack_simulator.html
-        - title: Notifications
+        - title: Email Notifications
           url: /cs_notifications_email.html
+
+
+        - title: Webhook Notifications
+          entries:
+            - title: Creating Webhooks
+              url: /ws_notifications_using_webhooks.html
+            - title: Discord Webhook Example
+              url: /ws_webhook_example_discord.html
+            - title: PagerDuty Webhook Example
+              url: /ws_webhook_example_pagerduty.html
+            - title: Slack Webhook Example
+              url: /ws_webhook_example_slack.html
+            - title: Team Webhook Example
+              url: /ws_webhook_example_teams.html
+
         - title: Workload Security API
           url: /concept_cs_api.html
+        - title: Troubleshooting the SVM Collector
+          url: /troubleshooting_collector_svm.html
    
     - title: Troubleshooting
       entries:
@@ -305,6 +341,63 @@ sidebar:
           
     - title: Data Collector Support Matrix
       url: /reference_data_collector_support_matrix.html
+
+#    - title: Data Collector Support Matrix
+#      entries:
+#        - title: Amazon
+#          url: /dc_matrix_amazon.html
+#        - title: ASA
+#          url: /dc_matrix_asa.html
+#        - title: Brocade
+#          url: /dc_matrix_brocade.html
+#        - title: Cisco
+#          url: /dc_matrix_cisco.html
+#        - title: Cohesity
+#          url: /dc_matrix_cohesity.html
+#        - title: Dell
+#          url: /dc_matrix_dell.html
+#        - title: Dell EMC
+#          url: /dc_matrix_emc.html
+#        - title: Fujitsu
+#          url: /dc_matrix_fujitsu.html
+#        - title: Google
+#          url: /dc_matrix_google.html
+#        - title: Hitachi
+#          url: /dc_matrix_hitachi.html
+#        - title: HDS
+#          url: /dc_matrix_hds.html
+#        - title: HiCommand
+#          url: /dc_matrix_hicommand.html
+#        - title: HP
+#          url: /dc_matrix_hp.html
+#        - title: HPE
+#          url: /dc_matrix_hpe.html
+#        - title: Huawei
+#          url: /dc_matrix_huawei.html
+#        - title: IBM
+#          url: /dc_matrix_ibm.html
+#        - title: Infinidat
+#          url: /dc_matrix_infinidat.html
+#        - title: Microsoft
+#          url: /dc_matrix_microsoft.html
+#        - title: NetApp
+#          url: /dc_matrix_netapp.html
+#        - title: Nutanix
+#          url: /dc_matrix_nutanix.html
+#        - title: OpenStack
+#          url: /dc_matrix_openstack.html
+#        - title: Oracle
+#          url: /dc_matrix_oracle.html
+#        - title: Pure
+#          url: /dc_matrix_pure.html
+#        - title: Red Hat
+#          url: /dc_matrix_red.html
+#        - title: Rubrik
+#          url: /dc_matrix_rubrik.html
+#        - title: Vast
+#          url: /dc_matrix_vast.html
+#        - title: VMware
+#          url: /dc_matrix_vmware.html
 
     - title: Reference & Support
       entries:
@@ -371,6 +464,8 @@ sidebar:
               url: /task_dc_fujitsu_eternus.html
             - title: Google
               url: /task_dc_google_cloud.html
+            - title: Google Cloud NetApp Volumes
+              url: /task_dc_google_cloud_netapp_volumes.html
             - title: HP Enterprise
               entries:
                 - title: HP Alletra 9000 and Primera
@@ -399,8 +494,6 @@ sidebar:
                   url: /task_dc_ibm_cs.html
                 - title: System Storage DS8000 Series
                   url: /task_dc_ibm_ds.html
-                - title: PowerVM
-                  url: /task_dc_ibm_powervm.html
                 - title: San Volume Controller (SVC)
                   url: /task_dc_ibm_svc.html
                 - title: XIV/A9000
@@ -415,12 +508,10 @@ sidebar:
                   url: /task_dc_ms_hyperv.html
             - title: NetApp
               entries:
-#                - title: Cloud Connection for ONTAP 9.9+
-#                  url: /task_dc_na_cloud_connection.html
                 - title: Cloud Volumes ONTAP
                   url: /task_dc_na_cloud_volumes_ontap.html
-                - title: Cloud Volumes Services for AWS
-                  url: /task_dc_na_cloud_volumes.html
+                - title: ONTAP ASA (All-SAN Array) r2
+                  url: /task_dc_na_ontap_all_san_array.html
                 - title: ONTAP Data Management Software 
                   url: /task_dc_na_cdot.html
                 - title: ONTAP REST collector
@@ -439,8 +530,6 @@ sidebar:
                   url: /task_dc_na_storagegrid.html
             - title: Nutanix
               url: /task_dc_nutanix.html
-            - title: OpenStack
-              url: /task_dc_openstack.html
             - title: Oracle
               url: /task_dc_oracle_zfs.html
             - title: Pure

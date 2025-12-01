@@ -6,9 +6,8 @@ summary: Configuring ECS data collector.
 ---
 
 = Configuring the EMC ECS data collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
@@ -67,7 +66,7 @@ Note: These are common terminology mappings only and might not represent every c
 
 Some things to try if you encounter problems with this data collector:
 
-==== Inventory
+=== Inventory
 
 [cols=2*, options="header", cols"50,50"]
 |===
@@ -76,15 +75,15 @@ Some things to try if you encounter problems with this data collector:
 |Make sure your credentials for this device are correct.
 |===
 
-==== Performance
+=== Performance
 
 [cols=2*, options="header", cols"50,50"]
 |===
 |Problem:|Try this:
 
 |Error: No enough data collected.
-|•	Check collection timestamp in log file and modify polling interval accordingly
-•	Wait for longer time
+|* Check collection timestamp in log file and modify polling interval accordingly
+* Wait for longer time
 
 
 |Error: Performance polling interval is too big.

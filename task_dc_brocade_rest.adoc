@@ -6,16 +6,15 @@ summary: Configuring Brocade FOS REST data collector.
 ---
 
 = Brocade FOS REST Data Collector
-:toc: macro
 :hardbreaks:
-:toclevels: 2
+
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead] 
-Data Infrastructure Insights uses the Brocade FOS REST collector to discover inventory and performance for Brocade switch devices running FabricOS (FOS) firmware 8.2 and later. 
+Data Infrastructure Insights uses the Brocade FOS REST collector to discover inventory and performance for Brocade switch devices running FabricOS (FOS) firmware 8.2 and later. Please note that early 8.2 FOS releases may have REST API bugs; it is highly recommended to run the latest possible FOS release your platform supports.   
 
 Please note: FOS' default "user" level is insufficiently powerful for Data Infrastructure Insights to view all the logical aspects of a device - we need a user account with the "Chassis Role" enabled, as well as permissions on all the Virtual Fabrics configured on a switch. 
 
@@ -27,6 +26,8 @@ This will create a user “NetAppCIUser” with a password of “Qwerty!”. Thi
 
 
 By default, this collector will attempt to discover all the FOS devices that are a part of all the fabrics the switch is part of.
+
+Please note: FOS' default read-only user "user" does NOT have view permissions on all Virtual Fabrics, nor does it have "chassis role" permissions. This means you will have a low likelihood of success using "user" with Data Infrastructure Insights, which needs to understand both the physical and logical configuration of the FOS device. 
 
 == Terminology 
 
@@ -91,6 +92,10 @@ Some things to try if you encounter problems with this data collector:
 |The Test feature warns me that a protocol is inaccessible
 
 |A given Brocade FOS 8.2+ device will only want to speak on HTTP or HTTPS - if a switch has a digital certificate installed, the switch will throw HTTP errors if one attempts to communicate to it with unencrypted HTTP versus HTTPS. The test feature attempts communication with both HTTP and HTTPS - if the Test tells you that one protocol passes, you can safely save the collector and not worry that the other protocol was unsuccessful - the collector will attempt both protocols during collection, and only fail if neither works.
+
+
+|Error: Inventory fails with 401 Unauthorized...Invalid Session Key...|This is distinct bug within some very early 8.2 FOS releases lie 8.2.1c that do NOT properly support HTTP basic authentication. Upgrade to a later 8.2 or 9.* release
+
 
 |Error: “Data Infrastructure Insights received Invalid Chassis Role” |Check that the user configured in this data source has been granted the chassis role permission.
 |Error: "Mismatched Chassis IP Address" |Change the data source configuration to use chassis IP address.

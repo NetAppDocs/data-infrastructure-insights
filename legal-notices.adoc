@@ -4,7 +4,6 @@ sidebar: sidebar
 keywords:
 summary:
 ---
-
 = Legal notices
 :icons: font
 :imagesdir: ./media/
@@ -17,12 +16,11 @@ include::https://raw.githubusercontent.com/NetAppDocs/common/main/_include/open-
 
 // Add required link(s)
 
-link:media/Data_Infrastructure_InsightsOn-prem_ComponentsNOTICE-1.pdf[Notice for Data Infrastructure Insights (formerly Cloud Insights)]
 
-link:media/Data_Infrastructure_Insights_Workload_SecurityOn-prem_ComponentsNOTICE-1.pdf[Notice for Workload Security (formerly Cloud Secure)]
+link:media/DII_Notice-Sept_2025.pdf[Notice for Data Infrastructure Insights (formerly Cloud Insights)]
 
-//link:media/Notice_Cloud_Insights-2023-04.pdf[Notice for Data Infrastructure Insights (formerly Cloud Insights)]
+link:media/WS_Notice-Sept_2025.pdf[Notice for Workload Security (formerly Cloud Secure)]
 
-//link:media/Notice_Cloud_Secure-2022-12-14.pdf[Notice for Workload Security (formerly Cloud Secure)]
+
 
 
