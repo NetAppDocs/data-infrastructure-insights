@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
-permalink: task_dc_na_ontap_rest.html
-keywords: data collector, ontap, ontap, CDOT, REST
-summary: ONTAP REST Data Collector
+permalink: task_dc_na_ontap_afx.html
+keywords: data collector, ontap, afx
+summary: ONTAP AFX Collector
 --- 
 
-= NetApp ONTAP REST data collector
+= NetApp ONTAP AFX data collector
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,9 +13,8 @@ summary: ONTAP REST Data Collector
 :imagesdir: ./media/
 
 [.lead]
-This data collector acquires inventory, EMS logs, and performance data from storage systems running ONTAP 9.14.1 and higher using REST API calls. For ONTAP systems on earlier releases, use the ZAPI-based "NetApp ONTAP Data Management Software" collector type. 
+This data collector acquires inventory, EMS logs, and performance data from storage systems running ONTAP 9.16.0 and higher using REST API calls. 
 
-NOTE: The ONTAP REST collector may be used as a replacement for the previous ONTAPI-based collector. As such, there may be differences in the metrics that are collected or reported. For more information about the differences between ONTAPI and REST, see the link:https://docs.netapp.com/us-en/ontap-restmap-9141/index.html[ONTAP 9.14.1 ONTAPI-to-REST mapping] documentation. 
 
 == Requirements
 
@@ -23,9 +22,9 @@ The following are requirements to configure and use this data collector:
 
 * You must have access to a user account with the required level of access. Note that Admin permissions are required if creating a new REST user/role. 
 ** Functionally, Data Infrastructure Insights primarily makes read requests, but some write permissions are required for Data Infrastructure Insights to register with the ONTAP array. See the _Note About Permissions_ immediately below.
-* ONTAP version 9.14.1 or higher.
+* ONTAP version 9.16.0 or higher.
 * Port requirements: 443
-* Note that Fpolicy metrics are not supported in the ONTAP REST collector (Workload Security data collectors use FPolicy servers, and FPolicy metrics allow you to monitor Workload Security data collection activity). To support Fpolicy metrics, use the link:task_dc_na_cdot.html[ONTAP Data Management] collector.
+
 
 == A Note About Permissions
 
@@ -44,13 +43,12 @@ To create a local account for Data Infrastructure Insights at the cluster level,
  security login rest-role create -role {role name} -api /api -access readonly
  security login rest-role create -role {role name} -api /api/cluster/agents -access all
  vserver services web access create -name spi -role {role name} -vserver {vserver name as retrieved above}
-
-. Create the read-only user using the following command. Once you have executed the create command, you will be prompted to enter a password for this user. Note that in the following command we show the role set to _ci_readonly_. If you create a role with different name in step  3 above, use that custom role name instead.
-
-// security login create -username ci_user -application http -authentication-method password -role ci_readonly
- 
  security login create -user-or-group-name {username} -application http -authentication-method password -role {role name}
 
+. Create the read-only user using the following command. Once you have executed the create command, you will be prompted to enter a password for this user.
+
+ security login create -username ci_user -application http -authentication-method password -role ci_readonly
+ 
 If AD/LDAP account is used, the command should be 
 
  security login create -user-or-group-name DOMAIN\aduser/adgroup -application http -authentication-method domain -role ci_readonly
@@ -77,18 +75,6 @@ User/Group                 Authentication                 Acct   Authentication
 Name           Application Method        Role Name        Locked Method
 -------------- ----------- ------------- ---------------- ------ --------------
 restUser       http        password      restRole         no     none
-----
-
-You can check for spi access if needed:
-
-----
-**Vserver:> vserver services web access show -name spi
- Vserver                      Type     Service Name     Role
--------------- -------- ---------------- ----------------
-<vserver name >     admin             spi           admin
-<vserver name >     admin             spi           csrestrole
-
-2 entries were displayed.**
 ----
 
 
@@ -135,14 +121,15 @@ Data Infrastructure Insights acquires inventory, logs and performance data from 
 [cols=2*, options="header", cols"50,50"]
 |===
 |Vendor/Model Term | Data Infrastructure Insights Term
-|Disk|Disk
-|Raid Group|Disk Group
-|Cluster|Storage
-|Node|Storage Node
-|Aggregate|Storage Pool
-|LUN|Volume
-|Volume|Internal Volume
-|Storage Virtual Machine/Vserver|Storage Virtual Machine
+|Cluster |Storage 
+|Node |StorageNode 
+|Volume/FlexVol/FlexGroup |InternalVolume 
+|Qtree/FlexTree |Qtree ( type : Explixit/Default ) 
+|S3 Bucket |Qtree ( type: Bucket ) 
+|StoragePod/StorageAvailabilityZone |StoragePool 
+|Share |Share 
+|Quota |Quota 
+|SVM (Storage Virtual Machine) |Storage Virtual Machine 
 |===
 
 == ONTAP Data Management Terminology

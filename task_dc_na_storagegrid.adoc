@@ -16,7 +16,16 @@ keywords: data collector, queries, create, storagegrid
 [.lead]
 The NetApp StorageGRID data collector supports inventory and performance collection from StorageGRID configurations. 
 
-NOTE: StorageGRID is metered at a different Raw TB to Managed Unit rate. Every 40 TB of unformatted StorageGRID capacity is charged as 1 link:concept_subscribing_to_cloud_insights.html#pricing[Managed Unit (MU)].
+[NOTE] 
+====
+To provide consistent metering against DII entitlements across all StorageGRID systems regardless of underlying hardware topology and configuration, Data Infrastructure Insights uses the total available capacity (storagegrid_storage_utilization_total_space_bytes), instead of RAW capacity based on physical disk layout.
+
+For customers using the Capacity-based licensing model, StorageGRID is metered as “Object” storage.
+
+For customers using the legacy (MU) licensing model, StorageGRID is metered as secondary storage, at a rate of 40TiB to 1 MU.
+====
+
+//NOTE: StorageGRID is metered at a different Raw TB to Managed Unit rate. Every 40 TB of unformatted StorageGRID capacity is charged as 1 link:concept_subscribing_to_cloud_insights.html#pricing[Managed Unit (MU)].
 
 == Terminology
 

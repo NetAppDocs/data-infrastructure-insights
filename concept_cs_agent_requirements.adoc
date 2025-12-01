@@ -7,14 +7,13 @@ keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cl
 
 = Workload Security Agent Requirements
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-You must link:task_cs_add_agent.html[install an Agent] in order to acquire information from your data collectors. Before you install the Agent, you should ensure that your environment meets operating system, CPU, memory, and disk space requirements.
+You must link:task_cs_add_agent.html[install a Workload Security Agent] in order to acquire information from your data collectors. Before installing the Agent, ensure that your environment meets operating system, CPU, memory, and disk space requirements.
 
 
 [cols=2*,options="header",cols="36,60"]
@@ -22,15 +21,16 @@ You must link:task_cs_add_agent.html[install an Agent] in order to acquire infor
 |Component|Linux Requirement
 |Operating system|A computer running a licensed version of one of the following:
 
-* AlmaLinux 9.4 and 9.5 (64-bit), including SELinux
-* CentOS 9 Stream (64-bit)
-* Debian 11(64-bit) and 12 (64-bit), including SELinux
-* OpenSUSE Leap 15.3(64-bit) through 15.6 (64-bit)
-* Oracle Linux 8.10 (64-bit), and 9.1(64-bit) through 9.6 (64-bit), including  SELinux
-* Red Hat Enterprise Linux 8.10 (64-bit), and 9.1(64-bit) through 9.6 (64-bit), including  SELinux
-* Rocky 9.4(64-bit) and 9.5 (64-bit), including  SELinux
-* SUSE Linux Enterprise Server 15 SP4(64-bit) through 15 SP6 (64-bit), including  SELinux
-* Ubuntu 20.04 LTS(64-bit), 22.04 LTS(64-bit), and 24.04 LTS (64-bit)
+* AlmaLinux 9.4 (64bit) thru 9.5 (64bit), 10 (64bit), including SELinux
+* CentOS Stream 9 (64-bit)
+* Debian 11 (64-bit), 12 (64-bit), including SELinux
+* OpenSUSE Leap 15.3 (64-bit) through 15.6 (64-bit)
+* Oracle Linux 8.10 (64-bit), 9.1 (64-bit) through 9.6 (64-bit), including  SELinux
+* Red Hat Enterprise Linux 8.10 (64bit), 9.1 (64bit) thru 9.6 (64bit), 10 (64bit), including SELinux
+* Rocky 9.4 (64bit) thru 9.6 (64bit), including SELinux
+* SUSE Linux Enterprise Server 15 SP4 (64-bit) through 15 SP6 (64-bit), including  SELinux
+* Ubuntu 20.04 LTS (64-bit), 22.04 LTS (64-bit), 24.04 LTS (64-bit)
+
 
 
 This computer should be running no other application-level software. A dedicated server is recommended.

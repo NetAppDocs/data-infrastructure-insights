@@ -16,6 +16,50 @@ keywords: features
 [.lead]
 NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in Data Infrastructure Insights (formerly Cloud Insights).
 
+== October 2025
+
+
+=== Infrastructure Health: Instant Visibility Into Storage and Fabric Risk
+
+Gain instant visibility into potential risks across your storage and fabrics with our new *Infrastructure Health* feature. A single, color-coded dashboard gives you unified risk visibility, helping you minimize downtime and quickly alleviate revenue loss. 
+
+Scores below 100 indicate potential problems; the lower the score, the less healthy the resources. Grouping resources by Data Center or Region for intuitive, consolidated health scores let you easily prioritize and troubleshoot critical areas.
+
+image:infra_health_dashboard.png[infra health dashboard showing red, amber, and green resource health scores, width=600]
+
+View detailed information in an on-screen slideout panel with the click of a button, quickly pinpointing issues requiring attention and keeping your systems secure and resilient.
+
+image:infra_health_detailpanel.png[infra health detail panel, width=600]
+
+
+=== Multi-Condition Monitors for Precise Alerting
+
+Reduce alert noise and improve monitoring precision by adding an optional second condition to any metric monitor. Alerts are triggered only when both conditions are met, giving you more targeted notifications that focus on the scenarios that matter most to you. 
+
+image:multi-condition_monitor_second_condition.png[adding a second condition to a monitor, width=600]
+
+
+=== Query Improvements: At-A-Glance Object Details
+
+Selecting a row in an object query result list opens a detail panel for the selected object. Quickly view metrics and attributes (the default view for object queries), alerts and changes, performance, and health scores, or explore related resources. All relevant object information is at your fingertips.
+
+image:query_slideout_panel.png[illustration of a query slideout panel defaulted to the metrics and attributes tab, width=600]
+
+
+
+
+
+=== Workload Security Improvements
+
+Two new APIs give you more control over your Workload Security environment:
+ 
+1.	View and manage Groups with _GET /rest/v1/cloudsecure/activities/groups_.
+2.	Pause and resume data collectors with _POST /rest/v1/cloudsecure/collectors/{collector-uuid}/status_
+ 
+Additionally, Workload Security role permission checks are now even more secure. As a result of the improved security, some existing users may experience permission issues when adding a collector. Confirm user permissions by following the instructions in the link:task_add_collector_svm.html#a-note-about-permissions[documentation].
+
+
+'''
 
 == August 2025
 
@@ -2876,322 +2920,3 @@ image:Onboarding_Progress.png[Progress Bar]
 
 
 '''
-== December 2019
-
-=== Business Entity can be used in filters
-
-Business Entity annotations can be used in filters for queries, widgets, performance policies, and landing pages.
-
-=== Drill-down available for Single-Value and Gauge widgets, and any widgets rolled to by "All"
-
-Clicking the value in a single-value or gauge widget opens a query page showing the results of the first query used in the widget. Additionally, clicking the legend for any widget whose data is rolled up by "All" will also open a query page showing the results of the first query used in the widget.
-
-=== Trial period extended
-
-New users who sign up for a free trial of Cloud Insights now have 30 days to evaluate the product. This is an increase from the previous 14-day trial period.
-
-=== Managed Unit calculation
-
-The calculation of Managed Units (MUs) in Cloud Insights has been changed to the following:
-
-* 1 Managed Unit = 2 hosts (any virtual or physical machine)
-* 1 Managed Unit = 4 TB of unformatted capacity of physical or virtual disks
-
-This change effectively doubles the environment capacity that you can monitor using your existing Cloud Insights subscription.
-
-
-'''
-
-== November 2019
-
-
-////
- ////=== Editions Feature Comparison Table
-
-The *Admin > Subscription* page link:concept_subscribing_to_cloud_insights.html[comparison table] has been updated to list the feature sets available in Basic, Standard, and Premium Editions of Cloud Insights. NetApp is constantly improving its Cloud Services, so check this page often to find the Edition that's right for your evolving business needs.
-
-'''
-////
-
-== October 2019
-
-=== Reporting
-
-link:reporting_overview.html[*Cloud Insights Reporting*] is a business intelligence tool that enables you to view pre-defined reports or create custom reports. With Reporting you can perform the following tasks:
-
-* Run a pre-defined report
-* Create a custom report
-* Customize the report format and delivery method
-* Schedule reports to run automatically
-* Email reports
-* Use colors to represent thresholds on data
-
-Cloud Insights Reporting can generate custom reports for areas like chargeback, consumption analysis, and forecasting, and can help answer questions such as the following:
-
-* What inventory do I have?
-* Where is my inventory?
-* Who is using our assets?
-* What is the chargeback for allocated storage for a business unit?
-* How long until I need to acquire additional storage capacity?
-* Are business units aligned along the proper storage tiers?
-* How is storage allocation changing over a month, quarter, or year?
-
-Reporting is available with Cloud Insights *Premium Edition*.
-
-=== Active IQ Enhancements
-
-link:concept_activeiq.html[Active IQ Risks] are now available as objects that can be queried as well as used in dashboard table widgets. The following Risks object attributes are included:
-* Category
-* Mitigation Category
-* Potential Impact
-* Risk Detail
-* Severity
-* Source
-* Storage
-* Storage Node
-* UI Category
-
-
-'''
-
-== September 2019
-
-=== New Gauge Widgets
-
-Two new widgets are available for displaying single-value data on your dashboards in eye-catching colors based on thresholds you specify. You can display values using either a *Solid Gauge* or *Bullet Gauge*. Values that land inside the Warning range are displayed in orange. Values in the Critical range are displayed in red. Values below the Warning threshold are displayed in green.
-
-image:Gauge-Solid.png[Solid/Traditional Gauge]
-image:Gauge-Bullet.png[Bullet Gauge]
-
-=== Conditional Color Formatting for Single Value Widget
-
-You can now display the Single-Value widget with a colored background based on thresholds you set.
-
-//image:SVW-Formatted.png[Single-Value Widget with Formatting]
-image:Single-Value Widgets - Formatted.png[Single-Value widgets with formatting]
-
-=== Invite Users During Onboarding
-
-At any point during the onboarding process, you can click on Admin > User Management > +User to invite additional users to your Cloud Insights environment. Be aware that users with _Guest_ or _User_ roles will see greater benefit once onboarding is complete and data has been collected.
-
-=== Data Collector Detail Page improvement
-
-The data collector detail page has been improved to display errors in a more readable format. Errors are now displayed in a separate table on the page, with each error displayed on a separate line in the case of multiple errors for the data collector.
-
-'''
-
-== August 2019
-
-=== All vs. Available Data Collectors
-
-When adding data collectors to your environment, you can set a filter to show only the data collectors available to you based on your subscription level, or all data collectors. 
-
-////
-
-=== Business Entity Annotations
-
-_Business Entity_ is now an annotation type provided by Cloud Insights, which can be used for monitoring and reporting of assets in your business hierarchy. An example business entity annotation might have a value of <Tenant>.<Line_of_Business>.<Business_Unit>.<Project>. An example might look like "Netapp.Cloud Services.Saas.Cloud Insights".
-////
-
-
-=== ActiveIQ Integration
-
-Cloud Insights collects data from NetApp ActiveIQ, which provides a series of visualizations, analytics, and other support related services to NetApp customers and their hardware / software systems. Cloud Insights integrates with ONTAP Data Management systems. See link:concept_activeiq.html[Active IQ] for more information.
-
-'''
-
-== July 2019
-
-=== Dashboard Improvements
-
-Dashboards and Widgets have been improved with the following changes:
-
-* In addition to Sum, Min, Max, and Avg, *Count* is now an option for roll up in Single-Value widgets. When rolling up by “Count”, Cloud Insights checks if an object is active or not, and only adds the active ones to the count. The resulting number is subject to aggregation and filters. 
-
-* In the Single-Value widget, you now have a choice to display the resulting number with 0, 1, 2, 3, or 4 decimal places.
-
-* Line charts show an axis label and units when a single counter is being plotted. 
-
-* *Transform* option is available for Services integration data now in all time-series widgets for all metrics. For any services integration (Telegraf) counter or metric in time-series widgets (Line, Spline, Area, Stacked Area), you are given a choice of how you want to link:concept_telegraf_display_options.html[Transform the values]. None (display value as-is), Sum, Delta, Cumulative, etc. 
-
-=== Downgrading to Basic Edition
-
-Downgrade to Basic Edition fails with an error message if there is no available NetApp device configured that has successfully completed a poll in the last 7 days.
-
-
-=== Collecting Kube-State-Metrics
-
-The link:task_config_telegraf_kubernetes.html[Kubernetes Data Collector] now collects objects and counters from the kube-state-metrics plugin, greatly expanding the number and scope of metrics available for monitoring in Cloud Insights.
-
-'''
-
-== June 2019
-
-=== Cloud Insights Editions
-
-Cloud Insights is available in different Editions to fit your budget and business needs. Existing NetApp customers with an active NetApp support account can enjoy 7 days of data retention and access to NetApp data collectors with the free *Basic Edition*, or get increased data retention, access to all supported data collectors, expert technical support and more with *Standard Edition*. For more information on available features, see NetApp's link:https://www.netapp.com/cloud-services/cloud-insights/[Cloud Insights] site.
-
-=== New Infrastructure Data Collector: NetApp HCI
-
-* link:task_dc_na_hci.html[NetApp HCI Virtual Center] has been added as an Infrastructure data collector. The HCI Virtual Center data collector collects NetApp HCI Host information and requires read-only privileges on all objects within the Virtual Center.
-
-Note that the HCI data collector acquires from the HCI Virtual Center only. To collect data from the storage system, you must also configure the NetApp link:task_dc_na_solidfire[SolidFire] data collector.
-
-
-'''
-== May 2019
-
-=== New Service Data Collector: Kapacitor
-
-* link:task_config_telegraf_kapacitor.html[Kapacitor] has been added as a data collector for services.
-
-=== Integration with Services via Telegraf
-
-In addition to acquisition of data from infrastructure devices such as switches and storage, Cloud Insights now collects data from a variety of Operating Systems and Services, using link:task_config_telegraf_agent.html[Telegraf as its agent] for collection of integration data. Telegraf is a plugin-driven agent that can be used to collect and report metrics. Input plugins are used to collect the desired information into the agent by accessing the system/OS directly, by calling third-party APIs, or by listening to configured streams. 
-
-Documentation for currently supported integrations can be found in the menu to the left under *Reference and Support*.
-
-
-=== Storage Virtual Machine Assets 
-
-* Storage Virtual Machines (SVMs) are available as assets in Cloud Insights. SVMs have their own Asset Landing Pages, and can be displayed and used in searches, queries, and filters. SVMs can also be used in dashboard widgets as well as associated with annotations.
-
-=== Reduced Acquisition Unit System Requirements
-
-* The system CPU and memory requirements for the Acquisition Unit (AU) software have been reduced. The new requirements are:
-
-|===
-|*Component*|*Old Requirement*|*New Requirement*
-|CPU Cores|4|2
-|Memory|16 GB|8 GB
-|===
-
-=== Additional Platforms Supported
-
-* The following platforms have been added to those currently link:https://docs.netapp.com/us-en/cloudinsights/concept_acquisition_unit_requirements.html[supported for Cloud Insights]:
-
-|===
-|Linux|Windows
-|CentOS 7.3 64-bit
-CentOS 7.4 64-bit
-CentOS 7.6 64-bit
-Debian 9 64-bit
-Red Hat Enterprise Linux  7.3 64-bit
-Red Hat Enterprise Linux  7.4 64-bit
-Red Hat Enterprise Linux  7.6 64-bit
-Ubuntu Server 18.04 LTS
-|Microsoft Windows 10 64-bit
-Microsoft Windows Server 2008 R2
-Microsoft Windows Server 2019
-|===
-
-'''
-
-== April 2019
-
-=== Filter Virtual Machines by Tags
-
-When configuring the following data collectors, you can filter to include or exclude virtual machines from data collection according to their Tags or Labels. 
-
-* link:task_dc_amazon_ec2.html#advanced-configuration[Amazon EC2]
-* link:task_dc_ms_azure.html#advanced-configuration[Azure]
-* link:task_dc_google_cloud.html#advanced-configuration[Google Cloud Platform]
-
-'''
-
-== March 2019
-
-=== Email Notifications for Subscription-related Events
-
-* You can select recipients for email link:concept_notifications_email.html[notifications] when subscription-related events occur, such as upcoming trial expiration or subscribed account changes. You can choose recipients for these notifications from among following:
-
-** All Account Owners
-** All Administrators
-** Additional Email Addresses that you specify
-
-=== Additional Dashboards
-
-* The following new AWS-focused link:concept_import_from_dashboard_gallery.html[dashboards] have been added to the gallery and are available for import:
- ** AWS Admin - Which EC2 are in high demand?
- **	AWS EC2 Instance Performance by Region 
-
-'''
-
-== February 2019
-
-=== Collecting from AWS Child Accounts
-
-* Cloud Insights supports link:task_dc_amazon_ec2.html#collecting-from-aws-child-accounts[collection from AWS child accounts] within a single data collector. Your AWS environment must be configured to allow Cloud Insights to collect from child accounts.
-
-=== Data Collector Naming 
-
-* Data Collector names can now include periods (.), hyphens (-), and spaces ( ) in addition to letters, numbers, and underscores. Names may not begin or end with a space, period, or hyphen.
-
-
-=== Acquisition Unit for Windows
-
-* You can configure a Cloud Insights Acquisition Unit on a Windows server/VM. Review the Windows link:concept_acquisition_unit_requirements.html[pre-requisites] before installing the link:task_configure_acquisition_unit.html[Acquisition Unit software].
-
-'''
-
-== January 2019
-
-=== "Owner" field is more readable
-
-* In Dashboard and Query lists, the data for the "Owner" field was previously an authorization ID string, instead of a user-friendly owner name. The "Owner" field now shows a simpler and more readable owner name.
-
-=== Managed Unit Breakdown on Subscription Page
-
-* For each data collector listed on the *Admin > Subscription* page, you can now see a breakdown of Managed Unit (MU) counts for hosts and storage, as well as the total.
-
-'''
-
-== December 2018
-
-=== Improvement of UI Load Time
-
-* The initial loading time for the Cloud Insights user interface (UI) has been significantly improved. Refresh time for the UI also benefits from this improvement in circumstances where metadata is loaded.
-
-=== Bulk Edit Data Collectors
-
-* You can edit information for multiple data collectors at the same time. On the *Observability > Collectors* page, select the data collectors to modify by checking the box to the left of each and click the *Bulk Actions* button. Choose *Edit* and modify the necessary fields.
-+
-The data collectors selected must be the same vendor and model, and reside on the same Acquisition Unit.
-
-=== Support and Subscription pages are Available During Onboarding
-
-* During the onboarding workflow, you can navigate to the *Help > Support* and *Admin > Subscription* pages. Returning from those pages returns you to the onboarding workflow, providing you have not closed the browser tab.
-
-
-'''
-
-== November 2018
-
-=== Subscribe through NetApp Sales or AWS Marketplace
-
-* Cloud Insights subscription and billing is now available directly through NetApp. This is in addition to the self-serve subscription available through AWS Marketplace. A new *Contact Sales* link is presented on the *Admin > Subscription* page. For customers whose environments have or are expected to have 1,000 or more Managed Units (MUs), it is recommended to contact NetApp sales via the Contact Sales link.
-
-=== Text Annotation Hyperlinks
-
-* Text-type annotations can now include hyperlinks. 
-
-=== Onboarding Walkthrough
-
-* Cloud Insights now features an onboarding walkthrough for the first user (administrator or account owner) to log in to a new environment. The walkthrough takes you through installing an Acquisition Unit, configuring an initial data collector, and selecting one or more useful dashboards.
-
-=== Import Dashboards from the Gallery
-
-* In addition to selecting dashboards during onboarding, you can import dashboards via *Dashboards > Show All Dashboards* and clicking *+From Gallery*.
-
-=== Duplicating Dashboards
-
-* The ability to duplicate a dashboard has been added to the dashboard list page as a choice in the options menu for each dashboard, and on a dashboard's main page itself from the _Save_ menu.
- 
-=== Cloud Central products menu
-
-* The menu allowing you to switch to other NetApp Cloud Central products has moved to the upper right corner of the screen.
-
-
-
-
-

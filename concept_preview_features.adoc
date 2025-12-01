@@ -17,5 +17,5 @@ keywords: coming soon, preview,
 [.lead]
 Data Infrastructure Insights highlights new features and functionality in a _Preview_ manner. Preview features are made available in limited environments or at limited capacity. 
 
-If you are interested in previewing one or more of these features, contact your link:https://bluexp.netapp.com/contact-cds[NetApp Sales Team] for more information.
+If you are interested in previewing one or more of these features, contact your NetApp Sales Team for more information.
 
