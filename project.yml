@@ -510,6 +510,8 @@ sidebar:
               entries:
                 - title: Cloud Volumes ONTAP
                   url: /task_dc_na_cloud_volumes_ontap.html
+                - title: ONTAP AFX 
+                  url: /task_dc_na_ontap_afx.html
                 - title: ONTAP ASA (All-SAN Array) r2
                   url: /task_dc_na_ontap_all_san_array.html
                 - title: ONTAP Data Management Software 
