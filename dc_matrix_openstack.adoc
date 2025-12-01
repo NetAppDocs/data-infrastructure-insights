@@ -1,0 +1,244 @@
+---
+sidebar: sidebar
+permalink: dc_matrix_openstack.html
+summary: The Data Collector Support Matrix contains detailed information on Openstack data collectors.
+keywords: support matrix, openstack, collector, matrix
+---
+
+= Data Collector Support Matrix for Openstack
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The Data Collector Support Matrix provides reference for Openstack Data Collectors.
+
+== OpenStack (REST API / SSH)
+
+
+
+
+
+=== Foundation
+
+==== Data Store
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Capacity|Implemented|HTTPS|Snapshot Used capacity in MB
+|MOID|Implemented|HTTPS|
+|Name|Implemented|HTTPS|
+|OID|Implemented|HTTPS|
+|Provisioned Capacity|Implemented|HTTPS|
+|Used Capacity|Implemented|HTTPS|
+|Virtual Center Ip|Implemented|HTTPS|
+|===
+
+
+==== NasShare DataStore
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|DataStore OID|Implemented|HTTPS|
+|Nas Share OID|Implemented|HTTPS|
+|OID|Implemented|HTTPS|
+|===
+
+
+==== NasShare Host
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Nas Share OID|Implemented|HTTPS|
+|Host OID|Implemented|HTTPS|
+|OID|Implemented|HTTPS|
+|Read Only|Implemented|HTTPS|
+|===
+
+
+==== LUN
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|OID|Implemented|HTTPS|
+|Number|Implemented|HTTPS|
+|DataStore OID|Implemented|HTTPS|
+|Host OID|Implemented|HTTPS|
+|Disk Name|Implemented|HTTPS|
+|TID|Implemented|HTTPS|
+|===
+
+
+==== NAS Share
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Capacity|Implemented|HTTPS|Allocated capacity in MB
+|Filer Ip|Implemented|HTTPS|
+|Filer Name|Implemented|HTTPS|
+|OID|Implemented|HTTPS|
+|Share Path|Implemented|HTTPS| For a HvNasShare to be matched to a Share
+|Type|Gap|HTTPS|
+|===
+
+
+==== Path
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|OID|Implemented|HTTPS|
+|Lun OID|Implemented|HTTPS|
+|Host Port WWPN|Implemented|HTTPS|
+|Storage Port WWPN|Implemented|HTTPS|
+|Active|Implemented|HTTPS|
+|Type|Gap|HTTPS|
+|===
+
+
+==== Server
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Cluster|Implemented|HTTPS|Cluster name
+|DataCenter Name|Implemented|HTTPS|
+|Host OID|Implemented|HTTPS|
+|MOID|Implemented|HTTPS|
+|OID|Implemented|HTTPS|
+|Virtual Center Ip|Implemented|HTTPS|
+|===
+
+
+==== Virtual Disk
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Capacity|Implemented|HTTPS|Snapshot Used capacity in MB
+|DataStore OID|Implemented|HTTPS|
+|Lun OID|Implemented|HTTPS|
+|Name|Implemented|HTTPS|
+|OID|Implemented|HTTPS|
+|Type|Gap|HTTPS|
+|Used Capacity|Implemented|HTTPS|
+|===
+
+
+==== VirtualMachine
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Guest State|Implemented|HTTPS|
+|DataStore OID|Implemented|HTTPS|
+|Host OID|Implemented|HTTPS|
+|IPs|Implemented|HTTPS|
+|MOID|Implemented|HTTPS|
+|Memory|Implemented|HTTPS|
+|Name|Implemented|HTTPS|
+|OID|Implemented|HTTPS|
+|Power State|Implemented|HTTPS|
+|State Change Time|Implemented|HTTPS|
+|Processors|Implemented|HTTPS|
+|Provisioned Capacity|Implemented|HTTPS|
+|Used Capacity|Implemented|HTTPS|
+|===
+
+
+==== VirtualMachine Disk
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|OID|Implemented|HTTPS|
+|VirtualDisk OID|Implemented|HTTPS|
+|VirtualMachine OID|Implemented|HTTPS|
+|===
+
+
+==== Host
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Host Cpu Count|Implemented|HTTPS|
+|Host Domain|Implemented|HTTPS|
+|Host Installed Memory|Implemented|HTTPS|
+|Host OS|Implemented|HTTPS|
+|IPs|Implemented|HTTPS|
+|Name|Implemented|HTTPS|
+|OID|Implemented|HTTPS|
+|===
+
+
+==== ISCSI Node
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Host Aliases|Implemented|HTTPS|
+|Node Name|Implemented|HTTPS|
+|OID|Implemented|HTTPS|
+|Type|Gap|HTTPS|
+|===
+
+
+==== Info
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|DataSource Name|Implemented|HTTPS|Info
+|Date|Implemented|HTTPS|
+|Originator ID|Implemented|HTTPS|
+|Originator Key|Implemented|HTTPS|
+|===
+
+
+=== Performance
+
+==== Host
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Total CPU Utilization|Implemented||
+|Key|Implemented||
+|Total Memory Utilization|Implemented||
+|Server ID|Implemented||
+|===
+
+
+==== Management APIs used by this data collector:
+
+|===
+^|API ^|Protocol Used ^|Transport layer protocol used ^|Incoming ports used ^|Outgoing ports used ^|Supports authentication ^|Requires only 'Read-only' credentials ^|Supports Encryption ^|Firewall friendly (static ports) 
+
+|OpenStack REST API
+|HTTPS
+|HTTPS
+|443
+|
+|true
+|false
+|true
+|true
+
+|OpenStack SSH
+|SSH
+|SSH
+|22
+|
+|true
+|false
+|true
+|true
+

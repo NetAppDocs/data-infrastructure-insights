@@ -1,0 +1,398 @@
+---
+sidebar: sidebar
+permalink: dc_matrix_oracle.html
+summary: The Data Collector Support Matrix contains detailed information on Oracle data collectors.
+keywords: support matrix, oracle, collector, matrix
+---
+
+= Data Collector Support Matrix for Oracle
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The Data Collector Support Matrix provides reference for Oracle Data Collectors.
+
+== Oracle ZFS (HTTPS)
+
+Models and versions supported by this data collector:
+
+
+=== Models
+
+* Sun ZFS Storage 7120
+* Sun ZFS Storage 7320
+* Sun ZFS Storage 7330
+* Sun ZFS Storage 7335
+* Sun ZFS Storage 7350
+* Sun ZFS Storage 7370
+* Sun ZFS Storage 7390
+* Sun ZFS Storage 7420
+
+
+=== Firmware Versions
+
+* 1-1.1
+* 1-1.2
+* 1-1.3
+* 1-1.34
+* 1-1.4
+* 2013.06.05.6.12
+* 2013.06.05.6.15
+* 2013.06.05.7.21
+* 2013.06.05.7.24
+* 2013.06.05.7.25
+* 2013.06.05.7.26
+* 2013.06.05.7.29
+* 2013.06.05.8.0
+* 2013.06.05.8.26
+* 2013.06.05.8.29
+* 2013.06.05.8.37
+* 2013.06.05.8.44
+* 2013.06.05.8.50
+* 2013.06.05.8.53
+* 2013.06.05.8.56
+* 2013.06.05.8.6
+* 2013.06.05.8.61
+* 2013.06.05.8.65
+* 2013.06.05.8.7
+* 2013.06.05.8.72
+* 2013.06.05.8.74
+* 2013.06.05.8.76
+
+
+=== Foundation
+
+==== Disk
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Capacity (GB)|Implemented|HTTP/S|Used capacity
+|Disk Id|Implemented|HTTP/S|Uniquely identifies this disk in the array
+|Location|Gap|HTTP/S|Where this disk is physically located in the array
+|Model|Implemented|HTTP/S|
+|Name|Implemented|HTTP/S|
+|Role|Implemented|HTTP/S|
+|Role Enum|Implemented|HTTP/S|enum for disk role
+|Serial Number|Implemented|HTTP/S|
+|Speed|Implemented|HTTP/S|Speed of disk (RPM)
+|Status|Implemented|HTTP/S|
+|Status Enum|Implemented|HTTP/S|enum for disk status
+|Type|Gap|HTTP/S|
+|Type Enum|Implemented|HTTP/S|enum for disk type
+|Vendor|Implemented|HTTP/S|
+|===
+
+
+==== Info
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|DataSource Name|Implemented|HTTP/S|Info
+|Date|Implemented|HTTP/S|
+|Originator ID|Implemented|HTTP/S|
+|Originator Key|Implemented|HTTP/S|
+|===
+
+
+==== Internal Volume
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Compression Enabled|Implemented|HTTP/S|Is compression enabled on the storage pool
+|Compression Savings|Implemented|HTTP/S|ratio of compression savings in percentage
+|Data Used Capacity|Implemented|HTTP/S|
+|Dedupe Enabled|Implemented|HTTP/S|Is dedupe enabled on the storage pool
+|Dedupe Savings|Implemented|HTTP/S|ratio of dedupe savings in percentage
+|Internal Volume Id|Implemented|HTTP/S|
+|Name|Implemented|HTTP/S|
+|Other UsedCapacity (MB)|Implemented|HTTP/S|Any capacity other than data and snapshot
+|Protection Type|Implemented|HTTP/S|
+|Raw to Usable Ratio|Implemented|HTTP/S|ratio to convert from usable capacity to raw capacity
+|Snapshot Used Capacity|Implemented|HTTP/S|
+|Storage Pool Id|Implemented|HTTP/S|
+|Thin Provisioned|Implemented|HTTP/S|
+|Thin Provisioning Supported|Implemented|HTTP/S|Whether this internal volume supports thin provisioning for the volume layer on top of it
+|Total Allocated Capacity|Implemented|HTTP/S|
+|Total Used Capacity|Implemented|HTTP/S|Total capacity in MB
+|Total Used Capacity (MB)|Implemented|HTTP/S|place holder for the used capacity as read from the device
+|Type|Gap|HTTP/S|
+|===
+
+
+==== QTree
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Name|Implemented|HTTP/S|
+|Qtree Id|Implemented|HTTP/S|unique id of the qtree
+|Quota UsedCapacity|Implemented|HTTP/S|Space in MB currently used
+|Type|Gap|HTTP/S|
+|===
+
+
+==== Quota
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Internal Volume Id|Implemented|HTTP/S|
+|Qtree Id|Implemented|HTTP/S|unique id of the qtree
+|Quota Id|Implemented|HTTP/S|unique id of the quota
+|Soft Capacity Limit (MB)|Implemented|HTTP/S|Maximum amount of disk space, allowed for the quota target
+|Type|Gap|HTTP/S|
+|Used Capacity|Implemented|HTTP/S|
+|User/Group Target|Implemented|HTTP/S|user/group target this quota refers to
+|===
+
+
+==== Storage
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Display IP|Implemented|HTTP/S|
+|Failed Raw Capacity|Implemented|HTTP/S|Raw capacity of failed disks (sum of all disks that are failed)
+|Family|Implemented|HTTP/S|The storage Family could be Clariion, Symmetrix, et al
+|IP|Implemented|HTTP/S|
+|Manufacturer|Implemented|HTTP/S|
+|Microcode Version|Implemented|HTTP/S|
+|Model|Implemented|HTTP/S|
+|Name|Implemented|HTTP/S|
+|Total Raw Capacity|Implemented|HTTP/S|Total raw capacity (sum of all disks on the array)
+|Serial Number|Implemented|HTTP/S|
+|Spare Raw Capacity|Implemented|HTTP/S|Raw capacity of spare disks (sum of all disks that are spare)
+|SupportActive Active|Implemented|HTTP/S|Specified if the storage supports active-active configurations
+|Virtual|Implemented|HTTP/S|Is this a storage virtualization device?
+|===
+
+
+==== Storage Node
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Memory Size|Gap|HTTP/S|device memory in MB
+|Model|Implemented|HTTP/S|
+|Name|Implemented|HTTP/S|
+|Processors Count|Implemented|HTTP/S|device CPU
+|Serial Number|Implemented|HTTP/S|
+|State|Implemented|HTTP/S|free text describing the device state
+|UUID|Implemented|HTTP/S|
+|Version|Implemented|HTTP/S|software version
+|===
+
+
+==== Storage Pool
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Auto Tiering|Implemented|HTTP/S|indicates if this storagepool is participating in auto tiering with other pools
+|Compression Enabled|Implemented|HTTP/S|Is compression enabled on the storage pool
+|Compression Savings|Implemented|HTTP/S|ratio of compression savings in percentage
+|Data Allocated Capacity|Gap|HTTP/S|capacity allocated for data
+|Data Used Capacity|Implemented|HTTP/S|
+|Dedupe Enabled|Implemented|HTTP/S|Is dedupe enabled on the storage pool
+|Dedupe Savings|Implemented|HTTP/S|ratio of dedupe savings in percentage
+|Include In Dwh Capacity|Implemented|HTTP/S|A way from ACQ to control which storage pools are interesting in DWH Capacity
+|Name|Implemented|HTTP/S|
+|Other UsedCapacity (MB)|Implemented|HTTP/S|Any capacity other than data and snapshot
+|Physical Disk Capacity (MB)|Implemented|HTTP/S|used as raw capacity for storage pool
+|Raid Group|Implemented|HTTP/S|indicates whether this storagePool is a raid group
+|Raw to Usable Ratio|Implemented|HTTP/S|ratio to convert from usable capacity to raw capacity
+|Redundancy|Implemented|HTTP/S|Redundancy level
+|Snapshot Used Capacity|Implemented|HTTP/S|
+|Status|Implemented|HTTP/S|
+|Storage Pool Id|Implemented|HTTP/S|
+|Thin Provisioning Supported|Implemented|HTTP/S|Whether this internal volume supports thin provisioning for the volume layer on top of it
+|Total Allocated Capacity|Implemented|HTTP/S|
+|Total Used Capacity|Implemented|HTTP/S|Total capacity in MB
+|Type|Gap|HTTP/S|
+|Virtual|Implemented|HTTP/S|Is this a storage virtualization device?
+|===
+
+
+==== Volume
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Auto Tiering|Implemented|HTTP/S|indicates if this storagepool is participating in auto tiering with other pools
+|Capacity|Implemented|HTTP/S|Snapshot Used capacity in MB
+|Disk Size|Implemented|HTTP/S|comma seperated list of disk sizes (GB)
+|Disk Speed|Implemented|HTTP/S|comma seperated list of disk speeds (rpm)
+|Disk Type|Not Available|HTTP/S|
+|Junction Path|Implemented|HTTP/S|
+|Name|Implemented|HTTP/S|
+|Total Raw Capacity|Implemented|HTTP/S|Total raw capacity (sum of all disks on the array)
+|Redundancy|Implemented|HTTP/S|Redundancy level
+|Storage Pool Id|Implemented|HTTP/S|
+|Thin Provisioned|Implemented|HTTP/S|
+|Type|Gap|HTTP/S|
+|UUID|Implemented|HTTP/S|
+|Used Capacity|Implemented|HTTP/S|
+|Virtual|Implemented|HTTP/S|Is this a storage virtualization device?
+|===
+
+
+==== Volume Map
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|LUN|Implemented|HTTP/S|Name of the backend lun
+|Masking Required|Implemented|HTTP/S|
+|Protocol Controller|Implemented|HTTP/S|
+|Storage Port|Implemented|HTTP/S|
+|Type|Gap|HTTP/S|
+|===
+
+
+==== Volume Mask
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Initiator|Implemented|HTTP/S|
+|Protocol Controller|Implemented|HTTP/S|
+|Storage Port|Implemented|HTTP/S|
+|Type|Gap|HTTP/S|
+|===
+
+
+=== Performance
+
+==== Disk
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|IOPs Total|Implemented||
+|===
+
+
+==== Internal Volume
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|IOPs Total|Implemented||
+|Total Capacity|Implemented||
+|Capacity Used Ratio|Implemented||
+|Data Used Capacity|Implemented||
+|Used Capacity|Implemented||
+|Other Used Capacity|Implemented||
+|Snapshot Used Capacity|Implemented||
+|Snapshot Used Capacity Ratio|Implemented|| Reported as a time series
+|===
+
+
+==== Qtree
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Used Capacity|Implemented||
+|Total File Count|Implemented||
+|===
+
+
+==== Storage
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|IOPs Read|Implemented||Number of read IOPs on the disk
+|IOPs other|Implemented||
+|IOPs Write|Implemented||
+|Cache Hit Ratio Total|Implemented||
+|Throughput Read|Implemented||
+|Throughput Write|Implemented||
+|Throughput Total|Implemented||Average disk total rate (read and write across all disks) in MB/s
+|IOPs Total|Implemented||
+|Failed Raw Capacity|Implemented||
+|Spare Raw Capacity|Implemented||Raw capacity of spare disks (sum of all disks that are spare)
+|StoragePools Capacity|Implemented||
+|Raw Capacity|Implemented||
+|===
+
+
+==== Storage
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Failed Raw Capacity|Implemented||
+|Raw Capacity|Implemented||
+|Spare Raw Capacity|Implemented||Raw capacity of spare disks (sum of all disks that are spare)
+|StoragePools Capacity|Implemented||
+|Key|Implemented||
+|Server ID|Implemented||
+|===
+
+
+==== Storage Node
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|IOPs Read|Implemented||Number of read IOPs on the disk
+|IOPs Write|Implemented||
+|IOPs Total|Implemented||
+|Cache Hit Ratio Total|Implemented||
+|Throughput Total|Implemented||Average disk total rate (read and write across all disks) in MB/s
+|Utilization Total|Implemented||
+|Throughput Write|Implemented||
+|Throughput Read|Implemented||
+|===
+
+
+==== Storage Node Data
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Cache Hit Ratio Total|Implemented||
+|IOPs Read|Implemented||Number of read IOPs on the disk
+|IOPs Total|Implemented||
+|IOPs Write|Implemented||
+|Key|Implemented||
+|Server ID|Implemented||
+|Throughput Read|Implemented||
+|Throughput Total|Implemented||Average disk total rate (read and write across all disks) in MB/s
+|Throughput Write|Implemented||
+|Utilization Total|Implemented||
+|===
+
+
+==== StoragePool Disk
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|IOPs Total|Implemented||
+|===
+
+
+==== Management APIs used by this data collector:
+
+|===
+^|API ^|Protocol Used ^|Transport layer protocol used ^|Incoming ports used ^|Outgoing ports used ^|Supports authentication ^|Requires only 'Read-only' credentials ^|Supports Encryption ^|Firewall friendly (static ports) 
+
+|Oracle ZFS REST API
+|HTTP/HTTPS
+|HTTP/HTTPS
+|215
+|
+|true
+|true
+|true
+|true
+

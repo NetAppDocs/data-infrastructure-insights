@@ -1,0 +1,493 @@
+---
+sidebar: sidebar
+permalink: dc_matrix_hitachi.html
+summary: The Data Collector Support Matrix contains detailed information on Hitachi data collectors.
+keywords: support matrix, hitachi, collector, matrix
+---
+
+= Data Collector Support Matrix for Hitachi
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The Data Collector Support Matrix provides reference for Hitachi Data Collectors.
+
+== Hitachi Ops Center
+
+Models and versions supported by this data collector:
+
+
+=== Models
+
+* VSP 5100
+* VSP 5500
+* VSP 5600
+* VSP 5600H
+* VSP E1090
+* VSP E590
+* VSP E790
+* VSP E790H
+* VSP F1500
+* VSP F400
+* VSP F900
+* VSP G1000
+* VSP G1500
+* VSP G600
+* VSP G800
+* VSP G900
+* XP8
+
+
+=== Firmware Versions
+
+* 80-06-91-00/00:01-71-03/02
+* 80-06-94-00/00:01-70-03/04
+* 80-06-96-00/00:01-71-03/02
+* 80-06-96-00/00:01-76-03/03
+* 83-05-49-40/01:01-69-03/02
+* 83-05-49-60/01:01-65-03/05
+* 83-05-49-60/01:01-69-03/02
+* 83-05-51-40/00:01-70-03/04
+* 83-05-51-40/00:01-71-03/02
+* 83-05-51-40/00:01-76-03/03
+* 88-08-08-60/00:01-65-03/05
+* 88-08-08-60/00:01-70-03/04
+* 88-08-11-60/00:01-65-03/05
+* 88-08-11-60/00:01-70-03/04
+* 88-08-13-60/00:01-65-03/05
+* 88-08-13-60/01:01-65-03/05
+* 88-08-13-60/01:01-70-03/04
+* 88-08-13-60/01:01-71-03/02
+* 88-08-13-60/01:01-76-03/03
+* 90-08-82-00/00:01-65-03/05
+* 90-08-82:01.70.04
+* 90-09-01-00/01:01-65-03/05
+* 90-09-22-00/00:01-65-03/05
+* 90-09-22-00/00:01-70-03/04
+* 90-09-22-00/00:01-71-03/02
+* 90-09-24-00/01:01-65-03/05
+* 90-09-24-00/01:01-71-03/02
+* 90-09-24-00/01:01-76-03/03
+* 90-09-24:01.65.05
+* 90-09-25-00/00:01-76-03/03
+* 90-09-25:01.70.04
+* 90-09-26-00/00:01-65-03/05
+* 90-09-26-00/00:01-71-03/02
+* 90-09-26-00/00:01-76-03/03
+* 93-07-01-80/00:01-70-03/04
+* 93-07-22-40/00:01-65-03/05
+* 93-07-22-40/00:01-69-03/02
+* 93-07-22-80/00:01-70-03/04
+* 93-07-22-80/00:01-71-03/02
+* 93-07-23-80/00:01-71-03/02
+* 93-07-23-80/01:01-71-03/02
+* 93-07-24-40/00:01-76-03/03
+* 93-07-24-80/00:01-70-03/04
+* null:null
+
+
+=== Foundation
+
+==== Disk
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Capacity (GB)|Implemented||Used capacity
+|Disk Id|Implemented||Uniquely identifies this disk in the array
+|Group|Implemented||
+|Location|Gap||Where this disk is physically located in the array
+|Model|Implemented||
+|Name|Implemented||
+|Potential Transfer Rate|Implemented||
+|Role|Implemented||
+|Role Enum|Implemented||enum for disk role
+|Seek Time|Implemented||
+|Serial Number|Implemented||
+|Speed|Implemented||Speed of disk (RPM)
+|Status Enum|Implemented||enum for disk status
+|Type Enum|Implemented||enum for disk type
+|Vendor|Implemented||
+|===
+
+
+==== Disk Group
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Capacity|Implemented||Snapshot Used capacity in MB
+|DiskGroup Id|Implemented||unique id of the disk group
+|Disk Type|Not Available||
+|Name|Implemented||
+|Physical Disk Capacity (MB)|Implemented||used as raw capacity for storage pool
+|Redundancy|Implemented||Redundancy level
+|Status|Implemented||
+|Used Capacity|Implemented||
+|Vendor DiskGroup Type|Implemented||vendor's designation of the disk group type
+|Virtual|Implemented||Is this a storage virtualization device?
+|===
+
+
+==== ISCSI Network Portal
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|IP|Implemented||
+|Listening Port|Implemented||
+|Nic|Implemented||
+|OID|Implemented||
+|===
+
+
+==== ISCSI Network Portal Group
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|OID|Implemented||
+|Portal Group Name|Implemented||
+|Portal Group Tag|Implemented||
+|===
+
+
+==== ISCSI Node
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Node Name|Implemented||
+|OID|Implemented||
+|Type|Gap||
+|===
+
+
+==== ISCSI Node Map
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|OID|Implemented||
+|Portal Group OID|Implemented||
+|===
+
+
+==== ISCSI Session
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Initiator Ips|Implemented||
+|Initiator OID|Implemented||
+|Max Connections|Implemented||
+|Number Of Connections|Implemented||
+|OID|Implemented||
+|Portal Group OID|Implemented||
+|Security|Implemented||
+|===
+
+
+==== Info
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|DataSource Name|Implemented||Info
+|Date|Implemented||
+|Originator ID|Implemented||
+|Originator Key|Implemented||
+|===
+
+
+==== Storage
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Display IP|Implemented||
+|Failed Raw Capacity|Implemented||Raw capacity of failed disks (sum of all disks that are failed)
+|Family|Implemented||The storage Family could be Clariion, Symmetrix, et al
+|IP|Implemented||
+|Manage URL|Implemented||
+|Manufacturer|Implemented||
+|Microcode Version|Implemented||
+|Model|Implemented||
+|Name|Implemented||
+|Total Raw Capacity|Implemented||Total raw capacity (sum of all disks on the array)
+|Serial Number|Implemented||
+|Spare Raw Capacity|Implemented||Raw capacity of spare disks (sum of all disks that are spare)
+|SupportActive Active|Implemented||Specified if the storage supports active-active configurations
+|Virtual|Implemented||Is this a storage virtualization device?
+|===
+
+
+==== Storage Node
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Name|Implemented||
+|UUID|Implemented||
+|===
+
+
+==== Storage Pool
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Compression Enabled|Implemented||Is compression enabled on the storage pool
+|Compression Savings|Implemented||ratio of compression savings in percentage
+|Dedupe Enabled|Implemented||Is dedupe enabled on the storage pool
+|Include In Dwh Capacity|Implemented||A way from ACQ to control which storage pools are interesting in DWH Capacity
+|Name|Implemented||
+|Physical Disk Capacity (MB)|Implemented||used as raw capacity for storage pool
+|Raid Group|Implemented||indicates whether this storagePool is a raid group
+|Raw to Usable Ratio|Implemented||ratio to convert from usable capacity to raw capacity
+|Redundancy|Implemented||Redundancy level
+|Soft Limit (MB)|Implemented||logical volume size that is defined during volume creation or resizing operations
+|Status|Implemented||
+|Storage Pool Id|Implemented||
+|Thin Provisioning Supported|Implemented||Whether this internal volume supports thin provisioning for the volume layer on top of it
+|Total Allocated Capacity|Implemented||
+|Total Used Capacity|Implemented||Total capacity in MB
+|Type|Gap||
+|Virtual|Implemented||Is this a storage virtualization device?
+|Encrypted|Implemented||
+|===
+
+
+==== Storage Synchronization
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Mode|Implemented||
+|Mode Enum|Implemented||
+|Source Storage|Implemented||
+|Source Volume|Implemented||
+|State|Implemented||free text describing the device state
+|State Enum|Implemented||
+|Target Storage|Implemented||
+|Target Volume|Implemented||
+|Technology|Implemented||technology which causes storage efficiency changed
+|===
+
+
+==== Volume
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Capacity|Implemented||Snapshot Used capacity in MB
+|Junction Path|Implemented||
+|Name|Implemented||
+|Protection Type|Implemented||
+|Total Raw Capacity|Implemented||Total raw capacity (sum of all disks on the array)
+|Storage Pool Id|Implemented||
+|Thin Provisioned|Implemented||
+|Type|Gap||
+|Used Capacity|Implemented||
+|Compression Enabled|Implemented||
+|===
+
+
+==== Volume Map
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|LUN|Implemented||Name of the backend lun
+|Masking Required|Implemented||
+|Protocol Controller|Implemented||
+|Storage Port|Implemented||
+|Type|Gap||
+|===
+
+
+==== Volume Mask
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Initiator|Implemented||
+|Protocol Controller|Implemented||
+|Storage Port|Implemented||
+|Type|Gap||
+|===
+
+
+=== Performance
+
+==== Disk
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|IOPs Read|Implemented||Number of read IOPs on the disk
+|IOPs Total|Implemented||
+|IOPs Write|Implemented||
+|Throughput Read|Implemented||
+|Throughput Total|Implemented||Average disk total rate (read and write across all disks) in MB/s
+|Throughput Write|Implemented||
+|===
+
+
+==== Storage
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Cache Hit Ratio Read|Implemented||
+|Cache Hit Ratio Total|Implemented||
+|Cache Hit Ratio Write|Implemented||
+|Failed Raw Capacity|Implemented||
+|Raw Capacity|Implemented||
+|Spare Raw Capacity|Implemented||Raw capacity of spare disks (sum of all disks that are spare)
+|StoragePools Capacity|Implemented||
+|IOPs Read|Implemented||Number of read IOPs on the disk
+|IOPs Total|Implemented||
+|IOPs Write|Implemented||
+|Latency Read|Implemented||
+|Latency Total|Implemented||
+|Latency Write|Implemented||
+|Throughput Read|Implemented||
+|Throughput Total|Implemented||Average disk total rate (read and write across all disks) in MB/s
+|Throughput Write|Implemented||
+|===
+
+
+==== Storage
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Cache Hit Ratio Read|Implemented||
+|Cache Hit Ratio Total|Implemented||
+|Cache Hit Ratio Write|Implemented||
+|Failed Raw Capacity|Implemented||
+|Raw Capacity|Implemented||
+|Spare Raw Capacity|Implemented||Raw capacity of spare disks (sum of all disks that are spare)
+|StoragePools Capacity|Implemented||
+|IOPs Read|Implemented||Number of read IOPs on the disk
+|IOPs Total|Implemented||
+|IOPs Write|Implemented||
+|Key|Implemented||
+|Latency Read|Implemented||
+|Latency Total|Implemented||
+|Latency Write|Implemented||
+|Server ID|Implemented||
+|Throughput Read|Implemented||
+|Throughput Total|Implemented||Average disk total rate (read and write across all disks) in MB/s
+|Throughput Write|Implemented||
+|===
+
+
+==== Storage Node
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|IOPs Total|Implemented||
+|Throughput Total|Implemented||Average disk total rate (read and write across all disks) in MB/s
+|===
+
+
+==== Storage Node Data
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|IOPs Total|Implemented||
+|Key|Implemented||
+|Server ID|Implemented||
+|Throughput Total|Implemented||Average disk total rate (read and write across all disks) in MB/s
+|===
+
+
+==== StoragePool Disk
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Capacity Provisioned|Implemented||
+|Raw Capacity|Implemented||
+|Capacity Soft Limit|Implemented||
+|Total Capacity|Implemented||
+|Used Capacity|Implemented||
+|Over Commit Capacity Ratio|Implemented||Reported as a time series
+|Capacity Used Ratio|Implemented||
+|IOPs Read|Implemented||Number of read IOPs on the disk
+|IOPs Total|Implemented||
+|IOPs Write|Implemented||
+|Throughput Read|Implemented||
+|Throughput Total|Implemented||Average disk total rate (read and write across all disks) in MB/s
+|Throughput Write|Implemented||
+|Utilization Total|Implemented||
+|===
+
+
+==== Volume
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Latency Total|Implemented||
+|Total Capacity|Implemented||
+|Latency Read|Implemented||
+|IOPs Write|Implemented||
+|Raw Capacity|Implemented||
+|Used Capacity|Implemented||
+|Throughput Read|Implemented||
+|IOPs Total|Implemented||
+|Latency Write|Implemented||
+|IOPs Read|Implemented||Number of read IOPs on the disk
+|Capacity Used Ratio|Implemented||
+|Cache Hit Ratio Read|Implemented||
+|Cache Hit Ratio Total|Implemented||
+|Cache Hit Ratio Write|Implemented||
+|Throughput Write|Implemented||
+|Throughput Total|Implemented||Average disk total rate (read and write across all disks) in MB/s
+|===
+
+
+==== Volume
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Cache Hit Ratio Read|Implemented||
+|Cache Hit Ratio Total|Implemented||
+|IOPs Read|Implemented||Number of read IOPs on the disk
+|IOPs Total|Implemented||
+|IOPs Write|Implemented||
+|Key|Implemented||
+|Latency Read|Implemented||
+|Latency Total|Implemented||
+|Latency Write|Implemented||
+|Server ID|Implemented||
+|Throughput Read|Implemented||
+|Throughput Total|Implemented||Average disk total rate (read and write across all disks) in MB/s
+|Throughput Write|Implemented||
+|===
+
+
+==== Management APIs used by this data collector:
+
+|===
+^|API ^|Protocol Used ^|Transport layer protocol used ^|Incoming ports used ^|Outgoing ports used ^|Supports authentication ^|Requires only 'Read-only' credentials ^|Supports Encryption ^|Firewall friendly (static ports) 
+
+|Hitachi Ops Center REST API
+|HTTPS
+|HTTPS
+|443
+|
+|true
+|true
+|true
+|true
+

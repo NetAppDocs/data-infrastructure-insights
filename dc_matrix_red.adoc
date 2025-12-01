@@ -1,0 +1,219 @@
+---
+sidebar: sidebar
+permalink: dc_matrix_red.html
+summary: The Data Collector Support Matrix contains detailed information on Red data collectors.
+keywords: support matrix, red, collector, matrix
+---
+
+= Data Collector Support Matrix for Red
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The Data Collector Support Matrix provides reference for Red Data Collectors.
+
+== Red Hat RHV (REST)
+
+
+
+
+
+=== Foundation
+
+==== Data Store
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Capacity|Implemented|HTTP/S|Snapshot Used capacity in MB
+|MOID|Implemented|HTTP/S|
+|Name|Implemented|HTTP/S|
+|OID|Implemented|HTTP/S|
+|Provisioned Capacity|Implemented|HTTP/S|
+|Used Capacity|Implemented|HTTP/S|
+|Virtual Center Ip|Implemented|HTTP/S|
+|===
+
+
+==== NasShare DataStore
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|DataStore OID|Implemented|HTTP/S|
+|Nas Share OID|Implemented|HTTP/S|
+|OID|Implemented|HTTP/S|
+|===
+
+
+==== NasShare Host
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Host OID|Implemented|HTTP/S|
+|Nas Share OID|Implemented|HTTP/S|
+|Read Only|Implemented|HTTP/S|
+|OID|Implemented|HTTP/S|
+|===
+
+
+==== LUN
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|DataStore OID|Implemented|HTTP/S|
+|Host OID|Implemented|HTTP/S|
+|Number|Implemented|HTTP/S|
+|OID|Implemented|HTTP/S|
+|===
+
+
+==== NAS Share
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Filer Name|Implemented|HTTP/S|
+|Filer Ip|Implemented|HTTP/S|
+|Share Path|Implemented|HTTP/S| For a HvNasShare to be matched to a Share
+|Capacity|Implemented|HTTP/S|Allocated capacity in MB
+|Type|Gap|HTTP/S|
+|OID|Implemented|HTTP/S|
+|===
+
+
+==== Path
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Active|Implemented|HTTP/S|
+|Lun OID|Implemented|HTTP/S|
+|Host Port WWPN|Implemented|HTTP/S|
+|OID|Implemented|HTTP/S|
+|Storage Port WWPN|Implemented|HTTP/S|
+|Type|Gap|HTTP/S|
+|===
+
+
+==== Server
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Cluster|Implemented|HTTP/S|Cluster name
+|DataCenter Name|Implemented|HTTP/S|
+|Host OID|Implemented|HTTP/S|
+|MOID|Implemented|HTTP/S|
+|OID|Implemented|HTTP/S|
+|Virtual Center Ip|Implemented|HTTP/S|
+|===
+
+
+==== Virtual Disk
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Capacity|Implemented|HTTP/S|Snapshot Used capacity in MB
+|DataStore OID|Implemented|HTTP/S|
+|Name|Implemented|HTTP/S|
+|OID|Implemented|HTTP/S|
+|Type|Gap|HTTP/S|
+|Used Capacity|Implemented|HTTP/S|
+|===
+
+
+==== VirtualMachine
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Guest State|Implemented|HTTP/S|
+|DataStore OID|Implemented|HTTP/S|
+|Host OID|Implemented|HTTP/S|
+|MOID|Implemented|HTTP/S|
+|Memory|Implemented|HTTP/S|
+|Name|Implemented|HTTP/S|
+|OID|Implemented|HTTP/S|
+|OS|Implemented|HTTP/S|
+|Power State|Implemented|HTTP/S|
+|State Change Time|Implemented|HTTP/S|
+|Processors|Implemented|HTTP/S|
+|Provisioned Capacity|Implemented|HTTP/S|
+|Used Capacity|Implemented|HTTP/S|
+|===
+
+
+==== VirtualMachine Disk
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|OID|Implemented|HTTP/S|
+|VirtualDisk OID|Implemented|HTTP/S|
+|VirtualMachine OID|Implemented|HTTP/S|
+|===
+
+
+==== Host
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Host Cpu Count|Implemented|HTTP/S|
+|Host Cpu Speed|Implemented|HTTP/S|
+|Host Installed Memory|Implemented|HTTP/S|
+|Host Model|Implemented|HTTP/S|
+|NIC count|Implemented|HTTP/S|
+|NIC speed|Implemented|HTTP/S|
+|IPs|Implemented|HTTP/S|
+|Manufacturer|Implemented|HTTP/S|
+|Name|Implemented|HTTP/S|
+|OID|Implemented|HTTP/S|
+|Platform Type|Implemented|HTTP/S|
+|===
+
+
+==== ISCSI Node
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Node Name|Implemented|HTTP/S|
+|OID|Implemented|HTTP/S|
+|Type|Gap|HTTP/S|
+|===
+
+
+==== Info
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|DataSource Name|Implemented|HTTP/S|Info
+|Date|Implemented|HTTP/S|
+|Originator ID|Implemented|HTTP/S|
+|===
+
+
+==== Management APIs used by this data collector:
+
+|===
+^|API ^|Protocol Used ^|Transport layer protocol used ^|Incoming ports used ^|Outgoing ports used ^|Supports authentication ^|Requires only 'Read-only' credentials ^|Supports Encryption ^|Firewall friendly (static ports) 
+
+|Red Hat RHEV REST API
+|HTTPS
+|HTTPS
+|443
+|
+|true
+|true
+|true
+|true
+

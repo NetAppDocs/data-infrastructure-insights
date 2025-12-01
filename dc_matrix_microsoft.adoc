@@ -1,0 +1,798 @@
+---
+sidebar: sidebar
+permalink: dc_matrix_microsoft.html
+summary: The Data Collector Support Matrix contains detailed information on Microsoft data collectors.
+keywords: support matrix, microsoft, collector, matrix
+---
+
+= Data Collector Support Matrix for Microsoft
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The Data Collector Support Matrix provides reference for Microsoft Data Collectors.
+
+== Microsoft Azure NetApp Files
+
+Models and versions supported by this data collector:
+
+
+=== API Versions
+
+* 2019-06-01
+* 2024-07-01
+
+
+=== Models
+
+* Azure NetApp Files
+
+
+=== Foundation
+
+==== File Share
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Is InternalVolume|Implemented|HTTPS|whether the file share represents an internal volume (netapp volume) or is it a qtree/folder within the internal volume
+|Is Shared|Implemented|HTTPS|whether this fileShare has any shares associated with it
+|Name|Implemented|HTTPS|
+|Path|Implemented|HTTPS|Path of the fileShare
+|Qtree Id|Implemented|HTTPS|unique id of the qtree
+|===
+
+
+==== Info
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Api Version|Implemented|HTTPS|
+|DataSource Name|Implemented|HTTPS|Info
+|Date|Implemented|HTTPS|
+|Originator ID|Implemented|HTTPS|
+|===
+
+
+==== Internal Volume
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Data Allocated Capacity|Gap|HTTPS|capacity allocated for data
+|Data Used Capacity|Implemented|HTTPS|
+|Dedupe Enabled|Implemented|HTTPS|Is dedupe enabled on the storage pool
+|Internal Volume Id|Implemented|HTTPS|
+|Last Snapshot Time|Implemented|HTTPS|time of last snapshot
+|Name|Implemented|HTTPS|
+|Raw to Usable Ratio|Implemented|HTTPS|ratio to convert from usable capacity to raw capacity
+|Snapshot Count|Implemented|HTTPS|Number of snapshots on the internal volumes
+|Snapshot Used Capacity|Implemented|HTTPS|
+|Status|Implemented|HTTPS|
+|Storage Pool Id|Implemented|HTTPS|
+|Thin Provisioned|Implemented|HTTPS|
+|Thin Provisioning Supported|Implemented|HTTPS|Whether this internal volume supports thin provisioning for the volume layer on top of it
+|Total Allocated Capacity|Implemented|HTTPS|
+|Total Used Capacity|Implemented|HTTPS|Total capacity in MB
+|Total Used Capacity (MB)|Implemented|HTTPS|place holder for the used capacity as read from the device
+|Type|Gap|HTTPS|
+|UUID|Implemented|HTTPS|
+|Comment|Gap|HTTPS|state: free text comment describing the svm
+||Implemented|HTTPS|
+|QoS - Policy|Implemented|HTTPS|
+|===
+
+
+==== Storage Synchronization
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Source Internal Volume|Implemented|HTTPS|
+|Target Internal Volume|Implemented|HTTPS|
+|Technology|Implemented|HTTPS|technology which causes storage efficiency changed
+|===
+
+
+==== QTree
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Name|Implemented|HTTPS|
+|Qtree Id|Implemented|HTTPS|unique id of the qtree
+|Quota HardCapacity Limit (MB)|Implemented|HTTPS|Maximum amount of disk space, allowed for the quota target
+|Security Style|Implemented|HTTPS|Security style of the directory: unix, ntfs, or mixed
+|Status|Implemented|HTTPS|
+|Type|Gap|HTTPS|
+|===
+
+
+==== Quota
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Hard Capacity Limit (MB)|Implemented|HTTPS|max amount of disk space, allowed for the quota target (Hard limit)
+|Internal Volume Id|Implemented|HTTPS|
+|Qtree Id|Implemented|HTTPS|unique id of the qtree
+|Quota Id|Implemented|HTTPS|unique id of the quota
+|Type|Gap|HTTPS|
+|Used Capacity|Implemented|HTTPS|
+|===
+
+
+==== Share
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|IP Interfaces|Implemented|HTTPS|comma separated list of IP addresses on which this share is exposed
+|Name|Implemented|HTTPS|
+|Protocol|Implemented|HTTPS|enum for share protocol
+|===
+
+
+==== Share Initiator
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Initiator|Implemented|HTTPS|
+|Permission|Implemented|HTTPS|Permissions for this particular share
+|===
+
+
+==== Storage
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Display IP|Implemented|HTTPS|
+|Failed Raw Capacity|Implemented|HTTPS|Raw capacity of failed disks (sum of all disks that are failed)
+|Family|Implemented|HTTPS|The storage Family could be Clariion, Symmetrix, et al
+|IP|Implemented|HTTPS|
+|Manufacturer|Implemented|HTTPS|
+|Model|Implemented|HTTPS|
+|Name|Implemented|HTTPS|
+|Total Raw Capacity|Implemented|HTTPS|Total raw capacity (sum of all disks on the array)
+|Serial Number|Implemented|HTTPS|
+|Spare Raw Capacity|Implemented|HTTPS|Raw capacity of spare disks (sum of all disks that are spare)
+|Virtual|Implemented|HTTPS|Is this a storage virtualization device?
+|===
+
+
+==== Storage Pool
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Data Allocated Capacity|Gap|HTTPS|capacity allocated for data
+|Data Used Capacity|Implemented|HTTPS|
+|Include In Dwh Capacity|Implemented|HTTPS|A way from ACQ to control which storage pools are interesting in DWH Capacity
+|Name|Implemented|HTTPS|
+|Physical Disk Capacity (MB)|Implemented|HTTPS|used as raw capacity for storage pool
+|Raid Group|Implemented|HTTPS|indicates whether this storagePool is a raid group
+|Raw to Usable Ratio|Implemented|HTTPS|ratio to convert from usable capacity to raw capacity
+|Status|Implemented|HTTPS|
+|Storage Pool Id|Implemented|HTTPS|
+|Thin Provisioning Supported|Implemented|HTTPS|Whether this internal volume supports thin provisioning for the volume layer on top of it
+|Total Allocated Capacity|Implemented|HTTPS|
+|Total Used Capacity|Implemented|HTTPS|Total capacity in MB
+|Type|Gap|HTTPS|
+|Virtual|Implemented|HTTPS|Is this a storage virtualization device?
+|Comment|Gap|HTTPS|state: free text comment describing the svm
+|===
+
+
+=== Performance
+
+==== Internal Volume
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Total Capacity|Implemented||
+|Used Capacity|Implemented||
+|Capacity Used Ratio|Implemented||
+|Total Data Capacity|Implemented||
+|Data Used Capacity|Implemented||
+|IOPs other|Implemented||
+|IOPs Read|Implemented||Number of read IOPs on the disk
+|IOPs Total|Implemented||
+|IOPs Write|Implemented||
+|Latency Read|Implemented||
+|Latency Total|Implemented||
+|Latency Write|Implemented||
+|Snapshot Used Capacity|Implemented||
+|Snapshot Used Capacity Ratio|Implemented|| Reported as a time series
+|Throughput Read|Implemented||
+|Throughput Total|Implemented||Average disk total rate (read and write across all disks) in MB/s
+|Throughput Write|Implemented||
+|===
+
+
+==== StoragePool Disk
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|IOPs Read|Implemented||Number of read IOPs on the disk
+|IOPs Write|Implemented||
+|Throughput Read|Implemented||
+|Throughput Write|Implemented||
+|Throughput Total|Implemented||Average disk total rate (read and write across all disks) in MB/s
+|IOPs Total|Implemented||
+|===
+
+
+==== Management APIs used by this data collector:
+
+|===
+^|API ^|Protocol Used ^|Transport layer protocol used ^|Incoming ports used ^|Outgoing ports used ^|Supports authentication ^|Requires only 'Read-only' credentials ^|Supports Encryption ^|Firewall friendly (static ports) 
+
+|Azure Netapp Files REST API
+|HTTPS
+|HTTPS
+|443
+|
+|true
+|true
+|true
+|true
+
+
+
+
+|===
+
+== Microsoft Azure Compute
+
+Models and versions supported by this data collector:
+API versions: 
+
+* 2018-06-01
+
+
+=== Foundation
+
+==== Data Store
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Capacity|Implemented|HTTPS|Snapshot Used capacity in MB
+|MOID|Implemented|HTTPS|
+|Name|Implemented|HTTPS|
+|OID|Implemented|HTTPS|
+|Provisioned Capacity|Implemented|HTTPS|
+|Virtual Center Ip|Implemented|HTTPS|
+|subscription Id|Implemented|HTTPS|
+|===
+
+
+==== Server
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Cluster|Implemented|HTTPS|Cluster name
+|DataCenter Name|Implemented|HTTPS|
+|Host OID|Implemented|HTTPS|
+|MOID|Implemented|HTTPS|
+|OID|Implemented|HTTPS|
+|Virtual Center Ip|Implemented|HTTPS|
+|===
+
+
+==== Virtual Disk
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Capacity|Implemented|HTTPS|Snapshot Used capacity in MB
+|DataStore OID|Implemented|HTTPS|
+|Lun OID|Implemented|HTTPS|
+|Is Chargeable|Implemented|HTTPS|
+|Name|Implemented|HTTPS|
+|OID|Implemented|HTTPS|
+|Type|Gap|HTTPS|
+|subscription Id|Implemented|HTTPS|
+|===
+
+
+==== VirtualMachine
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Guest State|Implemented|HTTPS|
+|DataStore OID|Implemented|HTTPS|
+|Host OID|Implemented|HTTPS|
+|IPs|Implemented|HTTPS|
+|MOID|Implemented|HTTPS|
+|Memory|Implemented|HTTPS|
+|Name|Implemented|HTTPS|
+|OID|Implemented|HTTPS|
+|OS|Implemented|HTTPS|
+|Power State|Implemented|HTTPS|
+|State Change Time|Implemented|HTTPS|
+|Processors|Implemented|HTTPS|
+|Provisioned Capacity|Implemented|HTTPS|
+|Instance Type|Implemented|HTTPS|
+|Launch Time|Implemented|HTTPS|
+|public Ips|Implemented|HTTPS|
+|Security Groups|Implemented|HTTPS|
+|subscription Id|Implemented|HTTPS|
+|===
+
+
+==== VirtualMachine Disk
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|OID|Implemented|HTTPS|
+|VirtualDisk OID|Implemented|HTTPS|
+|VirtualMachine OID|Implemented|HTTPS|
+|===
+
+
+==== Host
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Host OS|Implemented|HTTPS|
+|IPs|Implemented|HTTPS|
+|Manufacturer|Implemented|HTTPS|
+|Name|Implemented|HTTPS|
+|OID|Implemented|HTTPS|
+|===
+
+
+==== Info
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Api Description|Implemented|HTTPS|
+|Api Name|Implemented|HTTPS|
+|Api Version|Implemented|HTTPS|
+|DataSource Name|Implemented|HTTPS|Info
+|Date|Implemented|HTTPS|
+|Originator ID|Implemented|HTTPS|
+|Originator Key|Implemented|HTTPS|
+|===
+
+
+=== Performance
+
+==== Data Store
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Capacity Provisioned|Implemented|HTTPS|
+|Total Capacity|Implemented|HTTPS|
+|Over Commit Capacity Ratio|Implemented|HTTPS|Reported as a time series
+|===
+
+
+==== Virtual Disk
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Total Capacity|Implemented|HTTPS|
+|IOPs Read|Implemented|HTTPS|Number of read IOPs on the disk
+|IOPs Total|Implemented|HTTPS|
+|IOPs Write|Implemented|HTTPS|
+|Throughput Read|Implemented|HTTPS|
+|Throughput Total|Implemented|HTTPS|Average disk total rate (read and write across all disks) in MB/s
+|Throughput Write|Implemented|HTTPS|
+|===
+
+
+==== vm
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Total Capacity|Implemented|HTTPS|
+|Total CPU Utilization|Implemented|HTTPS|
+|IOPs Read|Implemented|HTTPS|Number of read IOPs on the disk
+|diskIops.total|Implemented|HTTPS|
+|Disk IOPs write|Implemented|HTTPS|
+|Disk Throughput Read|Implemented|HTTPS|
+|Throughput Read|Implemented|HTTPS|total disk throughput read
+|Disk Throughput Write|Implemented|HTTPS|
+|IP Throughput Read|Implemented|HTTPS|
+|Throughput total|Implemented|HTTPS|IP throughput total
+|ipThroughput.write|Implemented|HTTPS|
+|===
+
+
+==== VM
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Total Capacity|Implemented|HTTPS|
+|Key|Implemented|HTTPS|
+|Server ID|Implemented|HTTPS|
+|===
+
+
+==== Management APIs used by this data collector:
+
+|===
+^|API ^|Protocol Used ^|Transport layer protocol used ^|Incoming ports used ^|Outgoing ports used ^|Supports authentication ^|Requires only 'Read-only' credentials ^|Supports Encryption ^|Firewall friendly (static ports) 
+
+|Microsoft Azure Compute REST API
+|HTTPS
+|HTTPS
+|443
+|
+|true
+|true
+|true
+|true
+
+
+
+
+|===
+
+== Microsoft Hyper-V
+
+
+
+
+
+=== Foundation
+
+==== Data Store
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Capacity|Implemented|WMI|Snapshot Used capacity in MB
+|MOID|Implemented|WMI|
+|Name|Implemented|WMI|
+|OID|Implemented|WMI|
+|Provisioned Capacity|Implemented|WMI|
+|Used Capacity|Implemented|WMI|
+|Virtual Center Ip|Implemented|WMI|
+|===
+
+
+==== NasShare DataStore
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|DataStore OID|Implemented|WMI|
+|Nas Share OID|Implemented|WMI|
+|OID|Implemented|WMI|
+|===
+
+
+==== NasShare Host
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Nas Share OID|Implemented|WMI|
+|Host OID|Implemented|WMI|
+|OID|Implemented|WMI|
+|Read Only|Implemented|WMI|
+|===
+
+
+==== LUN
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Disk Name|Implemented|WMI|
+|DataStore OID|Implemented|WMI|
+|Host OID|Implemented|WMI|
+|Number|Implemented|WMI|
+|OID|Implemented|WMI|
+|TID|Implemented|WMI|
+|===
+
+
+==== NAS Share
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Capacity|Implemented|WMI|Allocated capacity in MB
+|Filer Ip|Implemented|WMI|
+|Filer Name|Implemented|WMI|
+|OID|Implemented|WMI|
+|Share Path|Implemented|WMI| For a HvNasShare to be matched to a Share
+|Type|Gap|WMI|
+|===
+
+
+==== Path
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Active|Implemented|WMI|
+|Lun OID|Implemented|WMI|
+|Host Port WWPN|Implemented|WMI|
+|OID|Implemented|WMI|
+|Storage Port WWPN|Implemented|WMI|
+|Type|Gap|WMI|
+|===
+
+
+==== Server
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Cluster|Implemented|WMI|Cluster name
+|DataCenter Name|Implemented|WMI|
+|Host OID|Implemented|WMI|
+|MOID|Implemented|WMI|
+|OID|Implemented|WMI|
+|Virtual Center Ip|Implemented|WMI|
+|===
+
+
+==== Virtual Disk
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Capacity|Implemented|WMI|Snapshot Used capacity in MB
+|DataStore OID|Implemented|WMI|
+|Name|Implemented|WMI|
+|OID|Implemented|WMI|
+|Type|Gap|WMI|
+|Used Capacity|Implemented|WMI|used capacity for reporting (MB)
+|Used Capacity|Implemented|WMI|
+|===
+
+
+==== VirtualMachine
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Dns Name|Implemented|WMI|
+|Guest State|Implemented|WMI|
+|DataStore OID|Implemented|WMI|
+|Host OID|Implemented|WMI|
+|IPs|Implemented|WMI|
+|MOID|Implemented|WMI|
+|Memory|Implemented|WMI|
+|Name|Implemented|WMI|
+|OID|Implemented|WMI|
+|OS|Implemented|WMI|
+|Power State|Implemented|WMI|
+|State Change Time|Implemented|WMI|
+|Processors|Implemented|WMI|
+|Provisioned Capacity|Implemented|WMI|
+|Used Capacity|Implemented|WMI|
+|===
+
+
+==== VirtualMachine Disk
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|OID|Implemented|WMI|
+|VirtualDisk OID|Implemented|WMI|
+|VirtualMachine OID|Implemented|WMI|
+|===
+
+
+==== Host
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Host Cpu Count|Implemented|WMI|
+|Host Cpu Speed|Implemented|WMI|
+|Host Domain|Implemented|WMI|
+|Host Installed Memory|Implemented|WMI|
+|Host Model|Implemented|WMI|
+|NIC count|Implemented|WMI|
+|NIC speed|Implemented|WMI|
+|IPs|Implemented|WMI|
+|Manufacturer|Implemented|WMI|
+|Name|Implemented|WMI|
+|OID|Implemented|WMI|
+|Platform Type|Implemented|WMI|
+|===
+
+
+==== ISCSI Node
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Host Aliases|Implemented|WMI|
+|Node Name|Implemented|WMI|
+|OID|Implemented|WMI|
+|Type|Gap|WMI|
+|===
+
+
+==== Info
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|DataSource Name|Implemented|WMI|Info
+|Date|Implemented|WMI|
+|Originator ID|Implemented|WMI|
+|===
+
+
+=== Performance
+
+==== DataStore
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Key|Implemented|WS-Management|
+|Server ID|Implemented|WS-Management|
+|Total Capacity|Implemented|WS-Management|
+|Capacity Provisioned|Implemented|WS-Management|
+|Used Capacity|Implemented|WS-Management|
+|Capacity Used Ratio|Implemented|WS-Management|
+|Over Commit Capacity Ratio|Implemented|WS-Management|Reported as a time series
+|===
+
+
+==== Data Store
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Capacity Provisioned|Implemented|WS-Management|
+|Total Capacity|Implemented|WS-Management|
+|Used Capacity|Implemented|WS-Management|
+|Over Commit Capacity Ratio|Implemented|WS-Management|Reported as a time series
+|Capacity Used Ratio|Implemented|WS-Management|
+|===
+
+
+==== Host
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Total CPU Utilization|Implemented|WS-Management|
+|IOPs Read|Implemented|WS-Management|Number of read IOPs on the disk
+|diskIops.total|Implemented|WS-Management|
+|Disk IOPs write|Implemented|WS-Management|
+|Latency Read|Implemented|WS-Management|
+|Latency Total|Implemented|WS-Management|
+|Latency Write|Implemented|WS-Management|
+|Disk Throughput Read|Implemented|WS-Management|
+|Throughput Read|Implemented|WS-Management|total disk throughput read
+|Disk Throughput Write|Implemented|WS-Management|
+|IP Throughput Read|Implemented|WS-Management|
+|Throughput total|Implemented|WS-Management|IP throughput total
+|ipThroughput.write|Implemented|WS-Management|
+|Total Memory Utilization|Implemented|WS-Management|
+|===
+
+
+==== Host
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Total CPU Utilization|Implemented|WS-Management|
+|IOPs Read|Implemented|WS-Management|Number of read IOPs on the disk
+|diskIops.total|Implemented|WS-Management|
+|Disk IOPs write|Implemented|WS-Management|
+|Latency Read|Implemented|WS-Management|
+|Latency Total|Implemented|WS-Management|
+|Latency Write|Implemented|WS-Management|
+|Disk Throughput Read|Implemented|WS-Management|
+|Throughput Read|Implemented|WS-Management|total disk throughput read
+|Disk Throughput Write|Implemented|WS-Management|
+|IP Throughput Read|Implemented|WS-Management|
+|Throughput total|Implemented|WS-Management|IP throughput total
+|ipThroughput.write|Implemented|WS-Management|
+|Key|Implemented|WS-Management|
+|Total Memory Utilization|Implemented|WS-Management|
+|Server ID|Implemented|WS-Management|
+|===
+
+
+==== Virtual Disk
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Total Capacity|Implemented|WS-Management|
+|Used Capacity|Implemented|WS-Management|
+|Capacity Used Ratio|Implemented|WS-Management|
+|IOPs Read|Implemented|WS-Management|Number of read IOPs on the disk
+|IOPs Total|Implemented|WS-Management|
+|IOPs Write|Implemented|WS-Management|
+|Latency Total|Implemented|WS-Management|
+|Throughput Read|Implemented|WS-Management|
+|Throughput Total|Implemented|WS-Management|Average disk total rate (read and write across all disks) in MB/s
+|Throughput Write|Implemented|WS-Management|
+|===
+
+
+==== vm
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Total Capacity|Implemented|WS-Management|
+|Used Capacity|Implemented|WS-Management|
+|Capacity Used Ratio|Implemented|WS-Management|
+|Total CPU Utilization|Implemented|WS-Management|
+|IOPs Read|Implemented|WS-Management|Number of read IOPs on the disk
+|diskIops.total|Implemented|WS-Management|
+|Disk IOPs write|Implemented|WS-Management|
+|Latency Total|Implemented|WS-Management|
+|Disk Throughput Read|Implemented|WS-Management|
+|Throughput Read|Implemented|WS-Management|total disk throughput read
+|Disk Throughput Write|Implemented|WS-Management|
+|IP Throughput Read|Implemented|WS-Management|
+|Throughput total|Implemented|WS-Management|IP throughput total
+|ipThroughput.write|Implemented|WS-Management|
+|===
+
+
+==== VM
+[cols="25,25,25,25", options="header"]
+|===
+^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information
+
+|Total Capacity|Implemented|WS-Management|
+|Used Capacity|Implemented|WS-Management|
+|Capacity Used Ratio|Implemented|WS-Management|
+|Key|Implemented|WS-Management|
+|Server ID|Implemented|WS-Management|
+|===
+
+
+==== Management APIs used by this data collector:
+
+|===
+^|API ^|Protocol Used ^|Transport layer protocol used ^|Incoming ports used ^|Outgoing ports used ^|Supports authentication ^|Requires only 'Read-only' credentials ^|Supports Encryption ^|Firewall friendly (static ports) 
+
+|PowerShell
+|WS-Management
+|HTTP
+|5985
+|
+|true
+|false
+|false
+|true
+
+|WMI
+|WMI
+|WMI
+|135
+|
+|true
+|false
+|true
+|true
+
