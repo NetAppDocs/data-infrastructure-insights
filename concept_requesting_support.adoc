@@ -2,12 +2,11 @@
 sidebar: sidebar
 permalink: concept_requesting_support.html
 summary: You can view knowledgebase articles, connect with the NetApp community, view videos, or open a ticket to request support.
-keywords: support, knowledgebase, documentation, community, chat, videos, help, contact, intercom
+keywords: support, knowledgebase, documentation, community, videos, help, contact
 ---
 
 = Requesting Support
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
@@ -16,12 +15,11 @@ keywords: support, knowledgebase, documentation, community, chat, videos, help, 
 [.lead]
 You can access available support options in Data Infrastructure Insights by selecting *Help > Support*. 
 
-
-image:SupportPageWithLearningCenter.png[Support page]
+image:SupportPageExample.png[Support page, width=600]
 
 == Activating support entitlement
 
-Data Infrastructure Insights offers self-service and email support when running in trial mode. Once you have subscribed to the service, it is strongly recommended that you activate support entitlement. Activating support entitlement enables you to access technical support over the online chat, the web ticketing system, and the phone. The default support mode is self-service until registration is completed. See <<obtaining-support-information,details>> below.
+Data Infrastructure Insights offers self-service and email support when running in trial mode. Once you have subscribed to the service, it is strongly recommended that you activate support entitlement. Activating support entitlement enables you to access technical support via the web ticketing system and phone. The default support mode is self-service until registration is completed. See <<obtaining-support-information,details>> below.
 
 During the initial subscription process, your Data Infrastructure Insights instance will generate a 20-digit NetApp serial number starting with "950". This NetApp serial number represents the Data Infrastructure Insights subscription associated with your account. You must register the NetApp serial number to activate support entitlement. We offer two options for support registration: 
 
@@ -62,7 +60,7 @@ image:SupportPage_SN_Section-NA.png[SN_Screen]
 
 . If no errors occur, user will be directed to a “Registration Submitted Successfully” page. The email address associated with the NSS SSO username used for registration will receive an email within a few hours stating “your product is now eligible for support”. 
 
-. As a new NetApp customer, you will also need to create a NetApp Support Site (NSS) user account for future registrations and access to support portal for technical support chat and web ticketing. This link is located at https://mysupport.netapp.com/eservice/public/now.do. You can provide your newly registered Data Infrastructure Insights serial number to expedite the process.
+. As a new NetApp customer, you will also need to create a NetApp Support Site (NSS) user account for future registrations and access to support portal for technical support and web ticketing. This link is located at https://mysupport.netapp.com/eservice/public/now.do. You can provide your newly registered Data Infrastructure Insights serial number to expedite the process.
 
 . This is a one-time registration for the Data Infrastructure Insights NetApp serial number. 
 
@@ -75,7 +73,7 @@ NetApp provides support for Data Infrastructure Insights in a variety of ways. E
 
 These support options are available in Trial mode and are available for free 24x7:
 
-* *https://kb.netapp.com/Cloud/BlueXP/DII[KnowledgeBase]*
+* *https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs[KnowledgeBase]*
 +
 Clicking the links in this section takes you to the NetApp Knowledgebase, where you can search through relevant articles, how-to's, and more.
 
@@ -103,10 +101,8 @@ You can request support by any of the following methods. You must have an active
 
 * link:https://www.netapp.com/us/contact-us/support.aspx[*Phone*]
 * link:https://mysupport.netapp.com/portal?_nfpb=true&_st=initialPage=true&_pageLabel=submitcase[*Support Ticket*]
-* *Chat* - You will be connected with NetApp support personnel for assistance (weekdays only). Chat is available in the *Help > Live Chat* menu option in the upper right of any Data Infrastructure Insights screen.
 
-
-You can also request sales support by clicking on the link:https://bluexp.netapp.com/contact-cds[*Contact Sales*] link.
+You can also request sales support by clicking on the *Contact Sales* link.
 
 Your Data Infrastructure Insights serial number is visible within the service from the *Help > Support* menu. If you are experiencing issues accessing the service and have registered a serial number with NetApp previously, you can also view your list of Data Infrastructure Insights serial numbers from the NetApp Support Site as follows:
 
