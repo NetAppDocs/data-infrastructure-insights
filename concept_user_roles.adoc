@@ -40,7 +40,7 @@ You use an account that has Administrator privileges to create or modify user ac
 |Same as Administrator
 |Same as Administrator
 |Same as Administrator
-|Same as Administrator, as well as manage SSO Authentication and Identity Federation configuration. Can also assign additional owners. Can also assign additional owners and add clients on the Managed Service Provider (MSP) master tenant."
+|Same as Administrator, as well as manage SSO Authentication and Identity Federation configuration. Can also assign additional owners. Can also assign additional owners and add clients on the Managed Service Provider (MSP) master tenant.
 
 |Administrator	
 |Can perform all Observability functions, as well as management of data collectors. 
