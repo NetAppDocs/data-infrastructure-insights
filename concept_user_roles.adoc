@@ -30,30 +30,17 @@ Data Infrastructure Insights provides up to four user account roles: Account Own
 
 You use an account that has Administrator privileges to create or modify user accounts. Each user account is assigned a role for each Data Infrastructure Insights feature from the following permission levels.
 
-////
-* *Guest* can view asset pages, dashboards, and queries, and run queries.
-* *User* can perform all guest-level privileges as well as create, modify, or delete dashboards, queries, annotations, annotation rules, and applications.
-* *Administrator* and *Account Owner* can perform all functions, as well as create, modify and delete policies, import dashboards, and manage all users and data collectors.
-////
-
-
-
 |===
 |Role	|Observability |Workload Security |Reporting |Admin
 
 //|Account Owner	
 //4+<|Can modify subscriptions, view billing and usage information, and perform all Administrator functions for Observability, Security, and Reporting. Can perform all Admin functions including API management, view audit, set notification recipient lists, and invite and manage users as well as manage SSO Authentication and Identity Federation configuration. 
 
-//The first Account Owner is created when you register for Data Infrastructure Insights.
-
-//It is strongly recommended to have at least two Account Owners for each Data Infrastructure Insights environment.
-
-
 |Account Owner
 |Same as Administrator
 |Same as Administrator
 |Same as Administrator
-|Same as Administrator, as well as manage SSO Authentication and Identity Federation configuration. Can also assign additional owners.
+|Same as Administrator, as well as manage SSO Authentication and Identity Federation configuration. Can also assign additional owners. Can also assign additional owners and add clients on the Managed Service Provider (MSP) master tenant."
 
 |Administrator	
 |Can perform all Observability functions, as well as management of data collectors. 
