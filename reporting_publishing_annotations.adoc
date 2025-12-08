@@ -1,0 +1,64 @@
+---
+sidebar: sidebar
+permalink: reporting_publishing_annotations.html
+summary: Learn how to publish and unpublish annotations for use in reports.
+keywords: reporting, annotations, publish, unpublish, data warehouse, dwh
+---
+
+== Publishing and Unpublishing Annotations for Reporting
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+
+[.lead]
+Learn how to publish annotations for use in reports and the Data Warehouse, and how to properly unpublish annotations when they are no longer needed.
+
+== Publishing Annotations for Reporting
+
+After you have created annotations in Data Infrastructure Insights, you can publish them for use in Reporting.
+
+=== Steps to Publish Annotations
+
+. Navigate to the *Observability > Enrich > Annotations page and select the _Annotations for Reporting_ tab.
+. Locate the annotation you want to publish.
+. Select the annotation and select _Publish to Reports_.  You can also choose to Apply it to Historical Data, allowing the annotation to be used when running history reports. 
+. Once published, the annotation becomes available for use in Reporting.
+. Annotations are published for use in Reporting following the next ETL run. 
+
+[NOTE]
+====
+Any reports that reference the annotation will use the published values. If you modify an annotation after publishing, you may need to re-publish it in order for those changes to take effect in reports.
+====
+
+== Unpublishing Annotations for Reporting
+
+There may be times when you need to remove or unpublish annotations, so they are no longer used in Reporting. For example, an annotation may no longer be needed, or it may contain outdated information that should not appear in reports.
+
+=== Steps to Unpublish Annotations
+
+Before unpublishing an annotation, be aware that this action will impact any existing reports that use the annotation. Reports may require editing or professional services assistance to remove the annotation references.
+
+. In the Data Infrastructure Insights user interface, navigate to the _Annotations for Reporting_ tab.
+. Locate the annotation you want to unpublish.
+. For each object where the annotation is published, deselect the annotation.
+. Remove any queries or rules that still reference the annotation to ensure it is not marked as "in use."
+. Annotations are unpublished following the next ETL run. 
+. After the ETL completes, the annotation can be deleted if no longer needed.
+
+[IMPORTANT]
+====
+Annotations will continue to appear in the Data Warehouse until they are properly unpublished. Simply deleting an annotation from the Annotations page without unpublishing it first will leave stale data that may appear in existing reports. Follow the unpublishing steps above to ensure complete removal.
+====
+
+== Impact on Existing Reports
+
+Removing or unpublishing annotations may require modifications to existing reports that reference those annotations. Consider the following:
+
+* Reports that use the annotation as a filter or dimension will need to be updated.
+* If an annotation is removed without updating dependent reports, those reports may return errors or unexpected results.
+* Professional Services may be needed to assist with report remediation in complex scenarios.
+
+It is recommended to review all reports that depend on an annotation before unpublishing it.
