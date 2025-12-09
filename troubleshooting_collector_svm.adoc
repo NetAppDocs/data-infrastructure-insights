@@ -220,14 +220,13 @@ Steps to delete fpolicy configurations:
  fpolicy policy event delete -vserver <svmname> -event-name <event_list>
  fpolicy policy external-engine delete -vserver <svmname> -engine-name <engine_name>
 
-|After enabling Workload Security, ONTAP performance is impacted: Latency becomes sporadically high, IOPs become sporadically low.
-|While using ONTAP with Workload Security sometimes latency issues can be seen in ONTAP. There are a number of possible reasons for this as noted in the following: link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1372994[1372994], https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1415152[1415152], https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1438207[1438207], https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1479704[1479704], https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1354659[1354659]. All of these issues are fixed in ONTAP 9.13.1 and later; it is strongly recommended to use one of these later versions.
- 
 ****
 
-
-
-
+****
+*Problem:* After enabling Workload Security, ONTAP performance is impacted: Latency becomes sporadically high, IOPs become sporadically low.
+*Try this:* While using ONTAP with Workload Security sometimes latency issues can be seen in ONTAP. There are a number of possible reasons for this as noted in the following: link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1372994[1372994], https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1415152[1415152], https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1438207[1438207], https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1479704[1479704], https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1354659[1354659]. All of these issues are fixed in ONTAP 9.13.1 and later; it is strongly recommended to use one of these later versions.
+ 
+****
 
 
 ****
