@@ -43,10 +43,10 @@ Before unpublishing an annotation, be aware that this action will impact any exi
 
 . In the Data Infrastructure Insights user interface, navigate to the _Annotations for Reporting_ tab.
 . Locate the annotation you want to unpublish.
-. For each object where the annotation is published, deselect the annotation.
+. For each object where the annotation is published, deselect the annotation and select _Save_.
 . Remove any queries or rules that still reference the annotation to ensure it is not marked as "in use."
 . Annotations are unpublished following the next ETL run. 
-. After the ETL completes, the annotation can be deleted if no longer needed.
+. After the ETL completes, the annotation can be deleted from the list of annotations, if no longer needed on the tenant side.
 
 [IMPORTANT]
 ====
