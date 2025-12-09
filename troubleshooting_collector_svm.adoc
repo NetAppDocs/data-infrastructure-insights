@@ -272,5 +272,11 @@ Restart the collector once the permissions are set.
 
 ****
 
+****
+*Problem:* Collector is in Error state with the message:
+Connector is in error state. Service name: audit. Reason for failure: Failed to configure persistent store on SVM <SVM Name>. Reason: Unable to find a suitable aggregate for volume "<volumeName>" in SVM "<SVM Name>". Reason: Performance information for aggregate "<aggregateName>" is currently not available. Wait a few minutes and try the command again.
+
+*Try this:* Wait a few minutes and then restart the Collector.
+****
 
 If you are still experiencing problems, reach out to the support links mentioned in the *Help > Support* page.
