@@ -42,7 +42,9 @@ If the Agent was installed in the Agent box prior to 4 March 2021, run the follo
  sysctl -p
 
 Restart the collector from the UI after resizing.
+
 {empty}
+
 ****
 
 
