@@ -26,6 +26,7 @@ image:CS_Data_Collector_Error.png[Workload Security Collector Error More Detail 
 Known problems and their resolutions are described below.
 
 ****
+
 *Problem:* Data Collector runs for some time and stops after a random time, failing with: "Error message: Connector is in error state. Service name: audit. Reason for failure: External fpolicy server overloaded."
 
 *Try This:*
@@ -173,6 +174,7 @@ Check if the fpolicy policy named with prefix “cloudsecure_” has been set an
 
 ****
 
+
 ****
 
 *Problem:* SVM Data Collector shows error message as "fpolicy.server.connectError: Node failed to establish a connection with the FPolicy server "12.195.15.146" ( reason: "Select Timed out")"
@@ -193,6 +195,7 @@ link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-nm
 *Try this:* Ensure there is an operational interface (having role as data and data protocol as CIFS/NFS.
 
 ****
+
 
 ****
 
