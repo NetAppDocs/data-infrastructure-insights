@@ -226,18 +226,9 @@ Steps to delete fpolicy configurations:
 ****
 
 
-****
-*Problem:* Data collector is in error, shows this error message.
-“Error: Connector is in error state. Service name: audit. Reason for failure: Failed to configure policy on SVM svm_test. Reason: Missing value for zapi field: events. “
-*Try this:* 
 
-. Start with a new SVM with only NFS service configured.
-. Add an ONTAP SVM data collector in Workload Security. CIFS is configured as an allowed protocol for the SVM while adding the ONTAP SVM Data Collector in Workload Security.
-. Wait until the Data collector in Workload Security shows an error.
-. Since the CIFS server is NOT configured on the SVM, this error as shown in the left is shown by Workload Security.
-. Edit the ONTAP SVM data collector and un-check CIFs as allowed protocol. Save the data collector. It will start running with only NFS protocol enabled.
 
-****
+
 
 ****
 *Problem:* Data Collector shows the error message:
@@ -272,11 +263,6 @@ Restart the collector once the permissions are set.
 
 ****
 
-****
-*Problem:* Collector is in Error state with the message:
-Connector is in error state. Service name: audit. Reason for failure: Failed to configure persistent store on SVM <SVM Name>. Reason: Unable to find a suitable aggregate for volume "<volumeName>" in SVM "<SVM Name>". Reason: Performance information for aggregate "<aggregateName>" is currently not available. Wait a few minutes and try the command again.
 
-*Try this:* Wait a few minutes and then restart the Collector.
-****
 
 If you are still experiencing problems, reach out to the support links mentioned in the *Help > Support* page.
