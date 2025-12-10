@@ -16,6 +16,29 @@ keywords: features
 [.lead]
 NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in Data Infrastructure Insights (formerly Cloud Insights).
 
+
+== November 2025
+
+=== Set Your Personalized Home Page
+
+Streamline your daily monitoring workflow by setting _any_ Data Infrastructure Insights page as your personalized home page. Each user can select a different home page to focus on what's important to them: a critical dashboard, alerts, infrastructure health, workload security, or more. 
+
+image:home_page_set.png[setting a home page, width=300]
+
+
+=== Stay Organized with Automatic Dashboard Grouping
+
+Transform your dashboard experience with intelligent grouping that automatically organizes imported Gallery dashboards into logical categories. The new grouping feature makes importing dashboards a snap and places each dashboard in the appropriate group based on its function and relevance to your environment. 
+
+image:dashboard_gallery_groups.png[gallery groups during import, width=500]
+
+
+
+
+
+
+''''
+
 == October 2025
 
 
