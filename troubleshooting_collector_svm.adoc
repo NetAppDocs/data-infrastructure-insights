@@ -1,6 +1,24 @@
 ---
 sidebar: sidebar
-permalink: troubleshooting_collector_svm.html
+permalink: troubleshRestart the collector from the UI after resizing.
+
+{empty}
+
+''''
+
+*Problem:* Collector reports Error Message: "No Check if the fpolicy policy named link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-nmg%2FGUID-969851BB-4302-4645-8DAC-1B059D81C5B2.html[Check firewall commands] on the ONTAP side.
+
+{empty}
+
+''''
+
+*Problem:* Error Message: "Connector is in error state. Service name:audit. Reason for failure: No valid data interface (role: data,data protocols: NFS or CIFS or both, status: up) found on the SVM."x "cloudsecure_" has been set and status is "on". If not set, then most likely the Agent is unable to execute the commands in the SVM. Please ensure all the prerequisites as described in the beginning of the page have been followed.
+
+{empty}
+
+''''
+
+*Problem:* SVM Data Collector is in error state and Error message is "Agent failed to connect to the collector"ddress found on the connector that can reach the data interfaces of the SVM".lector_svm.html
 keywords:  data collector, ONTAP, NetApp, SVM, cloud ontap, firewall
 summary: Troubleshooting Workload Security data collectors
 ---
@@ -25,7 +43,7 @@ image:CS_Data_Collector_Error.png[Workload Security Collector Error More Detail 
 
 Known problems and their resolutions are described below.
 
-****
+''''
 
 *Problem:* Data Collector runs for some time and stops after a random time, failing with: "Error message: Connector is in error state. Service name: audit. Reason for failure: External fpolicy server overloaded."
 *Try This:*
@@ -89,10 +107,7 @@ If yes, create an SVM Mgmt Only Lif and try connecting via this SVM management o
 
 {empty}
 
-****
-
-
-****
+''''
 
 *Problem:* Message: "Failed to determine ONTAP type for [hostname: <IP Address>. Reason: Connection error to Storage System <IP Address>: Host is unreachable (Host unreachable)"
 *Try this:* 
@@ -102,10 +117,7 @@ If yes, create an SVM Mgmt Only Lif and try connecting via this SVM management o
 
 {empty}
 
-****
-
-
-****
+''''
 
 *Problem:* Error Message: "Connector is in error state. Service.name: audit. Reason for failure: External fpolicy server terminated."
 *Try this:*
@@ -144,10 +156,7 @@ To prevent this, configure each SVM on a single environment.
 
 {empty}
 
-****
-
-
-****
+''''
 
 *Problem:* No events seen in activity page.
 *Try this:*
@@ -183,10 +192,7 @@ Check if the fpolicy policy named with prefix “cloudsecure_” has been set an
 
 {empty}
 
-****
-
-
-****
+''''
 
 *Problem:* SVM Data Collector shows error message as "fpolicy.server.connectError: Node failed to establish a connection with the FPolicy server "12.195.15.146" ( reason: "Select Timed out")"
 *Try this:* Firewall is enabled in SVM/Cluster. So fpolicy engine is unable to connect to fpolicy server.
@@ -209,10 +215,7 @@ link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-nm
 
 {empty}
 
-****
-
-
-****
+''''
 
 *Problem:* The data collector goes into Error state and then goes into RUNNING state after some time, then back to Error again. This cycle repeats.
 *Try this:* This typically happens in the following scenario:
@@ -224,9 +227,7 @@ link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-nm
 
 {empty}
 
-****
-
-****
+''''
 
 *Problem:* Connector is in error state. Service name: audit. Reason for failure: Failed to configure (policy on SVM svmname. Reason: Invalid value specified for 'shares-to-include' element within 'fpolicy.policy.scope-modify: "Federal'
 *Try this:* *The share names need to be given without any quotes. Edit the ONTAP SVM DSC configuration to correct the share names.
@@ -235,10 +236,7 @@ _Include and exclude shares_ is not intended for a long list of share names. Use
 
 {empty}
 
-****
-
-
-****
+''''
 
 *Problem:* There are existing fpolicies in the Cluster which are unused. What should be done with those prior to installation of Workload Security?
 *Try this:* It is recommended to delete all existing unused fpolicy settings even if they are in disconnected state. Workload Security will create fpolicy with the prefix "cloudsecure_". All other unused fpolicy configurations can be deleted.
@@ -257,20 +255,14 @@ Steps to delete fpolicy configurations:
 
 {empty}
 
-****
-
-
-****
+''''
 
 *Problem:* After enabling Workload Security, ONTAP performance is impacted: Latency becomes sporadically high, IOPs become sporadically low.
 *Try this:* While using ONTAP with Workload Security sometimes latency issues can be seen in ONTAP. There are a number of possible reasons for this as noted in the following: link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1372994[1372994], https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1415152[1415152], https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1438207[1438207], https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1479704[1479704], https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1354659[1354659]. All of these issues are fixed in ONTAP 9.13.1 and later; it is strongly recommended to use one of these later versions.
 
 {empty}
 
-****
-
-
-****
+''''
 
 *Problem:* Data Collector shows the error message:
 “Error: Failed to determine the health of the collector within 2 retries, try restarting the collector again (Error Code: AGENT008)”.
@@ -289,20 +281,14 @@ Look into the sizing guide on link:concept_cs_event_rate_checker.html[this page]
 
 {empty}
 
-****
-
-
-****
+''''
 
 *Problem:* The Data Collector is erroring out when SVM mode is selected.
 *Try this:* While connecting in SVM mode, If cluster management IP is used to connect instead of SVM management IP, then the connection will error out. Make sure that the correct SVM IP is used.
 
 {empty}
 
-****
-
-
-****
+''''
 
 *Problem:* Data collector shows an error message when Access Denied feature is enabled:
 "Connector is in error state. Service name: audit. Reason for failure: Failed to configure fpolicy on SVM test_svm. Reason: User is not authorized."
@@ -312,10 +298,7 @@ Restart the collector once the permissions are set.
 
 {empty}
 
-****
-
-
-****
+''''
 
 *Problem:* Collector is in Error state with the message:
 Connector is in error state. Service name: audit. Reason for failure: Failed to configure persistent store on SVM <SVM Name>. Reason: Unable to find a suitable aggregate for volume "<volumeName>" in SVM "<SVM Name>". Reason: Performance information for aggregate "<aggregateName>" is currently not available. Wait a few minutes and try the command again.
@@ -324,6 +307,7 @@ Connector is in error state. Service name: audit. Reason for failure: Failed to 
 
 {enpty}
 
-****
+''''
+
 
 If you are still experiencing problems, reach out to the support links mentioned in the *Help > Support* page.
