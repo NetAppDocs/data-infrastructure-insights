@@ -86,7 +86,9 @@ If yes, create an SVM Mgmt Only Lif and try connecting via this SVM management o
 . If it is still not working, please consult the networking team to make sure that no external firewall is blocking the connection from ONTAP to the Agent box.
 
 . If none of the above solves the issue, open a case with link:concept_requesting_support.html[Netapp Support] for further assistance.
+
 {empty}
+
 ****
 
 
@@ -97,7 +99,9 @@ If yes, create an SVM Mgmt Only Lif and try connecting via this SVM management o
 
 . Verify that the correct SVM IP Management address or Cluster Management IP has been provided.
 . SSH to the SVM or the Cluster to which you are intending to connect. Once you are connected ensure that the SVM or the Cluster name is correct.
+
 {empty}
+
 ****
 
 
@@ -137,7 +141,9 @@ Basically, in a tenant, 1 SVM should be added only once, via 1 data collector. 1
 To prevent this, configure each SVM on a single environment.
 
 . This error may also occur if service policies are not configured correctly. With ONTAP 9.8 or later, in order to connect to the Data Source Collector, the data-fpolicy-client service is required along with the data service data-nfs, and/or data-cifs. Additionally, the data-fpolicy-client service must be associated with the data lif(s) for the monitored SVM.
+
 {empty}
+
 ****
 
 
@@ -159,7 +165,9 @@ Please ensure that there are no errors related to fpolicy.
  <SVM>fpolicy show
 +
 Check if the fpolicy policy named with prefix “cloudsecure_” has been set and status is “on”. If not set, then most likely the Agent is unable to execute the commands in the SVM. Please ensure all the prerequisites as described in the beginning of the page have been followed.
+
 {empty}
+
 ****
 
 
@@ -172,7 +180,9 @@ Check if the fpolicy policy named with prefix “cloudsecure_” has been set an
 . Check how many Data Source collectors are connected to the Agent.
 . Also check the data flow rate in the “All Activity” page in the UI.
 . If the number of activities per second is significantly high, install another Agent and move some of the Data Source Collectors to the new Agent.
+
 {empty}
+
 ****
 
 
@@ -186,7 +196,9 @@ CLIs in ONTAP which can be used to get more information are:
  event log show -source fpolicy -fields event,action,description which shows more details.
 
 link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-nmg%2FGUID-969851BB-4302-4645-8DAC-1B059D81C5B2.html[Check firewall commands] on the ONTAP side.
+
 {empty}
+
 ****
 
 
@@ -194,7 +206,9 @@ link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-nm
 
 *Problem:* Error Message: “Connector is in error state. Service name:audit. Reason for failure: No valid data interface (role: data,data protocols: NFS or CIFS or both, status: up) found on the SVM.”
 *Try this:* Ensure there is an operational interface (having role as data and data protocol as CIFS/NFS.
+
 {empty}
+
 ****
 
 
@@ -207,7 +221,9 @@ link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-nm
 . The data collectors which show this kind of behavior will have 1 SVM added to these data collectors. Meaning 2 or more data collectors are connected to 1 SVM.
 . Ensure 1 data collector connects to only 1 SVM.
 . Delete the other data collectors which are connected to the same SVM.
+
 {empty}
+
 ****
 
 ****
@@ -216,7 +232,9 @@ link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-nm
 *Try this:* *The share names need to be given without any quotes. Edit the ONTAP SVM DSC configuration to correct the share names.
 
 _Include and exclude shares_ is not intended for a long list of share names. Use filtering by volume instead if you have a large number of shares to include or exclude.
+
 {empty}
+
 ****
 
 
@@ -236,7 +254,9 @@ Steps to delete fpolicy configurations:
  fpolicy policy delete -vserver <svmname> -policy-name <policy_name>
  fpolicy policy event delete -vserver <svmname> -event-name <event_list>
  fpolicy policy external-engine delete -vserver <svmname> -engine-name <engine_name>
+
 {empty}
+
 ****
 
 
@@ -244,7 +264,9 @@ Steps to delete fpolicy configurations:
 
 *Problem:* After enabling Workload Security, ONTAP performance is impacted: Latency becomes sporadically high, IOPs become sporadically low.
 *Try this:* While using ONTAP with Workload Security sometimes latency issues can be seen in ONTAP. There are a number of possible reasons for this as noted in the following: link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1372994[1372994], https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1415152[1415152], https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1438207[1438207], https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1479704[1479704], https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1354659[1354659]. All of these issues are fixed in ONTAP 9.13.1 and later; it is strongly recommended to use one of these later versions.
+
 {empty}
+
 ****
 
 
@@ -264,7 +286,9 @@ Please check the number of Data Collectors which are added to the Agent in the m
 If it is more than 20, please increase the CPU and RAM capacity of the Agent machine.
 Once the CPU and RAM is increased, the DSCs will get into Initializing and then to Running state automatically.
 Look into the sizing guide on link:concept_cs_event_rate_checker.html[this page].
+
 {empty}
+
 ****
 
 
@@ -272,7 +296,9 @@ Look into the sizing guide on link:concept_cs_event_rate_checker.html[this page]
 
 *Problem:* The Data Collector is erroring out when SVM mode is selected.
 *Try this:* While connecting in SVM mode, If cluster management IP is used to connect instead of SVM management IP, then the connection will error out. Make sure that the correct SVM IP is used.
+
 {empty}
+
 ****
 
 
@@ -283,9 +309,21 @@ Look into the sizing guide on link:concept_cs_event_rate_checker.html[this page]
 *Try this:* The user might be missing the REST permissions needed for the Access Denied feature. Please follow the instructions on link:concept_ws_integration_with_ontap_access_denied.html[this page] to set the permissions.
  
 Restart the collector once the permissions are set.
+
 {empty}
+
 ****
 
 
+****
+
+*Problem:* Collector is in Error state with the message:
+Connector is in error state. Service name: audit. Reason for failure: Failed to configure persistent store on SVM <SVM Name>. Reason: Unable to find a suitable aggregate for volume "<volumeName>" in SVM "<SVM Name>". Reason: Performance information for aggregate "<aggregateName>" is currently not available. Wait a few minutes and try the command again.
+
+*Try this:*  Wait a few minutes and then restart the Collector.
+
+{enpty}
+
+****
 
 If you are still experiencing problems, reach out to the support links mentioned in the *Help > Support* page.
