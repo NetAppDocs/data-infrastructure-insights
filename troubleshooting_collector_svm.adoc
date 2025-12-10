@@ -1,24 +1,6 @@
 ---
 sidebar: sidebar
-permalink: troubleshRestart the collector from the UI after resizing.
-
-{empty}
-
-''''
-
-*Problem:* Collector reports Error Message: "No Check if the fpolicy policy named link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-nmg%2FGUID-969851BB-4302-4645-8DAC-1B059D81C5B2.html[Check firewall commands] on the ONTAP side.
-
-{empty}
-
-''''
-
-*Problem:* Error Message: "Connector is in error state. Service name:audit. Reason for failure: No valid data interface (role: data,data protocols: NFS or CIFS or both, status: up) found on the SVM."x "cloudsecure_" has been set and status is "on". If not set, then most likely the Agent is unable to execute the commands in the SVM. Please ensure all the prerequisites as described in the beginning of the page have been followed.
-
-{empty}
-
-''''
-
-*Problem:* SVM Data Collector is in error state and Error message is "Agent failed to connect to the collector"ddress found on the connector that can reach the data interfaces of the SVM".lector_svm.html
+permalink: troubleshooting_collector_svm.html
 keywords:  data collector, ONTAP, NetApp, SVM, cloud ontap, firewall
 summary: Troubleshooting Workload Security data collectors
 ---
