@@ -212,6 +212,8 @@ sidebar:
             url: /reporting_creating_custom_reports.html#reporting-data-models
           - title: Reporting Database API
             url: /reporting_querying_database.html
+          - title: Publishing Annotations to Reports
+            url: /reporting_publishing_annotations.html
           - title: Data Retention
             url: /reporting_data_retention.html
           - title: Schema Diagrams
