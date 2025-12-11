@@ -78,7 +78,7 @@ The simplest way to do this is to specify wildcard configuration in your proxy/f
 
 NOTE: The use of an asterisk (*) for wildcard is common, but your proxy/firewall configuration may use a different format. Check with your proxy documentation to ensure correct wildcard specification in your environment.
 
-More information on proxy configuration can be found in the NetApp link:https://kb.netapp.com/Cloud/BlueXP/DII/Where_is_the_proxy_information_saved_to_in_the_Cloud_Insights_Acquisition_Unit[Knowledgbase].
+More information on proxy configuration can be found in the NetApp link:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs/Where_is_the_proxy_information_saved_to_in_the_Cloud_Insights_Acquisition_Unit[Knowledgbase].
 
 ==== Viewing Proxy URLs
 
@@ -135,7 +135,7 @@ The simplest way to do this is to specify wildcard configuration in your proxy/f
 
 NOTE: The use of an asterisk (*) for wildcard is common, but your proxy/firewall configuration may use a different format. Check with your proxy documentation to ensure correct wildcard specification in your environment.
 
-More information on proxy configuration can be found in the NetApp link:https://kb.netapp.com/Cloud/BlueXP/DII/Where_is_the_proxy_information_saved_to_in_the_Cloud_Insights_Acquisition_Unit[Knowledgbase].
+More information on proxy configuration can be found in the NetApp link:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs/Where_is_the_proxy_information_saved_to_in_the_Cloud_Insights_Acquisition_Unit[Knowledgbase].
 
 
 

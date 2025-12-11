@@ -159,10 +159,6 @@ A Performance Metric has a description and type and contains a collection of per
 
 A Performance Summary has a description, unit, sample start time, sample end time, and a collection of summarized values (current, min, max, avg, etc.) calculated from a single performance counter over a time range (1 hour, 24 hours, 3 days, and so on). 
 
-// == Performance Data 
-
-//The Performance data JSON...
-
 image:API_Performance.png[API Performance Example]
 
 The resulting Performance Data dictionary has the following keys:
@@ -260,7 +256,7 @@ Note that these commands are using the default namespace "netapp-monitoring".  I
 Note: If you have the latest NetApp Kubernetes Monitoring Operator installed and using an API access token that is renewable, expiring tokens will automatically be replaced by new/refreshed API access tokens.  There is no need to perform the manual steps listed below.
 
 
-
+////
 * Edit the the NetApp Kubernetes Monitoring Operator.
 +
  kubectl -n netapp-monitoring edit agent netapp-ci-agent-monitoring-netapp
@@ -271,6 +267,13 @@ Note: If you have the latest NetApp Kubernetes Monitoring Operator installed and
  …
    output-sink:
    - api-key:<NEW_API_TOKEN>
+////
+
+
+* Create a new API token.
+* Follow the steps for link:task_config_telegraf_agent_k8s.html#manual-upgrades[Manual Upgrade], selecting the new API token.
+
+Note: Customers managing their NetApp Kubernetes Monitoring Operator with a configuration management tool, such as Kustomize, can follow the same steps to generate and download an updated set of YAMLs to push to their repository.
 
 
 ==== RHEL/CentOS and Debian/Ubuntu

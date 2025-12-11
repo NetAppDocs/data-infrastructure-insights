@@ -1,0 +1,258 @@
+---
+sidebar: sidebar
+permalink: task_dc_na_ontap_afx.html
+keywords: data collector, ontap, afx
+summary: ONTAP AFX Collector
+--- 
+
+= NetApp ONTAP AFX data collector
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+This data collector acquires inventory, EMS logs, and performance data from storage systems running ONTAP 9.16.0 and higher using REST API calls. 
+
+
+== Requirements
+
+The following are requirements to configure and use this data collector:
+
+* You must have access to a user account with the required level of access. Note that Admin permissions are required if creating a new REST user/role. 
+** Functionally, Data Infrastructure Insights primarily makes read requests, but some write permissions are required for Data Infrastructure Insights to register with the ONTAP array. See the _Note About Permissions_ immediately below.
+* ONTAP version 9.16.0 or higher.
+* Port requirements: 443
+
+
+== A Note About Permissions
+
+Since a number of Data Infrastructure Insights' ONTAP dashboards rely on advanced ONTAP counters, you should keep *Enable Advanced Counter Data Collection* enabled in the data collector Advanced Configuration section.
+
+To create a local account for Data Infrastructure Insights at the cluster level, log in to ONTAP with the Cluster management Administrator username/password, and execute the following commands on the ONTAP server:
+
+. Before you begin, you must be signed in to ONTAP with an _Administrator_ account, and _diagnostic-level commands_ must be enabled.
+
+. Retrieve the name of the vserver that is of type _admin_. You will using this name in subsequent commands.
+
+ vserver show -type admin
+
+. Create a role using the following commands:
+
+ security login rest-role create -role {role name} -api /api -access readonly
+ security login rest-role create -role {role name} -api /api/cluster/agents -access all
+ vserver services web access create -name spi -role {role name} -vserver {vserver name as retrieved above}
+ security login create -user-or-group-name {username} -application http -authentication-method password -role {role name}
+
+. Create the read-only user using the following command. Once you have executed the create command, you will be prompted to enter a password for this user.
+
+ security login create -username ci_user -application http -authentication-method password -role ci_readonly
+ 
+If AD/LDAP account is used, the command should be 
+
+ security login create -user-or-group-name DOMAIN\aduser/adgroup -application http -authentication-method domain -role ci_readonly
+ 
+The resulting role and user login will look something like the following. Your actual output may vary:
+
+
+
+----
+security login rest-role show -vserver <vserver name> -role restRole
+
+               Role                                    Access
+Vserver        Name            API                     Level
+----------     -------------   -------------------     ------
+<vserver name> restRole        /api                    readonly
+                               /api/cluster/agents     all
+2 entries were displayed.
+
+security login show -vserver <vserver name> -user-or-group-name restUser
+
+Vserver: <vserver name>
+                                                                 Second
+User/Group                 Authentication                 Acct   Authentication
+Name           Application Method        Role Name        Locked Method
+-------------- ----------- ------------- ---------------- ------ --------------
+restUser       http        password      restRole         no     none
+----
+
+
+== Migration
+
+To migrate from a previous ONTAP (ontapi) data collector to the newer ONTAP REST collector, do the following:
+
+. Add the REST Collector. It is recommended to enter information for a different user than the one configured for the previous collector. For example, use the user noted in the Permissions section above.
+. Pause the previous collector, so it doesn't continue to collect data.
+. Let the new REST collector acquire data for at least 30 minutes. Ignore any data during this time that does not appear "normal". 
+. After the rest period, you should see your data stabilize as the REST collector continues to to acquire.
+
+You can use this same process to return to the previous collector, should you wish.
+
+== Configuration 
+
+[cols=2*, options="header", cols"50,50"]
+|===
+|Field|Description
+|ONTAP management IP Address	|IP address or fully-qualified domain name of the NetApp cluster. Must be Cluster Management IP/FQDN.
+|ONTAP REST User Name	|User name for NetApp cluster
+|ONTAP REST Password	|Password for NetApp cluster
+|===
+
+
+== Advanced configuration
+
+[cols=2*, options="header", cols"50,50"]
+|===
+|Field|Description
+|Inventory Poll Interval (min)	|Default is 60 minutes.
+|Performance Poll Interval (sec)	|Default is 60 seconds.
+|Advanced Counter Data Collection	|Select this to include ONTAP Advanced Counter data in polls. Enabled by default.
+|Enable EMS Event Collection	|Select this to include ONTAP EMS log event data. Enabled by default.
+|EMS Poll Interval (sec)	|Default is 60 seconds.
+|===
+
+
+
+== Terminology
+
+Data Infrastructure Insights acquires inventory, logs and performance data from the ONTAP data collector. For each asset type acquired, the most common terminology used for the asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+
+[cols=2*, options="header", cols"50,50"]
+|===
+|Vendor/Model Term | Data Infrastructure Insights Term
+|Cluster |Storage 
+|Node |StorageNode 
+|Volume/FlexVol/FlexGroup |InternalVolume 
+|Qtree/FlexTree |Qtree ( type : Explixit/Default ) 
+|S3 Bucket |Qtree ( type: Bucket ) 
+|StoragePod/StorageAvailabilityZone |StoragePool 
+|Share |Share 
+|Quota |Quota 
+|SVM (Storage Virtual Machine) |Storage Virtual Machine 
+|===
+
+== ONTAP Data Management Terminology
+
+The following terms apply to objects or references that you might find on ONTAP Data Management storage asset landing pages. Many of these terms apply to other data collectors as well.
+
+=== Storage
+
+* Model – A comma-delimited list of the unique, discrete node model names within this cluster. If all the nodes in the clusters are the same model type, just one model name will appear.
+* Vendor – same Vendor name you would see if you were configuring a new data source.
+* Serial number – The array UUID
+* IP – generally will be the IP(s) or hostname(s) as configured in the data source.
+* Microcode version – firmware.
+* Raw Capacity – base 2 summation of all the physical disks in the system, regardless of their role.
+* Latency – a representation of what the host facing workloads are experiencing, across both reads and writes. Ideally, Data Infrastructure Insights is sourcing this value directly, but this is often not the case. In lieu of the array offering this up, Data Infrastructure Insights is generally performing an IOPs-weighted calculation derived from the individual internal volumes’ statistics.
+* Throughput – aggregated from internal volumes.
+Management – this may contain a hyperlink for the management interface of the device. Created programmatically by the Data Infrastructure Insights data source as part of inventory reporting.
+
+=== Storage Pool
+
+* Storage – what storage array this pool lives on. Mandatory.
+* Type – a descriptive value from a list of an enumerated list of possibilities. Most commonly will be “Aggregate” or “RAID Group””.
+* Node – if this storage array’s architecture is such that pools belong to a specific storage node, its name will be seen here as a hyperlink to its own landing page.
+* Uses Flash Pool – Yes/No value – does this SATA/SAS based pool have SSDs used for caching acceleration?
+* Redundancy – RAID level or protection scheme. RAID_DP is dual parity, RAID_TP is triple parity.
+* Capacity – the values here are the logical used, usable capacity and the logical total capacity, and the percentage used across these.
+* Over-committed capacity – If by using efficiency technologies you have allocated a sum total of volume or internal volume capacities larger than the logical capacity of the storage pool, the percentage value here will be greater than 0%.
+* Snapshot – snapshot capacities used and total, if your storage pool architecture dedicates part of its capacity to segments areas exclusively for snapshots. ONTAP in MetroCluster configurations are likely to exhibit this, while other ONTAP configurations are less so.
+* Utilization – a percentage value showing the highest disk busy percentage of any disk contributing capacity to this storage pool. Disk utilization does not necessarily have a strong correlation with array performance – utilization may be high due to disk rebuilds, deduplication activities, etc in the absence of host driven workloads. Also, many arrays’ replication implementations may drive disk utilization while not showing as internal volume or volume workload.
+* IOPS – the sum IOPs of all the disks contributing capacity to this storage pool.
+Throughput – the sum throughput of all the disks contributing capacity to this storage pool.
+
+=== Storage Node
+
+* Storage – what storage array this node is part of. Mandatory.
+* HA Partner – on platforms where a node will fail over to one and only one other node, it will generally be seen here.
+* State – health of the node. Only available when the array is healthy enough to be inventoried by a data source.
+* Model – model name of the node.
+* Version – version name of the device.
+* Serial number – The node serial number.
+* Memory – base 2 memory if available.
+* Utilization – On ONTAP, this is a controller stress index from a proprietary algorithm. With every performance poll, a number between 0 and 100% will be reported that is the higher of either WAFL disk contention, or average CPU utilization. If you observe sustained values > 50%, that is indicative of undersizing – potentially a controller/node not large enough or not enough spinning disks to absorb the write workload.
+* IOPS – Derived directly from ONTAP REST calls on the node object.
+* Latency – Derived directly from ONTAP REST calls on the node object.
+* Throughput – Derived directly from ONTAP REST calls on the node object.
+* Processors – CPU count.
+
+
+
+== ONTAP Power Metrics
+
+Several ONTAP models provide power metrics for Data Infrastructure Insights that can be used for monitoring or alerting. The lists of supported and unsupported models below are not comprehensive but should provide some guidance; in general, if a model is in the same family as one on the list, the support should be the same. 
+
+Supported Models:
+
+A200
+A220
+A250
+A300
+A320
+A400
+A700
+A700s
+A800
+A900
+C190
+FAS2240-4
+FAS2552
+FAS2650
+FAS2720
+FAS2750
+FAS8200
+FAS8300
+FAS8700
+FAS9000
+
+Unsupported Models:
+
+FAS2620
+FAS3250
+FAS3270
+FAS500f
+FAS6280
+FAS/AFF 8020
+FAS/AFF 8040
+FAS/AFF 8060
+FAS/AFF 8080
+
+
+
+
+== Troubleshooting
+Some things to try if you encounter problems with this data collector:
+
+[cols=2*, options="header", cols"50,50"]
+|===
+|Problem:|Try this:
+
+|When attempting to create an ONTAP REST data collector, an error like the following is seen:
+Configuration: 10.193.70.14: ONTAP rest API at 10.193.70.14 is not available: 10.193.70.14 failed to GET /api/cluster: 400 Bad Request
+|This is likely due to an oldeer ONTAP array) for example, ONTAP 9.6) which has no REST API capabilities. ONTAP 9.14.1 is the minimum ONTAP version supported by the ONTAP REST collector. "400 Bad Request" responses should be expected on pre-REST ONTAP releases.
+
+For ONTAP versions that do support REST but are not 9.14.1 or later, you may see the following simillar message: 
+Configuration: 10.193.98.84: ONTAP rest API at 10.193.98.84 is not available: 10.193.98.84: ONTAP rest API at 10.193.98.84 is available: cheryl5-cluster-2 9.10.1 a3cb3247-3d3c-11ee-8ff3-005056b364a7 but is not of minimum version 9.14.1.
+
+
+|I see empty or "0" metrics where the ONTAP ontapi collector shows data.
+|ONTAP REST does not report metrics that are used internally on the ONTAP system only. For example, system aggregates will not be collected by ONTAP REST, only SVM's of type "data" will be collected.
+
+Other examples of ONTAP REST metrics that may report zero or empty data:
+
+InternalVolumes: REST no longer reports vol0.
+Aggregates: REST no longer reports aggr0.
+Storage: most metrics are a rollup of the Internal Volume metrics, and will be impacted by the above.
+Storage Virtual Machines: REST no longer reports SVM's of type other than 'data' (e.g. 'cluster', 'mgmt', 'node').
+
+You may also notice a change in the appearance of graphs that do have data, due to the change in default performance polling period from 15 minutes to 5 minutes.  More frequent polling means more data points to plot.
+
+
+|===
+
+
+
+Additional information may be found from the link:concept_requesting_support.html[Support] page or in the link:reference_data_collector_support_matrix.html[Data Collector Support Matrix].
+
+

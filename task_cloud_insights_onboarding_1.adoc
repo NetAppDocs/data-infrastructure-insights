@@ -14,21 +14,21 @@ keywords: onboarding, new user
 
 [.lead]
 
-Before you can start working with Data Infrastructure Insights, you must sign up on the *NetApp BlueXP* portal. If you already have a NetApp BlueXP login, you can start a free trial of Data Infrastructure Insights with a few quick steps.
+Before you can start working with Data Infrastructure Insights, you must sign up on the *NetApp Console* portal. If you already have a NetApp Console login, you can start a free trial of Data Infrastructure Insights with a few quick steps.
 
-== Creating your NetApp BlueXP account
+== Creating your NetApp Console account
 
-To get started with NetApp's cloud services, go to link:https://bluexp.netapp.com/[*NetApp BlueXP*^] and click *Get Started*.
+To get started with NetApp's cloud services, go to link:https://console.netapp.com/[*NetApp Console*^] and click *Get Started*.
 
 * If you have not already signed up, select *Sign Up*
 * Enter a valid business email address and choose a password.
 * Enter your company name, and your full name.
 * Accept the terms and conditions and select *Continue*.
-* BlueXP will walk you through getting started.
+* Console will walk you through getting started.
 
-=== What if I already have a NetApp BlueXP login?
+=== What if I already have a NetApp Console login?
 
-Once you have a NetApp BlueXP account, simply choose *Log In* on the link:https://bluexp.netapp.com/[*NetApp BlueXP*^] portal page.
+Once you have a NetApp Console account, simply choose *Log In* on the link:https://console.netapp.com/[*NetApp Console*^] portal page.
 
 Enter your email address and password. You will then be taken to NetApp's cloud offerings page.
 
@@ -56,22 +56,22 @@ You can also open a browser directly to your Data Infrastructure Insights tenant
 
  \https://<tenant-prefix>.c01.cloudinsights.netapp.com/
 
-The URL will also be included in each user's invitation email for simple access and bookmarking. If the user is not already logged in to BlueXP, they will be prompted to log in.
+The URL will also be included in each user's invitation email for simple access and bookmarking. If the user is not already logged in to Console, they will be prompted to log in.
 
-NOTE: New users must still sign up for access to BlueXP before they can access their tenant URL.
+NOTE: New users must still sign up for access to Console before they can access their tenant URL.
 
 The first time you log in to a new tenant, you will be guided through setting up to link:task_getting_started_with_cloud_insights.html[*begin gathering data*].
 
 == Logging Out
 
 
-To log out of Data Infrastructure Insights, click your *User Name* and select *Log Out*. You will be taken back to the BlueXP sign in screen.
+To log out of Data Infrastructure Insights, click your *User Name* and select *Log Out*. You will be taken back to the Console sign in screen.
 
-NOTE: Logging out of Data Infrastructure Insights logs you out of BlueXP. You will also be logged out of other NetApp Cloud services that use the BlueXP sign-in.
+NOTE: Logging out of Data Infrastructure Insights logs you out of Console. You will also be logged out of other NetApp Cloud services that use the Console sign-in.
 
 
 === Inactivity Timeout
 
-By default, BlueXP will log a user out if there is no activity for six hours (360 minutes). Regardless of activity, users will be logged out after seven days. 
+By default, Console will log a user out if there is no activity for six hours (360 minutes). Regardless of activity, users will be logged out after seven days. 
 
 

@@ -7,7 +7,6 @@ keywords: annotate, annotation, rules
 
 = Creating annotation rules
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:

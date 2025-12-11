@@ -6,8 +6,7 @@ summary: How to create an annotation.
 ---
 
 = Using annotations
-:hardbreaks: AA
-
+:hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:

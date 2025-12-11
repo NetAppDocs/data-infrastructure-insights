@@ -25,6 +25,7 @@ The following are requirements to configure and use this data collector:
 ** Functionally, Data Infrastructure Insights primarily makes read requests, but some write permissions are required for Data Infrastructure Insights to register with the ONTAP array. See the _Note About Permissions_ immediately below.
 * ONTAP version 9.14.1 or higher.
 * Port requirements: 443
+* Note that Fpolicy metrics are not supported in the ONTAP REST collector (Workload Security data collectors use FPolicy servers, and FPolicy metrics allow you to monitor Workload Security data collection activity). To support Fpolicy metrics, use the link:task_dc_na_cdot.html[ONTAP Data Management] collector.
 
 == A Note About Permissions
 
