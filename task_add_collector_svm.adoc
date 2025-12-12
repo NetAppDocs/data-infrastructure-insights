@@ -13,7 +13,7 @@ summary: Adding Workload Security data collectors
 :imagesdir: ./media/
 
 [.lead]
-Workload Security uses data collectors to collect file and user access data from devices.
+The ONTAP SVM Data Collector enables Workload Security to monitor file and user access activities on NetApp ONTAP storage virtual machines (SVMs). This guide walks you through the configuration and management of the SVM data collector to provide comprehensive security monitoring of your ONTAP environment.
 
 == Before you begin
 
@@ -24,6 +24,8 @@ Workload Security uses data collectors to collect file and user access data from
 ** NFS versions up to and including NFS 4.1 (Note that NFS 4.1 is supported with  ONTAP 9.15 or later).
 
 ** Flexgroup is supported from ONTAP 9.4 and later versions
+** FlexCache is supported for NFS with ONTAP 9.7 and later versions. 
+** FlexCache is supported for SMB with ONTAP 9.14.1 and later versions. 
 ** ONTAP Select is supported
 
 * Only data type SVMs are supported. SVMs with infinite volumes are not supported.
@@ -34,18 +36,19 @@ Workload Security uses data collectors to collect file and user access data from
 
 * Make sure that you have a properly configured User Directory Connector, otherwise events will show encoded user names and not the actual name of the user (as stored in Active Directory) in the “Activity Forensics” page.
 
-* •	ONTAP Persistent Store is supported from 9.14.1.
+* ONTAP Persistent Store is supported from 9.14.1.
 
 * For optimal performance, you should configure the FPolicy server to be on the same subnet as the storage system.
 
-
+[[fpolicy-best-practices]]
+* For comprehensive best practices and recommendations regarding Workload Security FPolicy configuration, see the link:https://kb.netapp.com/on-prem/ontap/da/NAS/NAS-KBs/DII_Storage_Workload_Security__Fpolicy_Best_Practice_and_Recommendations[KB Article on FPolicy Best Practices^].
 
 * You must add an SVM using one of the following two methods:
 ** By Using Cluster IP, SVM name, and Cluster Management Username and Password. *_This is the recommended method._*
 *** SVM name must be exactly as is shown in ONTAP and is case-sensitive.
 ** By Using SVM Vserver Management IP, Username, and Password
 ** If you are not able or not willing to use the full Administrator Cluster/SVM Management Username and Password, you can create a custom user with lesser privileges as mentioned in the <<a-note-about-permissions,“A note about permissions”>> section below. This custom user can be created for either SVM or Cluster access.
-*** o	You can also use an AD user with a role that has at least the permissions of csrole as mentioned in “A note about permissions” section below. Also refer to the link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.pow-adm-auth-rbac%2FGUID-0DB65B04-71DB-43F4-9A0F-850C93C4896C.html[ONTAP documentation].
+*** You can also use an AD user with a role that has at least the permissions of csrole as mentioned in “A note about permissions” section below. Also refer to the link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.pow-adm-auth-rbac%2FGUID-0DB65B04-71DB-43F4-9A0F-850C93C4896C.html[ONTAP documentation].
 
 * Ensure the correct applications are set for the SVM by executing the following command:
 
@@ -114,6 +117,7 @@ Cluster level credentials are needed for this feature to work.
 
 If you are using cluster administration credentials, no new permissions are needed.
 
+
 If you are using a custom user (for example, _csuser_) with permissions given to the user, then follow the steps in link:cs_restrict_user_access.html[User Access Blocking] to give permissions to Workload Security to block user.
 
 
@@ -146,8 +150,6 @@ To create the new user, log in to ONTAP with the Cluster management Administrato
  security login create -user-or-group-name csuser -application ontapi -authmethod password -role csrole
  security login create -user-or-group-name csuser -application ssh -authmethod password -role csrole
  security login create -user-or-group-name csuser -application http -authmethod password -role csrole
-
-
 
 
 === Permissions when adding via *Vserver Management IP*:
@@ -258,22 +260,15 @@ When adding via SVM IP the options are:
 * In the Installed Data Collectors page, use the options menu on the right of each collector to edit the data collector. You can restart the data collector or edit data collector configuration attributes.
 
 
-
-
-
 == Recommended Configuration for MetroCluster
 
 The following is recommended for MetroCluster:
 
-1.	Connect two data collectors, one to the source SVM and another to the destination SVM.
-2.	The data collectors should be connected by _Cluster IP_.
-3.	At any moment of time, one data collector should be in running, another will be in error.
-+
-The current 'running' SVM's data collector will show as _Running_. The current 'stopped' SVM's
-data collector will show as _Error_.
-
-4.	Whenever there is a switchover, the state of the data collector will change from 'running' to 'error' and vice versa.
-5.	It will take up to two minutes for the data collector to move from Error state to Running state.
+1. Connect two data collectors, one to the source SVM and another to the destination SVM.
+2. The data collectors should be connected by _Cluster IP_.
+3. At any moment in time, the current 'running' SVM's data collector will show as _Running_. The current 'stopped' SVM's data collector will show as _Stopped_.
+4. Whenever there is a switchover, the state of the data collector will change from _Running_ to _Stopped_ and vice versa.
+5. It will take up to two minutes for the data collector to move from _Stopped_ state to _Running_ state.
 
 
 == Service Policy
@@ -361,7 +356,6 @@ Workload Security will process the request. On successful migration, the user wi
 Note: Any configuration changes previously made on the "Edit Collector" page will be remain applied when the collector is successfully migrated to the destination agent.
 
 image:ws_migrate_collector_to_another_agent.png[migrate a collector by choosing another agent]
-
 
 == Troubleshooting
 

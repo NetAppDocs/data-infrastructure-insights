@@ -12,13 +12,14 @@ summary:
 include::https://raw.githubusercontent.com/NetAppDocs/common/main/_include/common-legal-notices.adoc[]
 
 // Include the open source notice intro
-include:https://raw.githubusercontent.com/NetAppDocs/common/main/_include/open-source-notice-intro.adoc[]
+include::https://raw.githubusercontent.com/NetAppDocs/common/main/_include/open-source-notice-intro.adoc[]
 
 // Add required link(s)
 
-link:media/Data_Infrastructure_Insights-On-prem-Components-ReleaseNotice1.pdf[Notice for Data Infrastructure Insights (formerly Cloud Insights)]
 
-link:media/Data_Infrastructure_Insights_Workload_SecurityOn-prem_ComponentsNOTICE-1.pdf[Notice for Workload Security (formerly Cloud Secure)]
+link:media/DII_ON-PREM_Notice_Nov2025.pdf[Notice for Data Infrastructure Insights (formerly Cloud Insights), window=_blank]
+
+link:media/DII_WS_Notice_Nov2025.pdf[Notice for Workload Security (formerly Cloud Secure), window=_blank]
 
 
 
