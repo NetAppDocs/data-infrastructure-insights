@@ -17,9 +17,9 @@ include::https://raw.githubusercontent.com/NetAppDocs/common/main/_include/open-
 // Add required link(s)
 
 
-link:media/DII_Notice-Sept_2025.pdf[Notice for Data Infrastructure Insights (formerly Cloud Insights)]
+link:media/DII_ON-PREM_Notice_Nov2025.pdf[Notice for Data Infrastructure Insights (formerly Cloud Insights), window=_blank]
 
-link:media/WS_Notice-Sept_2025.pdf[Notice for Workload Security (formerly Cloud Secure)]
+link:media/DII_WS_Notice_Nov2025.pdf[Notice for Workload Security (formerly Cloud Secure), window=_blank]
 
 
 
