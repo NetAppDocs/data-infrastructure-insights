@@ -20,9 +20,9 @@ NetApp is continually improving and enhancing its products and services. Here ar
 
 
 
-=== Accelerate Team Problem-Solving with Shared Queries
+=== Control Query Access with Shared Queries
 
-Now queries you create can be shared with colleagues and teams to enable faster troubleshooting and consistent analysis across your organization. Boost team efficiency by reusing proven queries, eliminate errors from manual recreation, and establish standardized investigation workflows that help your team solve issues faster. Share queries in read-only Viewer mode for safe distribution or Edit mode for collaborative refinement. Shared queries can also be leveraged in Annotation Rules and duplicated for specialized use cases, enabling your team to respond to issues more quickly and make smarter decisions.
+Share queries you create with fine-grained permission controls. Choose read-only Viewer mode to prevent modifications or Edit mode to allow changes. Private queries are accessible by creators, while Shared queries can be leveraged in Annotation Rules or duplicated for specialized use cases, giving you complete control over how queries are used and modified across your organization.
 
 image:query_sharing_dialog.png[setting permissions on a query, width=300]
 
@@ -37,9 +37,8 @@ image:monitor_list_filters.png[New Monitor Filtering, width=500]
 
 === Cleaner dashboard visualizations
 
-Improved dashboard design helps you see what matters most. Enhanced visual clarity with drop shadow borders that separate widgets, removed separator lines to reduce clutter, and gridline removal in charts so you can focus on your data insights. These refinements create a cleaner, more intuitive dashboard experience that makes spotting trends and anomalies faster and easier.
+Improved dashboard design helps you see what matters most. Enhanced visual clarity with drop shadow borders that separate widgets and removed separator lines to reduce clutter so you can focus on your data insights. These refinements create a cleaner, more intuitive dashboard experience that makes spotting trends and anomalies faster and easier.
 
-image:[drop shadows on widgets]
 
 
 '''
