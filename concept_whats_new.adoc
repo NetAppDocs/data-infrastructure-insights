@@ -24,7 +24,7 @@ NetApp is continually improving and enhancing its products and services. Here ar
 
 Share queries you create with fine-grained permission controls. Choose read-only Viewer mode to prevent modifications or Edit mode to allow changes. Private queries are accessible by creators, while Shared queries can be leveraged in Annotation Rules or duplicated for specialized use cases, giving you complete control over how queries are used and modified across your organization.
 
-image:query_sharing_dialog.png[setting permissions on a query, width=300]
+image:query_sharing_dialog.png[setting permissions on a query, width=200]
 
 Additionally, users with _Guest_ role can now create and manage their own private queries. 
 
