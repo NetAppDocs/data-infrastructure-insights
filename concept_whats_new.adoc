@@ -18,11 +18,32 @@ NetApp is continually improving and enhancing its products and services. Here ar
 
 == December 2025
 
+
+
 === Accelerate Team Problem-Solving with Shared Queries
 
 Now queries you create can be shared with colleagues and teams to enable faster troubleshooting and consistent analysis across your organization. Boost team efficiency by reusing proven queries, eliminate errors from manual recreation, and establish standardized investigation workflows that help your team solve issues faster. Share queries in read-only Viewer mode for safe distribution or Edit mode for collaborative refinement. Shared queries can also be leveraged in Annotation Rules and duplicated for specialized use cases, enabling your team to respond to issues more quickly and make smarter decisions.
 
-image:query_sharing_dialog.png[setting permissions on a query]
+image:query_sharing_dialog.png[setting permissions on a query, width=300]
+
+Additionally, users with _Guest_ role can now create and manage their own private queries. 
+
+=== Better Filtering When Managing Monitors
+
+Filtering for Monitor lists and groups is improved to add wildcard support, multiple filters, include/exclude functionality, and more. 
+
+image:monitor_list_filters.png[New Monitor Filtering, width=500]
+
+
+=== Cleaner dashboard visualizations
+
+Improved dashboard design helps you see what matters most. Enhanced visual clarity with drop shadow borders that separate widgets, removed separator lines to reduce clutter, and gridline removal in charts so you can focus on your data insights. These refinements create a cleaner, more intuitive dashboard experience that makes spotting trends and anomalies faster and easier.
+
+image:[drop shadows on widgets]
+
+
+'''
+
 
 
 == November 2025
