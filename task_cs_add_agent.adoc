@@ -33,10 +33,10 @@ Resume: Adds fpolicies back to ONTAP.
 
 | Pin and Unpin
 | Unpin immediately fetches the latest version (if available) and upgrades the agent and collector. During this upgrade, fpolicies will disconnect and reconnect.
-This feature is designed for customers who want to control the timing of automatic upgrades.
+This feature is designed for customers who want to control the timing of automatic upgrades. See below for <<pinning-an-agent-at-the-current-version,pin/unpin instructions>>.
 
 | Recommended Approach
-| For large configurations, it is advisable to use Pin and Unpin rather than pausing collectors. There is no need to pause and resume while using unpin and unpin.
+| For large configurations, it is advisable to use Pin and Unpin rather than pausing collectors. There is no need to pause and resume while using pin and unpin.
 Customers can keep their agents and collectors pinned, and upon receiving an email notification about a new version, have a 30-day window to selectively upgrade agents one by one.
 This approach minimizes latency impact on fpolicies and provides greater control over the upgrade process.
 |===
@@ -128,6 +128,7 @@ Sample output:
  35000-55000/tcp
 
 
+[pinning-an-agent-at-the-current-version]
 == "Pinning" an Agent at the current version
 
 By default, Data Infrastructure Insights Workload Security updates agents automatically. Some customers may wish to pause automatic updating, which leaves an Agent at its current version until one of the following occurs:

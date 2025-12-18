@@ -37,9 +37,9 @@ Navigate to *Analysis and Control > Observability* to learn about Data Infrastru
 
 == Starting your Data Infrastructure Insights free trial
 
-If this is your first time logging in to Data Infrastructure Insights, under the Data Infrastructure Insights offering, click on *Start Free Trial*. Data Infrastructure Insights will walk you through creating your company's tenant, including selecting the region where you want your tenant to reside.
+If this is your first time logging in to Data Infrastructure Insights, read about everything Data Infrastructure Insights has to offer, and when you are _Ready to Get Started_, click on *Request Trial* and fill out your information. 
 
-image:trial_region_selector.png[Selecting the region in which to host your Data Infrastructure Insights tenant]
+As part of your trial tenant set up, you will choose the region in which to host your tenant, and whether you want your tenant on AWS or Azure.
 
 Once the creation of your tenant is complete, Use your Console credentials to log in and start your free, 30-day trial of Data Infrastructure Insights. During this trial you can explore the features that Data Infrastructure Insights has to offer. 
 
