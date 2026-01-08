@@ -70,12 +70,15 @@ sidebar:
             url: /concept_dashboards_overview.html
           - title: Features of Dashboards
             url: /concept_dashboard_features.html
-          - title: Sample Dashboards
+          - title: Managing Dashboard Access
+            url: /dashboard_access_management.html
+           - title: Dashboard Best Practices
+            url: /concept_dashboard_best_practices.html
+           - title: Sample Dashboards
             entries:
               - title: Virtual Machine Performance
                 url: /task_dashboard_example_VM_performance.html
-          - title: Dashboard Best Practices
-            url: /concept_dashboard_best_practices.html
+
 
       - title: Working with Queries
         entries:
