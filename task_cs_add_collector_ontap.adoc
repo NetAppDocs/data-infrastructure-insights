@@ -2,19 +2,18 @@
 sidebar: sidebar
 permalink: task_cs_add_collector_ontap.html
 keywords:  data collector, ONTAP, SVM
-summary: Adding data collectors
+summary: Configure NetApp ONTAP data collectors to monitor file access, user activity, and detect security threats across your SVM infrastructure.
 ---
 
 = Configuring the NetApp ONTAP Data Collector
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Workload Security uses data collectors to collect file and user access data from devices. The data is provided to Workload Security for analysis. 
+Enable comprehensive monitoring of your NetApp ONTAP storage by configuring data collectors that capture file and user access data for security threat detection. This guide provides step-by-step instructions to connect Workload Security agents to your SVMs and begin collecting data for real-time analysis. 
 
 
 .Before you begin

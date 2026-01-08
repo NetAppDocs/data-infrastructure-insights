@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: concept_cs_integration_with_ontap_arp.html
-summary: Workload Security integrates with ONTAP Autonomous Ransomware Protection to improve ransomware detection.
+summary: Enhance attack detection by integrating Workload Security with ONTAP Autonomous Protection for correlated analysis, automated responses, and forensic investigation capabilities.
 keywords:  ransomware, ARP, Protection, Security
 ---
 
-= Integration with ONTAP Autonomous Ransomware Protection
+= Integration with ONTAP Autonomous Protection
 :hardbreaks:
 
 :nofooter:
@@ -14,7 +14,7 @@ keywords:  ransomware, ARP, Protection, Security
 :imagesdir: ./media/
 
 [.lead]
-The ONTAP Autonomous Ransomware Protection (ARP) feature uses workload analysis in NAS (NFS and SMB) environments to proactively detect and warn about abnormal in-file activity that might indicate a ransomware attack.
+The ONTAP Autonomous Protection feature uses workload analysis in NAS (NFS and SMB) environments to proactively detect and warn about abnormal in-file activity that might indicate malicious attacks or unauthorized data modifications.
 
 Additional details and license requirements about ARP can be found link:https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html[here].
 

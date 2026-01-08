@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: concept_cs_attack_simulator.html
 keywords:  ransomware, simulation, simulator, restrict, attack
-summary: Using a script, you can simulate a Ransomware attack for testing or demonstrating Workload Security 
+summary: Test and validate Workload Security detection capabilities by simulating attacks using the included simulation script to verify alert generation and response policies.
 ---
 
-= Workload Security: Simulating an Attack 
+= Workload Security: Simulating Abnormal File Tampering
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: Using a script, you can simulate a Ransomware attack for testing or dem
 :imagesdir: ./media/
 
 [.lead]
-You can use the instructions on this page to simulate an attack for testing or demonstrating Workload Security using the included Ransomware Simulation script.
+You can use the instructions on this page to simulate file tampering for testing or demonstrating Workload Security using the included Ransomware Simulation script.
 
 == Things to note before you begin
 

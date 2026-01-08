@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: cs_automated_response_policies.html
 keywords: alert, snapshot, ransomware, attack
-summary: You can set automated response policies for potential attacks (such as ransomware) and/or activity warnings
+summary: Configure automated response policies to take immediate action during security incidents, including snapshots, user access restriction, and webhook notifications for threats and suspicious behavior.
 ---
 
 = Automated Response Policies

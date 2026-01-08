@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_cs_agent_requirements.html
-summary: The server or VM you use as your Agent must meet minimum requirements
+summary: Ensure your Workload Security Agent deployment environment meets minimum operating system, CPU, memory, and disk space requirements for optimal performance and data collection.
 keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cloud Secure
 ---
 
@@ -68,8 +68,6 @@ For Linux, disk space should be allocated in this manner:
 
 == Additional recommendations
 * It is strongly recommended to synchronize the time on both the ONTAP system and the Agent machine using *Network Time Protocol (NTP)* or *Simple Network Time Protocol (SNTP)*.
-
-
 
 
 == Cloud Network Access Rules
