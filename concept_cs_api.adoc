@@ -1,8 +1,11 @@
 ---
-sidebar: sidebar
+sidebar: [.lead]
+Integrate Workload Security with your enterprise ecosystem using a REST API protected by secure token-based authentication. Retrieve forensic activity data, manage API access tokens, and develop custom integrations with CMDBs, ticketing systems, and other applications. Interactive Swagger documentation provides complete API specifications and enables you to test endpoints directly.
+
+Requirements for API Access:ar
 permalink: concept_cs_api.html
 keywords: api, access, token, swagger  
-summary: Workload Security includes a powerful API for integration with other applications such as CMDBs.
+summary: Access Workload Security data through a REST API with secure token-based authentication to integrate with CMDBs, ticketing systems, and other enterprise applications.
 ---
 
 = Workload Security API
@@ -20,7 +23,6 @@ Requirements for API Access:
 
 *	An API Access Token model is used to grant access.
 *	API Token management is performed by Workload Security users with the Administrator role.
-
 
 == API Documentation (Swagger)
 The latest API information is found by logging in to Workload Security and navigating to *Admin > API Access*. Click the *API Documentation* link.

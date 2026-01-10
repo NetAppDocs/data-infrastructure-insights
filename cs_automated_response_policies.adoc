@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: cs_automated_response_policies.html
-keywords: alert, snapshot, ransomware, attack
-summary: You can set automated response policies for potential attacks (such as ransomware) and/or activity warnings
+keywords: alert, snapshot, ransomware, attack, tampering
+summary: You can set automated response policies for potential attacks (such as file tampering) and/or activity warnings
 ---
 
 = Automated Response Policies

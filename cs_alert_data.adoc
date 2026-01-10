@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: cs_alert_data.html
-keywords: alert, attack, ransomware, activity, security, abnormal
-summary: Workload Security creates alerts in the event of abnormal user activity or potential attack. The Alerts page lists these activities for quick and easy investigation.
+keywords: alert, attack, ransomware, activity, security, abnormal, tampering
+summary: Review and investigate potential attack alerts and security warnings with detailed evidence, user information, and action history to rapidly respond to threats.
 ---
 
-= Alerts
+= Understanding and Investigating Alerts
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: Workload Security creates alerts in the event of abnormal user activity
 :imagesdir: ./media/
 
 [.lead]
-The Workload Security Alerts page shows a timeline of recent attacks and/or warnings and allows you to view details for each issue. 
+The Workload Security Alerts page provides comprehensive investigation tools for tracking detected threats and suspicious activities. Review attack timelines, filter by severity and status, track user behavior, view evidence details, and monitor automated response actions to rapidly identify and investigate security incidents. 
 
 
 image:CloudSecureAlertsListPage.png[Alerts list]
@@ -48,7 +48,7 @@ The following is displayed for each alert:
 
 *Potential Attacks:* 
 
-* The _Potential Attack_ type (for example, Ransomware or Sabotage)
+* The _Potential Attack_ type (for example, file tampering or Sabotage)
 
 * The date and time the potential attack was _Detected_
 
@@ -98,11 +98,11 @@ You can filter Alerts by the following:
 
 == The Alert Details page
 
-You can click an alert link on the Alerts list page to open a detail page for the alert. Alert details may vary according to the type of attack or alert. For example, a Ransomware Attack detail page may show the following information:
+You can click an alert link on the Alerts list page to open a detail page for the alert. Alert details may vary according to the type of attack or alert. For example, a file tampering attack detail page may show the following information:
 
 === Summary section:
 
-* Attack type (Ransomware, Sabotage) and Alert ID (assigned by Workload Security)
+* Attack type (file tampering, sabotage) and Alert ID (assigned by Workload Security)
 * Date and Time the attack was detected
 * Action Taken (for example, an automatic snapshot was taken. Time of snapshot is shown immediately below the summary section))
 * Status (New, In Progress, etc.)
@@ -117,10 +117,10 @@ You can click an alert link on the Alerts list page to open a detail page for th
 
 This section shows details about the user involved in the potential attack, including a graph of Top Activity for the user.
 
-Alerts page (this example shows a potential ransomware attack):
+Alerts page (this example shows a potential file tampering attack):
 image:RansomwareAlertExample.png[Ransomware Alert Example]
 
-Detail page (this example shows a potential ransomware attack):
+Detail page (this example shows a potential file tampering attack):
 image:RansomwareDetailPageExample.png[Ransomware Detail Page Example]
 
 
@@ -129,7 +129,7 @@ image:RansomwareDetailPageExample.png[Ransomware Detail Page Example]
 
 Workload Security protects your data by automatically taking a snapshot when malicious activity is detected, ensuring that your data is safely backed up.
 
-You can define link:cs_automated_response_policies.html[automated response policies] that take a snapshot when ransomware attack or other abnormal user activity is detected.
+You can define link:cs_automated_response_policies.html[automated response policies] that take a snapshot when file tampering attack or other abnormal user activity is detected.
 You can also take a snapshot manually from the alert page.
 
 Automatic Snapshot taken:

@@ -306,7 +306,7 @@ sidebar:
           url: /concept_ws_integration_with_ontap_access_denied.html
         - title: Blocking User Access
           url: /cs_restrict_user_access.html
-        - title: Simulating a Ransomware Attack
+        - title: Simulating a File Tampering Attack
           url: /concept_cs_attack_simulator.html
         - title: Email Notifications
           url: /cs_notifications_email.html

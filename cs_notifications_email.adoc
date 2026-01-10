@@ -1,20 +1,19 @@
 ---
 sidebar: sidebar
 permalink: cs_notifications_email.html
-summary: Adding email addresses for notifications of Workload Security Alerts.
+summary: Configure email notifications to receive alerts about potential attacks, security warnings, and Agent/Data Collector health status in real-time.
 keywords: email, notifications, alerts, warnings, attacks
 ---
 
 = Configuring Email Notifications for Alerts, Warnings, and Agent/Data Source Collector health
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-To configure Workload Security alert recipients, click on *Admin > Notifications* and enter an email addresses in the appropriate section(s) for each recipient.
+Email notifications enable you to stay informed about potential attacks, security warnings, and infrastructure health issues as they occur. Configure recipient email addresses in the Admin > Notifications settings to receive real-time alerts tailored to each recipient's responsibilities.
 
 
 == Potential Attack Alerts and Warnings
@@ -35,7 +34,7 @@ Keep the following in mind:
 * Health alerts will be sent only after the agent/collector stops reporting for at least one hour.
 * Only one email notification is sent to the intended recipients in a given 24 hour period, even If the Agent or Data collector is disconnected for a longer duration.
 * In case of an Agent failure, one alert will be sent (not one per collector). The email will include a list of all impacted SVMs.
-* Active directory collection failure is reported as a warning; it does not impact Ransomware detection.
+* Active directory collection failure is reported as a warning; it does not impact file tampering detection.
 * The Getting Started setup list now includes a new _Configure email notifications_ phase.
 
 == Receiving Agent And Data Collector Upgrade Notifications
