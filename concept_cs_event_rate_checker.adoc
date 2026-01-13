@@ -1,7 +1,7 @@
----
+r---
 sidebar: sidebar
 permalink: concept_cs_event_rate_checker.html
-summary: This script can be run to check the event rate in the SVM before installing an ONTAP SVM DSC
+summary: Use the SVM Event Rate Checker to measure NFS/SMB event rates and determine optimal Agent sizing before deploying Workload Security data collectors.
 keywords: event, checker, rate, sizing, cloud secure
 ---
 
