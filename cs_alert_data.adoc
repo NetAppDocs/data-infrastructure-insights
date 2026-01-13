@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: cs_alert_data.html
-keywords: alert, attack, ransomware, activity, security, abnormal
+keywords: alert, attack, ransomware, activity, security, abnormal, tampering
 summary: Workload Security creates alerts in the event of abnormal user activity or potential attack. The Alerts page lists these activities for quick and easy investigation.
 ---
 
@@ -96,11 +96,11 @@ You can click an alert link on the Alerts list page to open a detail page for th
 
 This section shows details about the user involved in the potential attack, including a graph of Top Activity for the user.
 
-Alerts page (this example shows a potential ransomware attack):
-image:RansomwareAlertExample.png[Ransomware Alert Example]
+Alerts page (this example shows a potential file tampering attack):
+image:RansomwareAlertExample.png[file tampering Alert Example]
 
-Detail page (this example shows a potential ransomware attack):
-image:RansomwareDetailPageExample.png[Ransomware Detail Page Example]
+Detail page (this example shows a potential file tampering attack):
+image:RansomwareDetailPageExample.png[file tampering Detail Page Example]
 
 
 
@@ -108,7 +108,7 @@ image:RansomwareDetailPageExample.png[Ransomware Detail Page Example]
 
 Workload Security protects your data by automatically taking a snapshot when malicious activity is detected, ensuring that your data is safely backed up.
 
-You can define link:cs_automated_response_policies.html[automated response policies] that take a snapshot when ransomware attack or other abnormal user activity is detected.
+You can define link:cs_automated_response_policies.html[automated response policies] that take a snapshot when file tampering attack or other abnormal user activity is detected.
 You can also take a snapshot manually from the alert page.
 
 Automatic Snapshot taken:

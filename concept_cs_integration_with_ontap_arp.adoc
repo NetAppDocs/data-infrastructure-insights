@@ -5,7 +5,7 @@ summary: Enhance attack detection by integrating Workload Security with ONTAP Au
 keywords:  ransomware, ARP, Protection, Security
 ---
 
-= Integration with ONTAP Autonomous Protection
+= Integration with ONTAP Autonomous Ransomware Protection
 :hardbreaks:
 
 :nofooter:
@@ -62,7 +62,7 @@ image:CS_Ransomware_Example_3.png[Ransomware Alert top section]
 
 
 
-A high confidence banner indicates the attack has shown ransomware behavior along with file encryption activities.
+A high confidence banner indicates the attack has shown file tampering behavior along with file encryption activities.
 The encrypted files graph indicates the timestamp at which the volume encryption activity was detected by the ARP solution.
 
 == Limitations

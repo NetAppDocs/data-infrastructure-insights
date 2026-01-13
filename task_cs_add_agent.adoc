@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_cs_add_agent.html
 keywords: agent, Workload Security, installation, Cloud Secure
-summary: Deploy Workload Security agents to monitor user activity, detect security threats, and protect your storage infrastructure with step-by-step installation guidance and best practices.
+summary: Deploy Workload Security agents to monitor user activity, detect security threats, and protect your storage infrastructure.
 ---
 
 = Deploy Workload Security Agents
