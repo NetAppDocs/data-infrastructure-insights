@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: concept_cs_attack_simulator.html
 keywords:  ransomware, simulation, simulator, restrict, attack
-summary: Using a script, you can simulate a Ransomware attack for testing or demonstrating Workload Security 
+summary: Test and validate Workload Security detection capabilities by simulating attacks using the included simulation script to verify alert generation and response policies.
 ---
 
-= Workload Security: Simulating an Attack 
+= Workload Security: Simulating Abnormal File Tampering
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,11 +13,11 @@ summary: Using a script, you can simulate a Ransomware attack for testing or dem
 :imagesdir: ./media/
 
 [.lead]
-You can use the instructions on this page to simulate an attack for testing or demonstrating Workload Security using the included Ransomware Simulation script.
+You can use the instructions on this page to simulate file tampering for testing or demonstrating Workload Security using the included file tampering Simulation script.
 
 == Things to note before you begin
 
-* The ransomware simulation script works on Linux only. The simulation script should also generate High Confidence Alerts in the event that the user has integrated ONTAP ARP with Workload Security.
+* The file tampering simulation script works on Linux only. The simulation script should also generate High Confidence Alerts in the event that the user has integrated ONTAP ARP with Workload Security.
 
 * Workload Security will detect events and alerts generated with NFS 4.1 only if ONTAP version is 9.15 or higher. 
 
@@ -137,7 +137,7 @@ If you paused the collector before following these steps, please be sure to resu
 == Generate the sample files programmatically:
 Before creating the files, you must first stop or link:task_add_collector_svm.html#play-pause-data-collector[pause the data collector] processing.
 
-To generate a Ransomware alert, you can execute the included script which will simulate a ransomware alert in Workload Security.
+To generate a file tampering alert, you can execute the included script which will simulate a file tampering alert in Workload Security.
 
 === Shell:
 
@@ -172,7 +172,7 @@ Note: In the event that all of the following conditions are met, a High Confiden
 . ONTAP Autonomous Ransomware Protection configured
 . Workload Security Data collector is added in Cluster mode.
 
-Workload Security detects ransomware patterns based on user behaviour while ONTAP ARP detects ransomware activity based on encryption activities in files.
+Workload Security detects file tampering patterns based on user behaviour while ONTAP ARP detects file tampering activity based on encryption activities in files.
 
 If the conditions are met, Workload Security marks the alerts as High Confidence Alert. 
 
@@ -187,7 +187,7 @@ image:ws_high_confidence_alert_detail.png[High Confidence Alert example, detail 
 
 == Triggering alert multiple times
 
-Workload Security learns user behavior and will not generate alerts on repeated ransomware attacks within 24 hours for the same user. 
+Workload Security learns user behavior and will not generate alerts on repeated file tampering attacks within 24 hours for the same user. 
 
 To generate a new alert with a different user, please follow the same steps again (creating test data and then encrypting the test data).
 

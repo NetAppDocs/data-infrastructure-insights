@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: ws_allowed_file_types.html
-keywords: workload security, cloud secure, include list, allowed, file types, ransomware
+keywords: workload security, cloud secure, include list, allowed, file types, ransomware, tampering
 summary: Add file extensions to an allowed file types list to reduce alerting.
 ---
 
@@ -14,14 +14,14 @@ summary: Add file extensions to an allowed file types list to reduce alerting.
 :imagesdir: ./media/
 
 [.lead]
-If a ransomware attack is detected for a known file extension, and alerts are being generated on the Alerts screen, then that file extension can be added to an _allowed file types_ list to prevent unnecessary alerting.
+If a file tampering attack is detected for a known file extension, and alerts are being generated on the Alerts screen, then that file extension can be added to an _allowed file types_ list to prevent unnecessary alerting.
 
 Navigate to *Workload Security > Policies* and go to the _Allowed File Type Policies_ tab.
 
 image:WS_Allowed_File_Type_Policies.png[Allowed File Types Policies]
 
-Once added to the _allowed file types_ list, no ransomware attack alert will be generated for that allowed file type. Note that the _Allowed File Types_ policy is only applicable for ransomware detection.
+Once added to the _allowed file types_ list, no file tampering attack alert will be generated for that allowed file type. Note that the _Allowed File Types_ policy is only applicable for file tampering detection.
 
-For example, if a file named _test.txt_ is renamed to _test.txt.abc_ and Workload Security is detecting a ransomware attack because of the _.abc_ extension, the _.abc_ extension can be added to the _allowed file types_ list. After being added to the list, ransomware attacks will no longer be generated against files with the _.abc_ extension.
+For example, if a file named _test.txt_ is renamed to _test.txt.abc_ and Workload Security is detecting a file tampering attack because of the _.abc_ extension, the _.abc_ extension can be added to the _allowed file types_ list. After being added to the list, file tampering attacks will no longer be generated against files with the _.abc_ extension.
 
 Allowed File Types can be exact matches (e.g., ".abc") or expressions (e.g., ".*type", ".type*", or "*type*"). Expressions of types “.a*c”, “.p*f” are not supported.
