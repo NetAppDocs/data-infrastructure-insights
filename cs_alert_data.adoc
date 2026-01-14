@@ -27,7 +27,7 @@ The following is displayed for each alert:
 
 *Potential Attacks:* 
 
-* The _Potential Attack_ type (for example, Ransomware or Sabotage)
+* The _Potential Attack_ type (for example, File Tampering or Sabotage)
 
 * The date and time the potential attack was _Detected_
 
@@ -77,11 +77,11 @@ You can filter Alerts by the following:
 
 == The Alert Details page
 
-You can click an alert link on the Alerts list page to open a detail page for the alert. Alert details may vary according to the type of attack or alert. For example, a Ransomware Attack detail page may show the following information:
+You can click an alert link on the Alerts list page to open a detail page for the alert. Alert details may vary according to the type of attack or alert. For example, a file tampering attack detail page may show the following information:
 
 === Summary section:
 
-* Attack type (Ransomware, Sabotage) and Alert ID (assigned by Workload Security)
+* Attack type (File Tampering, Sabotage) and Alert ID (assigned by Workload Security)
 * Date and Time the attack was detected
 * Action Taken (for example, an automatic snapshot was taken. Time of snapshot is shown immediately below the summary section))
 * Status (New, In Progress, etc.)
