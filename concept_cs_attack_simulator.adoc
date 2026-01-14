@@ -5,7 +5,7 @@ keywords:  ransomware, simulation, simulator, restrict, attack
 summary: Test and validate Workload Security detection capabilities by simulating attacks using the included simulation script to verify alert generation and response policies.
 ---
 
-= Workload Security: Simulating Abnormal File Tampering
+= Workload Security: Simulating File Tampering
 :hardbreaks:
 :nofooter:
 :icons: font
