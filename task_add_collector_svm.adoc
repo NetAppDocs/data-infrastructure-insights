@@ -296,7 +296,7 @@ NOTE: A collector cannot be paused if it has restricted users. Restore the user 
 Keep the following in mind:
 
 * Snapshot purge won't happen as per the settings configured on a paused collector.
-* EMS events (like ONTAP ARP) won't be processed on a paused collector. This means if ONTAP identifies a ransomware attack, Data Infrastructure Insights Workload Security won't be able to acquire that event.
+* EMS events (like ONTAP ARP) won't be processed on a paused collector. This means if ONTAP identifies a file tampering attack, Data Infrastructure Insights Workload Security won't be able to acquire that event.
 * Health notifications emails will NOT be sent for a paused collector.
 * Manual or Automatic actions (such as Snapshot or User Blocking) will not be supported on a paused collector.
 * On agent or collector upgrades, agent VM restarts/reboots, or agent service restart, a paused collector will remain in _Paused_ state.
