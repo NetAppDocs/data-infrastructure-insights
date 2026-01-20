@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: concept_cs_attack_simulator.html
-keywords:  ransomware, simulation, simulator, restrict, attack, file tampering
-summary: Test your Workload Security detection and response capabilities by simulating attacks using a provided script to validate alerts and verify policies.
+keywords:  ransomware, simulation, simulator, restrict, attack
+summary: Test and validate Workload Security detection capabilities by simulating attacks using the included simulation script to verify alert generation and response policies.
 ---
 
-= Workload Security: Simulating an Attack 
+= Workload Security: Simulating File Tampering
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: Test your Workload Security detection and response capabilities by simu
 :imagesdir: ./media/
 
 [.lead]
-Validate your Workload Security threat detection and automated response capabilities by simulating attacks using the included File Tampering simulation script. This allows you to test alert generation, verify policy effectiveness, and demonstrate detection capabilities in a controlled environment before encountering real threats.
+You can use the instructions on this page to simulate file tampering for testing or demonstrating Workload Security using the included file tampering Simulation script.
 
 == Things to note before you begin
 
@@ -172,7 +172,7 @@ Note: In the event that all of the following conditions are met, a High Confiden
 . ONTAP Autonomous Ransomware Protection configured
 . Workload Security Data collector is added in Cluster mode.
 
-Workload Security detects file tampering patterns based on user behavior while ONTAP ARP detects tampering activity based on encryption activities in files.
+Workload Security detects file tampering patterns based on user behaviour while ONTAP ARP detects file tampering activity based on encryption activities in files.
 
 If the conditions are met, Workload Security marks the alerts as High Confidence Alert. 
 

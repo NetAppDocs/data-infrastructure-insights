@@ -1,14 +1,13 @@
 ---
 sidebar: sidebar
 permalink: concept_cs_event_rate_checker.html
-summary: Measure SVM event rates to determine Agent sizing and plan your Workload Security deployment by validating how many data collectors each Agent can support.
+summary: Use the SVM Event Rate Checker to measure NFS/SMB event rates and determine optimal Agent sizing before deploying Workload Security data collectors.
 keywords: event, checker, rate, sizing, cloud secure
 ---
 
 
 = Event Rate Checker: Agent Sizing Guide
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:

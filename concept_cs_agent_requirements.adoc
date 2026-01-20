@@ -70,8 +70,6 @@ For Linux, disk space should be allocated in this manner:
 * It is strongly recommended to synchronize the time on both the ONTAP system and the Agent machine using *Network Time Protocol (NTP)* or *Simple Network Time Protocol (SNTP)*.
 
 
-
-
 == Cloud Network Access Rules
 
 For *US-based* Workload Security environments:
