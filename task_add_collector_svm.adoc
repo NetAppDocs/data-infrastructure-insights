@@ -109,6 +109,26 @@ image:ws_test_connection_success_example.png[Workload Security 'Test Connection'
 
 
 
+== Things to note for ONTAP Multi Admin Verify (MAV) 
+
+Some features, such as the creation and deletion of snapshots or user blocking (SMB), may not work based on the MAV commands added in your version of ONTAP. 
+
+Follow the steps below to add exclusions to your MAV commands which allow Workload Security to create or delete snapshots and block users.
+
+Commands to allow snapshot create and delete:
+
+ multi-admin-verify rule modify -operation "volume snapshot create" -query "-snapshot !*cloudsecure_*" 
+ multi-admin-verify rule modify -operation "volume snapshot delete" -query "-snapshot !*cloudsecure_*"  
+
+Command to allow user blocking:
+
+ multi-admin-verify rule delete -operation set
+
+
+
+
+
+
 == Prerequisites for User Access Blocking
 
 Keep the following in mind for link:cs_restrict_user_access.html[User Access Blocking]:
