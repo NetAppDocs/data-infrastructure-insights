@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: ws_allowed_file_types.html
-keywords: workload security, cloud secure, include list, allowed, file types, ransomware
+keywords: workload security, cloud secure, include list, allowed, file types, ransomware, tampering
 summary: Add file extensions to an allowed file types list to reduce alerting.
 ---
 

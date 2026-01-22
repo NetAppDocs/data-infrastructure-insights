@@ -8,7 +8,6 @@ keywords: event, checker, rate, sizing, cloud secure
 
 = Event Rate Checker: Agent Sizing Guide
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
