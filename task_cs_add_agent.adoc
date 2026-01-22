@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_cs_add_agent.html
 keywords: agent, Workload Security, installation, Cloud Secure
-summary: Workload Security agents monitor user activity and detect security threats in your storage environment.
+summary: Deploy Workload Security agents to monitor user activity, detect security threats, and protect your storage infrastructure.
 ---
 
 = Deploy Workload Security Agents
@@ -13,7 +13,7 @@ summary: Workload Security agents monitor user activity and detect security thre
 :imagesdir: ./media/
 
 [.lead]
-Workload Security agents are essential for monitoring user activity and detecting potential security threats across your storage infrastructure. This guide provides step-by-step instructions to deploy agents in your environment. Before you begin, ensure your agent server meets the link:concept_cs_agent_requirements.html[system requirements].
+Workload Security agents are essential for monitoring user activity and detecting potential security threats across your storage infrastructure. This guide provides step-by-step installation instructions, best practices for agent management (including pause/resume and pin/unpin capabilities), and post-deployment configuration requirements. Before you begin, ensure your agent server meets the link:concept_cs_agent_requirements.html[system requirements].
 
 
 == Before You Begin
