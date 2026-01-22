@@ -172,11 +172,7 @@ Note: In the event that all of the following conditions are met, a High Confiden
 . ONTAP Autonomous Ransomware Protection configured
 . Workload Security Data collector is added in Cluster mode.
 
-<<<<<<< HEAD
 Workload Security detects file tampering patterns based on user behaviour while ONTAP ARP detects file tampering activity based on encryption activities in files.
-=======
-Workload Security detects file tampering patterns based on user behavior while ONTAP ARP detects tampering activity based on encryption activities in files.
->>>>>>> 2419ffb18aee11bd2f018d39d0cc92e25a1af729
 
 If the conditions are met, Workload Security marks the alerts as High Confidence Alert. 
 
