@@ -59,7 +59,7 @@ Do not mount NFS version 4.1; it is not supported by Fpolicy.
 mount -t cifs //10.193.77.91/sharedfolderincluster /root/destinationfolder/ -o username=raisa
 ----
 
-==== Enable ONTAP Autonomous ransomware protection (Optional):
+==== Enable ONTAP Autonomous Ransomware Protection (Optional):
 
 If your ONTAP cluster version is 9.11.1 or higher you may enable the ONTAP Ransomware Protection service by executing the following command on the ONTAP command console.
 

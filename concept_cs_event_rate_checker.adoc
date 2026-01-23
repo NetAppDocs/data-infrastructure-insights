@@ -5,6 +5,7 @@ summary: Use the SVM Event Rate Checker to measure NFS/SMB event rates and deter
 keywords: event, checker, rate, sizing, cloud secure
 ---
 
+
 = Event Rate Checker: Agent Sizing Guide
 :hardbreaks:
 :nofooter:
