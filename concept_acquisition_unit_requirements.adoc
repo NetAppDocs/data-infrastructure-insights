@@ -6,8 +6,9 @@ keywords: AU, acquisition unit, requirements, sizing
 ---
 
 = Acquisition Unit Requirements
+:toc: macro
 :hardbreaks:
-
+:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:
@@ -43,18 +44,12 @@ If you are running with SELinux, it is recommended to execute the following comm
 
 |A computer running a licensed version of one of the following:
 
-* Microsoft Windows 10 64-bit
 * Microsoft Windows 11
-* Microsoft Windows Server 2012
-* Microsoft Windows Server 2012 R2
 * Microsoft Windows Server 2016
 * Microsoft Windows Server 2019
 * Microsoft Windows Server 2022
 * Microsoft Windows Server 2025
 
-
-// * Microsoft Windows 11 64-bit
-// * Microsoft Windows 2022
 
 This computer should be running no other application-level software. A dedicated server is recommended. 
 |CPU	|2 CPU cores 
@@ -76,8 +71,6 @@ If your organization requires proxy usage for internet access, you may need to u
 *.cloudinsights.netapp.com
 
 For more information, read about Proxies link:task_troubleshooting_linux_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls[here (Linux)] or link:task_troubleshooting_windows_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls[here (Windows)].
-
-Note that port 443 must be opened "outbound" from the AU to Data Infrastructure Insights.
 
 |Same 
 |Permissions	|Sudo permissions on the Acquisition Unit server.  
