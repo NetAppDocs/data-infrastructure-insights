@@ -74,3 +74,11 @@ To enable the Assistant to troubleshoot effectively, provide the following infor
 
 With these details, the Assistant can query the appropriate data sources and provide targeted insights to help resolve your issue.
 
+== Calling the Assistant
+
+To call the DII AI Assistant, simply select the icon in the lower corner of the screen.
+
+image:dii_ai_assistant.png[dii_ai_assistant_icon]
+
+Read the NetApp Data Processing Addendum and the NetApp Privacy Policy, and start asking the assistant whatever you like.
+
