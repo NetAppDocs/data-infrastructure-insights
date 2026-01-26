@@ -22,9 +22,9 @@ The DII AI Assistant is available as a Limited Preview. link:/concept_preview_fe
 
 == Before using the AI Assistant
 
-* This experimental AI Assistant is designed to assist you, and while it strives for accuracy, we recommend you always verify its outputs with human oversight for best results.  * This AI Assistant is powered by third-party LLMs. 
+* The AI Assistant is designed to assist you. While it strives for accuracy, it is strongly recommended to verify its outputs with human oversight for best results.  * The AI Assistant is powered by third-party LLMs. 
 * For safety and privacy of you and your colleagues, please do not input personally identifiable information (PII). 
-* To help keep your data secure, we ask that you do not enter sensitive or confidential information.
+* To help keep your data secure, do not enter sensitive or confidential information.
 * NetApp will use your inputs and the AI Assistant outputs to test and improve the functionality of the AI Assistant, all subject to the link:https://www.netapp.com/pdf.html?item=/media/71584-netapp-data-processing-addendum.pdf[NetApp Data Processing Addendum] and the link:https://www.netapp.com/company/legal/privacy-policy/[NetApp Privacy Policy]. 
 
 
