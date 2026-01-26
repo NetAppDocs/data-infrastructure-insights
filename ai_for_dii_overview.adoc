@@ -1,0 +1,77 @@
+AI Doc Overview
+
+sidebar: sidebar
+permalink: ai_for_dii_overview.html
+keywords: ai, 
+summary: You can use DII's AI assistant to summarize your data, explore insights, troubleshoot issues, and plan your resources.
+---
+
+= Data Infrastructure Insights AI Assistant
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The Data Infrastructure Insights AI Assistant is designed to help you work more efficiently with your infrastructure data. It can help you analyze information, discover insights, resolve operational challenges, and make informed decisions about your resources.
+
+[NOTE]
+====
+The DII AI Assistant is available as a Limited Preview. link:/concept_preview_features.html[Learn more] about Data Infrastructure Insights Preview features.
+====
+
+== Before using the AI Assistant
+
+* This experimental AI Assistant is designed to assist you, and while it strives for accuracy, we recommend you always verify its outputs with human oversight for best results.  * This AI Assistant is powered by third-party LLMs. 
+* For safety and privacy of you and your colleagues, please do not input personally identifiable information (PII). 
+* To help keep your data secure, we ask that you do not enter sensitive or confidential information.
+* NetApp will use your inputs and the AI Assistant outputs to test and improve the functionality of the AI Assistant, all subject to the link:https://www.netapp.com/pdf.html?item=/media/71584-netapp-data-processing-addendum.pdf[NetApp Data Processing Addendum] and the link:https://www.netapp.com/company/legal/privacy-policy/[NetApp Privacy Policy]. 
+
+
+== What can the AI Assistant do for me?
+
+=== Data Analysis
+
+The DII AI Assistant can help you analyze where you might have anomalies in your data. To do this effectively, I need to understand what specific data you're interested in examining for anomalies.
+
+The DII system contains various types of data, including:
+
+* Asset telemetry (hosts, storage, VMs, etc.)
+* Datalake measurements (Kubernetes, NetApp, VMware metrics)
+* Logs from different systems
+* Alerts that may indicate anomalies
+
+To provide a meaningful analysis, provide the Assistant with specific information about:
+
+* The type of data you want to analyze (e.g., specific assets, metrics, or systems),
+* The timeframe you're interested in, and
+* Any specific issue types you're concerned about (performance issues, capacity problems, errors, etc.)
+
+=== Troubleshoot issues
+
+The AI Assistant can help troubleshoot data center issues by leveraging DII (Data Infrastructure Insights) tools and data repositories. Here's what the Assistant can do:
+
+* *Investigate System Logs* - Query various log types (EMS logs, VMware events, Kubernetes events, and more) to identify error messages, warnings, and root causes of problems.
+
+* *Analyze Performance Metrics* - Retrieve performance data from the datalake to identify bottlenecks, resource constraints, and unusual patterns across your infrastructure.
+
+* *Review Active Alerts* - Examine current and historical alerts to understand what issues have been detected by monitoring systems and correlate them with potential root causes.
+
+* *Examine Asset Information* - Gather detailed configuration and status information about specific infrastructure components, including hosts, storage systems, VMs, and applications.
+
+* *Monitor Resource Utilization* - Track CPU, memory, disk, and network usage across your environment to identify resource constraints and capacity issues.
+
+* *Track Changes* - Review change logs to correlate issues with recent modifications and identify patterns in infrastructure changes.
+
+To enable the Assistant to troubleshoot effectively, provide the following information:
+
+* The specific issue you're experiencing and its symptoms
+* Which systems or components are affected
+* Any error messages or alerts you've observed
+* When the problem started occurring
+* Any recent changes to your environment
+* Expected behavior versus actual behavior
+
+With these details, the Assistant can query the appropriate data sources and provide targeted insights to help resolve your issue.
+
