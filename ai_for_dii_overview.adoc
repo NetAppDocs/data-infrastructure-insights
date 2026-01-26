@@ -32,7 +32,7 @@ The DII AI Assistant is available as a Limited Preview. link:/concept_preview_fe
 
 === Data Analysis
 
-The DII AI Assistant can help you analyze where you might have anomalies in your data. To do this effectively, I need to understand what specific data you're interested in examining for anomalies.
+The DII AI Assistant can help you analyze where you might have anomalies in your data. To do this effectively, it needs to understand what specific data you're interested in examining for anomalies.
 
 The DII system contains various types of data, including:
 
@@ -53,7 +53,7 @@ The AI Assistant can help troubleshoot data center issues by leveraging DII (Dat
 
 * *Investigate System Logs* - Query various log types (EMS logs, VMware events, Kubernetes events, and more) to identify error messages, warnings, and root causes of problems.
 
-* *Analyze Performance Metrics* - Retrieve performance data from the datalake to identify bottlenecks, resource constraints, and unusual patterns across your infrastructure.
+* *Analyze Performance Metrics* - Retrieve performance data to identify bottlenecks, resource constraints, and unusual patterns across your infrastructure.
 
 * *Review Active Alerts* - Examine current and historical alerts to understand what issues have been detected by monitoring systems and correlate them with potential root causes.
 
