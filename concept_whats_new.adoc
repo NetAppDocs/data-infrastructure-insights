@@ -25,14 +25,8 @@ Meet your infrastructure's new intelligent partner: The *Data Infrastructure Ins
 * How can I configure a monitor to alert for persistent unacceptable latency?
 * What are the top storage pools with the highest utilization in the environment?
 * How many alerts were generated in the last hour?
-* What are the most common types of logs being collected?
-* Which hosts are experiencing the highest CPU utilization?
-* What asset types are available for monitoring in the environment?
-* Are there any critical alerts currently active?
-* What's the overall health status of the storage systems?
-* Which virtual machines are consuming the most memory?
-* What are the current network performance metrics across the infrastructure?
-* How many monitors are configured in the system?
+
+Activate now! Ask your Tenant Owner to activate the AI Assistant by clicking on the "owl" and accepting the Terms and Conditions.
 
 
 
