@@ -13,26 +13,41 @@ summary: You can use DII's AI assistant to summarize your data, explore insights
 :imagesdir: ./media/
 
 [.lead]
-The Data Infrastructure Insights AI Assistant is designed to help you work more efficiently with your infrastructure data. It can help you analyze information, discover insights, resolve operational challenges, and make informed decisions about your resources.
+The *Data Infrastructure Insights AI Assistant* is designed to help you work more efficiently with your infrastructure data. It can help you analyze information, discover insights, resolve operational challenges, and make informed decisions about your resources.
 
 [NOTE]
 ====
 The DII AI Assistant is available as a Limited Preview. link:/concept_preview_features.html[Learn more] about Data Infrastructure Insights Preview features.
 ====
 
+== Meet your infrastructure's new intelligent partner
+
+The AI Assistant transforms how you interact with your data, turning complex queries into simple conversations. Instantly uncover hidden patterns, accelerate troubleshooting, and make data-driven decisions with confidence. Get instant answers to questions like:
+
+* How can I configure a monitor to alert for persistent unacceptable latency?
+* What are the top storage pools with the highest utilization in the environment?
+* How many alerts were generated in the last hour?
+* What are the most common types of logs being collected?
+* Which hosts are experiencing the highest CPU utilization?
+* What asset types are available for monitoring in the environment?
+* Are there any critical alerts currently active?
+* What's the overall health status of the storage systems?
+* Which virtual machines are consuming the most memory?
+* What are the current network performance metrics across the infrastructure?
+* How many monitors are configured in the system?
+
+
 == Before using the AI Assistant
 
-* The AI Assistant is designed to assist you. While it strives for accuracy, it is strongly recommended to verify its outputs with human oversight for best results.  * The AI Assistant is powered by third-party LLMs. 
+* The AI Assistant is designed to assist you. While it strives for accuracy, it is strongly recommended to verify its outputs with human oversight for best results. 
 * For safety and privacy of you and your colleagues, please do not input personally identifiable information (PII). 
 * To help keep your data secure, do not enter sensitive or confidential information.
-* NetApp will use your inputs and the AI Assistant outputs to test and improve the functionality of the AI Assistant, all subject to the link:https://www.netapp.com/pdf.html?item=/media/71584-netapp-data-processing-addendum.pdf[NetApp Data Processing Addendum] and the link:https://www.netapp.com/company/legal/privacy-policy/[NetApp Privacy Policy]. 
+* Read the link:https://www.netapp.com/pdf.html?item=/media/71584-netapp-data-processing-addendum.pdf[NetApp Data Processing Addendum] and the link:https://www.netapp.com/company/legal/privacy-policy/[NetApp Privacy Policy]. 
 
 
-== What can the AI Assistant do for me?
+== The AI Assistant works with you
 
-=== Data Analysis
-
-The DII AI Assistant can help you analyze where you might have anomalies in your data. To do this effectively, it needs to understand what specific data you're interested in examining for anomalies.
+The DII AI Assistant can help you answer questions about your IT Infrastructure's data. To do this effectively, it needs to understand what specific data you're interested in examining for anomalies.
 
 The DII system contains various types of data, including:
 
@@ -47,6 +62,8 @@ To provide a meaningful analysis, provide the Assistant with specific informatio
 * The timeframe you're interested in, and
 * Any specific issue types you're concerned about (performance issues, capacity problems, errors, etc.)
 
+
+////
 === Troubleshoot issues
 
 The AI Assistant can help troubleshoot data center issues by leveraging DII (Data Infrastructure Insights) tools and data repositories. Here's what the Assistant can do:
@@ -73,12 +90,14 @@ To enable the Assistant to troubleshoot effectively, provide the following infor
 * Expected behavior versus actual behavior
 
 With these details, the Assistant can query the appropriate data sources and provide targeted insights to help resolve your issue.
+////
 
-== Calling the Assistant
 
-To call the DII AI Assistant, simply select the icon in the lower corner of the screen.
+== Accessing the Assistant
+
+To call the DII AI Assistant, simply select the owl icon in the lower corner of the screen. A user with “Owner” role must accept the terms and conditions before anyone can utilize the AI Assistant on your tenant.
 
 image:dii_ai_assistant.png[dii_ai_assistant_icon]
 
-Read the NetApp Data Processing Addendum and the NetApp Privacy Policy, and start asking the assistant whatever you like.
+
 
