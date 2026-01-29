@@ -18,54 +18,48 @@ Before you can start working with Data Infrastructure Insights, you must sign up
 
 == Creating your NetApp Console account
 
-To get started with NetApp's cloud services, go to link:https://console.netapp.com/[*NetApp Console*^] and click *Get Started*.
+To get started with NetApp's cloud services, go to link:https://console.netapp.com/[*NetApp Console*^] and click *Sign Up*.
 
-* If you have not already signed up, select *Sign Up*
 * Enter a valid business email address and choose a password.
 * Enter your company name, and your full name.
 * Accept the terms and conditions and select *Continue*.
 * Console will walk you through getting started.
 
+
+
 === What if I already have a NetApp Console login?
 
 Once you have a NetApp Console account, simply choose *Log In* on the link:https://console.netapp.com/[*NetApp Console*^] portal page.
 
-Enter your email address and password. You will then be taken to NetApp's cloud offerings page.
+Select your Organization from the drop-down at the top of the screen.
 
-Navigate to *Analysis and Control > Observability* to learn about Data Infrastructure Insights and/or request a demo.
+From the main menu in the upper-left, select *Governance > Data Infrastructure Insights*.
 
-//image:BlueXP_CloudInsights.png[Data Infrastructure Insights free trial on BlueXP]
+image:console_main_menu.png[console main menu showing data infrastructure insights, 500]
 
 
 == Starting your Data Infrastructure Insights free trial
 
-If this is your first time logging in to Data Infrastructure Insights, read about everything Data Infrastructure Insights has to offer, and when you are _Ready to Get Started_, click on *Request Trial* and fill out your information. 
-
-As part of your trial tenant set up, you will choose the region in which to host your tenant, and whether you want your tenant on AWS or Azure.
-
-Once the creation of your tenant is complete, Use your BlueXP credentials to log in and start your free, 30-day trial of Data Infrastructure Insights. During this trial you can explore the features that Data Infrastructure Insights has to offer. 
-
-During the free trial, you can link:concept_subscribing_to_cloud_insights.html[start your subscription] to Data Infrastructure Insights at any time. When you are subscribed, You can use the Data Infrastructure Insights features based on your current subscription.
+If this is your first time logging in to Data Infrastructure Insights, read about everything Data Infrastructure Insights has to offer, and when you are ready to get started, select *Start 30-day free trial*. Choose the region in which to host your tenant, and follow any other prompts.
 
 
-== Sign in and go
+== Begin onboarding
 
-Once your tenant has been created, at any time you can simply log in to the NetApp BlueXP Portal and navigate to the link:https://services.cloud.netapp.com[Cloud Services] page and select *Go to Data Infrastructure Insights*.
+Console informs you when your Data Infrastructure Insights (DII) tenant is ready for onboarding. Select the *Start onboarding* button to set up your tenant. 
 
-You can also open a browser directly to your Data Infrastructure Insights tenant URL, for example:
+If at any time you leave the onboarding process before it is complete, simply log back in to Console to *Finish onboarding*.
 
- \https://<tenant-prefix>.c01.cloudinsights.netapp.com/
 
-The URL will also be included in each user's invitation email for simple access and bookmarking. If the user is not already logged in to Console, they will be prompted to log in.
+== You're ready to go!
 
-NOTE: New users must still sign up for access to Console before they can access their tenant URL.
+Once onboarding is complete, Console informs you that your tenant is ready for use. Select *Launch Data Infrastructure Insights* to begin. Note that some data will be available for immediate use (inventory, etc.), while other data may take time to acquire in order to be meaningful (performance monitoring, etc.). 
 
-The first time you log in to a new tenant, you will be guided through setting up to link:task_getting_started_with_cloud_insights.html[*begin gathering data*].
+
 
 == Logging Out
 
 
-To log out of Data Infrastructure Insights, click your *User Name* and select *Log Out*. You will be taken back to the Console sign in screen.
+To log out of Data Infrastructure Insights, click your User Name in the upper right corner of the screen and select *Log Out*. You will be taken back to the Console sign-in screen.
 
 NOTE: Logging out of Data Infrastructure Insights logs you out of Console. You will also be logged out of other NetApp Cloud services that use the Console sign-in.
 
