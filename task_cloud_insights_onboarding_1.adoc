@@ -13,8 +13,11 @@ keywords: onboarding, new user
 :imagesdir: ./media/
 
 [.lead]
-
 Before you can start working with Data Infrastructure Insights, you must sign up on the *NetApp Console* portal. If you already have a NetApp Console login, you can start a free trial of Data Infrastructure Insights with a few quick steps.
+
+These instructions are being updated. Please check back later.
+
+////
 
 == Creating your NetApp Console account
 
@@ -75,3 +78,4 @@ NOTE: Logging out of Data Infrastructure Insights logs you out of Console. You w
 By default, Console will log a user out if there is no activity for six hours (360 minutes). Regardless of activity, users will be logged out after seven days. 
 
 
+////
