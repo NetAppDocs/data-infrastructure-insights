@@ -16,6 +16,24 @@ keywords: features
 [.lead]
 NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in Data Infrastructure Insights (formerly Cloud Insights).
 
+== January 2026
+
+=== Monitor Improvements
+
+==== Modify a system monitor without duplicating it first
+
+DII adds the abiliy to modify system monitors (sometimes called canned or default monitors). Change a monitor's name, filters, or grouping without first having to create a duplicate of the monitor.
+
+Note that a banner will appear when viewing a changed system monitor indicating that the monitor has been modified from its default.
+
+
+==== Bulk Assignment of Health Category to Monitors
+
+Select multiple monitors, and in the Bulk Actions menu, you can choose to exclude those monitors from Health Monitoring.
+Monitors are included in Health Monitoring individually during creation, or by selecting "Update Health Monitoring" from the monitor's menu. 
+
+
+
 == December 2025
 
 
