@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_cs_agent_requirements.html
-summary: The server or VM you use as your Agent must meet minimum requirements
+summary: Workload Security Agents require specific operating system, CPU, memory, and disk space specifications to effectively monitor file access and detect security threats across your storage infrastructure.
 keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cloud Secure
 ---
 
@@ -13,7 +13,7 @@ keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cl
 :imagesdir: ./media/
 
 [.lead]
-You must link:task_cs_add_agent.html[install a Workload Security Agent] in order to acquire information from your data collectors. Before installing the Agent, ensure that your environment meets operating system, CPU, memory, and disk space requirements.
+Deploy Workload Security Agents on dedicated servers that meet minimum OS, CPU, memory, and disk space requirements to ensure optimal monitoring and threat detection performance. This guide specifies the hardware and network requirements needed before link:task_cs_add_agent.html[installing your Workload Security Agent], including supported Linux distributions, network connectivity rules, and system sizing guidance.
 
 
 [cols=2*,options="header",cols="36,60"]
@@ -68,8 +68,6 @@ For Linux, disk space should be allocated in this manner:
 
 == Additional recommendations
 * It is strongly recommended to synchronize the time on both the ONTAP system and the Agent machine using *Network Time Protocol (NTP)* or *Simple Network Time Protocol (SNTP)*.
-
-
 
 
 == Cloud Network Access Rules

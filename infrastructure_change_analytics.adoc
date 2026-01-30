@@ -21,7 +21,7 @@ In any environment, changes to your resources may happen because of mis-configur
 
 To analyze Infrastructure Changes, navigate to *Observability > Change Analysis*. Alerts and Configuration changes for the current time range are listed. Alert rows show the current alert status (active or resolved). 
 
-You can also navigate to a landing page for a resource. If changes have occurred to that recource or related resources, these will be shown in the Expert View section of the page. Zoom in to investigate individual changes, or leave the view wide to see all changes within the selected time range. Hovering over a change will give you a summary of the change. Clicking on that change will focus the expert view on the time of that change.
+You can also navigate to a landing page for a resource. If changes have occurred to that recource or related resources, these will be shown in the Perfromance section of the page. Zoom in to investigate individual changes, or leave the view wide to see all changes within the selected time range. Hovering over a change will give you a summary of the change. Clicking on that change will focus the performance at the time of that change.
 
 image:change_analysis_on_a_landing_page.png[Change Analysis on a landing page]
 

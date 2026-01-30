@@ -36,18 +36,19 @@ The ONTAP SVM Data Collector enables Workload Security to monitor file and user 
 
 * Make sure that you have a properly configured User Directory Connector, otherwise events will show encoded user names and not the actual name of the user (as stored in Active Directory) in the “Activity Forensics” page.
 
-* •	ONTAP Persistent Store is supported from 9.14.1.
+* ONTAP Persistent Store is supported from 9.14.1.
 
 * For optimal performance, you should configure the FPolicy server to be on the same subnet as the storage system.
 
-
+[[fpolicy-best-practices]]
+* For comprehensive best practices and recommendations regarding Workload Security FPolicy configuration, see the link:https://kb.netapp.com/on-prem/ontap/da/NAS/NAS-KBs/DII_Storage_Workload_Security__Fpolicy_Best_Practice_and_Recommendations[KB Article on FPolicy Best Practices^].
 
 * You must add an SVM using one of the following two methods:
 ** By Using Cluster IP, SVM name, and Cluster Management Username and Password. *_This is the recommended method._*
 *** SVM name must be exactly as is shown in ONTAP and is case-sensitive.
 ** By Using SVM Vserver Management IP, Username, and Password
 ** If you are not able or not willing to use the full Administrator Cluster/SVM Management Username and Password, you can create a custom user with lesser privileges as mentioned in the <<a-note-about-permissions,“A note about permissions”>> section below. This custom user can be created for either SVM or Cluster access.
-*** o	You can also use an AD user with a role that has at least the permissions of csrole as mentioned in “A note about permissions” section below. Also refer to the link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.pow-adm-auth-rbac%2FGUID-0DB65B04-71DB-43F4-9A0F-850C93C4896C.html[ONTAP documentation].
+*** You can also use an AD user with a role that has at least the permissions of csrole as mentioned in “A note about permissions” section below. Also refer to the link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.pow-adm-auth-rbac%2FGUID-0DB65B04-71DB-43F4-9A0F-850C93C4896C.html[ONTAP documentation].
 
 * Ensure the correct applications are set for the SVM by executing the following command:
 
@@ -105,6 +106,26 @@ Be sure to review the <<a-note-about-permissions,Permissions>> section below as 
 The user can go to the add/edit collector page, enter the cluster level details (in Cluster Mode) or SVM level details (in SVM Mode), and click on the *Test Connection* button. Workload Security will then process the request and display an appropriate success or failure message.
 
 image:ws_test_connection_success_example.png[Workload Security 'Test Connection' success message]
+
+
+
+== Things to note for ONTAP Multi Admin Verify (MAV) 
+
+Some features, such as the creation and deletion of snapshots or user blocking (SMB), may not work based on the MAV commands added in your version of ONTAP. 
+
+Follow the steps below to add exclusions to your MAV commands which allow Workload Security to create or delete snapshots and block users.
+
+Commands to allow snapshot create and delete:
+
+ multi-admin-verify rule modify -operation "volume snapshot create" -query "-snapshot !*cloudsecure_*" 
+ multi-admin-verify rule modify -operation "volume snapshot delete" -query "-snapshot !*cloudsecure_*"  
+
+Command to allow user blocking:
+
+ multi-admin-verify rule delete -operation set
+
+
+
 
 
 
@@ -295,7 +316,7 @@ NOTE: A collector cannot be paused if it has restricted users. Restore the user 
 Keep the following in mind:
 
 * Snapshot purge won't happen as per the settings configured on a paused collector.
-* EMS events (like ONTAP ARP) won't be processed on a paused collector. This means if ONTAP identifies a ransomware attack, Data Infrastructure Insights Workload Security won't be able to acquire that event.
+* EMS events (like ONTAP ARP) won't be processed on a paused collector. This means if ONTAP identifies a file tampering attack, Data Infrastructure Insights Workload Security won't be able to acquire that event.
 * Health notifications emails will NOT be sent for a paused collector.
 * Manual or Automatic actions (such as Snapshot or User Blocking) will not be supported on a paused collector.
 * On agent or collector upgrades, agent VM restarts/reboots, or agent service restart, a paused collector will remain in _Paused_ state.
@@ -355,7 +376,6 @@ Workload Security will process the request. On successful migration, the user wi
 Note: Any configuration changes previously made on the "Edit Collector" page will be remain applied when the collector is successfully migrated to the destination agent.
 
 image:ws_migrate_collector_to_another_agent.png[migrate a collector by choosing another agent]
-
 
 == Troubleshooting
 
