@@ -13,7 +13,7 @@ Getting Started: Sign Up and Start Your Free Trial
 :imagesdir: ./media/
 
 [.lead]
-Getting started with Data Infrastructure Insights is easy. Sign up for a NetApp Console account, create your tenant, and begin your free 30-day trial to explore all the features DII has to offer.
+Getting started with Data Infrastructure Insights is easy. Sign up for a NetApp Console account, create your site (sometimes called a "tenant"), and begin your free 30-day trial to explore all the features DII has to offer.
 
 
 == Creating your NetApp Console account
@@ -34,31 +34,31 @@ To get started with NetApp's cloud services, go to link:https://console.netapp.c
 
 == Starting your Data Infrastructure Insights free trial
 
-If this is your first time logging in to Data Infrastructure Insights, under the Data Infrastructure Insights offering, click on *Start Free Trial*. Data Infrastructure Insights will walk you through creating your company's tenant, including selecting the region where you want your tenant to reside.
+If this is your first time logging in to Data Infrastructure Insights, under the Data Infrastructure Insights offering, click on *Start Free Trial*. Data Infrastructure Insights will walk you through creating your company's site, including selecting the region where you want your site to reside.
 
 //image:trial_region_selector.png[Selecting the region in which to host your Data Infrastructure Insights tenant]
 
-Once the creation of your tenant is complete, use your Console credentials to log in and start your free 30-day trial of Data Infrastructure Insights. During this trial you can explore the features DII has to offer.
+Once the creation of your site is complete, use your Console credentials to log in and start your free 30-day trial of Data Infrastructure Insights. During this trial you can explore the features DII has to offer.
 
 During the free trial, you can link:concept_subscribing_to_cloud_insights.html[start your subscription] at any time. Once subscribed, you can use DII features based on your current subscription plan.
 
 
 == Sign in and go
 
-Once your tenant has been created, you can log in to the NetApp Console Portal and navigate to the link:https://services.cloud.netapp.com[Cloud Services] page, then select *Go to Data Infrastructure Insights*. You'll be taken directly to your tenant.
+Once your site has been created, you can log in to the NetApp Console Portal and navigate to the link:https://services.cloud.netapp.com[Cloud Services] page, then select *Go to Data Infrastructure Insights*. Your DII site opens in a new browser tab. 
 
-Alternatively, you can open your Data Infrastructure Insights tenant URL directly in a browser:
+Alternatively, you can open your Data Infrastructure Insights site URL directly in a browser:
 
- https://<tenant-prefix>.c01.cloudinsights.netapp.com/
+ https://<site-prefix>.c01.cloudinsights.netapp.com/
 
 The URL is also included in each user's invitation email for easy access and bookmarking. If you're not already logged in to Console, you'll be prompted to log in.
 
 [NOTE]
 ====
-New users must sign up for Console access before they can access their tenant URL.
+New users must sign up for Console access before they can access their site URL.
 ====
 
-The first time you log in to a new tenant, you'll be guided through setup to link:task_getting_started_with_cloud_insights.html[*begin gathering data*].
+The first time you log in to a new site, you'll be guided through steps to link:task_getting_started_with_cloud_insights.html[*begin gathering data*].
 
 == Logging out
 
