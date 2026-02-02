@@ -125,7 +125,7 @@ Products supported by this data collector:
 |Security|Implemented|SSH|
 .5+|Info|Api Name|Implemented|SSH|
 |Api Version|Implemented|SSH|
-google|DataSource Name|Implemented|SSH|Info
+|DataSource Name|Implemented|SSH|Info
 |Date|Implemented|SSH|
 |Originator ID|Implemented|SSH|
 .13+|Storage|Display IP|Implemented|SSH|
@@ -3829,14 +3829,14 @@ Products supported by this data collector:
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
 
-.86+|foundation .9+|Disk|Capacity (GB)|Implemented|HTTPS|Used capacity
-|Disk Id|Implemented|HTTPS|Uniquely identifies this disk in the array
+.86+|foundation .9+|Disk|Capacity (GB)|Implemented|HTTPS|
+|Disk Id|Implemented|HTTPS|
 |Name|Implemented|HTTPS|
 |Role|Implemented|HTTPS|
-|Role Enum|Implemented|HTTPS|enum for disk role
+|Role Enum|Implemented|HTTPS|
 |Status|Implemented|HTTPS|
-|Status Enum|Implemented|HTTPS|enum for disk status
-|Type Enum|Implemented|HTTPS|enum for disk type
+|Status Enum|Implemented|HTTPS|
+|Type Enum|Implemented|HTTPS|
 |Vendor|Implemented|HTTPS|
 .10+|Info|Api Description|Implemented|HTTPS|
 |Api Name|Implemented|HTTPS|
@@ -3844,66 +3844,66 @@ Products supported by this data collector:
 |Client Api Description|Implemented|HTTPS|
 |Client Api Name|Implemented|HTTPS|
 |Client Api Version|Implemented|HTTPS|
-|DataSource Name|Implemented|HTTPS|Info
+|DataSource Name|Implemented|HTTPS|
 |Date|Implemented|HTTPS|
 |Originator ID|Implemented|HTTPS|
 |Originator Key|Implemented|HTTPS|
 .13+|Storage|Display IP|Implemented|HTTPS|
-|Failed Raw Capacity|Implemented|HTTPS|Raw capacity of failed disks (sum of all disks that are failed)
-|Family|Implemented|HTTPS|The storage Family could be Clariion, Symmetrix, et al
+|Failed Raw Capacity|Implemented|HTTPS|
+|Family|Implemented|HTTPS|
 |IP|Implemented|HTTPS|
 |Manage URL|Implemented|HTTPS|
 |Manufacturer|Implemented|HTTPS|
 |Microcode Version|Implemented|HTTPS|
 |Model|Implemented|HTTPS|
 |Name|Implemented|HTTPS|
-|Total Raw Capacity|Implemented|HTTPS|Total raw capacity (sum of all disks on the array)
+|Total Raw Capacity|Implemented|HTTPS|
 |Serial Number|Implemented|HTTPS|
-|Spare Raw Capacity|Implemented|HTTPS|Raw capacity of spare disks (sum of all disks that are spare)
-|Virtual|Implemented|HTTPS|Is this a storage virtualization device?
+|Spare Raw Capacity|Implemented|HTTPS|
+|Virtual|Implemented|HTTPS|
 .2+|Storage Node|Name|Implemented|HTTPS|
 |UUID|Implemented|HTTPS|
-.13+|Storage Pool|Include In Dwh Capacity|Implemented|HTTPS|A way from ACQ to control which storage pools are interesting in DWH Capacity
+.13+|Storage Pool|Include In Dwh Capacity|Implemented|HTTPS|
 |Name|Implemented|HTTPS|
-|Physical Disk Capacity (MB)|Implemented|HTTPS|used as raw capacity for storage pool
-|Raid Group|Implemented|HTTPS|indicates whether this storagePool is a raid group
-|Raw to Usable Ratio|Implemented|HTTPS|ratio to convert from usable capacity to raw capacity
-|Redundancy|Implemented|HTTPS|Redundancy level
+|Physical Disk Capacity (MB)|Implemented|HTTPS|
+|Raid Group|Implemented|HTTPS|
+|Raw to Usable Ratio|Implemented|HTTPS|
+|Redundancy|Implemented|HTTPS|
 |Storage Pool Id|Implemented|HTTPS|
-|Thin Provisioning Supported|Implemented|HTTPS|Whether this internal volume supports thin provisioning for the volume layer on top of it
+|Thin Provisioning Supported|Implemented|HTTPS|
 |Total Allocated Capacity|Implemented|HTTPS|
-|Total Used Capacity|Implemented|HTTPS|Total capacity in MB
+|Total Used Capacity|Implemented|HTTPS|
 |Type|Gap|HTTPS|
-|Virtual|Implemented|HTTPS|Is this a storage virtualization device?
+|Virtual|Implemented|HTTPS|
 |Effective Used Capacity Percent|Implemented|HTTPS|
 .9+|Storage Synchronization|Mode|Implemented|HTTPS|
 |Mode Enum|Implemented|HTTPS|
 |Source Storage|Implemented|HTTPS|
 |Source Volume|Implemented|HTTPS|
-|State|Implemented|HTTPS|free text describing the device state 
+|State|Implemented|HTTPS|
 |State Enum|Implemented|HTTPS|
 |Target Storage|Implemented|HTTPS|
 |Target Volume|Implemented|HTTPS|
-|Technology|Implemented|HTTPS|technology which causes storage efficiency changed
-.18+|Volume|AutoTier Policy Identifier|Implemented|HTTPS|Dynamic Tier Policy identifier
-|Auto Tiering|Implemented|HTTPS|indicates if this storagepool is participating in auto tiering with other pools
-|Capacity|Implemented|HTTPS|Snapshot Used capacity in MB
+|Technology|Implemented|HTTPS|
+.18+|Volume|AutoTier Policy Identifier|Implemented|HTTPS|
+|Auto Tiering|Implemented|HTTPS|
+|Capacity|Implemented|HTTPS|
 |Disk Type|Not Available|HTTPS|
 |Junction Path|Implemented|HTTPS|
 |Name|Implemented|HTTPS|
-|Total Raw Capacity|Implemented|HTTPS|Total raw capacity (sum of all disks on the array)
-|Redundancy|Implemented|HTTPS|Redundancy level
+|Total Raw Capacity|Implemented|HTTPS|
+|Redundancy|Implemented|HTTPS|
 |Storage Pool Id|Implemented|HTTPS|
 |Thin Provisioned|Implemented|HTTPS|
 |Type|Gap|HTTPS|
 |UUID|Implemented|HTTPS|
 |Used Capacity|Implemented|HTTPS|
-|Virtual|Implemented|HTTPS|Is this a storage virtualization device?
-|Written Capacity|Implemented|HTTPS|Total capacity written to this volume by a Host in MB
+|Virtual|Implemented|HTTPS|
+|Written Capacity|Implemented|HTTPS|
 |Effective Used Capacity Percent|Implemented|HTTPS|
 |Compression Enabled|Implemented|HTTPS|
 |storage Groups|Implemented|HTTPS|
-.4+|Volume Map|LUN|Implemented|HTTPS|Name of the backend lun
+.4+|Volume Map|LUN|Implemented|HTTPS|
 |Protocol Controller|Implemented|HTTPS|
 |Storage Port|Implemented|HTTPS|
 |Type|Gap|HTTPS|
@@ -4556,119 +4556,24 @@ Management APIs used by this data collector:
 
 == EMC VPLEX
 
-Models and versions supported by this data collector:
-|===
-<.<|Models <.<|Firmware versions
 
-|VPLEX
-|6.2.0.04.00.07
-6.2.0.07.00.02
-6.2.1.0.0.519
+|===
+
+
 
 |===
 Products supported by this data collector:
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
 
-.51+|foundation .4+|Info|DataSource Name|Implemented|HTTP/S|Info
+.4+|foundation .4+|Info|DataSource Name|Implemented|HTTP/S|Info
 |Date|Implemented|HTTP/S|
 |Originator ID|Implemented|HTTP/S|
 |Originator Key|Implemented|HTTP/S|
-.13+|Storage|Display IP|Implemented|HTTP/S|
-|Failed Raw Capacity|Implemented|HTTP/S|Raw capacity of failed disks (sum of all disks that are failed)
-|Family|Implemented|HTTP/S|The storage Family could be Clariion, Symmetrix, et al
-|IP|Implemented|HTTP/S|
-|Manage URL|Implemented|HTTP/S|
-|Manufacturer|Implemented|HTTP/S|
-|Microcode Version|Implemented|HTTP/S|
-|Model|Implemented|HTTP/S|
-|Name|Implemented|HTTP/S|
-|Total Raw Capacity|Implemented|HTTP/S|Total raw capacity (sum of all disks on the array)
-|Serial Number|Implemented|HTTP/S|
-|Spare Raw Capacity|Implemented|HTTP/S|Raw capacity of spare disks (sum of all disks that are spare)
-|Virtual|Implemented|HTTP/S|Is this a storage virtualization device?
-.4+|Storage Node|Name|Implemented|HTTP/S|
-|Serial Number|Implemented|HTTP/S|
-|State|Implemented|HTTP/S|free text describing the device state
-|UUID|Implemented|HTTP/S|
-.14+|Storage Pool|Dedupe Enabled|Implemented|HTTP/S|Is dedupe enabled on the storage pool
-|Name|Implemented|HTTP/S|
-|Other Allocated Capacity|Gap|HTTP/S|Capacity allocated for other (not data and not snapshot)
-|Other UsedCapacity (MB)|Implemented|HTTP/S|Any capacity other than data and snapshot
-|Raid Group|Implemented|HTTP/S|indicates whether this storagePool is a raid group
-|Raw to Usable Ratio|Implemented|HTTP/S|ratio to convert from usable capacity to raw capacity
-|Redundancy|Implemented|HTTP/S|Redundancy level
-|Status|Implemented|HTTP/S|
-|Storage Pool Id|Implemented|HTTP/S|
-|Thin Provisioning Supported|Implemented|HTTP/S|Whether this internal volume supports thin provisioning for the volume layer on top of it
-|Total Allocated Capacity|Implemented|HTTP/S|
-|Total Used Capacity|Implemented|HTTP/S|Total capacity in MB
-|Type|Gap|HTTP/S|
-|Virtual|Implemented|HTTP/S|Is this a storage virtualization device?
-.8+|Volume|Capacity|Implemented|HTTP/S|Snapshot Used capacity in MB
-|Name|Implemented|HTTP/S|
-|Total Raw Capacity|Implemented|HTTP/S|Total raw capacity (sum of all disks on the array)
-|Redundancy|Implemented|HTTP/S|Redundancy level
-|Storage Pool Id|Implemented|HTTP/S|
-|Thin Provisioned|Implemented|HTTP/S|
-|UUID|Implemented|HTTP/S|
-|Virtual|Implemented|HTTP/S|Is this a storage virtualization device?
-.4+|Volume Map|LUN|Implemented|HTTP/S|Name of the backend lun
-|Protocol Controller|Implemented|HTTP/S|
-|Storage Port|Implemented|HTTP/S|
-|Type|Gap|HTTP/S|
-.4+|Volume Mask|Initiator|Implemented|HTTP/S|
-|Protocol Controller|Implemented|HTTP/S|
-|Storage Port|Implemented|HTTP/S|
-|Type|Gap|HTTP/S|
-.59+|performance .13+|Storage|Failed Raw Capacity|Implemented|SSH|
-|Raw Capacity|Implemented|SSH|
-|Spare Raw Capacity|Implemented|SSH|Raw capacity of spare disks (sum of all disks that are spare)
-|StoragePools Capacity|Implemented|SSH|
-|IOPs Total|Implemented|SSH|
+.15+|performance .4+|Storage Node Data|Cache Hit Ratio Total|Implemented|SSH|
 |Key|Implemented|SSH|
-|Latency Read|Implemented|SSH|
-|Latency Total|Implemented|SSH|
-|Latency Write|Implemented|SSH|
 |Server ID|Implemented|SSH|
-|Throughput Read|Implemented|SSH|
-|Throughput Total|Implemented|SSH|Average disk total rate (read and write across all disks) in MB/s
-|Throughput Write|Implemented|SSH|
-.13+|Storage Node|Cache Hit Ratio Total|Implemented|SSH|
-|IOPs Read|Implemented|SSH|Number of read IOPs on the disk
-|IOPs Total|Implemented|SSH|
-|IOPs Write|Implemented|SSH|
-|Key|Implemented|SSH|
-|Latency Read|Implemented|SSH|
-|Latency Total|Implemented|SSH|
-|Latency Write|Implemented|SSH|
-|Server ID|Implemented|SSH|
-|Throughput Read|Implemented|SSH|
-|Throughput Total|Implemented|SSH|Average disk total rate (read and write across all disks) in MB/s
-|Throughput Write|Implemented|SSH|
 |Utilization Total|Implemented|SSH|
-.4+|Storage Node Data|Key|Implemented|SSH|
-|Server ID|Implemented|SSH|
-|Cache Hit Ratio Total|Implemented|SSH|
-|Utilization Total|Implemented|SSH|
-.7+|StoragePool Disk|Capacity Provisioned|Implemented|SSH|
-|Total Capacity|Implemented|SSH|
-|Used Capacity|Implemented|SSH|
-|Over Commit Capacity Ratio|Implemented|SSH|Reported as a time series
-|Capacity Used Ratio|Implemented|SSH|
-|Other Total Capacity|Implemented|SSH|
-|Other Used Capacity|Implemented|SSH|
-.11+|Volume|Raw Capacity|Implemented|SSH|
-|Total Capacity|Implemented|SSH|
-|IOPs Total|Implemented|SSH|
-|Key|Implemented|SSH|
-|Latency Read|Implemented|SSH|
-|Latency Total|Implemented|SSH|
-|Latency Write|Implemented|SSH|
-|Server ID|Implemented|SSH|
-|Throughput Read|Implemented|SSH|
-|Throughput Total|Implemented|SSH|Average disk total rate (read and write across all disks) in MB/s
-|Throughput Write|Implemented|SSH|
 .11+|Volume|Raw Capacity|Implemented|SSH|
 |Total Capacity|Implemented|SSH|
 |IOPs Total|Implemented|SSH|
@@ -5467,155 +5372,6 @@ Management APIs used by this data collector:
 
 |===
 
-== Google Cloud Netapp Volumes
-
-
-Products supported by this data collector:
-|===
-^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
-
-.71+|foundation .7+|File Share|Name|Implemented|HTTPS|
-|Path|Implemented|HTTPS|Path of the fileShare
-|Qtree Id|Implemented|HTTPS|unique id of the qtree
-|Is InternalVolume|Implemented|HTTPS|whether the file share represents an internal volume (netapp volume) or is it a qtree/folder within the internal volume
-|Is Shared|Implemented|HTTPS|whether this fileShare has any shares associated with it
-|Status|Implemented|HTTPS|
-|Security Type|Implemented|HTTPS|
-.3+|Info|DataSource Name|Implemented|HTTPS|Info
-|Originator ID|Implemented|HTTPS|
-|Date|Implemented|HTTPS|
-.24+|Internal Volume|Internal Volume Id|Implemented|HTTPS|
-|Name|Implemented|HTTPS|
-|Storage Pool Id|Implemented|HTTPS|
-|Type|Gap|HTTPS|
-|Thin Provisioned|Implemented|HTTPS|
-|Thin Provisioning Supported|Implemented|HTTPS|Whether this internal volume supports thin provisioning for the volume layer on top of it
-|Dedupe Enabled|Implemented|HTTPS|Is dedupe enabled on the storage pool
-|Compression Enabled|Implemented|HTTPS|Is compression enabled on the storage pool
-|Last Snapshot Time|Implemented|HTTPS|time of last snapshot
-|Snapshot Count|Implemented|HTTPS|Number of snapshots on the internal volumes
-|Status|Implemented|HTTPS|
-|Protection Type|Implemented|HTTPS|
-|Snapshot Used Capacity|Implemented|HTTPS|
-|Snapshot Allocated Capacity|Gap|HTTPS|Allocated capacity of snapshots in MB
-|Data Used Capacity|Implemented|HTTPS|
-|Data Allocated Capacity|Gap|HTTPS|capacity allocated for data
-|Total Used Capacity|Implemented|HTTPS|Total capacity in MB
-|Total Allocated Capacity|Implemented|HTTPS|
-|Raw to Usable Ratio|Implemented|HTTPS|ratio to convert from usable capacity to raw capacity
-|Tiering Minimum Cooling Days|Implemented|HTTPS|
-|QoS - Policy|Implemented|HTTPS|
-||Implemented|HTTPS|
-|Comment|Gap|HTTPS|state: free text comment describing the svm
-|Qos Limit Raw|Implemented|HTTPS|
-.5+|QTree|Qtree Id|Implemented|HTTPS|unique id of the qtree
-|Name|Implemented|HTTPS|
-|Security Style|Implemented|HTTPS|Security style of the directory: unix, ntfs, or mixed
-|Status|Implemented|HTTPS|
-|Type|Gap|HTTPS|
-.3+|Share|Name|Implemented|HTTPS|
-|Protocol|Implemented|HTTPS|enum for share protocol
-|IP Interfaces|Implemented|HTTPS|comma separated list of IP addresses on which this share is exposed
-.2+|Share Initiator|Initiator|Implemented|HTTPS|
-|Permission|Implemented|HTTPS|Permissions for this particular share
-.10+|Storage|IP|Implemented|HTTPS|
-|Display IP|Implemented|HTTPS|
-|Name|Implemented|HTTPS|
-|Manufacturer|Implemented|HTTPS|
-|Family|Implemented|HTTPS|The storage Family could be Clariion, Symmetrix, et al
-|Virtual|Implemented|HTTPS|Is this a storage virtualization device?
-|Manage URL|Implemented|HTTPS|
-|Total Raw Capacity|Implemented|HTTPS|Total raw capacity (sum of all disks on the array)
-|Spare Raw Capacity|Implemented|HTTPS|Raw capacity of spare disks (sum of all disks that are spare)
-|Failed Raw Capacity|Implemented|HTTPS|Raw capacity of failed disks (sum of all disks that are failed)
-.17+|Storage Pool|Storage Pool Id|Implemented|HTTPS|
-|Name|Implemented|HTTPS|
-|Type|Gap|HTTPS|
-|Status|Implemented|HTTPS|
-|Thin Provisioning Supported|Implemented|HTTPS|Whether this internal volume supports thin provisioning for the volume layer on top of it
-|Include In Dwh Capacity|Implemented|HTTPS|A way from ACQ to control which storage pools are interesting in DWH Capacity
-|Vendor Tier|Implemented|HTTPS|Vendor Specific Tier Name
-|Dedupe Enabled|Implemented|HTTPS|Is dedupe enabled on the storage pool
-|Compression Enabled|Implemented|HTTPS|Is compression enabled on the storage pool
-|Virtual|Implemented|HTTPS|Is this a storage virtualization device?
-|Raid Group|Implemented|HTTPS|indicates whether this storagePool is a raid group
-|Data Used Capacity|Implemented|HTTPS|
-|Data Allocated Capacity|Gap|HTTPS|capacity allocated for data
-|Total Allocated Capacity|Implemented|HTTPS|
-|Physical Disk Capacity (MB)|Implemented|HTTPS|used as raw capacity for storage pool
-|Raw to Usable Ratio|Implemented|HTTPS|ratio to convert from usable capacity to raw capacity
-||Implemented|HTTPS|
-.52+|performance .21+|Internal Volume|Latency Total|Implemented|HTTPS|
-|Object Store Space Used|Implemented|HTTPS|
-|Total Capacity|Implemented|HTTPS|
-|Latency Read|Implemented|HTTPS|
-|IOPs other|Implemented|HTTPS|
-|IOPs Write|Implemented|HTTPS|
-|Used Capacity|Implemented|HTTPS|
-|Throughput Read|Implemented|HTTPS|
-|Server ID|Implemented|HTTPS|
-|IOPs Total|Implemented|HTTPS|
-|Snapshot Used Capacity Ratio|Implemented|HTTPS| Reported as a time series
-|Latency Write|Implemented|HTTPS|
-|IOPs Read|Implemented|HTTPS|Number of read IOPs on the disk
-|Capacity Used Ratio|Implemented|HTTPS|
-|Total Data Capacity|Implemented|HTTPS|
-|Data Used Capacity|Implemented|HTTPS|
-|Throughput Write|Implemented|HTTPS|
-|Throughput Total|Implemented|HTTPS|Average disk total rate (read and write across all disks) in MB/s
-|Snapshot Used Capacity|Implemented|HTTPS|
-|Key|Implemented|HTTPS|
-|Snapshot Reserved Capacity|Implemented|HTTPS|
-.16+|Storage|Latency Total|Implemented|HTTPS|
-|Failed Raw Capacity|Implemented|HTTPS|
-|Spare Raw Capacity|Implemented|HTTPS|Raw capacity of spare disks (sum of all disks that are spare)
-|Latency Read|Implemented|HTTPS|
-|IOPs other|Implemented|HTTPS|
-|IOPs Write|Implemented|HTTPS|
-|Raw Capacity|Implemented|HTTPS|
-|Throughput Read|Implemented|HTTPS|
-|Server ID|Implemented|HTTPS|
-|IOPs Total|Implemented|HTTPS|
-|Latency Write|Implemented|HTTPS|
-|IOPs Read|Implemented|HTTPS|Number of read IOPs on the disk
-|StoragePools Capacity|Implemented|HTTPS|
-|Throughput Write|Implemented|HTTPS|
-|Throughput Total|Implemented|HTTPS|Average disk total rate (read and write across all disks) in MB/s
-|Key|Implemented|HTTPS|
-.15+|StoragePool Disk|Object Store Space Used|Implemented|HTTPS|
-|Total Capacity|Implemented|HTTPS|
-|IOPs Write|Implemented|HTTPS|
-|Used Capacity|Implemented|HTTPS|
-|Raw Capacity|Implemented|HTTPS|
-|Throughput Read|Implemented|HTTPS|
-|IOPs Total|Implemented|HTTPS|
-|IOPs Read|Implemented|HTTPS|Number of read IOPs on the disk
-|Capacity Used Ratio|Implemented|HTTPS|
-|Total Data Capacity|Implemented|HTTPS|
-|Capacity Provisioned|Implemented|HTTPS|
-|Data Used Capacity|Implemented|HTTPS|
-|Throughput Write|Implemented|HTTPS|
-|Throughput Total|Implemented|HTTPS|Average disk total rate (read and write across all disks) in MB/s
-|Over Commit Capacity Ratio|Implemented|HTTPS|Reported as a time series
-
-|===
-
-Management APIs used by this data collector:
-|===
-^|API ^|Protocol Used ^|Transport layer protocol used ^|Incoming ports used ^|Outgoing ports used ^|Supports authentication ^|Requires only 'Read-only' credentials ^|Supports Encryption ^|Firewall friendly (static ports) 
-
-|Google Compute Platform REST API
-|HTTPS
-|
-|443
-|
-|true
-|true
-|true
-|true
-
-|===
-
 == HDS HCP (HTTPS)
 
 Models and versions supported by this data collector:
@@ -6071,31 +5827,31 @@ Products supported by this data collector:
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
 
-.110+|foundation .15+|Disk|Capacity (GB)|Implemented||Used capacity
-|Disk Id|Implemented||Uniquely identifies this disk in the array
+.110+|foundation .15+|Disk|Capacity (GB)|Implemented||
+|Disk Id|Implemented||
 |Group|Implemented||
-|Location|Gap||Where this disk is physically located in the array
+|Location|Gap||
 |Model|Implemented||
 |Name|Implemented||
 |Potential Transfer Rate|Implemented||
 |Role|Implemented||
-|Role Enum|Implemented||enum for disk role
+|Role Enum|Implemented||
 |Seek Time|Implemented||
 |Serial Number|Implemented||
-|Speed|Implemented||Speed of disk (RPM) 
-|Status Enum|Implemented||enum for disk status
-|Type Enum|Implemented||enum for disk type
+|Speed|Implemented||
+|Status Enum|Implemented||
+|Type Enum|Implemented||
 |Vendor|Implemented||
-.10+|Disk Group|Capacity|Implemented||Snapshot Used capacity in MB
-|DiskGroup Id|Implemented||unique id of the disk group
+.10+|Disk Group|Capacity|Implemented||
+|DiskGroup Id|Implemented||
 |Disk Type|Not Available||
 |Name|Implemented||
-|Physical Disk Capacity (MB)|Implemented||used as raw capacity for storage pool
-|Redundancy|Implemented||Redundancy level
+|Physical Disk Capacity (MB)|Implemented||
+|Redundancy|Implemented||
 |Status|Implemented||
 |Used Capacity|Implemented||
-|Vendor DiskGroup Type|Implemented||vendor's designation of the disk group type
-|Virtual|Implemented||Is this a storage virtualization device?
+|Vendor DiskGroup Type|Implemented||
+|Virtual|Implemented||
 .4+|ISCSI Network Portal|IP|Implemented||
 |Listening Port|Implemented||
 |Nic|Implemented||
@@ -6115,64 +5871,64 @@ Products supported by this data collector:
 |OID|Implemented||
 |Portal Group OID|Implemented||
 |Security|Implemented||
-.4+|Info|DataSource Name|Implemented||Info
+.4+|Info|DataSource Name|Implemented||
 |Date|Implemented||
 |Originator ID|Implemented||
 |Originator Key|Implemented||
 .14+|Storage|Display IP|Implemented||
-|Failed Raw Capacity|Implemented||Raw capacity of failed disks (sum of all disks that are failed)
-|Family|Implemented||The storage Family could be Clariion, Symmetrix, et al
+|Failed Raw Capacity|Implemented||
+|Family|Implemented||
 |IP|Implemented||
 |Manage URL|Implemented||
 |Manufacturer|Implemented||
 |Microcode Version|Implemented||
 |Model|Implemented||
 |Name|Implemented||
-|Total Raw Capacity|Implemented||Total raw capacity (sum of all disks on the array)
+|Total Raw Capacity|Implemented||
 |Serial Number|Implemented||
-|Spare Raw Capacity|Implemented||Raw capacity of spare disks (sum of all disks that are spare)
-|SupportActive Active|Implemented||Specified if the storage supports active-active configurations
-|Virtual|Implemented||Is this a storage virtualization device?
+|Spare Raw Capacity|Implemented||
+|SupportActive Active|Implemented||
+|Virtual|Implemented||
 .2+|Storage Node|Name|Implemented||
 |UUID|Implemented||
-.18+|Storage Pool|Compression Enabled|Implemented||Is compression enabled on the storage pool
-|Compression Savings|Implemented||ratio of compression savings in percentage
-|Dedupe Enabled|Implemented||Is dedupe enabled on the storage pool
-|Include In Dwh Capacity|Implemented||A way from ACQ to control which storage pools are interesting in DWH Capacity
+.18+|Storage Pool|Compression Enabled|Implemented||
+|Compression Savings|Implemented||
+|Dedupe Enabled|Implemented||
+|Include In Dwh Capacity|Implemented||
 |Name|Implemented||
-|Physical Disk Capacity (MB)|Implemented||used as raw capacity for storage pool
-|Raid Group|Implemented||indicates whether this storagePool is a raid group
-|Raw to Usable Ratio|Implemented||ratio to convert from usable capacity to raw capacity
-|Redundancy|Implemented||Redundancy level
-|Soft Limit (MB)|Implemented||logical volume size that is defined during volume creation or resizing operations
+|Physical Disk Capacity (MB)|Implemented||
+|Raid Group|Implemented||
+|Raw to Usable Ratio|Implemented||
+|Redundancy|Implemented||
+|Soft Limit (MB)|Implemented||
 |Status|Implemented||
 |Storage Pool Id|Implemented||
-|Thin Provisioning Supported|Implemented||Whether this internal volume supports thin provisioning for the volume layer on top of it
+|Thin Provisioning Supported|Implemented||
 |Total Allocated Capacity|Implemented||
-|Total Used Capacity|Implemented||Total capacity in MB
+|Total Used Capacity|Implemented||
 |Type|Gap||
-|Virtual|Implemented||Is this a storage virtualization device?
+|Virtual|Implemented||
 |Encrypted|Implemented||
 .9+|Storage Synchronization|Mode|Implemented||
 |Mode Enum|Implemented||
 |Source Storage|Implemented||
 |Source Volume|Implemented||
-|State|Implemented||free text describing the device state 
+|State|Implemented||
 |State Enum|Implemented||
 |Target Storage|Implemented||
 |Target Volume|Implemented||
-|Technology|Implemented||technology which causes storage efficiency changed
-.10+|Volume|Capacity|Implemented||Snapshot Used capacity in MB
+|Technology|Implemented||
+.10+|Volume|Capacity|Implemented||
 |Junction Path|Implemented||
 |Name|Implemented||
 |Protection Type|Implemented||
-|Total Raw Capacity|Implemented||Total raw capacity (sum of all disks on the array)
+|Total Raw Capacity|Implemented||
 |Storage Pool Id|Implemented||
 |Thin Provisioned|Implemented||
 |Type|Gap||
 |Used Capacity|Implemented||
 |Compression Enabled|Implemented||
-.5+|Volume Map|LUN|Implemented||Name of the backend lun
+.5+|Volume Map|LUN|Implemented||
 |Masking Required|Implemented||
 |Protocol Controller|Implemented||
 |Storage Port|Implemented||
@@ -8801,18 +8557,18 @@ Products supported by this data collector:
 |Licensed|Implemented|HTTPS|
 |Type|Gap|HTTPS|
 |Used|Implemented|HTTPS|
-.6+|Disk Group|Capacity|Implemented|HTTPS|Snapshot Used capacity in MB
-|DiskGroup Id|Implemented|HTTPS|unique id of the disk group
+.6+|Disk Group|Capacity|Implemented|HTTPS|
+|DiskGroup Id|Implemented|HTTPS|
 |Name|Implemented|HTTPS|
-|Physical Disk Capacity (MB)|Implemented|HTTPS|used as raw capacity for storage pool
+|Physical Disk Capacity (MB)|Implemented|HTTPS|
 |Used Capacity|Implemented|HTTPS|
-|Virtual|Implemented|HTTPS|Is this a storage virtualization device?
-.8+|File Share|Is InternalVolume|Implemented|HTTPS|whether the file share represents an internal volume (netapp volume) or is it a qtree/folder within the internal volume
-|Is Oplocks Enabled|Implemented|HTTPS|whether opportunistic locks are enabled on the FileShare
-|Is Shared|Implemented|HTTPS|whether this fileShare has any shares associated with it
+|Virtual|Implemented|HTTPS|
+.8+|File Share|Is InternalVolume|Implemented|HTTPS|
+|Is Oplocks Enabled|Implemented|HTTPS|
+|Is Shared|Implemented|HTTPS|
 |Name|Implemented|HTTPS|
-|Path|Implemented|HTTPS|Path of the fileShare
-|Qtree Id|Implemented|HTTPS|unique id of the qtree
+|Path|Implemented|HTTPS|
+|Qtree Id|Implemented|HTTPS|
 |Security Type|Implemented|HTTPS|
 |Status|Implemented|HTTPS|
 .4+|ISCSI Network Portal|IP|Implemented|HTTPS|
@@ -8845,40 +8601,40 @@ Products supported by this data collector:
 |Target Session Id|Implemented|HTTPS|
 .6+|Info|Api Name|Implemented|HTTPS|
 |Api Version|Implemented|HTTPS|
-|DataSource Name|Implemented|HTTPS|Info
+|DataSource Name|Implemented|HTTPS|
 |Date|Implemented|HTTPS|
 |Originator ID|Implemented|HTTPS|
 |Originator Key|Implemented|HTTPS|
-.41+|Internal Volume|Compression Enabled|Implemented|HTTPS|Is compression enabled on the storage pool
-|Compression Savings|Implemented|HTTPS|ratio of compression savings in percentage
-|Data Allocated Capacity|Gap|HTTPS|capacity allocated for data
+.41+|Internal Volume|Compression Enabled|Implemented|HTTPS|
+|Compression Savings|Implemented|HTTPS|
+|Data Allocated Capacity|Gap|HTTPS|
 |Data Used Capacity|Implemented|HTTPS|
-|Dedupe Enabled|Implemented|HTTPS|Is dedupe enabled on the storage pool
-|Dedupe Savings|Implemented|HTTPS|ratio of dedupe savings in percentage
-|GuidKey 1|Implemented|HTTPS|GuidKey1 is implicit for all objects whose GUID key has not changed since OCI version 7.3.5.
-|GuidKey 2|Implemented|HTTPS|GuidKey2 is implicit for all objects whose GUID key has not changed since OCI version 7.3.5.
+|Dedupe Enabled|Implemented|HTTPS|
+|Dedupe Savings|Implemented|HTTPS|
+|GuidKey 1|Implemented|HTTPS|
+|GuidKey 2|Implemented|HTTPS|
 |Internal Volume Id|Implemented|HTTPS|
-|Last Known Access Time|Implemented|HTTPS|Last know access to the volume
+|Last Known Access Time|Implemented|HTTPS|
 |Name|Implemented|HTTPS|
 |Protection Type|Implemented|HTTPS|
-|Raw to Usable Ratio|Implemented|HTTPS|ratio to convert from usable capacity to raw capacity
-|Snapshot Allocated Capacity|Gap|HTTPS|Allocated capacity of snapshots in MB
-|Snapshot Count|Implemented|HTTPS|Number of snapshots on the internal volumes
+|Raw to Usable Ratio|Implemented|HTTPS|
+|Snapshot Allocated Capacity|Gap|HTTPS|
+|Snapshot Count|Implemented|HTTPS|
 |Snapshot Used Capacity|Implemented|HTTPS|
-|Space Guarantee|Implemented|HTTPS|Space  Guatantee policy (file, volume or none)
+|Space Guarantee|Implemented|HTTPS|
 |Status|Implemented|HTTPS|
 |Storage Pool Id|Implemented|HTTPS|
 |Thin Provisioned|Implemented|HTTPS|
-|Thin Provisioning Supported|Implemented|HTTPS|Whether this internal volume supports thin provisioning for the volume layer on top of it
+|Thin Provisioning Supported|Implemented|HTTPS|
 |Total Allocated Capacity|Implemented|HTTPS|
 |Total Clone Saved Capacity in MB|Implemented|HTTPS|
-|Total Used Capacity|Implemented|HTTPS|Total capacity in MB
-|Total Used Capacity (MB)|Implemented|HTTPS|place holder for the used capacity as read from the device
+|Total Used Capacity|Implemented|HTTPS|
+|Total Used Capacity (MB)|Implemented|HTTPS|
 |Type|Gap|HTTPS|
 |UUID|Implemented|HTTPS|
-|Virtual Storage|Implemented|HTTPS|Owning virtual storage (vfiler)
+|Virtual Storage|Implemented|HTTPS|
 |Adaptive Qos Policy|Implemented|HTTPS|
-|Comment|Gap|HTTPS|state: free text comment describing the svm
+|Comment|Gap|HTTPS|
 |Group Id|Implemented|HTTPS|
 |Group Name|Implemented|HTTPS|
 |Encrypted|Implemented|HTTPS|
@@ -8892,45 +8648,45 @@ Products supported by this data collector:
 |Tiering Minimum Cooling Days|Implemented|HTTPS|
 .3+|Storage Synchronization|Source Internal Volume|Implemented|HTTPS|
 |Target Internal Volume|Implemented|HTTPS|
-|Technology|Implemented|HTTPS|technology which causes storage efficiency changed
-.12+|QTree|GuidKey 1|Implemented|HTTPS|GuidKey1 is implicit for all objects whose GUID key has not changed since OCI version 7.3.5.
-|GuidKey 2|Implemented|HTTPS|GuidKey2 is implicit for all objects whose GUID key has not changed since OCI version 7.3.5.
-|GuidKey 3|Implemented|HTTPS|GuidKey3 is implicit for all objects whose GUID key has not changed since OCI version 7.3.5.
+|Technology|Implemented|HTTPS|
+.12+|QTree|GuidKey 1|Implemented|HTTPS|
+|GuidKey 2|Implemented|HTTPS|
+|GuidKey 3|Implemented|HTTPS|
 |Name|Implemented|HTTPS|
-|Oplocks|Implemented|HTTPS|Indicates whether opportunistic locks are enabled on the Qtree
-|Qtree Id|Implemented|HTTPS|unique id of the qtree
-|Quota HardCapacity Limit (MB)|Implemented|HTTPS|Maximum amount of disk space, allowed for the quota target
-|Quota SoftCapacity Limit (MB)|Implemented|HTTPS|Maximum amount of disk space, allowed for the quota target
-|Quota UsedCapacity|Implemented|HTTPS|Space in MB currently used
-|Security Style|Implemented|HTTPS|Security style of the directory: unix, ntfs, or mixed
+|Oplocks|Implemented|HTTPS|
+|Qtree Id|Implemented|HTTPS|
+|Quota HardCapacity Limit (MB)|Implemented|HTTPS|
+|Quota SoftCapacity Limit (MB)|Implemented|HTTPS|
+|Quota UsedCapacity|Implemented|HTTPS|
+|Security Style|Implemented|HTTPS|
 |Status|Implemented|HTTPS|
 |Type|Gap|HTTPS|
-.15+|Quota|GuidKey 1|Implemented|HTTPS|GuidKey1 is implicit for all objects whose GUID key has not changed since OCI version 7.3.5.
-|GuidKey 2|Implemented|HTTPS|GuidKey2 is implicit for all objects whose GUID key has not changed since OCI version 7.3.5.
-|GuidKey 3|Implemented|HTTPS|GuidKey3 is implicit for all objects whose GUID key has not changed since OCI version 7.3.5.
-|Hard Capacity Limit (MB)|Implemented|HTTPS|max amount of disk space, allowed for the quota target (Hard limit)
-|Hard File Limit|Implemented|HTTPS|max number of files allowed for the quota target
+.15+|Quota|GuidKey 1|Implemented|HTTPS|
+|GuidKey 2|Implemented|HTTPS|
+|GuidKey 3|Implemented|HTTPS|
+|Hard Capacity Limit (MB)|Implemented|HTTPS|
+|Hard File Limit|Implemented|HTTPS|
 |Internal Volume Id|Implemented|HTTPS|
-|Qtree Id|Implemented|HTTPS|unique id of the qtree
-|Quota Id|Implemented|HTTPS|unique id of the quota
-|Soft Capacity Limit (MB)|Implemented|HTTPS|Maximum amount of disk space, allowed for the quota target
-|Soft File Limit|Implemented|HTTPS|Max number of files allowed for the quota target
-|Threshold (MB)|Implemented|HTTPS|Disk space threshold, for the quota target
+|Qtree Id|Implemented|HTTPS|
+|Quota Id|Implemented|HTTPS|
+|Soft Capacity Limit (MB)|Implemented|HTTPS|
+|Soft File Limit|Implemented|HTTPS|
+|Threshold (MB)|Implemented|HTTPS|
 |Type|Gap|HTTPS|
 |Used Capacity|Implemented|HTTPS|
-|Used Files|Implemented|HTTPS|Number of files currently used 
-|User/Group Target|Implemented|HTTPS|user/group target this quota refers to
+|Used Files|Implemented|HTTPS|
+|User/Group Target|Implemented|HTTPS|
 .4+|Share|Description|Implemented|HTTPS|
-|IP Interfaces|Implemented|HTTPS|comma separated list of IP addresses on which this share is exposed
+|IP Interfaces|Implemented|HTTPS|
 |Name|Implemented|HTTPS|
-|Protocol|Implemented|HTTPS|enum for share protocol
+|Protocol|Implemented|HTTPS|
 .2+|Share Initiator|Initiator|Implemented|HTTPS|
-|Permission|Implemented|HTTPS|Permissions for this particular share
-.18+|Storage|Cluster|Not Available|HTTPS|Whether this storage is a cluster
-|Cpu Count|Implemented|HTTPS|Cpu Count of the storage
+|Permission|Implemented|HTTPS|
+.18+|Storage|Cluster|Not Available|HTTPS|
+|Cpu Count|Implemented|HTTPS|
 |Display IP|Implemented|HTTPS|
-|Failed Raw Capacity|Implemented|HTTPS|Raw capacity of failed disks (sum of all disks that are failed)
-|Family|Implemented|HTTPS|The storage Family could be Clariion, Symmetrix, et al
+|Failed Raw Capacity|Implemented|HTTPS|
+|Family|Implemented|HTTPS|
 |IP|Implemented|HTTPS|
 |Manage URL|Implemented|HTTPS|
 |Manufacturer|Implemented|HTTPS|
@@ -8938,78 +8694,78 @@ Products supported by this data collector:
 |Microcode Version|Implemented|HTTPS|
 |Model|Implemented|HTTPS|
 |Name|Implemented|HTTPS|
-|Total Raw Capacity|Implemented|HTTPS|Total raw capacity (sum of all disks on the array)
+|Total Raw Capacity|Implemented|HTTPS|
 |Serial Number|Implemented|HTTPS|
-|Spare Raw Capacity|Implemented|HTTPS|Raw capacity of spare disks (sum of all disks that are spare)
-|SupportActive Active|Implemented|HTTPS|Specified if the storage supports active-active configurations
-|Virtual|Implemented|HTTPS|Is this a storage virtualization device?
+|Spare Raw Capacity|Implemented|HTTPS|
+|SupportActive Active|Implemented|HTTPS|
+|Virtual|Implemented|HTTPS|
 |UUID|Implemented|HTTPS|
-.7+|Storage Node|Cache Size|Implemented|HTTPS|device cache size in MB
+.7+|Storage Node|Cache Size|Implemented|HTTPS|
 |Model|Implemented|HTTPS|
 |Name|Implemented|HTTPS|
-|State|Implemented|HTTPS|free text describing the device state 
+|State|Implemented|HTTPS|
 |UUID|Implemented|HTTPS|
-|Version|Implemented|HTTPS|software version
+|Version|Implemented|HTTPS|
 |ManagementIp Addresses|Implemented|HTTPS|
-.29+|Storage Pool|Compression Enabled|Implemented|HTTPS|Is compression enabled on the storage pool
-|Compression Savings|Implemented|HTTPS|ratio of compression savings in percentage
-|Data Allocated Capacity|Gap|HTTPS|capacity allocated for data
+.29+|Storage Pool|Compression Enabled|Implemented|HTTPS|
+|Compression Savings|Implemented|HTTPS|
+|Data Allocated Capacity|Gap|HTTPS|
 |Data Used Capacity|Implemented|HTTPS|
-|Dedupe Enabled|Implemented|HTTPS|Is dedupe enabled on the storage pool
-|Dedupe Savings|Implemented|HTTPS|ratio of dedupe savings in percentage
-|Include In Dwh Capacity|Implemented|HTTPS|A way from ACQ to control which storage pools are interesting in DWH Capacity
+|Dedupe Enabled|Implemented|HTTPS|
+|Dedupe Savings|Implemented|HTTPS|
+|Include In Dwh Capacity|Implemented|HTTPS|
 |Name|Implemented|HTTPS|
-|Physical Disk Capacity (MB)|Implemented|HTTPS|used as raw capacity for storage pool
-|Raid Group|Implemented|HTTPS|indicates whether this storagePool is a raid group
-|Raw to Usable Ratio|Implemented|HTTPS|ratio to convert from usable capacity to raw capacity
-|Redundancy|Implemented|HTTPS|Redundancy level
-|Reserved Capacity|Implemented|HTTPS|Reserved Capacity in MB
-|Snapshot Allocated Capacity|Gap|HTTPS|Allocated capacity of snapshots in MB
+|Physical Disk Capacity (MB)|Implemented|HTTPS|
+|Raid Group|Implemented|HTTPS|
+|Raw to Usable Ratio|Implemented|HTTPS|
+|Redundancy|Implemented|HTTPS|
+|Reserved Capacity|Implemented|HTTPS|
+|Snapshot Allocated Capacity|Gap|HTTPS|
 |Snapshot Used Capacity|Implemented|HTTPS|
 |Status|Implemented|HTTPS|
 |Storage Pool Id|Implemented|HTTPS|
-|Thin Provisioning Supported|Implemented|HTTPS|Whether this internal volume supports thin provisioning for the volume layer on top of it
+|Thin Provisioning Supported|Implemented|HTTPS|
 |Total Allocated Capacity|Implemented|HTTPS|
-|Total Used Capacity|Implemented|HTTPS|Total capacity in MB
+|Total Used Capacity|Implemented|HTTPS|
 |Type|Gap|HTTPS|
-|Uses FlashPools|Implemented|HTTPS|indicate if this storagepool uses Flash Pools(NetApp specific)
-|Virtual|Implemented|HTTPS|Is this a storage virtualization device?
+|Uses FlashPools|Implemented|HTTPS|
+|Virtual|Implemented|HTTPS|
 ||Implemented|HTTPS|
 ||Implemented|HTTPS|
 ||Implemented|HTTPS|
 ||Implemented|HTTPS|
 ||Implemented|HTTPS|
 |UUID|Implemented|HTTPS|
-.13+|Storage VirtualMachine|Allocated capacity (MB)|Implemented|HTTPS|Allocated capacity of snapshots
+.13+|Storage VirtualMachine|Allocated capacity (MB)|Implemented|HTTPS|
 |Comment|Implemented|HTTPS|
-|Compression Savings|Implemented|HTTPS|ratio of compression savings in percentage
-|Dedupe Savings|Implemented|HTTPS|ratio of dedupe savings in percentage
-|Guid Key|Implemented|HTTPS|Globally Unique Key of the storage virtual machine
+|Compression Savings|Implemented|HTTPS|
+|Dedupe Savings|Implemented|HTTPS|
+|Guid Key|Implemented|HTTPS|
 |IP Space|Implemented|HTTPS|
 |Internal Volume Limit|Implemented|HTTPS|
 |Name|Implemented|HTTPS|
-|Protocols|Implemented|HTTPS|csv of svm enabled protocols (fcp, iscsi, nfs, cifs...)
-|State|Implemented|HTTPS|free text describing the device state 
+|Protocols|Implemented|HTTPS|
+|State|Implemented|HTTPS|
 |Type|Gap|HTTPS|
 |UUID|Implemented|HTTPS|
 |Used Capacity|Implemented|HTTPS|
 .1+|VirtualMachine Internal Volume Ref|Internal Volume Id|Implemented|HTTPS|
 .1+|VirtualMachine StoragePool lRef|Storage Pool Id|Implemented|HTTPS|
 .1+|VirtualMachine Volume Ref|Volume Name|Implemented|HTTPS|
-.13+|Volume|Capacity|Implemented|HTTPS|Snapshot Used capacity in MB
-|DiskGroup|Implemented|HTTPS|Disk Group Type
+.13+|Volume|Capacity|Implemented|HTTPS|
+|DiskGroup|Implemented|HTTPS|
 |Junction Path|Implemented|HTTPS|
-|Last Known Access Time|Implemented|HTTPS|Last know access to the volume
+|Last Known Access Time|Implemented|HTTPS|
 |Name|Implemented|HTTPS|
-|Qtree Id|Implemented|HTTPS|unique id of the qtree
-|Total Raw Capacity|Implemented|HTTPS|Total raw capacity (sum of all disks on the array)
+|Qtree Id|Implemented|HTTPS|
+|Total Raw Capacity|Implemented|HTTPS|
 |Storage Pool Id|Implemented|HTTPS|
 |Thin Provisioned|Implemented|HTTPS|
 |Type|Gap|HTTPS|
 |UUID|Implemented|HTTPS|
 |Used Capacity|Implemented|HTTPS|
 |Encrypted|Implemented|HTTPS|
-.4+|Volume Map|LUN|Implemented|HTTPS|Name of the backend lun
+.4+|Volume Map|LUN|Implemented|HTTPS|
 |Protocol Controller|Implemented|HTTPS|
 |Storage Port|Implemented|HTTPS|
 |Type|Gap|HTTPS|
@@ -9184,228 +8940,240 @@ FAS9000
 FAS9500
 FASDvM300
 SIMBOX
-a|* 8.2.3P4
-* 8.2.3P5
-* 8.3.1P2
-* 8.3.2
-* 8.3.2P12
-* 8.3.2P5
-* 9.0.0
-* 9.1.0
-* 9.1.0P1
-* 9.1.0P11
-* 9.1.0P15
-* 9.1.0P17
-* 9.1.0P19
-* 9.1.0P2
-* 9.1.0P20
-* 9.1.0P3
-* 9.1.0P6
-* 9.1.0P7
-* 9.1.0P8
-* 9.1.0P9
-* 9.10.0
-* 9.10.1
-* 9.10.1P1
-* 9.10.1P10
-* 9.10.1P11
-* 9.10.1P12
-* 9.10.1P13
-* 9.10.1P14
-* 9.10.1P15
-* 9.10.1P16
-* 9.10.1P17
-* 9.10.1P18
-* 9.10.1P19
-* 9.10.1P2
-* 9.10.1P20
-* 9.10.1P3
-* 9.10.1P4
-* 9.10.1P5
-* 9.10.1P6
-* 9.10.1P7
-* 9.10.1P8
-* 9.10.1P9
-* 9.11.0P1
-* 9.11.1
-* 9.11.1P1
-* 9.11.1P10
-* 9.11.1P11
-* 9.11.1P12
-* 9.11.1P13
-* 9.11.1P14
-* 9.11.1P15
-* 9.11.1P16
-* 9.11.1P17
-* 9.11.1P18
-* 9.11.1P2
-* 9.11.1P3
-* 9.11.1P4
-* 9.11.1P5
-* 9.11.1P6
-* 9.11.1P7
-* 9.11.1P8
-* 9.11.1P9
-* 9.12.1
-* 9.12.1P1
-* 9.12.1P10
-* 9.12.1P11
-* 9.12.1P12
-* 9.12.1P13
-* 9.12.1P14
-* 9.12.1P15
-* 9.12.1P16
-* 9.12.1P17
-* 9.12.1P2
-* 9.12.1P3
-* 9.12.1P4
-* 9.12.1P5
-* 9.12.1P6
-* 9.12.1P7
-* 9.12.1P8
-* 9.12.1P9
-* 9.13.0
-* 9.13.0P1
-* 9.13.0P3
-* 9.13.1
-* 9.13.1D1
-* 9.13.1P1
-* 9.13.1P10
-* 9.13.1P11
-* 9.13.1P12
-* 9.13.1P13
-* 9.13.1P14
-* 9.13.1P2
-* 9.13.1P3
-* 9.13.1P4
-* 9.13.1P5
-* 9.13.1P6
-* 9.13.1P7
-* 9.13.1P8
-* 9.13.1P9
-* 9.14.0
-* 9.14.0P1
-* 9.14.0P2
-* 9.14.1
-* 9.14.1P1
-* 9.14.1P10
-* 9.14.1P11
-* 9.14.1P2
-* 9.14.1P4
-* 9.14.1P5
-* 9.14.1P6
-* 9.14.1P7
-* 9.14.1P8
-* 9.14.1P8D5
-* 9.14.1P9
-* 9.15.0P1
-* 9.15.0P2
-* 9.15.1
-* 9.15.1P1
-* 9.15.1P2
-* 9.15.1P2D2
-* 9.15.1P3
-* 9.15.1P4
-* 9.15.1P5
-* 9.15.1P6
-* 9.15.1P7
-* 9.15.1P7D4
-* 9.15.1P8
-* 9.16.1
-* 9.16.1P1
-* 9.17.1
-* 9.2.0P3
-* 9.2.0P4
-* 9.3.0P15
-* 9.3.0P18
-* 9.3.0P20
-* 9.3.0P21
-* 9.3.0P6
-* 9.3.0P7
-* 9.3.0P8
-* 9.4.0
-* 9.4.0P2
-* 9.4.0P5
-* 9.5.0
-* 9.5.0P1
-* 9.5.0P10
-* 9.5.0P14
-* 9.5.0P16
-* 9.5.0P17
-* 9.5.0P18
-* 9.5.0P19
-* 9.5.0P2
-* 9.5.0P3
-* 9.5.0P6
-* 9.5.0P7
-* 9.5.0P9
-* 9.6.0
-* 9.6.0P11
-* 9.6.0P18
-* 9.6.0P2
-* 9.6.0P3
-* 9.6.0P5
-* 9.7.0
-* 9.7.0P10
-* 9.7.0P11
-* 9.7.0P12
-* 9.7.0P13
-* 9.7.0P14
-* 9.7.0P15
-* 9.7.0P16
-* 9.7.0P17
-* 9.7.0P18
-* 9.7.0P19
-* 9.7.0P20
-* 9.7.0P21
-* 9.7.0P22
-* 9.7.0P23
-* 9.7.0P4
-* 9.7.0P5
-* 9.7.0P6
-* 9.7.0P7
-* 9.7.0P8
-* 9.7.0P9
-* 9.8.0
-* 9.8.0P1
-* 9.8.0P10
-* 9.8.0P11
-* 9.8.0P12
-* 9.8.0P13
-* 9.8.0P14
-* 9.8.0P15
-* 9.8.0P16
-* 9.8.0P17
-* 9.8.0P18
-* 9.8.0P19
-* 9.8.0P2
-* 9.8.0P20
-* 9.8.0P21
-* 9.8.0P3
-* 9.8.0P4
-* 9.8.0P6
-* 9.8.0P7
-* 9.8.0P8
-* 9.8.0P9
-* 9.0
-* 9.1
-* 9.9.1P10
-* 9.9.1P11
-* 9.9.1P12
-* 9.9.1P13
-* 9.9.1P14
-* 9.9.1P15
-* 9.9.1P16
-* 9.9.1P17
-* 9.9.1P18
-* 9.9.1P19
-* 9.9.1P2
-* 9.9.1P20
-* 9.9.1P3
-* 9.9.1P6
-* 9.9.1P7
-* 9.9.1P9
-
+|8.2.3P4
+8.2.3P5
+8.3.1P2
+8.3.2
+8.3.2P12
+8.3.2P5
+9.0.0
+9.1.0
+9.1.0P1
+9.1.0P11
+9.1.0P15
+9.1.0P17
+9.1.0P19
+9.1.0P2
+9.1.0P20
+9.1.0P3
+9.1.0P6
+9.1.0P7
+9.1.0P8
+9.1.0P9
+9.10.0
+9.10.1
+9.10.1P1
+9.10.1P10
+9.10.1P11
+9.10.1P12
+9.10.1P13
+9.10.1P14
+9.10.1P15
+9.10.1P16
+9.10.1P17
+9.10.1P18
+9.10.1P19
+9.10.1P2
+9.10.1P20
+9.10.1P3
+9.10.1P4
+9.10.1P5
+9.10.1P6
+9.10.1P7
+9.10.1P8
+9.10.1P9
+9.11.0P1
+9.11.1
+9.11.1P1
+9.11.1P10
+9.11.1P11
+9.11.1P12
+9.11.1P13
+9.11.1P14
+9.11.1P15
+9.11.1P16
+9.11.1P17
+9.11.1P18
+9.11.1P2
+9.11.1P3
+9.11.1P4
+9.11.1P5
+9.11.1P6
+9.11.1P7
+9.11.1P8
+9.11.1P9
+9.11.1X12
+9.12.1
+9.12.1P1
+9.12.1P10
+9.12.1P11
+9.12.1P12
+9.12.1P13
+9.12.1P14
+9.12.1P15
+9.12.1P16
+9.12.1P17
+9.12.1P2
+9.12.1P3
+9.12.1P4
+9.12.1P5
+9.12.1P6
+9.12.1P7
+9.12.1P8
+9.12.1P9
+9.13.0
+9.13.0P1
+9.13.0P3
+9.13.1
+9.13.1D1
+9.13.1P1
+9.13.1P10
+9.13.1P11
+9.13.1P12
+9.13.1P13
+9.13.1P14
+9.13.1P2
+9.13.1P3
+9.13.1P4
+9.13.1P5
+9.13.1P6
+9.13.1P7
+9.13.1P8
+9.13.1P9
+9.14.0
+9.14.0P1
+9.14.0P2
+9.14.1
+9.14.1P1
+9.14.1P10
+9.14.1P11
+9.14.1P2
+9.14.1P4
+9.14.1P5
+9.14.1P6
+9.14.1P7
+9.14.1P8
+9.14.1P8D5
+9.14.1P9
+9.14.1X14
+9.14.1X20
+9.14.1X24
+9.15.0P1
+9.15.0P2
+9.15.1
+9.15.1P1
+9.15.1P2
+9.15.1P2D2
+9.15.1P3
+9.15.1P4
+9.15.1P5
+9.15.1P6
+9.15.1P7
+9.15.1P7D4
+9.15.1P8
+9.15.1X19
+9.15.1X27
+9.16.1
+9.16.1P1
+9.16.1X16
+9.16.1X26
+9.16.1X29
+9.17.1
+9.17.1X7
+9.2.0P3
+9.2.0P4
+9.3.0P15
+9.3.0P18
+9.3.0P20
+9.3.0P21
+9.3.0P6
+9.3.0P7
+9.3.0P8
+9.4.0
+9.4.0P2
+9.4.0P5
+9.5.0
+9.5.0P1
+9.5.0P10
+9.5.0P14
+9.5.0P16
+9.5.0P17
+9.5.0P18
+9.5.0P19
+9.5.0P2
+9.5.0P3
+9.5.0P6
+9.5.0P7
+9.5.0P9
+9.6.0
+9.6.0P11
+9.6.0P18
+9.6.0P2
+9.6.0P3
+9.6.0P5
+9.7.0
+9.7.0P10
+9.7.0P11
+9.7.0P12
+9.7.0P13
+9.7.0P14
+9.7.0P15
+9.7.0P16
+9.7.0P17
+9.7.0P18
+9.7.0P19
+9.7.0P20
+9.7.0P21
+9.7.0P22
+9.7.0P23
+9.7.0P4
+9.7.0P5
+9.7.0P6
+9.7.0P7
+9.7.0P8
+9.7.0P9
+9.7.0X17
+9.8.0
+9.8.0P1
+9.8.0P10
+9.8.0P11
+9.8.0P12
+9.8.0P13
+9.8.0P14
+9.8.0P14X5
+9.8.0P15
+9.8.0P16
+9.8.0P17
+9.8.0P18
+9.8.0P19
+9.8.0P2
+9.8.0P20
+9.8.0P21
+9.8.0P3
+9.8.0P4
+9.8.0P6
+9.8.0P7
+9.8.0P8
+9.8.0P9
+9.9.0
+9.9.1
+9.9.1P10
+9.9.1P11
+9.9.1P12
+9.9.1P13
+9.9.1P14
+9.9.1P15
+9.9.1P16
+9.9.1P17
+9.9.1P18
+9.9.1P19
+9.9.1P2
+9.9.1P20
+9.9.1P3
+9.9.1P5X2
+9.9.1P6
+9.9.1P7
+9.9.1P9
 
 |===
 Products supported by this data collector:
@@ -10186,46 +9954,48 @@ FAS9000
 FAS9500
 FASDvM300
 SIMBOX
-a|* NetApp Release 9.14.1P10: Thu Nov 28 12:32:16 UTC 2024
-* NetApp Release 9.14.1P11: Wed Jan 22 11:55:28 UTC 2025
-* NetApp Release 9.14.1P1: Thu Feb 15 00:45:21 UTC 2024
-* NetApp Release 9.14.1P4: Thu Apr 18 15:59:10 UTC 2024
-* NetApp Release 9.14.1P5: Sat May 18 19:42:16 UTC 2024
-* NetApp Release 9.14.1P6: Tue Jun 18 16:11:44 UTC 2024
-* NetApp Release 9.14.1P7: Thu Aug 01 03:07:44 UTC 2024
-* NetApp Release 9.14.1P8: Fri Sep 13 07:12:27 UTC 2024
-* NetApp Release 9.14.1P9: Mon Oct 21 18:04:05 UTC 2024
-* NetApp Release 9.15.1: Thu Jul 04 12:21:07 UTC 2024
-* NetApp Release 9.15.1P1: Tue Jul 30 05:15:49 UTC 2024
-* NetApp Release 9.15.1P2: Tue Aug 27 16:35:16 UTC 2024
-* NetApp Release 9.15.1P3: Wed Sep 25 22:33:44 UTC 2024
-* NetApp Release 9.15.1P4: Sun Oct 27 20:15:53 UTC 2024
-* NetApp Release 9.15.1P5: Sun Nov 24 16:31:37 UTC 2024
-* NetApp Release 9.15.1P6: Wed Dec 04 01:42:39 UTC 2024
-* NetApp Release 9.15.1P7: Sat Jan 18 21:34:02 UTC 2025
-* NetApp Release 9.15.1RC2: Mon Jun 24 04:49:55 UTC 2024
-* NetApp Release 9.16.1: Sat Jan 18 19:31:15 UTC 2025
-* NetApp Release 9.16.1P1: Fri Feb 14 03:53:50 UTC 2025
-* NetApp Release 9.16.1RC1: Mon Nov 04 10:39:46 UTC 2024
-* NetApp Release Clawhammer__9.14.1: Sat May 18 09:23:49 UTC 2024
-* NetApp Release Cloudstream__9.16.1: Mon Nov 04 05:51:46 UTC 2024
-* NetApp Release Cloudstream__9.16.1: Thu Mar 13 20:55:54 UTC 2025
-* NetApp Release Electricjellyfish__9.17.1: Mon Mar 03 05:57:49 UTC 2025
-* NetApp Release Electricjellyfish__9.17.1: Sun Mar 09 05:56:14 UTC 2025
-* NetApp Release Electricjellyfish__9.17.1: Sun Mar 16 04:54:53 UTC 2025
-* NetApp Release Electricjellyfish__9.17.1: Tue Jan 28 11:48:14 UTC 2025
-* NetApp Release Electricjellyfish__9.17.1: Tue Mar 18 04:59:54 UTC 2025
-* NetApp Release Electricjellyfish__9.17.1: Wed Mar 12 04:42:03 UTC 2025
-* NetApp Release Mightysquirrel__9.15.1: Fri May 24 05:03:10 UTC 2024
-* NetApp Release Mightysquirrel__9.15.1: Sat Jan 18 11:39:42 UTC 2025
-* NetApp Release Tropicallightning__9.18.0: Fri Feb 21 14:02:58 UTC 2025
-* NetApp Release Tropicallightning__9.18.0: Mon Feb 17 08:18:14 UTC 2025
-* NetApp Release Tropicallightning__9.18.0: Thu Feb 20 08:11:55 UTC 2025
-* NetApp Release Tropicallightning__9.18.0: Thu Feb 27 04:15:40 UTC 2025
-* NetApp Release Tropicallightning__9.18.0: Tue Feb 18 14:00:54 UTC 2025
-* NetApp Release Tropicallightning__9.18.0: Wed Feb 26 08:19:21 UTC 2025
-* NetApp Release Tropicallightning__9.18.0: Wed Jan 29 08:34:06 UTC 2025
-
+|NetApp Release 9.14.1P10: Thu Nov 28 12:32:16 UTC 2024
+NetApp Release 9.14.1P11: Wed Jan 22 11:55:28 UTC 2025
+NetApp Release 9.14.1P1: Thu Feb 15 00:45:21 UTC 2024
+NetApp Release 9.14.1P4: Thu Apr 18 15:59:10 UTC 2024
+NetApp Release 9.14.1P5: Sat May 18 19:42:16 UTC 2024
+NetApp Release 9.14.1P6: Tue Jun 18 16:11:44 UTC 2024
+NetApp Release 9.14.1P7: Thu Aug 01 03:07:44 UTC 2024
+NetApp Release 9.14.1P8: Fri Sep 13 07:12:27 UTC 2024
+NetApp Release 9.14.1P9: Mon Oct 21 18:04:05 UTC 2024
+NetApp Release 9.15.1: Thu Jul 04 12:21:07 UTC 2024
+NetApp Release 9.15.1P1: Tue Jul 30 05:15:49 UTC 2024
+NetApp Release 9.15.1P2: Tue Aug 27 16:35:16 UTC 2024
+NetApp Release 9.15.1P3: Wed Sep 25 22:33:44 UTC 2024
+NetApp Release 9.15.1P4: Sun Oct 27 20:15:53 UTC 2024
+NetApp Release 9.15.1P5: Sun Nov 24 16:31:37 UTC 2024
+NetApp Release 9.15.1P6: Wed Dec 04 01:42:39 UTC 2024
+NetApp Release 9.15.1P7: Sat Jan 18 21:34:02 UTC 2025
+NetApp Release 9.15.1RC2: Mon Jun 24 04:49:55 UTC 2024
+NetApp Release 9.16.1: Sat Jan 18 19:31:15 UTC 2025
+NetApp Release 9.16.1P1: Fri Feb 14 03:53:50 UTC 2025
+NetApp Release 9.16.1RC1: Mon Nov 04 10:39:46 UTC 2024
+NetApp Release 9.16.1X26: Mon Dec 09 10:27:42 UTC 2024
+NetApp Release 9.16.1X29: Sun Jan 12 11:18:25 UTC 2025
+NetApp Release 9.17.1X7: Fri Feb 14 11:21:52 UTC 2025
+NetApp Release Clawhammer__9.14.1: Sat May 18 09:23:49 UTC 2024
+NetApp Release Cloudstream__9.16.1: Mon Nov 04 05:51:46 UTC 2024
+NetApp Release Cloudstream__9.16.1: Thu Mar 13 20:55:54 UTC 2025
+NetApp Release Electricjellyfish__9.17.1: Mon Mar 03 05:57:49 UTC 2025
+NetApp Release Electricjellyfish__9.17.1: Sun Mar 09 05:56:14 UTC 2025
+NetApp Release Electricjellyfish__9.17.1: Sun Mar 16 04:54:53 UTC 2025
+NetApp Release Electricjellyfish__9.17.1: Tue Jan 28 11:48:14 UTC 2025
+NetApp Release Electricjellyfish__9.17.1: Tue Mar 18 04:59:54 UTC 2025
+NetApp Release Electricjellyfish__9.17.1: Wed Mar 12 04:42:03 UTC 2025
+NetApp Release Mightysquirrel__9.15.1: Fri May 24 05:03:10 UTC 2024
+NetApp Release Mightysquirrel__9.15.1: Sat Jan 18 11:39:42 UTC 2025
+NetApp Release Tropicallightning__9.18.0: Fri Feb 21 14:02:58 UTC 2025
+NetApp Release Tropicallightning__9.18.0: Mon Feb 17 08:18:14 UTC 2025
+NetApp Release Tropicallightning__9.18.0: Thu Feb 20 08:11:55 UTC 2025
+NetApp Release Tropicallightning__9.18.0: Thu Feb 27 04:15:40 UTC 2025
+NetApp Release Tropicallightning__9.18.0: Tue Feb 18 14:00:54 UTC 2025
+NetApp Release Tropicallightning__9.18.0: Wed Feb 26 08:19:21 UTC 2025
+NetApp Release Tropicallightning__9.18.0: Wed Jan 29 08:34:06 UTC 2025
 
 |===
 Products supported by this data collector:
@@ -11195,127 +10965,6 @@ Management APIs used by this data collector:
 |
 |true
 |true
-|true
-|true
-
-|===
-
-== OpenStack (REST API / SSH)
-
-
-|===
-
-
-
-|===
-Products supported by this data collector:
-|===
-^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
-
-.76+|foundation .7+|Data Store|Capacity|Implemented|HTTPS|Snapshot Used capacity in MB
-|MOID|Implemented|HTTPS|
-|Name|Implemented|HTTPS|
-|OID|Implemented|HTTPS|
-|Provisioned Capacity|Implemented|HTTPS|
-|Used Capacity|Implemented|HTTPS|
-|Virtual Center Ip|Implemented|HTTPS|
-.3+|NasShare DataStore|DataStore OID|Implemented|HTTPS|
-|Nas Share OID|Implemented|HTTPS|
-|OID|Implemented|HTTPS|
-.4+|NasShare Host|Nas Share OID|Implemented|HTTPS|
-|Host OID|Implemented|HTTPS|
-|OID|Implemented|HTTPS|
-|Read Only|Implemented|HTTPS|
-.6+|LUN|OID|Implemented|HTTPS|
-|Number|Implemented|HTTPS|
-|DataStore OID|Implemented|HTTPS|
-|Host OID|Implemented|HTTPS|
-|Disk Name|Implemented|HTTPS|
-|TID|Implemented|HTTPS|
-.6+|NAS Share|Capacity|Implemented|HTTPS|Allocated capacity in MB
-|Filer Ip|Implemented|HTTPS|
-|Filer Name|Implemented|HTTPS|
-|OID|Implemented|HTTPS|
-|Share Path|Implemented|HTTPS| For a HvNasShare to be matched to a Share
-|Type|Gap|HTTPS|
-.6+|Path|OID|Implemented|HTTPS|
-|Lun OID|Implemented|HTTPS|
-|Host Port WWPN|Implemented|HTTPS|
-|Storage Port WWPN|Implemented|HTTPS|
-|Active|Implemented|HTTPS|
-|Type|Gap|HTTPS|
-.6+|Server|Cluster|Implemented|HTTPS|Cluster name
-|DataCenter Name|Implemented|HTTPS|
-|Host OID|Implemented|HTTPS|
-|MOID|Implemented|HTTPS|
-|OID|Implemented|HTTPS|
-|Virtual Center Ip|Implemented|HTTPS|
-.7+|Virtual Disk|Capacity|Implemented|HTTPS|Snapshot Used capacity in MB
-|DataStore OID|Implemented|HTTPS|
-|Lun OID|Implemented|HTTPS|
-|Name|Implemented|HTTPS|
-|OID|Implemented|HTTPS|
-|Type|Gap|HTTPS|
-|Used Capacity|Implemented|HTTPS|
-.13+|VirtualMachine|Guest State|Implemented|HTTPS|
-|DataStore OID|Implemented|HTTPS|
-|Host OID|Implemented|HTTPS|
-|IPs|Implemented|HTTPS|
-|MOID|Implemented|HTTPS|
-|Memory|Implemented|HTTPS|
-|Name|Implemented|HTTPS|
-|OID|Implemented|HTTPS|
-|Power State|Implemented|HTTPS|
-|State Change Time|Implemented|HTTPS|
-|Processors|Implemented|HTTPS|
-|Provisioned Capacity|Implemented|HTTPS|
-|Used Capacity|Implemented|HTTPS|
-.3+|VirtualMachine Disk|OID|Implemented|HTTPS|
-|VirtualDisk OID|Implemented|HTTPS|
-|VirtualMachine OID|Implemented|HTTPS|
-.7+|Host|Host Cpu Count|Implemented|HTTPS|
-|Host Domain|Implemented|HTTPS|
-|Host Installed Memory|Implemented|HTTPS|
-|Host OS|Implemented|HTTPS|
-|IPs|Implemented|HTTPS|
-|Name|Implemented|HTTPS|
-|OID|Implemented|HTTPS|
-.4+|ISCSI Node|Host Aliases|Implemented|HTTPS|
-|Node Name|Implemented|HTTPS|
-|OID|Implemented|HTTPS|
-|Type|Gap|HTTPS|
-.4+|Info|DataSource Name|Implemented|HTTPS|Info
-|Date|Implemented|HTTPS|
-|Originator ID|Implemented|HTTPS|
-|Originator Key|Implemented|HTTPS|
-.4+|performance .4+|Host|Total CPU Utilization|Implemented||
-|Key|Implemented||
-|Total Memory Utilization|Implemented||
-|Server ID|Implemented||
-
-|===
-
-Management APIs used by this data collector:
-|===
-^|API ^|Protocol Used ^|Transport layer protocol used ^|Incoming ports used ^|Outgoing ports used ^|Supports authentication ^|Requires only 'Read-only' credentials ^|Supports Encryption ^|Firewall friendly (static ports) 
-
-|OpenStack REST API
-|HTTPS
-|HTTPS
-|443
-|
-|true
-|false
-|true
-|true
-
-|OpenStack SSH
-|SSH
-|SSH
-|22
-|
-|true
-|false
 |true
 |true
 
