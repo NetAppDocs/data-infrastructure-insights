@@ -1,0 +1,18 @@
+---
+sidebar: sidebar
+permalink: task_cloud_insights_onboarding_1.html
+summary: Signing up for Data Infrastructure Insights and creating your tenant.
+keywords: onboarding, new user
+---
+
+= Data Infrastructure Insights Onboarding
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Before you can start working with Data Infrastructure Insights, you must sign up on the *NetApp Console* portal. If you already have a NetApp Console login, you can start a free trial of Data Infrastructure Insights with a few quick steps.
+
+These instructions are being updated. Please check back later.
