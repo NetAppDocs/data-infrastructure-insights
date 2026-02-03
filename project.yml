@@ -15,8 +15,8 @@ sidebar:
     - title: What's New
       url: /concept_whats_new.html
   
-#    - title: Signing Up for Data Infrastructure Insights
-#      url: /task_cloud_insights_onboarding_1.html
+    - title: Signing Up for Data Infrastructure Insights
+      url: /task_cloud_insights_onboarding_1.html
   
     - title: Security
       entries:
