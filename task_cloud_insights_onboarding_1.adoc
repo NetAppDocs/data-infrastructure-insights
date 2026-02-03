@@ -34,7 +34,7 @@ To get started with NetApp's cloud services, go to link:https://console.netapp.c
 
 == Starting your Data Infrastructure Insights free trial
 
-If this is your first time logging in to Data Infrastructure Insights, under the Data Infrastructure Insights offering, click on *Start Free Trial*. DII will walk you through creating your company's site, including selecting the region where you want your site to reside.
+Under the Data Infrastructure Insights offering, click on *Start Free Trial*. DII will walk you through creating your company's site, including selecting the region where you want your site to reside.
 
 //image:trial_region_selector.png[Selecting the region in which to host your Data Infrastructure Insights tenant]
 
