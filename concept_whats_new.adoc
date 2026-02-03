@@ -16,15 +16,30 @@ keywords: features
 [.lead]
 NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in Data Infrastructure Insights (formerly Cloud Insights).
 
-== January 2026
+== February 2026
+
+=== Instant intelligent answers about your infrastructure
+
+Meet your infrastructure's new intelligent partner: The *Data Infrastructure Insights AI Assistant* transforms how you interact with your data, turning complex queries into simple conversations. Instantly uncover hidden patterns, accelerate troubleshooting, and make data-driven decisions with confidence. Get instant answers to questions like:
+
+* How can I configure a monitor to alert for persistent unacceptable latency?
+* What are the top storage pools with the highest utilization in the environment?
+* How many alerts were generated in the last hour?
+
+Activate now! Ask your DII Site Owner to activate the AI Assistant by clicking on the "owl" and accepting the Terms and Conditions.
+
+image:
+
+Note that the AI Assistant is currently available as a limited preview. 
+
 
 === Monitor Improvements
 
 ==== Modify a system monitor without duplicating it first
 
-DII adds the abiliy to modify system monitors (sometimes called canned or default monitors). Change a monitor's name, filters, or grouping without first having to create a duplicate of the monitor.
+DII adds the ability to modify system monitors (sometimes called canned or default monitors). Change a monitor's name, filters, or grouping without first having to create a duplicate of the monitor.
 
-Note that a banner will appear when viewing a changed system monitor indicating that the monitor has been modified from its default.
+Note that a banner will appear when viewing a changed system monitor, indicating that the monitor has been modified from its default.
 
 
 ==== Bulk Assignment of Health Category to Monitors
@@ -33,7 +48,7 @@ Select multiple monitors, and in the Bulk Actions menu, you can choose to exclud
 Monitors are included in Health Monitoring individually during creation, or by selecting "Update Health Monitoring" from the monitor's menu. 
 
 
-
+'''
 == December 2025
 
 
