@@ -47,6 +47,12 @@ Note that a banner will appear when viewing a changed system monitor, indicating
 Select multiple monitors, and in the Bulk Actions menu, you can choose to exclude those monitors from Health Monitoring.
 Monitors are included in Health Monitoring individually during creation, or by selecting "Update Health Monitoring" from the monitor's menu. 
 
+==== Exclude objects from health monitor
+
+When viewing an Infrastructure Health score, you may choose to exclude an object from health monitoring, without having to manually modify the monitor.
+
+image:health_monitoring_exclude_object.png[exclude object from health monitoring]
+
 
 '''
 == December 2025
