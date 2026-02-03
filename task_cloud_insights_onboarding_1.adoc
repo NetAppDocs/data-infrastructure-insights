@@ -25,7 +25,7 @@ To get started with NetApp's cloud services, go to link:https://console.netapp.c
 * Enter your company name, and your full name.
 * Accept the terms and conditions and select *Continue*.
 
-=== What if I already have a NetApp Console login?
+=== I already have a NetApp Console login
 
 * Log in to https://services.cloud.netapp.com/fabric-view using your NetApp Console credentials. 
 * Navigate to Products > Cloud Insights. 
@@ -34,7 +34,7 @@ To get started with NetApp's cloud services, go to link:https://console.netapp.c
 
 == Starting your Data Infrastructure Insights free trial
 
-If this is your first time logging in to Data Infrastructure Insights, under the Data Infrastructure Insights offering, click on *Start Free Trial*. Data Infrastructure Insights will walk you through creating your company's site, including selecting the region where you want your site to reside.
+If this is your first time logging in to Data Infrastructure Insights, under the Data Infrastructure Insights offering, click on *Start Free Trial*. DII will walk you through creating your company's site, including selecting the region where you want your site to reside.
 
 //image:trial_region_selector.png[Selecting the region in which to host your Data Infrastructure Insights tenant]
 
