@@ -564,12 +564,12 @@ spec:
 ...
     telegraf:
     ...
-          - name: docker
-            run-mode:
-              - DaemonSet
-            substitutions:
-              - key: DOCKER_UNIX_SOCK_PLACEHOLDER
-                value: unix:///run/docker.sock 
+          - name: docker
+            run-mode:
+              - DaemonSet
+            substitutions:
+              - key: DOCKER_UNIX_SOCK_PLACEHOLDER
+                value: unix:///run/docker.sock 
     ...
 ...
 
@@ -624,7 +624,7 @@ Alternatively, one can also <<uninstalling,uninstall>> and <<installing-the-kube
 |I see warning messages from Telegraf resembling the following:
 
 _W! [inputs.diskio] Unable to gather disk name for "vdc": error reading /dev/vdc: no such file or directory_
-|For the Kubernetes Monitoring Operator, these warning message are benign and can be safely ignored.  Alternatively, edit the telegraf section in AgentConfiguration, and set _runDsPrivileged_ to true. For more details, refer to the  link:telegraf_agent_k8s_config_options.html[operator's configuration options].
+|For the Kubernetes Monitoring Operator, these warning message are benign and can be safely ignored.  Alternatively, edit the telegraf section in AgentConfiguration, and set _runDsPrivileged_ to true. For more details, refer to the  link:telegraf_agent_k8s_config_options.html[operator's configuration options].
 
 
 |My fluent-bit pod is failing with the following errors:
@@ -660,6 +660,13 @@ E! [inputs.kubernetes] Error in plugin: error making HTTP request to "https://<k
 |This will occur if the kubelet is using self-signed certificates, and/or the specified certificate does not include the <kubelet_IP> in the certificates _Subject Alternative Name_ list.  To resolve this, the user can modify the link:telegraf_agent_k8s_config_options.html[agent configuration], and set _telegraf:insecureK8sSkipVerify_ to _true_.  This will configure the telegraf input plugin to skip verification.  
 
 Alternatively, the user can configure the kubelet for link:https://kubernetes.io/docs/reference/config-api/kubelet-config.v1beta1/[serverTLSBootstrap], which will trigger a certificate request from the 'certificates.k8s.io' API.
+
+|I'm getting the following error in the Fluent-bit pods and the pod cannot start:
+
+026/01/12 20:20:32] [error] [sqldb] error=unable to open database file [2026/01/12 20:20:32] [error] [input:tail:tail.0] db: could not create 'in_tail_files' table [2026/01/12 20:20:32] [error] [input:tail:tail.0] could not open/create database [2026/01/12 20:20:32] [error] failed initialize input tail.0 [2026/01/12 20:20:32] [error] [engine] input initialization failed
+|Ensure the host directory in which the DB file resides has the proper read/write permissions. More specifically, the host directory should grant read/write permissions to non-root users. The default DB file location is /var/log/ unless overridden by the fluent-bit-dbFile _agentconfiguration_ option.
+
+If SELinux is enabled, try setting the fluent-bit-seLinuxOptionsType agentconfiguration option to 'spc_t'
 
 
 |===
