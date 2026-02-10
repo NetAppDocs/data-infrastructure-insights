@@ -16,8 +16,37 @@ keywords: features
 [.lead]
 NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in Data Infrastructure Insights (formerly Cloud Insights).
 
+== December 2025
+
+
+
+=== Control Query Access with Shared Queries
+
+Share queries you create with fine-grained permission controls. Choose read-only Viewer mode to prevent modifications or Edit mode to allow changes. Private queries are accessible by creators, while Shared queries can be leveraged in Annotation Rules or duplicated for specialized use cases, giving you complete control over how queries are used and modified across your organization.
+
+image:query_sharing_dialog.png[setting permissions on a query, width=200]
+
+Additionally, users with _Guest_ role can now create and manage their own private queries. 
+
+=== Better Filtering When Managing Monitors
+
+Filtering for Monitor lists and groups is improved to add wildcard support, multiple filters, include/exclude functionality, and more. 
+
+image:monitor_list_filters.png[New Monitor Filtering, width=500]
+
+
+=== Cleaner dashboard visualizations
+
+Improved dashboard design helps you see what matters most. Enhanced visual clarity with drop shadow borders that separate widgets and removed separator lines to reduce clutter so you can focus on your data insights. These refinements create a cleaner, more intuitive dashboard experience that makes spotting trends and anomalies faster and easier.
+
+
+
+'''
+
+
 
 == November 2025
+
 
 === Set Your Personalized Home Page
 
@@ -31,9 +60,6 @@ image:home_page_set.png[setting a home page, width=300]
 Transform your dashboard experience with intelligent grouping that automatically organizes imported Gallery dashboards into logical categories. The new grouping feature makes importing dashboards a snap and places each dashboard in the appropriate group based on its function and relevance to your environment. 
 
 image:dashboard_gallery_groups.png[gallery groups during import, width=500]
-
-
-
 
 
 
