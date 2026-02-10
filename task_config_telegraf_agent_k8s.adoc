@@ -4,6 +4,7 @@ permalink: task_config_telegraf_agent_k8s.html
 keywords: kubernetes, Kubernetes, k8s, telegraf, installation, install, agent, telegraf agent, eks, operator
 summary: The Kubernetes Monitoring Operator collects Kubernetes data for use in Data Infrastructure Insights.  
 ---
+
 = Kubernetes Monitoring Operator Installation and Configuration
 :hardbreaks:
 :nofooter:
@@ -13,7 +14,6 @@ summary: The Kubernetes Monitoring Operator collects Kubernetes data for use in 
 
 [.lead]
 Data Infrastructure Insights offers the *Kubernetes Monitoring Operator* for Kubernetes collection. Navigate to *Kubernetes > Collectors > +Kubernetes Collector* to deploy a new operator.
-
 
 
 == Before installing the Kubernetes Monitoring Operator
@@ -44,9 +44,6 @@ image:NKMO-Instructions-2.png[Monitoring Operator Instructions]
 . When installation is complete, click the _Next_ button. Be sure to also delete or securely store the _operator-secrets.yaml_ file.
 
 
-
-//If you are using a proxy, read about <<configuring-proxy-support, configuring proxy>>.
-
 If you are have a custom repository, read about <<using-a-custom-or-private-docker-repository, using a custom/private docker repository>>.
 
 
@@ -66,10 +63,6 @@ image:KubernetesModifyDeploymentMenu.png[Modify deployment Menu on Kubernetes Co
 The screen shows the current state of each component and allows you to disable or enable components for that collector as needed. 
 
 image:KubernetesModifyDeploymentScreen.png[Modify deployment options,  width=700]
-
-
-
- 
 
 [#upgrading-to-the-latest-netapp-kubernetes-monitoring-operator]
 [#upgrading]
@@ -97,17 +90,17 @@ If you upgraded using the push-button upgrades feature and encounter any difficu
 
 === Manual Upgrades
 
-Determine whether an AgentConfiguration exists with the existing Operator (if your namespace is not the default _netapp-monitoring_, substitute the appropriate namespace):
+Determine whether an _AgentConfiguration_ exists with the existing Operator (if your namespace is not the default _netapp-monitoring_, substitute the appropriate namespace):
 
  kubectl -n netapp-monitoring get agentconfiguration netapp-ci-monitoring-configuration
  
-If an AgentConfiguration exists:
+If an _AgentConfiguration_ exists:
 
 * <<installing-the-kubernetes-monitoring-operator,Install>> the latest Operator over the existing Operator.
 
 ** Ensure you are <<using-a-custom-or-private-docker-repository,pulling the latest container images>> if you are using a custom repository.
 
-If the AgentConfiguration does not exist:
+If the _AgentConfiguration_ does not exist:
 
 * Make note of your cluster name as recognized by Data Infrastructure Insights (if your namespace is not the default netapp-monitoring, substitute the appropriate namespace):
 
@@ -120,7 +113,7 @@ If the AgentConfiguration does not exist:
 * <<to-remove-the-kubernetes-monitoring-operator,Uninstall>> the existing Operator.
 * <<installing-the-kubernetes-monitoring-operator,Install>> the latest Operator.
 ** Use the same cluster name.
-** After downloading the latest Operator YAML files, port any customizations found in agent_backup.yaml to the downloaded operator-config.yaml before deploying.
+** After downloading the latest Operator YAML files, port any customizations found in _agent_backup.yaml_ to the downloaded _operator-config.yaml_ before deploying.
 ** Ensure you are <<using-a-custom-or-private-docker-repository,pulling the latest container images>> if you are using a custom repository.
 
 
@@ -230,7 +223,7 @@ You can also edit this resource after the operator has been deployed by using th
 
 	kubectl -n netapp-monitoring edit AgentConfiguration
 
-To determine if your deployed version of the operator supports AgentConfiguration, run the following command:
+To determine if your deployed version of the operator supports _AgentConfiguration_, run the following command:
 
 	kubectl get crd agentconfigurations.monitoring.netapp.com
  
@@ -264,7 +257,7 @@ To set the variable(s), perform the following steps on your system *before* inst
 
 For the proxy used for your Kubernetes cluster to communicate with your Data Infrastructure Insights environment, install the Kubernetes Monitoring Operator after reading all of these instructions.
 
-Configure the proxy section of AgentConfiguration in operator-config.yaml before deploying the Kubernetes Monitoring Operator. 
+Configure the proxy section of _AgentConfiguration_ in _operator-config.yaml_ before deploying the Kubernetes Monitoring Operator. 
 
 ----
 agent:
@@ -321,7 +314,7 @@ Edit the monitoring-operator deployment in operator-deployment.yaml, and modify 
  image: <docker repo of the enterprise/corp docker repo>/ci-kube-rbac-proxy:<ci-kube-rbac-proxy version>
  image: <docker repo of the enterprise/corp docker repo>/netapp-monitoring:<version>
 
-Edit the AgentConfiguration in operator-config.yaml to reflect the new docker repo location. Create a new imagePullSecret for your private repository, for more details see _https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/_
+Edit the _AgentConfiguration_ in _operator-config.yaml_ to reflect the new docker repo location. Create a new imagePullSecret for your private repository, for more details see _https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/_
 
 ----
 agent:
@@ -334,11 +327,24 @@ agent:
 ----
 
 
+==== API access token for long-term passwords
+
+Some environments (i.e. proxy repositories) require long-term passwords for the Data Infrastructure Insights docker repository. The password provided in the UI at install time is valid for only 24 hours. Instead of using that, one can use an API Access Token as the docker repository password. This password will be valid as long as the API Access Token is valid. One can generate a new API Access Token for this specific purpose or use an existing one.
+
+link:task_config_telegraf_agent.html#manually-create-an-api-access-token[Read here] for instructions to create a new API Access Token.
+
+To extract an existing API Access Token from a downloaded _operator-secrets.yaml_ file, users can run the following:
+
+`grep '\.dockerconfigjson' operator-secrets.yaml |sed 's/.*\.dockerconfigjson: //g' |base64 -d |jq`
+
+To extract an existing API Access Token from a running operator install, users can run the following:
+
+`kubectl -n netapp-monitoring get secret netapp-ci-docker -o jsonpath='{.data.\.dockerconfigjson}' |base64 -d |jq` 
 
 
 === OpenShift Instructions
 
-If you are running on OpenShift 4.6 or higher, you must edit the AgentConfiguration in _operator-config.yaml_ to enable the _runPrivileged_ setting: 
+If you are running on OpenShift 4.6 or higher, you must edit the _AgentConfiguration_ in _operator-config.yaml_ to enable the _runPrivileged_ setting: 
 
  # Set runPrivileged to true SELinux is enabled on your kubernetes nodes
  runPrivileged: true
