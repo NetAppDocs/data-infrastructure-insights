@@ -7,7 +7,6 @@ keywords: dashboard, widget, ontap, overview, insight
 
 = ONTAP Essentials
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
@@ -75,9 +74,9 @@ image:DataProtectionDashboard_ClusterList.png[Data Protection Cluster List]
 
 == Security
 
-The Security Dashboard gives you an instant view of your current security situation, showing charts for hardware and software volume encryption, anti-ransomware status, and cluster authentication methods. Security criteria is evaluated based on recommendations defined in the link:https://www.netapp.com/pdf.html?item=/media/10674-tr4569.pdf[*NetApp Security Hardening Guide for ONTAP 9*].
+The Security Dashboard gives you an instant view of your current security situation, showing charts for hardware and software volume encryption, anti-file tampering status, and cluster authentication methods. Security criteria is evaluated based on recommendations defined in the link:https://www.netapp.com/pdf.html?item=/media/10674-tr4569.pdf[*NetApp Security Hardening Guide for ONTAP 9*].
 
-Select any of the encryption or anti-ransomware counts to dive into your environment.
+Select any of the encryption or anti-file tampering counts to dive into your environment.
 
 image:OE_SecurityDashboard.png[ONTAP Essentials Security Dashboard]
 

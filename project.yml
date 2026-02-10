@@ -70,12 +70,15 @@ sidebar:
             url: /concept_dashboards_overview.html
           - title: Features of Dashboards
             url: /concept_dashboard_features.html
+          - title: Managing Dashboard Access
+            url: /dashboard_access_management.html
+          - title: Dashboard Best Practices
+            url: /concept_dashboard_best_practices.html
           - title: Sample Dashboards
             entries:
               - title: Virtual Machine Performance
                 url: /task_dashboard_example_VM_performance.html
-          - title: Dashboard Best Practices
-            url: /concept_dashboard_best_practices.html
+
 
       - title: Working with Queries
         entries:
@@ -121,9 +124,6 @@ sidebar:
             url: /concept_anomaly_detection.html
           - title: System-Defined Monitors
             url: /task_system_monitors.html
-
-          - title: Configuring Notification Recipients
-            url: /concept_notifications_email.html 
 
           - title: Webhook Notifications
             entries:
@@ -212,6 +212,8 @@ sidebar:
             url: /reporting_creating_custom_reports.html#reporting-data-models
           - title: Reporting Database API
             url: /reporting_querying_database.html
+          - title: Publishing Annotations to Reports
+            url: /reporting_publishing_annotations.html
           - title: Data Retention
             url: /reporting_data_retention.html
           - title: Schema Diagrams
@@ -297,13 +299,13 @@ sidebar:
           url: /cs_automated_response_policies.html
         - title: Allowed File Types Policies
           url: /ws_allowed_file_types.html
-        - title: ONTAP Autonomous Ransomware Protection Integration
+        - title: ONTAP Autonomous Protection Integration
           url: /concept_cs_integration_with_ontap_arp.html
         - title: ONTAP Access Denied Integration
           url: /concept_ws_integration_with_ontap_access_denied.html
         - title: Blocking User Access
           url: /cs_restrict_user_access.html
-        - title: Simulating a Ransomware Attack
+        - title: Simulating an Attack
           url: /concept_cs_attack_simulator.html
         - title: Email Notifications
           url: /cs_notifications_email.html
