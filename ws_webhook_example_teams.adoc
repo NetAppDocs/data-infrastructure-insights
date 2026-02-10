@@ -41,6 +41,102 @@ image:ws_webhook_teams_example.png[Workload Security teams webhook example]
 . Paste the URL from above into the _URL_ field.
 
 
+
+=== Steps for creating Teams notification with Adaptive Card template
+
+
+. Replace the message body with the following template:
+
+  {
+  "type": "message",
+  "attachments": [
+    {
+      "contentType": "application/vnd.microsoft.card.adaptive",
+      "content": {
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "type": "AdaptiveCard",
+        "version": "1.2",
+        "body": [
+          {
+            "type": "TextBlock",
+            "text": "%%severity%% Alert: %%synopsis%%",
+            "wrap": true,
+            "weight": "Bolder",
+            "size": "Large"
+          },
+          {
+            "type": "TextBlock",
+            "text": "%%detected%%",
+            "wrap": true,
+            "isSubtle": true,
+            "spacing": "Small"
+          },
+          {
+            "type": "FactSet",
+            "facts": [
+              {
+                "title": "User",
+                "value": "%%userName%%"
+              },
+              {
+                "title": "Attack/Abnormal Behavior",
+                "value": "%%type%%"
+              },
+              {
+                "title": "Action taken",
+                "value": "%%actionTaken%%"
+              },
+              {
+                "title": "Files encrypted",
+                "value": "%%filesEncrypted%%"
+              },
+              {
+                "title": "Encrypted files suffix",
+                "value": "%%encryptedFilesSuffix%%"
+              },
+              {
+                "title": "Files deleted",
+                "value": "%%filesDeleted%%"
+              },
+              {
+                "title": "Activity Change Rate",
+                "value": "%%changePercentage%%"
+              },
+              {
+                "title": "Severity",
+                "value": "%%severity%%"
+              },
+              {
+                "title": "Status",
+                "value": "%%status%%"
+              },
+              {
+                "title": "Notes",
+                "value": "%%note%%"
+              }
+            ]
+          }
+        ],
+        "actions": [
+          {
+            "type": "Action.OpenUrl",
+            "title": "View Details",
+            "url": "https://%%cloudInsightsHostname%%/%%alertDetailsPageUrl%%"
+          }
+        ]
+      }
+    }
+  ]
+} 
+
+. If you are using Power Automate Flows, query params in the URL are in encoded format. You must decode the URL before entering.
+
+. Click "Test Webhook" to ensure there are no errors.
+
+. Save the webhook.
+
+
+
 == Notifications via Webhook
 
 To notify on events via webhook, navigate to _Workload Security > Policies_. Select _+Attack Policy_ or _+Warning Policy_.
