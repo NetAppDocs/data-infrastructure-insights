@@ -26,7 +26,7 @@ This page provides an overview of activities on your tenant, highlighting the fo
 You can zoom the graph by dragging out a rectangle in the graph. The entire page will be loaded to display the zoomed time range. When zoomed in, a button is displayed that lets the user zoom out. 
 
 * A list of the _All Activity_ data.
-* A group by dropdown will provide the option to group the activity by users, path, entity type etc.
+* A group by dropdown will provide the option to group the activity by users, folders, entity type, etc.
 * A common path button will be available above the table on click of which we can get slide out panel with entity path details.
 
 

@@ -135,7 +135,7 @@ Some things to try if you encounter problems with this data collector:
 
 |Logs collection is not supported on VMware versions prior to 8.0.1. Upgrade your VI Center Infrastructure to version 8.0.1 or later if you wish to use the Logs Collections feature within Data Infrastructure Insights.
 
-For more information, see this link:https://kb.netapp.com/Cloud/BlueXP/Cloud_Insights/VMware_Logs_package_is_not_supported_on_VMware_below_version_8.0.1___Data_Infrastructure_Insights[KB Article].
+For more information, see this link:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs/Data_Infrastructure_Insights_Brocade_data_source_fails_performance_collection_with_a_timeout_due_to_default_SNMP_configuration[KB Article].
 
 |===
 

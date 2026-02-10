@@ -1,20 +1,19 @@
 ---
 sidebar: sidebar
 permalink: concept_cs_agent_requirements.html
-summary: The server or VM you use as your Agent must meet minimum requirements
+summary: Workload Security Agents require specific operating system, CPU, memory, and disk space specifications to effectively monitor file access and detect security threats across your storage infrastructure.
 keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cloud Secure
 ---
 
 = Workload Security Agent Requirements
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-You must link:task_cs_add_agent.html[install an Agent] in order to acquire information from your data collectors. Before you install the Agent, you should ensure that your environment meets operating system, CPU, memory, and disk space requirements.
+Deploy Workload Security Agents on dedicated servers that meet minimum OS, CPU, memory, and disk space requirements to ensure optimal monitoring and threat detection performance. This guide specifies the hardware and network requirements needed before link:task_cs_add_agent.html[installing your Workload Security Agent], including supported Linux distributions, network connectivity rules, and system sizing guidance.
 
 
 [cols=2*,options="header",cols="36,60"]
@@ -22,15 +21,16 @@ You must link:task_cs_add_agent.html[install an Agent] in order to acquire infor
 |Component|Linux Requirement
 |Operating system|A computer running a licensed version of one of the following:
 
-* AlmaLinux 9.4 and 9.5 (64-bit), including SELinux
-* CentOS 9 Stream (64-bit)
-* Debian 11(64-bit) and 12 (64-bit), including SELinux
-* OpenSUSE Leap 15.3(64-bit) through 15.6 (64-bit)
-* Oracle Linux 8.10 (64-bit), and 9.1(64-bit) through 9.6 (64-bit), including  SELinux
-* Red Hat Enterprise Linux 8.10 (64-bit), and 9.1(64-bit) through 9.6 (64-bit), including  SELinux
-* Rocky 9.4(64-bit) and 9.5 (64-bit), including  SELinux
-* SUSE Linux Enterprise Server 15 SP4(64-bit) through 15 SP6 (64-bit), including  SELinux
-* Ubuntu 20.04 LTS(64-bit), 22.04 LTS(64-bit), and 24.04 LTS (64-bit)
+* AlmaLinux 9.4 (64bit) thru 9.5 (64bit), 10 (64bit), including SELinux
+* CentOS Stream 9 (64-bit)
+* Debian 11 (64-bit), 12 (64-bit), including SELinux
+* OpenSUSE Leap 15.3 (64-bit) through 15.6 (64-bit)
+* Oracle Linux 8.10 (64-bit), 9.1 (64-bit) through 9.6 (64-bit), including  SELinux
+* Red Hat Enterprise Linux 8.10 (64bit), 9.1 (64bit) thru 9.6 (64bit), 10 (64bit), including SELinux
+* Rocky 9.4 (64bit) thru 9.6 (64bit), including SELinux
+* SUSE Linux Enterprise Server 15 SP4 (64-bit) through 15 SP6 (64-bit), including  SELinux
+* Ubuntu 20.04 LTS (64-bit), 22.04 LTS (64-bit), 24.04 LTS (64-bit)
+
 
 
 This computer should be running no other application-level software. A dedicated server is recommended.
@@ -68,8 +68,6 @@ For Linux, disk space should be allocated in this manner:
 
 == Additional recommendations
 * It is strongly recommended to synchronize the time on both the ONTAP system and the Agent machine using *Network Time Protocol (NTP)* or *Simple Network Time Protocol (SNTP)*.
-
-
 
 
 == Cloud Network Access Rules
