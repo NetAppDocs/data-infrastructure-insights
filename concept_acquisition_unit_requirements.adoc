@@ -6,9 +6,7 @@ keywords: AU, acquisition unit, requirements, sizing
 ---
 
 = Acquisition Unit Requirements
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:
@@ -24,15 +22,15 @@ You must install an Acquisition Unit (AU) in order to acquire information from y
 |Operating system	
 |A computer running a licensed version of one of the following:
 
-* AlmaLinux 9.3 through 9.5
-* Centos (64-bit): 7.2 through 7.9, 8.1 through 8.4, Stream 8, Stream 9
-* Debian (64-bit): 9 through 12
-* OpenSUSE Leap 15.1 through 15.6
-* Oracle Enterprise Linux (64-bit): 7.5 through 7.9, 8.1 through 8.10, 9.3 through 9.6
-* Red Hat (64-bit): 7.2 through 7.9, 8.1 through 8.10, 9.1 through 9.6
-* Rocky 9.0 through 9.5
-* SUSE Linux Enterprise Server 15, 15 SP2 through 15 SP6
-* Ubuntu Server: 18.04, 20.04, 22.04, 24.04 LTS
+* AlmaLinux 9.5, 10
+* Centos (64-bit): Stream 9
+* Debian (64-bit): 11 through 13
+* OpenSUSE Leap 15.2 through 15.6, 16
+* Oracle Enterprise Linux (64-bit): 8.10, 9.2, 9.4, 9.6, 10
+* Red Hat (64-bit): 8.10, 9.2, 9.4, 9.6, 10
+* Rocky 9.2 through 9.6
+* SUSE Linux Enterprise Server 15 SP4 through 15 SP7, 16
+* Ubuntu Server: 20.04, 22.04, 24.04 LTS
 * SELinux on the above platforms
 
 This computer should be running no other application-level software. A dedicated server is recommended. 
