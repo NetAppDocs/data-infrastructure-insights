@@ -97,7 +97,7 @@ With these details, the Assistant can query the appropriate data sources and pro
 
 To call the DII AI Assistant, simply select the owl icon in the lower corner of the screen. A user with “Owner” role must accept the terms and conditions before anyone can utilize the AI Assistant on your tenant.
 
-image:dii_ai_assistant.png[dii_ai_assistant_icon]
+image:ai_assistant_icon.png[dii_ai_assistant_icon]
 
 
 
