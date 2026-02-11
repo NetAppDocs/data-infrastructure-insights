@@ -16,7 +16,7 @@ keywords: features
 [.lead]
 NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in Data Infrastructure Insights (formerly Cloud Insights).
 
-== January 2026
+== February 2026
 
 === Instant intelligent answers about your infrastructure
 
@@ -26,7 +26,9 @@ Meet your infrastructure's new intelligent partner: The *Data Infrastructure Ins
 * What are the top storage pools with the highest utilization in the environment?
 * How many alerts were generated in the last hour?
 
-Activate now! Ask your Tenant Owner to activate the AI Assistant by clicking on the "owl" and accepting the Terms and Conditions.
+//Activate now! Ask your Tenant Owner to activate the AI Assistant by clicking on the "owl" and accepting the Terms and Conditions.
+
+The DII AI Assistant is available now as a Limited Preview. link:/concept_preview_features.html[Learn more] about Data Infrastructure Insights Preview features.
 
 
 
