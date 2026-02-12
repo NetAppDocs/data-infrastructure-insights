@@ -7,7 +7,6 @@ keywords: coming soon, preview,
 
 = Preview Features and Functionality
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
