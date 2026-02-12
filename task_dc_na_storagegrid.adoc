@@ -51,9 +51,9 @@ The following are requirements for configuring this data source:
 [cols=2*, options="header", cols"50,50"]
 |===
 |Field|Description
-|StorageGRID Host IP Address |Management Virtual IP address of the StorageGRID appliance
-|User Name |Name used to log into the StorageGRID appliance
-|Password |Password used to log into the StorageGRID appliance
+|StorageGRID Host IP Address |Management IP address of the StorageGRID (Grid Manager)
+|User Name |Name used to log into the StorageGRID (Grid Manager)
+|Password |Password used to log into the StorageGRID (Grid Manager)
 |===
 
 == Advanced configuration
