@@ -29,6 +29,8 @@ sidebar:
           
     - title: Getting Started
       entries:
+        - title: Feature Tutorials
+          url: /concept_feature_tutorials.html
         - title: Collecting Data
           entries:
             - title: Overview
@@ -39,8 +41,6 @@ sidebar:
               url: /task_configure_acquisition_unit.html 
             - title: Configuring an Agent on Windows/Linux
               url: /task_config_telegraf_agent.html
-#            - title: Configuring a Kubernetes Operator
-#              url: /task_config_telegraf_agent_k8s.html
             - title: Configuring Data Collectors
               url: /task_configure_data_collectors.html
             - title: Determining Data Collector Acquisition Status
@@ -68,12 +68,15 @@ sidebar:
             url: /concept_dashboards_overview.html
           - title: Features of Dashboards
             url: /concept_dashboard_features.html
+          - title: Managing Dashboard Access
+            url: /dashboard_access_management.html
+          - title: Dashboard Best Practices
+            url: /concept_dashboard_best_practices.html
           - title: Sample Dashboards
             entries:
               - title: Virtual Machine Performance
                 url: /task_dashboard_example_VM_performance.html
-          - title: Dashboard Best Practices
-            url: /concept_dashboard_best_practices.html
+
 
       - title: Working with Queries
         entries:
@@ -119,9 +122,6 @@ sidebar:
             url: /concept_anomaly_detection.html
           - title: System-Defined Monitors
             url: /task_system_monitors.html
-
-          - title: Configuring Notification Recipients
-            url: /concept_notifications_email.html 
 
           - title: Webhook Notifications
             entries:
@@ -210,6 +210,8 @@ sidebar:
             url: /reporting_creating_custom_reports.html#reporting-data-models
           - title: Reporting Database API
             url: /reporting_querying_database.html
+          - title: Publishing Annotations to Reports
+            url: /reporting_publishing_annotations.html
           - title: Data Retention
             url: /reporting_data_retention.html
           - title: Schema Diagrams
@@ -295,13 +297,13 @@ sidebar:
           url: /cs_automated_response_policies.html
         - title: Allowed File Types Policies
           url: /ws_allowed_file_types.html
-        - title: ONTAP Autonomous Ransomware Protection Integration
+        - title: ONTAP Autonomous Protection Integration
           url: /concept_cs_integration_with_ontap_arp.html
         - title: ONTAP Access Denied Integration
           url: /concept_ws_integration_with_ontap_access_denied.html
         - title: Blocking User Access
           url: /cs_restrict_user_access.html
-        - title: Simulating a Ransomware Attack
+        - title: Simulating an Attack
           url: /concept_cs_attack_simulator.html
         - title: Email Notifications
           url: /cs_notifications_email.html
@@ -317,7 +319,7 @@ sidebar:
               url: /ws_webhook_example_pagerduty.html
             - title: Slack Webhook Example
               url: /ws_webhook_example_slack.html
-            - title: Team Webhook Example
+            - title: Teams Webhook Example
               url: /ws_webhook_example_teams.html
 
         - title: Workload Security API
@@ -339,63 +341,6 @@ sidebar:
           
     - title: Data Collector Support Matrix
       url: /reference_data_collector_support_matrix.html
-
-#    - title: Data Collector Support Matrix
-#      entries:
-#        - title: Amazon
-#          url: /dc_matrix_amazon.html
-#        - title: ASA
-#          url: /dc_matrix_asa.html
-#        - title: Brocade
-#          url: /dc_matrix_brocade.html
-#        - title: Cisco
-#          url: /dc_matrix_cisco.html
-#        - title: Cohesity
-#          url: /dc_matrix_cohesity.html
-#        - title: Dell
-#          url: /dc_matrix_dell.html
-#        - title: Dell EMC
-#          url: /dc_matrix_emc.html
-#        - title: Fujitsu
-#          url: /dc_matrix_fujitsu.html
-#        - title: Google
-#          url: /dc_matrix_google.html
-#        - title: Hitachi
-#          url: /dc_matrix_hitachi.html
-#        - title: HDS
-#          url: /dc_matrix_hds.html
-#        - title: HiCommand
-#          url: /dc_matrix_hicommand.html
-#        - title: HP
-#          url: /dc_matrix_hp.html
-#        - title: HPE
-#          url: /dc_matrix_hpe.html
-#        - title: Huawei
-#          url: /dc_matrix_huawei.html
-#        - title: IBM
-#          url: /dc_matrix_ibm.html
-#        - title: Infinidat
-#          url: /dc_matrix_infinidat.html
-#        - title: Microsoft
-#          url: /dc_matrix_microsoft.html
-#        - title: NetApp
-#          url: /dc_matrix_netapp.html
-#        - title: Nutanix
-#          url: /dc_matrix_nutanix.html
-#        - title: OpenStack
-#          url: /dc_matrix_openstack.html
-#        - title: Oracle
-#          url: /dc_matrix_oracle.html
-#        - title: Pure
-#          url: /dc_matrix_pure.html
-#        - title: Red Hat
-#          url: /dc_matrix_red.html
-#        - title: Rubrik
-#          url: /dc_matrix_rubrik.html
-#        - title: Vast
-#          url: /dc_matrix_vast.html
-#        - title: VMware
-#          url: /dc_matrix_vmware.html
 
     - title: Reference & Support
       entries:
@@ -508,6 +453,8 @@ sidebar:
               entries:
                 - title: Cloud Volumes ONTAP
                   url: /task_dc_na_cloud_volumes_ontap.html
+                - title: ONTAP AFX 
+                  url: /task_dc_na_ontap_afx.html
                 - title: ONTAP ASA (All-SAN Array) r2
                   url: /task_dc_na_ontap_all_san_array.html
                 - title: ONTAP Data Management Software 

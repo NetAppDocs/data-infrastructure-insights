@@ -177,45 +177,36 @@ The objects returned by queries and filters look similar to those shown in the f
 image:ObjectsReturnedByFilters.png[Objects returned by filters]
 
 
-== Grouping and Aggregation
+== Grouping, Identifying, and Aggregating
 
 === Grouping (Rolling Up)
 
-Data displayed in a widget is grouped (sometimes called rolled-up) from the underlying data points collected during acquisition. For example, if you have a line chart widget showing Storage IOPS over time, you might want to see a separate line for each of your data centers, for a quick comparison. You can choose to group this data in one of several ways:
+Data displayed in a widget is grouped (sometimes called rolled-up) from the underlying data points collected during acquisition. For example, if you have a line chart widget showing Storage IOPS over time, you might want to see a separate line for each of your data centers, for a quick comparison. In the "Group by" field, select the object type itself to view individual lines, areas, bars, columns, etc. (depending on the widget type) for each object. You can choose to group by any attribute available in the list for that object. For example, when viewing data for an Internal Volume, you may want to group data by the storage name.
+
+To view the consolidated data, remove any Group By attribute, which will default to grouping by "All".
+
+You can choose to aggregate this data in one of several ways:
 
 * *Average*: displays each line as the _average_ of the underlying data.
 * *Maximum*: displays each line as the _maximum_ of the underlying data.
 * *Minimum*: displays each line as the _minimum_ of the underlying data.
 * *Sum*: displays each line as the _sum_ of the underlying data.
-* *Count*: displays a _count_ of objects that have reported data within the specified time frame. You can choose the _Entire Time Window_ as determined by the dashboard time range.
 
-// You can choose to include _all_ objects that have reported data, or only those objects whose data is reported as _Not Null_. 
-
-.Steps
-
-To set the grouping method, do the following.
-
-. In your widget's query, choose an asset type and metric (for example, _Storage_) and metric (such as _Performance IOPS Total_).
-
-. For *Group*, choose a roll up method (such as _Average_) and select the attributes or metrics by which to roll up the data (for example, _Data Center_).
-+
-The widget updates automatically and shows data for each of your data centers.
-
-You can also choose to group _all_ of the underlying data into the chart or table. In this case, you will get a single line for each query in the widget, which will show the average, min, max, sum, or count of the chosen metric or metrics for all of the underlying assets.
-
-Clicking the legend for any widget whose data is grouped by "All" opens a query page showing the results of the first query used in the widget.
+When viewing the dashboard, selecting the legend for any widget whose data is grouped by "All" opens a query page showing the results of the first query used in the widget.
 
 If you have set a filter for the query, the data is grouped based on the filtered data.
 
-Note that when you choose to group a widget by any field (for example, _Model_), you will still need to Filter by that field in order to properly display the data for that field on the chart or table.
+=== Identifying custom data
+
+When you are creating or modifying a widget that is built on your own custom data, your data may not be represented properly in the widget without an identifying attribute. If DII cannot identify the object you have selected for your widget, it will present you with an _Advanced Configuration_ link in the "Group By" area. Expand this to select the attribute by which you wish to identify your data.
+
+image:unmodeled_data_identify_by.png[identify by drop-down for unknown data]
 
 === Aggregating data
 
-You can further align your time-series charts (line, area, etc.) by aggregating data points into minute, hour, or day buckets before that data is subsequently rolled up by attribute (if chosen). You can choose to aggregate data points according to their _Average, Maximum, Minimum, Sum_, or _Count_. 
+You can further align your charts by aggregating data points into minute, hour, or day buckets before that data is subsequently rolled up by attribute (if chosen). You can choose to aggregate data points according to their _Average, Maximum, Minimum, Sum_, or _Count_. 
 
 A small interval combined with a long time range may result in an "Aggregation interval resulted in too many data points." warning. You might see this if you have a small interval and increase the dashboard time frame to 7 days. In this case, Insight will temporarily increase the aggregation interval until you select a smaller time frame.
-
-You can also aggregate data in the bar chart widget and single-value widget.
 
 Most asset counters aggregate to _Average_ by default. Some counters aggregate to _Max, Min_, or _Sum_ by default. For example, port errors aggregate to _Sum_ by default, where storage IOPS aggregate to _Average_.
 

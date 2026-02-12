@@ -2,19 +2,18 @@
 sidebar: sidebar
 permalink: task_config_cs_incloud.html
 keywords:  Cloud, Storage, AWS, Cloud Volumes, Cloud ONTAP, firewall, VPC, Subnet,  cloud secure
-summary: Workload Security uses data collectors to collect file and user access data from devices.
+summary: Set up Workload Security data collectors for Cloud Volumes ONTAP and Amazon FSx for NetApp ONTAP to monitor file access, user activity, and detect threats across your cloud storage infrastructure.
 ---
 
 = Configuring the Cloud Volumes ONTAP and Amazon FSx for NetApp ONTAP collector 
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Workload Security uses data collectors to collect file and user access data from devices.
+Monitor file and user access across your cloud storage infrastructure by configuring Workload Security data collectors for Cloud Volumes ONTAP and Amazon FSx for NetApp ONTAP. This guide provides step-by-step instructions for deploying Agents in AWS and connecting them to your cloud storage instances.
 
 
 == Cloud Volumes ONTAP Storage Configuration
@@ -59,34 +58,6 @@ https://docs.netapp.com/us-en/cloudinsights/concept_cs_agent_requirements.html
 
 .. Install _wget_ and _unzip_ native Linux packages.
 
-////
-.. Install _selinux_ (dependency package for the docker-ce):
-+
- wget http://mirror.centos.org/centos/7/extras/x86_64/Packages/container-selinux-2.68-1.el7.noarch.rpm  
- yum install -y container-selinux-2.68-1.el7.noarch.rpm
-
-. Install the docker-ce (not the native docker) package. You must use a version higher than 17.03:
-https://download.docker.com/linux/centos/7/x86_64/stable/Packages/
-
-. SSH to the Redhat EC2 VM:
-+
- ssh -i "your_new_pem.pem" <ec2_hostname_or_IP>
- sudo su -
-
-. Perform a docker login after installing the required AWS CLI package:
-+
- curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
- unzip awscli-bundle.zip 
- sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws 
- /usr/local/bin/aws --version 
- aws configure --profile collector_readonly 
- aws ecr get-login --no-include-email --region us-east-1 --profile collector_readonly 
- docker login -u AWS -p <token_generated_above>  <ECR_hostname> 
-
-. Use the following command to verify the steps completed successfully and the _cs-ontap-dsc_ image can be successfully pulled: 
-+
- docker pull 376015418222.dkr.ecr.us-east-1.amazonaws.com/cs-ontap-dsc:1.25.0 
-////
 
 
 == Install the Workload Security Agent
@@ -104,44 +75,6 @@ This installs the Workload Security agent, providing all of the link:concept_cs_
 
 For detailed steps please refer to this link:
 https://docs.netapp.com/us-en/cloudinsights/task_cs_add_agent.html#steps-to-install-agent
-
-////
-== Add a NetApp ONTAP data collector 
-
-. Click *Observability > Collectors > Data Collectors > +Data Collector* and specify the NetApp ONTAP Cloud Volumes data collector. Enter the required information in the fields.
-
-[caption=]
-.Configuration
-[cols=2*, cols"50,50"]
-[Options=header]
-|===
-|Field|Description
-|Name |Unique name for the Data Collector
-|Agent|Select a configured agent from the list or click *Add Agent* to configure an Agent. See link:concept_cs_agent_requirements.html[Agent requirements] and link:task_cs_add_agent.html[Agent Installation] for configuration information.
-|SVM Management IP Address|Management IP Address
-|Username|User name to access the SVM
-|Password|SVM Password
-|Enter complete share names to exclude|Comma-separated list of shares to exclude from event collection
-|Enter complete volume names to exclude|Comma-separated list of volumes to exclude from event collection
-|===
-
-.. Click *Add Collector*
-
-. Verify the Agent Server is running using the 
-`docker ps` command and a `docker logs <docker_image_id>` file. 
-+
-All of the data collector's service status should be in the 'running' state.
-
-// .. Identify an NFS client (in the same VPC subnet as the Agent and Cloud ONTAP) 
- 
-//.. Install the nfs-utils package in this VPC Subnet: 
-
-//+
-
-//‘yum install -y nfs-utils’  
-
-//.. NFS mount the volume / qtree container that was created in the SVM. 
-////
 
 
 
