@@ -28,8 +28,7 @@ Meet your infrastructure's new intelligent partner: The *Data Infrastructure Ins
 
 //Activate now! Ask your DII Site Owner to activate the AI Assistant by clicking on the "owl" and accepting the Terms and Conditions.
 
-Note: The AI Assistant is currently available as a limited preview. Contact your NetApp Sales Representative for more information.  
-The AI Assistant is available for DII tenants deployed on AWS.
+The DII AI Assistant Preview is available now to most customers with service hosted on AWS regions; Azure region is coming soon. link:concept_preview_features.html[Learn more] about Data Infrastructure Insights Preview features.
 image:ai_assistant_icon.png[AI Assistant icon]
 
 
