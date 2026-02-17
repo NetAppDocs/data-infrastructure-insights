@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reporting_schema_tables.html
-summary: Data Warehouse schema diagrams and tables for use with Reporting
+summary: Schema tables and relationships for the dwh_capacity database
 keywords: dwh, data warehouse, schema, reporting 
 ---
 
@@ -13,7 +13,7 @@ keywords: dwh, data warehouse, schema, reporting
 :imagesdir: ./media/
 
 [.lead]
-This document provides schema tables for DWH Capacity
+This reference provides detailed schema information for the dwh_capacity database, including table structures, field definitions, data types, and relationships.
 
 ## Tables and Views
 

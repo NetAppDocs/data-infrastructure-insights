@@ -7,7 +7,6 @@ keywords: dwh, data warehouse, schema, reporting
 
 = Data Infrastructure Insights Schemas for Reporting
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
