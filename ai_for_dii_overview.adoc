@@ -18,7 +18,13 @@ The *Data Infrastructure Insights AI Assistant* is designed to help you work mor
 [NOTE]
 ====
 The DII AI Assistant is available as a Limited Preview. link:/concept_preview_features.html[Learn more] about Data Infrastructure Insights Preview features.
+
+The AI Assistant is available for DII tenants deployed on AWS only.
 ====
+
+
+image:ai_assistant_sample_question.png[AI Assistant Sample Question]
+
 
 == Meet your infrastructure's new intelligent partner
 
@@ -33,7 +39,6 @@ The AI Assistant transforms how you interact with your data, turning complex que
 * Are there any critical alerts currently active?
 * What's the overall health status of the storage systems?
 * Which virtual machines are consuming the most memory?
-* What are the current network performance metrics across the infrastructure?
 * How many monitors are configured in the system?
 
 
@@ -47,55 +52,26 @@ The AI Assistant transforms how you interact with your data, turning complex que
 
 == The AI Assistant works with you
 
-The DII AI Assistant can help you answer questions about your IT Infrastructure's data. To do this effectively, it needs to understand what specific data you're interested in examining for anomalies.
+The DII AI Assistant can help you answer questions about your IT Infrastructure's data. To do this effectively, it needs to understand your request as well as what specific data is required in order to respond to your request. 
 
 The DII system contains various types of data, including:
 
 * Asset telemetry (hosts, storage, VMs, etc.)
-* Datalake measurements (Kubernetes, NetApp, VMware metrics)
+* Datalake metrics (Kubernetes, NetApp Storage, VMware)
 * Logs from different systems
 * Alerts that may indicate anomalies
 
-To provide a meaningful analysis, provide the Assistant with specific information about:
+For the best experience, provide the Assistant with specific information about:
 
 * The type of data you want to analyze (e.g., specific assets, metrics, or systems),
 * The timeframe you're interested in, and
 * Any specific issue types you're concerned about (performance issues, capacity problems, errors, etc.)
 
 
-////
-=== Troubleshoot issues
-
-The AI Assistant can help troubleshoot data center issues by leveraging DII (Data Infrastructure Insights) tools and data repositories. Here's what the Assistant can do:
-
-* *Investigate System Logs* - Query various log types (EMS logs, VMware events, Kubernetes events, and more) to identify error messages, warnings, and root causes of problems.
-
-* *Analyze Performance Metrics* - Retrieve performance data to identify bottlenecks, resource constraints, and unusual patterns across your infrastructure.
-
-* *Review Active Alerts* - Examine current and historical alerts to understand what issues have been detected by monitoring systems and correlate them with potential root causes.
-
-* *Examine Asset Information* - Gather detailed configuration and status information about specific infrastructure components, including hosts, storage systems, VMs, and applications.
-
-* *Monitor Resource Utilization* - Track CPU, memory, disk, and network usage across your environment to identify resource constraints and capacity issues.
-
-* *Track Changes* - Review change logs to correlate issues with recent modifications and identify patterns in infrastructure changes.
-
-To enable the Assistant to troubleshoot effectively, provide the following information:
-
-* The specific issue you're experiencing and its symptoms
-* Which systems or components are affected
-* Any error messages or alerts you've observed
-* When the problem started occurring
-* Any recent changes to your environment
-* Expected behavior versus actual behavior
-
-With these details, the Assistant can query the appropriate data sources and provide targeted insights to help resolve your issue.
-////
-
 
 == Accessing the Assistant
 
-To call the DII AI Assistant, simply select the owl icon in the lower corner of the screen. A user with “Owner” role must accept the terms and conditions before anyone can utilize the AI Assistant on your tenant.
+To call the DII AI Assistant, simply select the owl icon in the lower corner of the screen. A user with “Owner” role must accept the terms and conditions before any user can utilize the AI Assistant on your tenant.
 
 image:ai_assistant_icon.png[dii_ai_assistant_icon]
 
