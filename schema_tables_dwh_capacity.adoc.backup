@@ -1,9 +1,9 @@
-'''
+---
 sidebar: sidebar
 permalink: reporting_schema_tables.html
 summary: Schema tables and relationships for the dwh_capacity database
 keywords: dwh, data warehouse, schema, reporting 
-'''
+---
 
 = Database Schema Reference for dwh_capacity
 :hardbreaks:
@@ -15,19 +15,22 @@ keywords: dwh, data warehouse, schema, reporting
 [.lead]
 This reference provides detailed schema information for the dwh_capacity database, including table structures, field definitions, data types, and relationships.
 
-== Tables and Views
+## Tables and Views
 
 === application_dimension
-| Field | Type | Description |
-|-------|------|-------------|
-| tk | Integer | Technical key |
-| name | String | Application name |
-| description | String | Application description |
-| priority | String | Priority level |
-| url | String | Reference URL |
-| id | Long | Unique identifier |
-| latest | String | Latest flag |
-| dateTk | Integer | Date technical key |
+
+[cols="1,1,2",options="header"]
+|===
+| Field | Type | Description
+| tk | Integer | Technical key
+| name | String | Application name
+| description | String | Application description
+| priority | String | Priority level
+| url | String | Reference URL
+| id | Long | Unique identifier
+| latest | String | Latest flag
+| dateTk | Integer | Date technical key
+|===
 
 **Relationships:**
 - internal_volume_capacity_fact (one-to-many)
@@ -35,25 +38,31 @@ This reference provides detailed schema information for the dwh_capacity databas
 - vm_capacity_fact (one-to-many)
 - qtree_capacity_fact (one-to-many)
 
----
+'''
 
 === application_group_bridge
-| Field | Type | Description |
-|-------|------|-------------|
-| appGroupTk | Integer | Application group technical key |
-| appTk | Integer | Application technical key |
-| isRep | String | Representative flag |
 
----
+[cols="1,1,2",options="header"]
+|===
+| Field | Type | Description
+| appGroupTk | Integer | Application group technical key
+| appTk | Integer | Application technical key
+| isRep | String | Representative flag
+|===
+
+'''
 
 === application_group_dimension
-| Field | Type | Description |
-|-------|------|-------------|
-| tk | Integer | Technical key |
-| repApp | String | Representative application |
-| repAppTk | Integer | Representative application technical key |
-| cardinality | Integer | Group cardinality |
-| dateTk | Integer | Date technical key |
+
+[cols="1,1,2",options="header"]
+|===
+| Field | Type | Description
+| tk | Integer | Technical key
+| repApp | String | Representative application
+| repAppTk | Integer | Representative application technical key
+| cardinality | Integer | Group cardinality
+| dateTk | Integer | Date technical key
+|===
 
 **Relationships:**
 - internal_volume_capacity_fact (one-to-many)
@@ -61,20 +70,23 @@ This reference provides detailed schema information for the dwh_capacity databas
 - vm_capacity_fact (one-to-many)
 - qtree_capacity_fact (one-to-many)
 
----
+'''
 
 === business_entity_dimension
-| Field | Type | Description |
-|-------|------|-------------|
-| tk | Integer | Technical key |
-| fullname | String | Full entity name |
-| tenant | String | Tenant name |
-| lob | String | Line of business |
-| businessUnit | String | Business unit |
-| project | String | Project name |
-| id | Long | Unique identifier |
-| latest | String | Latest flag |
-| dateTk | Integer | Date technical key |
+
+[cols="1,1,2",options="header"]
+|===
+| Field | Type | Description
+| tk | Integer | Technical key
+| fullname | String | Full entity name
+| tenant | String | Tenant name
+| lob | String | Line of business
+| businessUnit | String | Business unit
+| project | String | Project name
+| id | Long | Unique identifier
+| latest | String | Latest flag
+| dateTk | Integer | Date technical key
+|===
 
 **Relationships:**
 - internal_volume_capacity_fact (one-to-many)
@@ -82,60 +94,69 @@ This reference provides detailed schema information for the dwh_capacity databas
 - vm_capacity_fact (one-to-many)
 - qtree_capacity_fact (one-to-many)
 
----
+'''
 
 === capacity_type
+
 **Primary Key:** type
 
-| Field | Type | Description |
-|-------|------|-------------|
-| type | String | Capacity type |
-| used | String | Used flag |
-| vmSpecific | String | VM-specific flag |
-| replicationSpecific | String | Replication-specific flag |
-| description | String | Description |
+[cols="1,1,2",options="header"]
+|===
+| Field | Type | Description
+| type | String | Capacity type
+| used | String | Used flag
+| vmSpecific | String | VM-specific flag
+| replicationSpecific | String | Replication-specific flag
+| description | String | Description
+|===
 
 **Relationships:**
 - vm_capacity_fact (one-to-many)
 
----
+'''
 
 === cardinals
-| Field | Type | Description |
-|-------|------|-------------|
-| digit | Integer | Cardinal number |
 
----
+[cols="1,1,2",options="header"]
+|===
+| Field | Type | Description
+| digit | Integer | Cardinal number
+|===
+
+'''
 
 === chargeback_fact
+
 **Primary Key:** tk, dateTk
 
-| Field | Type | Description |
-|-------|------|-------------|
-| tk | Integer | Technical key |
-| dateTk | Integer | Date technical key |
-| storageTk | Integer | Storage technical key |
-| storagePoolTk | Integer | Storage pool technical key |
-| internalVolumeTk | Integer | Internal volume technical key |
-| qtreeTk | Integer | Qtree technical key |
-| hostTk | Integer | Host technical key |
-| hostGroupTk | Integer | Host group technical key |
-| applicationTk | Integer | Application technical key |
-| applicationGroupTk | Integer | Application group technical key |
-| tierTk | Integer | Tier technical key |
-| serviceLevelTk | Integer | Service level technical key |
-| businessUnit | String | Business unit |
-| businessEntityTk | Integer | Business entity technical key |
-| k8sNamespaceTk | Integer | Kubernetes namespace technical key |
-| k8sNamespaceGroupTk | Integer | Kubernetes namespace group technical key |
-| protectionType | String | Protection type |
-| storageAccessType | String | Storage access type |
-| resourceName | String | Resource name |
-| resourceType | String | Resource type |
-| mappedByVM | String | Mapped by VM flag |
-| virtualStorage | String | Virtual storage flag |
-| provisionedCapacityMB | Long | Provisioned capacity (MB) |
-| usedCapacityMB | Long | Used capacity (MB) |
+[cols="1,1,2",options="header"]
+|===
+| Field | Type | Description
+| tk | Integer | Technical key
+| dateTk | Integer | Date technical key
+| storageTk | Integer | Storage technical key
+| storagePoolTk | Integer | Storage pool technical key
+| internalVolumeTk | Integer | Internal volume technical key
+| qtreeTk | Integer | Qtree technical key
+| hostTk | Integer | Host technical key
+| hostGroupTk | Integer | Host group technical key
+| applicationTk | Integer | Application technical key
+| applicationGroupTk | Integer | Application group technical key
+| tierTk | Integer | Tier technical key
+| serviceLevelTk | Integer | Service level technical key
+| businessUnit | String | Business unit
+| businessEntityTk | Integer | Business entity technical key
+| k8sNamespaceTk | Integer | Kubernetes namespace technical key
+| k8sNamespaceGroupTk | Integer | Kubernetes namespace group technical key
+| protectionType | String | Protection type
+| storageAccessType | String | Storage access type
+| resourceName | String | Resource name
+| resourceType | String | Resource type
+| mappedByVM | String | Mapped by VM flag
+| virtualStorage | String | Virtual storage flag
+| provisionedCapacityMB | Long | Provisioned capacity (MB)
+| usedCapacityMB | Long | Used capacity (MB)
+|===
 
 **Relationships:**
 - volume_fact_current (one-to-one)
@@ -155,49 +176,55 @@ This reference provides detailed schema information for the dwh_capacity databas
 - host_dimension (many-to-one)
 - date_dimension (many-to-one)
 
----
+'''
 
 === datastore_dimension
-| Field | Type | Description |
-|-------|------|-------------|
-| tk | Integer | Technical key |
-| naturalKey | String | Natural key |
-| name | String | Datastore name |
-| moid | String | Managed object ID |
-| virtualCenterIp | String | vCenter IP address |
-| url | String | Reference URL |
-| id | Long | Unique identifier |
-| latest | String | Latest flag |
-| dateTk | Integer | Date technical key |
+
+[cols="1,1,2",options="header"]
+|===
+| Field | Type | Description
+| tk | Integer | Technical key
+| naturalKey | String | Natural key
+| name | String | Datastore name
+| moid | String | Managed object ID
+| virtualCenterIp | String | vCenter IP address
+| url | String | Reference URL
+| id | Long | Unique identifier
+| latest | String | Latest flag
+| dateTk | Integer | Date technical key
+|===
 
 **Relationships:**
 - vm_capacity_fact (one-to-many)
 
----
+'''
 
 === date_dimension
-| Field | Type | Description |
-|-------|------|-------------|
-| tk | Integer | Technical key |
-| fullDate | Date | Full date |
-| dayInMonth | Integer | Day in month |
-| dayInYear | Integer | Day in year |
-| dateYear | Integer | Year |
-| yearLabel | String | Year label |
-| monthNum | Integer | Month number |
-| monthLabel | String | Month label |
-| dayInWeekNum | Integer | Day of week number |
-| quarter | Integer | Quarter |
-| quarterLabel | String | Quarter label |
-| dayInQuarter | Integer | Day in quarter |
-| repQuarter | String | Representative quarter |
-| repMonth | String | Representative month |
-| repWeek | String | Representative week |
-| repDay | String | Representative day |
-| repMonthOrLatest | String | Representative month or latest |
-| sspFlag | String | SSP flag |
-| latest | String | Latest flag |
-| future | String | Future flag |
+
+[cols="1,1,2",options="header"]
+|===
+| Field | Type | Description
+| tk | Integer | Technical key
+| fullDate | Date | Full date
+| dayInMonth | Integer | Day in month
+| dayInYear | Integer | Day in year
+| dateYear | Integer | Year
+| yearLabel | String | Year label
+| monthNum | Integer | Month number
+| monthLabel | String | Month label
+| dayInWeekNum | Integer | Day of week number
+| quarter | Integer | Quarter
+| quarterLabel | String | Quarter label
+| dayInQuarter | Integer | Day in quarter
+| repQuarter | String | Representative quarter
+| repMonth | String | Representative month
+| repWeek | String | Representative week
+| repDay | String | Representative day
+| repMonthOrLatest | String | Representative month or latest
+| sspFlag | String | SSP flag
+| latest | String | Latest flag
+| future | String | Future flag
+|===
 
 **Relationships:**
 - internal_volume_capacity_fact (one-to-many)
@@ -214,7 +241,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== disk_group_capacity_fact
+### disk_group_capacity_fact
 **Primary Key:** tk, dateTk
 
 | Field | Type | Description |
@@ -236,7 +263,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== disk_group_capacity_future_fact
+### disk_group_capacity_future_fact
 **Primary Key:** tk, dateTk
 
 | Field | Type | Description |
@@ -257,7 +284,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== disk_group_dimension
+### disk_group_dimension
 | Field | Type | Description |
 |-------|------|-------------|
 | tk | Integer | Technical key |
@@ -279,7 +306,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== host_dimension
+### host_dimension
 | Field | Type | Description |
 |-------|------|-------------|
 | tk | Integer | Technical key |
@@ -306,7 +333,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== host_group_bridge
+### host_group_bridge
 | Field | Type | Description |
 |-------|------|-------------|
 | hostGroupTk | Integer | Host group technical key |
@@ -315,7 +342,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== host_group_dimension
+### host_group_dimension
 | Field | Type | Description |
 |-------|------|-------------|
 | tk | Integer | Technical key |
@@ -331,7 +358,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== internal_volume_capacity_fact
+### internal_volume_capacity_fact
 **Primary Key:** tk, dateTk
 
 | Field | Type | Description |
@@ -385,7 +412,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== internal_volume_dimension
+### internal_volume_dimension
 | Field | Type | Description |
 |-------|------|-------------|
 | tk | Integer | Technical key |
@@ -415,7 +442,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== k8s_cluster_dimension
+### k8s_cluster_dimension
 | Field | Type | Description |
 |-------|------|-------------|
 | tk | Integer | Technical key |
@@ -430,7 +457,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== k8s_namespace_dimension
+### k8s_namespace_dimension
 | Field | Type | Description |
 |-------|------|-------------|
 | tk | Integer | Technical key |
@@ -449,7 +476,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== k8s_namespace_group_bridge
+### k8s_namespace_group_bridge
 | Field | Type | Description |
 |-------|------|-------------|
 | k8sNamespaceGroupTk | Integer | Namespace group technical key |
@@ -458,7 +485,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== k8s_namespace_group_dimension
+### k8s_namespace_group_dimension
 | Field | Type | Description |
 |-------|------|-------------|
 | tk | Integer | Technical key |
@@ -475,7 +502,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== k8s_node_dimension
+### k8s_node_dimension
 | Field | Type | Description |
 |-------|------|-------------|
 | tk | Integer | Technical key |
@@ -493,7 +520,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== k8s_pv_dimension
+### k8s_pv_dimension
 | Field | Type | Description |
 |-------|------|-------------|
 | tk | Integer | Technical key |
@@ -512,7 +539,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== k8s_pvc_capacity_fact
+### k8s_pvc_capacity_fact
 **Primary Key:** tk, dateTk
 
 | Field | Type | Description |
@@ -535,7 +562,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== k8s_pvc_dimension
+### k8s_pvc_dimension
 | Field | Type | Description |
 |-------|------|-------------|
 | tk | Integer | Technical key |
@@ -554,7 +581,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== k8s_workload_dimension
+### k8s_workload_dimension
 | Field | Type | Description |
 |-------|------|-------------|
 | tk | Integer | Technical key |
@@ -569,7 +596,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== qtree_capacity_fact
+### qtree_capacity_fact
 **Primary Key:** tk, dateTk
 
 | Field | Type | Description |
@@ -613,7 +640,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== qtree_dimension
+### qtree_dimension
 | Field | Type | Description |
 |-------|------|-------------|
 | tk | Integer | Technical key |
@@ -635,7 +662,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== service_level_dimension
+### service_level_dimension
 | Field | Type | Description |
 |-------|------|-------------|
 | tk | Integer | Technical key |
@@ -655,7 +682,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== sp_time_to_fill
+### sp_time_to_fill
 **Primary Key:** saspFactTk
 
 | Field | Type | Description |
@@ -669,7 +696,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== storage_and_storage_pool_capacity_fact
+### storage_and_storage_pool_capacity_fact
 **Primary Key:** tk, dateTk
 
 | Field | Type | Description |
@@ -718,7 +745,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== storage_and_storage_pool_capacity_future_fact
+### storage_and_storage_pool_capacity_future_fact
 **Primary Key:** tk, dateTk
 
 | Field | Type | Description |
@@ -743,7 +770,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== storage_dimension
+### storage_dimension
 | Field | Type | Description |
 |-------|------|-------------|
 | tk | Integer | Technical key |
@@ -774,7 +801,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== storage_node_capacity_fact
+### storage_node_capacity_fact
 **Primary Key:** tk, dateTk
 
 | Field | Type | Description |
@@ -798,7 +825,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== storage_node_dimension
+### storage_node_dimension
 | Field | Type | Description |
 |-------|------|-------------|
 | tk | Integer | Technical key |
@@ -819,7 +846,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== storage_pool_dimension
+### storage_pool_dimension
 | Field | Type | Description |
 |-------|------|-------------|
 | tk | Integer | Technical key |
@@ -851,7 +878,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== tier_dimension
+### tier_dimension
 | Field | Type | Description |
 |-------|------|-------------|
 | tk | Integer | Technical key |
@@ -874,7 +901,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== vm_capacity_fact
+### vm_capacity_fact
 **Primary Key:** tk, dateTk
 
 | Field | Type | Description |
@@ -923,7 +950,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== vm_dimension
+### vm_dimension
 | Field | Type | Description |
 |-------|------|-------------|
 | tk | Integer | Technical key |
@@ -942,7 +969,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== volume_capacity_fact
+### volume_capacity_fact
 | Field | Type | Description |
 |-------|------|-------------|
 | volumeTk | Integer | Volume technical key |
@@ -974,7 +1001,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== volume_dimension
+### volume_dimension
 | Field | Type | Description |
 |-------|------|-------------|
 | tk | Integer | Technical key |
@@ -1001,7 +1028,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== volume_fact_current
+### volume_fact_current
 **Primary Key:** volumeId
 
 | Field | Type | Description |
@@ -1025,7 +1052,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== volume_history_capacity_fact
+### volume_history_capacity_fact
 **Primary Key:** tk, dateTk
 
 | Field | Type | Description |
@@ -1079,7 +1106,7 @@ This reference provides detailed schema information for the dwh_capacity databas
 
 ---
 
-=== volume_last_accessed_time
+### volume_last_accessed_time
 **Primary Key:** volumeName, storageIdentifier
 
 | Field | Type | Description |
