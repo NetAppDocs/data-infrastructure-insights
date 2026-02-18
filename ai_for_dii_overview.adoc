@@ -1,3 +1,4 @@
+*
 ---
 sidebar: sidebar
 permalink: ai_for_dii_overview.html
@@ -21,7 +22,6 @@ The DII AI Assistant is available as a Limited Preview. link:/concept_preview_fe
 
 The AI Assistant is available for DII tenants deployed on AWS only.
 ====
-
 
 image:ai_assistant_sample_question.png[AI Assistant Sample Question]
 
