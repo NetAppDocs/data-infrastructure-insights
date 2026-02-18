@@ -36,8 +36,6 @@ To get started with NetApp's cloud services, go to link:https://console.netapp.c
 
 Under the Data Infrastructure Insights offering, click on *Start Free Trial*. DII will walk you through creating your company's site, including selecting the region where you want your site to reside. Your free 30-day trial starts when your tenant is created.
 
-//image:trial_region_selector.png[Selecting the region in which to host your Data Infrastructure Insights tenant]
-
 Once the creation of your site is complete, use your Console credentials to log in and explore the features DII has to offer.
 
 During the free trial, you can link:concept_subscribing_to_cloud_insights.html[start your subscription] at any time. Once subscribed, you can enjoy uninterrupted access to DII features based on your current subscription plan.
@@ -65,13 +63,4 @@ The first time you log in to a new site, you'll be guided through steps to link:
 == Logging out
 
 To log out of Data Infrastructure Insights, click your *User Name* and select *Log Out*.
-
-//NOTE: Logging out of Data Infrastructure Insights logs you out of Console. You will also be logged out of other NetApp Cloud services that use the Console sign-in.
-
-////
-=== Inactivity Timeout
-
-By default, Console will log a user out if there is no activity for six hours (360 minutes). Regardless of activity, users will be logged out after seven days.
-////
-
 
