@@ -13,6 +13,53 @@ keywords: onboarding, new user
 :imagesdir: ./media/
 
 [.lead]
-Before you can start working with Data Infrastructure Insights, you must sign up on the *NetApp Console* portal. If you already have a NetApp Console login, you can start a free trial of Data Infrastructure Insights with a few quick steps.
+Before you can start working with Data Infrastructure Insights, you must sign up on the NetApp Console portal. If you already have a NetApp Console login, you can start a free trial of Data Infrastructure Insights with a few quick steps.
 
-These instructions are being updated. Please check back later.
+
+== Creating your NetApp Console account
+
+To get started with NetApp's cloud services, go to link:https://console.netapp.com/[*NetApp Console*^] and click *Get Started*.
+
+* If you have not already signed up, select *Sign Up*
+* Enter a valid business email address and choose a password.
+* Enter your company name, and your full name.
+* Accept the terms and conditions and select *Continue*.
+* Console will walk you through its getting started workflow.
+
+
+=== What if I already have a NetApp Console login?
+
+Once you have a NetApp Console account, simply choose *Log In* on the link:https://console.netapp.com/[NetApp Console] portal page.
+
+Select your Organization from the drop-down at the top of the screen.
+
+From the main menu in the upper-left, select *Governance > Data Infrastructure Insights*.
+
+
+
+== Starting your Data Infrastructure Insights free trial
+
+When you are ready to get started, select *Start 30-day free trial*. Choose the region in which to host your site, and follow any other prompts.
+
+Note that you must have "Org Admin" role to be able to create the DII site.
+
+Console informs you when your Data Infrastructure Insights (DII) site is ready for onboarding. Select the *Start onboarding* button to set up your site.
+
+If at any time you leave the onboarding process before it is complete, simply log back in to Console to *Finish onboarding*.
+
+Once onboarding is complete, Console informs you that your tenant is ready for use. Select Launch Data Infrastructure Insights* to begin. Note that some data will be available for immediate use (inventory, etc.), while other data may take time to acquire in order to be meaningful (performance monitoring, etc.).
+
+
+== Logging Out
+
+
+To log out of Data Infrastructure Insights, click your *User Name* and select *Log Out*. 
+
+NOTE: Logging out of Data Infrastructure Insights logs you out of Console. You will also be logged out of other NetApp Cloud services that use the Console sign-in.
+
+
+=== Inactivity Timeout
+
+By default, Console will log a user out if there is no activity for six hours (360 minutes). Regardless of activity, users will be logged out after seven days. 
+
+
