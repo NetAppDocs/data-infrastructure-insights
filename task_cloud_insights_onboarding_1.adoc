@@ -24,7 +24,7 @@ To get started with NetApp's cloud services, go to link:https://console.netapp.c
 * Enter a valid business email address and choose a password.
 * Enter your company name, and your full name.
 * Accept the terms and conditions and select *Continue*.
-* •	Console will walk you through its getting started workflow.
+* Console will walk you through its getting started workflow.
 
 
 === What if I already have a NetApp Console login?
