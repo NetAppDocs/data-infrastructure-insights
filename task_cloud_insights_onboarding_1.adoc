@@ -47,8 +47,6 @@ Console informs you when your Data Infrastructure Insights (DII) site is ready f
 
 If at any time you leave the onboarding process before it is complete, simply log back in to Console to *Finish onboarding*.
 
-You’re ready to go!
-*
 Once onboarding is complete, Console informs you that your tenant is ready for use. Select Launch Data Infrastructure Insights* to begin. Note that some data will be available for immediate use (inventory, etc.), while other data may take time to acquire in order to be meaningful (performance monitoring, etc.).
 
 
