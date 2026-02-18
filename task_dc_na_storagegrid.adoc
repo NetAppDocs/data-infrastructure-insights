@@ -7,7 +7,6 @@ keywords: data collector, queries, create, storagegrid
 
 = NetApp StorageGRID data collector
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
@@ -45,16 +44,16 @@ The following are requirements for configuring this data source:
 
 * StorageGRID Host IP Address
 * A username and password for a user that has had the Metric Query and Tenant Access roles assigned
-* Port 443
+* Port 443 (or 8443 if configured)
 
 == Configuration
 
 [cols=2*, options="header", cols"50,50"]
 |===
 |Field|Description
-|StorageGRID Host IP Address |Management Virtual IP address of the StorageGRID appliance
-|User Name |Name used to log into the StorageGRID appliance
-|Password |Password used to log into the StorageGRID appliance
+|StorageGRID Host IP Address |Management IP address of the StorageGRID (Grid Manager)
+|User Name |Name used to log into the StorageGRID (Grid Manager)
+|Password |Password used to log into the StorageGRID (Grid Manager)
 |===
 
 == Advanced configuration
