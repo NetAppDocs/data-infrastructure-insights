@@ -1,4 +1,3 @@
-*
 ---
 sidebar: sidebar
 permalink: ai_for_dii_overview.html
