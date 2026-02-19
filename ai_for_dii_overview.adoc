@@ -17,7 +17,7 @@ The *Data Infrastructure Insights AI Assistant* is designed to help you work mor
 
 [NOTE]
 ====
-The DII AI Assistant is available as a Limited Preview. link:/concept_preview_features.html[Learn more] about Data Infrastructure Insights Preview features.
+The DII AI Assistant is available as a Limited Preview. link:concept_preview_features.html[Learn more] about Data Infrastructure Insights Preview features.
 
 The AI Assistant is available for DII tenants deployed on AWS only.
 ====
