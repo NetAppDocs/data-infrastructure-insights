@@ -20,7 +20,7 @@ NetApp is continually improving and enhancing its products and services. Here ar
 
 === Instant intelligent answers about your infrastructure
 
-Meet your infrastructure's new intelligent partner: The *Data Infrastructure Insights AI Assistant* transforms how you interact with your data, turning complex queries into simple conversations. Instantly uncover hidden patterns, accelerate troubleshooting, and make data-driven decisions with confidence. Get instant answers to questions like:
+Meet your infrastructure's new intelligent partner: The link:ai_for_dii_overview.html[*Data Infrastructure Insights AI Assistant*] transforms how you interact with your data, turning complex queries into simple conversations. Instantly uncover hidden patterns, accelerate troubleshooting, and make data-driven decisions with confidence. Get instant answers to questions like:
 
 * How can I configure a monitor to alert for persistent unacceptable latency?
 * What are the top storage pools with the highest utilization in the environment?
@@ -29,6 +29,7 @@ Meet your infrastructure's new intelligent partner: The *Data Infrastructure Ins
 //Activate now! Ask your DII Site Owner to activate the AI Assistant by clicking on the "owl" and accepting the Terms and Conditions.
 
 The DII AI Assistant Preview is available now to most customers with service hosted on AWS regions; Azure region is coming soon. link:concept_preview_features.html[Learn more] about Data Infrastructure Insights Preview features.
+
 image:ai_assistant_icon.png[AI Assistant icon]
 
 
