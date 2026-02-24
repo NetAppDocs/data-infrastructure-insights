@@ -221,7 +221,7 @@ sidebar:
             entries:
               - title: Schema Tables - Ports
                 url: /reporting_schema_tables_ports.html
-               - title: Schema Tables - Capacity
+              - title: Schema Tables - Capacity
                 url: /reporting_schema_tables_ports.html
 
 
