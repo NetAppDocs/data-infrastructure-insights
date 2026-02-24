@@ -3,7 +3,6 @@ sidebar: sidebar
 permalink: concept_dashboard_features.html
 summary: Dashboard features and concepts.
 keywords: dashboard, widget, custom, concepts, queries, variables, rollup, roll up, grouping, aggregate, aggregation, filter, axis, group by, expressions, timeseries, exact match, theme, visibility, formatting, conditional, hide, collapse, expand
-
 ---
 
 = Dashboard Features
@@ -290,6 +289,8 @@ You can select the time range for your dashboard data. Only data relevant to the
 +
 The Custom time range allows you to select up to 31 consecutive days. You can also set the Start Time and End Time of day for this range. The default Start Time is 12:00 AM on the first day selected and the default End Time is 11:59 PM on the last day selected. Clicking *Apply* will apply the custom time range to the dashboard.
 
+You can scroll backward and forward in time, in increments of the time range currently selected. For example, if your time range is set to 24 hours, scrolling backward adjusts the dashboard time range to the pervious 24-hour period.
+
 === Zooming in to a time range
 
 While viewing a time-series widget (Line, Spline, Area, Stacked Area)--or a graph on a landing page--you can drag the mouse over the graph to zoom in. In the upper right of the screen you can then lock that time range so that graphs on other pages reflect data for that locked time range. To unlock, select a different time range from the list.
@@ -569,7 +570,6 @@ Clicking the link in either a single-value widget or a gauge widget will display
 
 Like single-value and gauge widgets, you can set conditional formatting in table widgets, allowing you to highlight data with colors and/or special icons.
 
-
 Conditional Formatting allows you to set and highlight Warning-level and Critical-level thresholds in table widgets, bringing instant visibility to outliers and exceptional data points.
 
 image:ConditionalFormattingExample.png[Conditional Formatting Example]
@@ -581,8 +581,6 @@ If you change the Unit Display for a column, the conditional formatting remains 
 image:ConditionalFormatting_GiB.png[Conditional Formatting - GiB]    image:ConditionalFormatting_TiB.png[Conditional Formatting - TiB]
 
 You can choose whether to display condition formatting as color, icons, or both.
-
-
 
 
 == Choosing the Unit for Displaying Data
@@ -604,7 +602,8 @@ In cases where the base unit is not known, you can assign a unit from among the 
 //image:WidgetBaseUnitNotKnown.png[Base unit unknown]
 image:bits_per_second.png[Choose your own base unit,width=320] 
 
-To clear out your settings and start again, click on *Reset Defaults*.  
+
+Many widgets also allow you to set the number of decimal places in which you want the data displayed. 
 
 === A word about Auto-Format
 
@@ -702,6 +701,14 @@ reads/min
 writes/min
 |===
 
+
+== Convert line or bullet gauge widget to sparkline graph
+
+DII allows you to convert a line/area chart or bullet graph to a non-editable sparkline graph. You can toggle back and forth between the widget as a sparkline graph and a re-sizable/editable widget.
+
+In Sparkline mode, the widget can be moved, edited, analyzed, duplicated, exported as an image, or deleted, but it cannot be resized. 
+
+The widget must have only a single data set. Multiple objects, multiple queries, or groupings other than “All” cannot be converted to sparkline, unless the graph is filtered down to a single object. Expressions are allowed, as long as they are performed against a single object.
 
 
 == TV Mode and Auto-Refresh
