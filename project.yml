@@ -217,8 +217,14 @@ sidebar:
           - title: Schema Diagrams
             url: /reporting_schema_diagrams.html
           - title: Schema Tables
-            url: /reference_schemas.html
- 
+#            url: /reference_schemas.html
+            entries:
+              - title: Schema Tables - Ports
+                url: /reporting_schema_tables_ports.html
+               - title: Schema Tables - Capacity
+                url: /reporting_schema_tables_ports.html
+
+
     - title: Kubernetes
       entries:
         - title: Kubernetes Overview Page
