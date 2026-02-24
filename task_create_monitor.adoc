@@ -61,11 +61,7 @@ Metric monitors apply to Inventory objects such as storage, switch, host, vm, et
 
 ==== Multi-Condition monitors
 
-You may choose to further refine your metric monitor by adding a second condition. Simply expand the "+Add Secondary Metric Condition" prompt... 
-
-image:multi-condition_monitor_choose.png[expand the second condition]
-
-...and configure the additional condition: 
+You may choose to further refine your metric monitor by adding a second condition. Simply expand the "+Add Secondary Metric Condition" prompt and configure the additional condition.
 
 image:multi-condition_monitor_second_condition.png[set the second condition]
 

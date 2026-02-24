@@ -1,27 +1,25 @@
 ---
 sidebar: sidebar
 permalink: concept_asset_expert_view_section.html
-summary: The Expert View section of an asset page is a powerful tool for troubleshooting or monitoring.
-keywords: asset page, expert view, metrics, greedy, degraded, correlated, contributors, chart, refresh
+summary: The Performance section of an asset page is a powerful tool for troubleshooting or monitoring.
+keywords: asset page, expert view, metrics, greedy, degraded, correlated, contributors, chart, refresh, performance
 ---
 
-= Expert View
+= Performance Section
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-The Expert View section of an asset page enables you to view a performance sample for the base asset based on any number of applicable metrics in context with a chosen time period in the performance chart and any assets related to it.  The data in the charts refreshes automatically as data collectors poll and updated data is acquired.
+The Performance section of an asset page or slideout panel enables you to view a performance sample for the base asset based on any number of applicable metrics in context with a chosen time period in the performance chart and any assets related to it.  The data in the charts refreshes automatically as data collectors poll and updated data is acquired.
 
-== Using the Expert View section
+== Using the Performance section
 
-The following is an example of the Expert View section in a storage asset page:
+The following is an example of the Performance section in a storage asset page:
 
-//image:ExpertViewExample1.png[Expert View Example]
-image:Expert_View_2021.png[Expert View Example]
+image:asset_page_performance_section.png[Performance Section]
 
 You can select the metrics you want to view in the performance chart for the time period selected. Click on the _Display Metrics_ drop-down and choose from the metrics listed.
 
@@ -41,23 +39,18 @@ Shows the assets that contribute (percentage) to the base asset.
 +
 Shows the assets that impact or are impacted by other shared resources, such as hosts, networks, and storage. These are sometimes called _greedy_ and _degraded_ resources.
 
-////
-* Degraded
-+
-Shows the assets that are depleted of system resources due to this asset.
-////
 
 
-== Alerts in Expert View
+== Alerts in Performance Section
 
-Alerts are also displayed in the Expert View section of an asset landing page, showing the time and duration of the alert as well as the monitor condition that triggered it.
+Alerts are also displayed in the Performance section of an asset landing page, showing the time and duration of the alert as well as the monitor condition that triggered it. Hover over an alert indicator to view details about the alert.
 
-image:Alerts_In_Expert_View.png[Alerts in Expert View]
+image:asset_page_alert_section.png[Alerts in performance section]
 
 
-== Expert View metric definitions
+== Performance metric definitions
 
-The Expert View section of an asset page displays several metrics based on the time period selected for the asset. Each metric is displayed in its own performance chart. You can add or remove metrics and related assets from the charts depending on what data you want to see. The metrics you can choose will vary depending on asset type.
+The Performance section of an asset page displays several metrics based on the time period selected for the asset. Each metric is displayed in its own performance chart. You can add or remove metrics and related assets from the charts depending on what data you want to see. The metrics you can choose will vary depending on asset type.
 
 |===
 | *Metric* | *Description*
@@ -96,9 +89,9 @@ The Expert View section of an asset page displays several metrics based on the t
 | Write pending (Total) | Number of write I/O service requests that are pending.
 |===
 
-== Using the Expert View section
+== Using the Performance section
 
-The Expert view section enables you to view performance charts for an asset based on any number of applicable metrics during a chosen time period, and to add related assets to compare and contrast asset and related asset performance over different time periods.
+The Performance section enables you to view performance charts for an asset based on any number of applicable metrics during a chosen time period, and to add related assets to compare and contrast asset and related asset performance over different time periods.
 
 .Steps
 . Locate an asset page by doing either of the following:
@@ -111,11 +104,11 @@ The Expert view section enables you to view performance charts for an asset base
 +
 The asset page displays. By default, the performance chart shows two metrics for time period selected for the asset page. For example, for a storage, the performance chart shows latency and total IOPS by default. The Resources section displays the resource name and an Additional resources section, which enables you to search for assets. Depending on the asset, you might also see assets in the Top correlated, Top contributor, Greedy, and Degraded sections. If there are no assets relevant to these sections, they are not displayed.
 
-. You can add a performance chart for a metric by clicking *Display Metrics* and selecting the metrics you want displayed. 
+. You can add a performance chart for a metric by clicking *Settings* gear icon and selecting the metrics you want displayed. 
 +
 A separate chart is displayed for each metric selected. The chart displays the data for the selected time period. You can change the time period by clicking on another time period in the top right corner of the asset page, or by zooming in on any chart.
 +
-Click on *Display Metrics* to de-select any chart. The performance chart for the metric is removed from Expert View.
+Click on *Settings* to de-select any chart. The performance chart for the metric is removed from the Performance section.
 
 . You can position your cursor over the chart and change the metric data that displays for that chart by clicking any of the following, depending on the asset:
 +

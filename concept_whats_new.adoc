@@ -16,6 +16,107 @@ keywords: features
 [.lead]
 NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in Data Infrastructure Insights (formerly Cloud Insights).
 
+== February 2026
+
+=== Instant intelligent answers about your infrastructure
+
+Meet your infrastructure's new intelligent partner: The link:ai_for_dii_overview.html[*Data Infrastructure Insights AI Assistant*] transforms how you interact with your data, turning complex queries into simple conversations. Instantly uncover hidden patterns, accelerate troubleshooting, and make data-driven decisions with confidence. Get instant answers to questions like:
+
+* How can I configure a monitor to alert for persistent unacceptable latency?
+* What are the top storage pools with the highest utilization in the environment?
+* How many alerts were generated in the last hour?
+
+//Activate now! Ask your DII Site Owner to activate the AI Assistant by clicking on the "owl" and accepting the Terms and Conditions.
+
+The DII AI Assistant Preview is available now to most customers with service hosted on AWS regions; Azure region is coming soon. link:concept_preview_features.html[Learn more] about Data Infrastructure Insights Preview features.
+
+image:ai_assistant_icon.png[AI Assistant icon]
+
+
+
+=== Monitor Improvements
+
+==== Customize System Monitors Faster, Without Duplicating
+
+Modify default system monitors directly to suit your needs—change names, filters, and grouping in one place. No need to create duplicate monitors for simple adjustments. A helpful banner reminds you which monitors have been customized, maintaining full visibility into your monitoring configuration.
+
+==== Streamline Monitor Management with Bulk Actions
+
+Manage multiple monitors at once through Bulk Actions. Quickly adjust Health Monitoring settings for groups of monitors, saving you time and reducing complexity. Update your monitoring strategy across the board in seconds, not minutes.
+
+==== Focus Your Infrastructure Health Scores on What Matters Most
+
+Exclude specific objects from your Infrastructure Health scores to maintain accuracy and relevance. When viewing your Infrastructure Health dashboard, instantly remove objects you want to deprioritize without modifying the monitor configuration. This focuses your alerts on the infrastructure elements that drive your business priorities.
+
+image:health_monitoring_exclude_object.png[exclude object from health monitoring]
+
+
+=== Operating System support
+
+The following Linux operating systems are currently supported with Data Infrastructure Insights link:concept_acquisition_unit_requirements.html[Acquisition Units]:
+
+* AlmaLinux 9.5 and 10
+* Centos (64-bit): Stream 9
+* Debian (64-bit): 11 through 13
+* OpenSUSE Leap 15.2 through 15.6, 16
+* Oracle Enterprise Linux (64-bit): 8.10, 9.2, 9.4, 9.6, 10
+* Red Hat (64-bit): 8.10, 9.2, 9.4, 9.6, 10
+* Rocky 9.2 through 9.6
+* SUSE Linux Enterprise Server 15 SP4 through 15 SP7, 16
+* Ubuntu Server: 20.04, 22.04, 24.04 LTS
+* SELinux on the above platforms
+
+
+'''
+== December 2025
+
+
+
+=== Control Query Access with Shared Queries
+
+Share queries you create with fine-grained permission controls. Choose read-only Viewer mode to prevent modifications or Edit mode to allow changes. Private queries are accessible by creators, while Shared queries can be leveraged in Annotation Rules or duplicated for specialized use cases, giving you complete control over how queries are used and modified across your organization.
+
+image:query_sharing_dialog.png[setting permissions on a query, width=200]
+
+Additionally, users with _Guest_ role can now create and manage their own private queries. 
+
+=== Better Filtering When Managing Monitors
+
+Filtering for Monitor lists and groups is improved to add wildcard support, multiple filters, include/exclude functionality, and more. 
+
+image:monitor_list_filters.png[New Monitor Filtering, width=500]
+
+
+=== Cleaner dashboard visualizations
+
+Improved dashboard design helps you see what matters most. Enhanced visual clarity with drop shadow borders that separate widgets and removed separator lines to reduce clutter so you can focus on your data insights. These refinements create a cleaner, more intuitive dashboard experience that makes spotting trends and anomalies faster and easier.
+
+
+
+'''
+
+
+
+== November 2025
+
+
+=== Set Your Personalized Home Page
+
+Streamline your daily monitoring workflow by setting _any_ Data Infrastructure Insights page as your personalized home page. Each user can select a different home page to focus on what's important to them: a critical dashboard, alerts, infrastructure health, workload security, or more. 
+
+image:home_page_set.png[setting a home page, width=300]
+
+
+=== Stay Organized with Automatic Dashboard Grouping
+
+Transform your dashboard experience with intelligent grouping that automatically organizes imported Gallery dashboards into logical categories. The new grouping feature makes importing dashboards a snap and places each dashboard in the appropriate group based on its function and relevance to your environment. 
+
+image:dashboard_gallery_groups.png[gallery groups during import, width=500]
+
+
+
+''''
+
 == October 2025
 
 
