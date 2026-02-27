@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: reporting_schema_dwh_tables.html
+permalink: reporting_schema_tables_dwh_capacity.html
 summary: Schema tables and relationships for the dwh_capacity database
 keywords: dwh, data warehouse, schema, reporting 
 ---
