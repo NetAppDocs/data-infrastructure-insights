@@ -224,7 +224,7 @@ sidebar:
 #            url: /reference_schemas.html
             entries:
               - title: Reporting Schema Tables Overview
-                url: /reporting_schema_tables.html
+                url: /reporting_schema_tables_overview.html
               - title: Schema Tables - Ports
                 url: /reporting_schema_tables_dwh_ports.html
               - title: Schema Tables - Capacity

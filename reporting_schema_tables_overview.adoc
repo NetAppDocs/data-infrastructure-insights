@@ -1,0 +1,20 @@
+---
+sidebar: sidebar
+permalink: reporting_schema_tables_overview.html
+summary: Data Warehouse schema diagrams and tables for use with Reporting
+keywords: dwh, data warehouse, schema, reporting 
+---
+
+= Data Infrastructure Insights Schemas for Reporting
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+This document provides schema tables for the Reporting Database. 
+
+NOTE: The Reporting feature is available in Data Infrastructure Insights link:concept_subscribing_to_cloud_insights.html[Premium Edition].
+
+link:media/capacity_schema_documentation.html[Capacity Schema]
