@@ -14,7 +14,7 @@ summary: Configuring Red Hat Virtualization data collector.
 :imagesdir: ./media/
 
 [.lead] 
-Data Infrastructure Insights uses the Red Hat Virtualization data collector to gather inventory data from virtualized Linux and Microsoft Windows workloads.   
+The DII data collector for Red Hat Virtualization also supports the open source project oVirt, and Oracle Linux Virtualization Manager. This data collector speaks REST API to the HTTPS interface on the management station 
 
 == Terminology
 
@@ -34,18 +34,18 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Requirements
 
-* IP address of the RHEV server over port 443 via REST API 
+* IP address/hostname of the RHV/oVirt/OLVM server over port 443 via REST API 
 * Read-only username and password 
-* RHEV Version 3.0+  
+* RHV Version 3.0+/Ovirt 4.0+/OLVM 4.0+  
 
 == Configuration
 
 [cols=2*, options="header", cols"50,50"]
 |===
 |Field | Description
-|RHEV Server IP Address|IP address of the storage system 
-|User name |User name with admin privileges 
-|Password for the admin privileged account|Password
+|RHV/Ovirt/OLVM Server IP Address|IP address of the management station
+|User name |User name 
+|Password |Password
 |===
 
 == Advanced configuration 
@@ -56,6 +56,8 @@ Note: These are common terminology mappings only and might not represent every c
 |HTTPS Communication Port|Port used for HTTPS communication to RHEV
 |Inventory poll interval (min)|The default is 20 minutes.
 //|Connection Timeout (sec)|The default is 60. 
+|VM Performance|Enable performance collection
+|Performance Poll Interval(sec)|The default is 900
 |===
 
         
