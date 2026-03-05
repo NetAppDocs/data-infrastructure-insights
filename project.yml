@@ -222,7 +222,7 @@ sidebar:
             url: /reporting_schema_diagrams.html
           - title: Schema Tables
             url: /reference_schemas.html
-            entries:
+#            entries:
 #              - title: Schema Tables - Capacity
 #                url: /schema/reporting_schema_capacity.html
 #              - title: Schema Tables - Capacity Efficiency
