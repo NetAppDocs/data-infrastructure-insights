@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Schema Documentation – dwh_fs_util</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 14px;
+    background: #f4f6f9;
+    color: #1a1a2e;
+    padding: 24px;
+}
+h1 { font-size: 2em; margin-bottom: 8px; color: #0d47a1; }
+h2 { font-size: 1.5em; margin: 32px 0 10px; color: #1565c0; border-bottom: 2px solid #90caf9; padding-bottom: 4px; }
+h3 { font-size: 1.1em; margin: 20px 0 6px; color: #263238; }
+p  { margin: 4px 0 8px; color: #555; }
+a  { color: #1565c0; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* TOC */
+#toc { background: #fff; border: 1px solid #cfd8dc; border-radius: 6px; padding: 16px 24px; margin-bottom: 32px; max-width: 480px; }
+#toc h2 { margin-top: 0; border: none; }
+#toc ul { list-style: disc; padding-left: 20px; line-height: 1.8; }
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.1);
+}
+th {
+    background: #1565c0;
+    color: #fff;
+    padding: 8px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9em;
+    letter-spacing: .03em;
+}
+td { padding: 7px 12px; border-bottom: 1px solid #eceff1; vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: #e3f2fd; }
+
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 12px;
+    font-size: 0.75em;
+    font-weight: 700;
+    letter-spacing: .04em;
+    margin-left: 4px;
+    vertical-align: middle;
+}
+.pk  { background: #ffd54f; color: #5d4037; }
+.fk  { background: #a5d6a7; color: #1b5e20; }
+.nn  { background: #ef9a9a; color: #b71c1c; }
+
+/* Relationship table */
+.rel-table th { background: #37474f; }
+
+/* Entity section */
+.entity-section { margin-bottom: 40px; }
+.entity-section h3 {
+    background: #e8eaf6;
+    padding: 8px 14px;
+    border-left: 4px solid #3949ab;
+    border-radius: 3px;
+    font-size: 1em;
+}
+
+/* Back-to-top */
+.back { font-size: 0.8em; float: right; margin-top: -2px; color: #90a4ae; }
+</style>
+</head>
+<body>
+<h1>Schema Documentation</h1>
+<p>Source: <code>dwh_fs_util</code> OData endpoint &mdash; Cloud Insights</p>
+<p>Tables found: <strong>8</strong> &nbsp;|&nbsp; Associations: <strong>7</strong></p>
+
+<div id="toc">
+<h2>Table of Contents</h2>
+<ul>
+<li><a href="#relationships">Key Relationships</a></li>
+<li><a href="#entity-compute_resource_dimension">compute_resource_dimension</a></li>
+<li><a href="#entity-date_dimension">date_dimension</a></li>
+<li><a href="#entity-file_system_dimension">file_system_dimension</a></li>
+<li><a href="#entity-fs_util_fact">fs_util_fact</a></li>
+<li><a href="#entity-host_dimension">host_dimension</a></li>
+<li><a href="#entity-storage_dimension">storage_dimension</a></li>
+<li><a href="#entity-tier_dimension">tier_dimension</a></li>
+<li><a href="#entity-vm_dimension">vm_dimension</a></li>
+</ul>
+</div>
+
+<h2 id="relationships">Key Relationships Between Tables</h2>
+<table class="rel-table"><thead><tr><th>Association</th><th>Principal (parent) table</th><th>Principal key(s)</th><th>Dependent (child) table</th><th>Foreign key(s)</th></tr></thead><tbody><tr><td>compute_resource_dimension</td><td><a href='#entity-compute_resource_dimension'>compute_resource_dimension</a></td><td>tk</td><td><a href='#entity-fs_util_fact'>fs_util_fact</a></td><td>computeResourceTk</td></tr><tr><td>date_dimension</td><td><a href='#entity-date_dimension'>date_dimension</a></td><td>tk</td><td><a href='#entity-fs_util_fact'>fs_util_fact</a></td><td>dateTk</td></tr><tr><td>file_system_dimension</td><td><a href='#entity-file_system_dimension'>file_system_dimension</a></td><td>tk</td><td><a href='#entity-fs_util_fact'>fs_util_fact</a></td><td>fsTk</td></tr><tr><td>host_dimension</td><td><a href='#entity-host_dimension'>host_dimension</a></td><td>tk</td><td><a href='#entity-fs_util_fact'>fs_util_fact</a></td><td>hostTk</td></tr><tr><td>storage_dimension</td><td><a href='#entity-storage_dimension'>storage_dimension</a></td><td>tk</td><td><a href='#entity-fs_util_fact'>fs_util_fact</a></td><td>storageTk</td></tr><tr><td>tier_dimension</td><td><a href='#entity-tier_dimension'>tier_dimension</a></td><td>tk</td><td><a href='#entity-fs_util_fact'>fs_util_fact</a></td><td>tierTk</td></tr><tr><td>vm_dimension</td><td><a href='#entity-vm_dimension'>vm_dimension</a></td><td>tk</td><td><a href='#entity-fs_util_fact'>fs_util_fact</a></td><td>vmTk</td></tr></tbody></table>
+
+<h2>Tables &amp; Fields</h2>
+<p style='margin-bottom:16px'><span class="badge pk">PK</span> Primary Key &nbsp;<span class="badge fk">FK</span> Foreign Key &nbsp;<span class="badge nn">NOT NULL</span> Required field</p>
+<div class="entity-section" id="entity-compute_resource_dimension"><h3>compute_resource_dimension<a class="back" href="#toc">↑ top</a></h3><p style='font-size:.8em;color:#78909c;'>Entity Set(s): <strong>compute_resource_dimension</strong></p><table><thead><tr><th>Field</th><th>Type</th><th>Nullable</th></tr></thead><tbody><tr><td>tk</td><td>Int32</td><td>Yes</td></tr><tr><td>identifier</td><td>String</td><td>Yes</td></tr><tr><td>name</td><td>String</td><td>Yes</td></tr><tr><td>type</td><td>String</td><td>Yes</td></tr><tr><td>domain</td><td>String</td><td>Yes</td></tr><tr><td>ip</td><td>String</td><td>Yes</td></tr><tr><td>os</td><td>String</td><td>Yes</td></tr><tr><td>id</td><td>Int32</td><td>Yes</td></tr><tr><td>latest</td><td>String</td><td>Yes</td></tr><tr><td>dateTk</td><td>Int32</td><td>Yes</td></tr></tbody></table><h4 style='margin:12px 0 6px;color:#546e7a;'>Navigation Properties (Joins)</h4><table><thead><tr><th>Nav Property</th><th>Related Entity</th><th>Cardinality / Join</th></tr></thead><tbody><tr><td>fs_util_fact</td><td><a href='#entity-fs_util_fact'>fs_util_fact</a></td><td style='font-size:.85em'>many</td></tr></tbody></table></div><div class="entity-section" id="entity-date_dimension"><h3>date_dimension<a class="back" href="#toc">↑ top</a></h3><p style='font-size:.8em;color:#78909c;'>Entity Set(s): <strong>date_dimension</strong></p><table><thead><tr><th>Field</th><th>Type</th><th>Nullable</th></tr></thead><tbody><tr><td>tk</td><td>Int32</td><td>Yes</td></tr><tr><td>fullDate</td><td>DateTimeOffset</td><td>Yes</td></tr><tr><td>dayInMonth</td><td>Byte</td><td>Yes</td></tr><tr><td>dayInYear</td><td>Int32</td><td>Yes</td></tr><tr><td>dateYear</td><td>Int32</td><td>Yes</td></tr><tr><td>yearLabel</td><td>String</td><td>Yes</td></tr><tr><td>monthNum</td><td>Byte</td><td>Yes</td></tr><tr><td>monthLabel</td><td>String</td><td>Yes</td></tr><tr><td>dayInWeekNum</td><td>Byte</td><td>Yes</td></tr><tr><td>quarter</td><td>Byte</td><td>Yes</td></tr><tr><td>quarterLabel</td><td>String</td><td>Yes</td></tr><tr><td>dayInQuarter</td><td>Int32</td><td>Yes</td></tr><tr><td>repQuarter</td><td>Byte</td><td>Yes</td></tr><tr><td>repMonth</td><td>Byte</td><td>Yes</td></tr><tr><td>repWeek</td><td>Byte</td><td>Yes</td></tr><tr><td>repDay</td><td>Byte</td><td>Yes</td></tr><tr><td>repMonthOrLatest</td><td>Byte</td><td>Yes</td></tr><tr><td>sspFlag</td><td>Byte</td><td>Yes</td></tr><tr><td>latest</td><td>String</td><td>Yes</td></tr><tr><td>future</td><td>String</td><td>Yes</td></tr></tbody></table><h4 style='margin:12px 0 6px;color:#546e7a;'>Navigation Properties (Joins)</h4><table><thead><tr><th>Nav Property</th><th>Related Entity</th><th>Cardinality / Join</th></tr></thead><tbody><tr><td>fs_util_fact</td><td><a href='#entity-fs_util_fact'>fs_util_fact</a></td><td style='font-size:.85em'>many</td></tr></tbody></table></div><div class="entity-section" id="entity-file_system_dimension"><h3>file_system_dimension<a class="back" href="#toc">↑ top</a></h3><p style='font-size:.8em;color:#78909c;'>Entity Set(s): <strong>file_system_dimension</strong></p><table><thead><tr><th>Field</th><th>Type</th><th>Nullable</th></tr></thead><tbody><tr><td>tk</td><td>Int32</td><td>Yes</td></tr><tr><td>computeResourceIdentifier</td><td>String</td><td>Yes</td></tr><tr><td>name</td><td>String</td><td>Yes</td></tr><tr><td>location</td><td>String</td><td>Yes</td></tr><tr><td>hardwareId</td><td>String</td><td>Yes</td></tr><tr><td>type</td><td>String</td><td>Yes</td></tr><tr><td>id</td><td>Int32</td><td>Yes</td></tr><tr><td>latest</td><td>String</td><td>Yes</td></tr><tr><td>dateTk</td><td>Int32</td><td>Yes</td></tr></tbody></table><h4 style='margin:12px 0 6px;color:#546e7a;'>Navigation Properties (Joins)</h4><table><thead><tr><th>Nav Property</th><th>Related Entity</th><th>Cardinality / Join</th></tr></thead><tbody><tr><td>fs_util_fact</td><td><a href='#entity-fs_util_fact'>fs_util_fact</a></td><td style='font-size:.85em'>many</td></tr></tbody></table></div><div class="entity-section" id="entity-fs_util_fact"><h3>fs_util_fact<a class="back" href="#toc">↑ top</a></h3><p style='font-size:.8em;color:#78909c;'>Entity Set(s): <strong>fs_util_fact</strong></p><table><thead><tr><th>Field</th><th>Type</th><th>Nullable</th></tr></thead><tbody><tr><td>tk<span class="badge pk">PK</span></td><td>Int32</td><td>Yes</td></tr><tr><td>dateTk<span class="badge fk">FK</span><br><span style='font-size:.8em;color:#546e7a'>→ <a href='#entity-date_dimension'>date_dimension</a>.tk</span></td><td>Int32</td><td>Yes</td></tr><tr><td>hostTk<span class="badge fk">FK</span><br><span style='font-size:.8em;color:#546e7a'>→ <a href='#entity-host_dimension'>host_dimension</a>.tk</span></td><td>Int32</td><td>Yes</td></tr><tr><td>vmTk<span class="badge fk">FK</span><br><span style='font-size:.8em;color:#546e7a'>→ <a href='#entity-vm_dimension'>vm_dimension</a>.tk</span></td><td>Int32</td><td>Yes</td></tr><tr><td>computeResourceTk<span class="badge fk">FK</span><br><span style='font-size:.8em;color:#546e7a'>→ <a href='#entity-compute_resource_dimension'>compute_resource_dimension</a>.tk</span></td><td>Int32</td><td>Yes</td></tr><tr><td>fsTk<span class="badge fk">FK</span><br><span style='font-size:.8em;color:#546e7a'>→ <a href='#entity-file_system_dimension'>file_system_dimension</a>.tk</span></td><td>Int32</td><td>Yes</td></tr><tr><td>storageTk<span class="badge fk">FK</span><br><span style='font-size:.8em;color:#546e7a'>→ <a href='#entity-storage_dimension'>storage_dimension</a>.tk</span></td><td>Int32</td><td>Yes</td></tr><tr><td>tierTk<span class="badge fk">FK</span><br><span style='font-size:.8em;color:#546e7a'>→ <a href='#entity-tier_dimension'>tier_dimension</a>.tk</span></td><td>Int32</td><td>Yes</td></tr><tr><td>sizeMB</td><td>Int64</td><td>Yes</td></tr><tr><td>usedMB</td><td>Int64</td><td>Yes</td></tr></tbody></table><h4 style='margin:12px 0 6px;color:#546e7a;'>Navigation Properties (Joins)</h4><table><thead><tr><th>Nav Property</th><th>Related Entity</th><th>Cardinality / Join</th></tr></thead><tbody><tr><td>file_system_dimension</td><td><a href='#entity-file_system_dimension'>file_system_dimension</a></td><td style='font-size:.85em'>one<br><span style='font-size:.85em;color:#546e7a'>JOIN: <code>fsTk</code> = <a href='#entity-file_system_dimension'>file_system_dimension</a>.<code>tk</code></span></td></tr><tr><td>storage_dimension</td><td><a href='#entity-storage_dimension'>storage_dimension</a></td><td style='font-size:.85em'>one<br><span style='font-size:.85em;color:#546e7a'>JOIN: <code>storageTk</code> = <a href='#entity-storage_dimension'>storage_dimension</a>.<code>tk</code></span></td></tr><tr><td>tier_dimension</td><td><a href='#entity-tier_dimension'>tier_dimension</a></td><td style='font-size:.85em'>one<br><span style='font-size:.85em;color:#546e7a'>JOIN: <code>tierTk</code> = <a href='#entity-tier_dimension'>tier_dimension</a>.<code>tk</code></span></td></tr><tr><td>compute_resource_dimension</td><td><a href='#entity-compute_resource_dimension'>compute_resource_dimension</a></td><td style='font-size:.85em'>one<br><span style='font-size:.85em;color:#546e7a'>JOIN: <code>computeResourceTk</code> = <a href='#entity-compute_resource_dimension'>compute_resource_dimension</a>.<code>tk</code></span></td></tr><tr><td>host_dimension</td><td><a href='#entity-host_dimension'>host_dimension</a></td><td style='font-size:.85em'>one<br><span style='font-size:.85em;color:#546e7a'>JOIN: <code>hostTk</code> = <a href='#entity-host_dimension'>host_dimension</a>.<code>tk</code></span></td></tr><tr><td>vm_dimension</td><td><a href='#entity-vm_dimension'>vm_dimension</a></td><td style='font-size:.85em'>one<br><span style='font-size:.85em;color:#546e7a'>JOIN: <code>vmTk</code> = <a href='#entity-vm_dimension'>vm_dimension</a>.<code>tk</code></span></td></tr><tr><td>date_dimension</td><td><a href='#entity-date_dimension'>date_dimension</a></td><td style='font-size:.85em'>one<br><span style='font-size:.85em;color:#546e7a'>JOIN: <code>dateTk</code> = <a href='#entity-date_dimension'>date_dimension</a>.<code>tk</code></span></td></tr></tbody></table></div><div class="entity-section" id="entity-host_dimension"><h3>host_dimension<a class="back" href="#toc">↑ top</a></h3><p style='font-size:.8em;color:#78909c;'>Entity Set(s): <strong>host_dimension</strong></p><table><thead><tr><th>Field</th><th>Type</th><th>Nullable</th></tr></thead><tbody><tr><td>tk</td><td>Int32</td><td>Yes</td></tr><tr><td>name</td><td>String</td><td>Yes</td></tr><tr><td>identifier</td><td>String</td><td>Yes</td></tr><tr><td>ip</td><td>String</td><td>Yes</td></tr><tr><td>os</td><td>String</td><td>Yes</td></tr><tr><td>model</td><td>String</td><td>Yes</td></tr><tr><td>manufacturer</td><td>String</td><td>Yes</td></tr><tr><td>url</td><td>String</td><td>Yes</td></tr><tr><td>id</td><td>Int32</td><td>Yes</td></tr><tr><td>latest</td><td>String</td><td>Yes</td></tr><tr><td>dateTk</td><td>Int32</td><td>Yes</td></tr><tr><td>dataCenter</td><td>String</td><td>Yes</td></tr></tbody></table><h4 style='margin:12px 0 6px;color:#546e7a;'>Navigation Properties (Joins)</h4><table><thead><tr><th>Nav Property</th><th>Related Entity</th><th>Cardinality / Join</th></tr></thead><tbody><tr><td>fs_util_fact</td><td><a href='#entity-fs_util_fact'>fs_util_fact</a></td><td style='font-size:.85em'>many</td></tr></tbody></table></div><div class="entity-section" id="entity-storage_dimension"><h3>storage_dimension<a class="back" href="#toc">↑ top</a></h3><p style='font-size:.8em;color:#78909c;'>Entity Set(s): <strong>storage_dimension</strong></p><table><thead><tr><th>Field</th><th>Type</th><th>Nullable</th></tr></thead><tbody><tr><td>tk</td><td>Int32</td><td>Yes</td></tr><tr><td>name</td><td>String</td><td>Yes</td></tr><tr><td>identifier</td><td>String</td><td>Yes</td></tr><tr><td>ip</td><td>String</td><td>Yes</td></tr><tr><td>model</td><td>String</td><td>Yes</td></tr><tr><td>manufacturer</td><td>String</td><td>Yes</td></tr><tr><td>serialNumber</td><td>String</td><td>Yes</td></tr><tr><td>microcodeVersion</td><td>String</td><td>Yes</td></tr><tr><td>family</td><td>String</td><td>Yes</td></tr><tr><td>url</td><td>String</td><td>Yes</td></tr><tr><td>id</td><td>Int32</td><td>Yes</td></tr><tr><td>latest</td><td>String</td><td>Yes</td></tr><tr><td>dateTk</td><td>Int32</td><td>Yes</td></tr><tr><td>dataCenter</td><td>String</td><td>Yes</td></tr></tbody></table><h4 style='margin:12px 0 6px;color:#546e7a;'>Navigation Properties (Joins)</h4><table><thead><tr><th>Nav Property</th><th>Related Entity</th><th>Cardinality / Join</th></tr></thead><tbody><tr><td>fs_util_fact</td><td><a href='#entity-fs_util_fact'>fs_util_fact</a></td><td style='font-size:.85em'>many</td></tr></tbody></table></div><div class="entity-section" id="entity-tier_dimension"><h3>tier_dimension<a class="back" href="#toc">↑ top</a></h3><p style='font-size:.8em;color:#78909c;'>Entity Set(s): <strong>tier_dimension</strong></p><table><thead><tr><th>Field</th><th>Type</th><th>Nullable</th></tr></thead><tbody><tr><td>tk</td><td>Int32</td><td>Yes</td></tr><tr><td>name</td><td>String</td><td>Yes</td></tr><tr><td>sequence</td><td>Int32</td><td>Yes</td></tr><tr><td>cost</td><td>Double</td><td>Yes</td></tr><tr><td>id</td><td>Int32</td><td>Yes</td></tr><tr><td>latest</td><td>String</td><td>Yes</td></tr><tr><td>dateTk</td><td>Int32</td><td>Yes</td></tr></tbody></table><h4 style='margin:12px 0 6px;color:#546e7a;'>Navigation Properties (Joins)</h4><table><thead><tr><th>Nav Property</th><th>Related Entity</th><th>Cardinality / Join</th></tr></thead><tbody><tr><td>fs_util_fact</td><td><a href='#entity-fs_util_fact'>fs_util_fact</a></td><td style='font-size:.85em'>many</td></tr></tbody></table></div><div class="entity-section" id="entity-vm_dimension"><h3>vm_dimension<a class="back" href="#toc">↑ top</a></h3><p style='font-size:.8em;color:#78909c;'>Entity Set(s): <strong>vm_dimension</strong></p><table><thead><tr><th>Field</th><th>Type</th><th>Nullable</th></tr></thead><tbody><tr><td>tk</td><td>Int32</td><td>Yes</td></tr><tr><td>name</td><td>String</td><td>Yes</td></tr><tr><td>naturalKey</td><td>String</td><td>Yes</td></tr><tr><td>os</td><td>String</td><td>Yes</td></tr><tr><td>virtualCenterIp</td><td>String</td><td>Yes</td></tr><tr><td>ips</td><td>String</td><td>Yes</td></tr><tr><td>url</td><td>String</td><td>Yes</td></tr><tr><td>id</td><td>Int32</td><td>Yes</td></tr><tr><td>latest</td><td>String</td><td>Yes</td></tr><tr><td>dateTk</td><td>Int32</td><td>Yes</td></tr></tbody></table><h4 style='margin:12px 0 6px;color:#546e7a;'>Navigation Properties (Joins)</h4><table><thead><tr><th>Nav Property</th><th>Related Entity</th><th>Cardinality / Join</th></tr></thead><tbody><tr><td>fs_util_fact</td><td><a href='#entity-fs_util_fact'>fs_util_fact</a></td><td style='font-size:.85em'>many</td></tr></tbody></table></div>
+
+</body>
+</html>

@@ -223,13 +223,19 @@ sidebar:
           - title: Schema Tables
 #            url: /reference_schemas.html
             entries:
-#              - title: Reporting Schema Tables Overview
-#                url: /reporting_schema_tables_overview.html
-              - title: Schema Tables - Ports
-                url: /reporting_schema_tables_dwh_ports.html
               - title: Schema Tables - Capacity
-#                url: /reporting_schema_tables_dwh_capacity.html
-                url: /schema/capacity_schema_documentation.html
+                url: /schema/reporting_schema_capacity.html
+              - title: Schema Tables - Capacity Efficiency
+                url: /schema/reporting_schema_capacity_efficiency.html
+              - title: Schema Tables - File System Utilization
+                url: /schema/reporting_schema_fs_util.html
+              - title: Schema Tables - Inventory
+                url: /schema/reporting_schema_inventory.html
+              - title: Schema Tables - Performance
+                url: /schema/reporting_schema_performance.html
+              - title: Schema Tables - Ports
+                url: /schema/reporting_schema_ports.html
+
 
 
     - title: Kubernetes
