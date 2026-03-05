@@ -13,15 +13,20 @@ keywords: dwh, data warehouse, schema, reporting
 :imagesdir: ./media/
 
 [.lead]
-These schema tables and diagrams are provided here as a reference for Data Infrastructure Insights Reporting.
+These schema tables are provided here as a reference for Data Infrastructure Insights Reporting.
 
-link:https://docs.netapp.com/us-en/cloudinsights/ci_reporting_database_schema.pdf[*Schema Tables*] in .PDF format. Click the link to open, or right-click and choose _Save as..._ to download.
+//link:https://docs.netapp.com/us-en/cloudinsights/ci_reporting_database_schema.pdf[*Schema Tables*] in .PDF format. Click the link to open, or right-click and choose _Save as..._ to download.
 
-link:reporting_schema_diagrams.html[*Schema Diagrams*]
+//link:reporting_schema_diagrams.html[*Schema Diagrams*]
 
 NOTE: The Reporting feature is available in Data Infrastructure Insights link:concept_subscribing_to_cloud_insights.html[Premium Edition]. 
 
-
+link:schema/reporting_schema_capacity.html[Schema Tables - Capacity^]
+link:schema/reporting_schema_capacity_efficiency.html[Schema Tables - Capacity Efficiency^]
+link:schema/reporting_schema_fs_util.html[Schema Tables - File System Utilization^]
+link:schema/reporting_schema_inventory.html[Schema Tables - Inventory^]
+link:schema/reporting_schema_performance.html[Schema Tables - Performance^]
+link:schema/reporting_schema_ports.html[Schema Tables - Ports^]
 
 
 
