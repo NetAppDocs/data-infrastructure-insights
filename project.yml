@@ -12,21 +12,10 @@ sidebar:
   entries:
     - title: Data Infrastructure Insights documentation
       url: /index.html
+      
     - title: What's New
       url: /concept_whats_new.html
-  
-    - title: Signing Up for Data Infrastructure Insights
-      url: /task_cloud_insights_onboarding_1.html
-  
-    - title: Security
-      entries:
-        - title: Security Practices
-          url: /security_overview.html
-        - title: What We Store, and Where 
-          url: /security_information_and_region.html
-        - title: SecurityAdmin Tool
-          url: /security_admin_tool.html
-          
+
     - title: Getting Started
       entries:
         - title: Feature Tutorials
@@ -53,6 +42,21 @@ sidebar:
           url: /concept_import_from_dashboard_gallery.html
         - title: User Accounts and Roles
           url: /concept_user_roles.html
+  
+    - title: Signing Up for Data Infrastructure Insights
+      url: /task_cloud_insights_onboarding_1.html
+  
+    - title: Security
+      entries:
+        - title: Security Practices
+          url: /security_overview.html
+        - title: What We Store, and Where 
+          url: /security_information_and_region.html
+        - title: SecurityAdmin Tool
+          url: /security_admin_tool.html
+          
+    - title: AI Assistant
+      url: /ai_for_dii_overview.html
           
     - title: Data Collector List
       url: /data_collector_list.html          

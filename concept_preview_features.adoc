@@ -18,3 +18,6 @@ Data Infrastructure Insights highlights new features and functionality in a _Pre
 
 If you are interested in previewing one or more of these features, contact your NetApp Sales Team for more information.
 
+== Current Previews:
+
+* link:ai_for_dii_overview.html[Data Infrastructure Insights AI Assistant] preview. 
