@@ -78,6 +78,20 @@ tr:hover td { background: #e3f2fd; }
 
 /* Back-to-top */
 .back { font-size: 0.8em; float: right; margin-top: -2px; color: #90a4ae; }
+
+/* Fact-grouped relationships */
+.fact-group { margin-bottom: 28px; }
+.fact-heading {
+    background: #eceff1;
+    padding: 6px 12px;
+    border-left: 4px solid #37474f;
+    border-radius: 3px;
+    font-size: .95em;
+    margin-bottom: 0;
+    color: #263238;
+}
+.fact-heading a { color: #263238; }
+.fact-group .rel-table { margin-top: 0; border-radius: 0 0 6px 6px; }
 </style>
 </head>
 <body>
@@ -96,7 +110,7 @@ tr:hover td { background: #e3f2fd; }
 </div>
 
 <h2 id="relationships">Key Relationships Between Tables</h2>
-<table class="rel-table"><thead><tr><th>Association</th><th>Principal (parent) table</th><th>Principal key(s)</th><th>Dependent (child) table</th><th>Foreign key(s)</th></tr></thead><tbody><tr><td>date_dimension</td><td><a href='#entity-date_dimension'>date_dimension</a></td><td>tk</td><td><a href='#entity-efficiency_fact'>efficiency_fact</a></td><td>dateTk</td></tr><tr><td>storage_dimension</td><td><a href='#entity-storage_dimension'>storage_dimension</a></td><td>tk</td><td><a href='#entity-efficiency_fact'>efficiency_fact</a></td><td>storageTk</td></tr></tbody></table>
+<div class='fact-group'><h3 class='fact-heading'><a href='#entity-efficiency_fact'>efficiency_fact</a></h3><table class='rel-table'><thead><tr><th>Referenced (parent) table</th><th>FK column</th><th>Parent PK</th></tr></thead><tbody><tr><td><a href='#entity-date_dimension'>date_dimension</a></td><td>dateTk</td><td>tk</td></tr><tr><td><a href='#entity-storage_dimension'>storage_dimension</a></td><td>storageTk</td><td>tk</td></tr></tbody></table></div>
 
 <h2>Tables &amp; Fields</h2>
 <p style='margin-bottom:16px'><span class="badge pk">PK</span> Primary Key &nbsp;<span class="badge fk">FK</span> Foreign Key &nbsp;<span class="badge nn">NOT NULL</span> Required field</p>
