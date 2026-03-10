@@ -16,6 +16,18 @@ keywords: features
 [.lead]
 NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in Data Infrastructure Insights (formerly Cloud Insights).
 
+== March 2026
+
+=== DII's AI Assistant is Available to All!
+
+The Data Infrastructure Insights AI Assistant is moving from preview to full availability, and along with this evolution comes the following enhancements:
+
+* Azure region availability: For customers whose DII site is hosted on Azure, the DII Assistant is now ready to help you. 
+* Up to 7 days of data: The Assistant can access up to 7 days worth of high resolution metrics for your data analysis and insights.
+
+
+'''
+
 == February 2026
 
 === Instant intelligent answers about your infrastructure
