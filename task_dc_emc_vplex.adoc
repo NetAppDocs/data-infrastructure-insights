@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
-permalink: task_dc_emc_VPLEX.html
-keywords: data collector, VPLEX, EMC, VPLEX,
+permalink: task_dc_emc_vplex.html
+keywords: data collector, VPLEX, EMC, vplex,
 summary: Configuring VPLEX data collector.
 ---
 
