@@ -23,7 +23,7 @@ NetApp is continually improving and enhancing its products and services. Here ar
 The Data Infrastructure Insights AI Assistant is available for Preview, and now includes the following enhancements:
 
 * Azure region availability: For customers whose DII site is hosted on Azure, the DII Assistant is now ready to help you. 
-* Up to 7 days of data: The Assistant can access up to 7 days worth of high resolution metrics for your data analysis and insights.
+* Up to 7 days of data: The Assistant can now access up to 7 days of high resolution metrics, enabling wider scope data analysis and insights.
 
 
 '''
