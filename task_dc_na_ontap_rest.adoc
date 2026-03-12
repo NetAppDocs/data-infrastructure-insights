@@ -35,7 +35,7 @@ To create a local account for Data Infrastructure Insights at the cluster level,
 
 . Before you begin, you must be signed in to ONTAP with an _Administrator_ account, and _diagnostic-level commands_ must be enabled.
 
-. Retrieve the name of the vserver that is of type _admin_. You will using this name in subsequent commands.
+. Retrieve the name of the vserver that is of type _admin_. You will use this name in subsequent commands.
 
  vserver show -type admin
 
@@ -99,13 +99,13 @@ To migrate from a previous ONTAP (ontapi) data collector to the newer ONTAP REST
 . Add the REST Collector. It is recommended to enter information for a different user than the one configured for the previous collector. For example, use the user noted in the Permissions section above.
 . Pause the previous collector, so it doesn't continue to collect data.
 . Let the new REST collector acquire data for at least 30 minutes. Ignore any data during this time that does not appear "normal". 
-. After the rest period, you should see your data stabilize as the REST collector continues to to acquire.
+. After the rest period, you should see your data stabilize as the REST collector continues to acquire.
 
 You can use this same process to return to the previous collector, should you wish.
 
 == Configuration 
 
-[cols=2*, options="header", cols"50,50"]
+[cols=2*, options="header", cols="50,50"]
 |===
 |Field|Description
 |ONTAP management IP Address	|IP address or fully-qualified domain name of the NetApp cluster. Must be Cluster Management IP/FQDN.
@@ -116,7 +116,7 @@ You can use this same process to return to the previous collector, should you wi
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols=2*, options="header", cols="50,50"]
 |===
 |Field|Description
 |Inventory Poll Interval (min)	|Default is 60 minutes.
@@ -132,7 +132,7 @@ You can use this same process to return to the previous collector, should you wi
 
 Data Infrastructure Insights acquires inventory, logs and performance data from the ONTAP data collector. For each asset type acquired, the most common terminology used for the asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols=2*, options="header", cols="50,50"]
 |===
 |Vendor/Model Term | Data Infrastructure Insights Term
 |Disk|Disk
@@ -159,7 +159,7 @@ The following terms apply to objects or references that you might find on ONTAP 
 * Raw Capacity – base 2 summation of all the physical disks in the system, regardless of their role.
 * Latency – a representation of what the host facing workloads are experiencing, across both reads and writes. Ideally, Data Infrastructure Insights is sourcing this value directly, but this is often not the case. In lieu of the array offering this up, Data Infrastructure Insights is generally performing an IOPs-weighted calculation derived from the individual internal volumes’ statistics.
 * Throughput – aggregated from internal volumes.
-Management – this may contain a hyperlink for the management interface of the device. Created programmatically by the Data Infrastructure Insights data source as part of inventory reporting.
+* Management – this may contain a hyperlink for the management interface of the device. Created programmatically by the Data Infrastructure Insights data source as part of inventory reporting.
 
 === Storage Pool
 
@@ -243,9 +243,9 @@ Some things to try if you encounter problems with this data collector:
 
 |When attempting to create an ONTAP REST data collector, an error like the following is seen:
 Configuration: 10.193.70.14: ONTAP rest API at 10.193.70.14 is not available: 10.193.70.14 failed to GET /api/cluster: 400 Bad Request
-|This is likely due to an oldeer ONTAP array) for example, ONTAP 9.6) which has no REST API capabilities. ONTAP 9.14.1 is the minimum ONTAP version supported by the ONTAP REST collector. "400 Bad Request" responses should be expected on pre-REST ONTAP releases.
+|This is likely due to an older ONTAP array (for example, ONTAP 9.6) which has no REST API capabilities. ONTAP 9.14.1 is the minimum ONTAP version supported by the ONTAP REST collector. "400 Bad Request" responses should be expected on pre-REST ONTAP releases.
 
-For ONTAP versions that do support REST but are not 9.14.1 or later, you may see the following simillar message: 
+For ONTAP versions that do support REST but are not 9.14.1 or later, you may see the following similar message: 
 Configuration: 10.193.98.84: ONTAP rest API at 10.193.98.84 is not available: 10.193.98.84: ONTAP rest API at 10.193.98.84 is available: cheryl5-cluster-2 9.10.1 a3cb3247-3d3c-11ee-8ff3-005056b364a7 but is not of minimum version 9.14.1.
 
 
