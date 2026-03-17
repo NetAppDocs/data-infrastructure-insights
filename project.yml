@@ -211,7 +211,22 @@ sidebar:
             url: /reporting_schema_diagrams.html
           - title: Schema Tables
             url: /reference_schemas.html
- 
+#            entries:
+#              - title: Schema Tables - Capacity
+#                url: /schema/reporting_schema_capacity.html
+#              - title: Schema Tables - Capacity Efficiency
+#                url: /schema/reporting_schema_capacity_efficiency.html
+#              - title: Schema Tables - File System Utilization
+#                url: /schema/reporting_schema_fs_util.html
+#              - title: Schema Tables - Inventory
+#                url: /schema/reporting_schema_inventory.html
+#              - title: Schema Tables - Performance
+#                url: /schema/reporting_schema_performance.html
+#              - title: Schema Tables - Ports
+#                url: /schema/reporting_schema_ports.html
+
+
+
     - title: Kubernetes
       entries:
         - title: Kubernetes Overview Page
@@ -472,8 +487,10 @@ sidebar:
               url: /task_dc_oracle_zfs.html
             - title: Pure
               url: /task_dc_pure_flasharray.html
-            - title: Red Hat
+            - title: Red Hat Virtualization
               url: /task_dc_redhat_virtualization.html
+            - title: Red Hat OpenShift Virtualization
+              url: /task_dc_redhat_openshift_virtualization.html
             - title: Rubrik CDM
               url: /task_dc_rubrik_cdm.html
             - title: VMware
