@@ -22,10 +22,11 @@ NetApp is continually improving and enhancing its products and services. Here ar
 
 The Data Infrastructure Insights AI Assistant is now generally available to all customers for DII sites hosted on AWS.
 
-Note that because the AI Assistant accomplishes the same tasks as DII's "Infrastructure Insights" of Shared Resources Under Stress, Kubernetes Namespaces Running out of Space, and Reclaiming ONTAP Cold Storage, those features are no longer separately available in DII. The intuitive AI Assistant is ready to answer your questions.
+Note that the AI Assistant on Azure sites is still in Preview. Watch this space for announcement of general availability.
 
-Note also that the AI Assistant on Azure sites is still in Preview. Watch this space for announcement of general availability.
+=== Infrastructure Insights features removed
 
+DII's "Infrastructure Insights" features of _Shared Resources Under Stress_, _Kubernetes Namespaces Running out of Space_, and _Reclaiming ONTAP Cold Storage_ are no longer available in DII. 
 
 
 
