@@ -18,15 +18,16 @@ NetApp is continually improving and enhancing its products and services. Here ar
 
 == March 2026
 
-=== DII's AI Assistant is Available to All!
+=== AI Assistant is now Generally Available
 
-The Data Infrastructure Insights AI Assistant is available for Preview, and now includes the following enhancements:
+The Data Infrastructure Insights AI Assistant is now generally available to all customers for DII sites hosted on AWS.
 
-* Azure region availability: For customers whose DII site is hosted on Azure, the DII Assistant is now ready to help you. 
-* Up to 7 days of data: The Assistant can now access up to 7 days of high resolution metrics, enabling wider scope data analysis and insights.
+Note that because the AI Assistant accomplishes the same tasks as DII's "Infrastructure Insights" of Shared Resources Under Stress, Kubernetes Namespaces Running out of Space, and Reclaiming ONTAP Cold Storage, those features are no longer separately available in DII. The intuitive AI Assistant is ready to answer your questions.
+
+Note also that the AI Assistant on Azure sites is still in Preview. Watch this space for announcement of general availability.
 
 
-'''
+
 
 == February 2026
 
