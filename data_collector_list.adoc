@@ -35,7 +35,6 @@ Alphabetical list of Data Collectors supported by Data Infrastructure Insights:
 | link:task_dc_ms_azure.html[Azure VMs and VHD ] |Infrastructure 
 | link:task_dc_brocade_fc_switch.html[Brocade Fibre Channel Switches ] |Infrastructure 
 | link:task_dc_brocade_rest.html[Brocade FOS REST ] | Infrastructure
-//| link:task_dc_ceph_storage.html[Ceph Storage ] |Infrastructure 
 | link:task_dc_cisco_fc_switch.html[Cisco MDS Fabric Switches ] |Infrastructure 
 | link:task_dc_cohesity_smartfiles.html[Cohesity SmartFiles ] |Infrastructure 
 | link:task_config_telegraf_consul.html[Consul ] |Service
