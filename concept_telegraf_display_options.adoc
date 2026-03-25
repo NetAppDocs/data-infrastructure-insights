@@ -5,10 +5,8 @@ keywords: telegraf, data, display,
 summary: Telegraf data display options 
 ---
 
-
 = Transforming Metrics
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:

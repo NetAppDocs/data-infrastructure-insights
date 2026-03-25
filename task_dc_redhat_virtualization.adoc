@@ -7,7 +7,6 @@ summary: Configuring Red Hat Virtualization data collector.
 
 = Red Hat Virtualization data collector
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
