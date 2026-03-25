@@ -114,8 +114,8 @@ Alphabetical list of Data Collectors supported by Data Infrastructure Insights:
 | link:task_config_telegraf_puppetagent.html[Puppet Agent ] |Service 
 | link:task_dc_pure_flasharray.html[Pure Storage FlashArray ] |Infrastructure 
 | link:task_dc_pure_flashblade.html[Pure Storage FlashBlade ] |Infrastructure 
-| link:task_dc_redhat_virtualization.html[Red Hat Virtualization ] |Infrastructure 
-//| link:task_dc_redhat_openshift_virtualization.html[Red Hat OpenShift Virtualization ] |Infrastructure 
+| link:codehtml[Red Hat Virtualization ] |Infrastructure 
+| link:task_dc_redhat_openshift_virtualization.html[Red Hat OpenShift Virtualization ] |Infrastructure 
 | link:task_config_telegraf_redis.html[Redis ] |Service 
 | link:task_config_telegraf_rethinkdb.html[RethinkDB ] |Service 
 | link:task_config_telegraf_agent.html#rhel-and-centos[RHEL & CentOS ] |Service 
