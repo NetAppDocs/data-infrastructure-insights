@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task_dc_redhat_virtualization.html
-keywords: data collector, Red Hat Virtualization
-summary: Configuring Red Hat Virtualization data collector.
+keywords: data collector, Red Hat Virtualization, Oracle Linux Virtualization
+summary: Configuring Red Hat Virtualization/Oracle Linux Virtualization Manager data collector.
 ---
 
-= Red Hat Virtualization data collector
+= Red Hat Virtualization / Oracle Linux Virtualization Manager data collector
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: Configuring Red Hat Virtualization data collector.
 :imagesdir: ./media/
 
 [.lead] 
-Data Infrastructure Insights uses the Red Hat Virtualization data collector to gather inventory data from virtualized Linux and Microsoft Windows workloads.   
+Data Infrastructure Insights uses this data collector to gather inventory data from virtualized Linux and Microsoft Windows workloads. 
 
 == Terminology
 
@@ -33,7 +33,7 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Requirements
 
-* IP address of the RHEV server over port 443 via REST API 
+* IP address of the RHEV/OLVM server over port 443 via REST API 
 * Read-only username and password 
 * RHEV Version 3.0+  
 
@@ -52,7 +52,7 @@ Note: These are common terminology mappings only and might not represent every c
 [cols=2*, options="header", cols"50,50"]
 |===
 |Field | Description
-|HTTPS Communication Port|Port used for HTTPS communication to RHEV
+|HTTPS Communication Port|Port used for HTTPS communication to RHEV/OLVM
 |Inventory poll interval (min)|The default is 20 minutes.
 //|Connection Timeout (sec)|The default is 60. 
 |===
