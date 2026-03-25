@@ -33,7 +33,7 @@ Alphabetical list of Data Collectors supported by Data Infrastructure Insights:
 | link:task_config_telegraf_apache.html[Apache ] |Service 
 | link:task_dc_ms_anf.html[Azure NetApp Files ] |Infrastructure 
 | link:task_dc_ms_azure.html[Azure VMs and VHD ] |Infrastructure 
-| link:task_dc_brocade_bna.html[Brocade Network Advisor (BNA) ] |Infrastructure 
+//| link:task_dc_brocade_bna.html[Brocade Network Advisor (BNA) ] |Infrastructure 
 | link:task_dc_brocade_fc_switch.html[Brocade Fibre Channel Switches ] |Infrastructure 
 | link:task_dc_brocade_rest.html[Brocade FOS REST ] | Infrastructure
 //| link:task_dc_ceph_storage.html[Ceph Storage ] |Infrastructure 
@@ -61,7 +61,7 @@ Alphabetical list of Data Collectors supported by Data Infrastructure Insights:
 | link:task_config_telegraf_docker.html[Docker ] |Service 
 | link:task_config_telegraf_elasticsearch.html[Elasticsearch ] |Service 
 | link:task_config_telegraf_flink.html[Flink ] |Service 
-| link:task_dc_fujitsu_eternus.html[Fujitsu ETERNUS DX ] |Infrastructure 
+//| link:task_dc_fujitsu_eternus.html[Fujitsu ETERNUS DX ] |Infrastructure 
 | link:task_dc_google_cloud.html[Google Compute and Storage ] |Infrastructure 
 | link:task_dc_google_cloud_netapp_volumes.html[Google Cloud NetApp Volumes] |Infrastructure
 | link:task_config_telegraf_hadoop.html[Hadoop ] |Service 
@@ -92,8 +92,8 @@ Alphabetical list of Data Collectors supported by Data Infrastructure Insights:
 | link:task_config_telegraf_mongodb.html[MongoDB ] |Service 
 | link:task_config_telegraf_mysql.html[MySQL ] |Service 
 | link:task_dc_na_cloud_volumes_ontap.html[NetApp Cloud Volumes ONTAP ] |Infrastructure 
-| link:task_dc_na_cloud_connection.html[NetApp Cloud Connection for ONTAP 9.9+ ] |Infrastructure 
-| link:task_dc_na_7mode.html[NetApp Data ONTAP 7-Mode ] |Infrastructure 
+//| link:task_dc_na_cloud_connection.html[NetApp Cloud Connection for ONTAP 9.9+ ] |Infrastructure 
+//| link:task_dc_na_7mode.html[NetApp Data ONTAP 7-Mode ] |Infrastructure 
 | link:task_dc_na_eseries.html[NetApp E-Series ] |Infrastructure 
 | link:task_dc_netapp_eseries_rest.html[NetApp E-Series REST ] |Infrastructure
 | link:task_dc_na_amazon_fsx.html[Amazon FSx for NetApp ONTAP] |Infrastructure 
