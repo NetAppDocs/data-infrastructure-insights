@@ -7,7 +7,6 @@ summary: Configuring VMware  data collector.
 
 = Configuring the VMware VSphere data collector 
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
