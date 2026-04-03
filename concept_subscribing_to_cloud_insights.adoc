@@ -15,17 +15,17 @@ keywords: subscribe, trial, subscription, contract, raw capacity, region, data r
 [.lead]
 Getting started with Data Infrastructure Insights is as easy as three simple steps:
 
-. Sign up for an account on link:https://bluexp.netapp.com//[*NetApp BlueXP*] to get access to all of NetApp's Cloud offerings.
+. Sign up for an account on link:https://console.netapp.com//[*NetApp Console*] to get access to all of NetApp's Cloud offerings.
 . Register for a free trial of Data Infrastructure Insights to explore the features available. To register for a free trial:
 ** Go to https://netapp.com
 ** Select *How to Buy* at the top of the page.
-** Select *Request trial*. If you are not already registered with BlueXP, Enter your details and sign up. Otherwise, sign in.
+** Select *Request trial*. If you are not already registered with Console, Enter your details and sign up. Otherwise, sign in.
 ** Schedule a meeting or wait for a representative to contact you about your trial.
 
 
 . *Subscribe* to Data Infrastructure Insights for on-going, uninterrupted access to your data though a variety of flexible subscription options:
 
-** link:https://bluexp.netapp.com/contact-cds[NetApp Sales direct]
+** link:https://console.netapp.com/contact-cds[NetApp Sales direct]
 ** AWS Marketplace:
 *** link:https://aws.amazon.com/marketplace/pp/prodview-axhuy7muvzfx2[Fixed term subscription]
 *** link:https://aws.amazon.com/marketplace/pp/prodview-rn4qwencpjpge[Pay-as-you-go subscription]
@@ -45,12 +45,7 @@ For detailed information about Data Infrastructure Insights features and pricing
 WARNING: Inactive Data Infrastructure Insights Basic Edition environments are deleted and their resources are reclaimed. An environment is considered inactive if there is no user activity for 30 consecutive days, of if there is no data ingested for 7 consecutive days. Data Infrastructure Insights will send a notification and provide a grace period of four days before an environment is deleted.
 ////
 
-
-
-
-
 While using Data Infrastructure Insights, if you see a padlock icon image:padlock.png[Padlock], it means the feature is not available in your current Subscription, or is available in a limited form. Subscribe to that feature for full access. Some features are available as a <<module-evaluation, Module Evaluation>> prior to subscribing.
-
 
 
 == Trial Edition
@@ -61,7 +56,6 @@ At any time during your trial period, you can subscribe to Data Infrastructure I
 Data Infrastructure Insights displays a banner when your free trial is nearing its end. Within that banner is a _View Subscription_ link, which opens the *Admin -> Subscription* page. Non-Admin users will see the banner but will not be able to go to the Subscription page.
 
 NOTE: If you need additional time to evaluate Data Infrastructure Insights and your trial is set to expire in 4 days or less, you can extend your trial for an additional 30 days. You can extend the trial only once. You cannot extend if your trial has expired.
-
 
 
 === Trial through AWS Marketplace
@@ -78,7 +72,6 @@ If your free trial has expired and you have not yet subscribed to Data Infrastru
 
 
 
-
 == What if my *Subscription* has expired?
 
 If you have a subscription to Data Infrastructure Insights, but that subscription has expired, you will have a grace period of five days in order to renew your subscription. All Data Infrastructure Insights functionality will remain active during this grace period.
@@ -90,7 +83,6 @@ NOTE: Your Data Infrastructure Insights data remains intact for 30 days followin
 
 == Module Evaluation
 
-
 You may also take advantage of *Module Evaluations*. For example, if you are already subscribed to Infrastructure Observability but are adding Kubernetes to your environment, you will automatically enter into a 30-day evaluation of Kubernetes Observability, starting from when you install the NetApp Kubernetes Monitoring Operator. You will only be charged for your Kubernetes Observability managed unit usage at the end of the evaluation period.
 
 NOTE: Keep in mind that you will be charged for new managed unit (MU) usage following the evaluation, so be sure to plan accordingly. When your module evaluation is ending, you will be notified if you will need to add more MUs to avoid service interruption.
@@ -100,8 +92,6 @@ You can monitor your managed unit usage on the *Admin > Subscription* page in th
 image:Module_Trials_UsageTab.png[MU Usage Screen]
 
 NOTE: A _Module Evaluation_ is not a _Trial_ - we use the term trial when we provide customers a free trial period of using the Data Infrastructure Insights service to confirm fit and enable purchase. A module evaluation is different - this is when we allow a paid customer to try out a module of Data Infrastructure Insights that they have not used in recent months of their paid subscription. When evaluation is active, charges for just the newly configured module are waived. The customers working environment is still under subscription and has not reverted to free trial. The subscription has not changed. 
-
-
 
 
 === Estimator
@@ -120,10 +110,6 @@ Note that customers are only eligible for a module evaluation once per subscript
 == Subscription Options
 
 To subscribe, go to *Admin -> Subscription*. In addition to the *Subscribe* buttons, you will be able to see your installed data collectors and calculate your estimated metering. For a typical environment, you can click the self-serve AWS Marketplace button. If your environment includes or is expected to include 1,000 or more Managed Units, you are eligible for Volume Pricing. 
-
-//image:SubscriptionCompareTable-2.png[Subscription Options]
-
-
 
 
 === Observability Metering
@@ -200,7 +186,7 @@ Clicking on the Amazon Marketplace link opens the AWS https://aws.amazon.com/mar
 
 After you have entered the total Managed Units count and chosen either 12-month or 36-month subscription term, click on *Set Up Your Account* to finish the subscription process.
 
-Once the AWS subscription process is complete, you will be taken back to your Data Infrastructure Insights environment. Or, if the environment is no longer active (for example, you have logged out), you will be taken to the NetAPp BlueXP sign-in page. When you sign in to Data Infrastructure Insights again, your subscription will be active. 
+Once the AWS subscription process is complete, you will be taken back to your Data Infrastructure Insights environment. Or, if the environment is no longer active (for example, you have logged out), you will be taken to the NetAPp Console sign-in page. When you sign in to Data Infrastructure Insights again, your subscription will be active. 
 
 NOTE: After clicking on *Set Up Your account* on the AWS Marketplace page, you must complete the AWS subscription process within one hour. If you do not complete it within one hour, you will need to click on *Set Up Your Account* again to complete the process.
 

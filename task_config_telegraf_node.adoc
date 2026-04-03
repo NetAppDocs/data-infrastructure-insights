@@ -7,7 +7,6 @@ summary: Flink data collector configuration
 
 = Node Data Collection
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
@@ -15,6 +14,8 @@ summary: Flink data collector configuration
 
 [.lead]
 Data Infrastructure Insights gathers metrics from the node on which you install an agent.
+
+NOTE: This collector is deprecated. It will no longer be available starting January 2027.
 
 == Installation
 

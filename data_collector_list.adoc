@@ -1,17 +1,16 @@
 ---
 sidebar: sidebar
 permalink: data_collector_list.html
-summary: List of supported data collectors.
+summary: Alphabetical reference list of all data collectors supported by Data Infrastructure Insights, organized by infrastructure and service types.
 keywords: data collector, vendor, infrastructure, integration, service
 ---
 
-= Data Infrastructure Insights Data Collector List
+= Data Infrastructure Insights Data Collector Reference List
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/The alerting page redesign will also be ready by the of the month. Need to add it to what’s new as wellopens
+:imagesdir: ./media/
 
 [.lead]
 Data Infrastructure Insights supports a variety of Data Collectors from many vendors and services. 
@@ -34,7 +33,7 @@ Alphabetical list of Data Collectors supported by Data Infrastructure Insights:
 | link:task_config_telegraf_apache.html[Apache ] |Service 
 | link:task_dc_ms_anf.html[Azure NetApp Files ] |Infrastructure 
 | link:task_dc_ms_azure.html[Azure VMs and VHD ] |Infrastructure 
-| link:task_dc_brocade_bna.html[Brocade Network Advisor (BNA) ] |Infrastructure 
+//| link:task_dc_brocade_bna.html[Brocade Network Advisor (BNA) ] |Infrastructure 
 | link:task_dc_brocade_fc_switch.html[Brocade Fibre Channel Switches ] |Infrastructure 
 | link:task_dc_brocade_rest.html[Brocade FOS REST ] | Infrastructure
 //| link:task_dc_ceph_storage.html[Ceph Storage ] |Infrastructure 
@@ -62,7 +61,7 @@ Alphabetical list of Data Collectors supported by Data Infrastructure Insights:
 | link:task_config_telegraf_docker.html[Docker ] |Service 
 | link:task_config_telegraf_elasticsearch.html[Elasticsearch ] |Service 
 | link:task_config_telegraf_flink.html[Flink ] |Service 
-| link:task_dc_fujitsu_eternus.html[Fujitsu ETERNUS DX ] |Infrastructure 
+//| link:task_dc_fujitsu_eternus.html[Fujitsu ETERNUS DX ] |Infrastructure 
 | link:task_dc_google_cloud.html[Google Compute and Storage ] |Infrastructure 
 | link:task_dc_google_cloud_netapp_volumes.html[Google Cloud NetApp Volumes] |Infrastructure
 | link:task_config_telegraf_hadoop.html[Hadoop ] |Service 
@@ -77,7 +76,6 @@ Alphabetical list of Data Collectors supported by Data Infrastructure Insights:
 | link:task_dc_huawei_oceanstor.html[Huawei OceanStor and Dorado Devices ] |Infrastructure 
 | link:task_dc_ibm_cleversafe.html[IBM Cleversafe ] |Infrastructure 
 | link:task_dc_ibm_cs.html[IBM CS Series ] |Infrastructure 
-| link:task_dc_ibm_powervm.html[IBM PowerVM ] |Infrastructure 
 | link:task_dc_ibm_svc.html[IBM SAN Volume Controller (SVC) ] |Infrastructure 
 | link:task_dc_ibm_ds.html[IBM System Storage DS8000 Series ] |Infrastructure 
 | link:task_dc_ibm_xiv.html[IBM XIV and A9000 Storages ] |Infrastructure 
@@ -94,9 +92,8 @@ Alphabetical list of Data Collectors supported by Data Infrastructure Insights:
 | link:task_config_telegraf_mongodb.html[MongoDB ] |Service 
 | link:task_config_telegraf_mysql.html[MySQL ] |Service 
 | link:task_dc_na_cloud_volumes_ontap.html[NetApp Cloud Volumes ONTAP ] |Infrastructure 
-| link:task_dc_na_cloud_volumes.html[NetApp Cloud Volumes Services for AWS ] |Infrastructure 
-| link:task_dc_na_cloud_connection.html[NetApp Cloud Connection for ONTAP 9.9+ ] |Infrastructure 
-| link:task_dc_na_7mode.html[NetApp Data ONTAP 7-Mode ] |Infrastructure 
+//| link:task_dc_na_cloud_connection.html[NetApp Cloud Connection for ONTAP 9.9+ ] |Infrastructure 
+//| link:task_dc_na_7mode.html[NetApp Data ONTAP 7-Mode ] |Infrastructure 
 | link:task_dc_na_eseries.html[NetApp E-Series ] |Infrastructure 
 | link:task_dc_netapp_eseries_rest.html[NetApp E-Series REST ] |Infrastructure
 | link:task_dc_na_amazon_fsx.html[Amazon FSx for NetApp ONTAP] |Infrastructure 
@@ -116,8 +113,9 @@ Alphabetical list of Data Collectors supported by Data Infrastructure Insights:
 | link:task_config_telegraf_postgresql.html[PostgreSQL ] |Service 
 | link:task_config_telegraf_puppetagent.html[Puppet Agent ] |Service 
 | link:task_dc_pure_flasharray.html[Pure Storage FlashArray ] |Infrastructure 
-//| link:task_dc_pure_flashblade.html[Pure Storage FlashBlade ] |Infrastructure 
+| link:task_dc_pure_flashblade.html[Pure Storage FlashBlade ] |Infrastructure 
 | link:task_dc_redhat_virtualization.html[Red Hat Virtualization ] |Infrastructure 
+| link:task_dc_redhat_openshift_virtualization.html[Red Hat OpenShift Virtualization ] |Infrastructure 
 | link:task_config_telegraf_redis.html[Redis ] |Service 
 | link:task_config_telegraf_rethinkdb.html[RethinkDB ] |Service 
 | link:task_config_telegraf_agent.html#rhel-and-centos[RHEL & CentOS ] |Service 

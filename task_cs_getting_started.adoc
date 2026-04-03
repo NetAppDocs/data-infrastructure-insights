@@ -1,27 +1,21 @@
 ---
 sidebar: sidebar
 permalink: task_cs_getting_started.html
-keywords: collectors, data collectors, configure, introduction, browsers , Cloud Secure
-summary: A few simple steps will get you started using Workload Security
+keywords: collectors, data collectors, configure, introduction, browsers, Cloud Secure
+summary: Deploy Workload Security agents and data collectors for monitoring user activity and detecting security threats.
 ---
 
 = Getting Started with Workload Security
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-There are configuration tasks that need to be completed before you can start using Workload Security to monitor user activity. 
-
-
-//not complete? 4/17 
+Workload Security helps you monitor user activity and detect potential security threats in your storage environment. Before you can begin monitoring, you need to configure agents, data collectors, and directory services to establish the foundation for comprehensive security monitoring. 
 
 The Workload Security system uses an agent to collect access data from storage systems and user information from  Directory Services servers.
-
-//not complete? 4/17
 
 You need to configure the following before you can start collecting data:
 
@@ -32,23 +26,23 @@ You need to configure the following before you can start collecting data:
 
 link:task_cs_add_agent.html[Add Agent]
 
-link:https://netapp.hubs.vidyard.com/watch/Lce7EaGg7NZfvCUw4Jwy5P?[*Video*: Agent Deployment] 
+// link:https://netapp.hubs.vidyard.com/watch/Lce7EaGg7NZfvCUw4Jwy5P?[*Video*: Agent Deployment] 
 
 |Configure a User Directory Connector|link:task_config_user_dir_connect.html[Add User Directory Connector]
 
-link:https://netapp.hubs.vidyard.com/watch/NEmbmYrFjCHvPps7QMy8me?[*Video*: Active Directory Connection]
+// link:https://netapp.hubs.vidyard.com/watch/NEmbmYrFjCHvPps7QMy8me?[*Video*: Active Directory Connection]
 
 |Configure data collectors | Click *Workload Security > Collectors*
 
 Click the data collector you want to configure. 
 
-See the Data Collector Vendor Reference section of the documentation. 
+See the Data Collector Vendor Reference section of the documentation for collector information. 
 
-link:https://netapp.hubs.vidyard.com/watch/YSQrcYA7DKXbj1UGeLYnSF?[*Video*: ONTAP SVM Connection]
+// link:https://netapp.hubs.vidyard.com/watch/YSQrcYA7DKXbj1UGeLYnSF?[*Video*: ONTAP SVM Connection]
 
 |Create  Users Accounts| link:concept_user_roles.html[Manage User Accounts]
 
-|Troubleshooting|link:https://netapp.hubs.vidyard.com/watch/Fs8N2w9wBtsFGrhRH9X85U?[*Video*: Troubleshooting]
+// |Troubleshooting|link:https://netapp.hubs.vidyard.com/watch/Fs8N2w9wBtsFGrhRH9X85U?[*Video*: Troubleshooting]
 
 |===
 

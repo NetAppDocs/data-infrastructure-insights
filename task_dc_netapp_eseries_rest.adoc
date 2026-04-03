@@ -14,11 +14,11 @@ summary: Configuring NetApp E-Series REST data collector.
 :imagesdir: ./media/
 
 [.lead]
-The NetApp E-Series REST data collector gathers inventory and performance data. The collector supports firmware 7.x+ using the same configurations and reporting the same data. The REST collector monitors the encryption status of storage pools as well as the encryption status of related disks and volumes, and it provides storage node CPU Utilization as performance counters--functionality not provided in the legacy SANtricity E-Series collector.
+The NetApp E-Series REST data collector gathers inventory, logs and performance data. The collector supports firmware 7.x+ using the same configurations and reporting the same data. The REST collector monitors the encryption status of storage pools, disks and volumes, storage node CPU Utilization as well as logs functionality not provided in the legacy SANtricity E-Series collector.
 
 == Terminology
 
-Cloud insight acquires the following inventory information from the NetApp E-Series, using REST. For each asset type acquired, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+Data Infrastructure Insights acquires the following inventory information from the NetApp E-Series, using REST. For each asset type acquired, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 [cols=2*, options="header", cols"50,50"]
 |===

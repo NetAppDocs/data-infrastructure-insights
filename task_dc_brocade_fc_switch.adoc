@@ -113,7 +113,7 @@ In the data collector's Advanced Configuration settings in Data Infrastructure I
 |Problem:|Try this:
 
 |Performance collection fails with "Timed out during sending SNMP request".
-|Depending on query variables and switch configuration, some queries may exceed the default timeout.  link:https://kb.netapp.com/Cloud/BlueXP/DII/Data_Infrastructure_Insights_Brocade_data_source_fails_performance_collection_with_a_timeout_due_to_default_SNMP_configuration[Learn More]. 
+|Depending on query variables and switch configuration, some queries may exceed the default timeout.  link:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs/Data_Infrastructure_Insights_Brocade_data_source_fails_performance_collection_with_a_timeout_due_to_default_SNMP_configuration[Learn More]. 
 |Performance collection fails with ...Row duplicates found in SNMP table...
 |DII has detected bad SNMP responses. You are likely running FOS 8.2.3e. Upgrade to 8.2.3e2 or higher.
 |Performance collections fails with ...Unknown user name...

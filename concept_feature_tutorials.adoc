@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar
 permalink: concept_feature_tutorials.html
-summary: Data Infrastructure Insights has tutorials to show you how to perform many tasks.
+summary: Step-by-step video tutorials help you master Data Infrastructure Insights features like dashboards, queries, monitoring, and troubleshooting.
 keywords: onboarding, getting started, video, tutorial, resolution, dashboard, query, troubleshooting
 ---
-= Feature Tutorials
+= Getting Started with Video Tutorials
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -12,7 +12,7 @@ keywords: onboarding, getting started, video, tutorial, resolution, dashboard, q
 :imagesdir: ./media/
 
 [.lead]
-Data Infrastructure Insights is loaded with useful features that enable you to quickly and easily troubleshoot issues, and provide insights into your corporate environment. Find data easily with powerful queries, visualize data in dashboards, and send email alerts for data thresholds you set. 
+Learn Data Infrastructure Insights efficiently with our feature tutorials with step-by-step video guides and a progress checklist. Master essential skills like creating dashboards, building queries, setting up monitoring, and troubleshooting issues through hands-on tutorials designed to get you productive quickly. 
 
 == Checklist and Video Tutorials
 
@@ -31,5 +31,21 @@ NOTE: You can view the tutorials in any order you like, as many times as you lik
 === Dismissing the Checklist
 
 The Startup Checklist is displayed until you click the _Don't Show This Again_ link at the bottom of the checklist. Even after dismissing the checklist, the tutorials are still available on each appropriate Data Infrastructure Insights page until you dismiss each one from the message header bar. 
+
+== Video Tutorials
+
+Watch the following videos to learn more.
+
+link:https://media.netapp.com/video-detail/248621bd-6619-5dc8-9718-5d78d0fd21da/turn-raw-data-into-actionable-insights[Turn raw data into actionable insights^]
+
+link:https://media.netapp.com/video-detail/5a293f3c-c655-5879-9133-1a32aaa140e8/create-powerful-dashboards-with-netapp[Create powerful dashboards with NetApp^]
+
+link:https://media.netapp.com/video-detail/0e62b784-8456-5ef7-8879-f0352135a0f1/simplified-troubleshooting-with-vm-analyzer[Simplified troubleshooting with VM Analyzer^]
+
+link:https://media.netapp.com/video-detail/d0530e0b-a222-52e7-92b1-dbeeee41b712/explore-and-analyze-with-queries-in-data-infrastructure-insights[Explore and analyze with queries in Data Infrastructure Insights^]
+
+link:https://media.netapp.com/video-detail/43497a8e-f648-56b7-9bc7-8d5d4274510f/proactive-infrastructure-monitoring-with-alerts-and-monitors[Proactive infrastructure monitoring with alerts and monitors^]
+
+
 
 
