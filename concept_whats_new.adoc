@@ -16,6 +16,19 @@ keywords: features
 [.lead]
 NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in Data Infrastructure Insights (formerly Cloud Insights).
 
+== April 2026
+
+=== Pause/Resume Auto-Resolution Rules
+
+Maintain full control over device identification in your environment. Pause rules during maintenance windows or testing without losing configurations, then resume them when ready. Manage multiple rules at once with bulk operations for greater efficiency.
+
+
+=== Deprecated Collectors?
+TBD
+
+
+'''
+
 == March 2026
 
 === AI Assistant is now Generally Available
