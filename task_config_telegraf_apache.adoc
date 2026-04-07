@@ -7,7 +7,6 @@ summary: Apache data collector configuration
 
 = Apache Data Collector
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
@@ -15,6 +14,8 @@ summary: Apache data collector configuration
 
 [.lead]
 This data collector allows collection of data from Apache servers on your tenant.
+
+NOTE: This collector is deprecated. It will no longer be available starting January 2027.
 
 .Pre-requisites
 
