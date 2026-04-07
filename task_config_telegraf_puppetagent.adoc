@@ -7,7 +7,6 @@ summary: Puppet data collector configuration
 
 = Puppet Agent Data Collector
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
@@ -16,6 +15,8 @@ summary: Puppet data collector configuration
 [.lead]
 
 Data Infrastructure Insights uses this data collector to gather metrics from Puppet Agent.
+
+NOTE: This collector is deprecated. It will no longer be available starting January 2027.
 
 == Installation
 

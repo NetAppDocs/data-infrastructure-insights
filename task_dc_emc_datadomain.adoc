@@ -7,14 +7,13 @@ summary: Configuring DELL EMC Data Domain data collector.
 
 = DELL EMC Data Domain data collector
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-This data collector gathers inventory and performance information from DELL EMC Data Domain deduplication storage systems. To configure this data collector, there are specific configuration instructions and usage recommendations you must follow. 
+This data collector gathers inventory information from DELL EMC Data Domain deduplication storage systems. To configure this data collector, there are specific configuration instructions and usage recommendations you must follow. 
 
 == Terminology
 
@@ -31,7 +30,7 @@ Data Infrastructure Insights acquires the following inventory information from t
 |NFS and CIFS share|FileShare
 |===
 
-Note: These are common terminology mappings only and might not represent every case for this data colletor.
+Note: These are common terminology mappings only and might not represent every case for this data collector.
 
 == Requirements
 
