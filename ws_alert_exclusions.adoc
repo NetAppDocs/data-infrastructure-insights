@@ -54,7 +54,7 @@ Once added to the _allowed file types_ list, no file tampering attack alert will
 
 For example, if a file named _test.txt_ is renamed to _test.txt.abc_ and Workload Security is detecting a ransomware attack because of the _.abc_ extension, the _.abc_ extension can be added to the _allowed file types_ list. After being added to the list, ransomware attacks will no longer be generated against files with the _.abc_ extension.
 
-Allowed File Types can be exact matches (e.g., ".abc") or expressions (e.g., ++.*type++, ++.type*++, or ++.*type*++). Expressions of types “.a*c”, “.p*f” are not supported.
+Allowed File Types can be exact matches (e.g., ".abc") or expressions (e.g., ++.*type++, ++.type*++, or ++.*type*++). Expressions of types .a*c, .p*f are not supported.
 
 
 ////
