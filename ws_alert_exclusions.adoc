@@ -18,11 +18,11 @@ Alert Exclusion lets you suppress alert generation for specific file types, user
 
 Alert Exclusion is configured per tenant and includes the following:
 
-. File Types: suppress File Tampering alerts on specific link:ws_allowed_file_types.html[file extensions] 
+. File Types: suppress File Tampering alerts on specific <<allowed-file-types, Allowed File Types>>
 . Users: suppress alerts triggered by selected users.
 . Paths: suppress alerts for activity on selected directory paths (up to four directory levels, starting at the junction path).
 
-File type exclusion (also known as 'Allowed File Type Policies') has been updated and described in link:ws_allowed_file_types.html[Allowed File Types].
+//File type exclusion (also known as 'Allowed File Type Policies') has been updated and described in link:ws_allowed_file_types.html[Allowed File Types].
 
 Users' exclusion list is supported by type-ahead, where admins can select users to be excluded for alerts. 
 
