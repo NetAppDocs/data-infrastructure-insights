@@ -46,7 +46,7 @@ File extensions can be added to an _allowed file types_ list to prevent unnecess
 
 Navigate to *Workload Security > Policies* and go to the _Allowed File Type Policies_ tab.
 
-image:WS_Allowed_File_Type_Policies.png[Allowed File Types Policies]
+image:ws_allowed_file_types.png[Add Allowed File Types]
 
 Once added to the _allowed file types_ list, no file tampering attack alert will be generated for that allowed file type. Note that the _Allowed File Types_ policy is only applicable for file tampering detection.
 
