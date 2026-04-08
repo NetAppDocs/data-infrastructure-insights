@@ -16,6 +16,8 @@ summary: Add file extensions to an Alerts Exclusion list to reduce alerting.
 [.lead]
 Alert Exclusion lets you suppress alert generation for specific file types, users and directory paths. Use this to reduce false positives by excluding known, expected activity that may otherwise match alert patterns.
 
+Navigate to *Workload Security > Policies* and select the *Alert Exclusions* tab.
+
 Alert Exclusion is configured per tenant and includes the following:
 
 . File Types: suppress File Tampering alerts on specific <<allowed-file-types, Allowed File Types>>
@@ -44,7 +46,7 @@ image:ws_alert_exclusions_paths.png[]
 
 File extensions can be added to an _allowed file types_ list to prevent unnecessary alerting.
 
-Navigate to *Workload Security > Policies* and go to the _Allowed File Type Policies_ tab.
+Select *+File Type* to add file types to the alert allowed file types list.
 
 image:ws_allowed_file_types.png[Add Allowed File Types]
 
