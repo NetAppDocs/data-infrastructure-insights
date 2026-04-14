@@ -498,62 +498,62 @@ sidebar:
             - title: VMware
               url: /task_dc_vmware.html
               
-        - title: Data Collector Reference - Services
-          entries:
-            - title: Host/Node
-              url: /task_config_telegraf_node.html
-            - title: ActiveMQ
-              url: /task_config_telegraf_activemq.html
-            - title: Apache
-              url: /task_config_telegraf_apache.html
-            - title: Consul 
-              url: /task_config_telegraf_consul.html
-            - title: Couchbase
-              url: /task_config_telegraf_couchbase.html
-            - title: CouchDB
-              url: /task_config_telegraf_couchdb.html
-            - title: Docker
-              url: /task_config_telegraf_docker.html
-            - title: Elasticsearch
-              url: /task_config_telegraf_elasticsearch.html
-            - title: Flink
-              url: /task_config_telegraf_flink.html
-            - title: Hadoop
-              url: /task_config_telegraf_hadoop.html
-            - title: HAProxy
-              url: /task_config_telegraf_haproxy.html
-            - title: Java
-              url: /task_config_telegraf_jvm.html
-            - title: Kafka
-              url: /task_config_telegraf_kafka.html
-            - title: Kapacitor
-              url: task_config_telegraf_kapacitor.html
-            - title: Kibana
-              url: /task_config_telegraf_kibana.html
-            - title: Kubernetes
-              url: /task_config_telegraf_agent_k8s.html
-            - title: Memcached
-              url: /task_config_telegraf_memcached.html
-            - title: MongoDB
-              url: /task_config_telegraf_mongodb.html
-            - title: MySQL
-              url: /task_config_telegraf_mysql.html
-            - title: Netstat
-              url: /task_config_telegraf_netstat.html
-            - title: Nginx
-              url: /task_config_telegraf_nginx.html
-            - title: OpenZFS
-              url: task_config_telegraf_openzfs.html
-            - title: PostgreSQL
-              url: /task_config_telegraf_postgresql.html
-            - title: Puppet
-              url: /task_config_telegraf_puppetagent.html
-            - title: Redis
-              url: /task_config_telegraf_redis.html
-            - title: RethinkDB
-              url: task_config_telegraf_rethinkdb.html
-            - title: Zookeeper
-              url: task_config_telegraf_zookeeper.html
+#        - title: Data Collector Reference - Services
+#          entries:
+#            - title: Host/Node
+#              url: /task_config_telegraf_node.html
+#            - title: ActiveMQ
+#              url: /task_config_telegraf_activemq.html
+#            - title: Apache
+#              url: /task_config_telegraf_apache.html
+#            - title: Consul 
+#              url: /task_config_telegraf_consul.html
+#            - title: Couchbase
+#              url: /task_config_telegraf_couchbase.html
+#            - title: CouchDB
+#              url: /task_config_telegraf_couchdb.html
+#            - title: Docker
+#              url: /task_config_telegraf_docker.html
+#            - title: Elasticsearch
+#              url: /task_config_telegraf_elasticsearch.html
+#            - title: Flink
+#              url: /task_config_telegraf_flink.html
+#            - title: Hadoop
+#              url: /task_config_telegraf_hadoop.html
+#            - title: HAProxy
+#              url: /task_config_telegraf_haproxy.html
+#            - title: Java
+#              url: /task_config_telegraf_jvm.html
+#            - title: Kafka
+#              url: /task_config_telegraf_kafka.html
+#            - title: Kapacitor
+#              url: task_config_telegraf_kapacitor.html
+#            - title: Kibana
+#              url: /task_config_telegraf_kibana.html
+#            - title: Kubernetes
+#              url: /task_config_telegraf_agent_k8s.html
+#            - title: Memcached
+#              url: /task_config_telegraf_memcached.html
+#            - title: MongoDB
+#              url: /task_config_telegraf_mongodb.html
+#            - title: MySQL
+#              url: /task_config_telegraf_mysql.html
+#            - title: Netstat
+#              url: /task_config_telegraf_netstat.html
+#            - title: Nginx
+#              url: /task_config_telegraf_nginx.html
+#            - title: OpenZFS
+#              url: task_config_telegraf_openzfs.html
+#            - title: PostgreSQL
+#              url: /task_config_telegraf_postgresql.html
+#            - title: Puppet
+#              url: /task_config_telegraf_puppetagent.html
+#            - title: Redis
+#              url: /task_config_telegraf_redis.html
+#            - title: RethinkDB
+#              url: task_config_telegraf_rethinkdb.html
+#            - title: Zookeeper
+#              url: task_config_telegraf_zookeeper.html
           
         - title: Object Icon Reference
           url: /reference_object_icons.html
