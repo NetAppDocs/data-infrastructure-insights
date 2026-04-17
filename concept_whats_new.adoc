@@ -28,19 +28,8 @@ DII's helpful AI Assistant now knows what asset page you are on, such as Storage
 
 Troubleshooting or swapping hardware? Pause Device Resolution rules to prevent automated changes from interfering with your work. Resume specific rules or all rules at once when your maintenance is complete, giving you full control over when automation resumes.
 
-image: ahr-pause-rules.png[pausing multiple AHR rules]
+image:ahr-pause-rules.png[pausing multiple AHR rules,500]
 
-
-=== Workload Security: Audit Events
-
-The Workload Security link:ws_audit_events.html[Audit page] now provides events to identify changes performed by any Workload Security user in the system, including but not limited to:
-
-* Changes of Workload Security policies.
-* Creation of new Data Source Collectors (DSCs).
-* Modification of DSCs.
-* Creation of agents.
-* User management tasks.
-* API token tasks.
 
 
 '''
