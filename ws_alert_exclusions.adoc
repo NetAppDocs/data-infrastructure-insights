@@ -1,0 +1,82 @@
+---
+sidebar: sidebar
+permalink: ws_alert_exclusions.html
+keywords: workload security, cloud secure, include list, allowed, file types, ransomware, tampering, exclusion, alerts
+summary: Add file extensions to an Alerts Exclusion list to reduce alerting.
+---
+
+= Alert Exclusions
+
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Alert Exclusion lets you suppress alert generation for specific file types, users and directory paths. Use this to reduce false positives by excluding known, expected activity that may otherwise match alert patterns.
+
+Navigate to *Workload Security > Policies* and select the *Alert Exclusions* tab.
+
+Alert Exclusion is configured per tenant and includes the following:
+
+. File Types: suppress File Tampering alerts on specific <<allowed-file-types, Allowed File Types>>
+. Users: suppress alerts triggered by selected users.
+. Paths: suppress alerts for activity on selected directory paths (up to four directory levels, starting at the junction path).
+
+//File type exclusion (also known as 'Allowed File Type Policies') has been updated and described in link:ws_allowed_file_types.html[Allowed File Types].
+
+Users' exclusion list is supported by type-ahead, where admins can select users to be excluded for alerts. 
+
+Directory exclusion supports up to four levels of directory paths, beginning with the junction path.
+
+Individual users and directory paths can be added to or removed from the respective exclusion list. Every entry in each list will have the information of when and by whom was it added to the list, and this information will be used for auditing purpose. 
+
+== Manage exclusions and auditing
+
+* Admins can add or remove file extensions, individual users, or paths at any time.
+* Each exclusion entry records the name of the admin whi set it and the date it was set. This information is retained for auditing.
+
+image:ws_alert_exclusions_users.png[]
+
+image:ws_alert_exclusions_paths.png[]
+
+
+== Allowed File Types 
+
+File extensions can be added to an _allowed file types_ list to prevent unnecessary alerting.
+
+Select *+File Type* to add file types to the alert allowed file types list.
+
+image:ws_allowed_file_types.png[Add Allowed File Types]
+
+Once added to the _allowed file types_ list, no file tampering attack alert will be generated for that allowed file type. Note that the _Allowed File Types_ policy is only applicable for file tampering detection.
+
+For example, if a file named _test.txt_ is renamed to _test.txt.abc_ and Workload Security is detecting a ransomware attack because of the _.abc_ extension, the _.abc_ extension can be added to the _allowed file types_ list. After being added to the list, ransomware attacks will no longer be generated against files with the _.abc_ extension.
+
+Allowed File Types can be exact matches (e.g., ".abc") or expressions (e.g., ++.*type++, ++.type*++, or ++.*type*++). Expressions of types .a*c, .p*f are not supported.
+
+
+////
+If a file tampering attack is detected for a known file extension, and alerts are being generated on the Alerts screen, then that file extension can be added to an _alert exclusions_ list to prevent unnecessary alerting. This can also be thought of as an _allowed file types_ list, since Workload Security will allow those files to bypass alerting from tampering.
+
+Navigate to *Workload Security > Policies* and go to the _Alert Exclusions_ tab.
+
+image:ws_alert_exclusions_list.png[Allowed File Types to be excluded from alerting]
+
+Once added to the allowed file types list, no file tampering attack alert will be generated for that file type. Note that the Alert Exclusion policy is only applicable for file tampering detection.
+
+For example, if a file named _test.txt_ is renamed to _test.txt.abc_ and Workload Security is detecting a file tampering attack because of the _.abc_ extension, the _.abc_ extension can be added to the allowed file types list. After being added to the list, file tampering attacks will no longer be generated against files with the _.abc_ extension.
+
+Allowed File Types can be exact matches (e.g., ".abc") or expressions (e.g., "*.type", ".type*", or .*type*"). Expressions of types “.a*c”, “.p*f” are not supported.
+
+Additional attributes of 'Set By' and 'Set Date' have been introduced for audit. Existing file types will be migrated to the new format with both these attributes' values set as 'migrated'.
+////
+
+////
+Once added to the _Alerts Exclusion_ list, no tampering attack alert will be generated for that allowed file type. Note that the Alerts Exclusion policy is only applicable for file tampering detection.
+
+For example, if a file named _test.txt_ is renamed to _test.txt.abc_ and Workload Security is detecting a tampering attack because of the _.abc_ extension, the _.abc_ extension can be added to the _alerts exclusion_ list. After being added to the list, file tampering attacks will no longer be generated against files with the _.abc_ extension.
+
+Excluded File Types can be exact matches (e.g., ".abc") or expressions (e.g., ".*type", ".type*", or "*type*"). Expressions of types “.a*c”, “.p*f” are not supported.
+////
