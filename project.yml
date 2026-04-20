@@ -291,20 +291,17 @@ sidebar:
               url: /task_cs_user_management.html
             - title: Event Rate Checker (Agent Sizing Guide)
               url: /concept_cs_event_rate_checker.html
-
+            
         - title: Alerts 
           url: /cs_alert_data.html  
         - title: Forensics
           entries:
             - title: Activity Forensics - All Activity
               url: /forensic_activity_history.html
-
             - title: Users
               url: /forensic_user_overview.html
         - title: Automated Response Policies
           url: /cs_automated_response_policies.html
-#        - title: Allowed File Types Policies
-#          url: /ws_allowed_file_types.html
         - title: Alert Exclusions
           url: /ws_alert_exclusions.html
         - title: ONTAP Autonomous Ransomware Protection Integration
@@ -317,7 +314,8 @@ sidebar:
           url: /concept_cs_attack_simulator.html
         - title: Email Notifications
           url: /cs_notifications_email.html
-
+        - title: Viewing Audit Events
+          url: /ws_audit_events.html
 
         - title: Webhook Notifications
           entries:

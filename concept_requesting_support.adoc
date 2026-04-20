@@ -95,7 +95,9 @@ In addition to the self-support options above, if you have a Data Infrastructure
 
 NOTE: You must register in order to <<activating-support-entitlement,activate support>> for NetApp Cloud products. To register, go to NetApp's link:https://register.netapp.com[Cloud Data Services Support Registration].
 
-It is highly recommended that you check the box to allow a NetApp Support Engineer access to your Data Infrastructure Insights tenant during your support session. This will allow the engineer to troubleshoot the problem and help you resolve it quickly. When your issue is resolved or your support session has ended, you can un-check the box. 
+It is highly recommended that you check the box to allow a NetApp Support Engineer access to your Data Infrastructure Insights site during your support session. This will allow the engineer to troubleshoot the problem and help you resolve it quickly. While the Support Engineer has access to your site, they will be able to perform all Admin-level functions. 
+
+When your issue is resolved or your support session has ended, you can un-check the box. 
 
 You can request support by any of the following methods. You must have an active Data Infrastructure Insights subscription to use these support options:
 
