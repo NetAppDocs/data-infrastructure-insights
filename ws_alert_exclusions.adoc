@@ -16,6 +16,8 @@ summary: Add file extensions to an Alerts Exclusion list to reduce alerting.
 [.lead]
 Alert Exclusion lets you suppress alert generation for specific file types, users and directory paths. Use this to reduce false positives by excluding known, expected activity that may otherwise match alert patterns.
 
+Note that only the alert for the event is suppressed; the events themselves are still captured and can be reviewed.
+
 Navigate to *Workload Security > Policies* and select the *Alert Exclusions* tab.
 
 Alert Exclusion is configured per tenant and includes the following:
@@ -24,37 +26,43 @@ Alert Exclusion is configured per tenant and includes the following:
 . Users: suppress alerts triggered by selected users.
 . Paths: suppress alerts for activity on selected directory paths (up to four directory levels, starting at the junction path).
 
-//File type exclusion (also known as 'Allowed File Type Policies') has been updated and described in link:ws_allowed_file_types.html[Allowed File Types].
 
-Users' exclusion list is supported by type-ahead, where admins can select users to be excluded for alerts. 
-
-Directory exclusion supports up to four levels of directory paths, beginning with the junction path.
-
-Individual users and directory paths can be added to or removed from the respective exclusion list. Every entry in each list will have the information of when and by whom was it added to the list, and this information will be used for auditing purpose. 
 
 == Manage exclusions and auditing
 
 * Admins can add or remove file extensions, individual users, or paths at any time.
-* Each exclusion entry records the name of the admin whi set it and the date it was set. This information is retained for auditing.
+* Each exclusion entry records the name of the admin who set it and the date it was set. This information is retained for auditing.
+
+== Users and Paths
+
+* Users' exclusion list:  Add users to be excluded for alerts.
+* Directory exclusion List:  Supports up to four levels of directory paths, beginning with the junction path.
 
 image:ws_alert_exclusions_users.png[]
 
 image:ws_alert_exclusions_paths.png[]
 
+Individual users and directory paths can be added to or removed from the respective exclusion list. Every entry in each list will have the information of when and by whom was it added to the list, and this information will be used for auditing purpose.
 
-== Allowed File Types 
+== File Types 
 
+////
 File extensions can be added to an _allowed file types_ list to prevent unnecessary alerting.
 
 Select *+File Type* to add file types to the alert allowed file types list.
 
 image:ws_allowed_file_types.png[Add Allowed File Types]
+////
 
-Once added to the _allowed file types_ list, no file tampering attack alert will be generated for that allowed file type. Note that the _Allowed File Types_ policy is only applicable for file tampering detection.
+Once added to the File Types list, no file tampering attack alert will be generated for that allowed file type. Note that the File Types policy is only applicable for file tampering detection.
+
+image:ws_file_types_list.png[File Types List]
 
 For example, if a file named _test.txt_ is renamed to _test.txt.abc_ and Workload Security is detecting a ransomware attack because of the _.abc_ extension, the _.abc_ extension can be added to the _allowed file types_ list. After being added to the list, ransomware attacks will no longer be generated against files with the _.abc_ extension.
 
 Allowed File Types can be exact matches (e.g., ".abc") or expressions (e.g., ++.*type++, ++.type*++, or ++.*type*++). Expressions of types .a*c, .p*f are not supported.
+
+Additional attributes of 'Set By' and 'Set Date' have been introduced for audit. Existing file types will be migrated to the new format with both these attributes' values set as 'migrated'.
 
 
 ////
