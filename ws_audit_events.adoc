@@ -1,0 +1,120 @@
+---
+sidebar: sidebar
+permalink: ws_audit_events.html
+summary: Audit events in Workload Security
+keywords: workload security, audit, events
+---
+
+= Audit Workload Security Events
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[lead]
+Identify changes both expected (for tracking) or unexpected (for troubleshooting). View an audit trail of the Workload Security system events and user activities.
+
+== Viewing Audited Events
+
+To View the Audit page, click Admin > Audit in the menu. The Audit page is displayed, providing the following details for each audit entry:
+
+* Time - Date and time of the event or activity
+* User - The User who initiated the activity
+* Role - The user's role in Workload Security (guest, user, administrator)
+* IP - The IP address associated with the event
+* Action - Type of activity, for example Login, Create, Update
+* Category - The category of activity.
+* Details - Details of the activity
+* Application Type - Type of audited application: Observability OR Workload Security. Use it for filtering only Workload Security audits.
+
+Workload Security events that are audited include, but are not limited to, the following:
+
+* Changes of Workload Security policies.
+* Creation of new Data Source Collectors (DSCs).
+* Modification of DSCs.
+* Creation of agents.
+* User management tasks.
+* API token tasks.
+
+
+== Displaying audit entries
+
+There are a number of different ways to view audit entries:
+
+* You can display audit entries by choosing a particular time period (1 hour, 24 hours, 3 days, etc.).
+* You can change the sort order of entries to either ascending (up arrow) or descending (down arrow) by clicking the arrow in the column header. By default, the table displays the entries in descending time order.
+* You can use the filter fields to show only the entries you want in the table. Click the [+] button to add additional filters.
+ 
+
+== More on Filtering
+
+You can use any of the following to refine your filter:
+
+|===
+
+|Filter	|What it does	|Example	|Result
+|* (Asterisk)	|enables you to search for everything	|vol*rhel	|returns all resources that start with "vol" and end with "rhel"
+|? (question mark)	|enables you to search for a specific number of characters	|BOS-PRD??-S12	|returns BOS-PRD12-S12, BOS-PRD23-S12, and so on
+|OR	|enables you to specify multiple entities	|FAS2240 OR CX600 OR FAS3270	|returns any of FAS2440, CX600, or FAS3270
+|NOT	|allows you to exclude text from the search results	|NOT EMC*	|returns everything that does not start with "EMC"
+|None	|searches for blank/NULL/None in any field where selected	|None	|returns results where the target field is not empty
+|Not *	|as with None above, but you can also use this form to search for NULL values in text-only fields	|Not *	|returns results where the target field is not empty.
+|""	|searches for an exact match	|"NetApp*"	|returns results containing the exact literal string NetApp*
+|===
+
+If you enclose a filter string in double quotes, Insight treats everything between the first and last quote as an exact match. Any special characters or operators inside the quotes will be treated as literals. For example, filtering for "*" will return results that are a literal asterisk; the asterisk will not be treated as a wildcard in this case. The operators OR and NOT will also be treated as literal strings when enclosed in double quotes.
+
+== Audited Events and Actions
+
+The events and actions audited by Workload Security can be categorized in the following broad areas:
+
+* User account: Log in, log out, role change, etc.
+* Agent: create, delete, upgrade, pin, unpin etc.
++
+Examples: 
+ _Agent Agent-Boston-1 is deleted._ 
+ _Agent upgrade to version 1.760.0 initiated by bulk operation_
+
+* Data/User directory Collector: add, remove, modify, upgrade, postpone/resume, change agent, restart, etc.
++
+Examples: 
+ _Data collector Collector-Boston1 removed, type ONTAP SVM_
+ _Agent: Agent-Boston-1, Cluster IP 10.193.88.36, SVM demoGroupShares2_
+ _Collector ONTAP SVM upgrade to version 1.417.0 initiated by bulk operation_
+
+* Automated Response Policies: add, update, remove, enable, disable, etc.
++
+Example: 
+_Automated attack policy Policy-Boston1 updated. Properties Devices updated, old value: [Device(name=svm_boston1, dataSourceId=39fb3b9c-9dd4-4961-bc27-23eb0b6f9ab7)], new value: [Device(name=demoGroupShares2, dataSourceId=5b9f5b74-4533-4852-909d-8886582a4359)]_
+
+* User blocking/unblocking: Automated or manual user blocking and unblocking.
++
+Example:
+_Block initiated for User Safwan Langley as part of Automated Response for a period of 2 hours_ 
+
+* Apikey: add, remove, etc.
++
+Example:
+_Workload Security API access token JPick-SWS has been created_
+
+* Notification: change email, etc.
++
+Example: 
+_Recipient ci-alerts-notifications-dl created_
+
+== Exporting Audit Events
+You can export the results of your Audit display to a .CSV file, which will allow you to analyze the data or import it into another application.
+Steps
+1.	On the Audit page, set the desired time range and any filters you want. Workload Security will export only the Audit entries that match the filtering and time range you have set.
+2.	Click the Export button   in the upper right of the table.
+The displayed Audit events will be exported to a .CSV file, up to a maximum of 10,000 rows.
+
+== Retention of Audit Data
+
+The amount of time Workload Security retains Audit data is based on your subscription:
+
+* Trial environments: Audit data is retained for 30 days
+* Subscribed environments: Audit data is retained for 1 year plus 1 day
+
+Audit entries older than the retention time are automatically purged. No user interaction is needed.
