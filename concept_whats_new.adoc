@@ -19,17 +19,33 @@ NetApp is continually improving and enhancing its products and services. Here ar
 
 == April 2026
 
+=== DII Knows Your Environment Better Than Ever
+
+We've made enhancements to how the AI in Data Infrastructure Insights understands your setup. Drawing on richer context about your current usage of the service, the configuration, and the performance patterns before it responds. The result is initial guidance that reflects your environment rather than a generic starting point, with fewer follow-ups needed to get to a useful answer.
+
+For example, navigate to a storage device and the AI Assistant provides one-click answers to questions such as:
+
+* How is this storage's capacity utilization trending, and which StoragePools are consuming the most space?
+* Can you show me the capacity utilization trend for this device over the last 24 hours?
+* Which volumes are consuming the most space on this storage?
+
+
+
+
+////
 === AI Assistant has Asset Page Context
 
 DII's helpful AI Assistant now knows what asset page you are on, such as Storage or VM. Using this context it suggests prompts to get you going and can understand questions you type in without referencing a specific asset, helping you analyze and investigate more efficiently.
+////
 
-
+////
 === Device Resolution: Pause Rules
 
 Troubleshooting or swapping hardware? Pause Device Resolution rules to prevent automated changes from interfering with your work. Resume specific rules or all rules at once when your maintenance is complete, giving you full control over when automation resumes.
 
 image:ahr-pause-rules.png[pausing multiple AHR rules,500]
 
+////
 
 
 '''
