@@ -13,7 +13,7 @@ summary: Configuring Red Hat OpenShift Virtualization data collector.
 :imagesdir: ./media/
 
 [.lead] 
-The DII Red Hat OpenShift Virtualization collector will attempt to discover the OSV compute workloads running on an OpenShift Virtualization environment - this collector will not discover all Open Shift pods. This is an HTTPS REST API-based collector. It is recommended to create one collector per OSV cluster.
+The DII Red Hat OpenShift Virtualization collector will attempt to discover the OSV compute workloads running on an OpenShift Virtualization environment - this collector will not discover all Open Shift pods. This is an HTTPS REST API-based collector that needs to speak to two HTTPS endpoints for both inventory and performance to succeed. It is recommended to create one collector per OSV cluster.
 
 The authentication approach for this collector is an authentication token bound to a service account. To create both the user account and the token:
 
@@ -25,15 +25,15 @@ Run those 3 commands and watch for any errors.
 
 When the commands complete:
 
- oc sa new-token acq-readonly-cluster-user
+ oc create token acq-readonly-cluster-user --duration=8760h
 
-This will create a token bound to your user.
+This will create a token with a one year lifespan bound to your user. If you do not specify the duration value, you will be subject to your local environment's token lifespan policies if any.  
 
 Finally, you may also want your OSV administrator to run:
 
  oc cluster-info
 
-This will return the hostname/IP address for management. Each DII OSV collector needs to be pointed at the IP/hostname for OSV management.
+This will return the hostname/IP address for management. Each DII OSV collector needs to be pointed at the IP/hostname for OSV management - you can then use this collector's "Test" feature to assert connectivity to that hostname, and DII will additionally assess the validity and lifespan of your authentication token, as well as learn where the Thanos REST API endpoint is, and attempt to communicate to it. The Thanos time series REST API endpoint is the second HTTPS endpoint that a collector needs to speak to for successful operation. 
 
 == Terminology
 
@@ -53,18 +53,18 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Requirements
 
-* IP address of the Red Hat OpenShift Virtualization server over port 443 via REST API 
-* Read-only username and password 
-* RHEV Version 3.0+  
+* IP address of the Red Hat OpenShift Virtualization server over the appropriate TCP port via REST API 
+* TCP connectivity to 2 REST API endpoints - the Kubevirt/API endpoint, and the Thanos time series API endpoint. 
+* Read-only username and authentication token
 
 == Configuration
 
 [cols=2*, options="header", cols"50,50"]
 |===
 |Field | Description
-|RHEV Server IP Address|IP address of the storage system 
+|API Server IP Address|IP address or hostname of the API management endpoint as returned by "oc cluster-info"
 |User name |User name with admin privileges 
-|Password for the admin privileged account|Password
+|Password or service account token|Token
 |===
 
 == Advanced configuration 
