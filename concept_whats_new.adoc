@@ -16,6 +16,26 @@ keywords: features
 [.lead]
 NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in Data Infrastructure Insights (formerly Cloud Insights).
 
+== May 2026
+
+=== A Smarter AI Assistant for Global Teams
+
+The AI Assistant now supports more than a dozen languages, empowering your team to engage naturally in their preferred language. See the full list link:TBD[here].
+
+
+=== Metric and Log Query Groups
+
+Find queries faster and collaborate more effectively with Query Groups. Organize your metric and log queries into custom groups that align with your team structure or operational workflows, making it simple to locate the right query when troubleshooting or analyzing your environment.
+
+
+=== SSO Groups
+TBD?
+
+
+=== Widget slideout panels for all widgets (?)
+TBD?
+
+
 
 == April 2026
 
