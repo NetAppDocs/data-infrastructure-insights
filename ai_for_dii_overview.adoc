@@ -15,12 +15,6 @@ summary: You can use DII's AI assistant to summarize your data, explore insights
 [.lead]
 The *Data Infrastructure Insights AI Assistant* is designed to help you work more efficiently with your infrastructure data. It can help you analyze information, discover insights, resolve operational challenges, and make informed decisions about your resources.
 
-[NOTE]
-====
-The DII AI Assistant is available as a Limited Preview. link:concept_preview_features.html[Learn more] about Data Infrastructure Insights Preview features.
-
-The AI Assistant is available for DII tenants deployed on AWS only.
-====
 
 image:ai_assistant_sample_question.png[AI Assistant Sample Question]
 
@@ -66,11 +60,14 @@ For the best experience, provide the Assistant with specific information about:
 * The timeframe you're interested in, and
 * Any specific issue types you're concerned about (performance issues, capacity problems, errors, etc.)
 
+== Chat naturally
+
+The AI Assistant now supports more than a dozen languages, empowering your team to engage naturally in their preferred language. See the full list here.
 
 
 == Accessing the Assistant
 
-To call the DII AI Assistant, simply select the owl icon in the lower corner of the screen. A user with “Owner” role must accept the terms and conditions before any user can utilize the AI Assistant on your tenant.
+To call the DII AI Assistant, simply select the owl icon in the lower corner of the screen. A user with “Owner” or "Admin" role must accept the terms and conditions before any user can utilize the AI Assistant on your tenant.
 
 image:ai_assistant_icon.png[dii_ai_assistant_icon]
 

@@ -20,7 +20,14 @@ NetApp is continually improving and enhancing its products and services. Here ar
 
 === A Smarter AI Assistant for Global Teams
 
-The AI Assistant now supports more than a dozen languages, empowering your team to engage naturally in their preferred language. See the full list link:TBD[here].
+The AI Assistant now supports more than a dozen languages, empowering your team to engage naturally in their preferred language. See the full list link:https://platform.claude.com/docs/en/build-with-claude/multilingual-support[here].
+
+
+=== Build smarter alerts and webhooks with dynamic, context rich messages
+ 
+When creating a monitor or webhook, simply type "%" in the alert description or webhook URL, header, or body to select from a dynamically populated list of object attributes, giving your alerts the right context to improve clarity, enhance webhook integration, and speed up response times.
+
+image:attribute_list_example.png[attribute list in a monitor description]
 
 
 === Metric and Log Query Groups
@@ -29,11 +36,11 @@ Find queries faster and collaborate more effectively with Query Groups. Organize
 
 
 === SSO Groups
-TBD?
+Not until GA
 
 
 === Widget slideout panels for all widgets (?)
-TBD?
+Not needed?
 
 
 
