@@ -7,7 +7,6 @@ summary: Device Resolution helps you accurately track performance and inventory 
 
 = Device Resolution rules
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
@@ -39,7 +38,7 @@ You create rules in the Auto Resolution Rules tab. The following steps describe 
 
 .Procedure
 
-. Click *Manage > Device Resolution*
+. Click *Observability > Enrich > Device Resolution*
 
 . In the *Auto resolution rules* tab, click *+ Host Rule* or *+ Tape Rule*.
 +
@@ -86,11 +85,15 @@ For rules using Delimiters, the input string is tokenized by the delimiter and a
 ** emc3
 ** hba3
 +
-* Rules using Regular expressions require a regular expression, the format, and cases sensitivity selection.
+* Rules using Regular expressions require a regular expression, the format, and case sensitivity selection.
 
 . Click *Run AR* to run all rules, or click the down-arrow in the button to run the rule you created (and any other rules that have been created since the last full run of AR).
 +
 The results of the rule run are displayed in the *FC identify* tab.
+
+=== Pausing and Resuming Rules
+
+To prevent a rule from running, choose "Pause" from the rule's right-side menu, or select multiple rules and choose "Pause" from the "Bulk Actions" drop-down. You can resume rule running in the same way.
 
 == Starting an automatic device resolution update
 
@@ -99,7 +102,7 @@ A device resolution update commits manual changes that have been added since the
 .Procedure
 
 . Log into the Data Infrastructure Insights web UI.
-. Click *Manage > Device Resolution*
+. Click *Observability > Enrich > Device Resolution*
 . In the *Device Resolution* screen, click the down-arrow in the *Run AR* button.
 . Click *Update* to start the update.
 
@@ -116,7 +119,7 @@ NOTE: If your source only contains part of a host or device name, use a regular 
 .Procedure
 
 . Log into the Data Infrastructure Insights web UI.
-. Click *Manage > Device Resolution*
+. Click *Observability > Enrich > Device Resolution*
 . Click the *Fibre Channel Identify* tab.
 +
 The system displays the devices along with their resolution status.
