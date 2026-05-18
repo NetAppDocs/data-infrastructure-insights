@@ -41,23 +41,23 @@ In Firefox, cookie exceptions are designated as simply _auth0.com_ and _netapp.c
  
 //Note: Make sure to select the "Including third-party cookies on this site" option when creating an exception. 
 
-|I have a BlueXP account but am unable to login to BlueXP.
-|Open a ticket from https://mysupport.netapp.com/site/help. Select category “blueXP.netapp.com > Account/Login issues” or “bluexp.netapp.com > Federation issues”.  These are specifically for BlueXP issues or questions.
+|I have a Console account but am unable to log in.
+|Open a ticket from https://mysupport.netapp.com/site/help. Select category console.netapp.com > Account/Login issues” or console.netapp.com > Federation issues”.  These are specifically for Console issues or questions.
 For all other Data Infrastructure Insights technical support issues, contact link:concept_requesting_support.html[NetApp support]. 
 
 |I got invited to Data Infrastructure Insights but I get a "not authorized" message.
-|Verify that you have signed up for a BlueXP account, or that your organization uses SSO login with BlueXP.
+|Verify that you have signed up for a Console account, or that your organization uses SSO login with Console.
 
-Verify your BlueXP profile email address matches email address shown in your Data Infrastructure Insights welcome email. If the email does not match, request a new invitation with the correct email address.
+Verify your Console profile email address matches email address shown in your Data Infrastructure Insights welcome email. If the email does not match, request a new invitation with the correct email address.
 
-|I logged out from BlueXP and was automatically logged out from Data Infrastructure Insights. |Single Sign-On (SSO) across NetApp Cloud Services logs out all Data Infrastructure Insights sessions. If you have access to multiple Data Infrastructure Insights accounts, logging out from any one logs out all active sessions. Log back in to access your account.
+|I logged out from Console and was automatically logged out from Data Infrastructure Insights. |Single Sign-On (SSO) across NetApp Cloud Services logs out all Data Infrastructure Insights sessions. If you have access to multiple Data Infrastructure Insights accounts, logging out from any one logs out all active sessions. Log back in to access your account.
 
 |I was automatically logged out after several days.
-|NetApp Cloud accounts require reauthentication every few days (current BlueXP setting is 7 days). Log back in to access your account.
+|NetApp Cloud accounts require reauthentication every few days (current Console setting is 7 days). Log back in to access your account.
 
 |I receive an error message “no longer authorized to login”.
 |Contact your account administrator to verify access to Data Infrastructure Insights. 
-Verify your BlueXP profile email address matches email address shown in your Data Infrastructure Insights welcome email
+Verify your Console profile email address matches email address shown in your Data Infrastructure Insights welcome email
 
 |Other login errors
 |Try incognito mode in Chrome, or clear browser history, cookies, and cache. 
@@ -89,7 +89,7 @@ I am able to save the report, but when I re-open the saved report, the schedule 
 
 == Resources
 
-Additional troubleshooting tips may be found in the link:https://kb.netapp.com/Cloud/BlueXP/DII[NetApp Knowledgebase] (support sign-in required).
+Additional troubleshooting tips may be found in the link:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs[NetApp Knowledgebase] (support sign-in required).
 
 Additional support information may be found from the Data Infrastructure Insights link:concept_requesting_support.html[Support] page.
 

@@ -60,13 +60,4 @@ For example: 1 critical alert on Components (-30) and 1 warning alert on Perform
 When alerts are resolved, these health score reductions gradually fade, and the score fully recovers within 2 hours.
 
 
-////
-== Fabric?
-
-TBD
-
-== Corrective Actions?
-
-TBD
-////
 

@@ -116,7 +116,16 @@ You can use the following to refine your filter:
 
 If you enclose a filter string in double quotes, Insight treats everything between the first and last quote as an exact match. Any special characters or operators inside the quotes will be treated as literals. For example, filtering for "*" will return results that are a literal asterisk; the asterisk will not be treated as a wildcard in this case. The operators OR and NOT will also be treated as literal strings when enclosed in double quotes.
 
-//The operator AND is always trated as a literal string.
+
+=== Filtering for Boolean values
+
+When filtering for a Boolean value, you may be presented with the following choices on which to filter:
+
+* *Any*: This will return _all_ results, including results set to "Yes", "No", or not set at all.
+* *Yes*: Returns only "Yes" results. Note that DII shows "Yes" as a check mark in most tables. Values may be set to "True", "On", etc.; DII treats all of these as "Yes".
+* *No*: Returns only "No" results. Note that DII shows "No" as an "X" in most tables. Values may be set to "False", "Off", etc.; DII treats all of these as "No".
+* *None*: Returns only results where the value has not been set at all. Also referred to as "Null" values.
+
 
 == What do I do now that I have query results?
 

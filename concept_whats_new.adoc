@@ -17,6 +17,221 @@ keywords: features
 NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in Data Infrastructure Insights (formerly Cloud Insights).
 
 
+== April 2026
+
+=== DII Knows Your Environment Better Than Ever
+
+We've made enhancements to how the AI in Data Infrastructure Insights understands your setup. Drawing on richer context about your current usage of the service, the configuration, and the performance patterns before it responds. The result is initial guidance that reflects your environment rather than a generic starting point, with fewer follow-ups needed to get to a useful answer.
+
+For example, navigate to a storage device and the AI Assistant provides one-click answers to questions such as:
+
+* How is this storage's capacity utilization trending, and which StoragePools are consuming the most space?
+* Can you show me the capacity utilization trend for this device over the last 24 hours?
+* Which volumes are consuming the most space on this storage?
+
+
+
+'''
+
+== March 2026
+
+=== AI Assistant is now Generally Available
+
+The Data Infrastructure Insights AI Assistant is now generally available to all customers for DII sites hosted on AWS.
+
+Note that the AI Assistant on Azure sites is still in Preview. Watch this space for announcement of general availability.
+
+=== Infrastructure Insights features removed
+
+DII's "Infrastructure Insights" features of _Shared Resources Under Stress_, _Kubernetes Namespaces Running out of Space_, and _Reclaiming ONTAP Cold Storage_ are no longer available in DII. 
+
+
+
+== February 2026
+
+=== Instant intelligent answers about your infrastructure
+
+Meet your infrastructure's new intelligent partner: The link:ai_for_dii_overview.html[*Data Infrastructure Insights AI Assistant*] transforms how you interact with your data, turning complex queries into simple conversations. Instantly uncover hidden patterns, accelerate troubleshooting, and make data-driven decisions with confidence. Get instant answers to questions like:
+
+* How can I configure a monitor to alert for persistent unacceptable latency?
+* What are the top storage pools with the highest utilization in the environment?
+* How many alerts were generated in the last hour?
+
+//Activate now! Ask your DII Site Owner to activate the AI Assistant by clicking on the "owl" and accepting the Terms and Conditions.
+
+The DII AI Assistant Preview is available now to most customers with service hosted on AWS regions; Azure region is coming soon. link:concept_preview_features.html[Learn more] about Data Infrastructure Insights Preview features.
+
+image:ai_assistant_icon.png[AI Assistant icon]
+
+
+
+=== Monitor Improvements
+
+==== Customize System Monitors Faster, Without Duplicating
+
+Modify default system monitors directly to suit your needs—change names, filters, and grouping in one place. No need to create duplicate monitors for simple adjustments. A helpful banner reminds you which monitors have been customized, maintaining full visibility into your monitoring configuration.
+
+==== Streamline Monitor Management with Bulk Actions
+
+Manage multiple monitors at once through Bulk Actions. Quickly adjust Health Monitoring settings for groups of monitors, saving you time and reducing complexity. Update your monitoring strategy across the board in seconds, not minutes.
+
+==== Focus Your Infrastructure Health Scores on What Matters Most
+
+Exclude specific objects from your Infrastructure Health scores to maintain accuracy and relevance. When viewing your Infrastructure Health dashboard, instantly remove objects you want to deprioritize without modifying the monitor configuration. This focuses your alerts on the infrastructure elements that drive your business priorities.
+
+image:health_monitoring_exclude_object.png[exclude object from health monitoring]
+
+
+=== Operating System support
+
+The following Linux operating systems are currently supported with Data Infrastructure Insights link:concept_acquisition_unit_requirements.html[Acquisition Units]:
+
+* AlmaLinux 9.5 and 10
+* Centos (64-bit): Stream 9
+* Debian (64-bit): 11 through 13
+* OpenSUSE Leap 15.2 through 15.6, 16
+* Oracle Enterprise Linux (64-bit): 8.10, 9.2, 9.4, 9.6, 10
+* Red Hat (64-bit): 8.10, 9.2, 9.4, 9.6, 10
+* Rocky 9.2 through 9.6
+* SUSE Linux Enterprise Server 15 SP4 through 15 SP7, 16
+* Ubuntu Server: 20.04, 22.04, 24.04 LTS
+* SELinux on the above platforms
+
+
+'''
+== December 2025
+
+
+
+=== Control Query Access with Shared Queries
+
+Share queries you create with fine-grained permission controls. Choose read-only Viewer mode to prevent modifications or Edit mode to allow changes. Private queries are accessible by creators, while Shared queries can be leveraged in Annotation Rules or duplicated for specialized use cases, giving you complete control over how queries are used and modified across your organization.
+
+image:query_sharing_dialog.png[setting permissions on a query, width=200]
+
+Additionally, users with _Guest_ role can now create and manage their own private queries. 
+
+=== Better Filtering When Managing Monitors
+
+Filtering for Monitor lists and groups is improved to add wildcard support, multiple filters, include/exclude functionality, and more. 
+
+image:monitor_list_filters.png[New Monitor Filtering, width=500]
+
+
+=== Cleaner dashboard visualizations
+
+Improved dashboard design helps you see what matters most. Enhanced visual clarity with drop shadow borders that separate widgets and removed separator lines to reduce clutter so you can focus on your data insights. These refinements create a cleaner, more intuitive dashboard experience that makes spotting trends and anomalies faster and easier.
+
+
+
+'''
+
+
+
+== November 2025
+
+
+=== Set Your Personalized Home Page
+
+Streamline your daily monitoring workflow by setting _any_ Data Infrastructure Insights page as your personalized home page. Each user can select a different home page to focus on what's important to them: a critical dashboard, alerts, infrastructure health, workload security, or more. 
+
+image:home_page_set.png[setting a home page, width=300]
+
+
+=== Stay Organized with Automatic Dashboard Grouping
+
+Transform your dashboard experience with intelligent grouping that automatically organizes imported Gallery dashboards into logical categories. The new grouping feature makes importing dashboards a snap and places each dashboard in the appropriate group based on its function and relevance to your environment. 
+
+image:dashboard_gallery_groups.png[gallery groups during import, width=500]
+
+
+
+''''
+
+== October 2025
+
+
+=== Infrastructure Health: Instant Visibility Into Storage and Fabric Risk
+
+Gain instant visibility into potential risks across your storage and fabrics with our new *Infrastructure Health* feature. A single, color-coded dashboard gives you unified risk visibility, helping you minimize downtime and quickly alleviate revenue loss. 
+
+Scores below 100 indicate potential problems; the lower the score, the less healthy the resources. Grouping resources by Data Center or Region for intuitive, consolidated health scores let you easily prioritize and troubleshoot critical areas.
+
+image:infra_health_dashboard.png[infra health dashboard showing red, amber, and green resource health scores, width=600]
+
+View detailed information in an on-screen slideout panel with the click of a button, quickly pinpointing issues requiring attention and keeping your systems secure and resilient.
+
+image:infra_health_detailpanel.png[infra health detail panel, width=600]
+
+
+=== Multi-Condition Monitors for Precise Alerting
+
+Reduce alert noise and improve monitoring precision by adding an optional second condition to any metric monitor. Alerts are triggered only when both conditions are met, giving you more targeted notifications that focus on the scenarios that matter most to you. 
+
+image:multi-condition_monitor_second_condition.png[adding a second condition to a monitor, width=600]
+
+
+=== Query Improvements: At-A-Glance Object Details
+
+Selecting a row in an object query result list opens a detail panel for the selected object. Quickly view metrics and attributes (the default view for object queries), alerts and changes, performance, and health scores, or explore related resources. All relevant object information is at your fingertips.
+
+image:query_slideout_panel.png[illustration of a query slideout panel defaulted to the metrics and attributes tab, width=600]
+
+
+
+
+
+=== Workload Security Improvements
+
+Two new APIs give you more control over your Workload Security environment:
+ 
+1.	View and manage Groups with _GET /rest/v1/cloudsecure/activities/groups_.
+2.	Pause and resume data collectors with _POST /rest/v1/cloudsecure/collectors/{collector-uuid}/status_
+ 
+Additionally, Workload Security role permission checks are now even more secure. As a result of the improved security, some existing users may experience permission issues when adding a collector. Confirm user permissions by following the instructions in the link:task_add_collector_svm.html#a-note-about-permissions[documentation].
+
+
+'''
+
+== August 2025
+
+=== Focused Widget Data at Your Fingertips
+
+The new *Analyze* feature in most widgets allows you to take a closer look at the data in one widget at a time. Simply click the "Analyze" button on a widget to open a detailed view, where you can interactively explore the underlying data and zoom in for deeper insights—without leaving your dashboard context.
+
+//image:widget_analyze_feature.png[Analyze button on a widget, width=400]
+
+image:widget_analyze_panel.png[Analyze panel for a line widget, width=900]
+
+
+=== Export and Import Dashboards
+If you manage multiple tenants and have developed a useful dashboard, you can export the dashboard and import it to another tenant. 
+
+image:dashboard_import_from_file.png[image showing import]
+image:dashboard_export_from_menu.png[image showing export]
+
+
+=== Enhanced Cloud Integration: Google Cloud NetApp Volumes (GCNV) support
+
+*Google Cloud NetApp Volumes* (GCNV) is now fully supported as a data collector in DII, completing our ecosystem for hybrid cloud monitoring. Gain visibility into critical storage objects like organizations, pools, and volumes across the infrastructure. Now you can track all your storage environments--on-prem or in the cloud--from a single platform.  
+
+
+
+=== Enhanced StorageGRID Monitoring
+
+StorageGRID Log collection is now enabled by default, providing event tracking data to DII, and we've expanded StorageGrid monitoring with over 50 default alerts, real-time event tracking, and new dashboards to simplify complex storage grid operations. Stay ahead of issues with deeper insights into traffic policies and bucket performance.  
+
+
+=== Operating System support
+
+The following operating systems are now supported with Data Infrastructure Insights Acquisition Units, in addition to those link:concept_acquisition_unit_requirements.html[already supported]:
+
+* AlmaLinux (64-bit) 10
+* Red Hat (64-bit) 10
+* Rocky (64-bit) 9.6
+
+
+
 == June 2025
 
 
@@ -2335,81 +2550,7 @@ A wide variety of information can be explored using the Kubernetes Explorer's dr
 image:Kubernetes_Cluster_Detail_Example.png[The Kubernetes Explorer]
 
 
-'''
-
-== December 2020
-
-=== Simpler Kubernetes Installation
-
-Kubernetes Agent installation has been streamlined to require fewer user interactions. link:task_config_telegraf_agent_k8s.html[Installing the Kubernetes Agent] now includes Kubernetes data collection.
-
-
-'''
-
-== November 2020
-
-=== Additional Dashboards
-
-The following new ONTAP-focused dashboards have been added to the gallery and are available for import: 
-
-* ONTAP: Aggregate Performance & Capacity
-* ONTAP FAS/AFF - Capacity Utilization
-* ONTAP FAS/AFF - Cluster Capacity
-* ONTAP FAS/AFF - Efficiency
-* ONTAP FAS/AFF - FlexVol Performance
-* ONTAP FAS/AFF - Node Operational/Optimal Points
-* ONTAP FAS/AFF - PrePost Capacity Efficiencies
-* ONTAP: Network Port Activity
-* ONTAP: Node Protocols Performance
-* ONTAP: Node Workload Performance (Frontend)
-* ONTAP: Processor
-* ONTAP: SVM Workload Performance (Frontend)
-* ONTAP: Volume Workload Performance (Frontend)
-
-=== Column Rename in Table Widgets
-
-You can rename columns in the _Metrics and Attributes_ section of a table widget by opening the widget in Edit mode and clicking the menu at the top of the column. Enter the new name and click _Save_, or click _Reset_ to set the column back to the original name.
-
-Note that this only affects the column's display name in the table widget; the metric/attribute name does not change in the underlying data itself.
-
-image:Table_Widget_Column_Rename.png[Table Widget Rename Column]
-
-'''
-
-== October 2020
-
-=== Default Expansion of Integration Data
-
-Table widget grouping now allows for default expansions of Kubernetes, ONTAP Advanced Data, and Agent Node metrics. For example, if you group Kubernetes _Nodes_ by _Cluster_, you will see a row in the table for each cluster. You could then expand each cluster row to see a list of the Node objects.
-
-
-//CIS-10642
-
-=== Basic Edition Technical Support
-
-Technical Support is now available for subscribers to Cloud Insights Basic Edition in addition to Standard and Premium Editions. Additionally, Cloud Insights has simplified the workflow for creating a NetApp support ticket.
-
-
-=== Cloud Secure Public API
-
-Cloud Secure supports link:concept_cs_api.html[REST APIs] for accessing Activity and Alert information. This is accomplished through the use of API Access Tokens, created through the Cloud Secure Admin UI, which are then used to access the REST APIs. Swagger documentation for these REST APIs is integrated with Cloud Secure.
-
-'''
-
-== September 2020
-
-=== Query Page with Integration Data
-
-The Cloud Insights Query page supports integration data (i.e. from Kubernetes, ONTAP Advanced Metrics, etc.). When working with integration data, the query results table displays a "Split-Screen" view, with object/grouping on the left side, and object data (attributes/metrics) on the right. You can also choose multiple attributes for grouping integration data. 
-
-image:QueryPageIntegrationData.png[Query showing integration data]
-
-=== Unit Display Formatting in Table Widget
-
-Unit display formatting is now available in Table widgets for columns that display metric/counter data (for example, gigabytes, MB/second, etc.). To change a metric's display unit, click the "three dots" menu in the column header and select "Unit Display". You can choose from any of the available units. Available units will vary according to the type of metric data in the display column.
-
-//image:TableWidgetUnitManagement.png[Table Widget Unit Management]
-image:TableWidgetUnitManagement1.png[Table Widget Unit Management]
+'''nt1.png[Table Widget Unit Management]
 
 
 === Acquisition Unit Detail Page
@@ -2512,18 +2653,7 @@ Alerts page showing potential ransomware attack:
 image:RansomwareAlertExample.png[Ransomware Alert Example]
 
 Detail page for potential ransomware attack:
-image:RansomwareDetailPageExample.png[Ransomware Detail Page Example]
-
-
-=== Subscribe to Premium Edition through AWS
-
-During your trial of Cloud Insights, you can link:concept_subscribing_to_cloud_insights.html[self-subscribe] through AWS Marketplace to either Cloud Insights Standard Edition or Premium Edition. Previously, you could only self-subscribe through AWS Marketplace to Standard Edition only.  
-
-=== Enhanced Table Widget
-
-The dashboard/asset page Table widget includes the following enhancements:
-
-* "Split-Screen" view: Table widgets display the object/grouping on the left side, and the object data (attributes/metrics) on the right.
+-Screen" view: Table widgets display the object/grouping on the left side, and the object data (attributes/metrics) on the right.
 +
 image:TableWidgetLeftRightPanes.png[Table Widget showing left and right panes]
 
@@ -2837,98 +2967,7 @@ image:Onboarding_Progress.png[Progress Bar]
 
 
 '''
-== December 2019
-
-=== Business Entity can be used in filters
-
-Business Entity annotations can be used in filters for queries, widgets, performance policies, and landing pages.
-
-=== Drill-down available for Single-Value and Gauge widgets, and any widgets rolled to by "All"
-
-Clicking the value in a single-value or gauge widget opens a query page showing the results of the first query used in the widget. Additionally, clicking the legend for any widget whose data is rolled up by "All" will also open a query page showing the results of the first query used in the widget.
-
-=== Trial period extended
-
-New users who sign up for a free trial of Cloud Insights now have 30 days to evaluate the product. This is an increase from the previous 14-day trial period.
-
-=== Managed Unit calculation
-
-The calculation of Managed Units (MUs) in Cloud Insights has been changed to the following:
-
-* 1 Managed Unit = 2 hosts (any virtual or physical machine)
-* 1 Managed Unit = 4 TB of unformatted capacity of physical or virtual disks
-
-This change effectively doubles the environment capacity that you can monitor using your existing Cloud Insights subscription.
-
-
-'''
-
-== November 2019
-
-
-////
- ////=== Editions Feature Comparison Table
-
-The *Admin > Subscription* page link:concept_subscribing_to_cloud_insights.html[comparison table] has been updated to list the feature sets available in Basic, Standard, and Premium Editions of Cloud Insights. NetApp is constantly improving its Cloud Services, so check this page often to find the Edition that's right for your evolving business needs.
-
-'''
-////
-
-== October 2019
-
-=== Reporting
-
-link:reporting_overview.html[*Cloud Insights Reporting*] is a business intelligence tool that enables you to view pre-defined reports or create custom reports. With Reporting you can perform the following tasks:
-
-* Run a pre-defined report
-* Create a custom report
-* Customize the report format and delivery method
-* Schedule reports to run automatically
-* Email reports
-* Use colors to represent thresholds on data
-
-Cloud Insights Reporting can generate custom reports for areas like chargeback, consumption analysis, and forecasting, and can help answer questions such as the following:
-
-* What inventory do I have?
-* Where is my inventory?
-* Who is using our assets?
-* What is the chargeback for allocated storage for a business unit?
-* How long until I need to acquire additional storage capacity?
-* Are business units aligned along the proper storage tiers?
-* How is storage allocation changing over a month, quarter, or year?
-
-Reporting is available with Cloud Insights *Premium Edition*.
-
-=== Active IQ Enhancements
-
-link:concept_activeiq.html[Active IQ Risks] are now available as objects that can be queried as well as used in dashboard table widgets. The following Risks object attributes are included:
-* Category
-* Mitigation Category
-* Potential Impact
-* Risk Detail
-* Severity
-* Source
-* Storage
-* Storage Node
-* UI Category
-
-
-'''
-
-== September 2019
-
-=== New Gauge Widgets
-
-Two new widgets are available for displaying single-value data on your dashboards in eye-catching colors based on thresholds you specify. You can display values using either a *Solid Gauge* or *Bullet Gauge*. Values that land inside the Warning range are displayed in orange. Values in the Critical range are displayed in red. Values below the Warning threshold are displayed in green.
-
-image:Gauge-Solid.png[Solid/Traditional Gauge]
-image:Gauge-Bullet.png[Bullet Gauge]
-
-=== Conditional Color Formatting for Single Value Widget
-
-You can now display the Single-Value widget with a colored background based on thresholds you set.
-
-//image:SVW-Formatted.png[Single-Value Widget with Formatting]
+alue Widget with Formatting]
 image:Single-Value Widgets - Formatted.png[Single-Value widgets with formatting]
 
 === Invite Users During Onboarding

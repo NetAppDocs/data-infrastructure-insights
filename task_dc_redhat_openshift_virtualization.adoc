@@ -1,0 +1,84 @@
+---
+sidebar: sidebar
+permalink: task_dc_redhat_openshift_virtualization.html
+keywords: data collector, Red Hat OpenShift Virtualization
+summary: Configuring Red Hat OpenShift Virtualization data collector.
+---
+
+= Red Hat OpenShift Virtualization data collector
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead] 
+The DII Red Hat OpenShift Virtualization collector will attempt to discover the OSV compute workloads running on an OpenShift Virtualization environment - this collector will not discover all Open Shift pods. This is an HTTPS REST API-based collector. It is recommended to create one collector per OSV cluster.
+
+The authentication approach for this collector is an authentication token bound to a service account. To create both the user account and the token:
+
+ oc create sa acq-readonly-cluster-user -n default
+ oc adm policy add-cluster-role-to-user cluster-reader -z acq-readonly-cluster-user --rolebinding-name acq-readonly-cluster-user-binding
+ oc adm policy add-cluster-role-to-user cluster-monitoring-view -z acq-readonly-cluster-user --rolebinding-name acq-readonly-cluster-monitor-user-binding
+
+Run those 3 commands and watch for any errors. 
+
+When the commands complete:
+
+ oc sa new-token acq-readonly-cluster-user
+
+This will create a token bound to your user.
+
+Finally, you may also want your OSV administrator to run:
+
+ oc cluster-info
+
+This will return the hostname/IP address for management. Each DII OSV collector needs to be pointed at the IP/hostname for OSV management.
+
+== Terminology
+
+For each asset type acquired by Data Infrastructure Insights, the most common terminology used for the asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+
+[cols=2*, options="header", cols"50,50"]
+|===
+|Vendor/Model Term | Data Infrastructure Insights Term
+|Disk|Virtual Disk
+|Host|Host
+|Virtual Machine|Virtual Machine
+|Storage Domain|Data Store
+|Logical Unit|LUN
+|===
+ 
+Note: These are common terminology mappings only and might not represent every case for this data collector.
+
+== Requirements
+
+* IP address of the Red Hat OpenShift Virtualization server over port 443 via REST API 
+* Read-only username and password 
+* RHEV Version 3.0+  
+
+== Configuration
+
+[cols=2*, options="header", cols"50,50"]
+|===
+|Field | Description
+|RHEV Server IP Address|IP address of the storage system 
+|User name |User name with admin privileges 
+|Password for the admin privileged account|Password
+|===
+
+== Advanced configuration 
+
+[cols=2*, options="header", cols"50,50"]
+|===
+|Field | Description
+|HTTPS Communication Port|Port used for HTTPS communication to RHOV
+|Inventory poll interval (min)|The default is 20 minutes.
+//|Connection Timeout (sec)|The default is 60. 
+|===
+
+        
+== Troubleshooting
+
+Additional information on this Data Collector may be found from the link:concept_requesting_support.html[Support] page or in the link:reference_data_collector_support_matrix.html[Data Collector Support Matrix].
+

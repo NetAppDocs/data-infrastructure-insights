@@ -7,7 +7,6 @@ summary: Data Infrastructure Insights tracks changes in infrastructure for ease 
 
 = Infrastructure Change Analysis
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
@@ -22,7 +21,7 @@ In any environment, changes to your resources may happen because of mis-configur
 
 To analyze Infrastructure Changes, navigate to *Observability > Change Analysis*. Alerts and Configuration changes for the current time range are listed. Alert rows show the current alert status (active or resolved). 
 
-You can also navigate to a landing page for a resource. If changes have occurred to that recource or related resources, these will be shown in the Expert View section of the page. Zoom in to investigate individual changes, or leave the view wide to see all changes within the selected time range. Hovering over a change will give you a summary of the change. Clicking on that change will focus the expert view on the time of that change.
+You can also navigate to a landing page for a resource. If changes have occurred to that recource or related resources, these will be shown in the Perfromance section of the page. Zoom in to investigate individual changes, or leave the view wide to see all changes within the selected time range. Hovering over a change will give you a summary of the change. Clicking on that change will focus the performance at the time of that change.
 
 image:change_analysis_on_a_landing_page.png[Change Analysis on a landing page]
 
@@ -43,9 +42,14 @@ You can also go directly to key Alerts or Changes from the status section below 
 
 image:Change_Analysis_filters_and_status.png[status and quick links to alerts and changes]
 
+
+== A Note about Long-Term Alerts
+
+Note that alerts that remain active for longer than 24 hours will be visible in the Alerts and Changes list once every 24 hours, so you may notice the same alert listed multiple times. Each of these alerts will have the same alert ID, same start time, etc., and will have a status of "Alerting" until the alert is resolved.
+
+
+
 == Which Objects are analyzed for changes?
-
-
 
 The following table lists the objects and attributes included in infrastructure change analysis. 
 

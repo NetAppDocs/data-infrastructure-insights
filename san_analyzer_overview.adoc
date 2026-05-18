@@ -14,9 +14,7 @@ keywords: topology, analyze, analysis, map
 
 
 [.lead]
-SAN plays a crucial role in handling vital workloads, but its complexity can result in significant outages and customer disruptions. With DII's *SAN Analyzer*, managing SAN becomes simpler and more efficient. This powerful tool offers end-to-end visibility, mapping dependencies from VM/Host to network to LUN and storage.
-
-By providing an interactive topology map, SAN Analyzer enables you to pinpoint issues, understand changes, and enhance comprehension of data flow. Streamline SAN management in complex IT environments with SAN Analyzer and increase your visibility into block workloads. 
+SAN plays a crucial role in handling vital workloads, but its complexity can result in significant outages and customer disruptions. With DII's *SAN Analyzer*, managing SAN becomes simpler and more efficient. This powerful tool offers end-to-end visibility, mapping dependencies from VM/Host to network to LUN and storage. By providing an interactive topology map, SAN Analyzer enables you to pinpoint issues, understand changes, and enhance comprehension of data flow. Streamline SAN management in complex IT environments with SAN Analyzer and increase your visibility into block workloads. 
 
 image:san_analyzer_example_with_panel.png[SAN Analyzer topology map of a storage system]
 
@@ -45,7 +43,17 @@ If your environment includes iSCSI devices, hovering over the _iSCSI_ object hig
 image:san_analyzer_iscsi_traffic.png[iSCSI traffic highlighted]
 
 
+== Troubleshooting Tips
+Some things to try if you encounter problems:
 
+[cols=2*, options="header", cols"50,50"]
+|===
+|*Problem:* | *Try this:* 
+
+|I see <0, =0 or >0 in the legend for metrics such as _trafficUtilization_ or _trafficRate_.
+|This might happen in very rare case where the metric values are below two decimal places, like 0.000123. Expanding the time window might help with analyzing the metric more effectively. 
+
+|===
 
 
 

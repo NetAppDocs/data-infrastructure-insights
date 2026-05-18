@@ -7,7 +7,6 @@ summary: The Data Infrastructure Insights API enables integration with other app
 
 = Data Infrastructure Insights API 
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
@@ -77,7 +76,7 @@ See the swagger pages for examples specific to the API you wish to use.
 
 The Data Infrastructure Insights API is category-based, and currently contains the following types:
 
-* ASSETS type contains asset, query, and search APIs. 
+* ASSETS type contains asset, query, and search APIs. DII asset attributes and metrics are sometimes referred to as “odata”. The APIs for these are typically accessed through /rest/v1/asset or /rest/v1/query. See the <<api-documentation-swagger,API Swagger documentation>> for more information.
 ** Assets: Enumerate top-level objects and retrieve a specific object or an object hierarchy.
 ** Query: Retrieve and manage Data Infrastructure Insights queries.
 ** Import: Import annotations or applications and assign them to objects
@@ -85,14 +84,14 @@ The Data Infrastructure Insights API is category-based, and currently contains t
 
 * DATA COLLECTION type is used to retrieve and manage data collectors.
 
-* DATA INGESTION type is used to retrieve and manage ingestion data and custom metrics, such as from Telegraf agents
+* DATA INGESTION type is used to retrieve and manage ingestion data and custom metrics, such as from Telegraf agents. These are sometimes referred to as “datalake” or “lake” metrics. The APIs for these typically accessed through /rest/v1/lake. See the <<api-documentation-swagger,API Swagger documentation>> for more information.
 
 * LOG INGESTION is used to retrieve and manage log data
 
 
 Additional types and/or APIs may become available over time. You can find the latest API information in the link:#api-documentation-swagger[API Swagger documentation]. 
 
-Note that the API types to which a user has access depend also on the link:concept_user_roles.html[User Role] they have in each Data Infrastructure Insights feature set (Monitoring, Workload Security, Reporting).
+Note that the API types to which a user has access depend also on the link:concept_user_roles.html[User Role] they have in each Data Infrastructure Insights feature set (Observability, Workload Security, Reporting).
 
 
 == Inventory Traversal
@@ -158,10 +157,6 @@ Examples of Performance Data objects include:
 A Performance Metric has a description and type and contains a collection of performance summaries. For example, Latency, Traffic, and Rate.
 
 A Performance Summary has a description, unit, sample start time, sample end time, and a collection of summarized values (current, min, max, avg, etc.) calculated from a single performance counter over a time range (1 hour, 24 hours, 3 days, and so on). 
-
-// == Performance Data 
-
-//The Performance data JSON...
 
 image:API_Performance.png[API Performance Example]
 
@@ -260,7 +255,7 @@ Note that these commands are using the default namespace "netapp-monitoring".  I
 Note: If you have the latest NetApp Kubernetes Monitoring Operator installed and using an API access token that is renewable, expiring tokens will automatically be replaced by new/refreshed API access tokens.  There is no need to perform the manual steps listed below.
 
 
-
+////
 * Edit the the NetApp Kubernetes Monitoring Operator.
 +
  kubectl -n netapp-monitoring edit agent netapp-ci-agent-monitoring-netapp
@@ -271,6 +266,13 @@ Note: If you have the latest NetApp Kubernetes Monitoring Operator installed and
  …
    output-sink:
    - api-key:<NEW_API_TOKEN>
+////
+
+
+* Create a new API token.
+* Follow the steps for link:task_config_telegraf_agent_k8s.html#manual-upgrades[Manual Upgrade], selecting the new API token.
+
+Note: Customers managing their NetApp Kubernetes Monitoring Operator with a configuration management tool, such as Kustomize, can follow the same steps to generate and download an updated set of YAMLs to push to their repository.
 
 
 ==== RHEL/CentOS and Debian/Ubuntu

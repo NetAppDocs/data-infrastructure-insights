@@ -42,7 +42,7 @@ This is data generated as a result of NetApp providing the Cloud Data Service, w
 
 * User Access data
 +
-Authentication and access information that allows NetApp BlueXP to communicate with regional Data Infrastructure Insights sites, including data related to user Authorization. 
+Authentication and access information that allows NetApp Console to communicate with regional Data Infrastructure Insights sites, including data related to user Authorization. 
 
 * Storage Workload Security User Directory Data
 +
@@ -73,7 +73,7 @@ The following information is stored in the host region:
 The following information resides in the United States, regardless of the region hosting your Data Infrastructure Insights environment:
 
 * Environment site (sometimes called "tenant") information such as site/account owner. 
-* Information that allows NetApp BlueXP to communicate with regional Data Infrastructure Insights sites, including anything to do with user Authorization.
+* Information that allows NetApp Console to communicate with regional Data Infrastructure Insights sites, including anything to do with user Authorization.
 * Information related to the relation between the Data Infrastructure Insights user and the tenant.
  
 === Host Regions

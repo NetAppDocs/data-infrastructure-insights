@@ -9,7 +9,6 @@ keywords: dashboard, public, shared, private
 = Dashboard Access Management
 :hardbreaks:
 :nofooter:
-
 :icons: font
 :linkattrs:
 :imagesdir: ./media/

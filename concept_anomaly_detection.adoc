@@ -88,7 +88,7 @@ While viewing an anomaly chart on an alert landing page, you can choose the foll
 * Weekly Trend: compare values to the same time, same day on previous weeks, for up to 5 previous weeks.
 * Full Anomaly Bounds: by default, the graph focuses on the metric value so you can better analyze the metric behavior. Select to show full anomaly bounds (maximum value, etc.)
 
-You can also view objects that contributed to the anomaly by selecting those in the landing page's expert view. The chart will show the behavior of the selected objects.
+You can also view objects that contributed to the anomaly by selecting those in the landing page's performance section . The chart will show the behavior of the selected objects.
 
 image:Anomaly_Detection_Contributing_Objects.png[charting objects contributing to the anomaly]
 

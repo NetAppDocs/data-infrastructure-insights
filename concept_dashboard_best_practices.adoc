@@ -7,7 +7,6 @@ keywords: dashboard, hints, tips, best practice, widgets, metrics,
 
 = Best Practices for Dashboards and Widgets
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:

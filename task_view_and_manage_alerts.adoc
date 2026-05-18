@@ -49,7 +49,7 @@ Clicking on an Alert ID opens the Alert Detail Page.
 
 == Alert Detail Panel
 
-Select any alert row to open the alert's detail panel. The alert detail panel provides additional detail about the alert, including a _Summary_, an _Expert View_ showing graphs related to the object's data, any _Related Assets_, and _Comments_ entered by alert investigators.
+Select any alert row to open the alert's detail panel. The alert detail panel provides additional detail about the alert, including a _Summary_, a _Performance_ section showing graphs related to the object's data, any _Related Assets_, and _Comments_ entered by alert investigators.
 
 //image:alert_detail_page.png[Alert Detail Page] 
 image:metric_alert_detail_pane.png[metric alert detail panel]

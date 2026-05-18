@@ -33,7 +33,7 @@ Clicking on an object or group opens a slideout panel providing additional detai
 
 == See it in Action
 
-link:https://media.netapp.com/video-detail/0e62b784-8456-5ef7-8879-f0352135a0f1/simplified-troubleshooting-with-vm-analyzer[Simplified troubleshooting with VM Analyzer (Video)]
+link:https://media.netapp.com/video-detail/0e62b784-8456-5ef7-8879-f0352135a0f1/simplified-troubleshooting-with-vm-analyzer[Simplified troubleshooting with VM Analyzer (Video),window=read-later]
 
 
 
