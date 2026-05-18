@@ -36,7 +36,7 @@ Alert Exclusion is configured per tenant and includes the following:
 == Users and Paths
 
 * Users' exclusion list:  Add users to be excluded for alerts.
-* Directory exclusion List:  Supports up to four levels of directory paths, beginning with the junction path.
+* Directory exclusion List: Supports up to four levels of directory paths, beginning with the junction path. All sub-directories and files under this path will be excluded for alert generation. Wildcards in directory paths are not supported.
 
 image:ws_alert_exclusions_users.png[]
 
