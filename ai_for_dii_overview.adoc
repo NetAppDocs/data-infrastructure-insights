@@ -62,7 +62,7 @@ For the best experience, provide the Assistant with specific information about:
 
 == Chat naturally
 
-The AI Assistant now supports more than a dozen languages, empowering your team to engage naturally in their preferred language. See the full list here.
+The AI Assistant now supports more than a dozen languages, empowering your team to engage naturally in their preferred language. See the full list link:https://platform.claude.com/docs/en/build-with-claude/multilingual-support[here].
 
 
 == Accessing the Assistant
