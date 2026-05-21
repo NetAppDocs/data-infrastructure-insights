@@ -23,6 +23,11 @@ NetApp is continually improving and enhancing its products and services. Here ar
 The AI Assistant now supports more than a dozen languages, empowering your team to engage naturally in their preferred language. See the full list link:https://platform.claude.com/docs/en/build-with-claude/multilingual-support[here].
 
 
+=== More Workspace, Less Clutter 
+
+The DII nav menu has a fresh new look, now matching the colors and behavior of Console for a more unified experience. The previously static menu will be collapsed by default for a more focused workspace and efficient use of on-screen real estate. Simply click the hamburger icon (☰) in the top left corner to access it.
+
+
 === Build smarter alerts and webhooks with dynamic, context rich messages
  
 When creating a monitor or webhook, simply type "%" in the alert description or webhook URL, header, or body to select from a dynamically populated list of object attributes, giving your alerts the right context to improve clarity, enhance webhook integration, and speed up response times.
