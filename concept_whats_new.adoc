@@ -18,6 +18,7 @@ NetApp is continually improving and enhancing its products and services. Here ar
 
 == May 2026
 
+
 === A Smarter AI Assistant for Global Teams
 
 The AI Assistant now supports more than a dozen languages, empowering your team to engage naturally in their preferred language. See the full list link:https://platform.claude.com/docs/en/build-with-claude/multilingual-support[here].
@@ -26,6 +27,10 @@ The AI Assistant now supports more than a dozen languages, empowering your team 
 === More Workspace, Less Clutter 
 
 The DII nav menu has a fresh new look, now matching the colors and behavior of Console for a more unified experience. The previously static menu will be collapsed by default for a more focused workspace and efficient use of on-screen real estate. Simply click the hamburger icon (☰) in the top left corner to access it.
+
+
+=== SSO Groups
+Not until GA
 
 
 === Build smarter alerts and webhooks with dynamic, context rich messages
@@ -40,12 +45,8 @@ image:attribute_list_example.png[attribute list in a monitor description]
 Find queries faster and collaborate more effectively with Query Groups. Organize your metric and log queries into custom groups that align with your team structure or operational workflows, making it simple to locate the right query when troubleshooting or analyzing your environment.
 
 
-=== SSO Groups
-Not until GA
 
 
-=== Widget slideout panels for all widgets (?)
-Not needed?
 
 
 
