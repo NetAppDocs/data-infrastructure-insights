@@ -35,7 +35,7 @@ image:attribute_monitor_in_list.png[attribute monitors are added to monitor type
  
 When creating a monitor or webhook, simply type "%" in the alert description or webhook URL, header, or body to select from a dynamically populated list of available object attributes and annotations. Give your alerts the right context to improve clarity, enhance webhook integration, and speed up response times.
 
-image:attribute_list_example.png[attribute list in a monitor description]
+image:attribute_list_example.png[attribute list in a monitor description, width=400]
 
 '''
 
