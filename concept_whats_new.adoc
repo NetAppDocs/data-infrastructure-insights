@@ -24,37 +24,20 @@ NetApp is continually improving and enhancing its products and services. Here ar
 The AI Assistant now supports more than a dozen languages, empowering your team to engage naturally in their preferred language. See the full list link:https://platform.claude.com/docs/en/build-with-claude/multilingual-support[here].
 
 
-=== More Workspace, Less Clutter 
+=== New Monitors for Infrastructure Attribute Changes
 
-The DII navigation menu has a fresh new look, now matching the colors and behavior of Console for a more unified experience. The previously static menu will be collapsed by default for a more focused workspace and efficient use of on-screen real estate. Simply click the hamburger icon (☰) in the top left corner to access it.
+Attribute Monitors are now available to automatically alert your team when assets move between data centers, a storage pool is not encrypted, or any attribute modifications occur. This helps to maintain configuration baselines and helps ensure nothing slips through the cracks during new deployments or changes.
 
+image:attribute_monitor_in_list.png[attribute monitors are added to monitor types]
 
-=== Streamlined Access Control with Federated Groups
-
-Simplify user management by leveraging your organization's existing federated groups, such as Active Directory or SAML. Data Infrastructure Insights automatically provisions the right level of access based on group membership, reducing administrative overhead while ensuring consistent, secure access control that aligns with your organizational structure.
-
-
-=== Automated Alerts for Infrastructure Attribute Changes
-
-Stay informed about critical infrastructure changes that impact your operations. Attribute Monitors automatically alert your team when assets move between data centers, business units change, or any other attribute modifications occur—ensuring nothing slips through the cracks during organizational or infrastructure changes.
-
-
-=== Expand Device Visibility with Intelligent AI Assistance
-
-Eliminate the guesswork from device identification with AI-powered device identification. Data Infrastructure Insights analyzes your environment and suggests Automatic Device Resolution rules, helping you quickly identify and manage more devices. Simply review and approve the AI-generated rules. DII handles the rest, improving device visibility and management across your infrastructure.
 
 === Build smarter alerts and webhooks with dynamic, context rich messages
  
-When creating a monitor or webhook, simply type "%" in the alert description or webhook URL, header, or body to select from a dynamically populated list of object attributes, giving your alerts the right context to improve clarity, enhance webhook integration, and speed up response times.
+When creating a monitor or webhook, simply type "%" in the alert description or webhook URL, header, or body to select from a dynamically populated list of available object attributes and annotations. Give your alerts the right context to improve clarity, enhance webhook integration, and speed up response times.
 
 image:attribute_list_example.png[attribute list in a monitor description]
 
-
-=== Metric and Log Query Groups
-
-Find queries faster and collaborate more effectively with Query Groups. Organize your metric and log queries into custom groups that align with your team structure or operational workflows, making it simple to locate the right query when troubleshooting or analyzing your environment.
-
-
+'''
 
 
 
