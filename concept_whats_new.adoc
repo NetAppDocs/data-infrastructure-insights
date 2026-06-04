@@ -16,6 +16,32 @@ keywords: features
 [.lead]
 NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in Data Infrastructure Insights (formerly Cloud Insights).
 
+== June 2026
+
+
+=== A Smarter AI Assistant for Global Teams
+
+The AI Assistant now supports more than a dozen languages, empowering your team to engage naturally in their preferred language. See the full list link:https://platform.claude.com/docs/en/build-with-claude/multilingual-support[here^].
+
+
+=== New Monitors for Infrastructure Attribute Changes
+
+Attribute Monitors are now available to automatically alert your team when assets move between data centers, a storage pool is not encrypted, or any attribute modifications occur. This helps to maintain configuration baselines and helps ensure nothing slips through the cracks during new deployments or changes.
+
+image:attribute_monitor_in_list.png[attribute monitors are added to monitor types]
+
+
+=== Build smarter alerts and webhooks with dynamic, context rich messages
+ 
+When creating a monitor or webhook, simply type "%" in the alert description or webhook URL, header, or body to select from a dynamically populated list of available object attributes and annotations. Give your alerts the right context to improve clarity, enhance webhook integration, and speed up response times.
+
+image:attribute_list_example.png[attribute list in a monitor description, width=400]
+
+'''
+
+
+
+
 
 == April 2026
 
