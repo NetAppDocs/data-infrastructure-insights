@@ -21,7 +21,7 @@ NetApp is continually improving and enhancing its products and services. Here ar
 
 === A Smarter AI Assistant for Global Teams
 
-The AI Assistant now supports more than a dozen languages, empowering your team to engage naturally in their preferred language. See the full list link:https://platform.claude.com/docs/en/build-with-claude/multilingual-support[here].
+The AI Assistant now supports more than a dozen languages, empowering your team to engage naturally in their preferred language. See the full list link:https://platform.claude.com/docs/en/build-with-claude/multilingual-support[here^].
 
 
 === New Monitors for Infrastructure Attribute Changes
