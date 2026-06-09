@@ -5,7 +5,7 @@ keywords: data collector, qumulo, rest
 summary: Configuring the Qumulo REST data collector.
 ---
 
-= Dell Qumulo REST data collector
+= Qumulo REST data collector
 :hardbreaks:
 :nofooter:
 :icons: font
