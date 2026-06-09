@@ -487,6 +487,8 @@ sidebar:
               url: /task_dc_oracle_zfs.html
             - title: Pure
               url: /task_dc_pure_flasharray.html
+            - title: Qumulo REST
+              url: /task_dc_emc_qumulo_rest.html
             - title: Red Hat Virtualization
               url: /task_dc_redhat_virtualization.html
             - title: Red Hat OpenShift Virtualization
