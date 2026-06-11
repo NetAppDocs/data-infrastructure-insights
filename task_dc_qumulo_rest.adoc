@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: task_dc_emc_qumulo_rest.html
+permalink: task_dc_qumulo_rest.html
 keywords: data collector, qumulo, rest
 summary: Configuring the Qumulo REST data collector.
 ---
