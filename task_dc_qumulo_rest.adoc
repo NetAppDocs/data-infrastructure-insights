@@ -1,0 +1,68 @@
+---
+sidebar: sidebar
+permalink: task_dc_qumulo_rest.html
+keywords: data collector, qumulo, rest
+summary: Configuring the Qumulo REST data collector.
+---
+
+= Qumulo REST data collector
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Data Infrastructure Insights uses this collector to acquire inventory and performance data from Qumulo storage. 
+
+== Terminology
+
+Data Infrastructure Insights acquires the following inventory information from this data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+
+[cols=2*, options="header", cols"50,50"]
+|===
+|Vendor/Model Term|Data Infrastructure Insights Term 
+|Drive|Disk
+|Cluster|Storage
+|Node|Storage Node
+|OneFS File System|Internal Volume
+|OneFS File System|Storage Pool
+|Qtree|Qtree
+|===
+
+Note: These are common terminology mappings only and might not represent every case for this data collector. 
+
+== Requirements
+
+You need the following information to configure this data collector:
+
+* A user account and password. This account does NOT need to be admin/root, but you MUST grant a substantial number of read only privileges to your service account - see table below
+* IP address / Fully Qualified Domain Name of the Qumulo cluster
+* HTTPS access to port 8080
+
+== Configuration
+
+[cols=2*, options="header", cols"50,50"]
+|===
+|Field|Description 
+|Qumulo IP address|The IP address or fully-qualified domain name of the Qumulo storage 
+|User Name|User name for the Qumulo
+|Password|Password used for the Qumulo
+|===
+
+== Advanced configuration
+
+[cols=2*, options="header", cols"50,50"]
+|===
+|Field|Description
+|HTTPS Port|The default is 8080. 
+|Inventory Poll Interval (min)|	Interval between inventory polls. The default is 30. 
+|Performance Poll Interval (min)|Interval between performance polls. The default is 5.
+
+|===
+
+           
+== Troubleshooting
+
+
+Additional information may be found from the link:concept_requesting_support.html[Support] page or in the link:reference_data_collector_support_matrix.html[Data Collector Support Matrix].
