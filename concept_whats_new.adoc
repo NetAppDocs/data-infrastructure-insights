@@ -18,16 +18,13 @@ NetApp is continually improving and enhancing its products and services. Here ar
 
 == June 2026
 
-
 === More Workspace, Less Clutter 
 
-The DII navigation menu has a fresh new look, now matching the colors and behavior of Console for a more unified experience. The previously static main menu will be collapsed by default for a more focused workspace and efficient use of on-screen real estate. Simply click the hamburger icon (☰) in the top left corner to access it.
-
-
+The DII navigation menu has a fresh new look, now matching the colors and behavior of Console for a more unified experience. The previously static main menu will be collapsed by default for a more focused workspace and efficient use of on-screen real estate. Simply click the hamburger icon (☰) in the top left corner to access it. 
 
 === Expand Device Visibility with Intelligent AI Assistance
 
-Accelerate onboarding of new devices with AI-powered device identification. Data Infrastructure Insights analyzes your environment and suggests Automatic Device Resolution rules, helping you quickly identify and manage more devices. Simply review and approve the AI-generated rules and DII handles the rest, improving device visibility and management across your infrastructure.
+Accelerate onboarding of new devices with AI-powered device identification. Data Infrastructure Insights analyzes your environment and suggests Automatic Device Resolution rules, helping you quickly identify and manage more devices. Simply review and approve the AI-generated rules and DII handles the rest, improving device visibility and management across your infrastructure. 
 
 
 
