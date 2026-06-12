@@ -131,7 +131,7 @@ You can validate LDAP User Permissions and Attribute Definitions using the follo
 
 * Use LDAP Explorer to navigate an LDAP database, view object properties and attributes, view permissions, view an object's schema, execute sophisticated searches that you can save and re-execute. 
 
-** Install LDAP Explorer (http://ldaptool.sourceforge.net/) or Java LDAP Explorer (http://jxplorer.org/) on any windows machine which can connect to the LDAP Server.
+** Install link:http://ldaptool.sourceforge.net/[LDAP Explorer] or link:http://jxplorer.org/[Java LDAP Explorer] on any windows machine which can connect to the LDAP Server.
 
 ** Connect to the LDAP server using the username/password of the LDAP directory server.
 
