@@ -22,7 +22,7 @@ Navigate to *Workload Security > Policies* and select the *Alert Exclusions* tab
 
 Alert Exclusion is configured per tenant and includes the following:
 
-. File Types: suppress File Tampering alerts on specific <<allowed-file-types, Allowed File Types>>
+. File Types: suppress File Tampering alerts on specific <<file-types, Allowed File Types>>
 . Users: suppress alerts triggered by selected users.
 . Paths: suppress alerts for activity on selected directory paths (up to four directory levels, starting at the junction path).
 
