@@ -25,9 +25,6 @@ Data Infrastructure Insights acquires the following inventory information from t
 |Drive|Disk
 |Cluster|Storage
 |Node|Storage Node
-|OneFS File System|Internal Volume
-|OneFS File System|Storage Pool
-|Qtree|Qtree
 |===
 
 Note: These are common terminology mappings only and might not represent every case for this data collector. 
@@ -38,7 +35,7 @@ You need the following information to configure this data collector:
 
 * A user account and password. This account does NOT need to be admin/root, but you MUST grant a substantial number of read only privileges to your service account - see table below
 * IP address / Fully Qualified Domain Name of the Qumulo cluster
-* HTTPS access to port 8080
+* HTTPS access to port 8000
 
 == Configuration
 
@@ -55,7 +52,7 @@ You need the following information to configure this data collector:
 [cols=2*, options="header", cols"50,50"]
 |===
 |Field|Description
-|HTTPS Port|The default is 8080. 
+|HTTPS Port|The default is 8000. 
 |Inventory Poll Interval (min)|	Interval between inventory polls. The default is 30. 
 |Performance Poll Interval (min)|Interval between performance polls. The default is 5.
 
