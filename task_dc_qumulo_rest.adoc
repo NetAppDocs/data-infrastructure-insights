@@ -33,7 +33,7 @@ Note: These are common terminology mappings only and might not represent every c
 
 You need the following information to configure this data collector:
 
-* A user account and password. This account does NOT need to be admin/root, but you MUST grant a substantial number of read only privileges to your service account - see table below
+* A user account and password with at least read permission.
 * IP address / Fully Qualified Domain Name of the Qumulo cluster
 * HTTPS access to port 8000
 
