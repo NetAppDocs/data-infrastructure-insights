@@ -103,7 +103,7 @@ sidebar:
           - title: Identifying Inactive Devices
             url: /task_identify_inactive_devices.html
 
-      - title: Monitors and Alerts
+      - title: Monitor, Alerts, and Notifications
         entries:
           - title: Creating Monitors
             url: /task_create_monitor.html
@@ -129,6 +129,8 @@ sidebar:
               - title: Webhook Example - Teams
                 url: /task_webhook_example_teams.html
 
+          - title: Login Message
+            url: /login_message_popup.html
 
       - title: Working with Annotations
         entries:
