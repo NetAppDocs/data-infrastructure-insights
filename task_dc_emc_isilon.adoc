@@ -7,7 +7,6 @@ summary: Configuring the Dell EMC PowerScale (formerly Isilon) data collector.
 
 = Dell EMC PowerScale data collector
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:

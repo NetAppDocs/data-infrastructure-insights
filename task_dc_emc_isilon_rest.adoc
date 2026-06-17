@@ -7,7 +7,6 @@ summary: Configuring the Dell EMC Isilon / PowerScale REST data collector.
 
 = Dell EMC Isilon / PowerScale REST data collector
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
