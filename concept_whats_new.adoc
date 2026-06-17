@@ -21,8 +21,9 @@ NetApp is continually improving and enhancing its products and services. Here ar
 
 
 === Share Important Updates with Login Messages
+ 
+Keep your team informed and aligned with customizable login messages. Communicate important announcements, maintenance schedules, or policy updates directly to users when they log in. With markdown support, you can format messages for clarity and ensure critical information reaches every DII user. Accounts with admin privileges can find the configuration in the Admin menu under Notifications.
 
-Keep your team informed and aligned with customizable login messages. Communicate important announcements, maintenance schedules, or policy updates directly to users when they log in. With markdown support, you can format messages for maximum impact and ensure critical information reaches your entire organization at the right time.
 
 
 === More Workspace, Less Clutter 
