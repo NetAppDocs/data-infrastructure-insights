@@ -1,0 +1,17 @@
+---
+sidebar: sidebar
+permalink: login_message_popup.html
+summary: Set a pop-up message-of-the-day for all users.
+keywords: notifications, pop-up, banner, motd, message, login
+---
+
+= Configuring a Login Message
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You can configure a message to display as a pop-up for all users when they log in. You choose to display only for the next login for all users, or for all subsequent logins.
+
