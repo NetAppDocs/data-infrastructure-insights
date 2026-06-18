@@ -1816,7 +1816,6 @@ link:https://docs.netapp.com/us-en/cloudinsights/cs_automated_response_policies.
 
 |Shared Resource Under Stress
 |The _Shared Resource Under Stress_ insight uses AI/ML to automatically identify where resource contention is causing performance degradation in your environment, highlights any workloads impacted by it, and provides recommended actions to remediate, letting you solve performance issues more quickly.
-link:https://docs.netapp.com/us-en/cloudinsights/insights_shared_resources_under_stress.html[Read More]
 
 |===
 
@@ -1940,7 +1939,6 @@ link:https://docs.netapp.com/us-en/cloudinsights/cs_automated_response_policies.
 
 |Shared Resource Under Stress
 |The Shared Resource Under Stress insight uses AI/ML to automatically identify where resource contention is causing performance degradation in your environment, highlights any workloads impacted by it, and provides recommended actions to remediate, letting you solve performance issues more quickly.
-link:https://docs.netapp.com/us-en/cloudinsights/insights_shared_resources_under_stress.html[Read More]
 
 |===
 
