@@ -7,7 +7,6 @@ summary: Configuring Workload Security LDAP User Directory Collector
 
 = Configuring an LDAP Directory Server Collector 
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
@@ -70,10 +69,7 @@ dorp.company.com
 |Ports|Select port
 |===
 
-////
-Add to table once link is provided:
-For more details about forest names, please refer to this link:
-////
+
 
 Enter the following Directory Server required attributes if the default attribute names have been modified in LDAP Directory Server. Most often these attributes names are _not_ modified in LDAP Directory Server, in which case you can simply proceed with the default attribute name.
 
