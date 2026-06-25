@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_dc_cisco_fc_switch.html
-keywords: data collector, cisco, FC, cisco FC 
+keywords: data collector, cisco, FC, cisco FC
 summary: Configuring Cisco MDS Fablic Switch data collector.
 ---
 
@@ -13,10 +13,10 @@ summary: Configuring Cisco MDS Fablic Switch data collector.
 :linkattrs:
 :imagesdir: ./media/
 
-[.lead] 
-Data Infrastructure Insights uses the Cisco MDS Fabric Switches data collector to discover inventory for Cisco MDS Fabric Switches as well as a variety of Cisco Nexus FCoE switches on which the FC service is enabled. 
+[.lead]
+Data Infrastructure Insights uses the Cisco MDS Fabric Switches data collector to discover inventory for Cisco MDS Fabric Switches as well as a variety of Cisco Nexus FCoE switches on which the FC service is enabled.
 
-Additionally, you can discover many models of Cisco devices running in NPV mode with this data collector. 
+Additionally, you can discover many models of Cisco devices running in NPV mode with this data collector.
 
 == Terminology
 
@@ -40,17 +40,17 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Requirements
 
-* An IP address of one switch in the fabric or individual switches 
-* Chassis discovery, to enable fabric discovery 
+* An IP address of one switch in the fabric or individual switches
+* Chassis discovery, to enable fabric discovery
 * If using SNMP V2, read-only community string
-* Port 161 is used to access the device 
+* Port 161 and 162 (UDP) is used to access the device
 
-== Configuration 
+== Configuration
 
 [cols=2*, options="header", cols"50,50"]
 |===
 |Field|Description
-|Cisco Switch IP|IP address or fully-qualified domain name of the switch 
+|Cisco Switch IP|IP address or fully-qualified domain name of the switch
 |SNMP Version|Select V1, V2, or V3. V2 or later is required for performance acquisition.
 |SNMP Community String|SNMP read-only community string used to access the switch (not applicable for SNMP v3)
 |User Name|User name for the switch (SNMP v3 only)
@@ -62,22 +62,22 @@ Note: These are common terminology mappings only and might not represent every c
 [cols=2*, options="header", cols"50,50"]
 |===
 |Field|Description
-|Inventory Poll Interval (min)|Interval between inventory polls (default 40 minutes) 
-|SNMP Auth Protocol|SNMP authentication protocol (SNMPv3 only) 
+|Inventory Poll Interval (min)|Interval between inventory polls (default 40 minutes)
+|SNMP Auth Protocol|SNMP authentication protocol (SNMPv3 only)
 |SNMP Privacy Protocol|SNMP privacy protocol (SNMPv3 only)
 |SNMP Privacy Password|SNMP Privacy Password
 |SNMP Retries|Number of SNMP retry attempts
 |SNMP Timeout (ms)|SNMP timeout (default 5000 ms)
-|Enable Trapping|Select to enable trapping. If you enable trapping, you must also activate SNMP notifications. 
+|Enable Trapping|Select to enable trapping. If you enable trapping, you must also activate SNMP notifications.
 |Minimum Time Between Traps (sec)|Minimum time between acquisition attempts triggered by traps (default 10 seconds)
 |Discover All Fabric Switches|Select to discover all switches in the fabric
-|Excluded Devices|Comma-separated list of device IPs to exclude from polling 
+|Excluded Devices|Comma-separated list of device IPs to exclude from polling
 |Included Devices|Comma-separated list of device IPs to include in polling
 |Check Device Type|Select to accept only those devices that explicitly advertise themselves as Cisco devices
-|First Alias Type|Provide a first preference for resolution of the alias. Choose from the following: 
+|First Alias Type|Provide a first preference for resolution of the alias. Choose from the following:
 
 *Device Alais*
-This is a user-friendly name for a port WWN (pWWN) that can be used in all configuration commands, as required. All switches in the Cisco MDS 9000 Family support Distributed Device Alias Services (device aliases). 
+This is a user-friendly name for a port WWN (pWWN) that can be used in all configuration commands, as required. All switches in the Cisco MDS 9000 Family support Distributed Device Alias Services (device aliases).
 
 *None*
 Do not report any alias.
@@ -86,11 +86,11 @@ Do not report any alias.
 A description to help identify the port in a list of ports.
 
 *Zone Alias (all)*
-A user-friendly name for a port that can be used only for the active configuration. This is the default. 
+A user-friendly name for a port that can be used only for the active configuration. This is the default.
 |Second Alias Type|Provide a second preference for resolution of the alias
 |Third Alias Type|Provide a third preference for resolution of the alias
 |Enable SANTap Proxy Mode Support|Select if your Cisco switch is using SANTap in proxy mode. If you are using EMC RecoverPoint, then you are probably using SANTap.
-|Performance Poll Interval (sec)|Interval between performance polls (default 300 seconds) 
+|Performance Poll Interval (sec)|Interval between performance polls (default 300 seconds)
 |===
 
 
@@ -107,7 +107,7 @@ Some things to try if you encounter problems with this data collector:
 •	Login to the device using CLI
 •	Try to run SNMP walk
 |Error: Device is not a Cisco MDS switch
-|•	Make sure the data source IP configured for the device is correct 
+|•	Make sure the data source IP configured for the device is correct
 •	Login to the device using Cisco Device Manager GUI
 •	Login to the device using CLI
 |Error: Data Infrastructure Insights is not able to obtain the switch’s WWN. |This may not be a FC or FCoE switch, and as such may not be supported. Make sure the IP/FQDN configured in the datasource is truly a FC/FCoE switch.
@@ -120,6 +120,8 @@ Some things to try if you encounter problems with this data collector:
 •	Login to the device using Cisco Device Manager GUI
 •	Login to the device using CLI
 •	Run SNMP walk
+|Error: Failed to discover the USM Engine ID at xx.xx.xx.xx/161. Please check if the device is online.
+|Verify that the SNMP ports 161 and 162 are open between the acquisition unit and the switch.
 |===
 
 === Performance
@@ -132,4 +134,3 @@ Some things to try if you encounter problems with this data collector:
 |===
 
 Additional information may be found from the link:concept_requesting_support.html[Support] page or in the link:reference_data_collector_support_matrix.html[Data Collector Support Matrix].
-
