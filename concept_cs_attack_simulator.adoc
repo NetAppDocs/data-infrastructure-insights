@@ -134,8 +134,7 @@ If you paused the collector before following these steps, please be sure to resu
 
 
 
-== Generate the sample files programmatically:
-Before creating the files, you must first stop or link:task_add_collector_svm.html#play-pause-data-collector[pause the data collector] processing.
+== Generate File Tampering Alert
 
 To generate a file tampering alert, you can execute the included script which will simulate a file tampering alert in Workload Security.
 

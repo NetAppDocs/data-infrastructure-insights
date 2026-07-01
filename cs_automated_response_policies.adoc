@@ -15,11 +15,9 @@ summary: Configure automated response policies to take immediate action during s
 [.lead]
 Response Policies trigger actions such as taking a snapshot or restricting user access in the event of an attack or abnormal user behavior. 
 
-
 You can set policies on specific devices or all devices. To set a response policy, select *Admin > Automated Response Policies* and click the appropriate *+Policy* button. You can create policies for Attacks or for Warnings.
 
-//image:Automated_Response_Screenshot.png[Create Attack Policy]
-image:ws_add_attack_policy.png[Add an Attack Policy dialog showing webhook dropdown]
+image:ws_add_attack_policy.png[Add an Attack Policy dialog showing webhook dropdown, width=300]
 
 You must save the policy with a unique name. 
 
