@@ -72,8 +72,9 @@ Next, set up a Data Collector:
 . Configure an SVM data collector if not already done.
 . Make sure the mount protocol is selected while configuring the data collector.
 
-== Generate File Tampering Alert
+== Generate the sample files programmatically:
 
+Before creating the files, you must first stop or link:task_add_collector_svm.html#play-pause-data-collector[pause the data collector] processing.
 
 Before running the simulation, you must first add files to be encrypted. You can either manually copy the files to be encrypted into the target folder, or use one of the included scripts to programmatically create the files. Whichever method you use, make sure at least 100 files are present to encrypt.
 
@@ -133,8 +134,7 @@ If you paused the collector before following these steps, please be sure to resu
 
 
 
-== Generate the sample files programmatically:
-Before creating the files, you must first stop or link:task_add_collector_svm.html#play-pause-data-collector[pause the data collector] processing.
+== Generate File Tampering Alert
 
 To generate a file tampering alert, you can execute the included script which will simulate a file tampering alert in Workload Security.
 
