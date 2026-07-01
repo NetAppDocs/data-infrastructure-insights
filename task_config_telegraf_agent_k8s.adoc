@@ -309,6 +309,10 @@ Network Performance and Map
 
 * ci-net-observer
 
+Change Analysis
+
+* ci-k8s-change-observer
+
 Push the operator docker image to your private/local/enterprise docker repository according to your corporate policies. Ensure that the image tags and directory paths to these images in your repository are consistent with those in the Data Infrastructure Insights repository.
 
 Edit the monitoring-operator deployment in operator-deployment.yaml, and modify all image references to use your private Docker repository.
@@ -669,6 +673,10 @@ Alternatively, the user can configure the kubelet for link:https://kubernetes.io
 |Ensure the host directory in which the DB file resides has the proper read/write permissions. More specifically, the host directory should grant read/write permissions to non-root users. The default DB file location is /var/log/ unless overridden by the fluent-bit-dbFile _agentconfiguration_ option.
 
 If SELinux is enabled, try setting the fluent-bit-seLinuxOptionsType agentconfiguration option to 'spc_t'
+
+|I see error messages from Telegraf resembling the following, but Telegraf does start up and run:
+E! [inputs.kubernetes] Error in plugin: https://<IP>>:<port>>/pods returned HTTP status 403 Forbidden
+|These messages may occur if you are running on Kubernetes versions below 1.33. The "nodes/pods" RBAC resource used by telegraf does not exist on these versions. Refer to the "For Kubernetes versions < 1.33" section of operator-additional-permissions.yaml for the RBAC resources required on older versions.
 
 
 |===
