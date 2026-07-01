@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "bitbucket": {
+      "command": "npx",
+      "args": ["-y", "bitbucket-mcp@latest"],
+      "envFile": "${workspaceFolder}/.cursor/.env.bitbucket",
+      "env": {
+        "BITBUCKET_URL": "https://bitbucket.ngage.netapp.com/rest/api/1.0",
+        "BITBUCKET_TOKEN": "BBDC-NTQ4MzIxMDk3NzQ3Oibb6FabxDFO2iYC3JKFBmHKei27",
+        "BITBUCKET_WORKSPACE": "${env:BITBUCKET_WORKSPACE}"
+      }
+    }
+  }
+}

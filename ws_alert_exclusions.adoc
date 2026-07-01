@@ -22,7 +22,7 @@ Navigate to *Workload Security > Policies* and select the *Alert Exclusions* tab
 
 Alert Exclusion is configured per tenant and includes the following:
 
-. File Types: suppress File Tampering alerts on specific <<allowed-file-types, Allowed File Types>>
+. File Types: suppress File Tampering alerts on specific <<file-types, Allowed File Types>>
 . Users: suppress alerts triggered by selected users.
 . Paths: suppress alerts for activity on selected directory paths (up to four directory levels, starting at the junction path).
 
@@ -36,11 +36,11 @@ Alert Exclusion is configured per tenant and includes the following:
 == Users and Paths
 
 * Users' exclusion list:  Add users to be excluded for alerts.
-* Directory exclusion List:  Supports up to four levels of directory paths, beginning with the junction path.
+* Directory exclusion List: Supports up to four levels of directory paths, beginning with the junction path. All sub-directories and files under this path will be excluded for alert generation. Wildcards in directory paths are not supported.
 
-image:ws_alert_exclusions_users.png[]
+image:ws_alert_exclusions_users.png[Alert Exclusions Users]
 
-image:ws_alert_exclusions_paths.png[]
+image:ws_alert_exclusions_paths.png[Alert Exclusions Paths]
 
 Individual users and directory paths can be added to or removed from the respective exclusion list. Every entry in each list will have the information of when and by whom was it added to the list, and this information will be used for auditing purpose.
 

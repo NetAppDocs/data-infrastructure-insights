@@ -689,7 +689,7 @@ Note that the HCI data collector acquires from the HCI Virtual Center only. To c
 
 === New Service Data Collector: Kapacitor
 
-* link:task_config_telegraf_kapacitor.html[Kapacitor] has been added as a data collector for services.
+* Kapacitor has been added as a data collector for services.
 
 === Integration with Services via Telegraf
 

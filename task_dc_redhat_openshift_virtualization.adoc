@@ -23,11 +23,13 @@ The authentication approach for this collector is an authentication token bound 
 
 Run those 3 commands and watch for any errors. 
 
-When the commands complete:
+When the commands complete, run:
 
- oc sa new-token acq-readonly-cluster-user
+ oc create token acq-readonly-cluster-user --duration=8760h 
 
 This will create a token bound to your user.
+Note: It is recommended to set token duration. Be aware that Data collection will fail with a “Failed to connect” error following token expiration. 
+
 
 Finally, you may also want your OSV administrator to run:
 
