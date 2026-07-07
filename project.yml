@@ -411,8 +411,6 @@ sidebar:
                   url: /task_dc_emc_vplex.html
                 - title: XtremIO
                   url: /task_dc_emc_xio.html
-            - title: Fujitsu
-              url: /task_dc_fujitsu_eternus.html
             - title: Google
               url: /task_dc_google_cloud.html
             - title: Google Cloud NetApp Volumes
