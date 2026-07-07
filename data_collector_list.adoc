@@ -54,7 +54,6 @@ Alphabetical list of Data Collectors supported by Data Infrastructure Insights:
 | link:task_dc_emc_vplex.html[Dell EMC VPLEX ] |Infrastructure 
 | link:task_dc_emc_xio.html[Dell EMC XtremIO ] |Infrastructure 
 | link:task_dc_dell_xc_series.html[Dell XC Series ] |Infrastructure 
-//| link:task_dc_fujitsu_eternus.html[Fujitsu ETERNUS DX ] |Infrastructure 
 | link:task_dc_google_cloud.html[Google Compute and Storage ] |Infrastructure 
 | link:task_dc_google_cloud_netapp_volumes.html[Google Cloud NetApp Volumes] |Infrastructure
 | link:task_dc_hds_hcp.html[Hitachi Content Platform (HCP)] |Infrastructure
@@ -90,6 +89,7 @@ Alphabetical list of Data Collectors supported by Data Infrastructure Insights:
 | link:task_dc_na_storagegrid.html[NetApp StorageGRID ] |Infrastructure 
 | link:task_dc_nutanix.html[Nutanix NX Series ] |Infrastructure 
 | link:task_dc_oracle_zfs.html[Oracle ZFS Storage Appliance ] |Infrastructure 
+| link:task_dc_promox_ve.html[Promox Virtual Environment] |Infrastructure
 | link:task_dc_pure_flasharray.html[Pure Storage FlashArray ] |Infrastructure 
 | link:task_dc_pure_flashblade.html[Pure Storage FlashBlade ] |Infrastructure 
 | link:task_dc_qumulo_rest.html[Qumulo REST]| Infrastructure
