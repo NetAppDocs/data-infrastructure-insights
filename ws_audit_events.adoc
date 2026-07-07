@@ -12,7 +12,7 @@ keywords: workload security, audit, events
 :linkattrs:
 :imagesdir: ./media/
 
-[lead]
+[.lead]
 Identify changes both expected (for tracking) or unexpected (for troubleshooting). View an audit trail of the Workload Security system events and user activities.
 
 == Viewing Audited Events
