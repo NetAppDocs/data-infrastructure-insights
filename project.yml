@@ -483,7 +483,7 @@ sidebar:
                   url: /task_dc_na_storagegrid.html
             - title: Nutanix NX
               url: /task_dc_nutanix.html
-            - title: Nutanix /API_Overview.html
+            - title: Nutanix AHV
               url: /task_dc_nutanix_ahv.html
             - title: Oracle
               url: /task_dc_oracle_zfs.html
