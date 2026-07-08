@@ -2,19 +2,18 @@
 sidebar: sidebar
 permalink: task_dc_nutanix.html
 keywords: data collector, Nutanix, NX Series 
-summary: Configuring Nutanix data collector.
+summary: Configuring Nutanix NX data collector.
 ---
 
 = Nutanix NX data collector
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead] 
-Data Infrastructure Insights uses the Nutanix data collector to discover inventory and performance data for Nutanix NX storage systems.
+Data Infrastructure Insights uses the Nutanix NX data collector to discover inventory and performance data for Nutanix NX storage systems.
 
 == Terminology
 

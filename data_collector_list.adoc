@@ -88,6 +88,7 @@ Alphabetical list of Data Collectors supported by Data Infrastructure Insights:
 | link:task_dc_na_solidfire.html[NetApp SolidFire All-Flash Array ] |Infrastructure 
 | link:task_dc_na_storagegrid.html[NetApp StorageGRID ] |Infrastructure 
 | link:task_dc_nutanix.html[Nutanix NX Series ] |Infrastructure 
+| link:task_dc_nutanix_ahv.html[Nutanix AHV Series ] |Infrastructure 
 | link:task_dc_oracle_zfs.html[Oracle ZFS Storage Appliance ] |Infrastructure 
 | link:task_dc_promox_ve.html[Promox Virtual Environment] |Infrastructure
 | link:task_dc_pure_flasharray.html[Pure Storage FlashArray ] |Infrastructure 

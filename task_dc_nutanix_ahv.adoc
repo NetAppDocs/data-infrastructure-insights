@@ -1,0 +1,68 @@
+---
+sidebar: sidebar
+permalink: task_dc_nutanix_ahv.html
+keywords: data collector, Nutanix, AHV Series 
+summary: Configuring Nutanix AHV data collector.
+---
+
+= Nutanix AHV data collector
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead] 
+The Nutanix AHV collector acquires Nutanix Acropolis Hypervisor (AHV) inventory and virtualization performance from Nutanix Prism Central using Prism Central v4 REST APIs (Cluster Management and Virtual Machine Management namespaces). It reports data in the virtualization OData model (VirtualizationRoot and related entities: hosts, virtual machines, datastores, virtual disks, and relationships).
+
+== Terminology
+
+[cols=2*, options="header", cols"50,50"]
+|===
+|Vendor/Model Term | Data Infrastructure Insights Term
+|AHV Node (Host) |Host
+|Prism Central Cluster |Hypervisor (Virtual Server)
+|Acropolis VM |Virtual Machine
+|Storage Container |Data Store
+|ADSF Volume Group |LUN
+|VM Disk |Virtual Disk
+|===
+
+Note: These are common terminology mappings only and might not represent every case for this data collector.
+
+== Requirements
+
+* Prism Central IP address or Fully Qualified Domain Name
+* Prism Central local or LDAP username and password (read-only account is sufficient for inventory and performance; Admin is not required)
+* Port requirement: HTTPS 9440
+* Prism Central version pc.2023.x or later (v3 API); pc.7.x or later recommended (v4 API)
+* Performance metrics require Prism Central with API v4.0.b1 or later (pc.7.3+). On older versions, inventory is still collected but no performance data is reported.
+
+
+== Configuration
+
+[cols=2*, options="header", cols"50,50"]
+|===
+|Field | Description
+|Prism Central IP Address|IP address or FQDN of the Prism Central instance
+|User name|Prism Central username
+|Password|Prism Central password
+|===
+
+== Advanced configuration 
+
+[cols=2*, options="header", cols"50,50"]
+|===
+|Field | Description
+|TCP port|TCP Port used to connect to Prism Central. The default is 9440. 
+|Inventory poll interval (min)|Interval between inventory polls. The default is 60 minutes.
+|Performance poll interval(sec)|Interval between performance polls. The default is 300 seconds.
+|HTTP timeout (sec)|HTTP request timeout. The default is 60 seconds.
+|HTTP retry count| Number of HTTP retries on transient failures. Default is 3.
+
+
+           
+== Troubleshooting
+
+Additional information on this Data Collector may be found from the link:concept_requesting_support.html[Support] page or in the link:reference_data_collector_support_matrix.html[Data Collector Support Matrix].
+
