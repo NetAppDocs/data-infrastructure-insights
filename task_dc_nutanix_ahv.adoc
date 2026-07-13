@@ -17,7 +17,7 @@ The Nutanix AHV collector acquires Nutanix Acropolis Hypervisor (AHV) inventory 
 
 == Terminology
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term | Data Infrastructure Insights Term
 |AHV Node (Host) |Host
@@ -41,7 +41,7 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field | Description
 |Prism Central IP Address|IP address or FQDN of the Prism Central instance
@@ -51,7 +51,7 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Advanced configuration 
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field | Description
 |TCP port|TCP Port used to connect to Prism Central. The default is 9440. 
