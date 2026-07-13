@@ -55,7 +55,7 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Requirements
 
-* IP address of the Red Hat OpenShift Virtualization server over port 443 via REST API 
+* IP address of the Red Hat OpenShift Virtualization server over port 6443 via REST API 
 * Read-only username and password 
 * RHEV Version 3.0+  
 
@@ -74,7 +74,7 @@ Note: These are common terminology mappings only and might not represent every c
 [cols=2*, options="header", cols"50,50"]
 |===
 |Field | Description
-|HTTPS Communication Port|Port used for HTTPS communication to RHOV
+|HTTPS Communication Port|Port used for HTTPS communication to RHOV. Default is 6443.
 |Inventory poll interval (min)|The default is 20 minutes.
 //|Connection Timeout (sec)|The default is 60. 
 |===
