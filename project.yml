@@ -482,11 +482,7 @@ sidebar:
                 - title: StorageGRID
                   url: /task_dc_na_storagegrid.html
             - title: Nutanix
-              entries:
-                - title: Nutanix AHV
-                  url: /task_dc_nutanix_ahv.html
-                - title: Nutanix NX
-                  url: /task_dc_nutanix.html
+              url: /task_dc_nutanix.html
             - title: Oracle
               url: /task_dc_oracle_zfs.html
             - title: Promox VE
