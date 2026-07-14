@@ -73,5 +73,28 @@ It is possible to configure a monitor in such a way for the condition to *always
 To prevent this, Data Infrastructure Insights will automatically close any "permanently active" alert after 7 days. Note that the underlying monitor conditions may (probably will) continue to exist, causing a new alert to be issued almost immediately, but this closing of "always active" alerts alleviates some of the system stress that can otherwise occur.
 
 
+== Maintenance Windows
+
+Maintenance Windows allow you to suppress alert notifications during scheduled maintenance periods, helping you avoid unnecessary disruptions.
+
+With Maintenance Windows, you can schedule specific maintenance periods during which alert notifications are suppressed, for objects and metrics you choose. For example, you can suppress alert notifications triggered by specific storage systems, when those storage systems are in a planned upgrade period.
+
+You can choose whether to suppress both alerts and notifications during the window, or supporess notifications only but continue to detect alerts.
+
+image:Maintenance_Windows_example.png[Maintenance Windows Example]
+
+=== Creating a Maintenance Window
+
+To create a Maintenance Window:
+
+. Navigate to *Observability > Alerts > Maintenance Windows* and click *+ Maintenance Window*.
+. Enter a descriptive *Name* for the maintenance window.
+. Select the *storage device* or *object attribute*.
+. Filter for the *monitor or monitors*. Wildcard are accepted.
+. Select the *Start Time* and *End Time* for the maintenance period.
+. Choose whether to suppress *alerts and notifications*, or *notifications only* (alerts are still detected during the window).
+. Click *Save* to create the maintenance window.
+
+
 
 
