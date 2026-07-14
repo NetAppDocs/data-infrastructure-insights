@@ -309,6 +309,10 @@ Network Performance and Map
 
 * ci-net-observer
 
+Change Analysis
+
+* ci-k8s-change-observer
+
 Push the operator docker image to your private/local/enterprise docker repository according to your corporate policies. Ensure that the image tags and directory paths to these images in your repository are consistent with those in the Data Infrastructure Insights repository.
 
 Edit the monitoring-operator deployment in operator-deployment.yaml, and modify all image references to use your private Docker repository.
@@ -322,7 +326,7 @@ Edit the _AgentConfiguration_ in _operator-config.yaml_ to reflect the new docke
 agent:
   ...
   # An optional docker registry where you want docker images to be pulled from as compared to CI's docker registry 
-  # Please see documentation link here: link:task_config_telegraf_agent_k8s.html#using-a-custom-or-private-docker-repository
+  # Please see documentation link here: link:task_config_telegraf_agent_k8s.html#using-a-custom-or-private-docker-repository[Using a custom or private docker repository]
   dockerRepo: your.docker.repo/long/path/to/test
   # Optional: A docker image pull secret that maybe needed for your private docker registry
   dockerImagePullSecret: docker-secret-name  
@@ -365,7 +369,7 @@ Return to the link:task_config_telegraf_agent_k8s.html[*NetApp Kubernetes Monito
 
 
 
-
+////
 == A Note About Secrets
 
 To remove permission for the Kubernetes Monitoring Operator to view secrets cluster-wide, delete the following resources from the _operator-setup.yaml_ file before installing:
@@ -392,6 +396,8 @@ If Change Analysis is enabled, modify the _AgentConfiguration_ or _operator-conf
     # # Example: '"networking.k8s.io.networkpolicies,batch.jobs", "authorization.k8s.io.subjectaccessreviews"'
     kindsToIgnoreFromWatch: '"secrets"'
     ...
+////
+
 
 
 == Verifying Kubernetes Monitoring Operator Image Signatures
@@ -516,7 +522,7 @@ kubectl get psp (should show Pod Security Policy removed)
 kubectl get all -n <namespace> \| grep -i psp (should show that nothing is found) 
 
 |"ImagePullBackoff" errors seen
-|These errors may be seen if you have a custom or private docker repository and have not yet configured the Kubernetes Monitoring Operator to properly recognize it.  <<using-a-custom-or-private-docker-repository,Read more>> about configuring for custom/private repo.
+|These errors may be seen if you have a custom or private docker repository and have not yet configured the Kubernetes Monitoring Operator to properly recognize it.  <<Using a custom or private docker repository,Read more>> about configuring for custom/private repo.
 
 
 |I am having an issue with my monitoring-operator deployment, and the current documentation does not help me resolve it.
@@ -669,6 +675,10 @@ Alternatively, the user can configure the kubelet for link:https://kubernetes.io
 |Ensure the host directory in which the DB file resides has the proper read/write permissions. More specifically, the host directory should grant read/write permissions to non-root users. The default DB file location is /var/log/ unless overridden by the fluent-bit-dbFile _agentconfiguration_ option.
 
 If SELinux is enabled, try setting the fluent-bit-seLinuxOptionsType agentconfiguration option to 'spc_t'
+
+|I see error messages from Telegraf resembling the following, but Telegraf does start up and run:
+E! [inputs.kubernetes] Error in plugin: https://<IP>>:<port>>/pods returned HTTP status 403 Forbidden
+|These messages may occur if you are running on Kubernetes versions below 1.33. The "nodes/pods" RBAC resource used by telegraf does not exist on these versions. Refer to the "For Kubernetes versions < 1.33" section of operator-additional-permissions.yaml for the RBAC resources required on older versions.
 
 
 |===

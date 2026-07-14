@@ -19,7 +19,7 @@ The data collector for VMware vSphere collects VM guest and ESXi Host performanc
 
 Data Infrastructure Insights acquires the following inventory information from the VMware vSphere data collector. For each asset type acquired, the most common terminology used for the asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term | Data Infrastructure Insights Term
 |Virtual disk|Disk
@@ -46,7 +46,7 @@ The following information is required to configure this data collector:
 
 == Setup and connection
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field | Description
 |Name|Unique name for the data collector
@@ -55,7 +55,7 @@ The following information is required to configure this data collector:
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Virtual center IP Address |IP address of the Virtual Center
@@ -68,7 +68,7 @@ The following information is required to configure this data collector:
 In the advanced configuration screen, check the *VM Performance* box to collect performance data. Inventory collection is enabled by default. 
 The following fields can be configured:
 
-[cols=2*,  cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Inventory poll interval (min)  | Default is 20
@@ -111,7 +111,7 @@ Some things to try if you encounter problems with this data collector:
 
 === Inventory
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Problem:|Try this:
 |Error: Include list to filter VMs cannot be empty
