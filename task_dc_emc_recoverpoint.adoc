@@ -32,7 +32,7 @@ The following information is required to configure this data collector:
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description 
 |Address of RecoverPoint|IP address or fully-qualified domain name of RecoverPoint cluster
@@ -42,7 +42,7 @@ The following information is required to configure this data collector:
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description 
 |TCP Port|TCP Port used to connect to Recoverpoint cluster
