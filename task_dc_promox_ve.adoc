@@ -15,35 +15,12 @@ summary: Configuring Promox Virtual Environment data collector.
 [.lead] 
 The DII Promox Virtual Environment collector will collect inventory data. This is an HTTPS REST API-based collector.
 
-////
-The authentication approach for this collector is an authentication token bound to a service account. To create both the user account and the token:
-
- oc create sa acq-readonly-cluster-user -n default
- oc adm policy add-cluster-role-to-user cluster-reader -z acq-readonly-cluster-user --rolebinding-name acq-readonly-cluster-user-binding
- oc adm policy add-cluster-role-to-user cluster-monitoring-view -z acq-readonly-cluster-user --rolebinding-name acq-readonly-cluster-monitor-user-binding
-
-Run those 3 commands and watch for any errors. 
-
-When the commands complete, run:
-
- oc create token acq-readonly-cluster-user --duration=8760h 
-
-This will create a token bound to your user.
-Note: It is recommended to set token duration. Be aware that Data collection will fail with a “Failed to connect” error following token expiration. 
-
-
-Finally, you may also want your OSV administrator to run:
-
- oc cluster-info
-
-This will return the hostname/IP address for management. Each DII OSV collector needs to be pointed at the IP/hostname for OSV management.
-////
 
 == Terminology
 
 For each asset type acquired by Data Infrastructure Insights, the most common terminology used for the asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term | Data Infrastructure Insights Term
 |Disk|Virtual Disk
@@ -59,17 +36,17 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field | Description
 |Hostname or IP address|hostname IP address of the storage system 
-|API Token ID| API tokern required for access
+|API Token ID| API token required for access
 |API Token Secret| Secret for the above token
 |===
 
 == Advanced configuration 
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field | Description
 |HTTPS Communication Port|Port used for HTTPS communication (default 8006)
