@@ -59,7 +59,7 @@ Note: These are common terminology mappings only and might not represent every c
 |Performance poll interval(sec)|Interval between performance polls. The default is 300 seconds.
 |HTTP timeout (sec)|HTTP request timeout. The default is 60 seconds.
 |HTTP retry count| Number of HTTP retries on transient failures. Default is 3.
-
+|===
 
            
 == Troubleshooting
