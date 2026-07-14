@@ -40,7 +40,7 @@ Note: These are common terminology mappings only and might not represent every c
 |===
 |Field | Description
 |Hostname or IP address|hostname IP address of the storage system 
-|API Token ID| API tokern required for access
+|API Token ID| API token required for access
 |API Token Secret| Secret for the above token
 |===
 
