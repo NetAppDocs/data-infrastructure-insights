@@ -19,9 +19,17 @@ NetApp is continually improving and enhancing its products and services. Here ar
 
 == July 2026
 
-The DII AI Assistant is now more convenient than ever, with its own "Home" page where you can converse freely. Start a new conversation quickly or pick up the last conversation where you left off.
+=== New AI Assistant Starting Page
 
-image: AI_dashboard_page_menu.png[AI Assistant Nav Menu]
+The DII AI Assistant now features a dedicated starting page, putting intelligent infrastructure analysis front and center. Start new conversations instantly, resume your last session with one click, or get started quickly with suggested prompts.
+
+
+image:AI_dashboard_page_default.png[AI Dashboard Default, width=800]
+
+Access the starting page from *AI Assistant* in the navigation menu or open the AI Assistant from anywhere using the "stars" icon in the top left.
+
+image:AI_dashboard_page_menu.png[AI Assistant Nav Menu, width=600]
+image:AI_assistant_access_button.png[AI Assistant access from anywhere, width=300]
 
 
 '''
