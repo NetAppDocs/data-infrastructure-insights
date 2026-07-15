@@ -22,7 +22,7 @@ The EMC PowerStore data collector gathers the volume-to-volume replication relat
 
 Data Infrastructure Insights acquires the following inventory information from this data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term|Data Infrastructure Insights Term 
 |host|host
@@ -48,7 +48,7 @@ The following information is required to configure this data collector:
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description 
 |PowerStore gateway(s)|IP addresses or fully-qualified domain names of PowerStore storage
@@ -58,7 +58,7 @@ The following information is required to configure this data collector:
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description 
 |HTTPS Port|Default is 443

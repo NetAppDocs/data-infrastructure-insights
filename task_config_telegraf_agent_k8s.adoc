@@ -369,7 +369,7 @@ Return to the link:task_config_telegraf_agent_k8s.html[*NetApp Kubernetes Monito
 
 
 
-
+////
 == A Note About Secrets
 
 To remove permission for the Kubernetes Monitoring Operator to view secrets cluster-wide, delete the following resources from the _operator-setup.yaml_ file before installing:
@@ -396,6 +396,8 @@ If Change Analysis is enabled, modify the _AgentConfiguration_ or _operator-conf
     # # Example: '"networking.k8s.io.networkpolicies,batch.jobs", "authorization.k8s.io.subjectaccessreviews"'
     kindsToIgnoreFromWatch: '"secrets"'
     ...
+////
+
 
 
 == Verifying Kubernetes Monitoring Operator Image Signatures
