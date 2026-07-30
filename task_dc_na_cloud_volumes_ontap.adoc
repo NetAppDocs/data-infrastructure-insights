@@ -19,7 +19,7 @@ This data collector supports inventory collection from Cloud Volumes ONTAP confi
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |NetApp Management IP Address |IP address for Cloud Volumens ONTAP
@@ -29,7 +29,7 @@ This data collector supports inventory collection from Cloud Volumes ONTAP confi
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Connection Type | HTTPS recommended. Also shows default port.

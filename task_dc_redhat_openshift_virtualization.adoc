@@ -41,7 +41,7 @@ This will return the hostname/IP address for management. Each DII OSV collector 
 
 For each asset type acquired by Data Infrastructure Insights, the most common terminology used for the asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term | Data Infrastructure Insights Term
 |Disk|Virtual Disk
@@ -55,13 +55,13 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Requirements
 
-* IP address of the Red Hat OpenShift Virtualization server over port 443 via REST API 
+* IP address of the Red Hat OpenShift Virtualization server over port 6443 via REST API 
 * Read-only username and password 
 * RHEV Version 3.0+  
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field | Description
 |RHEV Server IP Address|IP address of the storage system 
@@ -71,10 +71,10 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Advanced configuration 
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field | Description
-|HTTPS Communication Port|Port used for HTTPS communication to RHOV
+|HTTPS Communication Port|Port used for HTTPS communication to RHOV. Default is 6443.
 |Inventory poll interval (min)|The default is 20 minutes.
 //|Connection Timeout (sec)|The default is 60. 
 |===

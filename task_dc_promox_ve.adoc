@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
-permalink: task_dc_redhat_virtualization.html
-keywords: data collector, Red Hat Virtualization
-summary: Configuring Red Hat Virtualization data collector.
+permalink: task_dc_promox_ve.html
+keywords: data collector, Promox VirtVirtual Environmentalization
+summary: Configuring Promox Virtual Environment data collector.
 ---
 
-= Red Hat Virtualization data collector
+= Red Hat OpenShift Virtualization data collector
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,8 @@ summary: Configuring Red Hat Virtualization data collector.
 :imagesdir: ./media/
 
 [.lead] 
-The DII data collector for Red Hat Virtualization also supports the open source project oVirt, and Oracle Linux Virtualization Manager. This data collector communicates via REST API to the HTTPS interface on the management station.
+The DII Promox Virtual Environment collector will collect inventory data. This is an HTTPS REST API-based collector.
+
 
 == Terminology
 
@@ -31,20 +32,16 @@ For each asset type acquired by Data Infrastructure Insights, the most common te
  
 Note: These are common terminology mappings only and might not represent every case for this data collector.
 
-== Requirements
 
-* IP address/hostname of the RHV/oVirt/OLVM server over port 443 via REST API 
-* Read-only username and password 
-* RHV Version 3.0+/Ovirt 4.0+/OLVM 4.0+  
 
 == Configuration
 
 [cols="50,50", options="header"]
 |===
 |Field | Description
-|RHV/Ovirt/OLVM Server IP Address|IP address of the management station
-|User name |User name 
-|Password |Password
+|Hostname or IP address|hostname IP address of the storage system 
+|API Token ID| API token required for access
+|API Token Secret| Secret for the above token
 |===
 
 == Advanced configuration 
@@ -52,12 +49,10 @@ Note: These are common terminology mappings only and might not represent every c
 [cols="50,50", options="header"]
 |===
 |Field | Description
-|HTTPS Communication Port|Port used for HTTPS communication to RHEV
+|HTTPS Communication Port|Port used for HTTPS communication (default 8006)
 |Inventory poll interval (min)|The default is 20 minutes.
-|VM Performance|Enable performance collection
-|Performance Poll Interval(sec)|The default is 900
-|===
 
+|===
         
 == Troubleshooting
 

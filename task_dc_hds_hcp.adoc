@@ -22,7 +22,7 @@ NOTE: Hitachi Content Platform is metered at a different Raw TB to Managed Unit 
 
 Data Infrastructure Insights acquires the following inventory information from the Hitachi HCP data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term|Data Infrastructure Insights Term 
 |HCP Cluster|Storage
@@ -59,7 +59,7 @@ The following requirements must be met in order to collect performance data:
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |HCP Host|IP address or fully-qualified domain name of the HCP host 

@@ -20,7 +20,7 @@ This data collector acquires inventory and performance data from storage systems
 
 Data Infrastructure Insights acquires inventory and performance data from the ONTAP data collector. For each asset type acquired, the most common terminology used for the asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term | Data Infrastructure Insights Term
 |Disk|Disk
@@ -99,7 +99,7 @@ Data Infrastructure Insights has the ability to collect ONTAP cluster switch dat
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |NetApp Management IP |IP address or fully-qualified domain name of the NetApp cluster
@@ -109,7 +109,7 @@ Data Infrastructure Insights has the ability to collect ONTAP cluster switch dat
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Connection type|Choose HTTP (default port 80) or HTTPS (default port 443). The default is HTTPS
@@ -231,7 +231,7 @@ Some things to try if you encounter problems with this data collector:
 
 === Inventory
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Problem:|Try this:
 
@@ -263,7 +263,7 @@ ZAPI error code is 14007 and response contains “Node is not healthy”
 |===
 
 === Performance
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Problem:|Try this:
 |“Failed to collect performance from ZAPI” error|This is usually due to perf stat not running. Try the following command on each node:
