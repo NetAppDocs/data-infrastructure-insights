@@ -22,7 +22,7 @@ The list of supported devices includes models such as the SVC, the v7000, the v5
 
 Data Infrastructure Insights acquires the following inventory information from the IBM SVC data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term | Data Infrastructure Insights Term
 |Drive|Disk
@@ -77,7 +77,7 @@ Note: Alternatively, enable data collection using the SVC  management user inter
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Cluster IP Addresses |IP addresses or fully-qualified domain names of the SVC storage 
@@ -92,7 +92,7 @@ Note: Alternatively, enable data collection using the SVC  management user inter
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Inventory Poll Interval (min)|Interval between inventory polls. The default is 40 minutes.
@@ -109,7 +109,7 @@ Note: Alternatively, enable data collection using the SVC  management user inter
 == Troubleshooting
 Some things to try if you encounter problems with this data collector:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Problem:|Try this:
 |Error: "The command cannot be initiated because it was not run on the configuration node."
@@ -118,7 +118,7 @@ Some things to try if you encounter problems with this data collector:
 
 Some things to try if you encounter problems with this data collector:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Problem:|Try this:
 |Error: "The command cannot be initiated because it was not run on the configuration node."
