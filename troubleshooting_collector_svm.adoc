@@ -291,5 +291,22 @@ Connector is in error state. Service name: audit. Reason for failure: Failed to 
 
 ''''
 
+*Problem:* After adding or upgrading an ONTAP SVM Data Collector (Workload Security), the tenant shows an overprovisioning or subscription breach alert. Raw storage capacity increased even though no new hardware was added.
+
+*Try This:* The same storage may be counted twice — once by an Observability ONTAP cluster collector and again by a Workload Security SVM collector on the same cluster.
+
+Compare the raw storage capacity reported by Observability ONTAP collectors and Workload Security SVM collectors. For each SVM collector, check whether its parent cluster is already monitored by an Observability ONTAP collector. If it is, only the cluster capacity should count toward subscription usage.
+
+Confirm whether any recent SVM migration occurred across clusters. After an SVM is migrated, capacity metrics may remain associated with the previous cluster until Workload Security receives updated information from the collector.
+
+Ensure the ONTAP SVM Data Collector for the migrated SVM is in RUNNING state. If needed, restart the collector so Workload Security can collect the correct cluster and capacity metrics after the migration.
+
+If both the cluster and SVM capacity appear in the total, capacity is likely being double-counted. This often happens shortly after adding, upgrading, restarting an SVM collector, or migrating an SVM between clusters.
+
+If usage still exceeds your subscription, open a NetApp Support case with subscription usage before and after the alert, and a list of Observability and SVM collectors with their reported raw storage capacity.
+
+{empty}
+
+''''
 
 If you are still experiencing problems, reach out to the support links mentioned in the *Help > Support* page.
