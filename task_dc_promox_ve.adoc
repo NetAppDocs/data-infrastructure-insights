@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task_dc_promox_ve.html
-keywords: data collector, Promox VirtVirtual Environmentalization
+keywords: data collector, Promox Virtual Environment, PVE
 summary: Configuring Promox Virtual Environment data collector.
 ---
 
-= Red Hat OpenShift Virtualization data collector
+= Proxmox Virtual Environment data collector
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,9 @@ summary: Configuring Promox Virtual Environment data collector.
 :imagesdir: ./media/
 
 [.lead] 
-The DII Promox Virtual Environment collector will collect inventory data. This is an HTTPS REST API-based collector.
+The DII Promox Virtual Environment collector will collect inventory and performance data for PVE based virtual machines (not LXC containers) ahd host/hypervisors. This is an HTTPS REST API-based collector that needs to speak to the Proxmox REST API provided by the pveproxy service/daemon that listens on TCP 8006.
+
+This data collector uses user + token authentication. You will need to create a service account on each Proxmox cluster, and assign the appropriate permissions to the user, and then generate an API token with those same rights. Please note that a given Proxmox user's token does NOT necessarily have the same rights/permissions as the user. DII will generally need global Audit/Monitor level rights - if you are creating a service account via the Proxmox UI, for PathPermision start at "/", set Propagate to "Yes", and unlock Datastore Audit, Mapping Audit, Pool Audit, SDN Audit, Sys Audit, VM Audit, VM Monitor at minimum. With the user created, you can then create an access token for it. Strongly consider creating the token with an expiration of 0 to ensure the token never expires.  
 
 
 == Terminology
@@ -26,8 +28,7 @@ For each asset type acquired by Data Infrastructure Insights, the most common te
 |Disk|Virtual Disk
 |Host|Host
 |Virtual Machine|Virtual Machine
-|Storage Domain|Data Store
-|Logical Unit|LUN
+|Storage|Data Store
 |===
  
 Note: These are common terminology mappings only and might not represent every case for this data collector.
