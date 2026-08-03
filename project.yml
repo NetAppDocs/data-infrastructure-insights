@@ -490,7 +490,7 @@ sidebar:
             - title: Oracle
               url: /task_dc_oracle_zfs.html
             - title: Proxmox VE
-              url: /task_dc_Proxmox_ve.html
+              url: /task_dc_proxmox_ve.html
             - title: Pure
               url: /task_dc_pure_flasharray.html
             - title: Qumulo REST
