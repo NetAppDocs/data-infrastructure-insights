@@ -489,8 +489,8 @@ sidebar:
               url: /task_dc_nutanix_ahv.html
             - title: Oracle
               url: /task_dc_oracle_zfs.html
-            - title: Promox VE
-              url: /task_dc_promox_ve.html
+            - title: Proxmox VE
+              url: /task_dc_Proxmox_ve.html
             - title: Pure
               url: /task_dc_pure_flasharray.html
             - title: Qumulo REST
