@@ -237,7 +237,7 @@ FAS/AFF 8080
 == Troubleshooting
 Some things to try if you encounter problems with this data collector:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Problem:|Try this:
 

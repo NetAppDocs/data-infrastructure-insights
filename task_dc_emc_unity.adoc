@@ -31,7 +31,7 @@ The DELL EMC Unity (formerly VNXe) data collector provides inventory support for
 Data Infrastructure Insights acquires the following inventory information from the Unity data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term|Data Infrastructure Insights Term 
 |Disk|Disk
@@ -47,7 +47,7 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Unity Storage|IP address or fully-qualified domain name of the Unity device
@@ -58,7 +58,7 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Inventory Poll Interval (min) |Interval between inventory polls. The  default is 40 minutes 
@@ -72,7 +72,7 @@ Some things to try if you encounter problems with this data collector:
 
 === Inventory
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Problem:|Try this:
 |"Failed to execute external utility" with error messages “Failed to find Unisphere executable uemcli”

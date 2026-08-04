@@ -13,8 +13,7 @@ keywords: onboarding, new user
 :imagesdir: ./media/
 
 [.lead]
-Before you can start working with Data Infrastructure Insights, you must sign up on the NetApp Console portal. If you already have a NetApp Console login, you can start a free trial of Data Infrastructure Insights with a few quick steps.
-
+Before you can start working with Data Infrastructure Insights, you must sign up on the *NetApp Console* portal. If you already have a NetApp Console login, you can start a free trial of Data Infrastructure Insights with a few quick steps.
 
 == Creating your NetApp Console account
 

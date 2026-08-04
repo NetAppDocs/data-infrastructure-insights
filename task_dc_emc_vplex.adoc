@@ -1,13 +1,12 @@
 ---
 sidebar: sidebar
 permalink: task_dc_emc_vplex.html
-keywords: data collector, VPLEX, EMC 
+keywords: data collector, VPLEX, EMC, vplex,
 summary: Configuring VPLEX data collector.
 ---
 
 = Configuring the EMC VPLEX data collector
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
@@ -16,14 +15,14 @@ summary: Configuring VPLEX data collector.
 [.lead] 
 This data collector acquires inventory and performance data from EMC VPLEX storage systems. For  configuration, the data collector requires an IP address of the VPLEX server and an administrative level domain account.
 
-NOTE: Data Infrastructure Insights' performance collection from Vplex clusters requires that the performance archive service be operational, in order to populate the .CSV files and logs that Data Infrastructure Insights retrieves via SCP-based file copies. NetApp has observed that many Vplex firmware upgrade/management station updates will leave this functionality non-operational. Customers planning such upgrades may want to proactively ask Dell/EMC if their planned upgrade will leave this functionality inoperable, and if so, how can they re-enable it to minimize gaps in performance visibility? Cloud Insight's Vplex performance code will assess on each poll whether all the expected files exist, and if they are being properly updated; if they are missing or stale, Data Infrastructure Insights will log performance collection failures.
+NOTE: Data Infrastructure Insights' performance collection from VPLEX clusters requires that the performance archive service be operational, in order to populate the .CSV files and logs that Data Infrastructure Insights retrieves via SCP-based file copies. NetApp has observed that many VPLEX firmware upgrade/management station updates will leave this functionality non-operational. Customers planning such upgrades may want to proactively ask Dell/EMC if their planned upgrade will leave this functionality inoperable, and if so, how can they re-enable it to minimize gaps in performance visibility? Cloud Insight's VPLEX performance code will assess on each poll whether all the expected files exist, and if they are being properly updated; if they are missing or stale, Data Infrastructure Insights will log performance collection failures.
 
 
 == Terminology
 
 Data Infrastructure Insightst acquires the following inventory information from the VPLEX data collector. For each asset type acquired, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term | Data Infrastructure Insights Term
 |Cluster|Storage
@@ -50,7 +49,7 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |IP address of VPLEX Management Console|IP address or fully-qualified domain name of the VPLEX Management Console
@@ -64,7 +63,7 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Communication Port|Port used for VPLEX CLI. The default is 443. 
@@ -83,7 +82,7 @@ Some things to try if you encounter problems with this data collector:
 
 === Inventory
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Problem:|Try this:
 |Error: User authentication failed.
@@ -92,7 +91,7 @@ Some things to try if you encounter problems with this data collector:
 
 === Performance
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Problem:|Try this:
 |Error: VPLEX performance for version below 5.3 is not supported.

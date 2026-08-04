@@ -20,7 +20,7 @@ The HP Enterprise Alletra 6000 (previously Nimble) data collector supports inven
 
 Data Infrastructure Insights acquires the following inventory information from this collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term|Data Infrastructure Insights Term 
 |Array|Storage
@@ -50,7 +50,7 @@ You must have the following in order to collect performance data from the storag
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Array Management IP Address|Fully qualified domain name (FQDN) or array management IP address.
