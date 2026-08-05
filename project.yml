@@ -413,8 +413,6 @@ sidebar:
                   url: /task_dc_emc_vplex.html
                 - title: XtremIO
                   url: /task_dc_emc_xio.html
-            - title: Fujitsu
-              url: /task_dc_fujitsu_eternus.html
             - title: Google
               url: /task_dc_google_cloud.html
             - title: Google Cloud NetApp Volumes
@@ -483,10 +481,16 @@ sidebar:
                   url: /task_dc_na_solidfire.html
                 - title: StorageGRID
                   url: /task_dc_na_storagegrid.html
+#            - title: Nutanix AHV
+#              url: /task_dc_nutanix_ahv.html
             - title: Nutanix
               url: /task_dc_nutanix.html
+            - title: Nutanix AHV
+              url: /task_dc_nutanix_ahv.html
             - title: Oracle
               url: /task_dc_oracle_zfs.html
+            - title: Proxmox VE
+              url: /task_dc_proxmox_ve.html
             - title: Pure
               url: /task_dc_pure_flasharray.html
             - title: Qumulo REST

@@ -19,7 +19,7 @@ Data Infrastructure Insights uses the Oracle ZFS Storage Appliance data collecto
 
 Data Infrastructure Insights acquires inventory information with the Oracle ZFS data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term | Data Infrastructure Insights Term
 |Disk (SSD)|Disk
@@ -52,7 +52,7 @@ Failure to have the controller capture any or all of these will likely result in
  
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field | Description
 |ZFS Controller-1 Hostname|Host name for storage controller 1 
@@ -63,7 +63,7 @@ Failure to have the controller capture any or all of these will likely result in
 
 == Advanced configuration 
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field | Description
 |Connection Type |HTTPS or HTTP, also displays the default port

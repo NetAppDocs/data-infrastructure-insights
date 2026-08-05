@@ -95,7 +95,7 @@ You can use this same process to return to the previous collector, should you wi
 
 == Configuration 
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |ONTAP management IP Address	|IP address or fully-qualified domain name of the NetApp cluster. Must be Cluster Management IP/FQDN.
@@ -106,7 +106,7 @@ You can use this same process to return to the previous collector, should you wi
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Inventory Poll Interval (min)	|Default is 60 minutes.
@@ -122,7 +122,7 @@ You can use this same process to return to the previous collector, should you wi
 
 Data Infrastructure Insights acquires inventory, logs and performance data from the ONTAP data collector. For each asset type acquired, the most common terminology used for the asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term | Data Infrastructure Insights Term
 |Disk|Disk
@@ -227,7 +227,7 @@ FAS/AFF 8080
 == Troubleshooting
 Some things to try if you encounter problems with this data collector:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Problem:|Try this:
 

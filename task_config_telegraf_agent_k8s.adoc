@@ -309,6 +309,10 @@ Network Performance and Map
 
 * ci-net-observer
 
+Change Analysis
+
+* ci-k8s-change-observer
+
 Push the operator docker image to your private/local/enterprise docker repository according to your corporate policies. Ensure that the image tags and directory paths to these images in your repository are consistent with those in the Data Infrastructure Insights repository.
 
 Edit the monitoring-operator deployment in operator-deployment.yaml, and modify all image references to use your private Docker repository.
@@ -363,35 +367,6 @@ Learn More about Kubernetes link:https://kubernetes.io/docs/concepts/scheduling-
 Return to the link:task_config_telegraf_agent_k8s.html[*NetApp Kubernetes Monitoring Operator Installation* page]
 
 
-
-
-
-== A Note About Secrets
-
-To remove permission for the Kubernetes Monitoring Operator to view secrets cluster-wide, delete the following resources from the _operator-setup.yaml_ file before installing:
-
-----
- ClusterRole/netapp-ci<namespace>-agent-secret
- ClusterRoleBinding/netapp-ci<namespace>-agent-secret
-----
-
-If this is an upgrade, also delete the resources from your cluster:
-
-----
- kubectl delete ClusterRole/netapp-ci-<namespace>-agent-secret-clusterrole
- kubectl delete ClusterRoleBinding/netapp-ci-<namespace>-agent-secret-clusterrolebinding
- 
-----
-
-If Change Analysis is enabled, modify the _AgentConfiguration_ or _operator-config.yaml_ to uncomment the change-management section and include _kindsToIgnoreFromWatch: '"secrets"'_ under the change-management section. Note the presence and position of single and double quotes in this line.
-
-  change-management:
-    ...
-    # # A comma separated list of kinds to ignore from watching from the default set of kinds watched by the collector
-    # # Each kind will have to be prefixed by its apigroup
-    # # Example: '"networking.k8s.io.networkpolicies,batch.jobs", "authorization.k8s.io.subjectaccessreviews"'
-    kindsToIgnoreFromWatch: '"secrets"'
-    ...
 
 
 == Verifying Kubernetes Monitoring Operator Image Signatures
@@ -669,6 +644,10 @@ Alternatively, the user can configure the kubelet for link:https://kubernetes.io
 |Ensure the host directory in which the DB file resides has the proper read/write permissions. More specifically, the host directory should grant read/write permissions to non-root users. The default DB file location is /var/log/ unless overridden by the fluent-bit-dbFile _agentconfiguration_ option.
 
 If SELinux is enabled, try setting the fluent-bit-seLinuxOptionsType agentconfiguration option to 'spc_t'
+
+|I see error messages from Telegraf resembling the following, but Telegraf does start up and run:
+E! [inputs.kubernetes] Error in plugin: https://<IP>>:<port>>/pods returned HTTP status 403 Forbidden
+|These messages may occur if you are running on Kubernetes versions below 1.33. The "nodes/pods" RBAC resource used by telegraf does not exist on these versions. Refer to the "For Kubernetes versions < 1.33" section of operator-additional-permissions.yaml for the RBAC resources required on older versions.
 
 
 |===
