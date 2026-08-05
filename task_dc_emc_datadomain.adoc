@@ -19,7 +19,7 @@ This data collector gathers inventory information from DELL EMC Data Domain dedu
 
 Data Infrastructure Insights acquires the following inventory information from the Data Domain data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term|Data Infrastructure Insights Term 
 |Disk|Disk
@@ -42,7 +42,7 @@ You need the following information to configure this data collector:
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description 
 |IP address|The IP address or fully-qualified domain name of the Data Domain storage array 
@@ -52,7 +52,7 @@ You need the following information to configure this data collector:
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description 
 |Inventory Poll Interval (min)|Interval between inventory polls. The default is 20. 

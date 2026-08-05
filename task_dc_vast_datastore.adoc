@@ -46,7 +46,7 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field | Description
 |VAST DataStore Storage IP/Hostname|IP address or FQDN of the storage system 
@@ -58,7 +58,7 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Advanced configuration 
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field | Description
 |Connection type|Choose HTTP or HTTPS. Also displays the default port.
@@ -73,7 +73,7 @@ Some things to try if you encounter problems with this data collector:
 
 === Inventory
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Problem:|Try this:
 |"Invalid login credentials" with error messages “Policy doesn't allow” or “You are not authorized”

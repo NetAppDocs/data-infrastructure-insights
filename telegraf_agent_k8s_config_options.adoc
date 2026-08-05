@@ -16,131 +16,6 @@ summary: Configure the NetApp Kubernetes Monitoring Operator using AgentConfigur
 The link:task_config_telegraf_agent_k8s.html#configuringcustomizing-the-operator[Kubernetes Monitoring Operator] provides extensive customization options through the AgentConfiguration file. You can configure resource limits, collection intervals, proxy settings, tolerations, and component-specific settings to optimize monitoring for your Kubernetes environment. Use these options to customize telegraf, kube-state-metrics, logs collection, workload mapping, change management, and other monitoring components.
 
 
-////
-The table below lists the possible options for the _AgentConfiguration_ file:
-
-[cols="1,1,2"]
-|===
-|Component|Option|Description
-
-|agent||Configuration options that are common to all components that the operator can install. These can be considered as "global" options.
-||dockerRepo|A dockerRepo override to pull images from customer's private docker repositories instead of the Data Infrastructure Insights docker repository. Default is the Data Infrastructure Insights docker repository.
-||dockerImagePullSecret|Optional: A secret for the customer's private repository.
-||clusterName|Free text field that uniquely identifies a cluster across all customer clusters. This should be unique across a Data Infrastructure Insights tenant. Default is what the customer enters in the UI for the "Cluster Name" field.
-
-||proxy
-
-Format:
-
-proxy:
-
-  server:
-  port:
-  username:
-  password:
-  noProxy:
-  isTelegrafProxyEnabled:
-  isAuProxyEnabled:
-  isFluentbitProxyEnabled:
-  isCollectorProxyEnabled:
-
-|Optional to set proxy. This is usually the customer's corporate proxy.
-
-|telegraf||Configuration options that can customize the telegraf installation of the Operator
-||collectionInterval|Metrics collection interval, in seconds (Max=60s)
-||dsCpuLimit|CPU Limit for telegraf ds
-||dsMemLimit|Memory limit for telegraf ds
-||dsCpuRequest|CPU request for telegraf ds
-||dsMemRequest|Memory request for telegraf ds
-||rsCpuLimit|CPU Limit for telegraf rs
-||rsMemLimit|Memory limit for telegraf rs
-||rsCpuRequest|CPU request for telegraf rs
-||rsMemRequest|Memory request for telegraf rs
-||runPrivileged|Run the telegraf DaemonSet's _telegraf-mountstats-poller_ container in privileged mode. Set this to true if SELinux is enabled on your Kubernetes nodes.
-||runDsPrivileged|Set runDsPrivileged to true to run the telegraf DaemonSet's telegraf container in privileged mode.
-||batchSize|See link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent[Telegraf configuration documentation]
-||bufferLimit|See link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent[Telegraf configuration documentation]
-||roundInterval|See link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent[Telegraf configuration documentation]
-||collectionJitter|See link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent[Telegraf configuration documentation]
-||precision|See link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent[Telegraf configuration documentation]
-||flushInterval|See link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent[Telegraf configuration documentation]
-||flushJitter|See link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent[Telegraf configuration documentation]
-||outputTimeout|See link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent[Telegraf configuration documentation]
-
-||dsTolerations	|telegraf-ds additional tolerations.
-||rsTolerations	|telegraf-rs additional tolerations.
-
-||skipProcessorsAfterAggregators |See link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent[Telegraf configuration documentation]
-
-||unprotected |See this link:https://community.influxdata.com/t/updating-telegraf-to-version-1-29-5-crashes-kubernetes-pod/33376[known Telegraf issue]. Setting _unprotected_ will instruct the Kubernetes Monitoring Operator to run Telegraf with the `--unprotected` flag.
-
-||insecureK8sSkipVerify |If telegraf is unable to verify certificate due to lack of IP SANs, try enabling verification skip
-
-
-|kube-state-metrics||Configuration options that can customize the kube state metrics installation of the Operator
-
-||cpuLimit |CPU limit for kube-state-metrics deployment
-||memLimit |Mem limit for kube-state-metrics deployment
-||cpuRequest|CPU request for kube state metrics deployment 
-||memRequest|Mem request for kube state metrics deployment 
-
-||resources|a comma separated list of resources to capture.
-example: cronjobs,daemonsets,deployments,ingresses,jobs,namespaces,nodes,persistentvolumeclaims,
-persistentvolumes,pods,replicasets,resourcequotas,services,statefulsets
-
-||tolerations	|kube-state-metrics additional tolerations.
-
-
-||labels|a comma separated list of resources for which kube-state-metrics should capture labels
-
-+++
-example: cronjobs=[*],daemonsets=[*],deployments=[*],ingresses=[*],jobs=[*],namespaces=[*],nodes=[*],
-persistentvolumeclaims=[*],persistentvolumes=[*],pods=[*],replicasets=[*],resourcequotas=[*],services=[*],statefulsets=[*]
-+++
-
-|logs||Configuration options that can customize logs collection and installation of the Operator 
-||readFromHead|true/false, should fluent bit read the log from head
-||timeout|timeout, in secs
-||dnsMode|TCP/UDP, mode for DNS
-||fluent-bit-tolerations|fluent-bit-ds additional tolerations.
-||event-exporter-tolerations|event-exporter additional tolerations.
-||event-exporter-maxEventAgeSeconds|event-exporter max event age.  See https://github.com/jkroepke/resmoio-kubernetes-event-exporter
-||fluent-bit-containerLogPath|By default, the Fluentbit DaemonSet will mount the /var/log and /var/lib/docker/containers host paths to access/read the Kubernetes container logs. If Kubernetes has been configured to place container logs in a non-default location, use this option to modify the Fluentbit DaemonSet to mount the non-default path.
-
-|workload-map||Configuration options that can customize the workload map collection and installation of the Operator.
-||cpuLimit|CPU limit for net observer ds
-||memLimit|mem limit for net observer ds
-||cpuRequest|CPU request for net observer ds
-||memRequest|mem request for net observer ds
-
-||metricAggregationInterval|metric aggregation interval, in seconds
-||bpfPollInterval|BPF poll interval, in seconds
-||enableDNSLookup|true/false, enable DNS lookup
-
-||l4-tolerations|net-observer-l4-ds additional tolerations.
-
-||runPrivileged|true/false - Set runPrivileged to true if SELinux is enabled on your Kubernetes nodes.
-
-
-|change-management||Configuration options for Kubernetes Change Management and Analysis
-||cpuLimit|CPU limit for change-observer-watch-rs 
-||memLimit|Mem limit for change-observer-watch-rs 
-||cpuRequest|CPU request for change-observer-watch-rs 
-||memRequest|mem request for change-observer-watch-rs 
-
-||workloadFailureDeclarationIntervalSeconds|Interval after which a non-successful deployment of a workload will be marked as failed, in seconds
-||workloadDeployAggrIntervalSeconds|Frequency at which workload deployments are combined and sent, in seconds
-||nonWorkloadDeployAggrIntervalSeconds|Frequency at which non-workload deployments are combined and sent, in seconds
-||termsToRedact|A set of regular expressions used in env names and data maps whose value will be redacted
-Example terms:"pwd", "password", "token", "apikey", "api-key", "jwt"
-||additionalKindsToWatch|A comma separated list of additional kinds to watch from the default set of kinds watched by the collector
-||kindsToIgnoreFromWatch| A comma separated list of kinds to ignore from watching from the default set of kinds watched by the collector
-||logRecordAggrIntervalSeconds|Frequency with which log records are sent to CI from the collector
-||watch-tolerations|change-observer-watch-ds additional tolerations. Abbreviated single line format only.
-Example: '{key: taint1, operator: Exists, effect: NoSchedule},{key: taint2, operator: Exists, effect: NoExecute}'
-
-|===
-////
 
 == Sample AgentConfiguration file
 
@@ -192,7 +67,7 @@ spec:
     ## applicable repository name. Refer to additional documentation here:
     ## https://docs.netapp.com/us-en/cloudinsights/task_config_telegraf_agent_k8s.html#using-a-custom-or-private-docker-repository
     ##
-    dockerRepo: 'docker.c01.cloudinsights.netapp.com'
+    dockerRepo: 'ci-registry.rtp.openenglab.netapp.com:8022'
     ##
     ## [REQUIRED FIELD]
     ## Name of the imagePullSecret required for dockerRepo
@@ -211,6 +86,11 @@ spec:
     ## The threshold must be less than the total duration of the API key.
     ##
     # tokenRotationThresholdDays: '30'
+
+    ##
+    ## Sets the minimum TLS version for the operator and all collectors
+    ##
+    # minimumTLSVersion: 'TLS13'
 
   push-button-upgrades:
     ##
@@ -254,6 +134,31 @@ spec:
     ## Time allowed for the new operator pod to startup before reporting an upgrade failure to DII
     ##
     # upgradesStartupTime: '600'
+
+  locally-managed-collectors:
+    ##
+    ## Enable local management of optional plugins.
+    ## When enabled, the operator will not request plugin configuration from DII and will instead
+    ## manage the enabled plugins. This allows automated/git-based
+    ## deployments to control plugin enablement without requiring UI interaction.
+    ##
+    # enabled: 'false'
+
+    ##
+    ## Enable Fluent Bit event collection plugin
+    ##
+    # fluentbit: 'true'
+
+    ##
+    ## Enable Change Observer plugin
+    ##
+    # change-observer: 'true'
+
+    ##
+    ## Enable Network Observer (workload map) plugin
+    ##
+    # net-observer: 'false'
+    collectorEnvironment: 'dev'
 
   telegraf:
     ##
@@ -316,7 +221,23 @@ spec:
     # outputTimeout: '5s'
 
     ##
-    ## CPU/Mem limits and requests for netapp-ci-telegraf-ds DaemonSet
+    ## CPU/Mem limits and requests for netapp-ci-telegraf-ds DaemonSet (telegraf-init)
+    ##
+    # dsInitCpuLimit: '50m'
+    # dsInitMemLimit: '20Mi'
+    # dsInitCpuRequest: '10m'
+    # dsInitMemRequest: '10Mi'
+
+    ##
+    ## CPU/Mem limits and requests for netapp-ci-telegraf-ds DaemonSet (telegraf-mountstats-poller)
+    ##
+    # dsPollerCpuLimit: '50m'
+    # dsPollerMemLimit: '20Mi'
+    # dsPollerCpuRequest: '10m'
+    # dsPollerMemRequest: '10Mi'
+
+    ##
+    ## CPU/Mem limits and requests for netapp-ci-telegraf-ds DaemonSet (telegraf)
     ##
     # dsCpuLimit: '750m'
     # dsMemLimit: '800Mi'
@@ -324,7 +245,15 @@ spec:
     # dsMemRequest: '500Mi'
 
     ##
-    ## CPU/Mem limits and requests for netapp-ci-telegraf-rs ReplicaSet
+    ## CPU/Mem limits and requests for netapp-ci-telegraf-rs ReplicaSet (telegraf-rs-init)
+    ##
+    # rsInitCpuLimit: '50m'
+    # rsInitMemLimit: '20Mi'
+    # rsInitCpuRequest: '10m'
+    # rsInitMemRequest: '10Mi'
+
+    ##
+    ## CPU/Mem limits and requests for netapp-ci-telegraf-rs ReplicaSet (telegraf-rs)
     ##
     # rsCpuLimit: '3'
     # rsMemLimit: '4Gi'
@@ -336,6 +265,19 @@ spec:
     ## option to skip the second run.
     ##
     # skipProcessorsAfterAggregators: 'false'
+
+    ##
+    ## Time aggregation settings for kubernetes metrics
+    ## aggregationInterval controls the period over which metrics are aggregated before being sent.
+    ## aggregationGrace is the additional time to wait for late-arriving metrics before emitting aggregated values.
+    ##
+    # aggregationInterval: '300s'
+    # aggregationGrace: '60s'
+    ##
+    ## Set to true to use the deprecated broad merge aggregator instead of the new
+    ## basicstats-based aggregation. This is a failsafe in case the new implementation causes issues.
+    ##
+    # useDeprecatedMerge: false
 
     ##
     ## Additional tolerations for netapp-ci-telegraf-ds DaemonSet and netapp-ci-telegraf-rs ReplicaSet
@@ -384,12 +326,12 @@ spec:
     # runDsPrivileged: 'false'
 
     ##
-    ## Allow the netapp-ci-telegraf-ds DaemonSet's telegraf-ds, telegraf-init, and telegraf-mountstats-poller containers
+    ## Allow the netapp-ci-telegraf-ds DaemonSet's telegraf, telegraf-init, and telegraf-mountstats-poller containers
     ## to run with escalation privilege. This is needed to access/read root-protected files (node UUID,
     ## /proc/1/mountstats, etc.). Allowing escalation privilege should negate the need to run these containers in
     ## privileged mode.
     ##
-    # allowDsPrivilegeEscalation: 'true'
+    # allowDsPrivilegeEscalation: 'false'
 
     ##
     ## Allow the netapp-ci-telegraf-rs DaemonSet's telegraf-rs and telegraf-rs-init containers
@@ -397,7 +339,7 @@ spec:
     ## etcd credentials when applicable, etc.). Allowing escalation privilege should negate the need to run these
     ## containers in privileged mode.
     ##
-    # allowRsPrivilegeEscalation: 'true'
+    # allowRsPrivilegeEscalation: 'false'
 
     ##
     ## Enable collection of block IO metrics (kubernetes.pod_to_storage)
@@ -420,6 +362,18 @@ spec:
     ## Enable collection of pod ephemeral storage metrics (kubernetes.pod_volume)
     ##
     # podVolumeMetricCollectionEnabled: 'false'
+    ##
+    ## Comma-separated list of volume names for which to collect kubernetes.pod_volume metrics 
+    ## If list is empty, metrics will be collected for all volumes.  If list is set, metrics will be collected 
+    ## for the specified volume names only (i.e. "myVol1,myVol2"); all others will be ignored/dropped.
+    ##
+    # podVolumeIncludeList: ''
+    ##
+    ## Collect kubernetes.pod_volume metrics for volumes with used_bytes greater than that specified
+    ## If kubernetes.pod_volume.used_bytes is less than that specified, metrics for that pod volume
+    ## will be ignored/dropped.
+    ##
+    # podVolumeMinUsedBytes: '1048576'
 
     ##
     ## Declare Rancher cluster is managed
@@ -435,8 +389,6 @@ spec:
     ## The operator looks at well-known locations for the etcd certificate and key files. If this cannot find these
     ## files, the applicable telegraf input plugin will fail. Use this option to specify the complete filepath to these
     ## files on the nodes.
-    ## Note that the well-known locations for these files are typically root-protected. This is one of the reasons why
-    ## the netapp-ci-telegraf-rs ReplicaSet's telegraf-rs-init container needs to run with escalation privileges.
     ##
     # rsHostEtcdCrt: ''
     # rsHostEtcdKey: ''
@@ -447,6 +399,42 @@ spec:
     ## verification, use this option.
     ##
     # insecureK8sSkipVerify: 'false'
+
+    ##
+    ## telegraf-ds security context, selinux options type
+    ## If SELinux is enabled, it may be configured to prevent containers from accessing system-owned directories or
+    ## files (i.e. /proc/1/mountstats, etc.).  When this happens, telegraf-ds may fail to function properly, erroring
+    ## on permission denials.  Users may need to circumvent the SELinux restriction by setting the context as needed.
+    ## For example, dsSeLinuxOptionsType: 'spc_t'
+    ##
+    # dsSeLinuxOptionsType: ''
+
+    ##
+    ## Host path for kubelet pod directories on the node
+    ## The telegraf-mountstats-poller container mounts this path to collect nfs metrics.
+    ## Override when kubelet stores pods in a non-default location.
+    ##
+    # dsHostNodePodDir: '/var/lib/kubelet/pods'
+
+    ##
+    ## telegraf-rs security context, selinux options type
+    ## If SELinux is enabled, it may be configured to prevent containers from accessing system-owned directories or
+    ## files (i.e. /sys/class/dmi/id/product_uuid, etc.).  When this happens, telegraf-rs may fail to function 
+    ## properly, erroring on permission denials.  Users may need to circumvent the SELinux restriction by setting the 
+    ## context as needed.
+    ## For example, rsSeLinuxOptionsType: 'spc_t'
+    ##
+    # rsSeLinuxOptionsType: ''
+
+    ##
+    ## Enable collection of etcd metrics
+    ## Collection of etcd metrics requires access to etcd credential files.  The well-known locations for these files
+    ## are typically root-protected. Therefore, when enableEtcdCollection is set to true, users will typically
+    ## also need to set allowRsPrivilegeEscalation to true as well.  Users opposed to allowing privilege escalation
+    ## may instead place the etcd credential files in a non-root-accessible location and specify that location through
+    ## the rsHostEtcdCrt and rsHostEtcdKey options.
+    ##
+    # enableEtcdCollection: 'false'
 
   kube-state-metrics:
     ##
@@ -461,19 +449,19 @@ spec:
     ## Comma-separated list of k8s resources for which to collect metrics
     ## Refer to the kube-state-metrics --resources CLI option
     ##
-    # resources: 'cronjobs,daemonsets,deployments,horizontalpodautoscalers,ingresses,jobs,namespaces,nodes,persistentvolumeclaims,persistentvolumes,pods,replicasets,resourcequotas,services,statefulsets'
+    # resources: 'cronjobs,daemonsets,deployments,horizontalpodautoscalers,namespaces,nodes,persistentvolumeclaims,persistentvolumes,pods,replicasets,resourcequotas,services,statefulsets'
 
     ##
     ## Comma-separated list of k8s metrics to collect
     ## Refer to the kube-state-metrics --metric-allowlist CLI option
     ##
-    # metrics: 'kube_cronjob_created,kube_cronjob_status_active,kube_cronjob_labels,kube_daemonset_created,kube_daemonset_status_current_number_scheduled,kube_daemonset_status_desired_number_scheduled,kube_daemonset_status_number_available,kube_daemonset_status_number_misscheduled,kube_daemonset_status_number_ready,kube_daemonset_status_number_unavailable,kube_daemonset_status_observed_generation,kube_daemonset_status_updated_number_scheduled,kube_daemonset_metadata_generation,kube_daemonset_labels,kube_deployment_status_replicas,kube_deployment_status_replicas_available,kube_deployment_status_replicas_unavailable,kube_deployment_status_replicas_updated,kube_deployment_status_observed_generation,kube_deployment_spec_replicas,kube_deployment_spec_paused,kube_deployment_spec_strategy_rollingupdate_max_unavailable,kube_deployment_spec_strategy_rollingupdate_max_surge,kube_deployment_metadata_generation,kube_deployment_labels,kube_deployment_created,kube_job_created,kube_job_owner,kube_job_status_active,kube_job_status_succeeded,kube_job_status_failed,kube_job_labels,kube_job_status_start_time,kube_job_status_completion_time,kube_namespace_created,kube_namespace_labels,kube_namespace_status_phase,kube_node_info,kube_node_labels,kube_node_role,kube_node_spec_unschedulable,kube_node_created,kube_persistentvolume_capacity_bytes,kube_persistentvolume_status_phase,kube_persistentvolume_labels,kube_persistentvolume_info,kube_persistentvolume_claim_ref,kube_persistentvolumeclaim_access_mode,kube_persistentvolumeclaim_info,kube_persistentvolumeclaim_labels,kube_persistentvolumeclaim_resource_requests_storage_bytes,kube_persistentvolumeclaim_status_phase,kube_pod_info,kube_pod_start_time,kube_pod_completion_time,kube_pod_owner,kube_pod_labels,kube_pod_status_phase,kube_pod_status_ready,kube_pod_status_scheduled,kube_pod_container_info,kube_pod_container_status_waiting,kube_pod_container_status_waiting_reason,kube_pod_container_status_running,kube_pod_container_state_started,kube_pod_container_status_terminated,kube_pod_container_status_terminated_reason,kube_pod_container_status_last_terminated_reason,kube_pod_container_status_ready,kube_pod_container_status_restarts_total,kube_pod_overhead_cpu_cores,kube_pod_overhead_memory_bytes,kube_pod_created,kube_pod_deletion_timestamp,kube_pod_init_container_info,kube_pod_init_container_status_waiting,kube_pod_init_container_status_waiting_reason,kube_pod_init_container_status_running,kube_pod_init_container_status_terminated,kube_pod_init_container_status_terminated_reason,kube_pod_init_container_status_last_terminated_reason,kube_pod_init_container_status_ready,kube_pod_init_container_status_restarts_total,kube_pod_status_scheduled_time,kube_pod_status_unschedulable,kube_pod_spec_volumes_persistentvolumeclaims_readonly,kube_pod_container_resource_requests_cpu_cores,kube_pod_container_resource_requests_memory_bytes,kube_pod_container_resource_requests_storage_bytes,kube_pod_container_resource_requests_ephemeral_storage_bytes,kube_pod_container_resource_limits_cpu_cores,kube_pod_container_resource_limits_memory_bytes,kube_pod_container_resource_limits_storage_bytes,kube_pod_container_resource_limits_ephemeral_storage_bytes,kube_pod_init_container_resource_limits_cpu_cores,kube_pod_init_container_resource_limits_memory_bytes,kube_pod_init_container_resource_limits_storage_bytes,kube_pod_init_container_resource_limits_ephemeral_storage_bytes,kube_pod_init_container_resource_requests_cpu_cores,kube_pod_init_container_resource_requests_memory_bytes,kube_pod_init_container_resource_requests_storage_bytes,kube_pod_init_container_resource_requests_ephemeral_storage_bytes,kube_replicaset_status_replicas,kube_replicaset_status_ready_replicas,kube_replicaset_status_observed_generation,kube_replicaset_spec_replicas,kube_replicaset_metadata_generation,kube_replicaset_labels,kube_replicaset_created,kube_replicaset_owner,kube_resourcequota,kube_resourcequota_created,kube_service_info,kube_service_labels,kube_service_created,kube_service_spec_type,kube_statefulset_status_replicas,kube_statefulset_status_replicas_current,kube_statefulset_status_replicas_ready,kube_statefulset_status_replicas_updated,kube_statefulset_status_observed_generation,kube_statefulset_replicas,kube_statefulset_metadata_generation,kube_statefulset_created,kube_statefulset_labels,kube_statefulset_status_current_revision,kube_statefulset_status_update_revision,kube_node_status_capacity,kube_node_status_allocatable,kube_node_status_condition,kube_pod_container_resource_requests,kube_pod_container_resource_limits,kube_pod_init_container_resource_limits,kube_pod_init_container_resource_requests,kube_horizontalpodautoscaler_spec_max_replicas,kube_horizontalpodautoscaler_spec_min_replicas,kube_horizontalpodautoscaler_status_condition,kube_horizontalpodautoscaler_status_current_replicas,kube_horizontalpodautoscaler_status_desired_replicas'
+    # metrics: 'kube_cronjob_created,kube_cronjob_status_active,kube_cronjob_labels,kube_daemonset_created,kube_daemonset_status_current_number_scheduled,kube_daemonset_status_desired_number_scheduled,kube_daemonset_status_number_available,kube_daemonset_status_number_misscheduled,kube_daemonset_status_number_ready,kube_daemonset_status_number_unavailable,kube_daemonset_status_observed_generation,kube_daemonset_status_updated_number_scheduled,kube_daemonset_metadata_generation,kube_daemonset_labels,kube_deployment_status_replicas,kube_deployment_status_replicas_available,kube_deployment_status_replicas_unavailable,kube_deployment_status_replicas_updated,kube_deployment_status_observed_generation,kube_deployment_spec_replicas,kube_deployment_spec_paused,kube_deployment_spec_strategy_rollingupdate_max_unavailable,kube_deployment_spec_strategy_rollingupdate_max_surge,kube_deployment_metadata_generation,kube_deployment_labels,kube_deployment_created,kube_namespace_created,kube_namespace_labels,kube_namespace_status_phase,kube_node_info,kube_node_labels,kube_node_role,kube_node_spec_unschedulable,kube_node_created,kube_persistentvolume_capacity_bytes,kube_persistentvolume_status_phase,kube_persistentvolume_labels,kube_persistentvolume_info,kube_persistentvolume_claim_ref,kube_persistentvolumeclaim_access_mode,kube_persistentvolumeclaim_info,kube_persistentvolumeclaim_labels,kube_persistentvolumeclaim_resource_requests_storage_bytes,kube_persistentvolumeclaim_status_phase,kube_pod_info,kube_pod_start_time,kube_pod_completion_time,kube_pod_owner,kube_pod_labels,kube_pod_status_phase,kube_pod_status_ready,kube_pod_status_scheduled,kube_pod_container_info,kube_pod_container_status_waiting,kube_pod_container_status_waiting_reason,kube_pod_container_status_running,kube_pod_container_state_started,kube_pod_container_status_terminated,kube_pod_container_status_terminated_reason,kube_pod_container_status_last_terminated_reason,kube_pod_container_status_ready,kube_pod_container_status_restarts_total,kube_pod_overhead_cpu_cores,kube_pod_overhead_memory_bytes,kube_pod_created,kube_pod_deletion_timestamp,kube_pod_init_container_info,kube_pod_init_container_status_waiting,kube_pod_init_container_status_waiting_reason,kube_pod_init_container_status_running,kube_pod_init_container_status_terminated,kube_pod_init_container_status_terminated_reason,kube_pod_init_container_status_last_terminated_reason,kube_pod_init_container_status_ready,kube_pod_init_container_status_restarts_total,kube_pod_status_scheduled_time,kube_pod_status_unschedulable,kube_pod_spec_volumes_persistentvolumeclaims_readonly,kube_pod_container_resource_requests_cpu_cores,kube_pod_container_resource_requests_memory_bytes,kube_pod_container_resource_requests_storage_bytes,kube_pod_container_resource_requests_ephemeral_storage_bytes,kube_pod_container_resource_limits_cpu_cores,kube_pod_container_resource_limits_memory_bytes,kube_pod_container_resource_limits_storage_bytes,kube_pod_container_resource_limits_ephemeral_storage_bytes,kube_pod_init_container_resource_limits_cpu_cores,kube_pod_init_container_resource_limits_memory_bytes,kube_pod_init_container_resource_limits_storage_bytes,kube_pod_init_container_resource_limits_ephemeral_storage_bytes,kube_pod_init_container_resource_requests_cpu_cores,kube_pod_init_container_resource_requests_memory_bytes,kube_pod_init_container_resource_requests_storage_bytes,kube_pod_init_container_resource_requests_ephemeral_storage_bytes,kube_replicaset_status_replicas,kube_replicaset_status_ready_replicas,kube_replicaset_status_observed_generation,kube_replicaset_spec_replicas,kube_replicaset_metadata_generation,kube_replicaset_labels,kube_replicaset_created,kube_replicaset_owner,kube_resourcequota,kube_resourcequota_created,kube_service_info,kube_service_labels,kube_service_created,kube_service_spec_type,kube_statefulset_status_replicas,kube_statefulset_status_replicas_current,kube_statefulset_status_replicas_ready,kube_statefulset_status_replicas_updated,kube_statefulset_status_observed_generation,kube_statefulset_replicas,kube_statefulset_metadata_generation,kube_statefulset_created,kube_statefulset_labels,kube_statefulset_status_current_revision,kube_statefulset_status_update_revision,kube_node_status_capacity,kube_node_status_allocatable,kube_node_status_condition,kube_pod_container_resource_requests,kube_pod_container_resource_limits,kube_pod_init_container_resource_limits,kube_pod_init_container_resource_requests,kube_horizontalpodautoscaler_spec_max_replicas,kube_horizontalpodautoscaler_spec_min_replicas,kube_horizontalpodautoscaler_status_condition,kube_horizontalpodautoscaler_status_current_replicas,kube_horizontalpodautoscaler_status_desired_replicas'
 
     ##
     ## Comma-separated list of k8s label keys that will be used to determine which labels to export/collect
     ## Refer to the kube-state-metrics --metric-labels-allowlist CLI option
     ##
-    # labels: 'cronjobs=[*],daemonsets=[*],deployments=[*],horizontalpodautoscalers=[*],ingresses=[*],jobs=[*],namespaces=[*],nodes=[*],persistentvolumeclaims=[*],persistentvolumes=[*],pods=[*],replicasets=[*],resourcequotas=[*],services=[*],statefulsets=[*]'
+    # labels: 'cronjobs=[*],daemonsets=[*],deployments=[*],horizontalpodautoscalers=[*],namespaces=[*],nodes=[*],persistentvolumeclaims=[*],persistentvolumes=[*],pods=[*],replicasets=[*],resourcequotas=[*],services=[*],statefulsets=[*]'
 
     ##
     ## Additional tolerations for netapp-ci-kube-state-metrics StatefulSet
@@ -506,9 +494,8 @@ spec:
   logs:
     ##
     ## Allow the netapp-ci-fluent-bit-ds DaemonSet's fluent-bit container to run with escalation privilege.
-    ## This is needed to access/read root-protected files (event-exporter pod log, fluent-bit DB file, etc.).
     ##
-    # fluent-bit-allowPrivilegeEscalation: 'true'
+    # fluent-bit-allowPrivilegeEscalation: 'false'
 
     ##
     ## Read content from the head of the file, not the tail
@@ -526,8 +513,8 @@ spec:
     # fluentBitDNSResolver: "LEGACY"
 
     ##
-    ## Additional tolerations for netapp-ci-fluent-bit-ds DaemonSet
-    ## Inspect the netapp-ci-fluent-bit-ds DaemonSet to view the default tolerations. If additional tolerations are
+    ## Additional tolerations for netapp-ci-fluent-bit-rs ReplicaSet
+    ## Inspect the netapp-ci-fluent-bit-rs ReplicaSet to view the default tolerations. If additional tolerations are
     ## needed, specify them here using the following abbreviated single line format:
     ##
     ## Example: '{key: taint1, operator: Exists, effect: NoSchedule},{key: taint2, operator: Exists, effect: NoExecute}'
@@ -535,71 +522,28 @@ spec:
     # fluent-bit-tolerations: ''
 
     ##
-    ## CPU/Mem limits and requests for netapp-ci-fluent-bit-ds DaemonSet
+    ## CPU/Mem limits and requests for netapp-ci-fluent-bit-rs ReplicaSet (fluent-bit-init)
+    ##
+    # fluent-bit-init-cpuLimit: '50m'
+    # fluent-bit-init-memLimit: '20Mi'
+    # fluent-bit-init-cpuRequest: '10m'
+    # fluent-bit-init-memRequest: '10Mi'
+
+    ##
+    ## CPU/Mem limits and requests for netapp-ci-fluent-bit-rs ReplicaSet (logrotate)
+    ##
+    # fluent-bit-rotate-cpuLimit: '50m'
+    # fluent-bit-rotate-memLimit: '20Mi'
+    # fluent-bit-rotate-cpuRequest: '10m'
+    # fluent-bit-rotate-memRequest: '10Mi'
+
+    ##
+    ## CPU/Mem limits and requests for netapp-ci-fluent-bit-rs ReplicaSet (fluent-bit)
     ##
     # fluent-bit-cpuLimit: '500m'
     # fluent-bit-memLimit: '1Gi'
     # fluent-bit-cpuRequest: '50m'
     # fluent-bit-memRequest: '100Mi'
-
-    ##
-    ## Top-level host path in which the kubernetes container logs reside, including any symlinks from var/log/containers
-    ## For example, if /var/log/containers/*.log is a symlink to /kubernetes/log to
-    ## /kubernetes/var/lib/docker/containers/*/*.log, fluent-bit-containerLogPath should be set to '/kubernetes'.
-    ##
-    # fluent-bit-containerLogPath: '/var/lib/docker/containers'
-
-    ## fluent-bit DB file path/location
-
-    ##
-    ## fluent-bit DB file path/location
-    ## By default, fluent-bit is configured to use /var/log/netapp-monitoring_flb_kube.db.  This path usually requires
-    ## escalated privileges for read/write. Users who want to avoid escalation privilege can use this option to specify
-    ## a different DB file path/location. The custom path/location should allow non-root users to read/write.
-    ## Ideally, the path/location should be persistent.
-    ##
-    # fluent-bit-dbFile: '/var/log/netapp-monitoring_flb_kube.db'
-
-    ##
-    ## Additional tolerations for netapp-ci-event-exporter Deployment
-    ## Inspect the netapp-ci-event-exporter Deployment to view the default tolerations. If additional tolerations are
-    ## needed, specify them here using the following abbreviated single line format:
-    ##
-    ## Example: '{key: taint1, operator: Exists, effect: NoSchedule},{key: taint2, operator: Exists, effect: NoExecute}'
-    ##
-    # event-exporter-tolerations: ''
-
-    ##
-    ## CPU/Mem limits and requests for netapp-ci-event-exporter Deployment
-    ##
-    # event-exporter-cpuLimit: '500m'
-    # event-exporter-memLimit: '1Gi'
-    # event-exporter-cpuRequest: '50m'
-    # event-exporter-memRequest: '100Mi'
-
-    ##
-    ## Max age for events to be processed and exported; older events are discarded
-    ##
-    # event-exporter-maxEventAgeSeconds: '10'
-
-    ##
-    ## Client-side throttling
-    ## Set event-exporter-kubeBurst to roughly match event rate
-    ## Set event-exporter-kubeQPS to approximately 1/5 of event-exporter-kubeBurst
-    ##
-    # event-exporter-kubeQPS: 20
-    # event-exporter-kubeBurst: 100
-
-    ##
-    ## Additional node selector terms for netapp-ci-event-exporter Deployment
-    ## Inspect the event-exporter Deployment to view the default node selectors terms. If additional node selector terms
-    ## are needed, specify them here using the following abbreviated single line format:
-    ##
-    ## Example: '{"key": "myLabel1","operator": "In","values": ["myVal1"]},{"key": "myLabel2","operator": "In","values": ["myVal2"]}'
-    ##
-    ## These additional node selector terms will be AND'd with the default ones via matchExpressions.
-    ##
-    # event-exporter-nodeSelectorTerms: ''
 
   workload-map:
     ## Run workload-map container with escalation privilege to coordinate memlocks
@@ -650,6 +594,17 @@ spec:
     ##
     # runPrivileged: 'false'
 
+
+    ##
+    ## net-observer-l4-ds security context, selinux options type
+    ## If SELinux is enabled, it may be configured to prevent containers from accessing system-owned directories or
+    ## files (i.e. /sys/kernel, etc.).  When this happens, net-observer-l4-ds may fail to function 
+    ## properly, erroring on permission denials.  Users may need to circumvent the SELinux restriction by setting the 
+    ## context as needed.
+    ## For example, seLinuxOptionsType: 'spc_t'
+    ##
+    # seLinuxOptionsType: ''
+
   change-management:
     ##
     ## CPU/Mem limits and requests for netapp-ci-change-observer-watch-rs ReplicaSet
@@ -694,6 +649,8 @@ spec:
     ## Comma-separated list of additional kinds to watch
     ## Each kind should be prefixed by its API group. This list in addition to the default set of kinds watched by the
     ## collector.
+    ## Note: Kubernetes secrets are not watched by default. To enable secret change tracking, add "secrets" here
+    ## and grant secrets RBAC permissions via additional-permissions.yaml.
     ##
     ## Example: '"authorization.k8s.io.subjectaccessreviews"'
     ##
@@ -729,4 +686,4 @@ spec:
     ##
     # watch-tolerations: ''
 
-----
+    ----

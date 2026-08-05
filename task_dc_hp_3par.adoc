@@ -20,7 +20,7 @@ Data Infrastructure Insights uses the HP Enterprise Alletra 9000 / HP Enterprise
 
 Data Infrastructure Insights acquires the following inventory information from this data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Physical Disk|Disk
@@ -45,7 +45,7 @@ The following are required to configure this data collector:
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Storage IP address|Storage IP address or fully-qualified domain name of the StoreServ cluster
@@ -58,7 +58,7 @@ The following are required to configure this data collector:
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Inventory Poll Interval (min)|Interval between inventory polls. The default is 40 minutes. 
@@ -84,7 +84,7 @@ error: "Cache server is waiting for the system manager"
 Customer can take action.  What can customer do about this scenario?
 ////
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Problem:|Try this:
 |"showsys" command doesn't return any result.
@@ -93,7 +93,7 @@ Customer can take action.  What can customer do about this scenario?
 
 === Performance
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Problem:|Try this:
 |Failed to connect or login. Provider initialization failed.
