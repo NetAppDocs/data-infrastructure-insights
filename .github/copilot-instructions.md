@@ -3,7 +3,7 @@
 ### Repository overview
 Product: Data Infrastructure Insights
 
-Data Infrastructure Insights makes managing your heterogeneous storage infrastructure a whole lot easier. With AI-powered analysis, you get a clear map of your storage to workload relationships, no matter how complex. Troubleshoot and tackle issues faster with real-time, actionable insights and automated recommendations for improved performance and utilization. It’s all about reducing risks, cutting costs, and keeping your operations running smoothly and efficiently while confidently scaling for the future.
+*Data Infrastructure Insights* is a cloud infrastructure monitoring service for hybrid multicloud environments. This repository documents observability, *Storage Workload Security*, Kubernetes monitoring, ONTAP-focused analysis, reporting, APIs, troubleshooting, and vendor-specific data collector integrations. *AI Assistant* analysis provides a clear map of storage to workload relationships.
 
 ### Repository structure
 - `/`- root containing all .adoc files

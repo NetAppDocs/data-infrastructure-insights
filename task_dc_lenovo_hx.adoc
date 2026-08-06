@@ -28,7 +28,7 @@ The following information is required to configure this data collector:
 
 Data Infrastructure Insights acquires the following inventory and performance information from the Lenovo HX data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term | Data Infrastructure Insights Term
 |Storage Pool|Storage Pool
@@ -41,7 +41,7 @@ Data Infrastructure Insights acquires the following inventory and performance in
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Prism External IP Address|IP address used to connect to the storage system 
@@ -51,7 +51,7 @@ Data Infrastructure Insights acquires the following inventory and performance in
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |TCP Port|TCP Port used to connect to Lenovo HX. The default is 9440.
