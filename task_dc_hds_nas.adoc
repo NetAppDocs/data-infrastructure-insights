@@ -20,7 +20,7 @@ The Hitachi Vantara NAS data collector is an inventory and configuration data co
 
 Data Infrastructure Insights acquires the following inventory information from the HNAS data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term|Data Infrastructure Insights Term 
 |Tier|Disk Group
@@ -43,7 +43,7 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description 
 |HNAS Host|IP address or fully-qualified domain name of HNAS Management Host
@@ -53,7 +53,7 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description 
 |Inventory Poll Interval (min)|Interval between inventory polls. The default is 30 minutes. 
@@ -66,7 +66,7 @@ Some things to try if you encounter problems with this data collector:
 
 === Inventory
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Problem:|Try this:
 |"Error connecting" with error messages “Error setting up shell channel:”or “Error opening shell channel”
