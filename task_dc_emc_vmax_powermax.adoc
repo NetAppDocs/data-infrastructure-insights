@@ -49,7 +49,7 @@ Here is an example file with the proper cisys permissions.
 
 Data Infrastructure Insights acquires the following inventory information from the EMC VMAX/PowerMax data source. For each asset type acquired, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term|Data Infrastructure Insights Term 
 |Disk|Disk
@@ -67,7 +67,7 @@ Note: These are common terminology mappings only and might not represent every c
 *Note:* If SMI-S user authentication is not enabled, the default values in the Data Infrastructure Insights data collector are ignored. 
 
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Service Name|Service name as specified in _netcnfg_ file 
@@ -77,7 +77,7 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Advanced Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Inventory Poll Interval (min)|Interval between inventory polls. The default is 40 minutes. 
@@ -110,7 +110,7 @@ Note: These are common terminology mappings only and might not represent every c
 == Troubleshooting
 Some things to try if you encounter problems with this data collector:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Problem:|Try this:
 |Error: The feature being requested is not currently licensed

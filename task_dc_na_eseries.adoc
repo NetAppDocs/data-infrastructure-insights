@@ -20,7 +20,7 @@ The NetApp E-Series Legacy Santricity API data collector gathers inventory and p
 
 Cloud insight acquires the following inventory information from the NetApp E-Series data collector. For each asset type acquired, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term | Data Infrastructure Insights Term
 |Disk|Disk
@@ -92,7 +92,7 @@ The following terms apply to objects or references that you might find on NetApp
 
 == Configuration 
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Comma-separated list of Array SANtricity Controller IPs| IP addresses and/or fully-qualified domain names for the array controllers
@@ -100,7 +100,7 @@ The following terms apply to objects or references that you might find on NetApp
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Inventory Poll Interval (min) |Default is 30 minutes

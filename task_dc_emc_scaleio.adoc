@@ -20,7 +20,7 @@ The ScaleIO/PowerFlex data collector collects inventory information from ScaleIO
 
 Data Infrastructure Insights acquires the following inventory information from the ScaleIO/PowerFlex data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term|Data Infrastructure Insights Term 
 |MDM (Meta Data Manager) Cluster|Storage
@@ -40,7 +40,7 @@ Note: These are common terminology mappings only and might not represent every c
  
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description 
 |ScaleIO/PowerFlex  Gateway(s)|IP addresses or FQDNs of ScaleIO/PowerFlex gateways, separated by comma (,) or semicolon (;)
@@ -52,7 +52,7 @@ Note: These are common terminology mappings only and might not represent every c
 
 Click the Inventory check box to enable inventory collection.
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description 
 |HTTPS port|443

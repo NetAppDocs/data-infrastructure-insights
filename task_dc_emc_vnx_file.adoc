@@ -20,7 +20,7 @@ This data collector acquires inventory information from the VNX File Storage Sys
 
 Data Infrastructure Insights acquires the following inventory information from the VNX File data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term|Data Infrastructure Insights Term 
 |Celerra Network Server/Celerra Storage Pool|Storage Pool
@@ -43,7 +43,7 @@ You need the following to configure this data collector:
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description 
 |VNX File IP Address|IP address or fully-qualified domain name of the VNX File device
@@ -53,7 +53,7 @@ You need the following to configure this data collector:
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description 
 |Inventory Poll Interval (minutes)|Interval between inventory polls. The default is 20 minutes. 
@@ -68,7 +68,7 @@ Some things to try if you encounter problems with this data collector:
 
 === Inventory
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Problem:|Try this:
 |Error: Unable to proceed while DART update in progress
