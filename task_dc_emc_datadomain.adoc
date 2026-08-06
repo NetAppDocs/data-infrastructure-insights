@@ -7,20 +7,19 @@ summary: Configuring DELL EMC Data Domain data collector.
 
 = DELL EMC Data Domain data collector
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-This data collector gathers inventory and performance information from DELL EMC Data Domain deduplication storage systems. To configure this data collector, there are specific configuration instructions and usage recommendations you must follow. 
+This data collector gathers inventory information from DELL EMC Data Domain deduplication storage systems. To configure this data collector, there are specific configuration instructions and usage recommendations you must follow. 
 
 == Terminology
 
 Data Infrastructure Insights acquires the following inventory information from the Data Domain data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term|Data Infrastructure Insights Term 
 |Disk|Disk
@@ -31,7 +30,7 @@ Data Infrastructure Insights acquires the following inventory information from t
 |NFS and CIFS share|FileShare
 |===
 
-Note: These are common terminology mappings only and might not represent every case for this data colletor.
+Note: These are common terminology mappings only and might not represent every case for this data collector.
 
 == Requirements
 
@@ -43,7 +42,7 @@ You need the following information to configure this data collector:
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description 
 |IP address|The IP address or fully-qualified domain name of the Data Domain storage array 
@@ -53,7 +52,7 @@ You need the following information to configure this data collector:
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description 
 |Inventory Poll Interval (min)|Interval between inventory polls. The default is 20. 
