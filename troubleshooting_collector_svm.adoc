@@ -309,4 +309,23 @@ If usage still exceeds your subscription, open a NetApp Support case with subscr
 
 ''''
 
+*Problem*: One or more Data Collectors show Degraded instead of Running, even though the collector service is up.
+
+*Try This*: SWS reports Degraded when one or more FPolicy connections on a node are disconnected. This is not an outage — the collector is still running — but audit events from those node(s) may be lost until connectivity is restored.
+
+ONTAP establishes an FPolicy control-channel connection from each node that has an operational data LIF for the SVM. A node without a local data LIF cannot connect. See:
+
+* link:https://docs.netapp.com/us-en/ontap/nas-audit/node-fpolicy-server-communication-process-concept.html[Node-to-external ONTAP FPolicy server communication process^]
+* link:https://docs.netapp.com/us-en/ontap/nas-audit/fpolicy-external-fpolicy-servers-concept.html[How ONTAP FPolicy works with external FPolicy servers^]
+* link:https://docs.netapp.com/us-en/ontap/nas-audit/requirements-best-practices-fpolicy-concept.html[Requirements, considerations, and best practices for configuring ONTAP FPolicy^]
+
+In the UI, note which node(s) are disconnected, then check whether those nodes have a data LIF for the SVM.
+
+* No data LIF on the listed node(s): Disregard the Degraded status. ONTAP can show FPolicy disconnected with reason "No local lif present to connect to FPolicy server" when no local data LIF is present; this is expected. See link:https://kb.netapp.com/on-prem/ontap/da/NAS/NAS-KBs/Fpolicy_server_not_connected_due_to_no_local_lif_present_on_one_or_more_nodes[KB: Fpolicy server not connected due to "no local lif present"^]. A future SWS release will stop marking the collector Degraded in this case.
+* Data LIF present on the listed node(s): Investigate why FPolicy is disconnected (LIF down / missing data-fpolicy-client, network/firewall, or temporary restart/failover).
+
+{empty}
+
+''''
+
 If you are still experiencing problems, reach out to the support links mentioned in the *Help > Support* page.
