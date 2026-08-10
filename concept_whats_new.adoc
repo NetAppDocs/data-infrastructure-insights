@@ -16,6 +16,24 @@ keywords: features
 [.lead]
 NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in Data Infrastructure Insights (formerly Cloud Insights).
 
+== August 2026
+
+=== Better Control of User Data
+
+Asset Landing Pages and Slideout Panels already give you insight into the annotations and attributes assigned to the asset. Now that data is read-only by default, giving you greater control over when and how it is updated.
+
+In a Slideout Panel, After expanding the details, simply select the "Pencil" icon. 
+
+image:UserDataEdit-Slideout.png[Edit User Data in Slideout Panel-Pencil Icon, width=500]
+
+The asset landing page will open in Edit mode. Make any changes desires, then select the "Save" button in the upper right. To undo those changes before you save, select the drop-down next to Save and select "Discard Changes".
+
+Alternatively, navigate to the asset landing page directly and select "Edit" in the upper right. You are now in Edit mode and can make your changes as above.
+
+image:UserDataEdit-LP.png[Landing Page Edit Mode, width=200]
+
+'''
+
 
 == July 2026
 
