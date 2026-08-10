@@ -291,5 +291,41 @@ Connector is in error state. Service name: audit. Reason for failure: Failed to 
 
 ''''
 
+*Problem:* After adding or upgrading an ONTAP SVM Data Collector (Workload Security), the tenant shows an overprovisioning or subscription breach alert. Raw storage capacity increased even though no new hardware was added.
+
+*Try This:* The same storage may be counted twice — once by an Observability ONTAP cluster collector and again by a Workload Security SVM collector on the same cluster.
+
+Compare the raw storage capacity reported by Observability ONTAP collectors and Workload Security SVM collectors. For each SVM collector, check whether its parent cluster is already monitored by an Observability ONTAP collector. If it is, only the cluster capacity should count toward subscription usage.
+
+Confirm whether any recent SVM migration occurred across clusters. After an SVM is migrated, capacity metrics may remain associated with the previous cluster until Workload Security receives updated information from the collector.
+
+Ensure the ONTAP SVM Data Collector for the migrated SVM is in RUNNING state. If needed, restart the collector so Workload Security can collect the correct cluster and capacity metrics after the migration.
+
+If both the cluster and SVM capacity appear in the total, capacity is likely being double-counted. This often happens shortly after adding, upgrading, restarting an SVM collector, or migrating an SVM between clusters.
+
+If usage still exceeds your subscription, open a NetApp Support case with subscription usage before and after the alert, and a list of Observability and SVM collectors with their reported raw storage capacity.
+
+{empty}
+
+''''
+
+*Problem*: One or more Data Collectors show Degraded instead of Running, even though the collector service is up.
+
+*Try This*: SWS reports Degraded when one or more FPolicy connections on a node are disconnected. This is not an outage — the collector is still running — but audit events from those node(s) may be lost until connectivity is restored.
+
+ONTAP establishes an FPolicy control-channel connection from each node that has an operational data LIF for the SVM. A node without a local data LIF cannot connect. See:
+
+* link:https://docs.netapp.com/us-en/ontap/nas-audit/node-fpolicy-server-communication-process-concept.html[Node-to-external ONTAP FPolicy server communication process^]
+* link:https://docs.netapp.com/us-en/ontap/nas-audit/fpolicy-external-fpolicy-servers-concept.html[How ONTAP FPolicy works with external FPolicy servers^]
+* link:https://docs.netapp.com/us-en/ontap/nas-audit/requirements-best-practices-fpolicy-concept.html[Requirements, considerations, and best practices for configuring ONTAP FPolicy^]
+
+In the UI, note which node(s) are disconnected, then check whether those nodes have a data LIF for the SVM.
+
+* No data LIF on the listed node(s): Disregard the Degraded status. ONTAP can show FPolicy disconnected with reason "No local lif present to connect to FPolicy server" when no local data LIF is present; this is expected. See link:https://kb.netapp.com/on-prem/ontap/da/NAS/NAS-KBs/Fpolicy_server_not_connected_due_to_no_local_lif_present_on_one_or_more_nodes[KB: Fpolicy server not connected due to "no local lif present"^]. A future SWS release will stop marking the collector Degraded in this case.
+* Data LIF present on the listed node(s): Investigate why FPolicy is disconnected (LIF down / missing data-fpolicy-client, network/firewall, or temporary restart/failover).
+
+{empty}
+
+''''
 
 If you are still experiencing problems, reach out to the support links mentioned in the *Help > Support* page.
