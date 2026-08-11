@@ -1,0 +1,3891 @@
+= Schema Documentation
+
+Source: *dwh_inventory* OData endpoint — Data Infrastructure Insights
+
+Tables found: *106* | Associations: *171* 
+
+== Key Relationships Between Tables
+
+=== acq_data_source
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-acq_acquisition_unit[acq_acquisition_unit] |acquisitionUnitId |id
+|===
+
+=== auto_tiering_policy
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-storage[storage] |storageId |id
+|===
+
+=== auto_tiering_policy_constraint
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-auto_tiering_policy[auto_tiering_policy] |autoTieringPolicyId |id
+|link:#entity-storage[storage] |storageId |id
+|===
+
+=== backend_lun
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-storage[storage] |storageId |id
+|===
+
+=== backend_lun_to_volume
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-backend_lun[backend_lun] |backendLunId |id
+|link:#entity-storage[storage] |frontendStorageId |id
+|link:#entity-volume[volume] |backendVolumeId |id
+|===
+
+=== backend_path
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-backend_lun[backend_lun] |backendLunId |id
+|link:#entity-storage[storage] |storageId |id
+|===
+
+=== cluster_switch
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-storage[storage] |storageId |id
+|===
+
+=== cluster_switch_port
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-cluster_switch[cluster_switch] |clusterSwitchId |id
+|link:#entity-storage[storage] |storageId |id
+|link:#entity-storage_node[storage_node] |storageNodeId |id
+|===
+
+=== compute_resource
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-host[host] |hostId |id
+|link:#entity-hv_virtual_machine[hv_virtual_machine] |vmId |id
+|===
+
+=== disk
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-storage[storage] |storageId |id
+|===
+
+=== disk_group
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-storage[storage] |storageId |id
+|===
+
+=== dr_internal_volume_replica
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-internal_volume[internal_volume] |sourceInternalVolumeId |id
+|link:#entity-storage[storage] |targetStorageId |id
+|===
+
+=== dr_qtree_replica
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-qtree[qtree] |sourceQtreeId |id
+|link:#entity-storage[storage] |targetStorageId |id
+|===
+
+=== dr_volume_replica
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-storage[storage] |targetStorageId |id
+|link:#entity-volume[volume] |sourceVolumeId |id
+|===
+
+=== fc_name_server_entry
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-switch_port[switch_port] |connectedSwitchPortId |id
+|===
+
+=== file_system
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-compute_resource[compute_resource] |computeResourceId |id
+|link:#entity-host[host] |hostId |id
+|===
+
+=== file_system_to_virtual_disk
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-compute_resource[compute_resource] |computeResourceId |id
+|link:#entity-file_system[file_system] |fileSystemId |id
+|link:#entity-hv_data_store[hv_data_store] |dataStoreId |id
+|link:#entity-hv_virtual_disk[hv_virtual_disk] |virtualDiskId |id
+|===
+
+=== file_system_to_volume
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-compute_resource[compute_resource] |computeResourceId |id
+|link:#entity-file_system[file_system] |fileSystemId |id
+|link:#entity-storage[storage] |storageId |id
+|link:#entity-volume[volume] |volumeId |id
+|===
+
+=== generic_device_port
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-generic_device[generic_device] |genericDeviceId |id
+|===
+
+=== host_adapter
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-host[host] |hostId |id
+|===
+
+=== host_port
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-host[host] |hostId |id
+|link:#entity-host_adapter[host_adapter] |adapterId |id
+|===
+
+=== host_to_application
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-application[application] |applicationId |id
+|link:#entity-host[host] |hostId |id
+|===
+
+=== hv_data_store_to_internal_volume
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-hv_data_store[hv_data_store] |dataStoreId |id
+|link:#entity-internal_volume[internal_volume] |internalVolumeId |id
+|link:#entity-qtree[qtree] |qtreeId |id
+|link:#entity-storage[storage] |storageId |id
+|===
+
+=== hv_data_store_to_volume
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-hv_data_store[hv_data_store] |dataStoreId |id
+|link:#entity-qtree[qtree] |qtreeId |id
+|link:#entity-storage[storage] |storageId |id
+|link:#entity-volume[volume] |volumeId |id
+|===
+
+=== hv_datastore_to_nas_share
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-hv_data_store[hv_data_store] |dataStoreId |id
+|link:#entity-hv_nas_share[hv_nas_share] |nasShareId |id
+|===
+
+=== hv_host_to_nas_share
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-host[host] |hostId |id
+|link:#entity-hv_nas_share[hv_nas_share] |nasShareId |id
+|===
+
+=== hv_lun
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-host[host] |hostId |id
+|link:#entity-hv_data_store[hv_data_store] |dataStoreId |id
+|===
+
+=== hv_lun_to_volume
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-host[host] |hostId |id
+|link:#entity-hv_lun[hv_lun] |hvLunId |id
+|link:#entity-storage[storage] |storageId |id
+|link:#entity-volume[volume] |volumeId |id
+|===
+
+=== hv_nas_share
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-hv_data_store[hv_data_store] |dataStoreId |id
+|===
+
+=== hv_nas_share_to_share
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-hv_nas_share[hv_nas_share] |nasShareId |id
+|link:#entity-nas_share[nas_share] |shareId |id
+|link:#entity-storage[storage] |storageId |id
+|===
+
+=== hv_path
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-host[host] |hostId |id
+|link:#entity-hv_lun[hv_lun] |lunId |id
+|===
+
+=== hv_server
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-host[host] |hostId |id
+|===
+
+=== hv_virtual_disk
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-hv_data_store[hv_data_store] |dataStoreId |id
+|link:#entity-hv_lun[hv_lun] |lunId |id
+|===
+
+=== hv_virtual_disk_to_volume
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-hv_virtual_disk[hv_virtual_disk] |virtualDiskId |id
+|link:#entity-qtree[qtree] |qtreeId |id
+|link:#entity-storage[storage] |storageId |id
+|link:#entity-volume[volume] |volumeId |id
+|===
+
+=== hv_virtual_machine
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-host[host] |hostId |id
+|link:#entity-hv_data_store[hv_data_store] |dataStoreId |id
+|===
+
+=== hv_virtual_machine_to_disk
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-hv_virtual_disk[hv_virtual_disk] |virtualDiskId |id
+|link:#entity-hv_virtual_machine[hv_virtual_machine] |virtualMachineId |id
+|===
+
+=== internal_volume
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-storage[storage] |storageId |id
+|link:#entity-storage_pool[storage_pool] |storagePoolId |id
+|===
+
+=== internal_volume_to_application
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-application[application] |applicationId |id
+|link:#entity-internal_volume[internal_volume] |internalVolumeId |id
+|===
+
+=== iscsi_logical
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-host[host] |hostId |id
+|link:#entity-storage[storage] |storageId |id
+|link:#entity-volume[volume] |volumeId |id
+|===
+
+=== k8s_namespace
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-k8s_cluster[k8s_cluster] |clusterId |id
+|===
+
+=== k8s_node
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-hv_virtual_machine[hv_virtual_machine] |vmId |id
+|link:#entity-k8s_cluster[k8s_cluster] |clusterId |id
+|===
+
+=== k8s_pv
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-k8s_cluster[k8s_cluster] |clusterId |id
+|===
+
+=== k8s_pvc
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-k8s_cluster[k8s_cluster] |clusterId |id
+|link:#entity-k8s_namespace[k8s_namespace] |namespaceId |id
+|link:#entity-k8s_pv[k8s_pv] |pvId |id
+|===
+
+=== k8s_workload
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-k8s_cluster[k8s_cluster] |clusterId |id
+|link:#entity-k8s_namespace[k8s_namespace] |namespaceId |id
+|===
+
+=== k8s_workload_to_pvc
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-k8s_cluster[k8s_cluster] |clusterId |id
+|link:#entity-k8s_namespace[k8s_namespace] |namespaceId |id
+|link:#entity-k8s_pvc[k8s_pvc] |pvcId |id
+|link:#entity-k8s_workload[k8s_workload] |workloadId |id
+|===
+
+=== logical
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-generic_device[generic_device] |genericDeviceId |id
+|link:#entity-host[host] |hostId |id
+|link:#entity-storage[storage] |storageId |id
+|link:#entity-tape[tape] |tapeId |id
+|link:#entity-volume[volume] |volumeId |id
+|===
+
+=== nas_cr_logical
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-compute_resource[compute_resource] |computeResourceId |id
+|link:#entity-internal_volume[internal_volume] |internalVolumeId |id
+|link:#entity-nas_share[nas_share] |shareId |id
+|link:#entity-storage[storage] |storageId |id
+|===
+
+=== nas_file_share
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-internal_volume[internal_volume] |internalVolumeId |id
+|link:#entity-qtree[qtree] |qtreeId |id
+|link:#entity-storage[storage] |storageId |id
+|===
+
+=== nas_share
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-nas_file_share[nas_file_share] |fileShareId |id
+|link:#entity-storage[storage] |storageId |id
+|===
+
+=== nas_share_initiator
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-nas_share[nas_share] |shareId |id
+|link:#entity-storage[storage] |storageId |id
+|===
+
+=== object_to_annotation
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-annotation_value[annotation_value] |annotationValueId |id
+|===
+
+=== physical_path
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-generic_device[generic_device] |genericDeviceId |id
+|link:#entity-host[host] |hostId |id
+|link:#entity-storage[storage] |storageId |id
+|link:#entity-tape[tape] |tapeId |id
+|link:#entity-volume[volume] |volumeId |id
+|===
+
+=== qtree
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-internal_volume[internal_volume] |internalVolumeId |id
+|link:#entity-storage[storage] |storageId |id
+|===
+
+=== qtree_to_application
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-application[application] |applicationId |id
+|link:#entity-qtree[qtree] |qtreeId |id
+|===
+
+=== quota
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-internal_volume[internal_volume] |internalVolumeId |id
+|link:#entity-qtree[qtree] |qtreeId |id
+|link:#entity-storage[storage] |storageId |id
+|===
+
+=== share_to_application
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-application[application] |applicationId |id
+|link:#entity-nas_share[nas_share] |shareId |id
+|===
+
+=== storage_controller
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-storage[storage] |storageId |id
+|===
+
+=== storage_node
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-storage[storage] |storageId |id
+|===
+
+=== storage_pool
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-storage[storage] |storageId |id
+|===
+
+=== storage_port
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-storage[storage] |storageId |id
+|link:#entity-storage_controller[storage_controller] |controllerId |id
+|===
+
+=== storage_to_application
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-application[application] |applicationId |id
+|link:#entity-storage[storage] |storageId |id
+|===
+
+=== switch
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-fabric[fabric] |fabricId |id
+|===
+
+=== switch_port
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-fabric[fabric] |fabricId |id
+|link:#entity-switch[switch] |switchId |id
+|link:#entity-virtual_switch[virtual_switch] |virtualSwitchId |id
+|===
+
+=== switch_port_to_application
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-application[application] |applicationId |id
+|link:#entity-switch_port[switch_port] |portId |id
+|===
+
+=== switch_to_application
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-application[application] |applicationId |id
+|link:#entity-switch[switch] |switchId |id
+|===
+
+=== tape_controller
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-tape[tape] |tapeId |id
+|===
+
+=== tape_port
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-tape[tape] |tapeId |id
+|link:#entity-tape_controller[tape_controller] |controllerId |id
+|===
+
+=== unknown_logical
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-host[host] |hostId |id
+|link:#entity-storage[storage] |storageId |id
+|link:#entity-volume[volume] |volumeId |id
+|===
+
+=== violation
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-generic_device[generic_device] |genericDeviceId |id
+|link:#entity-host[host] |hostId |id
+|link:#entity-storage[storage] |storageId |id
+|link:#entity-tape[tape] |tapeId |id
+|link:#entity-volume[volume] |volumeId |id
+|===
+
+=== virtual_switch
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-fabric[fabric] |fabricId |id
+|===
+
+=== vm_to_application
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-application[application] |applicationId |id
+|link:#entity-hv_virtual_machine[hv_virtual_machine] |vmId |id
+|===
+
+=== vmware_host
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-hv_server[hv_server] |hvServerId |id
+|===
+
+=== volume
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-auto_tiering_policy[auto_tiering_policy] |autoTieringPolicyId |id
+|link:#entity-internal_volume[internal_volume] |internalVolumeId |id
+|link:#entity-qtree[qtree] |qtreeId |id
+|link:#entity-storage[storage] |storageId |id
+|===
+
+=== volume_map
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-storage[storage] |storageId |id
+|link:#entity-volume[volume] |volumeId |id
+|===
+
+=== volume_mask
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-host[host] |hostId |id
+|link:#entity-storage[storage] |storageId |id
+|link:#entity-volume[volume] |volumeId |id
+|===
+
+=== volume_to_application
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-application[application] |applicationId |id
+|link:#entity-volume[volume] |volumeId |id
+|===
+
+=== zone
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-fabric[fabric] |fabricId |id
+|===
+
+=== zone_member
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-fabric[fabric] |fabricId |id
+|link:#entity-zone[zone] |zoneId |id
+|===
+
+== Tables & Fields
+
+PKPrimary KeyFKForeign KeyNOT NULLRequired field
+
+=== acq_acquisition_unit
+
+=== ↑ top
+
+Entity Set(s):acq_acquisition_unit
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the acquisition unit.
+|identifier |String |Yes |Identifier of the acquisition unit.
+|name |String |Yes |Name of the acquisition unit.
+|ip |String |Yes |IP address of the acquisition unit.
+|siteName |String |Yes |The SANscreen Site to which this acquisition unit belongs.
+|leasePeriod |Int64 |Yes |Lease period in milliseconds for the acquisition unit.
+|nextLeaseRenewal |DateTimeOffset |Yes |Time when the lease for the acquisition unit expires.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|acq_data_source |link:#entity-acq_data_source[acq_data_source] |many
+|===
+
+=== acq_data_source
+
+=== ↑ top
+
+Entity Set(s):acq_data_source
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the data source.
+|acquisitionUnitId *[FK]* →link:#entity-acq_acquisition_unit[acq_acquisition_unit].id |Int64 |Yes |GUID of the acquisition unit to which this data source belongs.
+|name |String |Yes |Name of the data source.
+|type |String |Yes |Type of the data source.
+|vendor |String |Yes |Vendor of the data source.
+|model |String |Yes |Model of the data source.
+|auditLastStatus |String |Yes |The last status reported for the data source.
+|auditStatusDate |DateTimeOffset |Yes |The time for the status report.
+|auditStatusSince |DateTimeOffset |Yes |The time when this status report started.
+|auditStatusCount |Int32 |Yes |Count of audit entiries for this status.
+|auditLastStatusMessage |String |Yes |Message description for the data source status.
+|additionalDataSourceMessage |String |Yes |Additional status message for the data source.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|acq_acquisition_unit |link:#entity-acq_acquisition_unit[acq_acquisition_unit] |one JOIN:acquisitionUnitId=link:#entity-acq_acquisition_unit[acq_acquisition_unit].id
+|===
+
+=== annotation_value
+
+=== ↑ top
+
+Entity Set(s):annotation_value
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID for the annotation.
+|annotationType |String |Yes |System or user defined type such as Tier, Data center, etc.
+|valueIdentifier |String |Yes |Value of the annotation.
+|valueType |String |Yes |The data type for annotation value.
+|valueDate |DateTimeOffset |Yes |Value of the annotation (Date format).
+|enumSequence |Int32 |Yes |Sequence number determining the order of enumeration values. This is used primarily for display purposes.
+|enumCost |Double |Yes |Optional cost associated with the annotation. Applicable for Tier annotation.
+|ukHash |String |Yes |
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|object_to_annotation |link:#entity-object_to_annotation[object_to_annotation] |many
+|===
+
+=== application
+
+=== ↑ top
+
+Entity Set(s):application
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID for the application.
+|name |String |Yes |Name of the application.
+|description |String |Yes |Description of the application.
+|ignoreSharing |Byte |Yes |Indicates whether SANscreen issues sharing violations for hosts of this application.
+|priority |String |Yes |Priority of the application.
+|url |String |Yes |Url to this application in Insight Server.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|switch_port_to_application |link:#entity-switch_port_to_application[switch_port_to_application] |many
+|internal_volume_to_application |link:#entity-internal_volume_to_application[internal_volume_to_application] |many
+|share_to_application |link:#entity-share_to_application[share_to_application] |many
+|storage_to_application |link:#entity-storage_to_application[storage_to_application] |many
+|vm_to_application |link:#entity-vm_to_application[vm_to_application] |many
+|volume_to_application |link:#entity-volume_to_application[volume_to_application] |many
+|qtree_to_application |link:#entity-qtree_to_application[qtree_to_application] |many
+|switch_to_application |link:#entity-switch_to_application[switch_to_application] |many
+|host_to_application |link:#entity-host_to_application[host_to_application] |many
+|===
+
+=== auto_tiering_policy
+
+=== ↑ top
+
+Entity Set(s):auto_tiering_policy
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the auto tiering policy.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage on which the auto tiering policy is defined.
+|identifier |String |Yes |Identifier of the auto tiering policy.
+|name |String |Yes |Name of the auto tiering policy.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|volume |link:#entity-volume[volume] |many
+|auto_tiering_policy_constraint |link:#entity-auto_tiering_policy_constraint[auto_tiering_policy_constraint] |many
+|===
+
+=== auto_tiering_policy_constraint
+
+=== ↑ top
+
+Entity Set(s):auto_tiering_policy_constraint
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the auto tiering policy constraint.
+|autoTieringPolicyId *[FK]* →link:#entity-auto_tiering_policy[auto_tiering_policy].id |Int64 |Yes |GUID of the auto tiering policy.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage on which the auto tiering policy is defined.
+|vendorTier |String |Yes |Vendor-specific tier name.
+|limitPercent |Int32 |Yes |Volume share limit on this tier.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|auto_tiering_policy |link:#entity-auto_tiering_policy[auto_tiering_policy] |one JOIN:autoTieringPolicyId=link:#entity-auto_tiering_policy[auto_tiering_policy].id
+|===
+
+=== backend_lun
+
+=== ↑ top
+
+Entity Set(s):backend_lun
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the backend LUN.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage array.
+|name |String |Yes |Name of the LUN.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|backend_path |link:#entity-backend_path[backend_path] |many
+|backend_lun_to_volume |link:#entity-backend_lun_to_volume[backend_lun_to_volume] |many
+|===
+
+=== backend_lun_to_volume
+
+=== ↑ top
+
+Entity Set(s):backend_lun_to_volume
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the backend path.
+|frontendStorageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the frontend storage array.
+|backendLunId *[FK]* →link:#entity-backend_lun[backend_lun].id |Int64 |Yes |GUID of the backend LUN in the frontend array.
+|backendStorageId |Int64 |Yes |GUID of the backend storage array.
+|backendVolumeId *[FK]* →link:#entity-volume[volume].id |Int64 |Yes |GUID of the backend Volume.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|backend_lun |link:#entity-backend_lun[backend_lun] |one JOIN:backendLunId=link:#entity-backend_lun[backend_lun].id
+|storage |link:#entity-storage[storage] |one JOIN:frontendStorageId=link:#entity-storage[storage].id
+|volume |link:#entity-volume[volume] |one JOIN:backendVolumeId=link:#entity-volume[volume].id
+|===
+
+=== backend_path
+
+=== ↑ top
+
+Entity Set(s):backend_path
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the backend path.
+|backendLunId *[FK]* →link:#entity-backend_lun[backend_lun].id |Int64 |Yes |GUID of the backend LUN.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage array.
+|lun |String |Yes |Logical Unit Number.
+|initiatorPortWwn |String |Yes |WWN of the frontend storage port.
+|targetPortWwn |String |Yes |WWN of the backend storage port.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|backend_lun |link:#entity-backend_lun[backend_lun] |one JOIN:backendLunId=link:#entity-backend_lun[backend_lun].id
+|===
+
+=== business_entity
+
+=== ↑ top
+
+Entity Set(s):business_entity
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id |Int64 |Yes |GUID for the annotation.
+|fullname |String |Yes |Value of the annotation.
+|tenant |String |Yes |
+|lob |String |Yes |
+|businessUnit |String |Yes |
+|project |String |Yes |
+|===
+
+=== cluster_switch
+
+=== ↑ top
+
+Entity Set(s):cluster_switch
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |Id of the cluster switch
+|identifier |String |Yes |Identifier of the cluster switch
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |Storage Id of the cluster switch
+|name |String |Yes |Name of the cluster switch
+|address |String |Yes |Address of the cluster switch
+|serialNumber |String |Yes |Serial number of the cluster switch
+|network |String |Yes |Network of the cluster switch
+|version |String |Yes |Version of the cluster switch
+|model |String |Yes |Model of the cluster switch
+|monitored |String |Yes |Is this cluster switch monitored?
+|monitoringEnabled |String |Yes |Is monitoring enabled for the cluster switch?
+|monitoringReason |String |Yes |Reason for monitoring of the cluster switch
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|cluster_switch_port |link:#entity-cluster_switch_port[cluster_switch_port] |many
+|===
+
+=== cluster_switch_port
+
+=== ↑ top
+
+Entity Set(s):cluster_switch_port
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |Id of the cluster switch port
+|identifier |String |Yes |Identifier of the cluster switch port
+|clusterSwitchId *[FK]* →link:#entity-cluster_switch[cluster_switch].id |Int64 |Yes |Cluster switch Id of the cluster switch port
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |Storage Id of the cluster switch port
+|storageNodeId *[FK]* →link:#entity-storage_node[storage_node].id |Int64 |Yes |Storage Node Id of the cluster switch port
+|name |String |Yes |Name of the cluster switch port
+|duplexType |String |Yes |Duplex type of the cluster switch port
+|storageNodePortName |String |Yes |Name of the node port for the cluster switch port
+|storageNodePortMtu |String |Yes |Maximum Transmission Unit of the node port for the cluster switch port
+|portIndex |String |Yes |Index of the cluster switch port
+|isl |String |Yes |Inter Switch Link of the cluster switch port
+|macAddress |String |Yes |Mac address of the cluster switch port
+|mtu |String |Yes |Maximum Transmission Unit of the cluster switch port
+|number |String |Yes |Number of the cluster switch port
+|type |String |Yes |Type of the cluster switch port
+|speed |String |Yes |Speed of the cluster switch port
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|cluster_switch |link:#entity-cluster_switch[cluster_switch] |one JOIN:clusterSwitchId=link:#entity-cluster_switch[cluster_switch].id
+|storage_node |link:#entity-storage_node[storage_node] |one JOIN:storageNodeId=link:#entity-storage_node[storage_node].id
+|===
+
+=== compute_resource
+
+=== ↑ top
+
+Entity Set(s):compute_resource
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the Operating System
+|hostId *[FK]* →link:#entity-host[host].id |Int64 |Yes |The Host ID.
+|vmId *[FK]* →link:#entity-hv_virtual_machine[hv_virtual_machine].id |Int64 |Yes |The VM ID.
+|identifier |String |Yes |identifier of the compute resource
+|name |String |Yes |name of the compute resource.
+|type |String |Yes |resource type.
+|domain |String |Yes |domain of compute resource.
+|ip |String |Yes |Comma separated list of IP addresses of the compute resource.
+|os |String |Yes |Operating system running on the compute resource.
+|cpuCount |Int32 |Yes |cpu count of compute resource.
+|memory |Int32 |Yes |memory of compute resource.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|hv_virtual_machine |link:#entity-hv_virtual_machine[hv_virtual_machine] |one JOIN:vmId=link:#entity-hv_virtual_machine[hv_virtual_machine].id
+|host |link:#entity-host[host] |one JOIN:hostId=link:#entity-host[host].id
+|file_system |link:#entity-file_system[file_system] |many
+|nas_cr_logical |link:#entity-nas_cr_logical[nas_cr_logical] |many
+|file_system_to_virtual_disk |link:#entity-file_system_to_virtual_disk[file_system_to_virtual_disk] |many
+|file_system_to_volume |link:#entity-file_system_to_volume[file_system_to_volume] |many
+|===
+
+=== disk
+
+=== ↑ top
+
+Entity Set(s):disk
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the disk.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage array (filer).
+|identifier |String |Yes |The identifier of the disk. Uniquely identifies the disk in the storage.
+|name |String |Yes |The name of the disk.
+|speed |Int32 |Yes |Speed for disk.
+|capacityGB |Int64 |Yes |Disk capacity in GB.
+|location |String |Yes |Location of disk, where is it installed.
+|role |String |Yes |Role for disk in storage group (e.g. PARITY, DATA, SPARE).
+|vendor |String |Yes |Disk vendor (e.g. NetApp, SEAGATE).
+|model |String |Yes |Disk model.
+|type |String |Yes |Type for the disk (e.g. SATA, FC).
+|diskGroup |String |Yes |Identifier for disk group the disk belongs to (e.g. rg0, 7).
+|status |String |Yes |Status for disk (e.g. NORMAL, FAILED).
+|serialNumber |String |Yes |The disk serial number
+|url |String |Yes |Url to this disk in Insight Server.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|===
+
+=== disk_group
+
+=== ↑ top
+
+Entity Set(s):disk_group
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the disk group
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage array
+|name |String |Yes |name of the disk group
+|identifier |String |Yes |identifier of the disk group
+|vendorDiskGroupType |String |Yes |vendor type of the disk group
+|diskType |String |Yes |type of disks in the disk group
+|status |String |Yes |status of the disk group
+|redundancy |String |Yes |redundancy of the disk group
+|isVirtual |String |Yes |indicates whether the disk group is virtual
+|vendorTier |String |Yes |vendor tier of the disk group
+|capacityMB |Int64 |Yes |usable capacity of the disk group
+|usedCapacityMB |Int64 |Yes |used capacity of the disk group
+|physicalDiskCapacityMB |Int64 |Yes |physical capacity of the disk group
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|===
+
+=== disk_group_to_disk
+
+=== ↑ top
+
+Entity Set(s):disk_group_to_disk
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|storageId |Int64 |Yes |GUID of the storage array.
+|diskGroupId |Int64 |Yes |GUID of the disk group.
+|diskId |Int64 |Yes |GUID of the disk.
+|===
+
+=== disk_group_to_storage_pool
+
+=== ↑ top
+
+Entity Set(s):disk_group_to_storage_pool
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|storageId |Int64 |Yes |GUID of the storage array.
+|diskGroupId |Int64 |Yes |GUID of the disk group.
+|storagePoolId |Int64 |Yes |GUID of the storage pool.
+|===
+
+=== dr_internal_volume_replica
+
+=== ↑ top
+
+Entity Set(s):dr_internal_volume_replica
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|sourceStorageId |Int64 |Yes |GUID of the storage that is the source of the replica.
+|sourceInternalVolumeId *[FK]* →link:#entity-internal_volume[internal_volume].id |Int64 |Yes |GUID of the internal volume that is the source of the replica.
+|targetStorageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage that is the target of the replica.
+|targetInternalVolumeId *[PK]* |Int64 |Yes |GUID of the internal volume that is the target of the replica.
+|mode |String |Yes |Synchronization mode for the replica. Possible values are Synchronous, Asynchronous, Semi Synchronous, Copy and Unknown.
+|technology |String |Yes |The technology used for this replication. E.g., SnapMirror
+|dwhCalculated |String |Yes |True if this is a cross-site replica calculated by DWH
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|internal_volume |link:#entity-internal_volume[internal_volume] |one JOIN:sourceInternalVolumeId=link:#entity-internal_volume[internal_volume].id
+|storage |link:#entity-storage[storage] |one JOIN:targetStorageId=link:#entity-storage[storage].id
+|===
+
+=== dr_qtree_replica
+
+=== ↑ top
+
+Entity Set(s):dr_qtree_replica
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|sourceStorageId |Int64 |Yes |GUID of the storage that is the source of the replica.
+|sourceQtreeId *[FK]* →link:#entity-qtree[qtree].id |Int64 |Yes |GUID of the qtree that is the source of the replica.
+|targetStorageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage that is the target of the replica.
+|targetQtreeId *[PK]* |Int64 |Yes |GUID of the qtree that is the target of the replica.
+|mode |String |Yes |Synchronization mode for the replica. Possible values are Synchronous, Asynchronous, Semi Synchronous, Copy and Unknown.
+|technology |String |Yes |The technology used for this replication. E.g., SnapMirror
+|dwhCalculated |String |Yes |True if this is a cross-site replica calculated by DWH
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|qtree |link:#entity-qtree[qtree] |one JOIN:sourceQtreeId=link:#entity-qtree[qtree].id
+|storage |link:#entity-storage[storage] |one JOIN:targetStorageId=link:#entity-storage[storage].id
+|===
+
+=== dr_replica
+
+=== ↑ top
+
+Entity Set(s):dr_replica
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|sourceStorageId |Int64 |Yes |GUID of the storage that is the source of the replica.
+|sourceVolumeId |Int64 |Yes |GUID of the volume that is the source of the replica.
+|targetStorageId |Int64 |Yes |GUID of the storage that is the target of the replica.
+|targetVolumeId |Int64 |Yes |GUID of the volume that is the target of the replica.
+|fabrics |Int32 |Yes |[deprecated] Number of fabrics utilized by the replica.
+|spf |Byte |Yes |[deprecated] Indicates whether the replica has a single point of failure.
+|sourcePorts |Int32 |Yes |[deprecated] Number of source ports used by the replica.
+|targetPorts |Int32 |Yes |[deprecated] Number of target ports used by the replica.
+|hopsCount |Int32 |Yes |[deprecated] Number of switch hops for this replica.
+|synch |String |Yes |Enumerated text describing the replication mode configured
+|===
+
+=== dr_volume_replica
+
+=== ↑ top
+
+Entity Set(s):dr_volume_replica
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|sourceStorageId |Int64 |Yes |GUID of the storage that is the source of the replica.
+|sourceVolumeId *[PK]* |Int64 |Yes |GUID of the volume that is the source of the replica.
+|targetStorageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage that is the target of the replica.
+|targetVolumeId *[PK]* |Int64 |Yes |GUID of the volume that is the target of the replica.
+|sourceVolumeGroupId |String |Yes |Source Volume Group Id
+|sourceVolumeGroupName |String |Yes |Source Volume Group Name
+|targetVolumeGroupId |String |Yes |Target Volume Group Id
+|targetVolumeGroupName |String |Yes |Target Volume Group Name
+|fabrics |Int32 |Yes |[deprecated] Number of fabrics utilized by the replica.
+|spf |Byte |Yes |[deprecated] Indicates whether the replica has a single point of failure.
+|sourcePorts |Int32 |Yes |[deprecated] Number of source ports used by the replica.
+|targetPorts |Int32 |Yes |[deprecated] Number of target ports used by the replica.
+|hopsCount |Int32 |Yes |[deprecated] Number of switch hops for this replica.
+|mode |String |Yes |Enumerated text describing the replication mode configured
+|modeRaw |String |Yes |Text describing the replication mode configured
+|technology |String |Yes |Text describing the used replication technology
+|state |String |Yes |Text describing the dynamic state of replication
+|stateRaw |String |Yes |Enumerated text describing the dynamic state of replication
+|stateStartTime |DateTimeOffset |Yes |The known Start time of the reported state
+|stateSampleTime |DateTimeOffset |Yes |The last update time for the State
+|stateStartTimeCalculated |String |Yes |True, If the Starttime is calculated by Sanscreen Server
+|dwhCalculated |String |Yes |True if this is a cross-site replica calculated by DWH
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|volume |link:#entity-volume[volume] |one JOIN:sourceVolumeId=link:#entity-volume[volume].id
+|storage |link:#entity-storage[storage] |one JOIN:targetStorageId=link:#entity-storage[storage].id
+|===
+
+=== extended_data
+
+=== ↑ top
+
+Entity Set(s):extended_data
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|objectId *[PK]* |Int64 |Yes |GUID of the object.
+|objectType *[PK]* |String |Yes |Type of the object.
+|fieldName *[PK]* |String |Yes |Name of extended data field.
+|fieldValue |String |Yes |Value of the extended data field for this object.
+|===
+
+=== fabric
+
+=== ↑ top
+
+Entity Set(s):fabric
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the fabric.
+|identifier |String |Yes |Identifier of the fabric.
+|wwn |String |Yes |WWN of the fabric.
+|name |String |Yes |Name of the fabric.
+|vsanEnabled |String |Yes |Indicates whether this fabric is a VSAN.
+|vsanId |String |Yes |Identifier for the VSAN in case this fabric is a VSAN.
+|zoningEnabled |String |Yes |If true, zoning is enforce based on the data in the zone and zone members table. Otherwise, zoning is not enforced in the Fabric.
+|url |String |Yes |Url to this fabric in Insight Server.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|switch_port |link:#entity-switch_port[switch_port] |many
+|zone |link:#entity-zone[zone] |many
+|virtual_switch |link:#entity-virtual_switch[virtual_switch] |many
+|zone_member |link:#entity-zone_member[zone_member] |many
+|switch |link:#entity-switch[switch] |many
+|===
+
+=== fc_name_server_entry
+
+=== ↑ top
+
+Entity Set(s):fc_name_server_entry
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the fc name server entry.
+|portId |Int64 |Yes |GUID of the node port.
+|type |String |Yes |Type of the node port. (e.g., HOST_PORT, STORAGE_PORT, TAPE_PORT, GENERIC_DEVICE_PORT)
+|wwn |String |Yes |WWN of the node port.
+|connectedSwitchPortId *[FK]* →link:#entity-switch_port[switch_port].id |Int64 |Yes |GUID of the connected switch port.
+|connectedSwitchPortWwn |String |Yes |WWN of the connected switch port.
+|physicalPortWwn |String |Yes |WWN of the physical port (e.g., NP-Port of NPV). It is same as node port if node port is directly connected to switch port.
+|fcId |String |Yes |ID assigned after the handshake/login.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|switch_port |link:#entity-switch_port[switch_port] |one JOIN:connectedSwitchPortId=link:#entity-switch_port[switch_port].id
+|===
+
+=== file_system
+
+=== ↑ top
+
+Entity Set(s):file_system
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the file system.
+|computeResourceId *[FK]* →link:#entity-compute_resource[compute_resource].id |Int64 |Yes |GUID of the compute resource.
+|hostId *[FK]* →link:#entity-host[host].id |Int64 |Yes |GUID of the host.
+|name |String |Yes |Mounting point or drive latter. Part of the natual key.
+|location |String |Yes |Indicates where the data is kept and how it is accessed. For example: local, SAN, NAS. Will be set to null if the location is unknown.
+|hardwareId |String |Yes |Host specific identifier. Will be set to null if unknown.
+|type |String |Yes |File system type. For example: NTFS, FAT, UFS, UDF, ZFS, ISO 9660, VXFS etc. Will be set to null if unknown.
+|lastAgentReportTime |DateTimeOffset |Yes |Last time when file system information was collected by agent
+|sizeMB |Int64 |Yes |Size of the file system in MB.
+|usedMB |Int64 |Yes |Amount of file-system capacity that is used and is not available.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|compute_resource |link:#entity-compute_resource[compute_resource] |one JOIN:computeResourceId=link:#entity-compute_resource[compute_resource].id
+|host |link:#entity-host[host] |one JOIN:hostId=link:#entity-host[host].id
+|file_system_to_virtual_disk |link:#entity-file_system_to_virtual_disk[file_system_to_virtual_disk] |many
+|file_system_to_volume |link:#entity-file_system_to_volume[file_system_to_volume] |many
+|===
+
+=== file_system_to_virtual_disk
+
+=== ↑ top
+
+Entity Set(s):file_system_to_virtual_disk
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the file system to volume relation.
+|virtualDiskId *[FK]* →link:#entity-hv_virtual_disk[hv_virtual_disk].id |Int64 |Yes |GUID of the virtual disk.
+|fileSystemId *[FK]* →link:#entity-file_system[file_system].id |Int64 |Yes |GUID of the file system.
+|computeResourceId *[FK]* →link:#entity-compute_resource[compute_resource].id |Int64 |Yes |GUID of the compute resource.
+|dataStoreId *[FK]* →link:#entity-hv_data_store[hv_data_store].id |Int64 |Yes |GUID of the data store.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|hv_data_store |link:#entity-hv_data_store[hv_data_store] |one JOIN:dataStoreId=link:#entity-hv_data_store[hv_data_store].id
+|compute_resource |link:#entity-compute_resource[compute_resource] |one JOIN:computeResourceId=link:#entity-compute_resource[compute_resource].id
+|file_system |link:#entity-file_system[file_system] |one JOIN:fileSystemId=link:#entity-file_system[file_system].id
+|hv_virtual_disk |link:#entity-hv_virtual_disk[hv_virtual_disk] |one JOIN:virtualDiskId=link:#entity-hv_virtual_disk[hv_virtual_disk].id
+|===
+
+=== file_system_to_volume
+
+=== ↑ top
+
+Entity Set(s):file_system_to_volume
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the file system to volume relation.
+|computeResourceId *[FK]* →link:#entity-compute_resource[compute_resource].id |Int64 |Yes |GUID of the compute resource.
+|fileSystemId *[FK]* →link:#entity-file_system[file_system].id |Int64 |Yes |GUID of the file system.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage.
+|volumeId *[FK]* →link:#entity-volume[volume].id |Int64 |Yes |GUID of the volume.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|compute_resource |link:#entity-compute_resource[compute_resource] |one JOIN:computeResourceId=link:#entity-compute_resource[compute_resource].id
+|volume |link:#entity-volume[volume] |one JOIN:volumeId=link:#entity-volume[volume].id
+|file_system |link:#entity-file_system[file_system] |one JOIN:fileSystemId=link:#entity-file_system[file_system].id
+|===
+
+=== generic_device
+
+=== ↑ top
+
+Entity Set(s):generic_device
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the generic device.
+|wwn |String |Yes |WWN of the generic device
+|identifier |String |Yes |Identifier of the device.
+|manufacturer |String |Yes |Manufacturer of the generic device.
+|model |String |Yes |Model of the generic device.
+|firmware |String |Yes |Firmware version of the generic device.
+|driver |String |Yes |Driver of the generic device.
+|serialNumber |String |Yes |Serial number of the generic device.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|generic_device_port |link:#entity-generic_device_port[generic_device_port] |many
+|violation |link:#entity-violation[violation] |many
+|physical_path |link:#entity-physical_path[physical_path] |many
+|logical |link:#entity-logical[logical] |many
+|===
+
+=== generic_device_port
+
+=== ↑ top
+
+Entity Set(s):generic_device_port
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the port.
+|genericDeviceId *[FK]* →link:#entity-generic_device[generic_device].id |Int64 |Yes |GUID of the generic device.
+|wwn |String |Yes |WWN of the port.
+|number |Int64 |Yes |Number of the port in the containing blade
+|portId |String |Yes |Id of the port.
+|name |String |Yes |Name of the port.
+|speed |String |Yes |Speed of the port, in Gbps.
+|url |String |Yes |Url to this port in Insight Server.
+|active |String |Yes |True if the port is not dead
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|generic_device |link:#entity-generic_device[generic_device] |one JOIN:genericDeviceId=link:#entity-generic_device[generic_device].id
+|===
+
+=== host
+
+=== ↑ top
+
+Entity Set(s):host
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the host.
+|name |String |Yes |Name of the host.
+|identifier |String |Yes |Identifier of the device.
+|ip |String |Yes |IP address of the host.
+|os |String |Yes |Operating system running on the host.
+|model |String |Yes |Model number.
+|manufacturer |String |Yes |Manufacturer of the host.
+|installedMemoryMB |String |Yes |Total amount of memory available on the host, in MB.
+|hostFsFreeGB |String |Yes |Amount of free storage in the host file systems, in GB.
+|hostFsTotalGB |String |Yes |Total amount of storage in the file systems for a host, in GB.
+|hostFsUsedGB |String |Yes |Amount of storage in the file systems that is used for a host, in GB.
+|cpuCount |String |Yes |Number of CPUs running on the host.
+|cpuSpeed |String |Yes |Speed of CPU, in MHz.
+|nicCount |String |Yes |Number of NICs.
+|nicSpeed |String |Yes |Speed of NIC, Mbs.
+|url |String |Yes |Url to this host in Insight Server.
+|active |String |Yes |Indicates whether the host is currently active.
+|dataCenter |String |Yes |# dataCenter annotation value assigned to host
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|host_port |link:#entity-host_port[host_port] |many
+|hv_path |link:#entity-hv_path[hv_path] |many
+|volume_mask |link:#entity-volume_mask[volume_mask] |many
+|host_adapter |link:#entity-host_adapter[host_adapter] |many
+|unknown_logical |link:#entity-unknown_logical[unknown_logical] |many
+|logical |link:#entity-logical[logical] |many
+|host_to_application |link:#entity-host_to_application[host_to_application] |many
+|hv_host_to_nas_share |link:#entity-hv_host_to_nas_share[hv_host_to_nas_share] |many
+|file_system |link:#entity-file_system[file_system] |many
+|hv_lun |link:#entity-hv_lun[hv_lun] |many
+|violation |link:#entity-violation[violation] |many
+|iscsi_logical |link:#entity-iscsi_logical[iscsi_logical] |many
+|hv_lun_to_volume |link:#entity-hv_lun_to_volume[hv_lun_to_volume] |many
+|physical_path |link:#entity-physical_path[physical_path] |many
+|hv_server |link:#entity-hv_server[hv_server] |many
+|compute_resource |link:#entity-compute_resource[compute_resource] |many
+|hv_virtual_machine |link:#entity-hv_virtual_machine[hv_virtual_machine] |many
+|===
+
+=== host_adapter
+
+=== ↑ top
+
+Entity Set(s):host_adapter
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the host adapter.
+|hostId *[FK]* →link:#entity-host[host].id |Int64 |Yes |GUID of the host where this adapter resides.
+|wwn |String |Yes |WWN of the host adapter.
+|model |String |Yes |Model of the host adapter.
+|manufacturer |String |Yes |Manufacturer of the host adapter.
+|driver |String |Yes |Name of the driver managing access to the host adapter.
+|firmware |String |Yes |Version of the firmware running on the host adapter.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|host |link:#entity-host[host] |one JOIN:hostId=link:#entity-host[host].id
+|host_port |link:#entity-host_port[host_port] |many
+|===
+
+=== host_port
+
+=== ↑ top
+
+Entity Set(s):host_port
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the host port.
+|adapterId *[FK]* →link:#entity-host_adapter[host_adapter].id |Int64 |Yes |GUID of the node (adapter) where this host port resides.
+|hostId *[FK]* →link:#entity-host[host].id |Int64 |Yes |GUID of the host where this host port resides.
+|wwn |String |Yes |WWN of the host port.
+|nodeWwn |String |Yes |WWN of the node (adapter) where this port resides.
+|portId |String |Yes |Id of the port.
+|name |String |Yes |Name of the host port.
+|speed |String |Yes |Speed of the port, in Gbps.
+|url |String |Yes |Url to this port in Insight Server.
+|active |String |Yes |True if the port is not dead
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|host_adapter |link:#entity-host_adapter[host_adapter] |one JOIN:adapterId=link:#entity-host_adapter[host_adapter].id
+|host |link:#entity-host[host] |one JOIN:hostId=link:#entity-host[host].id
+|===
+
+=== host_to_application
+
+=== ↑ top
+
+Entity Set(s):host_to_application
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the relationship between a host and an application.
+|hostId *[FK]* →link:#entity-host[host].id |Int64 |Yes |GUID of the host.
+|applicationId *[FK]* →link:#entity-application[application].id |Int64 |Yes |GUID of the application.
+|inherited |String |Yes |This application is inherited.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|application |link:#entity-application[application] |one JOIN:applicationId=link:#entity-application[application].id
+|host |link:#entity-host[host] |one JOIN:hostId=link:#entity-host[host].id
+|===
+
+=== hv_data_store
+
+=== ↑ top
+
+Entity Set(s):hv_data_store
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the datastore.
+|naturalKey |String |Yes |Natural identifier of the datastore.
+|moid |String |Yes |Managed Object ID, assigned to the data store in Virtual Center.
+|name |String |Yes |Name of the datastore.
+|capacityMB |Int64 |Yes |Configured size of the datastore, in MB.
+|provisionedCapacityMB |Int64 |Yes |Amount of storage set-aside for use by the datastore, in MB.
+|virtualCenterIp |String |Yes |IP address of virtual center.
+|freeCapacityMB |Int64 |Yes |[OBSOLETE] Available capacity in the datastore, in MB.
+|usedCapacityMB |Int64 |Yes |Amount of space actually used by the datastore, in MB.
+|url |String |Yes |Url to this data store in Insight Server.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|hv_nas_share |link:#entity-hv_nas_share[hv_nas_share] |many
+|hv_data_store_to_internal_volume |link:#entity-hv_data_store_to_internal_volume[hv_data_store_to_internal_volume] |many
+|hv_lun |link:#entity-hv_lun[hv_lun] |many
+|hv_datastore_to_nas_share |link:#entity-hv_datastore_to_nas_share[hv_datastore_to_nas_share] |many
+|hv_virtual_disk |link:#entity-hv_virtual_disk[hv_virtual_disk] |many
+|file_system_to_virtual_disk |link:#entity-file_system_to_virtual_disk[file_system_to_virtual_disk] |many
+|hv_data_store_to_volume |link:#entity-hv_data_store_to_volume[hv_data_store_to_volume] |many
+|hv_virtual_machine |link:#entity-hv_virtual_machine[hv_virtual_machine] |many
+|===
+
+=== hv_data_store_to_internal_volume
+
+=== ↑ top
+
+Entity Set(s):hv_data_store_to_internal_volume
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|dataStoreId *[PK]* |Int64 |Yes |GUID fo the datastore.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage.
+|internalVolumeId *[PK]* |Int64 |Yes |GUID of the internal-volume.
+|qtreeId *[FK]* →link:#entity-qtree[qtree].id |Int64 |Yes |GUID of the qtree.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|hv_data_store |link:#entity-hv_data_store[hv_data_store] |one JOIN:dataStoreId=link:#entity-hv_data_store[hv_data_store].id
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|internal_volume |link:#entity-internal_volume[internal_volume] |one JOIN:internalVolumeId=link:#entity-internal_volume[internal_volume].id
+|qtree |link:#entity-qtree[qtree] |one JOIN:qtreeId=link:#entity-qtree[qtree].id
+|===
+
+=== hv_data_store_to_volume
+
+=== ↑ top
+
+Entity Set(s):hv_data_store_to_volume
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|dataStoreId *[PK]* |Int64 |Yes |GUID fo the datastore.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage.
+|qtreeId *[FK]* →link:#entity-qtree[qtree].id |Int64 |Yes |GUID of the qtree.
+|volumeId *[PK]* |Int64 |Yes |GUID of the volume.
+|repVolume |String |Yes |True if this volume is the representative of all the volumes in the datastore.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|hv_data_store |link:#entity-hv_data_store[hv_data_store] |one JOIN:dataStoreId=link:#entity-hv_data_store[hv_data_store].id
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|volume |link:#entity-volume[volume] |one JOIN:volumeId=link:#entity-volume[volume].id
+|qtree |link:#entity-qtree[qtree] |one JOIN:qtreeId=link:#entity-qtree[qtree].id
+|===
+
+=== hv_datastore_to_nas_share
+
+=== ↑ top
+
+Entity Set(s):hv_datastore_to_nas_share
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the relationship between a datastore and a hv nas share.
+|dataStoreId *[FK]* →link:#entity-hv_data_store[hv_data_store].id |Int64 |Yes |GUID of the datastore.
+|nasShareId *[FK]* →link:#entity-hv_nas_share[hv_nas_share].id |Int64 |Yes |GUID of the hv nas share.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|hv_data_store |link:#entity-hv_data_store[hv_data_store] |one JOIN:dataStoreId=link:#entity-hv_data_store[hv_data_store].id
+|hv_nas_share |link:#entity-hv_nas_share[hv_nas_share] |one JOIN:nasShareId=link:#entity-hv_nas_share[hv_nas_share].id
+|===
+
+=== hv_host_to_nas_share
+
+=== ↑ top
+
+Entity Set(s):hv_host_to_nas_share
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the relationship between a host to a nas share.
+|hostId *[FK]* →link:#entity-host[host].id |Int64 |Yes |GUID of the host.
+|nasShareId *[FK]* →link:#entity-hv_nas_share[hv_nas_share].id |Int64 |Yes |GUID of the nas share (hv_nas_share).
+|readOnly |Byte |Yes |Indicates whether the host has read-only access to the nas share.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|hv_nas_share |link:#entity-hv_nas_share[hv_nas_share] |one JOIN:nasShareId=link:#entity-hv_nas_share[hv_nas_share].id
+|host |link:#entity-host[host] |one JOIN:hostId=link:#entity-host[host].id
+|===
+
+=== hv_lun
+
+=== ↑ top
+
+Entity Set(s):hv_lun
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the lun.
+|hostId *[FK]* →link:#entity-host[host].id |Int64 |Yes |GUID of the host.
+|dataStoreId *[FK]* →link:#entity-hv_data_store[hv_data_store].id |Int64 |Yes |GUID of the datastore using this LUN. Is set to NULL for RDM VMDKs.
+|naturalKey |String |Yes |Natural identifier of the lun.
+|number |String |Yes |Logical Unit Number (lun).
+|tid |Int64 |Yes |Target SCSI id.
+|policy |String |Yes |SAN active path selection policy (MRU, FIXED or RR).
+|diskName |String |Yes |Disk name for the lun.
+|volumeUuid |String |Yes |UUID of the volume.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|hv_data_store |link:#entity-hv_data_store[hv_data_store] |one JOIN:dataStoreId=link:#entity-hv_data_store[hv_data_store].id
+|host |link:#entity-host[host] |one JOIN:hostId=link:#entity-host[host].id
+|hv_path |link:#entity-hv_path[hv_path] |many
+|hv_lun_to_volume |link:#entity-hv_lun_to_volume[hv_lun_to_volume] |many
+|hv_virtual_disk |link:#entity-hv_virtual_disk[hv_virtual_disk] |many
+|===
+
+=== hv_lun_to_volume
+
+=== ↑ top
+
+Entity Set(s):hv_lun_to_volume
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the relationship between a hv lun to a volume.
+|hostId *[FK]* →link:#entity-host[host].id |Int64 |Yes |GUID of the host on which the hv lun resides.
+|hvLunId *[FK]* →link:#entity-hv_lun[hv_lun].id |Int64 |Yes |GUID of the lun.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage array on which the volume resides.
+|volumeId *[FK]* →link:#entity-volume[volume].id |Int64 |Yes |GUID of the volume.
+|type |String |Yes |Type of the volume access technology.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|volume |link:#entity-volume[volume] |one JOIN:volumeId=link:#entity-volume[volume].id
+|hv_lun |link:#entity-hv_lun[hv_lun] |one JOIN:hvLunId=link:#entity-hv_lun[hv_lun].id
+|host |link:#entity-host[host] |one JOIN:hostId=link:#entity-host[host].id
+|===
+
+=== hv_nas_share
+
+=== ↑ top
+
+Entity Set(s):hv_nas_share
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the NAS share.
+|dataStoreId *[FK]* →link:#entity-hv_data_store[hv_data_store].id |Int64 |Yes |[Deprecated] GUID of the datastore.
+|naturalKey |String |Yes |Natural identifier of the NAS share.
+|filerName |String |Yes |Name of filer for the nas share.
+|filerIp |String |Yes |IP address of the filer for the nas share.
+|sharePath |String |Yes |Path in the logical disk to which this share refers.
+|capacityMB |Int32 |Yes |Capacity on the share that is visible to hosts, in MB.
+|type |String |Yes |The protocol used for the nas share (e.g., NFS or CIFS).
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|hv_data_store |link:#entity-hv_data_store[hv_data_store] |one JOIN:dataStoreId=link:#entity-hv_data_store[hv_data_store].id
+|hv_datastore_to_nas_share |link:#entity-hv_datastore_to_nas_share[hv_datastore_to_nas_share] |many
+|hv_nas_share_to_share |link:#entity-hv_nas_share_to_share[hv_nas_share_to_share] |many
+|hv_host_to_nas_share |link:#entity-hv_host_to_nas_share[hv_host_to_nas_share] |many
+|===
+
+=== hv_nas_share_to_share
+
+=== ↑ top
+
+Entity Set(s):hv_nas_share_to_share
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the relationship between a NAS share to a share.
+|nasShareId *[FK]* →link:#entity-hv_nas_share[hv_nas_share].id |Int64 |Yes |GUID of NAS share.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage array (filer) on which the share resides.
+|shareId *[FK]* →link:#entity-nas_share[nas_share].id |Int64 |Yes |GUID of share.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|hv_nas_share |link:#entity-hv_nas_share[hv_nas_share] |one JOIN:nasShareId=link:#entity-hv_nas_share[hv_nas_share].id
+|nas_share |link:#entity-nas_share[nas_share] |one JOIN:shareId=link:#entity-nas_share[nas_share].id
+|===
+
+=== hv_path
+
+=== ↑ top
+
+Entity Set(s):hv_path
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of a path from a host to a lun.
+|lunId *[FK]* →link:#entity-hv_lun[hv_lun].id |Int64 |Yes |GUID of the lun.
+|hostId *[FK]* →link:#entity-host[host].id |Int64 |Yes |GUID of the host.
+|hostPortWwpn |String |Yes |WWN of the host port used by the path.
+|storagePortWwpn |String |Yes |WWN of the storage port used by the path.
+|type |String |Yes |Path type (FC, ISCSI or UNKNOWN).
+|active |Byte |Yes |Indicates whether this path is active.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|hv_lun |link:#entity-hv_lun[hv_lun] |one JOIN:lunId=link:#entity-hv_lun[hv_lun].id
+|host |link:#entity-host[host] |one JOIN:hostId=link:#entity-host[host].id
+|===
+
+=== hv_server
+
+=== ↑ top
+
+Entity Set(s):hv_server
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the ESX server.
+|hostId *[FK]* →link:#entity-host[host].id |Int64 |Yes |GUID of the host.
+|naturalKey |String |Yes |Natural identifier of the ESX server.
+|moid |String |Yes |Managed Object ID, assigned to the server in Virtual Center.
+|virtualCenterIp |String |Yes |IP address of virtual center.
+|clusterName |String |Yes |Name of a cluster of hosts sharing access to the same SAN volumes or NAS share, or blank for a standalone host.
+|dataCenterName |String |Yes |Name of data center.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|host |link:#entity-host[host] |one JOIN:hostId=link:#entity-host[host].id
+|vmware_host |link:#entity-vmware_host[vmware_host] |many
+|===
+
+=== hv_virtual_disk
+
+=== ↑ top
+
+Entity Set(s):hv_virtual_disk
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the virtual disk.
+|dataStoreId *[FK]* →link:#entity-hv_data_store[hv_data_store].id |Int64 |Yes |GUID of the datastore for the virtual disk.
+|lunId *[FK]* →link:#entity-hv_lun[hv_lun].id |Int64 |Yes |RDM VMDK only, GUID of the lun associated with the virtual disk.
+|naturalKey |String |Yes |Natural identifier of the virtual disk.
+|name |String |Yes |Name of the virtual disk.
+|type |String |Yes |Type of the virtual disk.
+|capacityMB |Int64 |Yes |Capacity of the virtual disk, in MB.
+|usedCapacityMB |Int64 |Yes |Capacity consumed from the data-store, as repoted by device, in MB.
+|usedCapacityForReportingMB |Int64 |Yes |Capacity consumed from the data-store, may be smaller than capacityMB for thin-provisioned VMDKs, in MB.
+|url |String |Yes |Url to this virtual disk in Insight Server.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|hv_data_store |link:#entity-hv_data_store[hv_data_store] |one JOIN:dataStoreId=link:#entity-hv_data_store[hv_data_store].id
+|hv_lun |link:#entity-hv_lun[hv_lun] |one JOIN:lunId=link:#entity-hv_lun[hv_lun].id
+|hv_virtual_disk_to_volume |link:#entity-hv_virtual_disk_to_volume[hv_virtual_disk_to_volume] |many
+|hv_virtual_machine_to_disk |link:#entity-hv_virtual_machine_to_disk[hv_virtual_machine_to_disk] |many
+|file_system_to_virtual_disk |link:#entity-file_system_to_virtual_disk[file_system_to_virtual_disk] |many
+|===
+
+=== hv_virtual_disk_to_volume
+
+=== ↑ top
+
+Entity Set(s):hv_virtual_disk_to_volume
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|virtualDiskId *[PK]* |Int64 |Yes |GUID of the virtual disk.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage.
+|qtreeId *[FK]* →link:#entity-qtree[qtree].id |Int64 |Yes |GUID of the qtree.
+|volumeId *[FK]* →link:#entity-volume[volume].id |Int64 |Yes |GUID of the volume.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|volume |link:#entity-volume[volume] |one JOIN:volumeId=link:#entity-volume[volume].id
+|qtree |link:#entity-qtree[qtree] |one JOIN:qtreeId=link:#entity-qtree[qtree].id
+|hv_virtual_disk |link:#entity-hv_virtual_disk[hv_virtual_disk] |one JOIN:virtualDiskId=link:#entity-hv_virtual_disk[hv_virtual_disk].id
+|===
+
+=== hv_virtual_machine
+
+=== ↑ top
+
+Entity Set(s):hv_virtual_machine
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the virtual machine.
+|hostId *[FK]* →link:#entity-host[host].id |Int64 |Yes |GUID of host owning the virtual machine.
+|moid |String |Yes |Managed Object ID, assigned to the virtual machine in Virtual Center.
+|name |String |Yes |Name of the virtual machine.
+|dnsName |String |Yes |Fully qualified domain name of the virtual machine.
+|ips |String |Yes |Comma separated list of IP addresses of the virtual machine.
+|powerState |String |Yes |Power state of the virtual machine combined with the state of the guest OS
+|powerStateChangeTime |DateTimeOffset |Yes |Time when the power state has changed to the current value.
+|guestState |String |Yes |The combined state of the virtual hardware of the virtual machine and of the guest OS.
+|os |String |Yes |Guest operating system.
+|processors |Int32 |Yes |Number of processors of the virtual machine.
+|memory |Int64 |Yes |Memory of the virtual machine, in MB.
+|dataStoreId *[FK]* →link:#entity-hv_data_store[hv_data_store].id |Int64 |Yes |GUID of the datastore used by the virtual machine for storing its metadata (logs, snapshots, memory files etc.).
+|naturalKey |String |Yes |Natural identifier of the virtual machine.
+|virtualCenterIp |String |Yes |IP address of virtual center.
+|provisionedCapacityMB |Int64 |Yes |Amount of storage provisioned to the virtual machine, in MB.
+|usedCapacityMB |Int64 |Yes |Amount of space actually used by the virtual machine, in MB.
+|url |String |Yes |Url to this virtual machine in Insight Server.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|hv_data_store |link:#entity-hv_data_store[hv_data_store] |one JOIN:dataStoreId=link:#entity-hv_data_store[hv_data_store].id
+|host |link:#entity-host[host] |one JOIN:hostId=link:#entity-host[host].id
+|vm_to_application |link:#entity-vm_to_application[vm_to_application] |many
+|hv_virtual_machine_to_disk |link:#entity-hv_virtual_machine_to_disk[hv_virtual_machine_to_disk] |many
+|k8s_node |link:#entity-k8s_node[k8s_node] |many
+|compute_resource |link:#entity-compute_resource[compute_resource] |many
+|===
+
+=== hv_virtual_machine_to_disk
+
+=== ↑ top
+
+Entity Set(s):hv_virtual_machine_to_disk
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the relationship between a virtual machine and a virtual disk.
+|virtualMachineId *[FK]* →link:#entity-hv_virtual_machine[hv_virtual_machine].id |Int64 |Yes |GUID of the virtual machine id.
+|virtualDiskId *[FK]* →link:#entity-hv_virtual_disk[hv_virtual_disk].id |Int64 |Yes |GUID of the virtual disk.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|hv_virtual_machine |link:#entity-hv_virtual_machine[hv_virtual_machine] |one JOIN:virtualMachineId=link:#entity-hv_virtual_machine[hv_virtual_machine].id
+|hv_virtual_disk |link:#entity-hv_virtual_disk[hv_virtual_disk] |one JOIN:virtualDiskId=link:#entity-hv_virtual_disk[hv_virtual_disk].id
+|===
+
+=== internal_volume
+
+=== ↑ top
+
+Entity Set(s):internal_volume
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the internal-volume.
+|storagePoolId *[FK]* →link:#entity-storage_pool[storage_pool].id |Int64 |Yes |GUID of the storage pool.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage array (filer).
+|identifier |String |Yes |Unique identifier of the internal volume in the storage.
+|name |String |Yes |The name of the internal-volume. uniquly identifies the internal-volume in the storage.
+|type |String |Yes |Type of the internal-volume (e.g. flexVol, traditional etc.).
+|thinProvisioningSupported |String |Yes |Whether this internal-volume supports thin provisioning for the volume layer on top of it.
+|thinProvisioned |String |Yes |Whether this internal-volume is thin provisioned. default false.
+|spaceGuarantee |String |Yes |Space Guatantee policy
+|dedupeEnabled |String |Yes |Is dedupe enabled on the interal volume. default false.
+|cloneSourceId |Int64 |Yes |If this internal-volume is a clone of another internal-volume - the id of cloned internal-volume. Null otherwise.
+|snapshotCount |Int32 |Yes |Number of snapshots on the internal-volumes.
+|lastSnapshotTime |DateTimeOffset |Yes |Time of the last snapshot
+|lastKnownAccessTime |DateTimeOffset |Yes |Time of the last access to the internal-volume.
+|status |String |Yes |Status of the internal-volume (e.g offline online ...)
+|virtualStorage |String |Yes |Specifies VirtualStorage(e.g.vFiler)
+|protectionType |String |Yes |Specifies the protection type for the internal volume (e.g. SnapMirror, SnapVault ...).
+|flashPoolEligibility |String |Yes |Indicates whether the internal volume can use flash pool.
+|dedupeRatio |Double |Yes |Ratio of dedupe compression. Value between 0 and 1.
+|dedupeSavingsGB |Int64 |Yes |The dedupe compression on this internal volume (in GB).
+|totalAllocatedCapacityMB |Int64 |Yes |Capacity allocated for an internal-volume as reported by the storage-array in MB. Includes capacity allocated for snapshots. <br>Equals to: snapshotAllocatedCapacityMB + dataAllocatedCapacityMB + otherAllocatedCapacityMB
+|totalUsedCapacityMB |Int64 |Yes |Capacity consumed by internal-volume from storage pool.
+|totalUsedCapacityFromDeviceMB |Int64 |Yes |Capacity used in an internal-volume as reported by the storage-array in MB. Includes capacity used for snapshots. <br>Equals to: snapshotUsedCapacityMB + dataUsedCapacityMB
+|dataAllocatedCapacityMB |Int64 |Yes |Capacity allocated for an internal-volume as reported by the storage-array in MB. Does not include capacity allocated for snapshots.
+|dataUsedCapacityMB |Int64 |Yes |Capacity used in an internal-volume as reported by the storage-array in MB. Does not include capacity used for snapshots.
+|snapshotAllocatedCapacityMB |Int64 |Yes |Capacity allocated for internal-volume snapshots in MB.
+|snapshotUsedCapacityMB |Int64 |Yes |Capacity used for internal-volume snapshots in MB.
+|rawToUsableRatio |Double |Yes |The ratio between disk raw capacity and usable capacity for the internal-volume. Affected by the RAID level and other overheads.
+|otherUsedCapacityMB |Int64 |Yes |Additional overhead that has not been included in Data/Snapshot Used Capacity for the internal-volume. totalUsedCapacityMB = dataUsedCapacityMB + snapShotUsedCapacityMB + otherUsedCapacityMB.
+|otherAllocatedCapacityMB |Int64 |Yes |Additional overhead that has not been included in Data/Snapshot Allocated Capacity for the internal-volume. totalAllocatedCapacityMB = dataAllocatedCapacityMB + snapShotAllocatedCapacityMB + otherAllocatedCapacityMB.
+|totalCloneSavedCapacityMB |Int64 |Yes |Capacity which the clone internal-volume shares with its source internal-volume
+|compressionEnabled |String |Yes |Is compression enabled on the interal volume.
+|compressionRatio |Double |Yes |Ratio of compression savings. Value between 0 and 1.
+|compressionSavingsGB |Int64 |Yes |The compression on this internal volume (in GB).
+|compressionSavingsPercent |Double |Yes |The compression on this internal volume (%).
+|uuid |String |Yes |UUID of the internal volume.
+|url |String |Yes |Url to this internal-volume in Insight Server.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|storage_pool |link:#entity-storage_pool[storage_pool] |one JOIN:storagePoolId=link:#entity-storage_pool[storage_pool].id
+|volume |link:#entity-volume[volume] |many
+|qtree |link:#entity-qtree[qtree] |many
+|dr_internal_volume_replica |link:#entity-dr_internal_volume_replica[dr_internal_volume_replica] |many
+|internal_volume_to_application |link:#entity-internal_volume_to_application[internal_volume_to_application] |many
+|nas_file_share |link:#entity-nas_file_share[nas_file_share] |many
+|hv_data_store_to_internal_volume |link:#entity-hv_data_store_to_internal_volume[hv_data_store_to_internal_volume] |many
+|quota |link:#entity-quota[quota] |many
+|nas_cr_logical |link:#entity-nas_cr_logical[nas_cr_logical] |many
+|===
+
+=== internal_volume_to_application
+
+=== ↑ top
+
+Entity Set(s):internal_volume_to_application
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the relationship between an internal volume and an application.
+|applicationId *[FK]* →link:#entity-application[application].id |Int64 |Yes |GUID of the application.
+|internalVolumeId *[FK]* →link:#entity-internal_volume[internal_volume].id |Int64 |Yes |GUID of the internal volume.
+|inherited |String |Yes |This application is inherited.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|internal_volume |link:#entity-internal_volume[internal_volume] |one JOIN:internalVolumeId=link:#entity-internal_volume[internal_volume].id
+|application |link:#entity-application[application] |one JOIN:applicationId=link:#entity-application[application].id
+|===
+
+=== iscsi_logical
+
+=== ↑ top
+
+Entity Set(s):iscsi_logical
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the iscsi logical path.
+|hostId *[FK]* →link:#entity-host[host].id |Int64 |Yes |GUID of the initiator host of the iscsi logical path.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the target storage of the iscsi logical path.
+|volumeId *[FK]* →link:#entity-volume[volume].id |Int64 |Yes |GUID of the target volume of the iscsi logical path.
+|numberOfSessions |Int32 |Yes |The number of sessions established in iscsi logical path.
+|numberOfConnections |Int32 |Yes |The number of connections established in iscsi logical path.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|volume |link:#entity-volume[volume] |one JOIN:volumeId=link:#entity-volume[volume].id
+|host |link:#entity-host[host] |one JOIN:hostId=link:#entity-host[host].id
+|===
+
+=== k8s_cluster
+
+=== ↑ top
+
+Entity Set(s):k8s_cluster
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |Id of the K8S cluster
+|name |String |Yes |
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|k8s_namespace |link:#entity-k8s_namespace[k8s_namespace] |many
+|k8s_workload |link:#entity-k8s_workload[k8s_workload] |many
+|k8s_workload_to_pvc |link:#entity-k8s_workload_to_pvc[k8s_workload_to_pvc] |many
+|k8s_node |link:#entity-k8s_node[k8s_node] |many
+|k8s_pv |link:#entity-k8s_pv[k8s_pv] |many
+|k8s_pvc |link:#entity-k8s_pvc[k8s_pvc] |many
+|===
+
+=== k8s_label
+
+=== ↑ top
+
+Entity Set(s):k8s_label
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|objectId *[PK]* |Int64 |Yes |GUID of the object.
+|objectType *[PK]* |String |Yes |Type of the object.
+|labelName *[PK]* |String |Yes |Label name.
+|labelValue |String |Yes |Value of the label for this object.
+|===
+
+=== k8s_namespace
+
+=== ↑ top
+
+Entity Set(s):k8s_namespace
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |Id of the K8S namespace
+|identifier |String |Yes |Identifier of the K8S namespace
+|clusterId *[FK]* →link:#entity-k8s_cluster[k8s_cluster].id |Int64 |Yes |Id of the K8S cluster
+|name |String |Yes |
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|k8s_cluster |link:#entity-k8s_cluster[k8s_cluster] |one JOIN:clusterId=link:#entity-k8s_cluster[k8s_cluster].id
+|k8s_workload |link:#entity-k8s_workload[k8s_workload] |many
+|k8s_workload_to_pvc |link:#entity-k8s_workload_to_pvc[k8s_workload_to_pvc] |many
+|k8s_pvc |link:#entity-k8s_pvc[k8s_pvc] |many
+|===
+
+=== k8s_node
+
+=== ↑ top
+
+Entity Set(s):k8s_node
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |Id of the K8S node
+|identifier |String |Yes |Identifier of the K8S node
+|clusterId *[FK]* →link:#entity-k8s_cluster[k8s_cluster].id |Int64 |Yes |Id of the K8S cluster
+|name |String |Yes |Name of the K8S node
+|vmId *[FK]* →link:#entity-hv_virtual_machine[hv_virtual_machine].id |Int64 |Yes |Id of the virtual machine on which this node is located
+|internalIp |String |Yes |Internal IP of the K8S node
+|osImage |String |Yes |OS image of the K8S node
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|hv_virtual_machine |link:#entity-hv_virtual_machine[hv_virtual_machine] |one JOIN:vmId=link:#entity-hv_virtual_machine[hv_virtual_machine].id
+|k8s_cluster |link:#entity-k8s_cluster[k8s_cluster] |one JOIN:clusterId=link:#entity-k8s_cluster[k8s_cluster].id
+|===
+
+=== k8s_pv
+
+=== ↑ top
+
+Entity Set(s):k8s_pv
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |Id of the K8S persistent volume
+|identifier |String |Yes |Identifier of the K8S persistent volume
+|name |String |Yes |Name of the K8S persistent volume
+|objectId |Int64 |Yes |Id of the storage object mapped to this persistent volume
+|objectType |String |Yes |Type of the storage object mapped to this persistent volume
+|clusterId *[FK]* →link:#entity-k8s_cluster[k8s_cluster].id |Int64 |Yes |Id of the K8S cluster
+|phase |String |Yes |Phase of the K8S persistent volume (Bound, etc.)
+|sizeBytes |Int64 |Yes |Size of the K8S persistent volume (in bytes)
+|storageClass |String |Yes |Storage class of the K8S persistent volume
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|k8s_cluster |link:#entity-k8s_cluster[k8s_cluster] |one JOIN:clusterId=link:#entity-k8s_cluster[k8s_cluster].id
+|k8s_pvc |link:#entity-k8s_pvc[k8s_pvc] |many
+|===
+
+=== k8s_pvc
+
+=== ↑ top
+
+Entity Set(s):k8s_pvc
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |Id of the K8S persistent volume claim
+|identifier |String |Yes |Identifier of the K8S persistent volume claim
+|name |String |Yes |Name of the K8S persistent volume claim
+|pvId *[FK]* →link:#entity-k8s_pv[k8s_pv].id |Int64 |Yes |Identifier of the K8S persistent volume linked to this claim
+|clusterId *[FK]* →link:#entity-k8s_cluster[k8s_cluster].id |Int64 |Yes |Id of the K8S cluster
+|namespaceId *[FK]* →link:#entity-k8s_namespace[k8s_namespace].id |Int64 |Yes |Id of the K8S namespace
+|phase |String |Yes |Phase of the K8S persistent volume claim (Bound, etc.)
+|sizeBytes |Int64 |Yes |Size of the K8S persistent volume claim (in bytes)
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|k8s_pv |link:#entity-k8s_pv[k8s_pv] |one JOIN:pvId=link:#entity-k8s_pv[k8s_pv].id
+|k8s_namespace |link:#entity-k8s_namespace[k8s_namespace] |one JOIN:namespaceId=link:#entity-k8s_namespace[k8s_namespace].id
+|k8s_cluster |link:#entity-k8s_cluster[k8s_cluster] |one JOIN:clusterId=link:#entity-k8s_cluster[k8s_cluster].id
+|k8s_workload_to_pvc |link:#entity-k8s_workload_to_pvc[k8s_workload_to_pvc] |many
+|===
+
+=== k8s_workload
+
+=== ↑ top
+
+Entity Set(s):k8s_workload
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |Id of the K8S workload
+|identifier |String |Yes |Identifier of the K8S workload
+|name |String |Yes |Name of the K8S workload
+|namespaceId *[FK]* →link:#entity-k8s_namespace[k8s_namespace].id |Int64 |Yes |Id of the K8S namespace
+|clusterId *[FK]* →link:#entity-k8s_cluster[k8s_cluster].id |Int64 |Yes |Id of the K8S cluster
+|type |String |Yes |Workload type (pod, statefulset, etc.)
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|k8s_namespace |link:#entity-k8s_namespace[k8s_namespace] |one JOIN:namespaceId=link:#entity-k8s_namespace[k8s_namespace].id
+|k8s_cluster |link:#entity-k8s_cluster[k8s_cluster] |one JOIN:clusterId=link:#entity-k8s_cluster[k8s_cluster].id
+|k8s_workload_to_pvc |link:#entity-k8s_workload_to_pvc[k8s_workload_to_pvc] |many
+|===
+
+=== k8s_workload_to_pvc
+
+=== ↑ top
+
+Entity Set(s):k8s_workload_to_pvc
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|workloadId *[PK]* |Int64 |Yes |Identifier of the K8S workload
+|pvcId *[PK]* |Int64 |Yes |Identifier of the K8S persistent volume
+|clusterId *[FK]* →link:#entity-k8s_cluster[k8s_cluster].id |Int64 |Yes |Id of the K8S cluster
+|namespaceId *[FK]* →link:#entity-k8s_namespace[k8s_namespace].id |Int64 |Yes |Id of the K8S namespace
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|k8s_workload |link:#entity-k8s_workload[k8s_workload] |one JOIN:workloadId=link:#entity-k8s_workload[k8s_workload].id
+|k8s_pvc |link:#entity-k8s_pvc[k8s_pvc] |one JOIN:pvcId=link:#entity-k8s_pvc[k8s_pvc].id
+|k8s_namespace |link:#entity-k8s_namespace[k8s_namespace] |one JOIN:namespaceId=link:#entity-k8s_namespace[k8s_namespace].id
+|k8s_cluster |link:#entity-k8s_cluster[k8s_cluster] |one JOIN:clusterId=link:#entity-k8s_cluster[k8s_cluster].id
+|===
+
+=== logical
+
+=== ↑ top
+
+Entity Set(s):logical
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the logical path.
+|hostId *[FK]* →link:#entity-host[host].id |Int64 |Yes |GUID of the initiator host of the logical path - is set to null for paths from generic-devices.
+|genericDeviceId *[FK]* →link:#entity-generic_device[generic_device].id |Int64 |Yes |GUID of the generic-device which is the initiator of the logical path - is set to null for paths from hosts.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the target storage of the logical path - is set to null for paths to tapes.
+|tapeId *[FK]* →link:#entity-tape[tape].id |Int64 |Yes |GUID of the target tape of the logical path - is set to null for paths to storage-arrays.
+|volumeId *[FK]* →link:#entity-volume[volume].id |Int64 |Yes |GUID of the target volume of the logical path - is set to null for paths to tapes.
+|minHopNumber |Int32 |Yes |Minimal switch hops for the logical path.
+|hopsToDisplay |String |Yes |Comma separated list of switch hop counts corresponding to the different underlying paths for this logical path.
+|numberOfFabrics |Int32 |Yes |Number of fabrics utilized by the logical path.
+|numberOfHostPorts |Int32 |Yes |Number of host ports used by the logical path.
+|numberOfStoragePorts |Int32 |Yes |Number of storage ports used by the logical path.
+|spf |Byte |Yes |Indicates whether the logical path has a single point of failure.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|volume |link:#entity-volume[volume] |one JOIN:volumeId=link:#entity-volume[volume].id
+|tape |link:#entity-tape[tape] |one JOIN:tapeId=link:#entity-tape[tape].id
+|host |link:#entity-host[host] |one JOIN:hostId=link:#entity-host[host].id
+|generic_device |link:#entity-generic_device[generic_device] |one JOIN:genericDeviceId=link:#entity-generic_device[generic_device].id
+|===
+
+=== nas_cr_logical
+
+=== ↑ top
+
+Entity Set(s):nas_cr_logical
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the NAS logical path.
+|computeResourceId *[FK]* →link:#entity-compute_resource[compute_resource].id |Int64 |Yes |GUID of the host accessing the file-share.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage array (filer) being accessed.
+|internalVolumeId *[FK]* →link:#entity-internal_volume[internal_volume].id |Int64 |Yes |GUID of the internal volume being accessed.
+|shareId *[FK]* →link:#entity-nas_share[nas_share].id |Int64 |Yes |GUID of the share being accessed.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|compute_resource |link:#entity-compute_resource[compute_resource] |one JOIN:computeResourceId=link:#entity-compute_resource[compute_resource].id
+|internal_volume |link:#entity-internal_volume[internal_volume] |one JOIN:internalVolumeId=link:#entity-internal_volume[internal_volume].id
+|nas_share |link:#entity-nas_share[nas_share] |one JOIN:shareId=link:#entity-nas_share[nas_share].id
+|===
+
+=== nas_file_share
+
+=== ↑ top
+
+Entity Set(s):nas_file_share
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID for the file share.
+|internalVolumeId *[FK]* →link:#entity-internal_volume[internal_volume].id |Int64 |Yes |GUID of the internal-volume on which this file share is defined.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage array (filer) in which this share is defined.
+|qtreeId *[FK]* →link:#entity-qtree[qtree].id |Int64 |Yes |GUID of the qtree on which this file share is defined.
+|name |String |Yes |Name of the file share.
+|path |String |Yes |The full path in the internal-volume to the folder being shared, ends with the share name.
+|status |String |Yes |Status of the file share (snapvaulted, snapmirrored, normal, or readonly).
+|securityType |String |Yes |Security type of the file share (unix, ntfs, or mixed).
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|internal_volume |link:#entity-internal_volume[internal_volume] |one JOIN:internalVolumeId=link:#entity-internal_volume[internal_volume].id
+|qtree |link:#entity-qtree[qtree] |one JOIN:qtreeId=link:#entity-qtree[qtree].id
+|nas_share |link:#entity-nas_share[nas_share] |many
+|===
+
+=== nas_logical
+
+=== ↑ top
+
+Entity Set(s):nas_logical
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id |Int64 |Yes |GUID of the NAS logical path.
+|hostId |Int64 |Yes |The Host ID.
+|storageId |Int64 |Yes |GUID of the storage array (filer) being accessed.
+|shareId |Int64 |Yes |GUID of the share being accessed.
+|===
+
+=== nas_share
+
+=== ↑ top
+
+Entity Set(s):nas_share
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the share.
+|fileShareId *[FK]* →link:#entity-nas_file_share[nas_file_share].id |Int64 |Yes |GUID of the file share with which this share is associated.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage array (filer) in which this share is defined.
+|identifier |String |Yes |Identifier of the share in the storage.
+|name |String |Yes |Name of the share.
+|protocol |String |Yes |Protocol used to access the share, one of: CIFS or NFS.
+|ipInterfaces |String |Yes |All IP addresses of the storage on which the share is located.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|nas_file_share |link:#entity-nas_file_share[nas_file_share] |one JOIN:fileShareId=link:#entity-nas_file_share[nas_file_share].id
+|share_to_application |link:#entity-share_to_application[share_to_application] |many
+|nas_share_initiator |link:#entity-nas_share_initiator[nas_share_initiator] |many
+|hv_nas_share_to_share |link:#entity-hv_nas_share_to_share[hv_nas_share_to_share] |many
+|nas_cr_logical |link:#entity-nas_cr_logical[nas_cr_logical] |many
+|===
+
+=== nas_share_initiator
+
+=== ↑ top
+
+Entity Set(s):nas_share_initiator
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the share_initiator.
+|shareId *[FK]* →link:#entity-nas_share[nas_share].id |Int64 |Yes |GUID of the share with which this share_initiator is associated.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage array (filer) in which this share is defined.
+|initiator |String |Yes |IP address or name subnet of the host/s allowed to access the share.
+|permission |String |Yes |Read / write / execute, and name.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|nas_share |link:#entity-nas_share[nas_share] |one JOIN:shareId=link:#entity-nas_share[nas_share].id
+|===
+
+=== object_to_annotation
+
+=== ↑ top
+
+Entity Set(s):object_to_annotation
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|annotationValueId *[PK]* |Int64 |Yes |GUID of the annotation value.
+|objectId *[PK]* |Int64 |Yes |GUID of the annotated object.
+|objectType *[PK]* |String |Yes |Type of the annotated object.
+|annotationType |String |Yes |Type of the annotation.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|annotation_value |link:#entity-annotation_value[annotation_value] |one JOIN:annotationValueId=link:#entity-annotation_value[annotation_value].id
+|===
+
+=== physical_path
+
+=== ↑ top
+
+Entity Set(s):physical_path
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the physical path.
+|hostId *[FK]* →link:#entity-host[host].id |Int64 |Yes |GUID of the host which initiates the physical path. It is null for a path from a generic-device.
+|genericDeviceId *[FK]* →link:#entity-generic_device[generic_device].id |Int64 |Yes |GUID of the generic-device which initiates the physical path. It is null for a path from a host.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the target storage of the physical path. It is null for a path to a tape.
+|tapeId *[FK]* →link:#entity-tape[tape].id |Int64 |Yes |GUID of the target tape of the physical path. It is null for a path to a storage.
+|volumeId *[FK]* →link:#entity-volume[volume].id |Int64 |Yes |GUID of the target volume of the physical path.
+|hostPortWwn |String |Yes |WWN of the host port.
+|storagePortWwn |String |Yes |WWN of the storage port.
+|lun |String |Yes |Logical Unit Number (LUN) used by the host to access the volume.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|volume |link:#entity-volume[volume] |one JOIN:volumeId=link:#entity-volume[volume].id
+|tape |link:#entity-tape[tape] |one JOIN:tapeId=link:#entity-tape[tape].id
+|host |link:#entity-host[host] |one JOIN:hostId=link:#entity-host[host].id
+|generic_device |link:#entity-generic_device[generic_device] |one JOIN:genericDeviceId=link:#entity-generic_device[generic_device].id
+|===
+
+=== port_connectivity
+
+=== ↑ top
+
+Entity Set(s):port_connectivity
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the port connectivity.
+|portId |Int64 |Yes |GUID of the first port.
+|type |String |Yes |Type of the first port.
+|wwn |String |Yes |WWN of the first port.
+|connectedId |Int64 |Yes |GUID of the second port.
+|connectedType |String |Yes |Type of the second port.
+|connectedWwn |String |Yes |WWN of the second port.
+|===
+
+=== qtree
+
+=== ↑ top
+
+Entity Set(s):qtree
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the qtree.
+|internalVolumeId *[FK]* →link:#entity-internal_volume[internal_volume].id |Int64 |Yes |GUID of the internal-volume on which the qtree resides.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage array (filer).
+|identifier |String |Yes |Unique identifier of the qtree in the storage.
+|name |String |Yes |The name of the qtree.
+|quotaHardCapacityLimitMB |Int64 |Yes |The disk space limit imposed on this qtree by a quota. When exceeded, data cannot be written.
+|quotaSoftCapacityLimitMB |Int64 |Yes |The disk space limit imposed on this qtree by a quota. When exceeded, a warning is issued but data can still be written.
+|quotaUsedCapacityMB |Int64 |Yes |Capacity used towards the hard and soft capacity limit set on the quota.
+|type |String |Yes |Type of the qtree.
+|securityStyle |String |Yes |Security Style of the qtree.
+|status |String |Yes |Status of the qtree.
+|oplocks |String |Yes |Whether oplocks are enabled on the qtree.
+|url |String |Yes |Url to this qtree in Insight Server.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|internal_volume |link:#entity-internal_volume[internal_volume] |one JOIN:internalVolumeId=link:#entity-internal_volume[internal_volume].id
+|volume |link:#entity-volume[volume] |many
+|nas_file_share |link:#entity-nas_file_share[nas_file_share] |many
+|hv_data_store_to_internal_volume |link:#entity-hv_data_store_to_internal_volume[hv_data_store_to_internal_volume] |many
+|dr_qtree_replica |link:#entity-dr_qtree_replica[dr_qtree_replica] |many
+|quota |link:#entity-quota[quota] |many
+|hv_virtual_disk_to_volume |link:#entity-hv_virtual_disk_to_volume[hv_virtual_disk_to_volume] |many
+|qtree_to_application |link:#entity-qtree_to_application[qtree_to_application] |many
+|hv_data_store_to_volume |link:#entity-hv_data_store_to_volume[hv_data_store_to_volume] |many
+|===
+
+=== qtree_to_application
+
+=== ↑ top
+
+Entity Set(s):qtree_to_application
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the relationship between a qtree and an application.
+|applicationId *[FK]* →link:#entity-application[application].id |Int64 |Yes |GUID of the application.
+|qtreeId *[FK]* →link:#entity-qtree[qtree].id |Int64 |Yes |GUID of the qtree.
+|inherited |String |Yes |This application is inherited.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|application |link:#entity-application[application] |one JOIN:applicationId=link:#entity-application[application].id
+|qtree |link:#entity-qtree[qtree] |one JOIN:qtreeId=link:#entity-qtree[qtree].id
+|===
+
+=== quota
+
+=== ↑ top
+
+Entity Set(s):quota
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the quota.
+|internalVolumeId *[FK]* →link:#entity-internal_volume[internal_volume].id |Int64 |Yes |GUID of the internal-volume on which this quota is defined.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage array (filer) in which this quota is defined.
+|qtreeId *[FK]* →link:#entity-qtree[qtree].id |Int64 |Yes |GUID of the qtree on which this quota is defined.
+|identifier |String |Yes |Unique identifier of the quota.
+|targetUser |String |Yes |Specifies a group or user to which this quota applies.
+|type |String |Yes |Specifies the target type (tree, group or user) to which this quota applies.
+|hardFileLimit |Int64 |Yes |Hard limit on the number of files that this quota imposes on the tree, group or user.
+|softFileLimit |Int64 |Yes |Soft quota file limit that, if exceeded, issues warnings, rather than rejecting file creation requests.
+|hardCapacityLimitMB |Int64 |Yes |Hard disk space limit, in MB, that this quota imposes on the tree, group, user or type.
+|softCapacityLimitMB |Int64 |Yes |Soft quota space limit, in MB, that if exceeded, issues warnings rather than rejecting space requests.
+|thresholdMB |Int64 |Yes |Disk space usage point, in MB, at which warnings of approaching quota limits are issued.
+|usedFiles |Int64 |Yes |Number of files currently used by the target of this quota.
+|usedCapacityMB |Int64 |Yes |Disk space, in MB, currently used by the target of this quota.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|internal_volume |link:#entity-internal_volume[internal_volume] |one JOIN:internalVolumeId=link:#entity-internal_volume[internal_volume].id
+|qtree |link:#entity-qtree[qtree] |one JOIN:qtreeId=link:#entity-qtree[qtree].id
+|===
+
+=== service_level
+
+=== ↑ top
+
+Entity Set(s):service_level
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id |Int64 |Yes |GUID for the annotation.
+|name |String |Yes |Value of the annotation.
+|sequence |Int32 |Yes |Sequence number determining the order of enumeration values. This is used primarily for display purposes.
+|cost |Double |Yes |Optional cost associated with the annotation. Applicable for Tier annotation.
+|===
+
+=== share_to_application
+
+=== ↑ top
+
+Entity Set(s):share_to_application
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the relationship between a share and an application.
+|applicationId *[FK]* →link:#entity-application[application].id |Int64 |Yes |GUID of the application.
+|shareId *[FK]* →link:#entity-nas_share[nas_share].id |Int64 |Yes |GUID of the share.
+|inherited |String |Yes |This application is inherited.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|application |link:#entity-application[application] |one JOIN:applicationId=link:#entity-application[application].id
+|nas_share |link:#entity-nas_share[nas_share] |one JOIN:shareId=link:#entity-nas_share[nas_share].id
+|===
+
+=== storage
+
+=== ↑ top
+
+Entity Set(s):storage
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the storage array.
+|name |String |Yes |Name of the storage array.
+|identifier |String |Yes |Identifier of the device.
+|ip |String |Yes |IP address of the storage array.
+|model |String |Yes |Model of the storage array.
+|manufacturer |String |Yes |Manufacturer of the storage array.
+|serialNumber |String |Yes |Serial number for the storage array.
+|microcodeVersion |String |Yes |Version of the firmware running on the storage array.
+|rawCapacityMB |Int64 |Yes |Actual raw disk capacity for the storage array in MB.
+|spareRawCapacityMB |Int64 |Yes |Sum of all spare disk raw capacity in the storage array in MB.
+|failedRawCapacityMB |Int64 |Yes |Sum of all failed raw capacity in the storage array in MB.
+|memoryMB |Int64 |Yes |Size of memory installed in the array (filer), in MB.
+|cpuCount |Int32 |Yes |Number of cpus installed in the array (filer).
+|manageURL |String |Yes |URL to the management software of the device.
+|family |String |Yes |Storage family name, could be Clariion, Symmetrix etc.
+|isVirtual |String |Yes |Determines if the array is a virtualizer.
+|cluster |String |Yes |Determines if the array is a NetApp C-Mode cluster.
+|url |String |Yes |Url to this storage in Insight Server.
+|lastAcquiredTime |DateTimeOffset |Yes |Specifies the last acquired time.
+|active |String |Yes |Indicates whether the storage array is currently active.
+|dataCenter |String |Yes |# dataCenter annotation value assigned to storage
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|dr_internal_volume_replica |link:#entity-dr_internal_volume_replica[dr_internal_volume_replica] |many
+|nas_share |link:#entity-nas_share[nas_share] |many
+|storage_controller |link:#entity-storage_controller[storage_controller] |many
+|nas_share_initiator |link:#entity-nas_share_initiator[nas_share_initiator] |many
+|nas_cr_logical |link:#entity-nas_cr_logical[nas_cr_logical] |many
+|unknown_logical |link:#entity-unknown_logical[unknown_logical] |many
+|volume_map |link:#entity-volume_map[volume_map] |many
+|file_system_to_volume |link:#entity-file_system_to_volume[file_system_to_volume] |many
+|cluster_switch_port |link:#entity-cluster_switch_port[cluster_switch_port] |many
+|backend_lun_to_volume |link:#entity-backend_lun_to_volume[backend_lun_to_volume] |many
+|quota |link:#entity-quota[quota] |many
+|iscsi_logical |link:#entity-iscsi_logical[iscsi_logical] |many
+|hv_lun_to_volume |link:#entity-hv_lun_to_volume[hv_lun_to_volume] |many
+|storage_pool |link:#entity-storage_pool[storage_pool] |many
+|hv_nas_share_to_share |link:#entity-hv_nas_share_to_share[hv_nas_share_to_share] |many
+|hv_data_store_to_volume |link:#entity-hv_data_store_to_volume[hv_data_store_to_volume] |many
+|qtree |link:#entity-qtree[qtree] |many
+|dr_qtree_replica |link:#entity-dr_qtree_replica[dr_qtree_replica] |many
+|cluster_switch |link:#entity-cluster_switch[cluster_switch] |many
+|volume_mask |link:#entity-volume_mask[volume_mask] |many
+|auto_tiering_policy |link:#entity-auto_tiering_policy[auto_tiering_policy] |many
+|auto_tiering_policy_constraint |link:#entity-auto_tiering_policy_constraint[auto_tiering_policy_constraint] |many
+|dr_volume_replica |link:#entity-dr_volume_replica[dr_volume_replica] |many
+|hv_virtual_disk_to_volume |link:#entity-hv_virtual_disk_to_volume[hv_virtual_disk_to_volume] |many
+|logical |link:#entity-logical[logical] |many
+|volume |link:#entity-volume[volume] |many
+|backend_path |link:#entity-backend_path[backend_path] |many
+|disk |link:#entity-disk[disk] |many
+|internal_volume |link:#entity-internal_volume[internal_volume] |many
+|nas_file_share |link:#entity-nas_file_share[nas_file_share] |many
+|hv_data_store_to_internal_volume |link:#entity-hv_data_store_to_internal_volume[hv_data_store_to_internal_volume] |many
+|storage_to_application |link:#entity-storage_to_application[storage_to_application] |many
+|backend_lun |link:#entity-backend_lun[backend_lun] |many
+|violation |link:#entity-violation[violation] |many
+|storage_port |link:#entity-storage_port[storage_port] |many
+|physical_path |link:#entity-physical_path[physical_path] |many
+|disk_group |link:#entity-disk_group[disk_group] |many
+|storage_node |link:#entity-storage_node[storage_node] |many
+|===
+
+=== storage_controller
+
+=== ↑ top
+
+Entity Set(s):storage_controller
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the storage controller.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage where this controller resides.
+|wwn |String |Yes |WWN of the storage controller (node wwn).
+|model |String |Yes |Model of the storage controller.
+|manufacturer |String |Yes |Manufacturer of the storage controller.
+|driver |String |Yes |Name of the driver managing access to the storage controller.
+|firmware |String |Yes |Version of the firmware running on the storage controller.
+|numberOfPorts |String |Yes |Number of ports on the storage controller.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|storage_port |link:#entity-storage_port[storage_port] |many
+|===
+
+=== storage_node
+
+=== ↑ top
+
+Entity Set(s):storage_node
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the storage node
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage array (filer).
+|name |String |Yes |name of the storage node.
+|identifier |String |Yes |uuid of the storage node.
+|version |String |Yes |version of the storage node.
+|model |String |Yes |model of the storage node.
+|serialNumber |String |Yes |serialNumber of the storage node.
+|state |String |Yes |state of the storage node.
+|partnerNodeId |Int64 |Yes |GUID of the partner node.
+|memorySizeMB |Int64 |Yes |memory size of this storage node.
+|cacheSizeMB |Int64 |Yes |cache size of this storage node.
+|numberOfProcessors |Int32 |Yes |number of processors of this storage node
+|url |String |Yes |Url to this storage node in Insight Server.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|cluster_switch_port |link:#entity-cluster_switch_port[cluster_switch_port] |many
+|===
+
+=== storage_node_to_internal_volume
+
+=== ↑ top
+
+Entity Set(s):storage_node_to_internal_volume
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|storageId |Int64 |Yes |GUID of the storage array.
+|storageNodeId |Int64 |Yes |GUID of the storage node.
+|internalVolumeId |Int64 |Yes |GUID of the internal volume.
+|===
+
+=== storage_node_to_port
+
+=== ↑ top
+
+Entity Set(s):storage_node_to_port
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|storageId |Int64 |Yes |GUID of the storage array.
+|storageNodeId |Int64 |Yes |GUID of the storage node.
+|portId |Int64 |Yes |GUID of the port.
+|===
+
+=== storage_node_to_storage_pool
+
+=== ↑ top
+
+Entity Set(s):storage_node_to_storage_pool
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|storageId |Int64 |Yes |GUID of the storage array.
+|storageNodeId |Int64 |Yes |GUID of the storage node.
+|storagePoolId |Int64 |Yes |GUID of the storage pool.
+|===
+
+=== storage_node_to_volume
+
+=== ↑ top
+
+Entity Set(s):storage_node_to_volume
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|storageId |Int64 |Yes |GUID of the storage array.
+|storageNodeId |Int64 |Yes |GUID of the storage node.
+|volumeId |Int64 |Yes |GUID of the volume.
+|===
+
+=== storage_pool
+
+=== ↑ top
+
+Entity Set(s):storage_pool
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the Storage Pool.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage array (filer).
+|identifier |String |Yes |Identifier of the device.
+|type |String |Yes |Real-life entity type that the storage pool describes.
+|name |String |Yes |Name of the storage pool.
+|thinProvisioningSupported |String |Yes |Whether this storage-pool supports thin provisioning for the volume layer on top of it. default false.
+|includeInDwhCapacity |String |Yes |Detemines if the storage_pool will appear in the storage-pool dimension of the capacity datamart. default false.
+|isVirtual |String |Yes |Indicates the storage_pool is consists of backend LUNs.
+|raidGroup |String |Yes |Indicates if the storage_pool is a raidGroup.
+|vendorTier |String |Yes |Vendor-specific tier name.
+|autoTiering |String |Yes |Indicate whether this storage pool is participating in auto tiering with other pools.
+|usesFlashPools |String |Yes |Indicates whether this storage pool uses flash pools.
+|redundancy |String |Yes |The redundancy level of the storage_pool.
+|status |String |Yes |Status of the storage_pool (e.g offline online ...).
+|snapshotAllocatedCapacityMB |Int64 |Yes |Capacity allocated for storage-pool level snapshots in MB.
+|snapshotUsedCapacityMB |Int64 |Yes |Capacity used for storage-pool level snapshots in MB.
+|dataAllocatedCapacityMB |Int64 |Yes |Capacity allocated for a storage-pool as reported by the storage-array in MB. Does not include capacity allocated for storage-pool level snapshots.
+|dataUsedCapacityMB |Int64 |Yes |Capacity used in a storage-pool as reported by the storage-array in MB. Does not include capacity used for storage-pool level snapshots.
+|totalAllocatedCapacityMB |Int64 |Yes |Capacity allocated for a storage-pool as reported by the storage-array in MB. Includes capacity allocated for storage-pool level snapshots. <br>Equals to: snapshotAllocatedCapacityMB + dataAllocatedCapacityMB + otherAllocatedCapacityMB
+|totalUsedCapacityMB |Int64 |Yes |Capacity used in a storage-pool as reported by the storage-array in MB. Includes capacity used for storage-pool level snapshots. <br>Equals to: snapshotUsedCapacityMB + dataUsedCapacityMB + otherUsedCapacityMB
+|rawToUsableRatio |Double |Yes |The ratio between disk raw capacity and usable capacity for the storage-pool. Affected by the RAID level and other overheads.
+|reservedCapacityMB |Int64 |Yes |Unused storage-pool capacity that is reserved for volumes in MB. This capacity is included in the dataAllocatedCapacityMB capacity.
+|otherUsedCapacityMB |Int64 |Yes |Additional overhead that has not been included in Data/Snapshot Used Capacity for the storage-pool. totalUsedCapacityMB = dataUsedCapacityMB + snapShotUsedCapacityMB + otherUsedCapacityMB.
+|otherAllocatedCapacityMB |Int64 |Yes |Additional overhead that has not been included in Data/Snapshot Allocated Capacity for the storage-pool. totalAllocatedCapacityMB = dataAllocatedCapacityMB + snapShotAllocatedCapacityMB + otherAllocatedCapacityMB.
+|physicalDiskCapacityMB |Int64 |Yes |The Physical Disk Capacity in MB in case the storage pool has both backend LUNs and disks.
+|softLimitCapacityMB |Int64 |Yes |Capacity limit for thin provisioning in MB.
+|dedupeEnabled |String |Yes |Is deduplication enabled on the storage pool.
+|compressionEnabled |String |Yes |Is compression enabled on the storage pool.
+|compactionEnabled |String |Yes |Is compaction enabled on the storage pool.
+|dedupeRatio |Double |Yes |Ratio of deduplication savings. Value between 0 and 1.
+|dedupeSavingsGB |Int64 |Yes |The deduplication on this storage pool (in GB).
+|compressionRatio |Double |Yes |Ratio of compression savings. Value between 0 and 1.
+|compressionSavingsGB |Int64 |Yes |The compression on this storage pool (in GB).
+|compressionSavingsPercent |Double |Yes |The compression on this storage pool (%).
+|compactionSavingsGB |Int64 |Yes |The compaction on this storage pool (in GB).
+|url |String |Yes |Url to this storage pool in Insight Server.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|internal_volume |link:#entity-internal_volume[internal_volume] |many
+|===
+
+=== storage_pool_to_backend_lun
+
+=== ↑ top
+
+Entity Set(s):storage_pool_to_backend_lun
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|storageId |Int64 |Yes |GUID of the storage array.
+|storagePoolId |Int64 |Yes |GUID of the storage pool.
+|backendLunId |Int64 |Yes |GUID of the backend LUN.
+|===
+
+=== storage_pool_to_disk
+
+=== ↑ top
+
+Entity Set(s):storage_pool_to_disk
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|storageId |Int64 |Yes |GUID of the storage array.
+|storagePoolId |Int64 |Yes |GUID of the storage pool.
+|diskId |Int64 |Yes |GUID of the disk.
+|===
+
+=== storage_port
+
+=== ↑ top
+
+Entity Set(s):storage_port
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the storage port.
+|controllerId *[FK]* →link:#entity-storage_controller[storage_controller].id |Int64 |Yes |GUID of the controller (node) where this port resides.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage array where this port resides.
+|wwn |String |Yes |WWN of the port.
+|nodeWwn |String |Yes |WWN of the node (controller) where this port resides.
+|portId |String |Yes |Id of the port.
+|name |String |Yes |Name of the port.
+|speed |String |Yes |Speed of the port, in Gbps.
+|controller |String |Yes |Name of the controller where this port resides.
+|url |String |Yes |Url to this port in Insight Server.
+|active |String |Yes |True if the port is not dead
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|storage_controller |link:#entity-storage_controller[storage_controller] |one JOIN:controllerId=link:#entity-storage_controller[storage_controller].id
+|===
+
+=== storage_to_application
+
+=== ↑ top
+
+Entity Set(s):storage_to_application
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the relationship between a storage and an application.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage.
+|applicationId *[FK]* →link:#entity-application[application].id |Int64 |Yes |GUID of the application.
+|inherited |String |Yes |This application is inherited.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|application |link:#entity-application[application] |one JOIN:applicationId=link:#entity-application[application].id
+|===
+
+=== switch
+
+=== ↑ top
+
+Entity Set(s):switch
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the switch.
+|fabricId *[FK]* →link:#entity-fabric[fabric].id |Int64 |Yes |GUID of the fabric on which this switch is configured to operate.
+|identifier |String |Yes |Identifier of the device.
+|wwn |String |Yes |WWN of the switch.
+|ip |String |Yes |IP address of the switch.
+|name |String |Yes |Name of the switch.
+|manufacturer |String |Yes |Manufacturer of the switch
+|model |String |Yes |Model of the switch.
+|firmware |String |Yes |Firmware version running on the switch.
+|domainId |String |Yes |Fabric domain ID of the switch.
+|domainIdType |String |Yes |Type of domain ID. Possible values are static(0) or preferred(1).
+|priority |String |Yes |Priority of the switch.
+|vsanEnabled |String |Yes |Indicates whether the switch supports VSANs.
+|serialNumber |String |Yes |Serial number of the switch.
+|manageURL |String |Yes |URL to the management software of the device.
+|sanRouteEnabled |String |Yes |Indicates whether the switch supports Inter VSAN Routing (IVR).
+|npv |String |Yes |Indication whether this is an NPV switch.
+|isGenerated |String |Yes |Indication whether this switch does not correspond to a physical device. It is used to model one to many port connectivity.
+|type |String |Yes |Switch type.
+|url |String |Yes |Url to this switch in Insight Server.
+|lastAcquiredTime |DateTimeOffset |Yes |Specifies the last acquired time.
+|active |String |Yes |Indicates whether the Switch is dead or active
+|dataCenter |String |Yes |# dataCenter annotation value assigned to switch
+|switchLevel |String |Yes |# switchLevel annotation value assigned to switch
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|fabric |link:#entity-fabric[fabric] |one JOIN:fabricId=link:#entity-fabric[fabric].id
+|switch_port |link:#entity-switch_port[switch_port] |many
+|switch_to_application |link:#entity-switch_to_application[switch_to_application] |many
+|===
+
+=== switch_port
+
+=== ↑ top
+
+Entity Set(s):switch_port
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the port.
+|switchId *[FK]* →link:#entity-switch[switch].id |Int64 |Yes |GUID of the switch where the port resides.
+|fabricId *[FK]* →link:#entity-fabric[fabric].id |Int64 |Yes |GUID of the fabric on which the port is configured to operate.
+|virtualSwitchId *[FK]* →link:#entity-virtual_switch[virtual_switch].id |Int64 |Yes |GUID of the virtual switch where the port resides. NULL if none exists.
+|wwn |String |Yes |WWN of the port.
+|status |String |Yes |Status of the port. Possible values are OK, NOT_LICENSED, ERROR, INACTIVE and UNKNOWN
+|rawPortStatus |String |Yes |Status of the port, taken from the device itself. Refer to the device documentation for an explanation of values.
+|type |String |Yes |Port type, typically used to identify the protocol used to communicate with the other device, taken from the device itself: F-port, E-port, and so forth.
+|portPhysicalState |String |Yes |Current state of the port, taken from the device itself. Refer to the device documentation for an explanation of values.
+|number |Int64 |Yes |Number of the port in the containing blade
+|blade |Int64 |Yes |Number of the blade in the containing switch.
+|portId |String |Yes |Id of the port.
+|name |String |Yes |Name of the port.
+|speed |String |Yes |Speed of the port, in Gbps.
+|fc4Protocol |String |Yes |FC4 (application layer) protocol, displayed as any subset/combination of the following values: BASIC_LINK, EXTEND_LINK, FCIP, SCSI_FCP, FC_SERVICES, FC_SW, SNMP, FABRIC_SERVICES, FABRIC, DIAG and VI.
+|classOfService |String |Yes |Class of service for the FC protocol.
+|gbicType |String |Yes |Type of GBIC (Gigabit Interface Converter) used for the port.
+|url |String |Yes |Url to this port in Insight Server.
+|isGenerated |String |Yes |Indication whether this is a generated wwn (if we do not know the real wwn).
+|active |String |Yes |True if the port is not dead
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|virtual_switch |link:#entity-virtual_switch[virtual_switch] |one JOIN:virtualSwitchId=link:#entity-virtual_switch[virtual_switch].id
+|fabric |link:#entity-fabric[fabric] |one JOIN:fabricId=link:#entity-fabric[fabric].id
+|switch |link:#entity-switch[switch] |one JOIN:switchId=link:#entity-switch[switch].id
+|switch_port_to_application |link:#entity-switch_port_to_application[switch_port_to_application] |many
+|fc_name_server_entry |link:#entity-fc_name_server_entry[fc_name_server_entry] |many
+|===
+
+=== switch_port_to_application
+
+=== ↑ top
+
+Entity Set(s):switch_port_to_application
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the relationship between a port and an application.
+|applicationId *[FK]* →link:#entity-application[application].id |Int64 |Yes |GUID of the application.
+|portId *[FK]* →link:#entity-switch_port[switch_port].id |Int64 |Yes |GUID of the switch port.
+|inherited |String |Yes |This application is inherited.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|switch_port |link:#entity-switch_port[switch_port] |one JOIN:portId=link:#entity-switch_port[switch_port].id
+|application |link:#entity-application[application] |one JOIN:applicationId=link:#entity-application[application].id
+|===
+
+=== switch_to_application
+
+=== ↑ top
+
+Entity Set(s):switch_to_application
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the relationship between a switch and an application.
+|switchId *[FK]* →link:#entity-switch[switch].id |Int64 |Yes |GUID of the switch.
+|applicationId *[FK]* →link:#entity-application[application].id |Int64 |Yes |GUID of the application.
+|inherited |String |Yes |This application is inherited.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|switch |link:#entity-switch[switch] |one JOIN:switchId=link:#entity-switch[switch].id
+|application |link:#entity-application[application] |one JOIN:applicationId=link:#entity-application[application].id
+|===
+
+=== tape
+
+=== ↑ top
+
+Entity Set(s):tape
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the tape.
+|name |String |Yes |Name of the tape.
+|identifier |String |Yes |Identifier of the device.
+|ip |String |Yes |IP address of the tape.
+|manufacturer |String |Yes |Manufacturer of the tape.
+|serialNumber |String |Yes |Serial number for the tape.
+|active |String |Yes |Indicates whether the tape is currently active.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|tape_controller |link:#entity-tape_controller[tape_controller] |many
+|violation |link:#entity-violation[violation] |many
+|tape_port |link:#entity-tape_port[tape_port] |many
+|physical_path |link:#entity-physical_path[physical_path] |many
+|logical |link:#entity-logical[logical] |many
+|===
+
+=== tape_controller
+
+=== ↑ top
+
+Entity Set(s):tape_controller
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the tape controller.
+|tapeId *[FK]* →link:#entity-tape[tape].id |Int64 |Yes |GUID of the tape where this controller resides.
+|wwn |String |Yes |GUID of the controller.
+|model |String |Yes |Model of the controller.
+|manufacturer |String |Yes |Manufacturer of the controller.
+|driver |String |Yes |Name of the driver managing access to the controller.
+|firmware |String |Yes |Version of the firmware running on the controller.
+|numberOfPorts |String |Yes |Number of ports on the controller.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|tape |link:#entity-tape[tape] |one JOIN:tapeId=link:#entity-tape[tape].id
+|tape_port |link:#entity-tape_port[tape_port] |many
+|===
+
+=== tape_port
+
+=== ↑ top
+
+Entity Set(s):tape_port
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the tape port.
+|controllerId *[FK]* →link:#entity-tape_controller[tape_controller].id |Int64 |Yes |GUID of the controller where this port resides.
+|tapeId *[FK]* →link:#entity-tape[tape].id |Int64 |Yes |GUID of the tape where this port resides.
+|wwn |String |Yes |WWN of the port.
+|nodeWwn |String |Yes |WWN of the node (controller) where this port resides.
+|portId |String |Yes |Id of the port.
+|name |String |Yes |Name of the port.
+|speed |String |Yes |Speed of the port, in Gbps.
+|controller |String |Yes |Name of the controller where this port resides.
+|url |String |Yes |Url to this port in Insight Server.
+|active |String |Yes |True if the port is not dead
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|tape_controller |link:#entity-tape_controller[tape_controller] |one JOIN:controllerId=link:#entity-tape_controller[tape_controller].id
+|tape |link:#entity-tape[tape] |one JOIN:tapeId=link:#entity-tape[tape].id
+|===
+
+=== tier
+
+=== ↑ top
+
+Entity Set(s):tier
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id |Int64 |Yes |GUID for the annotation.
+|name |String |Yes |Value of the annotation.
+|sequence |Int32 |Yes |Sequence number determining the order of enumeration values. This is used primarily for display purposes.
+|cost |Double |Yes |Optional cost associated with the annotation. Applicable for Tier annotation.
+|===
+
+=== unknown_logical
+
+=== ↑ top
+
+Entity Set(s):unknown_logical
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the generic logical path with unknown type.
+|hostId *[FK]* →link:#entity-host[host].id |Int64 |Yes |GUID of the initiator host of the generic logical path with unknown type.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the target storage of the generic logical path with unknown type.
+|volumeId *[FK]* →link:#entity-volume[volume].id |Int64 |Yes |GUID of the target volume of the generic logical path with unknown type.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|volume |link:#entity-volume[volume] |one JOIN:volumeId=link:#entity-volume[volume].id
+|host |link:#entity-host[host] |one JOIN:hostId=link:#entity-host[host].id
+|===
+
+=== violation
+
+=== ↑ top
+
+Entity Set(s):violation
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the violation.
+|hostId *[FK]* →link:#entity-host[host].id |Int64 |Yes |GUID of the initiator host of the violation - is set to null for violations from generic-devices.
+|genericDeviceId *[FK]* →link:#entity-generic_device[generic_device].id |Int64 |Yes |GUID of the generic-device which is the initiator of the violation - is set to null for violations from hosts.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the target storage of the violation - is set to null for violations to tapes.
+|tapeId *[FK]* →link:#entity-tape[tape].id |Int64 |Yes |GUID of the target tape of the violation - is set to null for violations to storage-arrays.
+|volumeId *[FK]* →link:#entity-volume[volume].id |Int64 |Yes |GUID of the volume to which the violation applies - is set to null for paths to tapes.
+|volumeName |String |Yes |Name of the volume. This would be available even if there is a Path Violations with missing volume
+|type |String |Yes |Violation type.
+|technologyType |String |Yes |The technology type (FC, ISCSI, HV) for the violation
+|since |DateTimeOffset |Yes |Time when the violation started.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|volume |link:#entity-volume[volume] |one JOIN:volumeId=link:#entity-volume[volume].id
+|tape |link:#entity-tape[tape] |one JOIN:tapeId=link:#entity-tape[tape].id
+|host |link:#entity-host[host] |one JOIN:hostId=link:#entity-host[host].id
+|generic_device |link:#entity-generic_device[generic_device] |one JOIN:genericDeviceId=link:#entity-generic_device[generic_device].id
+|===
+
+=== virtual_switch
+
+=== ↑ top
+
+Entity Set(s):virtual_switch
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the virtual switch.
+|fabricId *[FK]* →link:#entity-fabric[fabric].id |Int64 |Yes |GUID of the fabric to which the virtual switch belongs.
+|wwn |String |Yes |WWN of the virtual switch.
+|ip |String |Yes |IP address of the virtual switch
+|name |String |Yes |Name of the virtual switch.
+|domainId |String |Yes |Fabric domain ID of the switch.
+|domainIdType |String |Yes |Type of domain ID. Possible values are static(0) or preferred(1).
+|priority |String |Yes |Priority of the virtual switch.
+|switchRole |String |Yes |Role of the virtual switch in the event of fabric merge. Possible values are PRINCIPAL and SUBORDINATE
+|chassisWwn |String |Yes |WWN of the physical switch which defines the virtual switch.
+|npv |String |Yes |Indication whether this is an NPV switch.
+|isGenerated |String |Yes |Indication whether this switch does not correspond to a physical device. It is used to model one to many port connectivity.
+|type |String |Yes |Switch type.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|fabric |link:#entity-fabric[fabric] |one JOIN:fabricId=link:#entity-fabric[fabric].id
+|switch_port |link:#entity-switch_port[switch_port] |many
+|===
+
+=== virtual_to_backend_volume
+
+=== ↑ top
+
+Entity Set(s):virtual_to_backend_volume
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|virtualVolumeId |Int64 |Yes |GUID of the volume.
+|backendVolumeId |Int64 |Yes |GUID of the backend Volume.
+|===
+
+=== vm_to_application
+
+=== ↑ top
+
+Entity Set(s):vm_to_application
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the relationship between a virtual machine and an application.
+|vmId *[FK]* →link:#entity-hv_virtual_machine[hv_virtual_machine].id |Int64 |Yes |GUID of the virtual machine.
+|applicationId *[FK]* →link:#entity-application[application].id |Int64 |Yes |GUID of the application.
+|inherited |String |Yes |This application is inherited.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|application |link:#entity-application[application] |one JOIN:applicationId=link:#entity-application[application].id
+|hv_virtual_machine |link:#entity-hv_virtual_machine[hv_virtual_machine] |one JOIN:vmId=link:#entity-hv_virtual_machine[hv_virtual_machine].id
+|===
+
+=== vmware_host
+
+=== ↑ top
+
+Entity Set(s):vmware_host
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |Id of the vmware host
+|identifier |String |Yes |Identifier of the vmware host
+|hvServerId *[FK]* →link:#entity-hv_server[hv_server].id |Int64 |Yes |HV Server of the vmware host
+|name |String |Yes |Name of the vmware Host
+|numCpuCores |Int64 |Yes |Number of CPU cores for the vmware host
+|numCpuPackages |Int64 |Yes |Number of CPU packages for the vmware host
+|numCpuThreads |Int64 |Yes |Number of CPU threads for the vmware host
+|numNodes |Int64 |Yes |Number of nodes for the vmware host
+|hyperThreadActive |String |Yes |Indicates whether hyperthreading is enabled on the vmware host
+|hyperThreadAvailable |String |Yes |Indicates whether hyperthreading is available on the vmware host
+|hyperThreadConfig |String |Yes |Indicates whether hyperthreading is configured to be enabled on the vmware host
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|hv_server |link:#entity-hv_server[hv_server] |one JOIN:hvServerId=link:#entity-hv_server[hv_server].id
+|===
+
+=== volume
+
+=== ↑ top
+
+Entity Set(s):volume
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the volume.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage where this volume resides.
+|internalVolumeId *[FK]* →link:#entity-internal_volume[internal_volume].id |Int64 |Yes |When the volume represents a NetApp LUN, GUID of the internal-volume where the LUN resides. Null otherwise.
+|qtreeId *[FK]* →link:#entity-qtree[qtree].id |Int64 |Yes |When the volume represents a NetApp LUN, GUID of the qtree where the LUN resides. Null otherwise.
+|name |String |Yes |Name of the volume.
+|label |String |Yes |Label (description) of the volume.
+|thinProvisioned |String |Yes |Whether this volume is thin provisioned.
+|capacityMB |Int64 |Yes |Volume usable capacity (as seen by the host or other SCSI initiators) in MB.
+|consumedCapacityMB |Int64 |Yes |Presents the capacity that is being consumed in MB.
+|writtenCapacityMB |Int64 |Yes |Presents the capacity that is being written in MB.
+|rawCapacityMB |Int64 |Yes |Actual raw disk capacity used by the volume, in MB.
+|type |String |Yes |Vendor-specific type of volume (e.g., SFS, BCV).
+|replicaSource |String |Yes |Indicates whether this volume is a source in a replica.
+|replicaTarget |String |Yes |Indicates whether this volume is a target in a replica.
+|snapshot |String |Yes |Indicates whether this volume is a snapshot volume.
+|cylinders |Int32 |Yes |Number of cylinders in the volume.
+|diskGroup |String |Yes |Comma separated list of the disk groups used by this volume.
+|isVirtual |String |Yes |Indicates whether this volume is a virtual volume (in a virtual storage-pool).
+|meta |String |Yes |Indicates whether this volume is a meta volume in a volume group.
+|virtualStorage |String |Yes |Name of the vFiler containing the volume (NetApp).
+|head |String |Yes |Head (NetApp) through which the volume is exposed. For example, name of the active head in an active-passive configuration.
+|protectionType |String |Yes |Specifies the protection type for the volume (e.g., BCV, R1, R2 ...)
+|technologyType |String |Yes |Specifies the technology type (FC/ISCSI/UNKNOWN).
+|autoTieringPolicyId *[FK]* →link:#entity-auto_tiering_policy[auto_tiering_policy].id |Int64 |Yes |GUID of auto tiering policy
+|autoTiering |String |Yes |Indicates whether this volume is participating in auto tiering.
+|uuid |String |Yes |UUID of the volume.
+|isMainframe |String |Yes |Indicates whether this is a Mainframe volume
+|lastKnownAccessTime |DateTimeOffset |Yes |Specifies the last time known to SANscreen in which the volume was accessed for read or write (NULL if time is unavailable).
+|url |String |Yes |Url to this volume in Insight Server.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|internal_volume |link:#entity-internal_volume[internal_volume] |one JOIN:internalVolumeId=link:#entity-internal_volume[internal_volume].id
+|auto_tiering_policy |link:#entity-auto_tiering_policy[auto_tiering_policy] |one JOIN:autoTieringPolicyId=link:#entity-auto_tiering_policy[auto_tiering_policy].id
+|qtree |link:#entity-qtree[qtree] |one JOIN:qtreeId=link:#entity-qtree[qtree].id
+|volume_mask |link:#entity-volume_mask[volume_mask] |many
+|dr_volume_replica |link:#entity-dr_volume_replica[dr_volume_replica] |many
+|hv_virtual_disk_to_volume |link:#entity-hv_virtual_disk_to_volume[hv_virtual_disk_to_volume] |many
+|unknown_logical |link:#entity-unknown_logical[unknown_logical] |many
+|volume_map |link:#entity-volume_map[volume_map] |many
+|logical |link:#entity-logical[logical] |many
+|file_system_to_volume |link:#entity-file_system_to_volume[file_system_to_volume] |many
+|backend_lun_to_volume |link:#entity-backend_lun_to_volume[backend_lun_to_volume] |many
+|violation |link:#entity-violation[violation] |many
+|volume_to_application |link:#entity-volume_to_application[volume_to_application] |many
+|iscsi_logical |link:#entity-iscsi_logical[iscsi_logical] |many
+|hv_lun_to_volume |link:#entity-hv_lun_to_volume[hv_lun_to_volume] |many
+|physical_path |link:#entity-physical_path[physical_path] |many
+|hv_data_store_to_volume |link:#entity-hv_data_store_to_volume[hv_data_store_to_volume] |many
+|===
+
+=== volume_in_storage_pool
+
+=== ↑ top
+
+Entity Set(s):volume_in_storage_pool
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|storageId |Int64 |Yes |GUID of the storage array.
+|volumeId |Int64 |Yes |GUID of the volume.
+|storagePoolId |Int64 |Yes |GUID of the storage pool.
+|volumeMembersCapacityMB |Int64 |Yes |Capacity of all volume-members on the storage-pool contributing to a volume, in MB.
+|volumeMembersRawCapacityMB |Int64 |Yes |Raw capacity of all volume-members on the storage-pool contributing to a volume, in MB.
+|===
+
+=== volume_map
+
+=== ↑ top
+
+Entity Set(s):volume_map
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the volume map entry.
+|volumeId *[FK]* →link:#entity-volume[volume].id |Int64 |Yes |GUID of the volume to which the volume map entry refers.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage on which the volume map entry is defined.
+|protocolController |String |Yes |Name of the protocol controller which defines the volume map entry.
+|lun |String |Yes |Logical Unit Number (LUN) used to access this volume.
+|tid |Int32 |Yes |Target SCSI ID defined by the volume map entry.
+|storagePortWwn |String |Yes |WWN of the storage port to which this volume map entry refers.
+|wwnSecurityValidity |Byte |Yes |Indicates whether access to the volume requires additional masking configuration.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|volume |link:#entity-volume[volume] |one JOIN:volumeId=link:#entity-volume[volume].id
+|===
+
+=== volume_mask
+
+=== ↑ top
+
+Entity Set(s):volume_mask
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the volume mask entry.
+|volumeId *[FK]* →link:#entity-volume[volume].id |Int64 |Yes |GUID of the volume to which the volume mask entry refers.
+|storageId *[FK]* →link:#entity-storage[storage].id |Int64 |Yes |GUID of the storage on which the volume mask entry is defined.
+|protocolController |String |Yes |Name of the protocol controller which defines the volume mask entry.
+|storagePortWwn |String |Yes |WWN of the storage port to which the volume mask entry refers.
+|initiatorWwn |String |Yes |WWN of the initiator port to which the volume mask entry refers.
+|hostId *[FK]* →link:#entity-host[host].id |Int64 |Yes |GUID of the host referred to by the initiator WWN of this volume mask entry
+|type |String |Yes |Type of the volume access technology.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage |link:#entity-storage[storage] |one JOIN:storageId=link:#entity-storage[storage].id
+|volume |link:#entity-volume[volume] |one JOIN:volumeId=link:#entity-volume[volume].id
+|host |link:#entity-host[host] |one JOIN:hostId=link:#entity-host[host].id
+|===
+
+=== volume_to_application
+
+=== ↑ top
+
+Entity Set(s):volume_to_application
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the relationship between a volume and an application.
+|applicationId *[FK]* →link:#entity-application[application].id |Int64 |Yes |GUID of the application.
+|volumeId *[FK]* →link:#entity-volume[volume].id |Int64 |Yes |GUID of the volume.
+|inherited |String |Yes |This application is inherited.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|volume |link:#entity-volume[volume] |one JOIN:volumeId=link:#entity-volume[volume].id
+|application |link:#entity-application[application] |one JOIN:applicationId=link:#entity-application[application].id
+|===
+
+=== zone
+
+=== ↑ top
+
+Entity Set(s):zone
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the zone.
+|fabricId *[FK]* →link:#entity-fabric[fabric].id |Int64 |Yes |GUID of the fabric where the zone is defined.
+|name |String |Yes |Name of the zone. Part of the natural-key.
+|fabricWwn |String |Yes |WWN of the fabric where the zone is defined.
+|configurationName |String |Yes |Name of the active zone configuration (set) that contains this zone. Part of the natural-key.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|fabric |link:#entity-fabric[fabric] |one JOIN:fabricId=link:#entity-fabric[fabric].id
+|zone_member |link:#entity-zone_member[zone_member] |many
+|===
+
+=== zone_member
+
+=== ↑ top
+
+Entity Set(s):zone_member
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|id *[PK]* |Int64 |Yes |GUID of the zone_member.
+|zoneId *[FK]* →link:#entity-zone[zone].id |Int64 |Yes |GUID of the zone.
+|fabricId *[FK]* →link:#entity-fabric[fabric].id |Int64 |Yes |GUID of the fabric where the zone is defined.
+|type |String |Yes |Member zoning type. Can be either WWN (Soft) or SWITCH (Hard).
+|wwn |String |Yes |WWN of the member. Can be a switch port (if type=SWITCH) or node/port of a device (type=WWN).
+|zoneName |String |Yes |Name of the zone.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|fabric |link:#entity-fabric[fabric] |one JOIN:fabricId=link:#entity-fabric[fabric].id
+|zone |link:#entity-zone[zone] |one JOIN:zoneId=link:#entity-zone[zone].id
+|===
+
