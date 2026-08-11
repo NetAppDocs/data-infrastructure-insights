@@ -1,4 +1,16 @@
-= Schema Documentation
+---
+sidebar: sidebar
+permalink: reporting_schema_inventory.html
+summary: Schema tables for the Inventory data warehouse
+keywords: dwh, data warehouse, schema, reporting, inventory
+---
+
+= Inventory Schema
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
 
 Source: *dwh_inventory* OData endpoint — Data Infrastructure Insights
 

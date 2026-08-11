@@ -1,4 +1,16 @@
-= Schema Documentation
+---
+sidebar: sidebar
+permalink: reporting_schema_ports.html
+summary: Schema tables for the Ports data warehouse
+keywords: dwh, data warehouse, schema, reporting, ports
+---
+
+= Ports Schema
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
 
 Source: *dwh_ports* OData endpoint — Data Infrastructure Insights
 
