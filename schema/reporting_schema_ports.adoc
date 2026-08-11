@@ -2,7 +2,7 @@
 
 Source: *dwh_ports* OData endpoint — Data Infrastructure Insights
 
-Tables found: *7* |  Associations: *4*
+Tables found: *7* |  Associations: *4* 
 
 == Key Relationships Between Tables 
 

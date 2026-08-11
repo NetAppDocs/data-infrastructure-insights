@@ -2,7 +2,7 @@
 
 Source: *dwh_capacity* OData endpoint — Data Infrastructure Insights
 
-Tables found: *44* | Associations: *92*
+Tables found: *44* | Associations: *92* 
 
 == Key Relationships Between Tables
 

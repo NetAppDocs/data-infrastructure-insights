@@ -2,7 +2,7 @@
 
 Source: *dwh_performance* OData endpoint — Data Infrastructure Insights
 
-Tables found: *74* | Associations: *167*
+Tables found: *74* | Associations: *167* 
 
 == Key Relationships Between Tables
 
