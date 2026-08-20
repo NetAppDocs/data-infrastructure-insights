@@ -8436,256 +8436,254 @@ Management APIs used by this data collector:
 
 Models and versions supported by this data collector:
 |===
-<.<|Models <.<|Firmware versions
+<.<|Models <.<|Firmware versions 
 
-a|
-* AFF-A150
-* AFF-A1K
-* AFF-A20
-* AFF-A200
-* AFF-A220
-* AFF-A250
-* AFF-A30
-* AFF-A300
-* AFF-A320
-* AFF-A400
-* AFF-A50
-* AFF-A70
-* AFF-A700
-* AFF-A700s
-* AFF-A800
-* AFF-A90
-* AFF-A900
-* AFF-C190
-* AFF-C250
-* AFF-C30
-* AFF-C400
-* AFF-C60
-* AFF-C80
-* AFF-C800
-* AFF8020
-* AFF8040
-* AFF8080
-* ASA-A250
-* ASA-A400
-* ASA-A800
-* ASA-A900
-* ASA-C250
-* ASA-C800
-* CDvM200
-* DG5000
-* DG5200
-* DM5000H
-* FAS2520
-* FAS2552
-* FAS2554
-* FAS2620
-* FAS2650
-* FAS2720
-* FAS2750
-* FAS2820
-* FAS3250
-* FAS3270
-* FAS50
-* FAS500f
-* FAS70
-* FAS8020
-* FAS8040
-* FAS8060
-* FAS8080
-* FAS8200
-* FAS8300
-* FAS8700
-* FAS90
-* FAS9000
-* FAS9500
-* FASDvM300
-* SIMBOX
-a|
-* 8.2.3P5
-* 8.3.2P12
-* 9.0.0
-* 9.1.0P17
-* 9.1.0P19
-* 9.1.0P3
-* 9.10.0
-* 9.10.1
-* 9.10.1P10
-* 9.10.1P12
-* 9.10.1P13
-* 9.10.1P15
-* 9.10.1P17
-* 9.10.1P20
-* 9.10.1P4
-* 9.10.1P6
-* 9.11.0P1
-* 9.11.1
-* 9.11.1P10
-* 9.11.1P11
-* 9.11.1P12
-* 9.11.1P13
-* 9.11.1P14
-* 9.11.1P15
-* 9.11.1P17
-* 9.11.1P18
-* 9.11.1P19
-* 9.11.1P20
-* 9.11.1P3
-* 9.11.1P5
-* 9.11.1P7
-* 9.11.1P8
-* 9.12.1
-* 9.12.1P1
-* 9.12.1P10
-* 9.12.1P11
-* 9.12.1P12
-* 9.12.1P13
-* 9.12.1P14
-* 9.12.1P15
-* 9.12.1P16
-* 9.12.1P17
-* 9.12.1P18
-* 9.12.1P19
-* 9.12.1P2
-* 9.12.1P20
-* 9.12.1P3
-* 9.12.1P4
-* 9.12.1P5
-* 9.12.1P6
-* 9.12.1P7
-* 9.12.1P9
-* 9.13.0
-* 9.13.1
-* 9.13.1P1
-* 9.13.1P10
-* 9.13.1P11
-* 9.13.1P12
-* 9.13.1P13
-* 9.13.1P14
-* 9.13.1P16
-* 9.13.1P17
-* 9.13.1P18
-* 9.13.1P19
-* 9.13.1P2
-* 9.13.1P20
-* 9.13.1P3
-* 9.13.1P4
-* 9.13.1P6
-* 9.13.1P7
-* 9.13.1P8
-* 9.13.1P9
-* 9.14.0
-* 9.14.0P1
-* 9.14.1
-* 9.14.1P1
-* 9.14.1P10
-* 9.14.1P11
-* 9.14.1P12
-* 9.14.1P13
-* 9.14.1P14
-* 9.14.1P15
-* 9.14.1P16
-* 9.14.1P17
-* 9.14.1P2
-* 9.14.1P4
-* 9.14.1P5
-* 9.14.1P6
-* 9.14.1P7
-* 9.14.1P8
-* 9.14.1P9
-* 9.15.0P1
-* 9.15.1
-* 9.15.1P10
-* 9.15.1P11
-* 9.15.1P12
-* 9.15.1P13
-* 9.15.1P14
-* 9.15.1P15
-* 9.15.1P16
-* 9.15.1P17
-* 9.15.1P19
-* 9.15.1P2
-* 9.15.1P3
-* 9.15.1P4
-* 9.15.1P5
-* 9.15.1P6
-* 9.15.1P7
-* 9.15.1P8
-* 9.16.1
-* 9.16.1P1
-* 9.16.1P10
-* 9.16.1P11
-* 9.16.1P11D1
-* 9.16.1P12
-* 9.16.1P12D1
-* 9.16.1P13
-* 9.16.1P14
-* 9.16.1P2
-* 9.16.1P3
-* 9.16.1P4
-* 9.16.1P5
-* 9.16.1P6
-* 9.16.1P7
-* 9.16.1P8
-* 9.16.1P9
-* 9.17.1
-* 9.17.1P1
-* 9.17.1P10
-* 9.17.1P2
-* 9.17.1P3
-* 9.17.1P4
-* 9.17.1P5
-* 9.17.1P6
-* 9.17.1P6D2
-* 9.17.1P7
-* 9.17.1P8
-* 9.17.1P9
-* 9.18.1
-* 9.18.1D4
-* 9.18.1P1
-* 9.18.1P2
-* 9.18.1P3
-* 9.18.1P4
-* 9.18.1P5
-* 9.18.1P6
-* 9.19.1
-* 9.19.1X30
-* 9.19.1X39
-* 9.19.1X42
-* 9.19.1X43
-* 9.4.0P2
-* 9.5.0P16
-* 9.5.0P18
-* 9.5.0P2
-* 9.5.0P6
-* 9.5.0P7
-* 9.6.0
-* 9.6.0P11
-* 9.6.0P2
-* 9.7.0P12
-* 9.7.0P17
-* 9.7.0P19
-* 9.7.0P20
-* 9.7.0P21
-* 9.7.0P22
-* 9.7.0P23
-* 9.7.0P6
-* 9.8.0P10
-* 9.8.0P11
-* 9.8.0P12
-* 9.8.0P14
-* 9.8.0P18
-* 9.8.0P19
-* 9.8.0P20
-* 9.8.0P21
-* 9.8.0P4
-* 9.8.0P8
-* 9.8.0P9
-* 9.9.1P15
-* 9.9.1P16
-* 9.9.1P20
-* 9.9.1P7
-* 9.9.1P8
+|AFF-A150
+AFF-A1K
+AFF-A20
+AFF-A200
+AFF-A220
+AFF-A250
+AFF-A30
+AFF-A300
+AFF-A320
+AFF-A400
+AFF-A50
+AFF-A70
+AFF-A700
+AFF-A700s
+AFF-A800
+AFF-A90
+AFF-A900
+AFF-C190
+AFF-C250
+AFF-C30
+AFF-C400
+AFF-C60
+AFF-C80
+AFF-C800
+AFF8020
+AFF8040
+AFF8080
+ASA-A250
+ASA-A400
+ASA-A800
+ASA-A900
+ASA-C250
+ASA-C800
+CDvM200
+DG5000
+DG5200
+DM5000H
+FAS2520
+FAS2552
+FAS2554
+FAS2620
+FAS2650
+FAS2720
+FAS2750
+FAS2820
+FAS3250
+FAS3270
+FAS50
+FAS500f
+FAS70
+FAS8020
+FAS8040
+FAS8060
+FAS8080
+FAS8200
+FAS8300
+FAS8700
+FAS90
+FAS9000
+FAS9500
+FASDvM300
+SIMBOX
+|8.2.3P5 clustered Data ONTAP
+8.3.2P12 clustered Data ONTAP
+9.0.0 clustered Data ONTAP
+9.1.0P17 clustered Data ONTAP
+9.1.0P19 clustered Data ONTAP
+9.1.0P3 clustered Data ONTAP
+9.10.0 clustered Data ONTAP
+9.10.1 clustered Data ONTAP
+9.10.1P10 clustered Data ONTAP
+9.10.1P12 clustered Data ONTAP
+9.10.1P13 clustered Data ONTAP
+9.10.1P15 clustered Data ONTAP
+9.10.1P17 clustered Data ONTAP
+9.10.1P20 clustered Data ONTAP
+9.10.1P4 clustered Data ONTAP
+9.10.1P6 clustered Data ONTAP
+9.11.0P1 clustered Data ONTAP
+9.11.1 clustered Data ONTAP
+9.11.1P10 clustered Data ONTAP
+9.11.1P11 clustered Data ONTAP
+9.11.1P12 clustered Data ONTAP
+9.11.1P13 clustered Data ONTAP
+9.11.1P14 clustered Data ONTAP
+9.11.1P15 clustered Data ONTAP
+9.11.1P17 clustered Data ONTAP
+9.11.1P18 clustered Data ONTAP
+9.11.1P19 clustered Data ONTAP
+9.11.1P20 clustered Data ONTAP
+9.11.1P3 clustered Data ONTAP
+9.11.1P5 clustered Data ONTAP
+9.11.1P7 clustered Data ONTAP
+9.11.1P8 clustered Data ONTAP
+9.12.1 clustered Data ONTAP
+9.12.1P1 clustered Data ONTAP
+9.12.1P10 clustered Data ONTAP
+9.12.1P11 clustered Data ONTAP
+9.12.1P12 clustered Data ONTAP
+9.12.1P13 clustered Data ONTAP
+9.12.1P14 clustered Data ONTAP
+9.12.1P15 clustered Data ONTAP
+9.12.1P16 clustered Data ONTAP
+9.12.1P17 clustered Data ONTAP
+9.12.1P18 clustered Data ONTAP
+9.12.1P19 clustered Data ONTAP
+9.12.1P2 clustered Data ONTAP
+9.12.1P20 clustered Data ONTAP
+9.12.1P3 clustered Data ONTAP
+9.12.1P4 clustered Data ONTAP
+9.12.1P5 clustered Data ONTAP
+9.12.1P6 clustered Data ONTAP
+9.12.1P7 clustered Data ONTAP
+9.12.1P9 clustered Data ONTAP
+9.13.0 clustered Data ONTAP
+9.13.1 clustered Data ONTAP
+9.13.1P1 clustered Data ONTAP
+9.13.1P10 clustered Data ONTAP
+9.13.1P11 clustered Data ONTAP
+9.13.1P12 clustered Data ONTAP
+9.13.1P13 clustered Data ONTAP
+9.13.1P14 clustered Data ONTAP
+9.13.1P16 clustered Data ONTAP
+9.13.1P17 clustered Data ONTAP
+9.13.1P18 clustered Data ONTAP
+9.13.1P19 clustered Data ONTAP
+9.13.1P2 clustered Data ONTAP
+9.13.1P20 clustered Data ONTAP
+9.13.1P3 clustered Data ONTAP
+9.13.1P4 clustered Data ONTAP
+9.13.1P6 clustered Data ONTAP
+9.13.1P7 clustered Data ONTAP
+9.13.1P8 clustered Data ONTAP
+9.13.1P9 clustered Data ONTAP
+9.14.0 clustered Data ONTAP
+9.14.0P1 clustered Data ONTAP
+9.14.1 clustered Data ONTAP
+9.14.1P1 clustered Data ONTAP
+9.14.1P10 clustered Data ONTAP
+9.14.1P11 clustered Data ONTAP
+9.14.1P12 clustered Data ONTAP
+9.14.1P13 clustered Data ONTAP
+9.14.1P14 clustered Data ONTAP
+9.14.1P15 clustered Data ONTAP
+9.14.1P16 clustered Data ONTAP
+9.14.1P17 clustered Data ONTAP
+9.14.1P2 clustered Data ONTAP
+9.14.1P4 clustered Data ONTAP
+9.14.1P5 clustered Data ONTAP
+9.14.1P6 clustered Data ONTAP
+9.14.1P7 clustered Data ONTAP
+9.14.1P8 clustered Data ONTAP
+9.14.1P9 clustered Data ONTAP
+9.15.0P1 clustered Data ONTAP
+9.15.1 clustered Data ONTAP
+9.15.1P10 clustered Data ONTAP
+9.15.1P11 clustered Data ONTAP
+9.15.1P12 clustered Data ONTAP
+9.15.1P13 clustered Data ONTAP
+9.15.1P14 clustered Data ONTAP
+9.15.1P15 clustered Data ONTAP
+9.15.1P16 clustered Data ONTAP
+9.15.1P17 clustered Data ONTAP
+9.15.1P19 clustered Data ONTAP
+9.15.1P2 clustered Data ONTAP
+9.15.1P3 clustered Data ONTAP
+9.15.1P4 clustered Data ONTAP
+9.15.1P5 clustered Data ONTAP
+9.15.1P6 clustered Data ONTAP
+9.15.1P7 clustered Data ONTAP
+9.15.1P8 clustered Data ONTAP
+9.16.1 clustered Data ONTAP
+9.16.1P1 clustered Data ONTAP
+9.16.1P10 clustered Data ONTAP
+9.16.1P11 clustered Data ONTAP
+9.16.1P11D1 clustered Data ONTAP
+9.16.1P12 clustered Data ONTAP
+9.16.1P12D1 clustered Data ONTAP
+9.16.1P13 clustered Data ONTAP
+9.16.1P14 clustered Data ONTAP
+9.16.1P2 clustered Data ONTAP
+9.16.1P3 clustered Data ONTAP
+9.16.1P4 clustered Data ONTAP
+9.16.1P5 clustered Data ONTAP
+9.16.1P6 clustered Data ONTAP
+9.16.1P7 clustered Data ONTAP
+9.16.1P8 clustered Data ONTAP
+9.16.1P9 clustered Data ONTAP
+9.17.1 clustered Data ONTAP
+9.17.1P1 clustered Data ONTAP
+9.17.1P10 clustered Data ONTAP
+9.17.1P2 clustered Data ONTAP
+9.17.1P3 clustered Data ONTAP
+9.17.1P4 clustered Data ONTAP
+9.17.1P5 clustered Data ONTAP
+9.17.1P6 clustered Data ONTAP
+9.17.1P6D2 clustered Data ONTAP
+9.17.1P7 clustered Data ONTAP
+9.17.1P8 clustered Data ONTAP
+9.17.1P9 clustered Data ONTAP
+9.18.1 clustered Data ONTAP
+9.18.1D4 clustered Data ONTAP
+9.18.1P1 clustered Data ONTAP
+9.18.1P2 clustered Data ONTAP
+9.18.1P3 clustered Data ONTAP
+9.18.1P4 clustered Data ONTAP
+9.18.1P5 clustered Data ONTAP
+9.18.1P6 clustered Data ONTAP
+9.19.1 clustered Data ONTAP
+9.19.1X30 clustered Data ONTAP
+9.19.1X39 clustered Data ONTAP
+9.19.1X42 clustered Data ONTAP
+9.19.1X43 clustered Data ONTAP
+9.4.0P2 clustered Data ONTAP
+9.5.0P16 clustered Data ONTAP
+9.5.0P18 clustered Data ONTAP
+9.5.0P2 clustered Data ONTAP
+9.5.0P6 clustered Data ONTAP
+9.5.0P7 clustered Data ONTAP
+9.6.0 clustered Data ONTAP
+9.6.0P11 clustered Data ONTAP
+9.6.0P2 clustered Data ONTAP
+9.7.0P12 clustered Data ONTAP
+9.7.0P17 clustered Data ONTAP
+9.7.0P19 clustered Data ONTAP
+9.7.0P20 clustered Data ONTAP
+9.7.0P21 clustered Data ONTAP
+9.7.0P22 clustered Data ONTAP
+9.7.0P23 clustered Data ONTAP
+9.7.0P6 clustered Data ONTAP
+9.8.0P10 clustered Data ONTAP
+9.8.0P11 clustered Data ONTAP
+9.8.0P12 clustered Data ONTAP
+9.8.0P14 clustered Data ONTAP
+9.8.0P18 clustered Data ONTAP
+9.8.0P19 clustered Data ONTAP
+9.8.0P20 clustered Data ONTAP
+9.8.0P21 clustered Data ONTAP
+9.8.0P4 clustered Data ONTAP
+9.8.0P8 clustered Data ONTAP
+9.8.0P9 clustered Data ONTAP
+9.9.1P15 clustered Data ONTAP
+9.9.1P16 clustered Data ONTAP
+9.9.1P20 clustered Data ONTAP
+9.9.1P7 clustered Data ONTAP
+9.9.1P8 clustered Data ONTAP
 
 |===
 Products supported by this data collector:
