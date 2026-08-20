@@ -3,7 +3,6 @@ sidebar: sidebar
 permalink: reference_data_collector_support_matrix.html
 summary: The Data Collector Support Matrix contains detailed information on supported data collectors. 
 keywords: support matrix, vendor, NetApp, IBM, EMC, Dell, HP, Hitachi, VMware, Huawei, OpenStack
-
 ---
 
 = Data Infrastructure Insights Data Collector Support Matrix 
