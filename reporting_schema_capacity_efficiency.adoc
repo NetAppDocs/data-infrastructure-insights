@@ -1,4 +1,16 @@
-= Schema Documentation
+---
+sidebar: sidebar
+permalink: reporting_schema_capacity_efficiency.html
+summary: Schema tables for the Capacity Efficiency data warehouse
+keywords: dwh, data warehouse, schema, reporting, capacity efficiency
+---
+
+= Capacity Efficiency Schema
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
 
 Source: *dwh_capacity_efficiency* OData endpoint — Data Infrastructure Insights
 

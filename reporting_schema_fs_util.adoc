@@ -1,4 +1,16 @@
-= Schema Documentation
+---
+sidebar: sidebar
+permalink: reporting_schema_fs_util.html
+summary: Schema tables for the File System Utilization data warehouse
+keywords: dwh, data warehouse, schema, reporting, file system, fs util
+---
+
+= File System Utilization Schema
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
 
 Source: *dwh_fs_util* OData endpoint — Data Infrastructure Insights
 

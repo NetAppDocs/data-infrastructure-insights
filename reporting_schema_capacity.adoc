@@ -1,4 +1,16 @@
-= Schema Documentation
+---
+sidebar: sidebar
+permalink: reporting_schema_capacity.html
+summary: Schema tables for the Capacity data warehouse
+keywords: dwh, data warehouse, schema, reporting, capacity
+---
+
+= Capacity Schema
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
 
 Source: *dwh_capacity* OData endpoint — Data Infrastructure Insights
 
