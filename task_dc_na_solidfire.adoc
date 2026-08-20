@@ -22,7 +22,7 @@ The SolidFire data collector utilizes the SolidFire REST API. The acquisition un
 
 Data Infrastructure Insights acquires the following inventory information from the NetApp SolidFire All-Flash Array data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term | Data Infrastructure Insights Term
 |Drive|Disk
@@ -45,7 +45,7 @@ The following are requirements for configuring this data collector:
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Management Virtual IP Address (MVIP) |Management Virtual IP address of the SolidFire Cluster 
@@ -55,7 +55,7 @@ The following are requirements for configuring this data collector:
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Connection Type |Choose connection type

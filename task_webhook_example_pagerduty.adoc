@@ -2,12 +2,11 @@
 sidebar: sidebar
 permalink: task_webhook_example_pagerduty.html
 keywords: webhook, notification, PagerDuty, integration
-summary: Create a webhook to alert on performance or inventory thresholds for Pagerduty
+summary: Create a webhook to alert on performance or inventory thresholds for PagerDuty
 ---
 
 = Webhook Example for PagerDuty
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
@@ -22,17 +21,37 @@ NOTE: This page refers to third-party instructions, which could be subject to ch
 
 . In PagerDuty, navigate to *Services > Service Directory* and click on the *+New Service* button​
 
-. Enter in a _Name_ and select _Use our API directly_.  Click on _Add Service_.
+. Enter in a _Name_ and a meaningful _description_. Click _Next_.
 +
-image:Webhooks_PagerDutyScreen1.png[Pagerduty screen]
+//image:Webhooks_PagerDutyScreen1.png[PagerDuty screen]
+image:webhook-pagerduty-1.png[PagerDuty screen,width=500]
 
+. On the next screen, select an existing escalation policy, or generate a new one. Click _Next_.
++
+image:webhook-pagerduty-2.png[Assigning an Escalation Policy,width=500]
+
+. Select AIOps features as desired. Click _Next_.
++
+image:webhook-pagerduty-3.png[aiops service selection screen,width=500]
+
+. Select the Integration(s) you wish to use to feed alerts to PagerDuty. For DII, use the Events API V2 Integration.
++
+image:webhook-pagerduty-4.png[PagerDuty integrations selection screen,width=500]
+
+On the Integration configuration screen, make note of the *Integration Key*. You will need this key when you create the Data Infrastructure Insights webhook below. 
++
+image:webhook-pagerduty-5.png[Copying the Integration Key,width=500]
+
+
+////
 . Click on the _Integrations_ tab to see the *Integration Key*. You will need this key when you create the Data Infrastructure Insights webhook below. 
 
-//. On the same screen, copy or make note of the *Integration URL* under Alert Events. You will need to enter this into the Data Infrastructure Insights webhook configuration.
 
 . Go to *Incidents* or *Services* to view Alerts.
 +
-image:Webhooks_PagerDutyScreen2.png[Pagerduty Screen]
+image:Webhooks_PagerDutyScreen2.png[PagerDuty Screen]
+////
+
 
 
 == Create Data Infrastructure Insights Webhook:
@@ -42,8 +61,6 @@ image:Webhooks_PagerDutyScreen2.png[Pagerduty Screen]
 . Give the webhook a meaningful Name, such as "PagerDuty Trigger". You will use this webhook for critical- and warning-level events.
 
 . In the _Template Type_ drop-down, select *PagerDuty*.
-
-//. Enter the PagerDuty Integration URL from above into the _URL_ field.
 
 . Create a custom parameter secret named _routingKey_ and set the value to the PagerDuty _Integration Key_ value from above.
 +
@@ -87,12 +104,6 @@ To notify on events via webhook, in Data Infrastructure Insights navigate to *Al
 image:Webhooks_Notifications.png[Webhook Notifications]
 
 NOTE: Setting separate notifications for trigger events versus resolved events is a best practice, since PagerDuty handles trigger events differently than resolved events. 
-
-//Additionally, if you would like to create a webhook for Warning-level events as well, create a new webhook and set the Message Body _severity_ to "warning".
-
-//Trigger vs Resolve: Two separate templates.  Resolved alerts are no longer displayed in PagerDuty​
-
-
 
 
 

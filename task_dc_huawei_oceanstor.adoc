@@ -20,7 +20,7 @@ Data Infrastructure Insights uses the Huawei OceanStor (REST/HTTPS) data collect
 
 Data Infrastructure Insights acquires the following inventory and performance information from the Huawei OceanStor. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term | Data Infrastructure Insights Term
 |Storage Pool|Storage Pool
@@ -45,7 +45,7 @@ The following requirements are required to configure this data collector:
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description 
 |OceanStor Host IP Address|IP address or fully-qualified domain name of the OceanStor Device Manager
@@ -55,7 +55,7 @@ The following requirements are required to configure this data collector:
 
 == Advanced Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description 
 |TCP Port|TCP Port used to connect to OceanStor Device Manager. The default is 8088.

@@ -26,7 +26,7 @@ Data Infrastructure Insights uses the Brocade Enterprise Fabric Connectivity Man
 
 == Configuration 
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |EFC server|IP address or fully-qualified domain name of the EFC Server
@@ -36,7 +36,7 @@ Data Infrastructure Insights uses the Brocade Enterprise Fabric Connectivity Man
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Inventory Poll Interval (min)| Interval between inventory polls. The default is 15 minutes.

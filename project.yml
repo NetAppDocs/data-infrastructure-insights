@@ -12,21 +12,10 @@ sidebar:
   entries:
     - title: Data Infrastructure Insights documentation
       url: /index.html
+      
     - title: What's New
       url: /concept_whats_new.html
-  
-#    - title: Signing Up for Data Infrastructure Insights
-#      url: /task_cloud_insights_onboarding_1.html
-  
-    - title: Security
-      entries:
-        - title: Security Practices
-          url: /security_overview.html
-        - title: What We Store, and Where 
-          url: /security_information_and_region.html
-        - title: SecurityAdmin Tool
-          url: /security_admin_tool.html
-          
+
     - title: Getting Started
       entries:
         - title: Feature Tutorials
@@ -41,8 +30,6 @@ sidebar:
               url: /task_configure_acquisition_unit.html 
             - title: Configuring an Agent on Windows/Linux
               url: /task_config_telegraf_agent.html
-#            - title: Configuring a Kubernetes Operator
-#              url: /task_config_telegraf_agent_k8s.html
             - title: Configuring Data Collectors
               url: /task_configure_data_collectors.html
             - title: Determining Data Collector Acquisition Status
@@ -55,6 +42,21 @@ sidebar:
           url: /concept_import_from_dashboard_gallery.html
         - title: User Accounts and Roles
           url: /concept_user_roles.html
+  
+    - title: Signing Up for Data Infrastructure Insights
+      url: /task_cloud_insights_onboarding_1.html
+  
+    - title: Security
+      entries:
+        - title: Security Practices
+          url: /security_overview.html
+        - title: What We Store, and Where 
+          url: /security_information_and_region.html
+        - title: SecurityAdmin Tool
+          url: /security_admin_tool.html
+          
+    - title: AI Assistant
+      url: /ai_for_dii_overview.html
           
     - title: Data Collector List
       url: /data_collector_list.html          
@@ -101,18 +103,7 @@ sidebar:
           - title: Identifying Inactive Devices
             url: /task_identify_inactive_devices.html
 
-      - title: Insights
-        entries:
-          - title: Overview
-            url: /insights_overview.html 
-          - title: Shared Resources Under Stress
-            url: /insights_shared_resources_under_stress.html
-          - title: Kubernetes Namespaces Running Out of Space
-            url: /insights_k8s_namespaces_running_out_of_space.html
-          - title: Reclaim ONTAP Cold Storage
-            url: /insights_reclaim_ontap_cold_storage.html         
-
-      - title: Monitors and Alerts
+      - title: Monitor, Alerts, and Notifications
         entries:
           - title: Creating Monitors
             url: /task_create_monitor.html
@@ -138,6 +129,8 @@ sidebar:
               - title: Webhook Example - Teams
                 url: /task_webhook_example_teams.html
 
+          - title: Login Message
+            url: /login_message_popup.html
 
       - title: Working with Annotations
         entries:
@@ -220,7 +213,22 @@ sidebar:
             url: /reporting_schema_diagrams.html
           - title: Schema Tables
             url: /reference_schemas.html
- 
+#            entries:
+#              - title: Schema Tables - Capacity
+#                url: /schema/reporting_schema_capacity.html
+#              - title: Schema Tables - Capacity Efficiency
+#                url: /schema/reporting_schema_capacity_efficiency.html
+#              - title: Schema Tables - File System Utilization
+#                url: /schema/reporting_schema_fs_util.html
+#              - title: Schema Tables - Inventory
+#                url: /schema/reporting_schema_inventory.html
+#              - title: Schema Tables - Performance
+#                url: /schema/reporting_schema_performance.html
+#              - title: Schema Tables - Ports
+#                url: /schema/reporting_schema_ports.html
+
+
+
     - title: Kubernetes
       entries:
         - title: Kubernetes Overview Page
@@ -285,21 +293,20 @@ sidebar:
               url: /task_cs_user_management.html
             - title: Event Rate Checker (Agent Sizing Guide)
               url: /concept_cs_event_rate_checker.html
-
+            
         - title: Alerts 
           url: /cs_alert_data.html  
         - title: Forensics
           entries:
             - title: Activity Forensics - All Activity
               url: /forensic_activity_history.html
-
             - title: Users
               url: /forensic_user_overview.html
         - title: Automated Response Policies
           url: /cs_automated_response_policies.html
-        - title: Allowed File Types Policies
-          url: /ws_allowed_file_types.html
-        - title: ONTAP Autonomous Protection Integration
+        - title: Alert Exclusions
+          url: /ws_alert_exclusions.html
+        - title: ONTAP Autonomous Ransomware Protection Integration
           url: /concept_cs_integration_with_ontap_arp.html
         - title: ONTAP Access Denied Integration
           url: /concept_ws_integration_with_ontap_access_denied.html
@@ -309,7 +316,8 @@ sidebar:
           url: /concept_cs_attack_simulator.html
         - title: Email Notifications
           url: /cs_notifications_email.html
-
+        - title: Viewing Audit Events
+          url: /ws_audit_events.html
 
         - title: Webhook Notifications
           entries:
@@ -321,7 +329,7 @@ sidebar:
               url: /ws_webhook_example_pagerduty.html
             - title: Slack Webhook Example
               url: /ws_webhook_example_slack.html
-            - title: Team Webhook Example
+            - title: Teams Webhook Example
               url: /ws_webhook_example_teams.html
 
         - title: Workload Security API
@@ -343,63 +351,6 @@ sidebar:
           
     - title: Data Collector Support Matrix
       url: /reference_data_collector_support_matrix.html
-
-#    - title: Data Collector Support Matrix
-#      entries:
-#        - title: Amazon
-#          url: /dc_matrix_amazon.html
-#        - title: ASA
-#          url: /dc_matrix_asa.html
-#        - title: Brocade
-#          url: /dc_matrix_brocade.html
-#        - title: Cisco
-#          url: /dc_matrix_cisco.html
-#        - title: Cohesity
-#          url: /dc_matrix_cohesity.html
-#        - title: Dell
-#          url: /dc_matrix_dell.html
-#        - title: Dell EMC
-#          url: /dc_matrix_emc.html
-#        - title: Fujitsu
-#          url: /dc_matrix_fujitsu.html
-#        - title: Google
-#          url: /dc_matrix_google.html
-#        - title: Hitachi
-#          url: /dc_matrix_hitachi.html
-#        - title: HDS
-#          url: /dc_matrix_hds.html
-#        - title: HiCommand
-#          url: /dc_matrix_hicommand.html
-#        - title: HP
-#          url: /dc_matrix_hp.html
-#        - title: HPE
-#          url: /dc_matrix_hpe.html
-#        - title: Huawei
-#          url: /dc_matrix_huawei.html
-#        - title: IBM
-#          url: /dc_matrix_ibm.html
-#        - title: Infinidat
-#          url: /dc_matrix_infinidat.html
-#        - title: Microsoft
-#          url: /dc_matrix_microsoft.html
-#        - title: NetApp
-#          url: /dc_matrix_netapp.html
-#        - title: Nutanix
-#          url: /dc_matrix_nutanix.html
-#        - title: OpenStack
-#          url: /dc_matrix_openstack.html
-#        - title: Oracle
-#          url: /dc_matrix_oracle.html
-#        - title: Pure
-#          url: /dc_matrix_pure.html
-#        - title: Red Hat
-#          url: /dc_matrix_red.html
-#        - title: Rubrik
-#          url: /dc_matrix_rubrik.html
-#        - title: Vast
-#          url: /dc_matrix_vast.html
-#        - title: VMware
-#          url: /dc_matrix_vmware.html
 
     - title: Reference & Support
       entries:
@@ -462,8 +413,6 @@ sidebar:
                   url: /task_dc_emc_vplex.html
                 - title: XtremIO
                   url: /task_dc_emc_xio.html
-            - title: Fujitsu
-              url: /task_dc_fujitsu_eternus.html
             - title: Google
               url: /task_dc_google_cloud.html
             - title: Google Cloud NetApp Volumes
@@ -532,75 +481,85 @@ sidebar:
                   url: /task_dc_na_solidfire.html
                 - title: StorageGRID
                   url: /task_dc_na_storagegrid.html
+#            - title: Nutanix AHV
+#              url: /task_dc_nutanix_ahv.html
             - title: Nutanix
               url: /task_dc_nutanix.html
+            - title: Nutanix AHV
+              url: /task_dc_nutanix_ahv.html
             - title: Oracle
               url: /task_dc_oracle_zfs.html
+            - title: Proxmox VE
+              url: /task_dc_proxmox_ve.html
             - title: Pure
               url: /task_dc_pure_flasharray.html
-            - title: Red Hat
+            - title: Qumulo REST
+              url: /task_dc_qumulo_rest.html
+            - title: Red Hat Virtualization
               url: /task_dc_redhat_virtualization.html
+            - title: Red Hat OpenShift Virtualization
+              url: /task_dc_redhat_openshift_virtualization.html
             - title: Rubrik CDM
               url: /task_dc_rubrik_cdm.html
             - title: VMware
               url: /task_dc_vmware.html
               
-        - title: Data Collector Reference - Services
-          entries:
-            - title: Host/Node
-              url: /task_config_telegraf_node.html
-            - title: ActiveMQ
-              url: /task_config_telegraf_activemq.html
-            - title: Apache
-              url: /task_config_telegraf_apache.html
-            - title: Consul 
-              url: /task_config_telegraf_consul.html
-            - title: Couchbase
-              url: /task_config_telegraf_couchbase.html
-            - title: CouchDB
-              url: /task_config_telegraf_couchdb.html
-            - title: Docker
-              url: /task_config_telegraf_docker.html
-            - title: Elasticsearch
-              url: /task_config_telegraf_elasticsearch.html
-            - title: Flink
-              url: /task_config_telegraf_flink.html
-            - title: Hadoop
-              url: /task_config_telegraf_hadoop.html
-            - title: HAProxy
-              url: /task_config_telegraf_haproxy.html
-            - title: Java
-              url: /task_config_telegraf_jvm.html
-            - title: Kafka
-              url: /task_config_telegraf_kafka.html
-            - title: Kapacitor
-              url: task_config_telegraf_kapacitor.html
-            - title: Kibana
-              url: /task_config_telegraf_kibana.html
-            - title: Kubernetes
-              url: /task_config_telegraf_agent_k8s.html
-            - title: Memcached
-              url: /task_config_telegraf_memcached.html
-            - title: MongoDB
-              url: /task_config_telegraf_mongodb.html
-            - title: MySQL
-              url: /task_config_telegraf_mysql.html
-            - title: Netstat
-              url: /task_config_telegraf_netstat.html
-            - title: Nginx
-              url: /task_config_telegraf_nginx.html
-            - title: OpenZFS
-              url: task_config_telegraf_openzfs.html
-            - title: PostgreSQL
-              url: /task_config_telegraf_postgresql.html
-            - title: Puppet
-              url: /task_config_telegraf_puppetagent.html
-            - title: Redis
-              url: /task_config_telegraf_redis.html
-            - title: RethinkDB
-              url: task_config_telegraf_rethinkdb.html
-            - title: Zookeeper
-              url: task_config_telegraf_zookeeper.html
+#        - title: Data Collector Reference - Services
+#          entries:
+#            - title: Host/Node
+#              url: /task_config_telegraf_node.html
+#            - title: ActiveMQ
+#              url: /task_config_telegraf_activemq.html
+#            - title: Apache
+#              url: /task_config_telegraf_apache.html
+#            - title: Consul 
+#              url: /task_config_telegraf_consul.html
+#            - title: Couchbase
+#              url: /task_config_telegraf_couchbase.html
+#            - title: CouchDB
+#              url: /task_config_telegraf_couchdb.html
+#            - title: Docker
+#              url: /task_config_telegraf_docker.html
+#            - title: Elasticsearch
+#              url: /task_config_telegraf_elasticsearch.html
+#            - title: Flink
+#              url: /task_config_telegraf_flink.html
+#            - title: Hadoop
+#              url: /task_config_telegraf_hadoop.html
+#            - title: HAProxy
+#              url: /task_config_telegraf_haproxy.html
+#            - title: Java
+#              url: /task_config_telegraf_jvm.html
+#            - title: Kafka
+#              url: /task_config_telegraf_kafka.html
+#            - title: Kapacitor
+#              url: task_config_telegraf_kapacitor.html
+#            - title: Kibana
+#              url: /task_config_telegraf_kibana.html
+#            - title: Kubernetes
+#              url: /task_config_telegraf_agent_k8s.html
+#            - title: Memcached
+#              url: /task_config_telegraf_memcached.html
+#            - title: MongoDB
+#              url: /task_config_telegraf_mongodb.html
+#            - title: MySQL
+#              url: /task_config_telegraf_mysql.html
+#            - title: Netstat
+#              url: /task_config_telegraf_netstat.html
+#            - title: Nginx
+#              url: /task_config_telegraf_nginx.html
+#            - title: OpenZFS
+#              url: task_config_telegraf_openzfs.html
+#            - title: PostgreSQL
+#              url: /task_config_telegraf_postgresql.html
+#            - title: Puppet
+#              url: /task_config_telegraf_puppetagent.html
+#            - title: Redis
+#              url: /task_config_telegraf_redis.html
+#            - title: RethinkDB
+#              url: task_config_telegraf_rethinkdb.html
+#            - title: Zookeeper
+#              url: task_config_telegraf_zookeeper.html
           
         - title: Object Icon Reference
           url: /reference_object_icons.html

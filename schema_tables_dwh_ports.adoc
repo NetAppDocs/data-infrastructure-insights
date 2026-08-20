@@ -1,0 +1,179 @@
+---
+sidebar: sidebar
+permalink: schema_tables_dwh_ports.html
+summary: Schema tables and relationships for the dwh_ports database
+keywords: dwh, data warehouse, schema, reporting 
+---
+
+= Database Schema Reference for dwh_ports
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+This reference provides detailed schema information for the dwh_ports database, including table structures, field definitions, data types, and relationships.
+
+== Tables and Views
+
+=== cardinals
+[cols="1,1,2",options="header"]
+|===
+| Field | Type | Description
+| digit | Integer | A number between 0 and 99
+|===
+
+'''
+
+=== connected_device_dimension
+*Primary Key:* tk
+
+[cols="1,1,2",options="header"]
+|===
+| Field | Type | Description
+| tk | Integer | Technical key
+| name | String | Name of the device
+| manufacturer | String | Manufacturer of the device
+| model | String | Model of the device
+| type | String | Type of the device
+| firmware | String | Firmware version running on the device
+| id | Long | The ID of the device
+| latest | String | Latest flag
+|===
+
+*Relationships:*
+
+* ports_fact (one-to-many)
+
+'''
+
+=== date_dimension
+[cols="1,1,2",options="header"]
+|===
+| Field | Type | Description
+| tk | Integer | Technical key
+| fullDate | DateTimeOffset | Full date
+| dayInMonth | Byte | Day in month
+| dayInYear | Integer | Day in year
+| dateYear | Integer | Year
+| yearLabel | String | Year label
+| monthNum | Byte | Month number
+| monthLabel | String | Month label
+| dayInWeekNum | Byte | Day of week number
+| quarter | Byte | Quarter
+| quarterLabel | String | Quarter label
+| dayInQuarter | Integer | Day in quarter
+| repQuarter | Byte | Representative quarter
+| repMonth | Byte | Representative month
+| repWeek | Byte | Representative week
+| repDay | Byte | Representative day
+| repMonthOrLatest | Byte | Representative month or latest
+| sspFlag | Byte | SSP flag
+| latest | String | Latest flag
+| future | String | Future flag
+|===
+
+*Relationships:*
+
+* ports_fact (one-to-many)
+
+'''
+
+=== port_dimension
+[cols="1,1,2",options="header"]
+|===
+| Field | Type | Description
+| tk | Integer | Technical key
+| wwn | String | World Wide Name
+| name | String | Port name
+| gbicType | String | GBIC type
+| type | String | Port type
+| speed | String | Port speed
+| isGenerated | String | Generated flag
+| url | String | Reference URL
+| id | Long | Unique identifier
+| latest | String | Latest flag
+| dateTk | Integer | Date technical key
+|===
+
+*Relationships:*
+
+* ports_fact (one-to-many)
+
+'''
+
+=== ports_fact
+*Primary Key:* tk
+
+[cols="1,1,2",options="header"]
+|===
+| Field | Type | Description
+| tk | Integer | Technical key
+| dateTk | Integer | Date technical key
+| switchTk | Integer | Switch technical key
+| connectedDeviceTk | Integer | Connected device technical key
+| portTk | Integer | Port technical key
+| fabric | String | Fabric name or WWN
+| speed | String | Port speed
+| connectivityType | String | Connectivity type
+| type | String | Port type
+| status | String | Port status
+|===
+
+*Relationships:*
+
+* connected_device_dimension (many-to-one)
+* port_dimension (many-to-one)
+* date_dimension (many-to-one)
+* switch_dimension (many-to-one)
+
+'''
+
+=== ports_fact_current
+[cols="1,1,2",options="header"]
+|===
+| Field | Type | Description
+| tk | Integer | Technical key
+| dateTk | Integer | Date technical key
+| switchTk | Integer | Switch technical key
+| connectedDeviceTk | Integer | Connected device technical key
+| portTk | Integer | Port technical key
+| fabric | String | Fabric name or WWN
+| speed | String | Port speed
+| connectivityType | String | Connectivity type
+| type | String | Port type
+| status | String | Port status
+|===
+
+'''
+
+=== switch_dimension
+[cols="1,1,2",options="header"]
+|===
+| Field | Type | Description
+| tk | Integer | Technical key
+| wwn | String | World Wide Name
+| name | String | Switch name
+| identifier | String | Switch identifier
+| ip | String | IP address
+| model | String | Switch model
+| manufacturer | String | Manufacturer
+| firmware | String | Firmware version
+| serialNumber | String | Serial number
+| npv | String | NPV mode flag
+| isGenerated | String | Generated flag
+| type | String | Switch type
+| url | String | Reference URL
+| id | Long | Unique identifier
+| latest | String | Latest flag
+| dateTk | Integer | Date technical key
+| dataCenter | String | Data center location
+| switchLevel | String | Switch level
+|===
+
+*Relationships:*
+
+* ports_fact (one-to-many)
+
+'''
