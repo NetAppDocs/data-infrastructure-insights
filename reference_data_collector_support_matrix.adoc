@@ -15,6 +15,7 @@ keywords: support matrix, vendor, NetApp, IBM, EMC, Dell, HP, Hitachi, VMware, H
 [.lead]
 The Data Collector Support Matrix provides reference for Data Collectors supported by Data Infrastructure Insights , including vendor and model information.
 
+
 == AFX
 
 Models and versions supported by this data collector:
