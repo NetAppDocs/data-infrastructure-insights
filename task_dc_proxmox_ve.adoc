@@ -1,0 +1,61 @@
+---
+sidebar: sidebar
+permalink: task_dc_proxmox_ve.html
+keywords: data collector, Proxmox Virtual Environment, PVE
+summary: Configuring Proxmox Virtual Environment data collector.
+---
+
+= Proxmox Virtual Environment data collector
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead] 
+The DII Proxmox Virtual Environment collector will collect inventory and performance data for PVE based virtual machines (not LXC containers) and host/hypervisors. This is an HTTPS REST API-based collector that needs to speak to the Proxmox REST API provided by the pveproxy service/daemon that listens on TCP 8006.
+
+This data collector uses user + token authentication. You will need to create a service account on each Proxmox cluster, and assign the appropriate permissions to the user, and then generate an API token with those same rights. Please note that a given Proxmox user's token does NOT necessarily have the same rights/permissions as the user. DII will generally need global Audit/Monitor level rights - if you are creating a service account via the Proxmox UI, for PathPermision start at "/", set Propagate to "Yes", and unlock Datastore Audit, Mapping Audit, Pool Audit, SDN Audit, Sys Audit, VM Audit, VM Monitor at minimum. With the user created, you can then create an access token for it. Strongly consider creating the token with an expiration of 0 to ensure the token never expires.  
+
+
+== Terminology
+
+For each asset type acquired by Data Infrastructure Insights, the most common terminology used for the asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+
+[cols="50,50", options="header"]
+|===
+|Vendor/Model Term | Data Infrastructure Insights Term
+|Disk|Virtual Disk
+|Host|Host
+|Virtual Machine|Virtual Machine
+|Storage|Data Store
+|===
+ 
+Note: These are common terminology mappings only and might not represent every case for this data collector.
+
+
+
+== Configuration
+
+[cols="50,50", options="header"]
+|===
+|Field | Description
+|Hostname or IP address|hostname IP address of the storage system 
+|API Token ID| API token required for access
+|API Token Secret| Secret for the above token
+|===
+
+== Advanced configuration 
+
+[cols="50,50", options="header"]
+|===
+|Field | Description
+|HTTPS Communication Port|Port used for HTTPS communication (default 8006)
+|Inventory poll interval (min)|The default is 20 minutes.
+
+|===
+        
+== Troubleshooting
+
+Additional information on this Data Collector may be found from the link:concept_requesting_support.html[Support] page or in the link:reference_data_collector_support_matrix.html[Data Collector Support Matrix].
+

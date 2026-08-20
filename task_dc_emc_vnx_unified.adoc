@@ -20,7 +20,7 @@ For configuration, the Dell EMC VNX Unified (SSH) data collector requires the IP
 
 Data Infrastructure Insights acquires the following inventory information from this data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 
 |Vendor/Model Term|Data Infrastructure Insights Term
@@ -49,7 +49,7 @@ You need the following to configure the VNX (SSH) data collector:
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |VNX IP Address|IP address or fully-qualified domain name of the VNX Control Station
@@ -60,7 +60,7 @@ You need the following to configure the VNX (SSH) data collector:
 
 == Advanced configiration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Inventory Poll Interval (min)|Interval between inventory polls. The default is 40 minutes. 

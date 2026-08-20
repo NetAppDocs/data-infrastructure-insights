@@ -56,8 +56,6 @@ _CN=Acrobat Users,CN=Users,DC=hq,DC=companyname,DC=com,O= companyname,L=Boston,S
 Trusted Active Directory domains are also supported.
 
 |Bind DN|User permitted to search the directory. For example: _username@companyname.com_ or _username@domainname.com_
-In addition, Domain Read Only permission is required. 
-User must be a member of the Security group _Read-only Domain Controllers_.
 |BIND password|Directory server password (i.e. password for username used in Bind DN)
 |Protocol|ldap, ldaps, ldap-start-tls
 |Ports|Select port
