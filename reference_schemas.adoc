@@ -21,12 +21,12 @@ These schema tables are provided here as a reference for Data Infrastructure Ins
 
 NOTE: The Reporting feature is available in Data Infrastructure Insights link:concept_subscribing_to_cloud_insights.html[Premium Edition]. 
 
-link:reporting_schema_capacity.adoc[Schema Tables - Capacity]
-link:reporting_schema_capacity_efficiency.adoc[Schema Tables - Capacity Efficiency]
-link:reporting_schema_fs_util.adoc[Schema Tables - File System Utilization]
-link:reporting_schema_inventory.adoc[Schema Tables - Inventory]
-link:reporting_schema_performance.adoc[Schema Tables - Performance]
-link:reporting_schema_ports.adoc[Schema Tables - Ports]
+link:reporting_schema_capacity.html[Schema Tables - Capacity]
+link:reporting_schema_capacity_efficiency.html[Schema Tables - Capacity Efficiency]
+link:reporting_schema_fs_util.html[Schema Tables - File System Utilization]
+link:reporting_schema_inventory.html[Schema Tables - Inventory]
+link:reporting_schema_performance.html[Schema Tables - Performance]
+link:reporting_schema_ports.html[Schema Tables - Ports]
 
 
 
