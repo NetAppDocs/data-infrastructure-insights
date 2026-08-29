@@ -76,8 +76,8 @@ Note: These are common terminology mappings only and might not represent every c
 |Check Device Type|Select to accept only those devices that explicitly advertise themselves as Cisco devices
 |First Alias Type|Provide a first preference for resolution of the alias. Choose from the following: 
 
-*Device Alais*
-This is a user-friendly name for a port WWN (pWWN) that can be used in all configuration commands, as required. All switches in the Cisco MDS 9000 Family support Distributed Device Alias Services (device aliases). 
+*Device Alias*
+This is a user-friendly name for a port WWN (pWWN) that can be used in all configuration commands, as required. All switches in the Cisco MDS 9000 Family support Distributed Device Alias Services (device aliases). The values here map to the CLI command "show device-alias". This is the default
 
 *None*
 Do not report any alias.
@@ -86,7 +86,7 @@ Do not report any alias.
 A description to help identify the port in a list of ports.
 
 *Zone Alias (all)*
-A user-friendly name for a port that can be used only for the active configuration. This is the default. 
+The legacy values from the "show fcalias" output  
 |Second Alias Type|Provide a second preference for resolution of the alias
 |Third Alias Type|Provide a third preference for resolution of the alias
 |Enable SANTap Proxy Mode Support|Select if your Cisco switch is using SANTap in proxy mode. If you are using EMC RecoverPoint, then you are probably using SANTap.
