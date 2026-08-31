@@ -18,17 +18,23 @@ NetApp is continually improving and enhancing its products and services. Here ar
 
 == August 2026
 
-=== Better Control of User Data
 
-Asset Landing Pages and Slideout Panels already give you insight into the annotations and attributes assigned to the asset. Now that data is read-only by default, giving you greater control over when and how it is updated.
+=== Enhanced VM Analyzer filtering
 
-In a Slideout Panel, After expanding the details, simply select the "Pencil" icon. 
+A new toggle in the VM Analyzer view allows you hide mounted volumes without a datastore, offering a cleaner view to simplify troubleshooting VMs.
 
-image:UserDataEdit-Slideout.png[Edit User Data in Slideout Panel-Pencil Icon, width=500]
+image:vm_analyzer_datastore_only_view.png[datastore-only view slider]
 
-The asset landing page will open in Edit mode. Make any changes desires, then select the "Save" button in the upper right. To undo those changes before you save, select the drop-down next to Save and select "Discard Changes".
 
-Alternatively, navigate to the asset landing page directly and select "Edit" in the upper right. You are now in Edit mode and can make your changes as above.
+=== UI update: User Data Edit Mode
+
+Keep asset information accurate while reducing the risk of unintended changes. Annotations and attributes (i.e. “User Data”) now appear in read-only mode by default, so you can review the details first and choose when you are ready to edit them.
+ 
+Edit only when you need to. From a slideout panel, expand the asset details and select the pencil icon. The asset landing page opens in Edit mode, where you can update the information and select Save when you are finished.
+ 
+You can also open the asset landing page directly and select Edit in the upper-right corner.
+
+image:UserDataEdit-Slideout.png[Edit User Data in Slideout Panel-Pencil Icon, width=400]
 
 image:UserDataEdit-LP.png[Landing Page Edit Mode, width=200]
 
