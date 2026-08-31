@@ -12,6 +12,9 @@ keywords: dwh, data warehouse, schema, reporting, performance
 :linkattrs:
 :imagesdir: ./media/
 
+[.lead]
+The Performance schema provides time-series metrics on I/O, latency, throughput, and other performance indicators across storage, hosts, volumes, and applications. Use this schema to analyze performance trends, identify bottlenecks, and optimize workload placement.
+
 Source: *dwh_performance* OData endpoint — Data Infrastructure Insights
 
 Tables found: *74* | Associations: *167* 
