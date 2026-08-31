@@ -12,6 +12,9 @@ keywords: dwh, data warehouse, schema, reporting, file system, fs util
 :linkattrs:
 :imagesdir: ./media/
 
+[.lead]
+The File System Utilization schema tracks storage consumption and usage patterns across file systems, hosts, and compute resources. Use this schema to identify capacity hotspots and optimize storage allocation at the file system level.
+
 Source: *dwh_fs_util* OData endpoint — Data Infrastructure Insights
 
 Tables found: *8* |  Associations: *7* 

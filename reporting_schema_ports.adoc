@@ -12,6 +12,9 @@ keywords: dwh, data warehouse, schema, reporting, ports
 :linkattrs:
 :imagesdir: ./media/
 
+[.lead]
+The Ports schema contains network port and switch data, including port connectivity, status, and relationships to connected devices. Use this schema to analyze network topology and fabric health within your storage infrastructure.
+
 Source: *dwh_ports* OData endpoint — Data Infrastructure Insights
 
 Tables found: *7* |  Associations: *4* 
