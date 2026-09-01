@@ -18,6 +18,12 @@ NetApp is continually improving and enhancing its products and services. Here ar
 
 == August 2026
 
+=== AI Assistant Visualizations
+
+Transform complex data into actionable insights instantly. Ask the DII Assistant about your infrastructure and it will visualize the answer in graphs and tables, helping you identify trends and resolve issues faster without manual chart creation.
+
+image:ai_assistant-column_graph.png[AI Assistant visualization]
+
 
 === Enhanced VM Analyzer filtering
 
