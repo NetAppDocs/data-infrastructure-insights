@@ -10,7 +10,7 @@ keywords: dwh, data warehouse, schema, reporting, inventory
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 Source: *dwh_inventory* OData endpoint — Data Infrastructure Insights
 
