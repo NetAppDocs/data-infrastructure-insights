@@ -16,7 +16,7 @@ keywords: features
 [.lead]
 NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in Data Infrastructure Insights (formerly Cloud Insights).
 
-== August 2026
+== September 2026
 
 === AI Assistant Visualizations
 
