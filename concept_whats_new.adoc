@@ -20,7 +20,7 @@ NetApp is continually improving and enhancing its products and services. Here ar
 
 === AI Assistant Visualizations
 
-Transform complex data into actionable insights instantly. Ask the DII Assistant about your infrastructure and it will visualize the answer in graphs and tables, helping you identify trends and resolve issues faster without manual chart creation.
+Transform complex data into graphical insights instantly. Ask the AI Assistant to create a dashboard and it will visualize the answer with interactive graphs and tables, helping you identify trends and resolve issues faster without manual chart creation.
 
 image:ai_assistant-column_graph.png[AI Assistant visualization]
 
