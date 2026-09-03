@@ -16,6 +16,36 @@ keywords: features
 [.lead]
 NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in Data Infrastructure Insights (formerly Cloud Insights).
 
+== September 2026
+
+=== AI Assistant Visualizations
+
+Transform complex data into graphical insights instantly. Ask the AI Assistant to create a dashboard and it will visualize the answer with interactive graphs and tables, helping you identify trends and resolve issues faster without manual chart creation.
+
+image:ai_assistant-column_graph.png[AI Assistant visualization]
+
+
+=== Enhanced VM Analyzer filtering
+
+A new toggle in the VM Analyzer view allows you hide mounted volumes without a datastore, offering a cleaner view to simplify troubleshooting VMs.
+
+image:vm_analyzer_datastore_only_view.png[datastore-only view slider]
+
+
+=== UI update: User Data Edit Mode
+
+Keep asset information accurate while reducing the risk of unintended changes. Annotations and attributes (i.e. “User Data”) now appear in read-only mode by default, so you can review the details first and choose when you are ready to edit them.
+ 
+Edit only when you need to. From a slideout panel, expand the asset details and select the pencil icon. The asset landing page opens in Edit mode, where you can update the information and select Save when you are finished.
+ 
+You can also open the asset landing page directly and select Edit in the upper-right corner.
+
+image:UserDataEdit-Slideout.png[Edit User Data in Slideout Panel-Pencil Icon, width=400]
+
+image:UserDataEdit-LP.png[Landing Page Edit Mode, width=200]
+
+'''
+
 
 == July 2026
 
