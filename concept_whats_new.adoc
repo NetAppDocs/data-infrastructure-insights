@@ -27,7 +27,7 @@ image:ai_assistant-column_graph.png[AI Assistant visualization]
 
 === Enhanced VM Analyzer filtering
 
-A new toggle in the VM Analyzer view allows you hide mounted volumes without a datastore, offering a cleaner view to simplify troubleshooting VMs.
+A new toggle in the VM Analyzer view allows you to hide mounted volumes without a datastore, offering a cleaner view to simplify troubleshooting VMs.
 
 image:vm_analyzer_datastore_only_view.png[datastore-only view slider]
 
