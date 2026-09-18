@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reporting_querying_database.html
-summary: Use Data Infrastructure Insights APIs to query the Reporting DB directly.
+summary: Access the Reporting database directly through APIs, bypassing Cognos for custom integrations, automated reporting, and advanced data analysis workflows.
 keywords: reporting, cognos, data warehouse, dwh, API
 ---
 
@@ -12,16 +12,15 @@ keywords: reporting, cognos, data warehouse, dwh, API
 :linkattrs:
 :imagesdir: ./media/
 
-
 [.lead]
-Data Infrastructure Insights' powerful API allows users to query the Data Infrastructure Insights Reporting database directly, without going through the Cognos Reporting environment.
+Access the Data Infrastructure Insights Reporting database directly through OData v4-compliant APIs, bypassing the Cognos interface for greater flexibility. This enables custom integrations, automated reporting workflows, and advanced data analysis for users who need programmatic access to their infrastructure data.
 
 NOTE: This documentation refers to the Data Infrastructure Insights Reporting feature, which is available in Data Infrastructure Insights Premium Edition.
 
 == Odata
 
 The Data Infrastructure Insights Reporting API follows the link:https://www.odata.org/[OData v4] (Open Data Protocol) standard for its querying of the Reporting database. 
-For more information or to learn more, check out link:https://www.odata.org/getting-started/basic-tutorial/[this tutorial] on OData. 
+To learn more, check out link:https://www.odata.org/getting-started/basic-tutorial/[this tutorial] on OData. 
 
 All requests will start with the url _\https://<Data Infrastructure Insights URL>/rest/v1/dwh-management/odata_
 

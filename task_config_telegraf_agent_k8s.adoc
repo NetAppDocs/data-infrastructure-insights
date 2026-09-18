@@ -491,7 +491,7 @@ kubectl get psp (should show Pod Security Policy removed)
 kubectl get all -n <namespace> \| grep -i psp (should show that nothing is found) 
 
 |"ImagePullBackoff" errors seen
-|These errors may be seen if you have a custom or private docker repository and have not yet configured the Kubernetes Monitoring Operator to properly recognize it.  <<Using a custom or private docker repository,Read more>> about configuring for custom/private repo.
+|These errors may be seen if you have a custom or private docker repository and have not yet configured the Kubernetes Monitoring Operator to properly recognize it.  <<using-a-custom-or-private-docker-repository,Read more>> about configuring for custom/private repo.
 
 
 |I am having an issue with my monitoring-operator deployment, and the current documentation does not help me resolve it.

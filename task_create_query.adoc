@@ -1,20 +1,19 @@
 ---
 sidebar: sidebar
 permalink: task_create_query.html
-summary: Queries allow you to quickly and easily ientify assets and metrics of interest.
+summary: Create custom queries to search, filter, and analyze your infrastructure assets and metrics with granular control, flexible grouping, and customizable results display.
 keywords: query, queries
 ---
 
 = Creating Queries
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Queries enable you to search the assets on your tenant at a granular level, allowing to filter for the data you want and sort the results to your liking. 
+Create powerful queries to search your infrastructure assets at a granular level with flexible filtering, grouping, and sorting capabilities. Build targeted searches that help you identify specific assets, analyze performance metrics, and organize results exactly how you need them. 
 
 For example, you can create a query for _volumes_, add a filter to find particular _storages_ associated with the selected volumes, add another filter to find a particular _annotation_ such as "Tier 1" on the selected storages, and finally add another filter to find all storages with _IOPS - Read (IO/s)_ greater than 25. When the results are displayed, you can then sort the columns of information associated with the query in ascending or descending order.
 
