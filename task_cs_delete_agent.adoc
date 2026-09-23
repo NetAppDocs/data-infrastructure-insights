@@ -7,44 +7,135 @@ summary: Deleting Workload Security agents
 
 = Deleting a Workload Security Agent
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-When you delete a Workload Security Agent, all the data collectors associated with the Agent must be deleted first. 
+Delete an Agent when you are retiring its host or consolidating collection onto another Agent. Deleting an Agent also deletes every collector still assigned to it.
 
-== Deleting an Agent
+[width="100%",cols="100%",options="header",]
+|===
+a|
+*Deleting an Agent deletes its remaining collectors*
 
-[IMPORTANT]
+Any data collector or User Directory Collector still assigned to the Agent is removed with it, and the configuration cannot be recovered afterwards. Record or move any configuration you still need before you delete the Agent.
 
-Deleting an Agent deletes all of the Data Collectors associated with the Agent. If you plan to configure the data collectors with a different agent you should create a backup of the Data Collector configurations before you delete the Agent.
+|===
 
-.Before you begin
-. Make sure all the data collectors associated with the agent are deleted from the Workload Security portal.
-+
-Note: Ignore this step if all the associated collectors are in STOPPED state.
+== Decide what you want to keep
 
+[width="100%",cols="37%,63%",options="header",]
+|===
+|*Your goal* |*What to do*
+|Keep collecting the same storage from another Agent |Move each collector to the other Agent before deleting this one. Reassign the collectors rather than recreating them, so collection is not duplicated.
+|Stop collecting from this storage entirely |Delete the Agent. The collectors still assigned to it are deleted at the same time.
+|Rebuild the Agent on a new host |Record the configuration of each collector first, deploy the new Agent, then recreate or move the collectors.
+|===
 
-.Steps to delete an Agent:
+== Before you begin
 
-. SSH into the agent VM and execute the following command. When prompted, enter "y" to continue. 
+* Sign in as a Data Infrastructure Insights Administrator or Account Owner. Deleting an Agent requires administrator permissions.
+* Identify the Agent by name, and review the collectors assigned to it on the Agent details page.
+* Save any collector configuration you still need. Deleted collector configuration cannot be restored.
+* Remove every collector assigned to this Agent from any alert policy that references it. A collector that is still referenced by an alert policy blocks the deletion.
 
- sudo /opt/netapp/cloudsecure/agent/install/cloudsecure-agent-uninstall.sh 
- Uninstall CloudSecure Agent? [y|N]: 
+[width="100%",cols="100%",options="header",]
+|===
+a|
+*You do not need to pause the Agent, unpin it, or wait for an upgrade*
 
-. Click *Workload Security > Collectors > Agents*
-+
-The system displays the list of configured Agents.
+Pause, resume, pin, and unpin do not affect Agent deletion. Scheduled or in-progress Agent and collector operations do not block it either.
 
-. Click the options menu for the Agent you are deleting.
+|===
 
-. Click *Delete*. 
-+
-The system displays the *Delete Agent* page.
+== Choose the procedure that matches your Agent
 
-. Click *Delete* to confirm the deletion.
+The Agents list shows the status of each Agent. What you must do before deleting depends on whether the Agent is still connected.
 
+[width="100%",cols="21%,62%,17%",options="header",]
+|===
+|*Agent status* |*What Workload Security requires* |*Use*
+|Connected |Every data collector and User Directory Collector must be removed from the Agent first. Collector state does not matter; a stopped collector still counts. |Procedure A
+|Not Connected |Collectors do not have to be removed first. Any collector still assigned is deleted together with the Agent. |Procedure B
+|===
 
+== Procedure A: Delete a connected Agent
+
+*1.* Select Workload Security ++>++ Collectors ++>++ Agents, then select the Agent name to open its details.
+
+*2.* Move or delete every data collector listed for the Agent. To keep collecting the same storage, assign the collector to another Agent instead of deleting it.
+
+*3.* Move or delete every User Directory Collector listed for the Agent.
+
+*4.* Return to Workload Security ++>++ Collectors ++>++ Agents.
+
+*5.* Select the options menu for the Agent, then select Delete.
+
+*6.* Confirm the deletion in the Delete Agent dialog.
+
+*7.* Uninstall the Agent software on its host, as described in "Uninstall the Agent software".
+
+image:ws-delete-agent-confirmation.png[Delete Agent dialog confirming deletion of a sample Agent and showing the command that uninstalls the Agent software from its host.,title="Delete Agent confirmation dialog",width=1007,height=562]
+
+.The confirmation dialog repeats the uninstall command for the Agent host.
+[width="100%",cols="100%",options="header",]
+|===
+a|
+*If the dialog says Cannot Delete Agent*
+
+At least one data collector or User Directory Collector is still assigned to this connected Agent. Remove the remaining collectors and try again. Refresh the Agents page first if you have just removed them.
+
+|===
+
+== Procedure B: Delete a retired or unreachable Agent
+
+Use this procedure when the Agent host is being decommissioned or is already offline, and you no longer need the collectors assigned to it.
+
+*1.* Confirm that you no longer need any collector assigned to this Agent. Those collectors are deleted with it.
+
+*2.* If the host is still reachable, uninstall the Agent software as described in "Uninstall the Agent software".
+
+*3.* Select Workload Security ++>++ Collectors ++>++ Agents and wait until the Agent shows Not Connected.
+
+*4.* Select the options menu for the Agent, then select Delete.
+
+*5.* Confirm the deletion in the Delete Agent dialog.
+
+== Uninstall the Agent software
+
+Deleting an Agent in Workload Security removes its cloud-side configuration. It does not uninstall the software from the host, so uninstall it separately when you retire the host.
+
+*1.* Open a terminal session on the Agent host.
+
+*2.* Run the uninstall command and enter y when prompted.
+
+----
+sudo cloudsecure-agent-uninstall.sh
+----
+
+The uninstaller stops and disables the Agent service and removes the installation directory. To uninstall without the confirmation prompt, add the -n option.
+
+== Verify the deletion
+
+* The Agent no longer appears in Workload Security ++>++ Collectors ++>++ Agents.
+* The collectors that were assigned to it no longer appear in the collector lists.
+* The Agent service is no longer present on the host if you uninstalled the software.
+
+== Troubleshooting
+
+[width="100%",cols="39%,61%",options="header",]
+|===
+|*Message or symptom* |*Cause and resolution*
+|Cannot Delete Agent: "Please delete all the datacollectors configured on ++<++Agent++>++." |The Agent is connected and still has at least one data collector or User Directory Collector assigned. Move or delete the remaining collectors, refresh the page, and retry.
+|"Remove the below device(s) of the agent from these policies before deleting the agent." |A collector under this Agent is still referenced by the alert policies named in the message. Edit each policy, remove that collector, save the policy, then retry the deletion.
+|The deletion fails with an authorization error. |Deleting an Agent requires an Administrator or Account Owner. Other roles can open the Agents page but cannot complete the deletion.
+|The Agent is reported as not registered. |The Agent has already been deleted, or you are working in a different environment. Refresh the Agents page and confirm the Agent and tenant.
+|The Agent is gone from Workload Security but still runs on the host. |Deleting the Agent does not uninstall the software. Run the uninstall command on the host.
+|A deleted collector still appears to consume usage. |Usage is reported from the collectors present during each reporting interval. Delete Agents and collectors you no longer use, and move collectors instead of recreating them so old and new collectors do not overlap.
+|===
+
+== Related information
+
+https://docs.netapp.com/us-en/data-infrastructure-insights/task_cs_delete_agent.html[[.underline]#Current NetApp documentation page#]
