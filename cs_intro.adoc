@@ -7,14 +7,13 @@ summary: Protect your data with Storage Workload Security's insider threat detec
 
 = About Storage Workload Security
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Data Infrastructure Insights Storage Workload Security (formerly Cloud Secure) helps protect your data with actionable intelligence on insider threats. It provides centralized visibility and control of all corporate data access across hybrid cloud environments to ensure security and compliance goals are met. 
+Data Infrastructure Insights Storage Workload Security (formerly Cloud Secure) protects your organization's data with advanced insider threat detection and actionable intelligence. Gain centralized visibility and control over all corporate data access across hybrid cloud environments while ensuring security and compliance goals are met through real-time monitoring and automated response capabilities. 
 
 
 == Visibility

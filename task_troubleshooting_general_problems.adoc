@@ -7,7 +7,6 @@ keywords: troubleshooting, problems, browser, login, log in, accessing, access t
 
 = Troubleshooting General Data Infrastructure Insights Problems
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
@@ -95,8 +94,8 @@ Additional support information may be found from the Data Infrastructure Insight
 
 If you have an active Data Infrastructure Insights subscription you can use these support options:
 
-link:https://www.netapp.com/us/contact-us/support.aspx[Phone]
-link:https://mysupport.netapp.com/site/cases/mine/create?serialNumber=95001014387268156333[Support Ticket]
+link:https://www.netapp.com/company/contact-us/support/[Phone]
+link:https://mysupport.netapp.com/portal?_nfpb=true&_st=initialPage=true&_pageLabel=submitcase[Support Ticket]
 
 For more information, see the https://docs.netapp.com/us-en/cloudinsights/concept_requesting_support.html[Data Infrastructure Insights Support Documentation].
 
