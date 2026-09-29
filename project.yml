@@ -204,8 +204,6 @@ sidebar:
         entries:
           - title: Asset Page Overview
             url: /concept_asset_page_overview.html
-          - title: Asset Page Summary Section
-            url: /concept_asset_summary_section.html
           - title: In-Context Filtering for Objects 
             url: /concept_in_context_filters.html
           - title: Storage Virtualization
