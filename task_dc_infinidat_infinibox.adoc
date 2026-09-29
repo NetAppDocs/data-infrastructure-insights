@@ -20,7 +20,7 @@ The Infinidat InfiniBox (HTTP) data collector is used to collect inventory  info
 
 Data Infrastructure Insights acquires the following inventory information from the Infinidat InfiniBox data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term|Data Infrastructure Insights Term 
 |Storage Pool|Storage Pool
@@ -42,7 +42,7 @@ The following are requirements when configuring this data collector.
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |InfiniBox Host|IP address or fully-qualified domain name of the InfiniBox Management Node 
@@ -52,7 +52,7 @@ The following are requirements when configuring this data collector.
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |TCP Port|TCP Port used to connect to InfiniBox Server. The  default is 443.

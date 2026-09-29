@@ -20,7 +20,7 @@ Data Infrastructure Insights uses the Brocade FC Switch (SSH) data source to dis
 
 Data Infrastructure Insights acquires the following inventory information from the Brocade FC Switch data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 
 |Vendor/Model Term|Data Infrastructure Insights Term
@@ -46,7 +46,7 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Switch IP|IP address or fully-qualified domain name of the EFC Server
@@ -60,7 +60,7 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Fabric name|Fabric name to be reported by the data collector. Leave blank to report the fabric name as WWN. 
@@ -87,7 +87,7 @@ Some things to try if you encounter problems with this data collector:
 
 === Inventory
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 
 |Problem:|Try this:
@@ -108,7 +108,7 @@ In the data collector's Advanced Configuration settings in Data Infrastructure I
 
 === Performance
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Problem:|Try this:
 

@@ -19,7 +19,7 @@ The DII data collector for Red Hat Virtualization also supports the open source 
 
 For each asset type acquired by Data Infrastructure Insights, the most common terminology used for the asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term | Data Infrastructure Insights Term
 |Disk|Virtual Disk
@@ -39,7 +39,7 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field | Description
 |RHV/Ovirt/OLVM Server IP Address|IP address of the management station
@@ -49,7 +49,7 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Advanced configuration 
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field | Description
 |HTTPS Communication Port|Port used for HTTPS communication to RHEV

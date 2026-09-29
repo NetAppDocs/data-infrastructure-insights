@@ -35,7 +35,7 @@ Access keys consist of an access key ID (for example, AKIAIOSFODNN7EXAMPLE) and 
 
 Enter data into the data collector fields according to the table below:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field | Description
 |AWS Region|Choose AWS region
@@ -47,7 +47,7 @@ Enter data into the data collector fields according to the table below:
 
 == Advanced Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field | Description
 |Cross Account Role|Role for accessing resources in different AWS accounts.

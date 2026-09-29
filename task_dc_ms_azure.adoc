@@ -35,7 +35,7 @@ https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-ser
 
 Enter data into the data collector fields according to the table below:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field | Description
 |Azure Service Principal Application (Client) ID (Reader role required)|Sign-in ID to Azure. Requires Reader Role access.
@@ -46,7 +46,7 @@ Enter data into the data collector fields according to the table below:
 
 == Advanced Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field | Description
 |Inventory Poll Interval (min)|The default is 60

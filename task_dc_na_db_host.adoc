@@ -22,7 +22,7 @@ Data Infrastructure Insights acquires inventory from this collector.
 ////
 For each asset type acquired, the most common terminology used for the asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term | Data Infrastructure Insights Term
 |Disk|Disk
@@ -53,7 +53,7 @@ The following are requirements to configure and use this data collector:
 
 == Configuration 
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |DB Server IP Address|IP address of the DB server
@@ -65,7 +65,7 @@ The following are requirements to configure and use this data collector:
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Inventory Poll Interval (Min)|Default is 60 minutes
@@ -77,7 +77,7 @@ The following are requirements to configure and use this data collector:
 == Troubleshooting
 Some things to try if you encounter problems with this data collector:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Problem:|Try this:
 

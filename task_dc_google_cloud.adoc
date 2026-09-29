@@ -24,7 +24,7 @@ This data collector supports inventory and performance collection from Google Co
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Organization ID|The organization ID you want to discover with this collector. This field is required if your service account is able to see more than one organization
@@ -36,7 +36,7 @@ This data collector supports inventory and performance collection from Google Co
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Inventory Poll Interval (min) |Default is 60 minutes

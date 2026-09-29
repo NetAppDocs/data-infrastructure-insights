@@ -325,7 +325,7 @@ Edit the _AgentConfiguration_ in _operator-config.yaml_ to reflect the new docke
 agent:
   ...
   # An optional docker registry where you want docker images to be pulled from as compared to CI's docker registry 
-  # Please see documentation link here: link:task_config_telegraf_agent_k8s.html#using-a-custom-or-private-docker-repository
+  # Please see documentation link here: link:task_config_telegraf_agent_k8s.html#using-a-custom-or-private-docker-repository[Using a custom or private docker repository]
   dockerRepo: your.docker.repo/long/path/to/test
   # Optional: A docker image pull secret that maybe needed for your private docker registry
   dockerImagePullSecret: docker-secret-name  
@@ -366,35 +366,6 @@ Learn More about Kubernetes link:https://kubernetes.io/docs/concepts/scheduling-
 Return to the link:task_config_telegraf_agent_k8s.html[*NetApp Kubernetes Monitoring Operator Installation* page]
 
 
-
-
-
-== A Note About Secrets
-
-To remove permission for the Kubernetes Monitoring Operator to view secrets cluster-wide, delete the following resources from the _operator-setup.yaml_ file before installing:
-
-----
- ClusterRole/netapp-ci<namespace>-agent-secret
- ClusterRoleBinding/netapp-ci<namespace>-agent-secret
-----
-
-If this is an upgrade, also delete the resources from your cluster:
-
-----
- kubectl delete ClusterRole/netapp-ci-<namespace>-agent-secret-clusterrole
- kubectl delete ClusterRoleBinding/netapp-ci-<namespace>-agent-secret-clusterrolebinding
- 
-----
-
-If Change Analysis is enabled, modify the _AgentConfiguration_ or _operator-config.yaml_ to uncomment the change-management section and include _kindsToIgnoreFromWatch: '"secrets"'_ under the change-management section. Note the presence and position of single and double quotes in this line.
-
-  change-management:
-    ...
-    # # A comma separated list of kinds to ignore from watching from the default set of kinds watched by the collector
-    # # Each kind will have to be prefixed by its apigroup
-    # # Example: '"networking.k8s.io.networkpolicies,batch.jobs", "authorization.k8s.io.subjectaccessreviews"'
-    kindsToIgnoreFromWatch: '"secrets"'
-    ...
 
 
 == Verifying Kubernetes Monitoring Operator Image Signatures

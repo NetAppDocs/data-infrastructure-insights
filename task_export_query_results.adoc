@@ -1,20 +1,19 @@
 ---
 sidebar: sidebar
 permalink: task_export_query_results.html
-summary: How to export the results of a query to a .csv file
+summary: Export query results, dashboard tables, landing page and other data to .CSV files for external analysis, reporting, and integration with other applications using asynchronous processing.
 keywords: query, queries, export, csv
 ---
 
 = Exporting query results to a .CSV file
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-You can export the results of any query to a .CSV file, which will allow you to analyze the data or import it into another application.
+Export data to .CSV files from queries, dashboard table widgets, and landing page tables for external analysis, reporting, and integration with other applications. The asynchronous export process allows you to continue working while large datasets are processed in the background.
 
 .Steps
 . Log in to Data Infrastructure Insights.

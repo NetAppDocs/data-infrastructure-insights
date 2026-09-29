@@ -23,7 +23,7 @@ Data Infrastructure Insights uses this data collector to discover inventory and 
 
 Data Infrastructure Insights acquires the following inventory information from this data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 
 |Vendor/Model Term|Data Infrastructure Insights Term
@@ -47,7 +47,7 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Prism External IP Address|IP address of the XC server
@@ -57,7 +57,7 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |TCP Port|Port used for TCP communication with the XC server

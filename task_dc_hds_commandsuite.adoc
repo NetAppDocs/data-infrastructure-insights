@@ -20,7 +20,7 @@ The Hitachi Vantara Command Suite data collector supports the HiCommand Device M
 
 Data Infrastructure Insights acquires the following inventory information from the Hitachi Vantara Command Suite data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term|Data Infrastructure Insights Term 
 |PDEV|Disk
@@ -98,7 +98,7 @@ The following requirements must be met in order to collect performance data:
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |HiCommand Server |IP address or fully-qualified domain name of the HiCommand Device Manager server 
@@ -149,7 +149,7 @@ Some things to try if you encounter problems with this data collector:
 
 === Inventory
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Problem:|Try this:
 |Error: User does not have enough permission
@@ -162,7 +162,7 @@ Some things to try if you encounter problems with this data collector:
 |===
 
 === Performance
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Problem:|Try this:
 |Error:

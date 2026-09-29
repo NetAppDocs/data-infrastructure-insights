@@ -20,7 +20,7 @@ Data Infrastructure Insights uses the Brocade Network Advisor data collector to 
 
 Data Infrastructure Insights acquires the following inventory information from the Brocade Network Advisor data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 
 |Vendor/Model Term|Data Infrastructure Insights Term
@@ -44,7 +44,7 @@ The following are required to configure this data collector:
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Brocade Network Advisor Server IP|IP address of the Network Advisor Server
@@ -55,7 +55,7 @@ The following are required to configure this data collector:
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Connection Type|HTTPS (default port 443) or HTTP (default port 80)
@@ -73,7 +73,7 @@ Some things to try if you encounter problems with this data collector:
 
 === Inventory
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Problem:|Try this:
 |Receive a message that more than 1 node is logged into the Access Gateway port, or data collector fails to discover Access Gateway device.| Check that the NPV device is operating correctly and that all connected WWNs are expected. Do not directly acquire the NPV device. Instead, acquisition of the core fabric switch will collect the NPV device data.
