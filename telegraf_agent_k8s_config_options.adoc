@@ -655,6 +655,14 @@ spec:
     # fluent-bit-init-memRequest: '10Mi'
 
     ##
+    ## CPU/Mem limits and requests for netapp-ci-fluent-bit-rs ReplicaSet (logrotate)
+    ##
+    # fluent-bit-rotate-cpuLimit: '50m'
+    # fluent-bit-rotate-memLimit: '20Mi'
+    # fluent-bit-rotate-cpuRequest: '10m'
+    # fluent-bit-rotate-memRequest: '10Mi'
+
+    ##
     ## CPU/Mem limits and requests for netapp-ci-fluent-bit-rs ReplicaSet (fluent-bit)
     ##
     # fluent-bit-cpuLimit: '500m'
