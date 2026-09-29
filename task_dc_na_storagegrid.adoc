@@ -30,7 +30,7 @@ For customers using the legacy (MU) licensing model, StorageGRID is metered as s
 
 Data Infrastructure Insights acquires the following inventory information from the NetApp StorageGRID collector. For each asset type acquired, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term | Data Infrastructure Insights Term
 |StorageGRID|Storage
@@ -48,7 +48,7 @@ The following are requirements for configuring this data source:
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |StorageGRID Host IP Address |Management IP address of the StorageGRID (Grid Manager)
@@ -58,7 +58,7 @@ The following are requirements for configuring this data source:
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Inventory Poll Interval (min) |Default is 60 minutes

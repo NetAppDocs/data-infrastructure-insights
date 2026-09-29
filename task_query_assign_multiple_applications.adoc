@@ -1,20 +1,19 @@
 ---
 sidebar: sidebar
 permalink: task_query_assign_multiple_applications.html
-summary: Use a query to assign multiple applications or annotations to, or remove multiple applications or annotations from, objects.
+summary: Efficiently manage applications and annotations across multiple assets using query-based bulk operations to assign or remove them without manual, individual asset configuration.
 keywords: query, queries, application, annotation, multiple
 ---
 
 = Assigning multiple applications to or removing multiple applications from assets
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-You can assign multiple link:task_create_application.html[applications] to or remove multiple applications from assets by using a query instead of having to manually assign or remove them. 
+Streamline asset management by using queries to perform bulk operations on applications and annotations. Instead of manually configuring each asset individually, you can efficiently assign or remove multiple applications and annotations across groups of assets in a single operation. 
 
 NOTE: You can use these steps to add or remove link:task_defining_annotations.html[annotations] in the same way.
 

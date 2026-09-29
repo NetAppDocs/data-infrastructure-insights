@@ -22,7 +22,7 @@ Data Infrastructure Insights acquires the following inventory information from t
 
 NOTE: This data collector is link:task_getting_started_with_cloud_insights.html#useful-definitions[deprecated].
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term | Data Infrastructure Insights Term
 |Disk|Disk
@@ -53,7 +53,7 @@ You need the following to configure and use this data collector:
 
 == Configuration 
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Address of storage system|IP address or fully-qualified domain name for the NetApp storage system
@@ -66,7 +66,7 @@ You need the following to configure and use this data collector:
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Inventory Poll Interval (min)|Interval between inventory polls. The default is 20 minutes.
@@ -117,7 +117,7 @@ Some things to try if you encounter problems with this data collector:
 
 === Inventory
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Problem:|Try this:
 |Receive 401 HTTP response or 13003 ZAPI error code and ZAPI returns “Insufficient privileges” or “not authorized for this command”| Check username and password, and user privileges/permissions.

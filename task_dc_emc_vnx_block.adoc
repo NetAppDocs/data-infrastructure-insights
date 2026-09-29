@@ -20,7 +20,7 @@ Data Infrastructure Insights uses the Dell EMC VNX Block Storage (NaviSec) data 
 
 Data Infrastructure Insights acquires the following inventory information from the EMC VNX Block Storage data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term|Data Infrastructure Insights Term 
 |Disk|Disk
@@ -51,7 +51,7 @@ naviseccli.exe -h <IP address> -user <user> -password <password> -scope
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field |Description
 |VNX Block Storage IP Address|IP address or fully-qualified domain name of the VNX block storage 
@@ -62,7 +62,7 @@ naviseccli.exe -h <IP address> -user <user> -password <password> -scope
 
 == Advanced Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field |Description
 |Inventory Poll Interval (min)|Interval between inventory polls. Default is 40 minutes.

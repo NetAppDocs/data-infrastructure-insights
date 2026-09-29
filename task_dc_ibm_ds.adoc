@@ -23,7 +23,7 @@ DS3xxx, DS4xxx, and DS5xxx devices are supported by the link:task_dc_na_eseries.
 Data Infrastructure Insights acquires the following inventory information from the IBM DS data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term|Data Infrastructure Insights Term 
 |Disk Drive Module|Disk
@@ -47,7 +47,7 @@ You need the following to configure this data collector:
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |DS Storage|IP address or fully-qualified domain name of the DS device
@@ -58,7 +58,7 @@ You need the following to configure this data collector:
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Inventory Poll Interval (min) |Interval between inventory polls (min). The default is 40.
@@ -75,7 +75,7 @@ Some things to try if you encounter problems with this data collector:
 
 === Inventory
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Problem:|Try this:
 |Error containing: CMUC00192E, CMUC00191E or CMUC00190E

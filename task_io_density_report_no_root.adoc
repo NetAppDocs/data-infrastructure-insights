@@ -1,13 +1,12 @@
 ---
 sidebar: sidebar
 permalink: task_io_density_report_no_root.html
-summary: When querying for high I/O density you want to exclude root volumes.
-keywords: NetApp, root volume, high I/O,
+summary: When querying for high IO density you want to exclude root volumes.
+keywords: NetApp, root volume, high IO,
 ---
 
 = Ensuring IO density reports describe only internal data volumes
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:

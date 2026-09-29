@@ -19,7 +19,7 @@ The Microsoft Hyper-V data collector acquires inventory and performance data fro
 
 Data Infrastructure Insights acquires the following inventory information from the Microsoft Hyper-V (WMI). For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term|Data Infrastructure Insights Term 
 |Virtual Hard Disk|Virtual Disk
@@ -56,7 +56,7 @@ Best Practice: It is highly recommended for each Hyper-V hypervisor to have “R
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Cluster IP address or floating cluster FQDN|The IP address or fully-qualified domain name for the the cluster, or a standalone, non-clustered hypervisor
@@ -67,7 +67,7 @@ Best Practice: It is highly recommended for each Hyper-V hypervisor to have “R
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Inventory Poll Interval (min)|The default is 20 minutes.

@@ -20,7 +20,7 @@ This REST API-based collector will acquire a Cohesity cluster, discovering the â
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |Cohesity Cluster IP|IP address of the Cohesity cluster
@@ -30,7 +30,7 @@ This REST API-based collector will acquire a Cohesity cluster, discovering the â
 
 == Advanced configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field|Description
 |TCP Port|Port used for TCP communication with the Cohesity cluster

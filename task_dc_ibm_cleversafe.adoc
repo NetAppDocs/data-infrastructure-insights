@@ -22,7 +22,7 @@ NOTE: IBM Cleversafe is metered at a different Raw TB to Managed Unit rate. Ever
 
 Data Infrastructure Insights acquires the following inventory information from the IBM Cleversafe data collector. For each asset type acquired by Data Infrastructure Insights, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Vendor/Model Term |Data Infrastructure Insights Term
 |Storage Pool|Storage Pool
@@ -41,7 +41,7 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Configuration
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field | Description
 |Manager IP or host name|IP address or hostname of management node
@@ -51,7 +51,7 @@ Note: These are common terminology mappings only and might not represent every c
 
 == Advanced configuration 
 
-[cols=2*, options="header", cols"50,50"]
+[cols="50,50", options="header"]
 |===
 |Field | Description
 |Inventory poll interval (min)|Interval between inventory polls. 
