@@ -303,7 +303,6 @@ Core Operator Functionality and Kubernetes Monitoring
 Events Log
 
 * ci-fluent-bit
-* ci-kubernetes-event-exporter
 
 Network Performance and Map
 
@@ -592,24 +591,6 @@ spec:
 
 |As of October 12, 2023, Data Infrastructure Insights has refactored the operator to better serve our users; for those changes to be fully adopted, you must <<uninstalling,remove the old operator>> and <<installing-the-kubernetes-monitoring-operator,install the new one>>.
 
-|My kubernetes events unexpectedly stopped reporting to Data Infrastructure Insights.
-a|Retrieve the name of the event-exporter pod:
-
- `kubectl -n netapp-monitoring get pods \|grep event-exporter \|awk '{print $1}' \|sed 's/event-exporter./event-exporter/'`
-
-It should be either "netapp-ci-event-exporter" or "event-exporter".  Next, edit the monitoring agent `kubectl -n netapp-monitoring edit agent`, and set the value for LOG_FILE to reflect the appropriate event-exporter pod name found in the previous step.  More specifically, LOG_FILE should be set to either "/var/log/containers/netapp-ci-event-exporter.log" or "/var/log/containers/event-exporter*.log"
-
- fluent-bit:
- ...
- - name: event-exporter-ci
-   substitutions:
-   - key: LOG_FILE
-     values:
-     - /var/log/containers/netapp-ci-event-exporter*.log
- ...
-
-Alternatively, one can also <<uninstalling,uninstall>> and <<installing-the-kubernetes-monitoring-operator,reinstall>> the agent.
-
 |I'm seeing pod(s) deployed by the Kubernetes Monitoring Operator crash because of insufficient resources.
 |Refer to the Kubernetes Monitoring Operator link:telegraf_agent_k8s_config_options.html[configuration options] to increase the CPU and/or memory limits as needed.
 
@@ -619,10 +600,6 @@ Alternatively, one can also <<uninstalling,uninstall>> and <<installing-the-kube
 
 |netapp-ci-kube-state-metrics pods fail to start after running a Kubernetes Operator upgrade, throwing ErrImagePull (failing to pull the image).
 |Try resetting the pods manually.
-
-|"Event discarded as being older then maxEventAgeSeconds" messages are being observed for my Kubernetes cluster under Log Analysis.
-|Modify the Operator _agentconfiguration_ and increase the _event-exporter-maxEventAgeSeconds_ (i.e. to 60s), _event-exporter-kubeQPS_ (i.e. to 100), and _event-exporter-kubeBurst_ (i.e. to 500). For more details on these configuration options, see the link:telegraf_agent_k8s_config_options.html[configuration options] page.
-
 
 |Telegraf warns of, or crashes because of, insufficient lockable memory.
 |Try increasing the limit of lockable memory for Telegraf in the underlying operating system/node. If increasing the limit is not an option, modify the NKMO agentconfiguration and set _unprotected_ to _true_.  This will instruct Telegraf to no attempt to reserve locked memory pages. While this can pose a security risk as decrypted secrets might be swapped out to disk, it allows for execution in environments where reserving locked memory is not possible. For more details on the _unprotected_ configuration options, refer to the link:telegraf_agent_k8s_config_options.html[configuration options] page.
