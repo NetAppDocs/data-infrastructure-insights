@@ -690,4 +690,5 @@ spec:
     ## Example: '{key: taint1, operator: Exists, effect: NoSchedule},{key: taint2, operator: Exists, effect: NoExecute}'
     ##
     # watch-tolerations: ''
+
 ----
