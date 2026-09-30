@@ -56,7 +56,42 @@ sidebar:
           url: /security_admin_tool.html
           
     - title: AI Assistant
-      url: /ai_for_dii_overview.html
+      entries:
+        - title: AI Assistant Overview
+          url: /ai_for_dii_overview.html
+        - title: DII MCP
+          entries:
+            - title: DII MCP Overview
+              url: /mcp_overview.html
+            - title: DII MCP Server
+              url: /mcp_overview.html
+            - title: Concepts
+              url: /mcp_concepts.html
+            - title: Setup
+              url: /mcp_setup.html
+            - title: Security
+              url: /mcp_security.html
+            - title: Troubleshooting
+              url: /mcp_troubleshooting.html
+            - title: Tools
+              url: /mcp_tools_overview.html
+            - title: Use Cases
+              entries:
+                - title: Use Case Overview
+                  url: /mcp_recipe_overview.html
+                - title: Capacity Risk Analysis
+                  url: /mcp_recipe_capacity_risk.html
+                - title: Environment Inventory
+                  url: /mcp_recipe_environment_inventory.html
+                - title: Kubernetes Collector Currency
+                  url: /mcp_recipe_kubernetes_collector_currency.html
+                - title: Notification Posture
+                  url: /mcp_recipe_notification_posture.html
+                - title: Performance Root Cause Analysis
+                  url: /mcp_recipe_performance_rca.html
+                - title: Storage Health
+                  url: /mcp_recipe_storage_health.html
+
           
     - title: Data Collector List
       url: /data_collector_list.html          

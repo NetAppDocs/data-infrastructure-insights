@@ -42,7 +42,7 @@ spec:
     ## A uniquely identifiable user-friendly cluster name
     ## The cluster name must be unique across all clusters in your Data Infrastructure Insights (DII) environment.
     ##
-    clusterName: "my_cluster"
+    clusterName: "<my_cluster>"
 
     ##
     ## Proxy settings
@@ -67,7 +67,7 @@ spec:
     ## applicable repository name. Refer to additional documentation here:
     ## https://docs.netapp.com/us-en/cloudinsights/task_config_telegraf_agent_k8s.html#using-a-custom-or-private-docker-repository
     ##
-    dockerRepo: 'ci-registry.rtp.openenglab.netapp.com:8022'
+    dockerRepo: '<my_docker_repository>'
     ##
     ## [REQUIRED FIELD]
     ## Name of the imagePullSecret required for dockerRepo
@@ -544,6 +544,11 @@ spec:
     # fluent-bit-memLimit: '1Gi'
     # fluent-bit-cpuRequest: '50m'
     # fluent-bit-memRequest: '100Mi'
+
+    ##
+    ## TTL for deduping of k8s events 
+    ##
+    # fluent-bit-k8s-event-ttl-seconds: '3600'
 
   workload-map:
     ## Run workload-map container with escalation privilege to coordinate memlocks

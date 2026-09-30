@@ -1,0 +1,55 @@
+---
+sidebar: sidebar
+permalink: mcp_recipe_overview.html
+summary: Recipes combine multiple read-only DII tools into repeatable infrastructure workflows. Use them as starting points and replace fictional resource names with values from your tenant.
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant
+---
+
+= DII MCP operational recipes
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Recipes combine multiple read-only DII tools into repeatable infrastructure workflows. Use them as starting points and replace fictional resource names with values from your tenant.
+
+NOTE: The DII MCP is a link:concept_preview_features.html[Preview] feature and is therefore subject to change.
+
+== Choose a workflow
+
+[options="header"]
+|===
+|Goal |Recipe |Primary DII surfaces
+|Validate collection coverage and freshness |link:mcp_recipe_environment_inventory.html[Inventory environment and collection health] |Acquisition units, data sources
+|Prioritize active infrastructure issues |link:mcp_recipe_storage_health.html[Assess storage health] |Alerts, monitors, logs, objects
+|Find pools approaching capacity pressure |link:mcp_recipe_capacity_risk.html[Identify capacity risk] |Object metadata, grouping, time series
+|Check Kubernetes collection component versions |link:mcp_recipe_kubernetes_collector_currency.html[Check Kubernetes collector currency] |Kubernetes collectors
+|Investigate a slow volume or workload |link:mcp_recipe_performance_rca.html[Troubleshoot performance] |Object metrics, alerts, logs
+|Review routing and suppression safely |link:mcp_recipe_notification_posture.html[Review notification posture] |Rules, targets, maintenance windows
+|===
+
+== Standard investigation pattern
+
+. Clarify the resource scope and time range.
+. Discover available types.
+. Retrieve metadata before using dynamic fields.
+. Query a bounded time window.
+. Correlate independent signals.
+. Distinguish observed facts from inferences.
+. Report limitations and recommended follow-up.
+
+== Safety
+
+* These recipes use read-only tools.
+* Keep time windows to 30 days or less.
+* Omit credentials, private addresses, UUIDs, raw webhook endpoints, and unnecessary log payloads.
+* Confirm high-impact operational actions outside the MCP workflow.
+
+== Related documentation
+
+* link:mcp_overview.html[DII MCP overview]
+* link:mcp_concepts.html[Concepts and data model]
+* link:mcp_tools_overview.html[Tool reference]
+* link:mcp_security.html[Security and privacy]

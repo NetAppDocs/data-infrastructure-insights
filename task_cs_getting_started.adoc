@@ -13,40 +13,88 @@ summary: Deploy Workload Security agents and data collectors for monitoring user
 :imagesdir: ./media/
 
 [.lead]
-Workload Security helps you monitor user activity and detect potential security threats in your storage environment. Before you can begin monitoring, you need to configure agents, data collectors, and directory services to establish the foundation for comprehensive security monitoring. 
+Workload Security monitors user activity on your storage and detects potential security threats. An Agent that you install in your environment hosts the collectors that gather file and user access data from storage systems, and user information from directory servers.
 
-The Workload Security system uses an agent to collect access data from storage systems and user information from  Directory Services servers.
+Complete the tasks below in order. Each task depends on the one before it, so a collector cannot be added until its Agent is connected, and activity does not resolve to user names until a directory collector exists.
 
-You need to configure the following before you can start collecting data:
+== Setup at a glance
 
-[cols="2*"]
+[cols="1,2,2",options="header"]
 |===
-|Task|Related information
-| Configure an Agent a| link:concept_cs_agent_requirements.html[Agent Requirements] 
+|Task |What it gives you |Where to find the details
 
-link:task_cs_add_agent.html[Add Agent]
+|*1. Size and prepare the Agent host*
+|A supported host with enough capacity for your event rate.
+|Workload Security Agent Requirements; Event Rate Checker
 
-// link:https://netapp.hubs.vidyard.com/watch/Lce7EaGg7NZfvCUw4Jwy5P?[*Video*: Agent Deployment] 
+|*2. Deploy the Agent*
+|A Connected Agent that can host collectors.
+|Deploy Workload Security Agents
 
-|Configure a User Directory Connector|link:task_config_user_dir_connect.html[Add User Directory Connector]
+|*3. Configure a User Directory Collector*
+|Activity and alerts that show user names instead of SIDs.
+|Active Directory collector; LDAP Directory Server collector
 
-// link:https://netapp.hubs.vidyard.com/watch/NEmbmYrFjCHvPps7QMy8me?[*Video*: Active Directory Connection]
+|*4. Configure the ONTAP SVM Data Collector*
+|File and user access events from the monitored SVM.
+|Configuring the ONTAP SVM Data Collector
 
-|Configure data collectors | Click *Workload Security > Collectors*
-
-Click the data collector you want to configure. 
-
-See the Data Collector Vendor Reference section of the documentation for collector information. 
-
-// link:https://netapp.hubs.vidyard.com/watch/YSQrcYA7DKXbj1UGeLYnSF?[*Video*: ONTAP SVM Connection]
-
-|Create  Users Accounts| link:concept_user_roles.html[Manage User Accounts]
-
-// |Troubleshooting|link:https://netapp.hubs.vidyard.com/watch/Fs8N2w9wBtsFGrhRH9X85U?[*Video*: Troubleshooting]
-
+|*5. Verify that data is flowing*
+|Confirmation that monitoring works end to end.
+|This page; Troubleshooting the ONTAP SVM Data Collector
 |===
 
+== Step 1 - Size and prepare the Agent host
 
-Workload Security can integrate with other tools as well.  For example, link:http://docs.netapp.com/us-en/cloudinsights/CloudInsights_CloudSecure_Splunk_integration_guide.pdf[see this guide] on integration with Splunk.
+Install the Agent on a dedicated Linux host that runs no other application-level software.
 
+* Confirm the host meets the operating system, CPU, memory, and disk requirements, and give it a static IP address. For the current list of supported Linux versions, use Linux Versions Supported on the Add Agent page.
+* Synchronize time on the Agent host and on ONTAP using NTP.
+* Size for peak event rate with the Event Rate Checker before you decide how many collectors an Agent will host. An Agent supports at most 50 collectors of all types combined, within a ceiling of 20,000 events per second.
+* Plan the network paths: the Agent reaches ONTAP management on TCP 443 and the Workload Security service on TCP 443, and ONTAP connects back to the Agent on ports reserved within TCP 35000-55000.
+
+== Step 2 - Deploy the Agent
+
+* Log in as Administrator or Account Owner and select *Collectors > Agents > +Agent*.
+* If your network uses a proxy server, set the proxy details before you run the installer snippet.
+* Click *Copy Installer Snippet*. The snippet contains a unique key that is valid for two hours and for one Agent only.
+* Run the snippet on the Agent host, then return to the browser and click *Complete Setup*.
+* Confirm the Agent shows *Connected* on *Collectors > Agents*.
+
+NOTE: Open the reserved FPolicy callback ports toward the Agent, including in the firewall on the Agent host. ONTAP cannot deliver events until this path is open.
+
+== Step 3 - Configure a User Directory Collector
+
+Configure this collector before, or together with, your first ONTAP SVM collector. Without it, Activity Forensics shows encoded identifiers (SIDs) rather than user names.
+
+* Add one collector for every domain whose users access the monitored SVMs, including trusted domains.
+* For Active Directory, map Display Name to `name`, ID to `objectsid`, and User Name to `sAMAccountName`.
+* For an LDAP directory server, map Display Name to `name`, ID to `uidnumber`, and User Name to `uid`.
+* Enabling SSL on the directory server does not block the collector. Workload Security accepts the certificate that the server presents.
+
+NOTE: Test Connection is not available for User Directory collectors. Validate the server, port, bind account, and search base with your usual directory tools, then confirm that the collector reaches *Running*.
+
+== Step 4 - Configure the ONTAP SVM Data Collector
+
+* Choose the connection method. Cluster management IP with the SVM name is recommended, because SVM mode cannot run the feature and RBAC checks.
+* Prepare the ONTAP account first. Use `cluster-admin` credentials, or create `csuser` and `csrole` with the required privileges. Test Connection runs with this account, so it cannot validate FPolicy or the optional features until the privileges exist.
+* Select *Collectors > +Data Collectors*, hover over the NetApp SVM tile, and click *+Monitor*.
+* Enter the collector details, and click *Test Connection* before you save.
+* Resolve every failed check, then save the collector.
+
+NOTE: Test Connection reports SUCCESS based on its network checks. Feature results are informational, so review them for each optional feature you intend to use, such as snapshots, Access Denied, Autonomous Ransomware Protection, Persistent Store, or user blocking.
+
+== Step 5 - Verify that data is flowing
+
+* Confirm the collector reaches *Running*.
+* Generate real SMB or NFS client activity on the monitored SVM. Without client I/O there are no events.
+* Confirm the activity appears in *Workload Security > Activity Forensics*.
+* Confirm that the activity shows user names rather than SIDs. If it does not, check the User Directory Collector.
+* If the collector reports *Error* or *Degraded*, open *Status > More detail* and follow Troubleshooting the ONTAP SVM Data Collector.
+
+== Optional next steps
+
+* Create user accounts to give other people access to Workload Security. This is not required for data collection. See Workload Security User Management.
+* Enable optional collector features. Each has its own ONTAP version and permission requirements.
+* Integrate Workload Security with other tools, such as Splunk.
 
