@@ -1,0 +1,116 @@
+---
+sidebar: sidebar
+permalink: mcp_recipe_capacity_risk.html
+summary: Use this recipe to identify storage pools or equivalent capacity domains approaching pressure and to find potential rebalance candidates.
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant
+---
+
+= Identify capacity risk
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Use this recipe to identify storage pools or equivalent capacity domains approaching pressure and to find potential rebalance candidates.
+
+NOTE: The DII MCP is a link:concept_preview_features.html[Preview] feature and is therefore subject to change.
+
+== Prerequisites
+
+* A storage scope or permission to review all visible storage pools.
+* A lookback window of 30 days or less.
+* Agreement on organizational warning and critical thresholds.
+
+== Tools used
+
+* +ObjectService_getObjectTypes+
+* +ObjectService_getMetadataForObjectType+
+* +ObjectService_query+
+* +ObjectService_groupObjects+
+* +ObjectService_queryPerformanceMetricsForObjects+
+* +AlertsService_getMetadata+
+* +AlertsService_queryForAlerts+
+
+== Starter prompt
+
+[example]
+====
+Assess storage capacity risk over the last 30 days. Discover the correct storage-pool object type and metadata, then rank pools using available used-capacity ratio, free capacity, growth, and time-to-full signals. Identify critical, warning, and watch-list pools, and suggest evidence-based rebalance candidates. State the thresholds and aggregation functions used.
+====
+
+== Agent workflow
+
+. List object types and select the appropriate normalized or product-specific pool type.
+. Retrieve metadata.
+. Identify valid:
++
+* Pool and storage-system names
+* Total, used, and free capacity metrics
+* Used-ratio metric
+* Time-to-full or forecast metric
+* Groupable storage, tier, location, or service-level attributes
+. Query a current ranked snapshot using compatible aggregations.
+. Retrieve time series for growth-sensitive metrics over the requested lookback.
+. Where supported, group capacity by storage system, tier, or location.
+. Query active capacity-related alerts for corroboration.
+. Classify risk using the agreed thresholds.
+. Identify potential rebalance sources and destinations based on both capacity and operational constraints.
+
+== Example risk model
+
+Use tenant policy when available. Otherwise, label the following as an illustrative model:
+
+* *Critical:* used ratio at or above 90%, or time to full under 30 days
+* *Warning:* used ratio at or above 80%, or time to full under 90 days
+* *Watch:* sustained positive growth with time to full under 180 days
+* *Lower risk:* none of the above conditions
+
+Do not infer time to full from only two samples when DII supplies a forecast metric. If no forecast is available, describe the trend without presenting a precise exhaustion date.
+
+== Rebalance guidance
+
+A destination is not suitable solely because it has free capacity. Consider:
+
+* Storage system and protocol compatibility
+* Service level and performance headroom
+* Data-protection and replication relationships
+* Workload placement constraints
+* Thin provisioning and overcommitment
+* Operational change windows
+
+== Suggested output
+
+. Capacity-risk summary
+. Critical and warning pools
+. Growth narrative
+. Active capacity alerts
+. Candidate source and destination pairs
+. Assumptions and missing data
+
+== Limits and privacy
+
+* Object windows cannot exceed 30 days per call. Use consecutive non-overlapping windows for longer trends.
+* Filters apply to raw metric values before aggregation.
+* Only group by attributes marked groupable in metadata.
+* Capacity values can use different units; normalize before comparing.
+
+== Follow-up prompts
+
+[example]
+====
+Show the 30-day used-capacity trend for the five highest-risk pools.
+====
+
+[example]
+====
+Group pool capacity by storage system and identify systems with both a critical pool and a viable lower-risk destination.
+====
+
+[example]
+====
+Correlate the highest-risk pools with active capacity monitors and alerts.
+====
+
+link:mcp_recipe_overview.html[Back to recipes]
