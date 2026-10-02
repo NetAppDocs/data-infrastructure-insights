@@ -88,6 +88,8 @@ I am able to save the report, but when I re-open the saved report, the schedule 
 
 To report capacity for a FlexGroup in a query, dashboard, or monitor, use the constituent's reference to its parent FlexGroup. Group the constituents by that reference and aggregate their capacity values.
 
+DII intentionally sets the FlexGroup parent's capacity to zero; ONTAP itself still reports capacity. This applies to capacity/efficiency metrics, not performance metrics. It is recommended to group constituents by Group ID, since Group Name may not be globally unique.
+
 |===
 
 
