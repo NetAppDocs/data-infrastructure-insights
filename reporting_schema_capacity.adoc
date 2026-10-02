@@ -12,6 +12,9 @@ keywords: dwh, data warehouse, schema, reporting, capacity
 :linkattrs:
 :imagesdir: ./media/
 
+[.lead]
+The Capacity schema contains tables and metrics related to storage capacity, utilization, and provisioning across your infrastructure. Use this schema to analyze capacity trends, forecast future needs, and optimize resource allocation.
+
 Source: *dwh_capacity* OData endpoint — Data Infrastructure Insights
 
 Tables found: *44* | Associations: *92* 
