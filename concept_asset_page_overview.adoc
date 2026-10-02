@@ -29,12 +29,14 @@ You can click any of the asset links to view their asset pages. For example, if 
 
 NOTE: You may notice that volume capacity might show greater than 100% on some storage assets. This is due to metadata related to the capacity of the volume being part of the consumed capacity data reported by the asset.
 
-NOTE: You may also notice that the capacity numbers for FlexGroups may show "0", while the constituents show values. In DII, FlexGroups themselves zero out most capacity metrics, while constituents include them. The problem is double counting - if both entities were to report full capacity metrics, DII would be reporting the same capacity twice (once on the flexgroup and once on the constituent). Favoring the constituent-level reporting supports key use cases while avoiding that duplication.
-+
-In this case, to report capacity for a FlexGroup in a query, dashboard, or monitor, use the constituent's reference to its parent FlexGroup. You can then group the constituents by that reference and aggregate their capacity values.
-+
-DII intentionally sets the FlexGroup parent's capacity to zero; ONTAP itself still reports capacity. This applies to capacity/efficiency metrics, not performance metrics. It is recommended to group constituents by Group ID, since Group Name may not be globally unique.
+[NOTE]
+====
+You may also notice that the capacity numbers for FlexGroups may show "0", while the constituents show values. In DII, FlexGroups themselves zero out most capacity metrics, while constituents include them. The problem is double counting - if both entities were to report full capacity metrics, DII would be reporting the same capacity twice (once on the flexgroup and once on the constituent). Favoring the constituent-level reporting supports key use cases while avoiding that duplication.
 
+In this case, to report capacity for a FlexGroup in a query, dashboard, or monitor, use the constituent's reference to its parent FlexGroup. You can then group the constituents by that reference and aggregate their capacity values.
+
+DII intentionally sets the FlexGroup parent's capacity to zero; ONTAP itself still reports capacity. This applies to capacity/efficiency metrics, not performance metrics. It is recommended to group constituents by Group ID, since Group Name may not be globally unique.
+====
 
 == Performance Section
 
