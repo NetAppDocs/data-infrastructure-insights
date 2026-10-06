@@ -1,0 +1,102 @@
+---
+sidebar: sidebar
+permalink: mcp_recipe_environment_inventory.html
+summary: Use this recipe to understand whether DII's acquisition units and configured data sources are connected, reporting, and collecting successfully.
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant
+---
+
+= Inventory environment and collection health
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Use this recipe to understand whether DII's acquisition units and configured data sources are connected, reporting, and collecting successfully.
+
+NOTE: The DII MCP is a link:concept_preview_features.html[Preview] feature and is therefore subject to change.
+
+== Prerequisites
+
+* Access to acquisition-unit and collector tools.
+* An optional acquisition-unit or collector name to narrow the investigation.
+
+== Tools used
+
+* +AcquisitionUnitsService_getAcquisitionUnits+
+* +AcquisitionUnitsService_getAcquisitionUnitByUuid+
+* +CollectorService_getDataSources+
+* +CollectorService_getDataSourceById+
+* +CollectorService_getDataSourceTypes+
+
+== Starter prompt
+
+[example]
+====
+Review my DII collection environment. Summarize acquisition units by connection status and reporting freshness, then summarize configured data sources by acquisition status and vendor. Highlight acquisition units that never reported, units with no assigned collectors, failed collectors, and stale successful acquisitions. Do not display IP addresses, UUIDs, or credentials.
+====
+
+== Agent workflow
+
+. List all acquisition units.
+. Classify each AU using both connection status and `lastReported`.
+. Count assigned data sources per AU.
+. List all configured data sources.
+. Group collectors by status, vendor, model, and AU.
+. Identify:
++
+* Disconnected or heartbeat-failed AUs
+* Connected AUs that never reported
+* AUs with zero data sources
+* Failed collectors
+* Collectors with no successful acquisition
+* Successful collectors whose last acquisition is unexpectedly old
+. Retrieve full AU or collector details only for the exceptions.
+. Return a prioritized summary and clearly state the freshness threshold used.
+
+== Interpretation
+
+Use these distinctions:
+
+* *Connected and reporting:* the AU is connected and has a recent `lastReported` value.
+* *Connected but never reported:* connectivity exists, but successful telemetry reporting is not established.
+* *Heartbeat failed:* investigate the AU host, network path, and service.
+* *Collector failed:* inspect the collector's recent poll activity, package status, configuration, and last successful acquisition.
+* *No assigned collectors:* this can be intentional; verify before treating it as a fault.
+
+The supported data source type catalog describes products DII can collect. It does not prove that those products are configured in the tenant.
+
+== Suggested output
+
+. Executive summary
+. Acquisition-unit status counts
+. Collector status counts
+. Exceptions ranked by operational impact
+. Recommended checks
+. Data limitations
+
+== Limits and privacy
+
+* Avoid returning AU UUIDs, IP addresses, private hostnames, or collector credentials.
+* A status value alone does not establish data freshness.
+* Retrieve detailed configuration only for named exceptions.
+
+== Follow-up prompts
+
+[example]
+====
+Inspect the failed collector named `example-array`. Summarize recent poll activity and collection-package failures without showing credentials or private addresses.
+====
+
+[example]
+====
+Which acquisition units have not reported within the last 30 minutes, and which collectors depend on them?
+====
+
+[example]
+====
+Compare configured collector vendors with the DII supported data source type catalog.
+====
+
+link:mcp_recipe_overview.html[Back to recipes]
