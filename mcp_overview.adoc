@@ -1,0 +1,77 @@
+---
+sidebar: sidebar
+permalink: mcp_overview.html
+summary: Connect AI assistants to Data Infrastructure Insights (DII) so they can investigate infrastructure inventory, telemetry, alerts, and collection health using natural language.
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant
+---
+
+= DII MCP Server
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Connect AI assistants/agents to Data Infrastructure Insights (DII) so they can investigate infrastructure inventory, telemetry, alerts, and collection health using natural language.
+
+NOTE: The DII MCP is a link:concept_preview_features.html[Preview] feature and is therefore subject to change. 
+
+The DII MCP Server implements the Model Context Protocol (MCP) and exposes tenant-scoped tools to supported AI clients. The current product toolset is *read-only*: it retrieves and analyzes DII data but does not modify infrastructure or DII resources.
+
+== What you can investigate
+
+* *Infrastructure inventory:* storage, virtualization, Kubernetes, ONTAP, Azure NetApp Files, StorageGRID, and related resources.
+* *Performance and capacity:* object metrics, grouped aggregates, and time-series behavior.
+* *Logs and events:* discover log types, search events, and build event-count histograms.
+* *Alerting:* inspect active alerts, monitor definitions, severities, and corrective guidance.
+* *Collection health:* review acquisition units, data sources, supported collector types, and Kubernetes collector versions.
+* *Notification posture:* inspect maintenance windows, notification rules, and webhook target types.
+
+== Choose an entry point
+
+=== Connect an AI client
+
+Follow link:mcp_setup.html[Set up the DII MCP Server] for Cursor, Claude Code, VS Code, Codex, or another MCP-compatible client.
+
+=== Browse available tools
+
+Use the link:mcp_tools_overview.html[tool reference] to understand all current tools, required discovery calls, query limits, and user-facing names.
+
+=== Start with an operational workflow
+
+Use a link:mcp_recipe_overview.html[recipe] when you already know the outcome you need:
+
+* Inventory collection health
+* Assess storage health
+* Identify capacity risk
+* Check Kubernetes collector currency
+* Troubleshoot performance
+* Review notification posture
+
+== How DII MCP queries work
+
+Many DII resources have dynamic schemas. A reliable investigation follows a discovery-first sequence:
+
+. List the available object or log types.
+. Retrieve metadata for the selected type.
+. Use only valid attributes and metrics from that metadata.
+. Query a bounded time range.
+. Refine the result with filters, grouping, sorting, or pagination.
+
+See link:mcp_concepts.html[Concepts and data model] for details.
+
+== Important limitations
+
+* All current product tools are read-only.
+* Object, performance, and log queries enforce bounded time windows. Use windows of 30 days or less unless a tool page explicitly documents a smaller limit.
+* Query fields must match the metadata returned for the selected resource type.
+* Large results are paginated or capped.
+* Tool availability and returned data depend on the tenant's collectors, enabled features, and user permissions.
+* Do not request or reproduce complete webhook endpoint addresses. See link:mcp_security.html[Security and privacy].
+
+== Next steps
+
+. link:mcp_setup.html[Connect your client].
+. Try the link:mcp_recipe_environment_inventory.html[environment inventory recipe].
+. Review link:mcp_troubleshooting.html[Troubleshooting] if a query is rejected or returns unexpected results.
