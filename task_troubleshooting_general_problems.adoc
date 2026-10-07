@@ -83,6 +83,13 @@ Try with a different browser profile (i.e. Chrome - add Person).
 I am able to save the report, but when I re-open the saved report, the schedule time appears as AM (i.e. morning), regardless of whether I entered AM or PM in the schedule time.
 |Re-enter the schedule time, being careful not to enter the full "AM" or "PM" characters; it is enough to type "A" for "AM or "P" for "PM". If you are not shown the extra character, the schedule time will be set correctly.
 
+|In DII, the capacity numbers for FlexGroups are "0". The constituents are fine, but the FlexGroup does not show a rollup capacity of all the constituents.
+|This is intentional. Most capacity metrics are reported on the FlexGroup's constituents, not on the parent FlexGroup. Reporting the same capacity on both would double-count it. Favoring the constituent-level reporting supports key use cases while avoiding that duplication.
+
+To report capacity for a FlexGroup in a query, dashboard, or monitor, use the constituent's reference to its parent FlexGroup. Group the constituents by that reference and aggregate their capacity values.
+
+DII intentionally sets the FlexGroup parent's capacity to zero; ONTAP itself still reports capacity. This applies to capacity/efficiency metrics, not performance metrics. It is recommended to group constituents by Group ID, since Group Name may not be globally unique.
+
 |===
 
 
