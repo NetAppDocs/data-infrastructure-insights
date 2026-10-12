@@ -1,0 +1,93 @@
+---
+sidebar: sidebar
+permalink: mcp_security.html
+summary: The DII MCP Server gives an AI client access to tenant infrastructure context. Treat that context with the same care as the DII user interface and APIs.
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant
+---
+
+= Security and privacy
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The DII MCP Server gives an AI client access to tenant infrastructure context. Treat that context with the same care as the DII user interface and APIs.
+
+NOTE: The DII MCP is a link:concept_preview_features.html[Preview] feature and is therefore subject to change.
+
+== Least-privilege access
+
+* Use an identity dedicated to the person, application, or automation connecting to MCP.
+* Grant only the DII read permissions needed for the intended workflows.
+* Review access when a user's role or operational responsibility changes.
+* Use a separate service identity for unattended automation.
+
+The current DII product toolset documented here is read-only. Read-only access can still disclose sensitive names, topology, configuration, telemetry, and operational state.
+
+== Authentication
+
+Prefer interactive OAuth or another short-lived authentication flow supported by your deployment. If non-interactive credentials are required:
+
+* Store them in an approved secret manager.
+* Scope and rotate them according to organizational policy.
+* Never place them in project files, shell history, prompts, screenshots, or documentation.
+
+== Sensitive fields
+
+Potentially sensitive DII data includes:
+
+* IP addresses, hostnames, tenant-specific resource names, and UUIDs
+* Infrastructure topology and configuration
+* Alert descriptions and log payloads
+* User, owner, label, and annotation values
+* Webhook endpoint addresses
+
+Webhook URLs commonly embed routing keys, signatures, tokens, or unique paths. Do not ask an agent to return a complete webhook address. Request only:
+
+* Target name
+* Integration or engine type
+* Enabled or delivery status
+
+Applications integrating the MCP server should redact webhook addresses before displaying, storing, or forwarding tool results.
+
+== Prompt and output hygiene
+
+* Use fictional identifiers in reusable prompts and examples.
+* Ask the agent to omit IP addresses, UUIDs, endpoint addresses, and raw log payloads unless they are necessary.
+* Summarize findings instead of copying large raw responses.
+* Review generated content before placing it in tickets, chat channels, or external documents.
+* Follow organizational data-handling requirements for the selected AI client.
+
+== Tenant isolation
+
+MCP results are tenant-scoped to the authenticated DII context. Do not combine results from multiple tenants unless the workflow and authorization explicitly permit it.
+
+== Audit and retention
+
+Audit-event coverage and retention depend on the DII deployment and connected AI client. Before production use, administrators should confirm:
+
+* Whether MCP authentication and tool calls are logged
+* Which request arguments and result metadata are retained
+* Who can review those records
+* How long the AI client retains prompts and tool results
+
+Do not assume that MCP-specific audit events or retention guarantees exist unless they are documented for your deployment.
+
+== Incident response
+
+If a credential or credential-bearing endpoint appears in an MCP result, prompt, transcript, or published document:
+
+. Stop sharing the affected content.
+. Revoke or rotate the credential or integration secret.
+. Remove the value from stored artifacts where possible.
+. Review access and audit records.
+. Report the exposure through your organization's security process.
+
+== Related documentation
+
+* link:mcp_setup.html[Set up the DII MCP Server]
+* link:mcp_concepts.html[Concepts and data model]
+* link:mcp_recipe_notification_posture.html[Notification posture recipe]
+* link:mcp_troubleshooting.html[Troubleshooting]

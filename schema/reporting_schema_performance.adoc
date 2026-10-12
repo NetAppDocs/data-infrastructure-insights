@@ -10,7 +10,7 @@ keywords: dwh, data warehouse, schema, reporting, performance
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 Source: *dwh_performance* OData endpoint — Data Infrastructure Insights
 

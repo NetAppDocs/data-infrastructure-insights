@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_import_from_dashboard_gallery.html
-summary: You can import recommended dashboards to assist with answering business insight questions. You can also import custom dashboards that you have previously exported.
+summary: Import pre-built dashboards from the gallery to quickly gain business insights, or import custom dashboards you've exported to share configurations across tenants.
 keywords: dashboard, gallery, import, export
 ---
 
@@ -13,7 +13,7 @@ keywords: dashboard, gallery, import, export
 :imagesdir: ./media/
 
 [.lead]
-Data Infrastructure Insights provides a number of Recommended Dashboards to provide business insights into your data. Each dashboard contains widgets designed to help answer a particular question or solve a particular problem relevant to the data currently being collected on your tenant. DII also allows you to export a useful dashboard and import it to another tenant.
+Access pre-built dashboards from the gallery to quickly gain insights into your infrastructure, or import custom dashboards you've exported from other tenants. Gallery dashboards are tailored to your environment's data collectors and designed to answer specific business questions, while exported dashboards let you share useful configurations across multiple tenants.
 
 == Importing from the Dashboard Gallery
 
