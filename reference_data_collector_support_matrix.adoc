@@ -15,7 +15,6 @@ keywords: support matrix, vendor, NetApp, IBM, EMC, Dell, HP, Hitachi, VMware, H
 [.lead]
 The Data Collector Support Matrix provides reference for Data Collectors supported by Data Infrastructure Insights , including vendor and model information.
 
-
 == AFX
 
 Models and versions supported by this data collector:
@@ -24,6 +23,7 @@ Models and versions supported by this data collector:
 
 |AFX-1K
 |NetApp Release 9.19.1: Sat Jul 18 20:33:10 UTC 2026
+NetApp Release 9.19.1P2: Wed Aug 19 19:38:56 UTC 2026
 NetApp Release 9.19.1RC1: Sat May 02 12:38:22 UTC 2026
 
 |===
@@ -479,7 +479,7 @@ Products supported by this data collector:
 |Total Allocated Capacity|Implemented|HTTPS|
 |Type|Gap|HTTPS|
 |Virtual|Implemented|HTTPS|Is this a storage virtualization device?
-.18+|performance .6+|Internal Volume|Total Capacity|Implemented|HTTPS|
+.19+|performance .6+|Internal Volume|Total Capacity|Implemented|HTTPS|
 |Used Capacity|Implemented|HTTPS|
 |Capacity Used Ratio|Implemented|HTTPS|
 |Key|Implemented|HTTPS|
@@ -493,10 +493,11 @@ Products supported by this data collector:
 |StoragePools Capacity|Implemented|HTTPS|
 |Key|Implemented|HTTPS|
 |Server ID|Implemented|HTTPS|
-.4+|StoragePool Disk|Capacity Provisioned|Implemented|HTTPS|
+.5+|StoragePool Disk|Capacity Provisioned|Implemented|HTTPS|
 |Raw Capacity|Implemented|HTTPS|
 |Total Capacity|Implemented|HTTPS|
 |Over Commit Capacity Ratio|Implemented|HTTPS|Reported as a time series
+|Capacity Used Ratio|Implemented|HTTPS|
 
 |===
 
@@ -929,9 +930,10 @@ NetApp Release 9.17.1P5: Wed Feb 18 10:54:36 UTC 2026
 NetApp Release 9.17.1P6: Wed Mar 25 15:38:10 UTC 2026
 NetApp Release 9.17.1P7: Mon Apr 20 13:57:24 UTC 2026
 NetApp Release 9.17.1P9: Wed Jun 24 13:09:36 UTC 2026
-NetApp Release 9.18.1P3: Thu May 07 19:01:14 UTC 2026
 NetApp Release 9.18.1P4: Thu Jun 04 11:38:00 UTC 2026
 NetApp Release 9.18.1P5: Thu Jul 09 23:05:16 UTC 2026
+NetApp Release 9.18.1P7: Thu Sep 03 20:55:20 UTC 2026
+NetApp Release 9.19.1P2: Wed Aug 19 19:38:56 UTC 2026
 
 |===
 Products supported by this data collector:
@@ -1190,8 +1192,7 @@ Models and versions supported by this data collector:
 |===
 <.<|Models <.<|Firmware versions 
 
-|205.5
-Brocade 300E
+|Brocade 300E
 Brocade 32Gb Fibre Channel SAN Switch Module for HPE Synergy
 Brocade 4024 Embedded
 Brocade 4900
@@ -1224,8 +1225,7 @@ Brocade X6-4
 Brocade X6-8
 Brocade X7-4
 Brocade X7-8
-|v10.0.0a
-v10.0.0a1
+|v10.0.0a1
 v6.2.2b
 v6.2.2f
 v6.2.2f9
@@ -1245,21 +1245,17 @@ v7.0.2b1
 v7.0.2c
 v7.1.0b
 v7.1.1
-v7.1.1c
 v7.2.0d
 v7.2.1
 v7.2.1c1
 v7.2.1g
-v7.3.1c
 v7.3.1d
 v7.4.0a
 v7.4.1d
-v7.4.1e
 v7.4.2
 v7.4.2a
 v7.4.2a4
 v7.4.2c
-v7.4.2d
 v7.4.2f
 v7.4.2g
 v7.4.2h
@@ -1268,11 +1264,9 @@ v8.0.2c
 v8.0.2d
 v8.1.2a
 v8.1.2d
-v8.1.2f
 v8.1.2g
 v8.2.0
 v8.2.0a
-v8.2.0b
 v8.2.1a
 v8.2.1c
 v8.2.2a
@@ -1295,7 +1289,6 @@ v9.0.1b
 v9.0.1c
 v9.0.1d
 v9.1.1
-v9.1.1a
 v9.1.1b
 v9.1.1b_lw
 v9.1.1c
@@ -1321,6 +1314,8 @@ v9.2.2a
 v9.2.2b
 v9.2.2c
 v9.2.2c1
+v9.2.2c1_cvr_866435_01
+v9.2.2d
 
 |===
 Products supported by this data collector:
@@ -1471,12 +1466,10 @@ Models and versions supported by this data collector:
 <.<|Models <.<|Firmware versions 
 
 |202.0
-203.0
 Brocade 6505
 Brocade 6510
 Brocade 6520
 Brocade 6558
-Brocade 7810 Extension Switch
 Brocade 7840
 Brocade 7850 Extension Switch
 Brocade DCX8510-4
@@ -1484,7 +1477,6 @@ Brocade DCX8510-8
 Brocade G610
 Brocade G620
 Brocade G630
-Brocade G710
 Brocade G720
 Brocade G730
 Brocade G820
@@ -1498,7 +1490,6 @@ v10.0.0a1
 v10.0.0a1_cvr_881241_01
 v10.0.0a_cvr_875417_01
 v8.2.2d
-v8.2.3
 v8.2.3b
 v8.2.3c
 v8.2.3d
@@ -1535,6 +1526,7 @@ v9.2.2c
 v9.2.2c1
 v9.2.2c1_lw
 v9.2.2c_lw
+v9.2.2d
 
 |===
 Products supported by this data collector:
@@ -1668,7 +1660,6 @@ Models and versions supported by this data collector:
 8978-E04
 8978-E08
 8978-E16
-DS-C9124-K9
 DS-C9132T-K9
 DS-C9148-16P-K9
 DS-C9148-32P-K9
@@ -1681,7 +1672,6 @@ DS-C9250I-K9
 DS-C9396S-K9
 DS-C9396T-K9
 DS-C9396V-K9
-DS-C9506
 DS-C9509
 DS-C9513
 DS-C9706
@@ -1694,29 +1684,24 @@ UCS-FI-6296UP
 UCS-FI-6332-16UP
 UCS-FI-6454
 UCS-FI-6536
-|3.3(1c)
-5.0(1a)
+|5.0(1a)
 5.0(3)N2(4.13i)
 5.0(3)N2(4.21j)
 5.0(3)N2(4.21k)
 5.0(3)N2(4.22c)
-5.0(3)N2(4.23f)
 5.0(3)N2(4.23g)
 5.0(3)N2(4.34a)
 5.0(3)N2(4.36d)
 5.0(4b)
-5.0(8)
 5.2(2d)
 5.2(8a)
 5.2(8b)
 5.2(8c)
 5.2(8d)
-5.2(8g)
 5.2(8h)
 5.2(8i)
 6.2(11)
 6.2(11b)
-6.2(11c)
 6.2(13)
 6.2(13a)
 6.2(17)
@@ -1729,7 +1714,6 @@ UCS-FI-6536
 6.2(5a)
 6.2(9)
 6.2(9a)
-6.2(9b)
 7.3(0)DY(1)
 8.1(1)
 8.3(1)
@@ -1893,12 +1877,14 @@ C6025
 C6035
 C6055
 C6208S
+CX8405
 PXG1
 Virtual ROBO
 |6.8.2_u1_release-20240509_a5da4644
 7.1.2_u2_release-20240925_66722648
 7.1.2_u4_release-20250529_205b971c
 7.3.2_release-20260123_529553a9
+7.4.1_release-20260723_91509e0b
 
 |===
 Products supported by this data collector:
@@ -2071,7 +2057,6 @@ H700
 H7000
 H710
 NL410
-SIMULATOR
 X210
 |9.10.1.2
 9.10.1.3
@@ -2079,27 +2064,26 @@ X210
 9.10.1.5
 9.10.1.6
 9.10.1.7
-9.11.0.0
+9.10.1.8
 9.12.0.1
 9.13.0.0
 9.13.0.1
 9.13.1.0
+9.13.1.1
+9.14.0.1
 9.2.1.13
 9.2.1.8
 9.4.0.12
-9.4.0.14
-9.4.0.17
 9.4.0.6
 9.5.0.6
 9.5.0.8
-9.5.1.1
 9.7.1.13
+9.7.1.16
 9.7.1.2
 9.7.1.4
 9.7.1.5
 9.7.1.6
 9.7.1.7
-9.7.1.8
 v8.0.0.6
 v8.0.0.7
 
@@ -2332,26 +2316,19 @@ Models and versions supported by this data collector:
 
 |A200
 F800
-H400
 H500
 H5600
 H700
 NL400
 NL410
 S210
-Traceback (most recent call last):
 X200
 X400
 X410
-sudo python 
 |9.10.1.2
 9.10.1.4
 9.2.1.13
-9.5.0.3
-9.5.0.6
 9.8.0.2
-v7.2.0.5
-v7.2.1.3
 v7.2.1.6
 v8.0.0.6
 v8.0.0.7
@@ -2556,19 +2533,15 @@ V10.1.0.8
 V10.2.0.1
 V10.2.0.12
 V10.2.0.14
-V10.2.0.2
 V10.2.0.9
 V10.3.0.1
 V10.3.0.5
 V10.3.0.7
+V10.3.0.9
 V10.4.0.1
 V10.4.0.11
 V10.4.0.5
 V9.2.3.11
-V9.2.3.20
-V9.2.3.22
-V9.2.4.1
-V9.2.4.11
 V9.2.4.12
 V9.2.4.15
 V9.2.4.17
@@ -2588,13 +2561,9 @@ VMAX400K
 VMAX450F
 |5977.1131.1131 build 615
 5977.1151.1151 build 60 build 60
-5978.711.711 build 416
 5978.711.711 build 436 build 436
-5978.711.711 build 484
 5978.711.711 build 484 build 484
-5978.714.711 build 49
 5978.714.714 build 101 build 101
-5978.714.714 build 117
 5978.714.714 build 117 build 117
 5978.714.714 build 137
 5978.714.714 build 137 build 137
@@ -2605,11 +2574,8 @@ VMAX450F
 5978.714.714 build 184
 5978.714.714 build 184 build 184
 5978.714.714 build 185 build 185
-5978.714.714 build 236
 5978.714.714 build 252
 5978.714.714 build 252 build 252
-5978.714.714 build 49
-5978.714.714 build 49 build 49
 5978.714.714 build 79 build 79
 5978.720.720 build 1
 5978.720.720 build 17
@@ -2622,7 +2588,9 @@ VMAX450F
 5978.720.720 build 56
 5978.720.720 build 56 build 56
 5978.720.720 build 6
+5978.720.720 build 69 build 69
 5978.720.720 build 77 build 77
+5978.720.720 build 79
 6079.225.0 build 216 build 216
 6079.275.0 build 221 build 221
 6079.275.0 build 250 build 250
@@ -2635,6 +2603,8 @@ VMAX450F
 6079.325.0 build 244 build 244
 6079.325.0 build 253 build 253
 6079.325.0 build 275 build 275
+6079.325.0 build 310 build 310
+6079.325.0 build 324 build 324
 6079.325.0 build 84 build 84
 
 |===
@@ -2836,12 +2806,10 @@ Models and versions supported by this data collector:
 |===
 <.<|Models <.<|Firmware versions 
 
-|NSX
-VG8
+|VG8
 VNX5200
 VNX5300
-|5.5.38-1
-7.1.76-4
+|7.1.76-4
 7.1.79-8
 8.1.9-155
 
@@ -2850,7 +2818,7 @@ Products supported by this data collector:
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
 
-.85+|foundation .6+|File Share|Is InternalVolume|Implemented|SSH|whether the file share represents an internal volume (netapp volume) or is it a qtree/folder within the internal volume
+.84+|foundation .6+|File Share|Is InternalVolume|Implemented|SSH|whether the file share represents an internal volume (netapp volume) or is it a qtree/folder within the internal volume
 |Is Shared|Implemented|SSH|whether this fileShare has any shares associated with it
 |Name|Implemented|SSH|
 |Path|Implemented|SSH|Path of the fileShare
@@ -2919,12 +2887,11 @@ Products supported by this data collector:
 |Serial Number|Implemented|SSH|
 |Spare Raw Capacity|Implemented|SSH|Raw capacity of spare disks (sum of all disks that are spare)
 |Virtual|Implemented|SSH|Is this a storage virtualization device?
-.16+|Storage Pool|Data Allocated Capacity|Gap|SSH|capacity allocated for data
+.15+|Storage Pool|Data Allocated Capacity|Gap|SSH|capacity allocated for data
 |Data Used Capacity|Implemented|SSH|
 |Dedupe Enabled|Implemented|SSH|Is dedupe enabled on the storage pool
 |Include In Dwh Capacity|Implemented|SSH|A way from ACQ to control which storage pools are interesting in DWH Capacity
 |Name|Implemented|SSH|
-|Physical Disk Capacity (MB)|Implemented|SSH|used as raw capacity for storage pool
 |Raid Group|Implemented|SSH|indicates whether this storagePool is a raid group
 |Raw to Usable Ratio|Implemented|SSH|ratio to convert from usable capacity to raw capacity
 |Snapshot Allocated Capacity|Gap|SSH|Allocated capacity of snapshots in MB
@@ -2968,16 +2935,13 @@ VNX5300
 VNX5400
 VNX5500
 VNX5600
-VNX5700
 VNX7600
 |05.32.000.5.218
 05.32.000.5.219
 05.32.000.5.221
-05.32.000.5.225
 05.32.000.5.249
 05.33.009.5.155
 05.33.009.5.184
-05.33.009.5.186
 05.33.009.5.231
 05.33.021.5.256
 05.33.021.5.266
@@ -3207,7 +3171,6 @@ DD9910
 7.10.1.60-1161253
 7.10.1.80-1198417
 7.13.1.20-1148611
-7.13.1.25-1161300
 7.13.1.40-1186473
 7.13.1.80-1246402
 7.7.5.25-1078970
@@ -3217,6 +3180,8 @@ DD9910
 8.3.1.20-1208918
 8.3.1.30-1226406
 8.3.1.40-1247360
+8.3.1.45-1261709
+8.3.1.50-1268129
 8.4.0.0-1175068
 8.6.1.20-1246795
 
@@ -3355,6 +3320,7 @@ Models and versions supported by this data collector:
 3.9.0.0
 4.1.0.2
 4.1.0.3
+4.1.0.4
 4.2.0.0
 
 |===
@@ -3495,8 +3461,6 @@ PowerStore 9000T
 PowerStore 9200T
 |3.2.0.1
 3.6.1.1
-3.6.1.2
-4.0.0.1
 4.0.1.3
 4.1.0.0
 4.1.0.1
@@ -3506,7 +3470,9 @@ PowerStore 9200T
 4.1.0.5
 4.3.1.0
 4.3.1.1
+4.3.1.2
 5.0.0.1
+5.0.0.2
 
 |===
 Products supported by this data collector:
@@ -3624,11 +3590,21 @@ Products supported by this data collector:
 |Object Type|Implemented||
 |Source|Implemented||
 |WWN|Implemented||
-.63+|performance .5+|Internal Volume|Total Capacity|Implemented||
+.73+|performance .15+|Internal Volume|Total Capacity|Implemented||
 |Used Capacity|Implemented||
 |Capacity Used Ratio|Implemented||
+|IOPs other|Implemented||
+|IOPs Read|Implemented||Number of read IOPs on the disk
+|IOPs Total|Implemented||
+|IOPs Write|Implemented||
 |Key|Implemented||
+|Latency Read|Implemented||
+|Latency Total|Implemented||
+|Latency Write|Implemented||
 |Server ID|Implemented||
+|Throughput Read|Implemented||
+|Throughput Total|Implemented||Average disk total rate (read and write across all disks) in MB/s
+|Throughput Write|Implemented||
 .2+|Qtree|Key|Implemented||
 |Server ID|Implemented||
 .16+|Storage|Failed Raw Capacity|Implemented||
@@ -3773,6 +3749,103 @@ Management APIs used by this data collector:
 
 |===
 
+== EMC ScaleIO & PowerFlex REST
+
+Models and versions supported by this data collector:
+|===
+<.<|Models <.<|Firmware versions 
+
+|ScaleIO
+|R3_5.1201.101
+R3_6.1000.134
+
+|===
+Products supported by this data collector:
+|===
+^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
+
+.51+|foundation .8+|Disk|Capacity (GB)|Implemented|HTTPS|Used capacity
+|Disk Id|Implemented|HTTPS|Uniquely identifies this disk in the array
+|Location|Gap|HTTPS|Where this disk is physically located in the array
+|Name|Implemented|HTTPS|
+|Serial Number|Implemented|HTTPS|
+|Speed|Implemented|HTTPS|Speed of disk (RPM) 
+|Status|Implemented|HTTPS|
+|Status Enum|Implemented|HTTPS|enum for disk status
+.8+|Info|Api Version|Implemented|HTTPS|
+|Client Api Description|Implemented|HTTPS|
+|Client Api Name|Implemented|HTTPS|
+|Client Api Version|Implemented|HTTPS|
+|DataSource Name|Implemented|HTTPS|Info
+|Date|Implemented|HTTPS|
+|Originator ID|Implemented|HTTPS|
+|Originator Key|Implemented|HTTPS|
+.13+|Storage|Display IP|Implemented|HTTPS|
+|Failed Raw Capacity|Implemented|HTTPS|Raw capacity of failed disks (sum of all disks that are failed)
+|Family|Implemented|HTTPS|The storage Family could be Clariion, Symmetrix, et al
+|IP|Implemented|HTTPS|
+|Manufacturer|Implemented|HTTPS|
+|Microcode Version|Implemented|HTTPS|
+|Model|Implemented|HTTPS|
+|Name|Implemented|HTTPS|
+|Total Raw Capacity|Implemented|HTTPS|Total raw capacity (sum of all disks on the array)
+|Serial Number|Implemented|HTTPS|
+|Spare Raw Capacity|Implemented|HTTPS|Raw capacity of spare disks (sum of all disks that are spare)
+|SupportActive Active|Implemented|HTTPS|Specified if the storage supports active-active configurations
+|Virtual|Implemented|HTTPS|Is this a storage virtualization device?
+.2+|Storage Node|Name|Implemented|HTTPS|
+|UUID|Implemented|HTTPS|
+.12+|Storage Pool|Include In Dwh Capacity|Implemented|HTTPS|A way from ACQ to control which storage pools are interesting in DWH Capacity
+|Name|Implemented|HTTPS|
+|Physical Disk Capacity (MB)|Implemented|HTTPS|used as raw capacity for storage pool
+|Raid Group|Implemented|HTTPS|indicates whether this storagePool is a raid group
+|Raw to Usable Ratio|Implemented|HTTPS|ratio to convert from usable capacity to raw capacity
+|Status|Implemented|HTTPS|
+|Storage Pool Id|Implemented|HTTPS|
+|Thin Provisioning Supported|Implemented|HTTPS|Whether this internal volume supports thin provisioning for the volume layer on top of it
+|Total Allocated Capacity|Implemented|HTTPS|
+|Total Used Capacity|Implemented|HTTPS|Total capacity in MB
+|Type|Gap|HTTPS|
+|Virtual|Implemented|HTTPS|Is this a storage virtualization device?
+.8+|Volume|Capacity|Implemented|HTTPS|Snapshot Used capacity in MB
+|Junction Path|Implemented|HTTPS|
+|Name|Implemented|HTTPS|
+|Total Raw Capacity|Implemented|HTTPS|Total raw capacity (sum of all disks on the array)
+|Storage Pool Id|Implemented|HTTPS|
+|Thin Provisioned|Implemented|HTTPS|
+|UUID|Implemented|HTTPS|
+|Host IPs|Implemented|HTTPS|
+.12+|performance .12+|Storage|Failed Raw Capacity|Implemented||
+|Raw Capacity|Implemented||
+|Spare Raw Capacity|Implemented||Raw capacity of spare disks (sum of all disks that are spare)
+|StoragePools Capacity|Implemented||
+|IOPs Read|Implemented||Number of read IOPs on the disk
+|IOPs Total|Implemented||
+|IOPs Write|Implemented||
+|Key|Implemented||
+|Server ID|Implemented||
+|Throughput Read|Implemented||
+|Throughput Total|Implemented||Average disk total rate (read and write across all disks) in MB/s
+|Throughput Write|Implemented||
+
+|===
+
+Management APIs used by this data collector:
+|===
+^|API ^|Protocol Used ^|Transport layer protocol used ^|Incoming ports used ^|Outgoing ports used ^|Supports authentication ^|Requires only 'Read-only' credentials ^|Supports Encryption ^|Firewall friendly (static ports) 
+
+|EMC ScaleIO & PowerFlex REST API
+|HTTPS
+|HTTPS
+|443
+|
+|true
+|true
+|true
+|true
+
+|===
+
 == EMC Symmetrix CLI
 
 Models and versions supported by this data collector:
@@ -3788,9 +3861,9 @@ V9.1.0.6
 V9.2.3.0
 V9.2.3.1
 V9.2.3.6
-V9.2.4.11
 V9.2.4.13
 V9.2.4.14
+V9.2.4.15
 V9.2.4.3
 V9.2.4.6
 V9.2.4.7
@@ -3801,26 +3874,19 @@ unavailable
 PowerMax_8000
 VMAX-1
 VMAX100K
-VMAX10K
 VMAX250F
 VMAX400K
 VMAX450F
 VMAX950F
 |5876.286.194(16F40000) build 115
-5876.309.196(16F40000) build 162
 5876.309.196(16F40000) build 94
 5977.1151.1151(17590000) build 60
 5978.711.711(175A0000) build 448
-5978.711.711(175A0000) build 484
-5978.714.714(175A0000) build 101
 5978.714.714(175A0000) build 117
 5978.714.714(175A0000) build 137
 5978.714.714(175A0000) build 145
 5978.714.714(175A0000) build 147
-5978.714.714(175A0000) build 149
-5978.714.714(175A0000) build 184
 5978.714.714(175A0000) build 185
-5978.714.714(175A0000) build 236
 5978.714.714(175A0000) build 252
 5978.714.714(175A0000) build 49
 5978.714.714(175A0000) build 53
@@ -3829,13 +3895,14 @@ VMAX950F
 5978.720.720(175A0000) build 38
 5978.720.720(175A0000) build 56
 5978.720.720(175A0000) build 6
+5978.720.720(175A0000) build 75
 
 |===
 Products supported by this data collector:
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
 
-.144+|foundation .3+|Device Group|Name|Implemented||
+.125+|foundation .3+|Device Group|Name|Implemented||
 |Storage Management Id|Implemented||
 |Type|Gap||
 .12+|Disk|Capacity (GB)|Implemented||Used capacity
@@ -3858,25 +3925,6 @@ Products supported by this data collector:
 |Used Capacity|Implemented||
 |Vendor DiskGroup Type|Implemented||vendor's designation of the disk group type
 |Virtual|Implemented||Is this a storage virtualization device?
-.4+|ISCSI Network Portal|IP|Implemented||
-|Listening Port|Implemented||
-|Nic|Implemented||
-|OID|Implemented||
-.3+|ISCSI Network Portal Group|OID|Implemented||
-|Portal Group Name|Implemented||
-|Portal Group Tag|Implemented||
-.3+|ISCSI Node|Node Name|Implemented||
-|OID|Implemented||
-|Type|Gap||
-.2+|ISCSI Node Map|OID|Implemented||
-|Portal Group OID|Implemented||
-.7+|ISCSI Session|Initiator Ips|Implemented||
-|Initiator OID|Implemented||
-|Max Connections|Implemented||
-|Number Of Connections|Implemented||
-|OID|Implemented||
-|Portal Group OID|Implemented||
-|Security|Implemented||
 .10+|Info|Api Description|Implemented||
 |Api Name|Implemented||
 |Api Version|Implemented||
@@ -4374,17 +4422,15 @@ Unity 650F
 Unity 680
 Unity 880
 Unity 880F
-UnityVSA
 |4.1.2.9257522
-5.1.1.0.5.005
 5.1.2.0.5.007
-5.2.1.0.5.013
 5.3.0.0.5.120
 5.3.1.0.5.008
 5.4.0.0.5.094
 5.4.1.0.5.006
 5.5.0.0.5.259
 5.5.2.0.5.014
+5.5.3.0.5.057
 5.5.4.0.5.037
 
 |===
@@ -4392,7 +4438,7 @@ Products supported by this data collector:
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
 
-.121+|foundation .15+|Disk|Capacity (GB)|Implemented|HTTPS|Used capacity
+.116+|foundation .15+|Disk|Capacity (GB)|Implemented|HTTPS|Used capacity
 |Disk Id|Implemented|HTTPS|Uniquely identifies this disk in the array
 |Group|Implemented|HTTPS|
 |Location|Gap|HTTPS|Where this disk is physically located in the array
@@ -4418,10 +4464,6 @@ Products supported by this data collector:
 |Name|Implemented|HTTPS|
 |Path|Implemented|HTTPS|Path of the fileShare
 |Qtree Id|Implemented|HTTPS|unique id of the qtree
-.4+|ISCSI Network Portal|IP|Implemented|HTTPS|
-|Listening Port|Implemented|HTTPS|
-|Nic|Implemented|HTTPS|
-|OID|Implemented|HTTPS|
 .3+|ISCSI Network Portal Group|OID|Implemented|HTTPS|
 |Portal Group Name|Implemented|HTTPS|
 |Portal Group Tag|Implemented|HTTPS|
@@ -4471,9 +4513,8 @@ Products supported by this data collector:
 |Serial Number|Implemented|HTTPS|
 |State|Implemented|HTTPS|free text describing the device state 
 |UUID|Implemented|HTTPS|
-.17+|Storage Pool|Compression Enabled|Implemented|HTTPS|Is compression enabled on the storage pool
+.16+|Storage Pool|Compression Enabled|Implemented|HTTPS|Is compression enabled on the storage pool
 |Compression Savings|Implemented|HTTPS|ratio of compression savings in percentage
-|Dedupe Enabled|Implemented|HTTPS|Is dedupe enabled on the storage pool
 |Include In Dwh Capacity|Implemented|HTTPS|A way from ACQ to control which storage pools are interesting in DWH Capacity
 |Name|Implemented|HTTPS|
 |Physical Disk Capacity (MB)|Implemented|HTTPS|used as raw capacity for storage pool
@@ -4598,8 +4639,6 @@ Models and versions supported by this data collector:
 |VPLEX
 mn-216
 |6.2.0.03.00.02
-6.2.0.04.00.07
-6.2.0.06.00.07
 6.2.0.07.00.02
 6.2.1.0.0.519
 6.2.1.1.0.78
@@ -5210,6 +5249,7 @@ Models and versions supported by this data collector:
 
 |Hitachi Content Platform
 |10.0.1.4
+10.1.0.100
 9.7.2.27
 9.7.3.14
 
@@ -5452,11 +5492,9 @@ XP8
 0986/A-H
 DKC:60-08-22
 DKC:70-06-43
-DKC:90-09-25
 DKC:90-09-28
 SVP:60-08-21/00
 SVP:70-06-30/00
-SVP:90-09-25/00
 SVP:90-09-28/00
 
 |===
@@ -5670,45 +5708,53 @@ VSP F700
 VSP F900
 VSP G1000
 VSP G350
-VSP G700
 VSP G800
 VSP One B26
 VSP One B28
+VSP One B85
 XP8
 |80-06-86-00/00:01-76-03/03
 80-06-96-00/00:01-76-03/03
+80-06-96-00/00:01-88-03/03
 83-05-51-60/00:01-76-03/03
+83-05-51-60/00:01-88-03/03
 88-08-10-60/00:01-76-03/03
-88-08-12-60/00:01-57-03/00
 88-08-12-60/00:01-76-03/03
 88-08-13-60/01:01-76-03/03
-88-08-15-21/00:01-76-03/03
 88-08-16-21/10:01-76-03/03
 88-08-19-60/00:01-76-03/03
+88-08-19-60/00:01-88-03/03
 88-08-20-60/00:01-76-03/03
+88-08-21-60/00:01-76-03/03
+88-08-21-60/00:01-88-03/03
 90-09-24-00/01:01-76-03/03
-90-09-24:01.65.05
 90-09-24:01.72.00
 90-09-26-00/00:01-76-03/03
 90-09-27-00/01:01-76-03/03
 90-09-28-00/00:01-65-03/05
 90-09-28-00/00:01-76-03/03
-90-09-30-00/00:01-65-03/05
 90-09-30-00/00:01-76-03/03
 90-09-30-00/00:01-87-03/03
 90-09-30-00/00:01-88-03/03
 90-09-31-00/20:01-76-03/03
 90-09-31-00/20:01-88-03/03
+90-09-32-00/00:01-76-03/03
+90-09-32-00/00:01-87-03/03
 93-07-22-40/00:01-76-03/03
-93-07-25-40/00:01-76-03/03
 93-07-29-40/00:01-76-03/03
-93-07-29-80/00:01-65-03/05
 93-07-29-80/00:01-76-03/03
 93-07-29-80/00:01-87-03/03
+93-07-30-40/20:01-76-03/03
+93-07-30-40/20:01-88-03/03
+93-07-30-80/20:01-76-03/03
+93-07-30-80/20:01-88-03/03
+93-07-31-80/00:01-87-03/03
+A0-05-43-00/00:01-88-03/03
 A3-04-21-40/00:01-88-03/03
 A3-04-22-40/00:01-76-03/03
 A3-04-22-40/00:01-88-03/03
 A3-04-23-40/01:01-88-03/03
+A3-05-22-40/00:01-88-03/03
 null:null
 
 |===
@@ -5716,7 +5762,7 @@ Products supported by this data collector:
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
 
-.103+|foundation .15+|Disk|Capacity (GB)|Implemented||
+.110+|foundation .15+|Disk|Capacity (GB)|Implemented||
 |Disk Id|Implemented||
 |Group|Implemented||
 |Location|Gap||
@@ -5753,6 +5799,13 @@ Products supported by this data collector:
 |Type|Gap||
 .2+|ISCSI Node Map|OID|Implemented||
 |Portal Group OID|Implemented||
+.7+|ISCSI Session|Initiator Ips|Implemented||
+|Initiator OID|Implemented||
+|Max Connections|Implemented||
+|Number Of Connections|Implemented||
+|OID|Implemented||
+|Portal Group OID|Implemented||
+|Security|Implemented||
 .4+|Info|DataSource Name|Implemented||
 |Date|Implemented||
 |Originator ID|Implemented||
@@ -5959,7 +6012,6 @@ InServ V400
 P09
 P10
 P102
-P103
 P106
 P107
 P109
@@ -6038,13 +6090,11 @@ P52
 P56
 P58
 P59
-P60
 P61
 P72
 P74
 P76
 P77
-P78
 P84
 P85
 P90
@@ -6514,12 +6564,16 @@ Models and versions supported by this data collector:
 5500 V5
 5800 V3
 6800 V3
+6800 V5
 Dorado 18000 V6 NVMe
 Dorado 5000 V3
 Dorado 6000 V3
 Dorado 6000 V6 NVMe
-|V300R002C10
+|V300R001C01
+V300R001C21
+V300R002C10
 V300R006C50
+V500R007C10
 V500R007C61
 V500R007C71 Kunpeng
 V600R005C26
@@ -6531,7 +6585,7 @@ Products supported by this data collector:
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
 
-.107+|foundation .14+|Disk|Capacity (GB)|Implemented|HTTPS|Used capacity
+.126+|foundation .14+|Disk|Capacity (GB)|Implemented|HTTPS|Used capacity
 |Disk Id|Implemented|HTTPS|Uniquely identifies this disk in the array
 |Location|Gap|HTTPS|Where this disk is physically located in the array
 |Model|Implemented|HTTPS|
@@ -6550,6 +6604,25 @@ Products supported by this data collector:
 |Name|Implemented|HTTPS|
 |Path|Implemented|HTTPS|Path of the fileShare
 |Qtree Id|Implemented|HTTPS|unique id of the qtree
+.4+|ISCSI Network Portal|IP|Implemented|HTTPS|
+|Listening Port|Implemented|HTTPS|
+|Nic|Implemented|HTTPS|
+|OID|Implemented|HTTPS|
+.3+|ISCSI Network Portal Group|OID|Implemented|HTTPS|
+|Portal Group Name|Implemented|HTTPS|
+|Portal Group Tag|Implemented|HTTPS|
+.3+|ISCSI Node|Node Name|Implemented|HTTPS|
+|OID|Implemented|HTTPS|
+|Type|Gap|HTTPS|
+.2+|ISCSI Node Map|OID|Implemented|HTTPS|
+|Portal Group OID|Implemented|HTTPS|
+.7+|ISCSI Session|Initiator Ips|Implemented|HTTPS|
+|Initiator OID|Implemented|HTTPS|
+|Max Connections|Implemented|HTTPS|
+|Number Of Connections|Implemented|HTTPS|
+|OID|Implemented|HTTPS|
+|Portal Group OID|Implemented|HTTPS|
+|Security|Implemented|HTTPS|
 .4+|Info|DataSource Name|Implemented|HTTPS|Info
 |Date|Implemented|HTTPS|
 |Originator ID|Implemented|HTTPS|
@@ -7139,7 +7212,6 @@ Models and versions supported by this data collector:
 4657-924
 4657-92G
 4662-12G
-4662-24G
 4662-6H2
 4662-7H2
 4666-AH8
@@ -7151,7 +7223,7 @@ Models and versions supported by this data collector:
 4983-AH8
 5075-A30
 5078-A40
-9848-AF7
+5127-A20
 9848-AF8
 9848-AG8
 9848-UG8
@@ -7160,26 +7232,21 @@ SVC
 7.8.1.10
 7.8.1.11
 7.8.1.12
-7.8.1.14
 7.8.1.5
-7.8.1.8
 8.1.3.5
 8.2.1.8
 8.3.1.5
-8.3.1.7
 8.4.0.11
 8.4.0.15
 8.4.0.9
-8.4.2.0
 8.5.0.11
 8.5.0.12
 8.5.0.13
 8.5.0.14
-8.5.0.15
 8.5.0.16
 8.5.0.17
+8.5.0.18
 8.5.0.5
-8.5.0.6
 8.5.0.7
 8.5.0.8
 8.5.0.9
@@ -7190,7 +7257,6 @@ SVC
 8.6.0.4
 8.6.0.5
 8.6.0.6
-8.6.0.7
 8.6.0.9
 8.7.0.0
 8.7.0.10
@@ -7210,6 +7276,7 @@ SVC
 9.1.2.1
 9.1.3.0
 9.1.3.1
+9.1.3.2
 
 |===
 Products supported by this data collector:
@@ -8096,17 +8163,14 @@ Models and versions supported by this data collector:
 |ONTAPI version=1.17
 ONTAPI version=1.19
 ONTAPI version=1.21
-ONTAPI version=1.9
 |FAS2040
 FAS2220
 FAS2240-2
 FAS2552
-FAS3140
 FAS3250
 FAS3270
 FAS8040
-|7.3.2P3
-8.1.1 7-Mode
+|8.1.1 7-Mode
 8.1.4P9D18 7-Mode
 8.2.3P2 7-Mode
 8.2.4P4 7-Mode
@@ -8119,7 +8183,7 @@ Products supported by this data collector:
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
 
-.178+|foundation .4+|Capability|Active|Implemented||
+.177+|foundation .4+|Capability|Active|Implemented||
 |Licensed|Implemented||
 |Type|Gap||
 |Used|Implemented||
@@ -8232,12 +8296,11 @@ Products supported by this data collector:
 |Protocol|Implemented||enum for share protocol
 .2+|Share Initiator|Initiator|Implemented||
 |Permission|Implemented||Permissions for this particular share
-.15+|Storage|Cpu Count|Implemented||Cpu Count of the storage
+.14+|Storage|Cpu Count|Implemented||Cpu Count of the storage
 |Display IP|Implemented||
 |Failed Raw Capacity|Implemented||Raw capacity of failed disks (sum of all disks that are failed)
 |Family|Implemented||The storage Family could be Clariion, Symmetrix, et al
 |IP|Implemented||
-|Manage URL|Implemented||
 |Manufacturer|Implemented||
 |Memory|Implemented||
 |Microcode Version|Implemented||
@@ -8436,256 +8499,256 @@ Management APIs used by this data collector:
 
 Models and versions supported by this data collector:
 |===
-<.<|Models <.<|Firmware versions
+<.<|Models <.<|Firmware versions 
 
-a|
-* AFF-A150
-* AFF-A1K
-* AFF-A20
-* AFF-A200
-* AFF-A220
-* AFF-A250
-* AFF-A30
-* AFF-A300
-* AFF-A320
-* AFF-A400
-* AFF-A50
-* AFF-A70
-* AFF-A700
-* AFF-A700s
-* AFF-A800
-* AFF-A90
-* AFF-A900
-* AFF-C190
-* AFF-C250
-* AFF-C30
-* AFF-C400
-* AFF-C60
-* AFF-C80
-* AFF-C800
-* AFF8020
-* AFF8040
-* AFF8080
-* ASA-A250
-* ASA-A400
-* ASA-A800
-* ASA-A900
-* ASA-C250
-* ASA-C800
-* CDvM200
-* DG5000
-* DG5200
-* DM5000H
-* FAS2520
-* FAS2552
-* FAS2554
-* FAS2620
-* FAS2650
-* FAS2720
-* FAS2750
-* FAS2820
-* FAS3250
-* FAS3270
-* FAS50
-* FAS500f
-* FAS70
-* FAS8020
-* FAS8040
-* FAS8060
-* FAS8080
-* FAS8200
-* FAS8300
-* FAS8700
-* FAS90
-* FAS9000
-* FAS9500
-* FASDvM300
-* SIMBOX
-a|
-* 8.2.3P5
-* 8.3.2P12
-* 9.0.0
-* 9.1.0P17
-* 9.1.0P19
-* 9.1.0P3
-* 9.10.0
-* 9.10.1
-* 9.10.1P10
-* 9.10.1P12
-* 9.10.1P13
-* 9.10.1P15
-* 9.10.1P17
-* 9.10.1P20
-* 9.10.1P4
-* 9.10.1P6
-* 9.11.0P1
-* 9.11.1
-* 9.11.1P10
-* 9.11.1P11
-* 9.11.1P12
-* 9.11.1P13
-* 9.11.1P14
-* 9.11.1P15
-* 9.11.1P17
-* 9.11.1P18
-* 9.11.1P19
-* 9.11.1P20
-* 9.11.1P3
-* 9.11.1P5
-* 9.11.1P7
-* 9.11.1P8
-* 9.12.1
-* 9.12.1P1
-* 9.12.1P10
-* 9.12.1P11
-* 9.12.1P12
-* 9.12.1P13
-* 9.12.1P14
-* 9.12.1P15
-* 9.12.1P16
-* 9.12.1P17
-* 9.12.1P18
-* 9.12.1P19
-* 9.12.1P2
-* 9.12.1P20
-* 9.12.1P3
-* 9.12.1P4
-* 9.12.1P5
-* 9.12.1P6
-* 9.12.1P7
-* 9.12.1P9
-* 9.13.0
-* 9.13.1
-* 9.13.1P1
-* 9.13.1P10
-* 9.13.1P11
-* 9.13.1P12
-* 9.13.1P13
-* 9.13.1P14
-* 9.13.1P16
-* 9.13.1P17
-* 9.13.1P18
-* 9.13.1P19
-* 9.13.1P2
-* 9.13.1P20
-* 9.13.1P3
-* 9.13.1P4
-* 9.13.1P6
-* 9.13.1P7
-* 9.13.1P8
-* 9.13.1P9
-* 9.14.0
-* 9.14.0P1
-* 9.14.1
-* 9.14.1P1
-* 9.14.1P10
-* 9.14.1P11
-* 9.14.1P12
-* 9.14.1P13
-* 9.14.1P14
-* 9.14.1P15
-* 9.14.1P16
-* 9.14.1P17
-* 9.14.1P2
-* 9.14.1P4
-* 9.14.1P5
-* 9.14.1P6
-* 9.14.1P7
-* 9.14.1P8
-* 9.14.1P9
-* 9.15.0P1
-* 9.15.1
-* 9.15.1P10
-* 9.15.1P11
-* 9.15.1P12
-* 9.15.1P13
-* 9.15.1P14
-* 9.15.1P15
-* 9.15.1P16
-* 9.15.1P17
-* 9.15.1P19
-* 9.15.1P2
-* 9.15.1P3
-* 9.15.1P4
-* 9.15.1P5
-* 9.15.1P6
-* 9.15.1P7
-* 9.15.1P8
-* 9.16.1
-* 9.16.1P1
-* 9.16.1P10
-* 9.16.1P11
-* 9.16.1P11D1
-* 9.16.1P12
-* 9.16.1P12D1
-* 9.16.1P13
-* 9.16.1P14
-* 9.16.1P2
-* 9.16.1P3
-* 9.16.1P4
-* 9.16.1P5
-* 9.16.1P6
-* 9.16.1P7
-* 9.16.1P8
-* 9.16.1P9
-* 9.17.1
-* 9.17.1P1
-* 9.17.1P10
-* 9.17.1P2
-* 9.17.1P3
-* 9.17.1P4
-* 9.17.1P5
-* 9.17.1P6
-* 9.17.1P6D2
-* 9.17.1P7
-* 9.17.1P8
-* 9.17.1P9
-* 9.18.1
-* 9.18.1D4
-* 9.18.1P1
-* 9.18.1P2
-* 9.18.1P3
-* 9.18.1P4
-* 9.18.1P5
-* 9.18.1P6
-* 9.19.1
-* 9.19.1X30
-* 9.19.1X39
-* 9.19.1X42
-* 9.19.1X43
-* 9.4.0P2
-* 9.5.0P16
-* 9.5.0P18
-* 9.5.0P2
-* 9.5.0P6
-* 9.5.0P7
-* 9.6.0
-* 9.6.0P11
-* 9.6.0P2
-* 9.7.0P12
-* 9.7.0P17
-* 9.7.0P19
-* 9.7.0P20
-* 9.7.0P21
-* 9.7.0P22
-* 9.7.0P23
-* 9.7.0P6
-* 9.8.0P10
-* 9.8.0P11
-* 9.8.0P12
-* 9.8.0P14
-* 9.8.0P18
-* 9.8.0P19
-* 9.8.0P20
-* 9.8.0P21
-* 9.8.0P4
-* 9.8.0P8
-* 9.8.0P9
-* 9.9.1P15
-* 9.9.1P16
-* 9.9.1P20
-* 9.9.1P7
-* 9.9.1P8
+|AFF-A150
+AFF-A1K
+AFF-A20
+AFF-A200
+AFF-A220
+AFF-A250
+AFF-A30
+AFF-A300
+AFF-A320
+AFF-A400
+AFF-A50
+AFF-A70
+AFF-A700
+AFF-A700s
+AFF-A800
+AFF-A90
+AFF-A900
+AFF-C190
+AFF-C250
+AFF-C30
+AFF-C400
+AFF-C60
+AFF-C80
+AFF-C800
+AFF8020
+AFF8040
+AFF8080
+ASA-A250
+ASA-A400
+ASA-A800
+ASA-A900
+ASA-C250
+ASA-C800
+CDvM200
+DG5000
+DG5200
+DM5000H
+FAS2520
+FAS2552
+FAS2554
+FAS2620
+FAS2650
+FAS2720
+FAS2750
+FAS2820
+FAS3250
+FAS3270
+FAS50
+FAS500f
+FAS70
+FAS8020
+FAS8040
+FAS8060
+FAS8080
+FAS8200
+FAS8300
+FAS8700
+FAS90
+FAS9000
+FAS9500
+FASDvM300
+SIMBOX
+|8.2.3P5 clustered Data ONTAP
+8.3.2P12 clustered Data ONTAP
+9.0.0 clustered Data ONTAP
+9.1.0P17 clustered Data ONTAP
+9.1.0P19 clustered Data ONTAP
+9.1.0P3 clustered Data ONTAP
+9.10.0 clustered Data ONTAP
+9.10.1 clustered Data ONTAP
+9.10.1P10 clustered Data ONTAP
+9.10.1P12 clustered Data ONTAP
+9.10.1P13 clustered Data ONTAP
+9.10.1P14 clustered Data ONTAP
+9.10.1P17 clustered Data ONTAP
+9.10.1P20 clustered Data ONTAP
+9.10.1P4 clustered Data ONTAP
+9.11.1 clustered Data ONTAP
+9.11.1P10 clustered Data ONTAP
+9.11.1P11 clustered Data ONTAP
+9.11.1P12 clustered Data ONTAP
+9.11.1P13 clustered Data ONTAP
+9.11.1P14 clustered Data ONTAP
+9.11.1P15 clustered Data ONTAP
+9.11.1P17 clustered Data ONTAP
+9.11.1P18 clustered Data ONTAP
+9.11.1P19 clustered Data ONTAP
+9.11.1P20 clustered Data ONTAP
+9.11.1P3 clustered Data ONTAP
+9.11.1P5 clustered Data ONTAP
+9.11.1P7 clustered Data ONTAP
+9.11.1P8 clustered Data ONTAP
+9.12.1 clustered Data ONTAP
+9.12.1P1 clustered Data ONTAP
+9.12.1P10 clustered Data ONTAP
+9.12.1P11 clustered Data ONTAP
+9.12.1P12 clustered Data ONTAP
+9.12.1P13 clustered Data ONTAP
+9.12.1P14 clustered Data ONTAP
+9.12.1P15 clustered Data ONTAP
+9.12.1P16 clustered Data ONTAP
+9.12.1P17 clustered Data ONTAP
+9.12.1P18 clustered Data ONTAP
+9.12.1P19 clustered Data ONTAP
+9.12.1P2 clustered Data ONTAP
+9.12.1P20 clustered Data ONTAP
+9.12.1P3 clustered Data ONTAP
+9.12.1P4 clustered Data ONTAP
+9.12.1P5 clustered Data ONTAP
+9.12.1P6 clustered Data ONTAP
+9.12.1P7 clustered Data ONTAP
+9.12.1P9 clustered Data ONTAP
+9.13.0 clustered Data ONTAP
+9.13.1 clustered Data ONTAP
+9.13.1P1 clustered Data ONTAP
+9.13.1P10 clustered Data ONTAP
+9.13.1P11 clustered Data ONTAP
+9.13.1P12 clustered Data ONTAP
+9.13.1P13 clustered Data ONTAP
+9.13.1P14 clustered Data ONTAP
+9.13.1P16 clustered Data ONTAP
+9.13.1P17 clustered Data ONTAP
+9.13.1P18 clustered Data ONTAP
+9.13.1P19 clustered Data ONTAP
+9.13.1P2 clustered Data ONTAP
+9.13.1P20 clustered Data ONTAP
+9.13.1P21 clustered Data ONTAP
+9.13.1P3 clustered Data ONTAP
+9.13.1P4 clustered Data ONTAP
+9.13.1P6 clustered Data ONTAP
+9.13.1P7 clustered Data ONTAP
+9.13.1P8 clustered Data ONTAP
+9.13.1P9 clustered Data ONTAP
+9.14.0 clustered Data ONTAP
+9.14.0P1 clustered Data ONTAP
+9.14.1 clustered Data ONTAP
+9.14.1P1 clustered Data ONTAP
+9.14.1P10 clustered Data ONTAP
+9.14.1P11 clustered Data ONTAP
+9.14.1P12 clustered Data ONTAP
+9.14.1P13 clustered Data ONTAP
+9.14.1P14 clustered Data ONTAP
+9.14.1P15 clustered Data ONTAP
+9.14.1P16 clustered Data ONTAP
+9.14.1P17 clustered Data ONTAP
+9.14.1P18 clustered Data ONTAP
+9.14.1P2 clustered Data ONTAP
+9.14.1P4 clustered Data ONTAP
+9.14.1P5 clustered Data ONTAP
+9.14.1P6 clustered Data ONTAP
+9.14.1P7 clustered Data ONTAP
+9.14.1P8 clustered Data ONTAP
+9.14.1P9 clustered Data ONTAP
+9.15.0P1 clustered Data ONTAP
+9.15.1 clustered Data ONTAP
+9.15.1P10 clustered Data ONTAP
+9.15.1P11 clustered Data ONTAP
+9.15.1P12 clustered Data ONTAP
+9.15.1P13 clustered Data ONTAP
+9.15.1P14 clustered Data ONTAP
+9.15.1P15 clustered Data ONTAP
+9.15.1P16 clustered Data ONTAP
+9.15.1P17 clustered Data ONTAP
+9.15.1P19 clustered Data ONTAP
+9.15.1P2 clustered Data ONTAP
+9.15.1P20 clustered Data ONTAP
+9.15.1P3 clustered Data ONTAP
+9.15.1P4 clustered Data ONTAP
+9.15.1P5 clustered Data ONTAP
+9.15.1P6 clustered Data ONTAP
+9.15.1P7 clustered Data ONTAP
+9.15.1P8 clustered Data ONTAP
+9.16.1 clustered Data ONTAP
+9.16.1P1 clustered Data ONTAP
+9.16.1P10 clustered Data ONTAP
+9.16.1P11 clustered Data ONTAP
+9.16.1P12 clustered Data ONTAP
+9.16.1P13 clustered Data ONTAP
+9.16.1P14 clustered Data ONTAP
+9.16.1P15 clustered Data ONTAP
+9.16.1P2 clustered Data ONTAP
+9.16.1P3 clustered Data ONTAP
+9.16.1P4 clustered Data ONTAP
+9.16.1P5 clustered Data ONTAP
+9.16.1P6 clustered Data ONTAP
+9.16.1P7 clustered Data ONTAP
+9.16.1P8 clustered Data ONTAP
+9.16.1P9 clustered Data ONTAP
+9.17.1 clustered Data ONTAP
+9.17.1P1 clustered Data ONTAP
+9.17.1P10 clustered Data ONTAP
+9.17.1P11 clustered Data ONTAP
+9.17.1P2 clustered Data ONTAP
+9.17.1P3 clustered Data ONTAP
+9.17.1P4 clustered Data ONTAP
+9.17.1P5 clustered Data ONTAP
+9.17.1P6 clustered Data ONTAP
+9.17.1P6D2 clustered Data ONTAP
+9.17.1P7 clustered Data ONTAP
+9.17.1P8 clustered Data ONTAP
+9.17.1P9 clustered Data ONTAP
+9.18.1 clustered Data ONTAP
+9.18.1P1 clustered Data ONTAP
+9.18.1P2 clustered Data ONTAP
+9.18.1P3 clustered Data ONTAP
+9.18.1P4 clustered Data ONTAP
+9.18.1P5 clustered Data ONTAP
+9.18.1P6 clustered Data ONTAP
+9.18.1P7 clustered Data ONTAP
+9.19.1 clustered Data ONTAP
+9.19.1P2 clustered Data ONTAP
+9.19.1P3 clustered Data ONTAP
+9.19.1X39 clustered Data ONTAP
+9.19.1X42 clustered Data ONTAP
+9.19.1X43 clustered Data ONTAP
+9.20.1 clustered Data ONTAP
+9.4.0P2 clustered Data ONTAP
+9.5.0P16 clustered Data ONTAP
+9.5.0P18 clustered Data ONTAP
+9.5.0P2 clustered Data ONTAP
+9.5.0P7 clustered Data ONTAP
+9.6.0 clustered Data ONTAP
+9.6.0P11 clustered Data ONTAP
+9.6.0P2 clustered Data ONTAP
+9.7.0P12 clustered Data ONTAP
+9.7.0P17 clustered Data ONTAP
+9.7.0P19 clustered Data ONTAP
+9.7.0P20 clustered Data ONTAP
+9.7.0P21 clustered Data ONTAP
+9.7.0P22 clustered Data ONTAP
+9.7.0P23 clustered Data ONTAP
+9.7.0P6 clustered Data ONTAP
+9.8.0P10 clustered Data ONTAP
+9.8.0P11 clustered Data ONTAP
+9.8.0P12 clustered Data ONTAP
+9.8.0P14 clustered Data ONTAP
+9.8.0P18 clustered Data ONTAP
+9.8.0P19 clustered Data ONTAP
+9.8.0P20 clustered Data ONTAP
+9.8.0P21 clustered Data ONTAP
+9.8.0P4 clustered Data ONTAP
+9.8.0P8 clustered Data ONTAP
+9.8.0P9 clustered Data ONTAP
+9.9.1P15 clustered Data ONTAP
+9.9.1P16 clustered Data ONTAP
+9.9.1P20 clustered Data ONTAP
+9.9.1P7 clustered Data ONTAP
+9.9.1P8 clustered Data ONTAP
 
 |===
 Products supported by this data collector:
@@ -9149,8 +9212,8 @@ Models and versions supported by this data collector:
 7999
 |08.40.60.01
 08.80.00.00
+2.10.1.0
 58.90.55.79
-68.90.0.44
 7.84.46.0
 8.20.16.0
 8.20.27.0
@@ -9166,7 +9229,6 @@ Models and versions supported by this data collector:
 8.40.60.1
 8.40.60.2
 8.42.20.0
-8.50.0.4
 8.51.0.0
 8.52.0.0
 8.52.0.1
@@ -9211,7 +9273,6 @@ Models and versions supported by this data collector:
 98.90.10.0
 98.90.28.0
 98.90.33.0
-98.90.52.0
 98.90.56.0
 98.90.57.0
 98.90.9.0
@@ -9427,7 +9488,8 @@ Models and versions supported by this data collector:
 4000
 5700
 EF570
-|08.52.00.01
+|02.10.01.00
+08.52.00.01
 08.53.00.04
 08.53.00.09
 08.62.00.02
@@ -9466,7 +9528,6 @@ EF570
 98.81.09.00
 98.90.09.00
 98.90.33.00
-98.90.52.00
 98.90.56.00
 98.90.57.00
 
@@ -9670,79 +9731,6 @@ Management APIs used by this data collector:
 
 |===
 
-== NetApp HCI Virtual Center
-
-Models and versions supported by this data collector:
-API versions: 
-
-* VMware vCenter Server 7.0.3 build-20395099
-
-
-Products supported by this data collector:
-|===
-^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
-
-.42+|foundation .6+|LUN|Disk Name|Implemented|Web Services|
-|Host OID|Implemented|Web Services|
-|Number|Implemented|Web Services|
-|OID|Implemented|Web Services|
-|Policy|Implemented|Web Services|
-|TID|Implemented|Web Services|
-.6+|Path|Active|Implemented|Web Services|
-|Lun OID|Implemented|Web Services|
-|Host Port WWPN|Implemented|Web Services|
-|OID|Implemented|Web Services|
-|Storage Port WWPN|Implemented|Web Services|
-|Type|Gap|Web Services|
-.6+|Server|Cluster|Implemented|Web Services|Cluster name
-|DataCenter Name|Implemented|Web Services|
-|Host OID|Implemented|Web Services|
-|MOID|Implemented|Web Services|
-|OID|Implemented|Web Services|
-|Virtual Center Ip|Implemented|Web Services|
-.12+|Host|Host Cpu Count|Implemented|Web Services|
-|Host Cpu Speed|Implemented|Web Services|
-|Host Domain|Implemented|Web Services|
-|Host Installed Memory|Implemented|Web Services|
-|Host Model|Implemented|Web Services|
-|NIC count|Implemented|Web Services|
-|NIC speed|Implemented|Web Services|
-|IPs|Implemented|Web Services|
-|Manufacturer|Implemented|Web Services|
-|Name|Implemented|Web Services|
-|OID|Implemented|Web Services|
-|Platform Type|Implemented|Web Services|
-.4+|ISCSI Node|Host Aliases|Implemented|Web Services|
-|Node Name|Implemented|Web Services|
-|OID|Implemented|Web Services|
-|Type|Gap|Web Services|
-.8+|Info|Api Description|Implemented|Web Services|
-|Api Name|Implemented|Web Services|
-|Api Version|Implemented|Web Services|
-|Client Api Name|Implemented|Web Services|
-|Client Api Version|Implemented|Web Services|
-|DataSource Name|Implemented|Web Services|Info
-|Date|Implemented|Web Services|
-|Originator ID|Implemented|Web Services|
-.0+|performance 
-|===
-
-Management APIs used by this data collector:
-|===
-^|API ^|Protocol Used ^|Transport layer protocol used ^|Incoming ports used ^|Outgoing ports used ^|Supports authentication ^|Requires only 'Read-only' credentials ^|Supports Encryption ^|Firewall friendly (static ports) 
-
-|VMware REST API
-|Web Services
-|HTTP/HTTPS
-|80/443
-|
-|true
-|true
-|true
-|true
-
-|===
-
 == NetApp ONTAP REST
 
 Models and versions supported by this data collector:
@@ -9763,6 +9751,7 @@ AFF-A700
 AFF-A800
 AFF-A90
 AFF-A900
+AFF-C190
 AFF-C250
 AFF-C30
 AFF-C400
@@ -9797,14 +9786,15 @@ NetApp Release 9.14.1P6: Tue Jun 18 16:11:44 UTC 2024
 NetApp Release 9.15.1: Thu Jul 04 07:17:54 UTC 2024
 NetApp Release 9.15.1P10: Thu Apr 17 14:04:43 UTC 2025
 NetApp Release 9.15.1P11: Wed May 21 22:53:05 UTC 2025
+NetApp Release 9.15.1P12: Fri Jun 20 16:04:19 UTC 2025
 NetApp Release 9.15.1P13: Tue Jul 15 14:07:45 UTC 2025
 NetApp Release 9.15.1P14: Tue Aug 05 15:53:54 UTC 2025
 NetApp Release 9.15.1P15: Sun Oct 05 06:25:31 UTC 2025
 NetApp Release 9.15.1P16: Sat Nov 29 23:46:11 UTC 2025
 NetApp Release 9.15.1P17: Tue Feb 10 12:35:50 UTC 2026
 NetApp Release 9.15.1P19: Sat May 09 17:13:04 UTC 2026
+NetApp Release 9.15.1P20: Thu Aug 20 10:17:54 UTC 2026
 NetApp Release 9.15.1P3: Wed Sep 25 22:33:44 UTC 2024
-NetApp Release 9.15.1P4: Sun Oct 27 20:15:53 UTC 2024
 NetApp Release 9.15.1P6: Wed Dec 04 01:42:39 UTC 2024
 NetApp Release 9.15.1P7: Sat Jan 18 21:34:02 UTC 2025
 NetApp Release 9.15.1P8: Fri Mar 07 22:41:00 UTC 2025
@@ -9815,6 +9805,8 @@ NetApp Release 9.16.1P12: Wed Mar 11 12:37:44 UTC 2026
 NetApp Release 9.16.1P12D1: Fri May 15 20:58:40 UTC 2026
 NetApp Release 9.16.1P13: Fri May 08 03:41:42 UTC 2026
 NetApp Release 9.16.1P14: Thu Jul 09 16:46:59 UTC 2026
+NetApp Release 9.16.1P15: Fri Aug 14 04:40:34 UTC 2026
+NetApp Release 9.16.1P1: Fri Feb 14 03:53:50 UTC 2025
 NetApp Release 9.16.1P2: Wed Mar 19 10:28:11 UTC 2025
 NetApp Release 9.16.1P3: Thu Apr 24 02:50:10 UTC 2025
 NetApp Release 9.16.1P4: Tue May 27 23:22:56 UTC 2025
@@ -9825,6 +9817,9 @@ NetApp Release 9.16.1P8: Sat Oct 04 03:23:15 UTC 2025
 NetApp Release 9.16.1P9: Fri Nov 07 08:49:09 UTC 2025
 NetApp Release 9.17.1: Fri Sep 05 00:50:54 UTC 2025
 NetApp Release 9.17.1P10: Tue Jul 21 21:51:01 UTC 2026
+NetApp Release 9.17.1P11: Thu Aug 20 00:43:57 UTC 2026
+NetApp Release 9.17.1P11D2: Mon Sep 14 21:18:54 UTC 2026
+NetApp Release 9.17.1P1: Sat Oct 04 06:37:53 UTC 2025
 NetApp Release 9.17.1P2: Fri Nov 07 09:39:01 UTC 2025
 NetApp Release 9.17.1P3: Sun Dec 07 04:46:28 UTC 2025
 NetApp Release 9.17.1P4: Thu Jan 15 22:33:51 UTC 2026
@@ -9840,18 +9835,22 @@ NetApp Release 9.18.1P2: Sun Mar 29 12:49:32 UTC 2026
 NetApp Release 9.18.1P3: Thu May 07 19:01:14 UTC 2026
 NetApp Release 9.18.1P4: Thu Jun 04 11:38:00 UTC 2026
 NetApp Release 9.18.1P5: Thu Jul 09 23:05:16 UTC 2026
+NetApp Release 9.18.1P6: Fri Aug 07 23:43:59 UTC 2026
+NetApp Release 9.18.1P7: Thu Sep 03 20:55:20 UTC 2026
 NetApp Release 9.19.1: Sat Jul 18 20:33:10 UTC 2026
 NetApp Release 9.19.1: Thu Jul 16 06:07:43 UTC 2026
+NetApp Release 9.19.1P2: Wed Aug 19 19:38:56 UTC 2026
 NetApp Release 9.19.1RC1D2: Sat May 30 08:35:20 UTC 2026
-NetApp Release 9.19.1X30: Tue Jun 09 10:08:09 UTC 2026
 NetApp Release 9.19.1X39: Thu Jul 09 22:50:24 UTC 2026
 NetApp Release 9.19.1X42: Tue Jul 14 08:11:23 UTC 2026
 NetApp Release 9.19.1X43: Sat Jul 18 20:33:10 UTC 2026
+NetApp Release 9.20.1RC1X11: Mon Sep 28 13:47:02 UTC 2026
+NetApp Release 9.20.1RC1X9: Wed Sep 16 13:58:14 UTC 2026
 NetApp Release Cloudstream__9.16.1: Sat Jan 18 14:32:15 UTC 2025
 NetApp Release Cloudstream__9.16.1: Sun Oct 19 07:41:54 UTC 2025
-NetApp Release Electricjellyfish__9.17.1: Fri Oct 24 06:23:44 UTC 2025
-NetApp Release Electricjellyfish__9.17.1: Sat Oct 04 01:37:59 UTC 2025
 NetApp Release Kingsue__9.20.1: Wed May 27 07:06:53 UTC 2026
+NetApp Release Tropicallightning__9.18.1: Fri Aug 07 20:52:40 UTC 2026
+NetApp Release Wookeyjack__9.21.1: Mon Sep 21 06:55:54 UTC 2026
 
 |===
 Products supported by this data collector:
@@ -10083,7 +10082,7 @@ Products supported by this data collector:
 |Protocol Controller|Implemented|HTTPS|
 |Storage Port|Implemented|HTTPS|
 |Type|Gap|HTTPS|
-.152+|performance .11+|Disk|IOPs Read|Implemented|HTTPS|Number of read IOPs on the disk
+.155+|performance .11+|Disk|IOPs Read|Implemented|HTTPS|Number of read IOPs on the disk
 |IOPs Total|Implemented|HTTPS|
 |IOPs Write|Implemented|HTTPS|
 |Key|Implemented|HTTPS|
@@ -10219,10 +10218,13 @@ Products supported by this data collector:
 |Throughput Read|Implemented|HTTPS|
 |Throughput Total|Implemented|HTTPS|Average disk total rate (read and write across all disks) in MB/s
 |Throughput Write|Implemented|HTTPS|
-.16+|Volume|Raw Capacity|Implemented|HTTPS|
+.19+|Volume|Raw Capacity|Implemented|HTTPS|
 |Total Capacity|Implemented|HTTPS|
 |Used Capacity|Implemented|HTTPS|
 |Capacity Used Ratio|Implemented|HTTPS|
+|IO Density Read|Implemented|HTTPS|
+|IO Density Total|Implemented|HTTPS|
+|Write IO Density|Implemented|HTTPS|
 |IOPs Read|Implemented|HTTPS|Number of read IOPs on the disk
 |IOPs Total|Implemented|HTTPS|
 |IOPs Write|Implemented|HTTPS|
@@ -10537,11 +10539,12 @@ Models and versions supported by this data collector:
 11.9.0.7
 11.9.0.9
 12.0.0
-12.0.0.1
 12.0.0.3
 12.0.0.4
 12.0.0.6
 12.0.0.7
+12.0.0.8
+12.0.0.9
 12.1.0
 12.2.0
 
@@ -11090,7 +11093,6 @@ Sun ZFS Storage 7420
 2013.06.05.8.74
 2013.06.05.8.76
 2013.06.05.8.83
-2013.06.05.8.85
 2013.06.05.8.86
 2013.06.05.8.87
 2013.06.05.8.89
@@ -11341,40 +11343,39 @@ FA-XL130
 FA-XL130R5
 FA-XL170
 FA-XL170R5
+FA-m20
 FA-m20r2
-FA-m50r2
-FA-x70
 |6.1.14
-6.1.17
 6.10.3
 6.10.4
 6.10.6
+6.10.7
 6.3.10
 6.3.14
+6.3.17
 6.3.21
 6.5.10
 6.5.11
 6.5.12
 6.5.12.post3
 6.5.13
-6.5.2
 6.5.3
-6.5.4
 6.5.7
 6.5.8
 6.5.9
-6.7.2
 6.7.3
 6.7.4
 6.7.6
 6.7.7
 6.7.8
+6.9.1
 6.9.2
 6.9.3
 6.9.4
 6.9.5
 6.9.6
 6.9.7
+6.9.8
 
 |===
 Products supported by this data collector:
@@ -11567,9 +11568,7 @@ Models and versions supported by this data collector:
 FlashBlade//S200
 FlashBlade//S200R2
 FlashBlade//S500
-|Purity//FB 3.3.3
-Purity//FB 4.3.11
-Purity//FB 4.3.14
+|Purity//FB 4.3.11
 Purity//FB 4.3.5
 Purity//FB 4.5.11
 Purity//FB 4.5.14
@@ -11578,6 +11577,7 @@ Purity//FB 4.6.6
 Purity//FB 4.6.7
 Purity//FB 4.7.10
 Purity//FB 4.7.11
+Purity//FB 4.7.12
 
 |===
 Products supported by this data collector:
@@ -11747,13 +11747,14 @@ Firmware versions:
 
 * 6.0.3-p16-13857
 * 9.3.3-p4-29749
-* 9.4.2-p3-31101
-* 9.4.3-31180
 * 9.4.3-p1-31252
 * 9.4.3-p4-31485
 * 9.5.1-p2-36376
 * 9.5.1-p2-36376_HP72dc853
 * 9.5.2-36527
+* 9.6.0-p1-33410
+* 9.6.0-p2-33501
+* 9.6.1-p1-33607
 
 
 Products supported by this data collector:
@@ -11884,16 +11885,22 @@ Models and versions supported by this data collector:
  Build version: release-5.3.3-hf7-2198162
  Build version: release-5.3.3-sp3-2009124
  Build version: release-5.4.3-sp2-hf24-2483981
+ Build version: release-5.4.3-sp4-hf21-2650650
+ Build version: release-5.4.6-hf6-2650431
+ Build version: release-5.4.6-sp1-2679416
 System version: 5.3.3.0.10090135699003918747
 System version: 5.3.3.1.3876442573258902143
 System version: 5.4.3.1.1891089545684643723
+System version: 5.4.3.1.7633800423310192645
+System version: 5.4.6.0.15923970655878004698
+System version: 5.4.6.0.17320657730101426841
 
 |===
 Products supported by this data collector:
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
 
-.109+|foundation .14+|Disk|Capacity (GB)|Implemented|HTTPS|Used capacity
+.108+|foundation .14+|Disk|Capacity (GB)|Implemented|HTTPS|Used capacity
 |Disk Id|Implemented|HTTPS|Uniquely identifies this disk in the array
 |Location|Gap|HTTPS|Where this disk is physically located in the array
 |Model|Implemented|HTTPS|
@@ -11938,10 +11945,9 @@ Products supported by this data collector:
 .3+|QTree|Name|Implemented|HTTPS|
 |Qtree Id|Implemented|HTTPS|unique id of the qtree
 |Type|Gap|HTTPS|
-.7+|Quota|Hard Capacity Limit (MB)|Implemented|HTTPS|max amount of disk space, allowed for the quota target (Hard limit)
+.6+|Quota|Hard Capacity Limit (MB)|Implemented|HTTPS|max amount of disk space, allowed for the quota target (Hard limit)
 |Internal Volume Id|Implemented|HTTPS|
 |Quota Id|Implemented|HTTPS|unique id of the quota
-|Soft Capacity Limit (MB)|Implemented|HTTPS|Maximum amount of disk space, allowed for the quota target
 |Type|Gap|HTTPS|
 |Used Capacity|Implemented|HTTPS|
 |Used Files|Implemented|HTTPS|Number of files currently used 
@@ -12114,16 +12120,14 @@ Management APIs used by this data collector:
 Models and versions supported by this data collector:
 API versions: 
 
-* VMware vCenter Server 8.0.2 build-24721900
 * VMware vCenter Server 8.0.3 build-24322831
-* VMware vCenter Server 8.0.3 build-25413364
 
 
 Products supported by this data collector:
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
 
-.74+|foundation .8+|Data Store|Capacity|Implemented|Web Services|Snapshot Used capacity in MB
+.73+|foundation .8+|Data Store|Capacity|Implemented|Web Services|Snapshot Used capacity in MB
 |MOID|Implemented|Web Services|
 |Name|Implemented|Web Services|
 |OID|Implemented|Web Services|
@@ -12150,12 +12154,11 @@ Products supported by this data collector:
 |MOID|Implemented|Web Services|
 |OID|Implemented|Web Services|
 |Virtual Center Ip|Implemented|Web Services|
-.7+|Virtual Disk|Capacity|Implemented|Web Services|Snapshot Used capacity in MB
+.6+|Virtual Disk|Capacity|Implemented|Web Services|Snapshot Used capacity in MB
 |DataStore OID|Implemented|Web Services|
 |Name|Implemented|Web Services|
 |OID|Implemented|Web Services|
 |Type|Gap|Web Services|
-|Used Capacity|Implemented|Web Services|used capacity for reporting (MB)
 |Used Capacity|Implemented|Web Services|
 .17+|VirtualMachine|Dns Name|Implemented|Web Services|
 |Guest State|Implemented|Web Services|
@@ -12288,7 +12291,6 @@ API versions:
 * VMware vCenter Server 6.5.0 build-14020092
 * VMware vCenter Server 6.5.0 build-22499743
 * VMware vCenter Server 6.7.0 build-10244857
-* VMware vCenter Server 6.7.0 build-14070654
 * VMware vCenter Server 6.7.0 build-15129973
 * VMware vCenter Server 6.7.0 build-17137327
 * VMware vCenter Server 6.7.0 build-19299595
@@ -12314,14 +12316,15 @@ API versions:
 * VMware vCenter Server 7.0.3 build-24614210
 * VMware vCenter Server 7.0.3 build-24730281
 * VMware vCenter Server 7.0.3 build-24927011
+* VMware vCenter Server 7.0.3 build-25606036
 * VMware vCenter Server 8.0.0 build-20519528
 * VMware vCenter Server 8.0.1 build-21560480
 * VMware vCenter Server 8.0.1 build-21860503
 * VMware vCenter Server 8.0.1 build-22368047
 * VMware vCenter Server 8.0.2 build-22617221
 * VMware vCenter Server 8.0.2 build-23504390
-* VMware vCenter Server 8.0.2 build-23929136
 * VMware vCenter Server 8.0.2 build-24321653
+* VMware vCenter Server 8.0.2 build-25624321
 * VMware vCenter Server 8.0.3 build-24022515
 * VMware vCenter Server 8.0.3 build-24262322
 * VMware vCenter Server 8.0.3 build-24305161
@@ -12339,6 +12342,7 @@ API versions:
 * VMware vCenter Server 9.1.0.0100.25417926
 * VMware vCenter Server 9.1.0.0200.25573614
 * VMware vCenter Server 9.1.0.0300.25629530
+* VMware vCenter Server 9.1.1.0.25712839
 
 
 Products supported by this data collector:
