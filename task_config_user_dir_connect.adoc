@@ -7,192 +7,212 @@ summary: Configuring Workload Security Active Directory User Directory Collector
 
 = Configuring an Active Directory (AD) User Directory Collector 
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Workload Security can be configured to collect user attributes from Active Directory servers.     
+Configure the User Directory Collector before the ONTAP SVM Data Collector.
 
-.Before you begin
+Workload Security uses directory data to resolve identities in file-access activity. User Directory collectors do not provide a Test Connection function.
 
-* You must be a Data Infrastructure Insights Administrator or Account Owner to perform this task. 
-* You must have the IP address of the server hosting the Active Directory server.
-* An Agent must be configured before you configure a User Directory connector. 
+image:config_ad_user_directory_image1.png[Add User Directory dialog with Active Directory and LDAP Directory Server options.,title="Choose a User Directory type",width=652,height=211]
 
-.Steps to Configure a User Directory Collector
-
-. In the Workload Security menu, click: 
-*Collectors > User Directory Collectors > + User Directory Collector* and select *Active Directory*
-+
-The system displays the Add User Directory screen.
-
-Configure the User Directory Collector by entering the required data in the following tables:
-
-[cols=2*, cols"30,70"]
-[Options=header]
+.Choose the directory that stores the identities you need Workload Security to resolve.
+[width="100%",cols="50%,50%",options="header",]
 |===
-|Name|Description
-|Name |Unique name for the user directory. For example _GlobalADCollector_
-|Agent|Select a configured agent from the list
-|Server IP/Domain Name|IP address or Fully-Qualified Domain Name (FQDN) of server hosting the active directory
-|Forest Name|Forest level of the directory structure.
-Forest name allows both of the following formats:
+|*Select* |*Use it when*
+|Active Directory |Users are stored in Active Directory and monitored activity is SMB; or Unix users are stored in Active Directory with uidNumber values and perform NFS activity.
 
-_x.y.z_ => direct domain name as you have it on your SVM. [Example: hq.companyname.com]
+|LDAP Directory Server |Unix users are stored primarily in an LDAP directory and monitored activity is NFS.
 
-_DC=x,DC=y,DC=z_ => Relative distinguished names [Example: DC=hq,DC= companyname,DC=com]
-
-Or you can specify as the following:
-
-_OU=engineering,DC=hq,DC= companyname,DC=com_ [to filter by specific OU engineering]
-
-_CN=username,OU=engineering,DC=companyname, DC=netapp, DC=com_ [to get only specific user with <username> from OU <engineering>]
-
-_CN=Acrobat Users,CN=Users,DC=hq,DC=companyname,DC=com,O= companyname,L=Boston,S=MA,C=US_ [to get all Acrobat Users within the Users in that organization]
-
-Trusted Active Directory domains are also supported.
-
-|Bind DN|User permitted to search the directory. For example: _username@companyname.com_ or _username@domainname.com_
-|BIND password|Directory server password (i.e. password for username used in Bind DN)
-|Protocol|ldap, ldaps, ldap-start-tls
-|Ports|Select port
+|Both |Identities are split across Active Directory and LDAP. Add one collector for each authoritative directory so all monitored identities can be resolved.
 |===
 
-////
-Add to table once link is provided:
-For more details about forest names, please refer to this link:
-////
-
-Enter the following Directory Server required attributes if the default attribute names have been modified in Active Directory. Most often these attributes names are _not_ modified in Active Directory, in which case you can simply proceed with the default attribute name.
-
-[cols=2*, cols"50,50"]
-[Options=header]
+[width="100%",cols="100%",options="header",]
 |===
-|Attributes |Attribute name in Directory Server
-|Display Name|name
-|SID|objectsid
-|User Name|sAMAccountName
-|===
+a|
+*This page covers Active Directory*
 
-Click Include Optional Attributes to add any of the following attributes:
-
-[cols=2*, cols"50,50"]
-[Options=header]
-|===
-|Attributes |Attribute Name in Directory Server
-|Email Address|mail
-|Telephone Number|telephonenumber
-|Role|title
-|Country|co
-|State|state
-|Department|department
-|Photo|thumbnailphoto
-|ManagerDN|manager
-|Groups|memberOf
-|===
-
-
-//Removed based on review comments
-//Enter the following user search parameters in the Advanced Configuration attributes table: 
-
-//[cols=2*, cols"50,50"]
-//[Options=header]
-//|===
-//|*Base DN*|*Query* 
-//|Attributes //|(&(objectCategory=person)(objectClass=user))
-//|Email Address|mail
-//|Phone|telephoneNumber
-//|Country|Country
-//|State|state
-//|Department|department
-//|Photo|thumbnailPhoto
-//
-//|===
-
-== Testing Your User Directory Collector Configuration 
-
-You can validate LDAP User Permissions and Attribute Definitions using the following procedures:
-
-* Use the following command to validate Workload Security LDAP user permission:
-+
-`ldapsearch -o ldif-wrap=no -LLL -x -b "dc=netapp,dc=com" -h 10.235.40.29 -p 389 -D \Administrator@netapp.com -W`
-
-* Use AD Explorer to navigate an AD database, view object properties and attributes, view permissions, view an object's schema, execute sophisticated searches that you can save and re-execute. 
-
-** Install link:https://docs.microsoft.com/en-us/sysinternals/downloads/adexplorer[AD Explorer] on any windows machine which can connect to the AD Server.
-
-** Connect to the AD server using the username/password of the AD directory server.
-
-image:cs_ADExample.png[AD Connection]
-
-
-== Troubleshooting User Directory Collector Configuration Errors
-
-The following table describes known problems and resolutions that can occur during collector configuration:
-
-[cols=2*,  cols"50,50"]
-[options="header"]
-|===
-|Problem: | Resolution:
-|Adding a User Directory connector results in the ‘Error’ state. Error says, “Invalid credentials provided for LDAP server”.
-|Incorrect username or password provided. Edit and provide the correct user name and password.
-
-|Adding a User Directory connector results in the ‘Error’ state. Error says, “Failed to get the object corresponding to DN=DC=hq,DC=domainname,DC=com provided as forest name.”
-|Incorrect forest name provided. Edit and provide the correct forest name.
-
-|The optional attributes of domain user are not appearing in the Workload Security User Profile page.
-|This is likely due to a mismatch between the names of optional attributes added in CloudSecure and the actual attribute names in Active Directory. Edit and provide the correct optional attribute name(s). 
-
-|Data collector in error state with "Failed to retrieve LDAP users. Reason for failure: Cannot connect on the server, the connection is null"
-|Restart the collector by clicking on the _Restart_ button.
-
-|Adding a User Directory connector results in the ‘Error’ state. 
-|Ensure you have provided valid values for the required fields (Server, forest-name, bind-DN, bind-Password).
-Ensure bind-DN input is always provided as ‘Administrator@<domain_forest_name>’ or as a user account with domain admin privileges.
-
-|Adding a User Directory connector results in the ‘RETRYING’ state. Shows error “Unable to define state of the collector,reason Tcp command [Connect(localhost:35012,None,List(),Some(,seconds),true)] failed because of java.net.ConnectionException:Connection refused.”
-|Incorrect IP or FQDN provided for the AD Server. Edit and provide the correct IP address or FQDN.
-
-|Adding a User Directory connector results in the ‘Error’ state. Error says, “Failed to establish LDAP connection”.
-|Incorrect IP or FQDN provided for the AD Server. Edit and provide the correct IP address or FQDN.
-
-|Adding a User Directory connector results in the ‘Error’ state. Error says, “Failed to load the settings. Reason: Datasource configuration has an error. Specific reason: /connector/conf/application.conf: 70: ldap.ldap-port has type STRING rather than NUMBER”
-|Incorrect value for Port provided. Try using the default port values or the correct port number for the AD server.
-
-|I started with the mandatory attributes, and it worked. After adding the optional ones, the optional attributes data is not getting fetched from AD. 
-|This is likely due to a mismatch between the optional attributes added in CloudSecure and the actual attribute names in Active Directory. Edit and provide the correct mandatory or optional attribute name.
-
-|After restarting the collector, when will the AD sync happen?
-|AD sync will happen immediately after the collector restarts. It will take approximately 15 minutes to fetch user data of approximately 300K users, and is refreshed every 12 hours automatically.
-
-|User Data is synced from AD to CloudSecure. When will the data be deleted?
-|User data is retained for 13months in case of no refresh. If the tenant is deleted then the data will be deleted.
-
-|User Directory connector results in the ‘Error’ state. "Connector is in error state. Service name: usersLdap. Reason for failure: Failed to retrieve LDAP users. Reason for failure: 80090308: LdapErr: DSID-0C090453, comment: AcceptSecurityContext error, data 52e, v3839"
-|Incorrect forest name provided. See above on how to provide the correct forest name.
-
-|Telephone number is not getting populated in the user profile page.
-|This is most likely due to an attribute mapping problem with the Active Directory. 
-
-1. Edit the particular Active Directory collector which is fetching the user’s information from Active Directory.
-2. Notice under optional attributes, there is a field name “Telephone Number” mapped to Active Directory attribute ‘telephonenumber’.
-4. Now, please use the Active Directory Explorer tool as described above to browse the Active Directory and see the correct attribute name.
-3. Make sure that in Active Directory there is an attribute named ‘telephonenumber’ which has indeed the telephone number of the user.
-5. Let us say in Active Directory it has been modified to ‘phonenumber’.
-6. Then Edit the CloudSecure User Directory collector. In optional attribute section, replace ‘telephonenumber’ with ‘phonenumber’.
-7. Save the Active Directory collector, the collector will restart and get the telephone number of the user and display the same in the user profile page.
-
-|If encryption certificate (SSL) is enabled on the Active Directory (AD) Server, the Workload Security User Directory Collector can not connect to the AD Server.
-|Disable AD Server encryption before Configuring a User Directory Collector.
-Once the user detail is fetched it will be there for 13 months.
-If the AD server gets disconnected after fetching the user details, the newly added users in AD won’t get fetched. To fetch again, the user directory collector needs to be connected to AD.
-
-|Data from Active Directory is present in CloudInsights Security.
-Want to delete all the user information from CloudInsights.	
-|It is not possible to ONLY delete Active Directory user information from CloudInsights Security. In order to delete the user, the complete tenant needs to be deleted.
+Use this collector for SMB identities and for NFS identities whose Unix IDs are maintained in Active Directory.
 
 |===
 
+== Before you begin
+
+* Sign in as a Data Infrastructure Insights Administrator or Account Owner.
+* Deploy and connect a Workload Security Agent that can reach the directory server.
+* Collect the Active Directory server IP address or FQDN, Forest Name, Bind DN, and Bind password.
+* Allow the Agent to reach the directory service. Typical ports are 389 for LDAP or StartTLS and 636 for LDAPS; use the port configured on your server.
+* Use a Bind DN account that can search the required directory scope and read every attribute mapped in the collector.
+
+== Add the Active Directory collector
+
+*1.* Go to Workload Security ++>++ Collectors ++>++ User Directory Collectors and select {plus} User Directory Collector.
+
+*2.* Select Active Directory and select Continue.
+
+*3.* Complete the connection fields and attribute mappings described below.
+
+*4.* Review Advanced Configuration if computer or service accounts must be resolved.
+
+*5.* Validate the configuration with AD Explorer or ldapsearch, then select Save Collector.
+
+image:config_ad_user_directory_image2.png[Active Directory collector form showing connection fields, required and optional attribute mappings, and the Advanced Configuration Search Query.,title="Add Active Directory collector",width=504,height=754]
+
+Active Directory collector fields and default attribute mappings.
+
+=== Connection fields
+
+[width="100%",cols="34%,33%,33%",options="header",]
+|===
+|*Field* |*Requirement* |*What to enter*
+|Name++*++ |Mandatory |A unique collector name.
+
+|Agent |Mandatory |A connected Agent that can reach this AD server.
+
+|Server IP/Domain Name++*++ |Mandatory |The AD server IP address or FQDN.
+
+|Forest Name++*++ |Mandatory |A DNS domain such as hq.example.com; a DN such as DC=hq,DC=example,DC=com; or a narrower OU/CN DN when only that scope should be searched. Trusted AD domains are supported.
+
+|Bind DN++*++ |Mandatory |An account permitted to search the scope, such as ws-reader@example.com. Grant only the directory read permissions required for the mapped attributes.
+
+|Bind Password++*++ |Mandatory |The password for the Bind DN account.
+
+|Protocol |Defaulted |LDAP, LDAPS, or LDAP with StartTLS. Select the protocol used by your server.
+
+|Port++*++ |Mandatory |The numeric directory port; commonly 389 or 636.
+|===
+
+=== Mandatory attribute mappings
+
+Fields marked with an asterisk must have valid mappings. Keep the defaults unless your AD schema uses different attribute names.
+
+[width="100%",cols="34%,33%,33%",options="header",]
+|===
+|*Workload Security field* |*Default AD attribute* |*When required*
+|Display Name++*++ |name |Always
+
+|SID++*++ |objectsid |Always; resolves SMB security identifiers
+
+|User Name++*++ |sAMAccountName |Always
+
+|UNIXID |uidnumber |Required when NFS activity must be resolved for Unix users stored in AD
+|===
+
+=== Optional attribute mappings
+
+Select Include Optional Attributes only for profile data you want to import. Each mapping must match the actual AD schema. Empty or incorrect mappings do not prevent identity resolution but the profile value will not be populated.
+
+[width="100%",cols="50%,50%",options="header",]
+|===
+|*Profile value* |*Default AD attribute*
+|Email Address |mail
+|Telephone Number |telephonenumber
+|Role |title
+|State |st
+|Country |co
+|Department |department
+|Photo |thumbnailphoto
+|Manager DN |manager
+|Groups |memberof
+|===
+
+== Advanced Configuration: include the accounts you need
+
+The Search Query controls which directory objects are imported. The default query includes POSIX accounts and standard AD user objects:
+
+[width="100%",cols="100%",options="header",]
+|===
+|({vbar}(objectClass=posixAccount)(&(objectCategory=person)(objectClass=user)))
+|===
+
+A computer account, managed service account, or custom service-account object that does not match this filter remains unresolved. Inspect the object's objectClass in AD Explorer, then extend the query only for the required object types. For example:
+
+[width="100%",cols="100%",options="header",]
+|===
+|({vbar}(objectClass=posixAccount) +
+(&(objectCategory=person)(objectClass=user)) +
+(objectClass=computer) +
+(objectClass=msDS-ManagedServiceAccount) +
+(objectClass=msDS-GroupManagedServiceAccount))
+|===
+
+[width="100%",cols="100%",options="header",]
+|===
+a|
+*Do not broaden the query without checking the result*
+
+Confirm that every added branch returns only the accounts Workload Security should import. A broader query can increase sync time and import unwanted directory objects.
+
+|===
+
+== Validate the configuration
+
+[width="100%",cols="100%",options="header",]
+|===
+a|
+*Test Connection is not available for User Directory collectors*
+
+Validate network access, bind credentials, search scope, query results, and mapped attributes from a host with equivalent access before you save the collector.
+
+|===
+
+=== Use AD Explorer
+
+Connect to the Active Directory server with the intended Bind DN account. Verify that the account can browse the configured Forest Name or OU and read name, objectSid, sAMAccountName, uidNumber when used, and any optional attributes.
+
+https://learn.microsoft.com/en-us/sysinternals/downloads/adexplorer[[.underline]#Download Microsoft Sysinternals AD Explorer#]
+
+=== Use ldapsearch
+
+Run a scoped search using the intended Bind DN. Replace the examples with your directory values and add the collector's Search Query as the LDAP filter.
+
+[width="100%",cols="100%",options="header",]
+|===
+|ldapsearch -o ldif-wrap=no -LLL -x -H ldap://ad.example.com:389 -D
+"ws-reader@example.com" -W -b "DC=hq,DC=example,DC=com"
+'({vbar}(objectClass=posixAccount)(&(objectCategory=person)(objectClass=user)))'
+name objectSid sAMAccountName uidNumber
+|===
+
+* The bind succeeds with the exact account and password that the collector will use.
+* The search returns the expected human, computer, or service account.
+* Every mandatory mapped attribute exists and has a value on the returned object.
+* The Agent has the same DNS resolution and network path to the directory server.
+
+== After you save
+
+* The Active Directory sync starts when the collector starts or restarts.
+* A directory with approximately 300,000 users can take about 15 minutes to sync.
+* User data refreshes automatically every 12 hours.
+* If the directory becomes unavailable, previously fetched user details remain, but new or changed users cannot be fetched until connectivity is restored.
+* User data is retained for 13 months without a refresh. User-directory data cannot be deleted independently of the tenant.
+
+== Troubleshooting
+
+[width="100%",cols="50%,50%",options="header",]
+|===
+|*Message or symptom* |*What to check*
+|Invalid credentials provided for the LDAP server. |Verify the Bind DN and password. Also confirm that the account can search the configured Forest Name.
+
+|Failed to get the object corresponding to DN=… provided as forest name. |Correct the Forest Name. Use the exact domain, DN, OU, or other supported scope.
+
+|Failed to establish LDAP connection. |Verify the AD server IP/FQDN, DNS resolution, protocol, port, and firewall path from the Agent.
+
+|Failed to retrieve LDAP users…connection is null. |Restart the collector. If it recurs, validate connectivity and the search with ldapsearch from an equivalent network location.
+
+|Collector is RETRYING or reports AGENT008. |Verify the server address and Forest Name; then confirm the Agent can reach the directory service.
+
+|A user or optional attribute is not displayed. |Verify that the Search Query includes the object and that the mapped attribute name matches the directory schema, including case where applicable. Save to restart and resync.
+
+|AcceptSecurityContext error, data 52e. |Verify the credentials and Forest Name. In Active Directory, data 52e indicates invalid credentials.
+
+|ldap-port has type STRING rather than NUMBER. |Enter a numeric port
+value, such as 389 or 636.
+|===
+
+== Related information
+
+https://docs.netapp.com/us-en/data-infrastructure-insights/task_config_user_dir_connect.html[[.underline]#Current NetApp documentation page#]

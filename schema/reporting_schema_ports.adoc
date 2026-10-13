@@ -10,7 +10,7 @@ keywords: dwh, data warehouse, schema, reporting, ports
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 Source: *dwh_ports* OData endpoint — Data Infrastructure Insights
 

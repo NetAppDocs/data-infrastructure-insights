@@ -41,6 +41,9 @@ When you add a new monitor, you are prompted to create a Metric Monitor or a Log
 
 * _Metric_ monitors alert on infrastructure- or performance-related triggers
 * _Log_ monitors alert on log-related activity
+* _Anomaly Detection_ monitors alert on changes in the patterns of your data
+* _Attribute_ monitors alert on changes to an object's attributes, such as moving an object to a new data center
+
 
 +
 After you choose your monitor type, the Monitor Configuration dialog is displayed. Configuration varies depending on which type of monitor you are creating.
@@ -151,21 +154,14 @@ image:AnomalyDetectionMonitorMetricChoosing.png[Metrics Filtering for anomaly de
 image:AnomalyDetectionMonitorDefineConditions.png[Defining the conditions to trigger an anomaly detection]
 
 
-////
-==== Define the alert resolution behavior
-
-You can choose how a metric monitor alert is resolved. You are presented with two choices:
-
-* Resolve when the metric returns to the acceptable range. 
-* Resolve when the metric is within the acceptable range for a specified amount of time, from 1 minute to 7 days.
-
-////
+=== Attribute Monitor
 
 
+Attribute Monitors automatically alert your team when assets move between data centers, a storage pool is not encrypted, or any attribute modifications occur. This helps to maintain configuration baselines and helps ensure nothing slips through the cracks during new deployments or changes.
 
+image:attribute_monitor_in_list.png[attribute monitors are added to monitor types]
 
-
-
+Simply choose the object type and select which attributes you want to monitor for changes.
 
 
 === Select notification type and recipients

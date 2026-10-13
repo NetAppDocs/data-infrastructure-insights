@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_dashboard_features.html
-summary: Dashboard features and concepts.
+summary: Master advanced dashboard capabilities including widget customization, query filtering, variable configuration, data transformations, and formatting options for creating powerful, flexible visualizations.
 keywords: dashboard, widget, custom, concepts, queries, variables, rollup, roll up, grouping, aggregate, aggregation, filter, axis, group by, expressions, timeseries, exact match, theme, visibility, formatting, conditional, hide, collapse, expand
 
 ---
@@ -14,7 +14,7 @@ keywords: dashboard, widget, custom, concepts, queries, variables, rollup, roll 
 :imagesdir: ./media/
 
 [.lead]
-Dashboards and widgets allow great flexibility in how data is displayed. Here are some concepts to help you get the most from your custom dashboards. 
+Unlock the full potential of your dashboards with advanced features and customization options. Learn to configure widget queries, apply data transformations, use variables for dynamic filtering, and implement sophisticated formatting to create highly effective, tailored visualizations for your infrastructure monitoring needs. 
 
 toc:[]
 
