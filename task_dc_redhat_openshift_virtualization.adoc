@@ -15,17 +15,50 @@ summary: Configuring Red Hat OpenShift Virtualization data collector.
 [.lead] 
 The DII Red Hat OpenShift Virtualization collector will attempt to discover the OSV compute workloads running on an OpenShift Virtualization environment - this collector will not discover all Open Shift pods. This is an HTTPS REST API-based collector. It is recommended to create one collector per OSV cluster.
 
+This collector has unique service account requirements due to the nature of Kubernetes, and Container Storage Interface (CSI) technology. Namely - there is no standard storage API support in Kubernetes that DII can access to deeply understand how VM-like workloads on pods interact with shared storage arrays. DII may need to be able to make read only API calls to the custom resources that different CSI drivers install. Therefore, the rights and roles DII requires will vary depending on which storage vendors you have integrated into a given OSV cluster. 
+
 The authentication approach for this collector is an authentication token bound to a service account. To create both the user account and the token:
 
  oc create sa acq-readonly-cluster-user -n default
  oc adm policy add-cluster-role-to-user cluster-reader -z acq-readonly-cluster-user --rolebinding-name acq-readonly-cluster-user-binding
  oc adm policy add-cluster-role-to-user cluster-monitoring-view -z acq-readonly-cluster-user --rolebinding-name acq-readonly-cluster-monitor-user-binding
 
-Run those 3 commands and watch for any errors. 
+Run those 3 commands and watch for any errors. At this point, you have created a service account with the core Kubernetes role requirement, but this will not have access to any CSI driver namespaces. We want to create a new role with rules for all relevant CSI driver namespaces, and then bind it to our user. This example includes NetApp Trident, Pure Portworx, and EMC.  
+
+ oc apply -f - <<'EOF'
+ apiVersion: rbac.authorization.k8s.io/v1
+ kind: ClusterRole
+ metadata:
+   name: storage-crd-reader
+ rules:
+   - apiGroups: ["trident.netapp.io"]
+     resources:
+       - tridentbackends
+       - tridentbackendconfigs
+       - tridentvolumes
+       - tridentnodes
+       - tridentversions
+       - tridentvolumereferences
+     verbs: ["get", "list"]
+   - apiGroups: ["storage.purestorage.com"]
+     resources:
+       - purevolumes
+       - puresnapshots
+       - storagenodeinitiators
+     verbs: ["get", "list"]
+   - apiGroups: ["storage.dell.com"]
+     resources:
+       - containerstoragemodules
+     verbs: ["get", "list"]
+ EOF
+
+Then add that role to our user:
+
+ oc adm policy add-cluster-role-to-user storage-crd-reader -z acq-readonly-cluster-user -n default --rolebinding-name acq-readonly-storage-crd-binding
 
 When the commands complete, run:
 
- oc create token acq-readonly-cluster-user --duration=8760h 
+ oc create token acq-readonly-cluster-user -n default --duration=8760h 
 
 This will create a token bound to your user.
 Note: It is recommended to set token duration. Be aware that Data collection will fail with a “Failed to connect” error following token expiration. 
@@ -34,8 +67,18 @@ Note: It is recommended to set token duration. Be aware that Data collection wil
 Finally, you may also want your OSV administrator to run:
 
  oc cluster-info
+ # Test CRD access
+ oc auth can-i list customresourcedefinitions.apiextensions.k8s.io -A --as=system:serviceaccount:default:acq-readonly-cluster-user
+ # Test NetApp Trident backends access
+ oc auth can-i list tridentbackends.trident.netapp.io -A --as=system:serviceaccount:default:acq-readonly-cluster-user
+ # Test NetApp Trident nodes access (contains iSCSI Initiator IQNs)
+ oc auth can-i list tridentnodes.trident.netapp.io -A --as=system:serviceaccount:default:acq-readonly-cluster-user
+ # Test NetApp Trident volumes access
+ oc auth can-i list tridentvolumes.trident.netapp.io -A --as=system:serviceaccount:default:acq-readonly-cluster-user
+ # Test Pure volumes access
+ oc auth can-i list purevolumes.storage.purestorage.com -A --as=system:serviceaccount:default:acq-readonly-cluster-user
 
-This will return the hostname/IP address for management. Each DII OSV collector needs to be pointed at the IP/hostname for OSV management.
+The first command will return the hostname/IP address for management. Each DII OSV collector needs to be pointed at the IP/hostname for OSV management. The Trident commands test Trident namespace API access
 
 == Terminology
 
