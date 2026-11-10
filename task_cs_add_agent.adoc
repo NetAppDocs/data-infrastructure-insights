@@ -13,285 +13,215 @@ summary: Deploy Workload Security agents to monitor user activity, detect securi
 :imagesdir: ./media/
 
 [.lead]
-Workload Security agents are essential for monitoring user activity and detecting potential security threats across your storage infrastructure. This guide provides step-by-step installation instructions, best practices for agent management (including pause/resume and pin/unpin capabilities), and post-deployment configuration requirements. Before you begin, ensure your agent server meets the link:concept_cs_agent_requirements.html[system requirements].
+Workload Security Agents monitor user activity and detect potential security threats across your storage infrastructure. This guide covers installing an Agent, opening the required network ports, managing pause/resume and pin/unpin behavior, and verifying the Agent after deployment. Before you begin, ensure the Agent host meets the requirements in Workload Security Agent Requirements.
+
+== Before you begin
+
+* Confirm the Agent host meets the system, package, and network requirements in Workload Security Agent Requirements (4 CPU cores, 16 GB RAM, /opt/netapp with at least 35 GB free, supported Linux distribution, unzip / zip / sshpass, static IP, NTP).
+* sudo privilege is required for installation, running scripts, and uninstall.
+* During installation, a local user cssys and a local group cssys are created on the machine. If policy does not allow creating a local user and instead requires Active Directory, create a user with the username cssys in Active Directory before you install.
+* An Agent supports a maximum of 50 data collectors (all types combined — for example Active Directory, LDAP, and ONTAP SVM collectors), within a ceiling of about 20,000 events per second. Plan capacity with the Event Rate Checker before deploying many collectors on one Agent.
+* If the Agent will use a proxy to reach SaaS, have the proxy host, port, and credentials ready. You set the proxy during installation, in step 4.
+
+== Steps to install an Agent
+
+[arabic]
+. Log in as Administrator or Account Owner to your Workload Security environment.
+. Select Collectors ++>++ Agents ++>++ {plus}Agent. The system displays the Add an Agent page.
+
+.The Add Agent page, with proxy server settings and the installer snippet expanded.
+image:ws_deploy_agents_image6.png[The Add Agent page showing Agent Server Requirements, the proxy server settings step, and the installer snippet,title="The Add Agent page showing Agent Server Requirements, the proxy server settings step, and the installer snippet",width=609,height=532]
+
+[arabic]
+. In the Agent Server Requirements panel, click Linux Versions Supported (i) and Minimum Server Requirements (i) to confirm the host OS is supported and correctly sized.
+
+.Minimum Server Requirements: 4 CPU cores, 16 GB RAM, 35 GB free disk space.
+image:ws_deploy_agents_image8.png[Minimum Server Requirements tooltip showing 4 CPU cores, 16 GB RAM, and 35 GB free disk space,title="Minimum Server Requirements tooltip showing 4 CPU cores, 16 GB RAM, and 35 GB free disk space",width=336,height=172]
+
+[arabic]
+. If your network uses a proxy server, expand Optional: Proxy server settings ++>++ Show Instructions and click Copy Proxy Server Settings. On the Agent host, run the copied command in a terminal, replacing USER, PASSWORD, PROXY++_++SERVER, and PORT with your own values:
+
+____
+export https++_++proxy='USER:PASSWORD@PROXY++_++SERVER:PORT'
+
+_Run this command in the same terminal that you use for the installer snippet, so that the installer inherits the proxy setting._
+____
+
+[arabic]
+. Click Copy Installer Snippet. The snippet contains a unique key that is valid for 2 hours and for one Agent only, so run it promptly and do not reuse it for a second Agent. To inspect it first, click Reveal Installer Snippet.
+. On the Agent host, open a terminal, paste the installation command, and run it. Prefer an empty working directory you own (for example mkdir cloudsecure && cd cloudsecure) so chmod during install does not fail on files owned by other users.
+. When installation completes successfully, the installer prints a success message and the Agent service starts. Return to the browser and click Complete Setup to finish adding the Agent. "New agent detected" will be displayed on successful installation.
 
 
-== Before You Begin
+=== After you finish
 
-* The sudo privilege is required for installation, running scripts, and uninstall. 
-* While installing the agent, a local user _cssys_ and a local group _cssys_ are created on the machine. If permission settings do not allow creation of a local user, and instead require Active Directory, a user with the username _cssys_ must be created in the Active Directory server.
-* You can read about Data Infrastructure Insights security link:security_overview.html[here].
+* Confirm the Agent appears Connected on Workload Security ++>++ Collectors ++>++ Agents.
+* Open the FPolicy/EMS callback ports on the Agent host (see Network configuration below).
+* Configure a User Directory Collector (Active Directory or LDAP) for each domain whose users touch monitored SVMs — ideally before or with the first ONTAP SVM collector. Without it, Activity Forensics may show SIDs instead of usernames. Test Connection is not available for User Directory collectors.
+* Configure one or more ONTAP SVM Data Collectors. Prefer Cluster management IP {plus} SVM name with cluster credentials, and run Test Connection before saving so network and RBAC checks pass.
+* Stay within Agent capacity: at most 50 collectors per Agent; use the Event Rate Checker to size for peak event rate.
 
-== Best Practices
+=== Change the proxy after installation
 
-Keep the following in mind before configuring your Workload Security agent.
+If the proxy changes after the Agent is installed, update the Agent configuration and restart the service.
 
-[cols="1,3"]
-|=== 
-| Pause and Resume | Pause: Removes fpolicies from ONTAP. Typically used when customers perform extended maintenance activities which may take significant time, such as agent VM reboots or storage replacements. 
-Resume: Adds fpolicies back to ONTAP.
+[arabic]
+. Change to the configuration directory: cd /opt/netapp/cloudsecure/conf
+. Edit agent.properties and set AGENT++_++PROXY++_++HOST, AGENT++_++PROXY++_++PORT, and if required AGENT++_++PROXY++_++USER and AGENT++_++PROXY++_++PASSWORD.
+. Restart the Agent: sudo systemctl restart cloudsecure-agent.service
 
-| Pin and Unpin
-| Unpin immediately fetches the latest version (if available) and upgrades the agent and collector. During this upgrade, fpolicies will disconnect and reconnect.
-This feature is designed for customers who want to control the timing of automatic upgrades. See below for <<pinning-an-agent-at-the-current-version,pin/unpin instructions>>.
+If the Agent is behind SSL inspection (for example Zscaler), disable SSL inspection for ++*++.cloudinsights.netapp.com and the regional agentlogin host. Workload Security does not work correctly when intermediary certificates re-sign the SaaS endpoints.
 
-| Recommended Approach
-| For large configurations, it is advisable to use Pin and Unpin rather than pausing collectors. There is no need to pause and resume while using pin and unpin.
-Customers can keep their agents and collectors pinned, and upon receiving an email notification about a new version, have a 30-day window to selectively upgrade agents one by one.
-This approach minimizes latency impact on fpolicies and provides greater control over the upgrade process.
+== Network configuration
+
+Open the TCP ports that ONTAP uses to send FPolicy (and EMS) events to the Agent. You do not need to open the entire 35000–55000 range. Size the reservation to collectors on this Agent: each SVM uses up to 4 ports (2 per enabled protocol — NFS and CIFS/SMB). For a fully loaded Agent (50 collectors), reserve about 200 ports within 35000–55000. Increase the reservation if needed.
+
+Open the range toward the Agent host, including any local firewall. Also ensure SVM data LIFs can reach the Agent for FPolicy events, and (if you use EMS-based features such as ARP) that the cluster management IP can reach the Agent on the same reserved ports. See Workload Security Agent Requirements for the full in-network and cloud egress tables.
+
+*Example — firewalld (permanent):*
+
+____
+sudo firewall-cmd --permanent --zone=public --add-port=35000-55000/tcp
+
+sudo firewall-cmd --reload
+____
+
+*Verify the rule:*
+
+On systems using firewalld (for example RHEL / CentOS 8{plus}):
+
+____
+sudo firewall-cmd --zone=public --list-ports ++|++ grep 35000
+____
+
+_Sample output: 35000-55000/tcp_
+
+On systems using iptables (for example older RHEL / CentOS 7.x):
+
+____
+sudo iptables-save ++|++ grep 35000
+____
+
+_Sample output:_
+
+____
+-A IN++_++public++_++allow -p tcp -m tcp --dport 35000:55000 -m
+conntrack -ctstate NEW,UNTRACKED -j ACCEPT
+____
+
+_Test Connection (on the ONTAP SVM collector page) verifies only a subset of ports in this range. Keep the full reserved set open on the Agent._
+
+== Post-install verification
+
+After a successful install, confirm the following on the Agent host and in the UI:
+
+* *UI state:* Collectors ++>++ Agents shows the Agent as Connected (not NOT++_++CONNECTED).
+* *Service:* sudo systemctl status cloudsecure-agent.service reports active (running).
+* *User:* id cssys and groups cssys succeed (local cssys user/group exist, or the AD cssys account is available).
+* *Disk path:* /opt/netapp is on local disk that cssys can access (not an NFS mount the local user cannot use).
+* *Ports:* The reserved 35000–55000 subset is open inbound to the Agent (firewall-cmd or iptables check above).
+* *SaaS path:* Outbound TCP 443 to your region’s ++*++.cloudinsights.netapp.com and agentlogin endpoints succeeds (no SSL-inspection rewrite).
+
+If the Agent fails to start before application logs exist, check journalctl -u cloudsecure-agent.service — early bootstrap errors go to the service journal, not agent.log.
+
+== Control Agent upgrades: pin and unpin
+
+By default, Workload Security updates Agents automatically. Pinning an Agent pauses those automatic updates, so the Agent and the collectors it hosts stay at their current version.
+
+___
+*Note:* _Pin and unpin apply to an Agent and are available only through the API. Pause and Resume are collector controls — they do not apply to an Agent — and you can run them from either the UI or the API. See Configuring the ONTAP SVM Data Collector._
+___
+
+[width="100%",cols="34%,33%,33%",options="header",]
+|===
+|Control |How you run it |What it does
+|Pin a|
+cloudsecure++_++config.agents API only.
+
+Not available in the UI.
+
+|Pauses automatic updates. The Agent and the collectors it hosts stay at their current version.
+
+|Unpin a|
+cloudsecure++_++config.agents API only.
+
+Not available in the UI.
+
+|Resumes automatic updates. The Agent retrieves the latest available version and upgrades itself and its collectors.
 |===
 
+A pinned Agent returns to automatic updates when either of the following happens:
 
-== Steps to Install Agent 
+* You unpin the Agent.
+* 30 days have passed. The 30-day window starts on the day of the most recent Agent update, not on the day you pin the Agent.
 
-. Log in as Administrator or Account Owner to your Workload Security environment. 
-. Select *Collectors > Agents > +Agent*
-+ 
-The system displays the Add an Agent page:
-+
-image::Add-agent-1.png[Adding a workload security agent]
+In either case, the Agent updates at the next Workload Security refresh after the condition is met. Allow up to five minutes for a pin or unpin request to take effect.
 
-. Verify that the agent server meets the minimum system requirements. 
+To pin or unpin an Agent, use the cloudsecure++_++config.agents APIs. You can view current Agent versions on Workload Security ++>++ Collectors ++>++ Agents.
 
-. To verify that the agent server is running a supported version of Linux, click _Versions Supported (i)_.
+image:ws_deploy_agents_image3.png[Agent pin and unpin APIs,title="Agent pin and unpin APIs",width=609,height=225]
 
-. If your network is using proxy server, please set the proxy server details by following the instructions in the Proxy section.
-+
-image:CloudSecureAgentWithProxy_Instructions.png[Agent Install with Proxy Note]
+.Pin and unpin APIs in the cloudsecure++_++config.agents category.
+image:ws_deploy_agents_image4.png[Agent versions,title="Agent versions",width=609,height=97]
 
+Agent versions displayed on the Agents tab.
 
-. Click the Copy to Clipboard icon to copy the installation command. 
-. Run the installation command in a terminal window.  
+=== Pin and unpin one Agent at a time
 
-. The system displays the following message when the installation completes successfully:
-+ 
-image::new-agent-detect.png[Message for successful agent installation]
+Pinning and unpinning are also supported at the tenant level. If you unpin at the tenant level, every Agent in the tenant is upgraded automatically and immediately.
 
+Use Agent-level pin and unpin instead. Agent-level control is more granular: only the Agent you unpin receives the upgrade, so the effect of a new version is contained to that Agent and the collectors it hosts.
 
-.After You Finish
-
-//. Verify that the agent is installed using the following command:
-//`sudo grep -irn register agent.log`
-
-. You need to configure a link:task_config_user_dir_connect.html[User Directory Collector ].
-. You need to configure one or more Data Collectors.  
-
-////
-== Files Created During Installation
-
-* Installation directory: 
-+
-/opt/netapp/cloudsecure/agent
-
-* Installation logs: 
-+
-/var/log/netapp/cloudsecure/install
-/opt/netapp/cloud-secure/logs 
-
-* Agent Logs:         
-
-* You can use the following command to verify the agent installed correctly: 
-`sudo grep -irn register /opt/netapp/cloudsecure/agent/logs/agent.log`
-
-//* Use the following script to control the Workload Security service:
-//`sudo cloud-secure-agent-service.sh --help`
-
-* Use the following script to uninstall the agent:
-`sudo cloudsecure-agent-uninstall.sh`
-////
-
-== Network Configuration
-
-Run the following commands on the local system to open ports that will be used by Workload Security. If there is a security concern regarding the port range, you can use a lesser port range, for example _35000:35100_. Each SVM uses two ports. 
-
-.Steps
-
-. `sudo firewall-cmd --permanent --zone=public --add-port=35000-55000/tcp` 
-. `sudo firewall-cmd --reload` 
-
-Follow the next steps according to your platform:
-
-*CentOS 7.x / RHEL 7.x*:
-
-. `sudo iptables-save | grep 35000` 
-
-Sample output:
-
- -A IN_public_allow -p tcp -m tcp --dport 35000:55000 -m conntrack -ctstate NEW,UNTRACKED -j ACCEPT
-
-*CentOS 8.x / RHEL 8.x*:
-
-. `sudo firewall-cmd --zone=public --list-ports | grep 35000` (for CentOS 8)
-
-Sample output:
-
- 35000-55000/tcp
-
-
-[pinning-an-agent-at-the-current-version]
-== "Pinning" an Agent at the current version
-
-By default, Data Infrastructure Insights Workload Security updates agents automatically. Some customers may wish to pause automatic updating, which leaves an Agent at its current version until one of the following occurs:
-
-
-* The customer resumes automatic Agent updates. 
-* 30 days have passed. Note that the 30 days starts on the day of the most recent Agent update, not at the day the Agent is paused.
-
-In each of these cases, the agent will be updated at the next Workload Security refresh.
-
-To pause or resume automatic agent updates, use the _cloudsecure_config.agents_ APIs:
-
-image:ws_pin_agent_apis.png[cloudsecure agent APIs to pin and unpin agents]
-
-Note that it may take up to five minutes for the pause or resume action to take effect.
-
-You can view your current Agent versions on the *Workload Security > Collectors* page, in the *Agents* tab.
-
-image:ws_agent_version.png[WS Agent versions shown in the agents table]
-
-
-
-== Troubleshooting Agent Errors
-
-Known problems and their resolutions are described in the following table. 
-
-[cols=2*, options="header", cols"30,70"]
-
+[width="100%",cols="34%,33%,33%",options="header",]
 |===
-|Problem: | Resolution:
+|Scope |Pin |Unpin
+|All Agents in the tenant |POST /v1/cloudsecure/agents/configuration
+|DELETE /v1/cloudsecure/agents/configuration
 
-|Agent installation fails to create the /opt/netapp/cloudsecure/agent/logs/agent.log folder and the install.log file provides no relevant information.|This error occurs during bootstrapping of the agent. The error is not logged in log files because it occurs before logger is initialized. 
-The error is redirected to standard output, and is visible in the service log using the `journalctl -u cloudsecure-agent.service` command. This command can be used for troubleshooting the issue further.
-est
-|Agent installation fails with ‘This linux distribution is not supported. Exiting the installation’.|This error appears when you attempt to install the Agent on an unsupported system. See link:concept_cs_agent_requirements.html[Agent Requirements].
+|A single Agent (recommended) a|
+POST /v1/cloudsecure/agents/
 
-|Agent Installation failed with the error: 
-"-bash: unzip: command not found"
-|Install unzip and then run the installation command again. If Yum is installed on the machine, try “yum install unzip” to install unzip software. 
-After that, re-copy the command from the Agent installation UI and paste it in the CLI to execute the installation again.
+++{++agentId}/configuration
 
-|Agent was installed and was running. However agent has stopped suddenly.
-|SSH to the Agent machine. Check the status of the agent service via `sudo systemctl status cloudsecure-agent.service`. 
-1. Check if the logs shows a message“Failed to start Workload Security daemon service” . 
-2. Check if cssys user exists in the Agent machine or not. Execute the following commands one by one with root permission and check if the cssys user and group exists. 
-`sudo id cssys`
-`sudo groups cssys`
-3. If none exists, then a centralized monitoring policy may have deleted the cssys user.
-4. Create cssys user and group manually by executing the following commands.
-`sudo useradd cssys`
-`sudo groupadd cssys`
-5. Restart the agent service after that by executing the following command:
-`sudo systemctl restart cloudsecure-agent.service`
-6. If it is still not running, please check the other troubleshooting options.
+a|
+DELETE /v1/cloudsecure/agents/
 
-|Unable to add more than 50 Data collectors to an Agent.
-|Only 50 Data collectors can be added to an Agent. This can be a combination of all the collector types, for example, Active Directory, SVM and other collectors.
-
-|UI shows Agent is in NOT_CONNECTED state.
-|Steps to restart the Agent.
-1. SSH to the Agent machine.
-2. Restart the agent service after that by executing the following command:
-`sudo systemctl restart cloudsecure-agent.service`
-3. Check the status of the agent service via `sudo systemctl status cloudsecure-agent.service`.
-4. Agent should go to CONNECTED state.
-
-|Agent VM is behind Zscaler proxy and the agent installation is failing. Because of Zscaler proxy’s SSL inspection, the Workload Security certificates are presented as it is signed by Zscaler CA so the agent is not trusting the communication.
-|Disable SSL inspection in the Zscaler proxy for the *.cloudinsights.netapp.com url. If Zscaler does SSL inspection and replaces the certificates, Workload Security will not work.
-
-|While installing the agent, the installation hangs after unzipping.
-|“chmod 755 -Rf” command is failing. 
-The command fails when the agent installation command is being run by a non-root sudo user that has files in the working directory, belonging to another user, and permissions of those files cannot be changed. Because of the failing chmod command, the rest of the installation does not execute.
-
-1.	Create a new directory named “cloudsecure”.
-2.	Go to that directory.
-3.	Copy and paste the full “token=…… … ./cloudsecure-agent-install.sh" installation command and press enter.
-4.	Installation should be able to proceed.
-
-|If the Agent is still not able to connect to Saas, please open a case with NetApp Support. Provide the Data Infrastructure Insights serial number to open a case, and attach logs to the case as noted.
-|To attach logs to the case:
- 1.	Execute the following script with root permission and share the output file (cloudsecure-agent-symptoms.zip).
-    a.	/opt/netapp/cloudsecure/agent/bin/cloudsecure-agent-symptom-collector.sh
- 2.	Execute the following commands one by one with root permission and share the output.
-    a.	id cssys
-    b.	groups cssys
-    c.	cat /etc/os-release
-    
-|The cloudsecure-agent-symptom-collector.sh script fails with the following error.
-
-[root@machine tmp]# /opt/netapp/cloudsecure/agent/bin/cloudsecure-agent-symptom-collector.sh
-Collecting service log
-Collecting application logs
-Collecting agent configurations
-Taking service status snapshot
-Taking agent directory structure snapshot
-………………….
-………………….
-/opt/netapp/cloudsecure/agent/bin/cloudsecure-agent-symptom-collector.sh: line 52: zip: command not found
-ERROR: Failed to create /tmp/cloudsecure-agent-symptoms.zip
-
-|Zip tool is not installed..
-Install the zip tool by running the command “yum install zip”.
-Then run the cloudsecure-agent-symptom-collector.sh again. 
-
-    
-|Agent installation Fails with useradd: cannot create directory /home/cssys
-|This error can occur if user's login directory cannot be created under /home, due to lack of permissions.
-
-The workaround would be to create cssys user and add its login directory manually using the following command:
-
-_sudo useradd user_name -m -d HOME_DIR_
-
--m :Create the user's home directory if it does not exist.
--d : The new user is created using HOME_DIR as the value for the user's login directory.
-
-For instance, _sudo useradd cssys -m -d /cssys_, adds a user _cssys_ and creates its login directory under root.
-
-|Agent is not running after installation. 
-_Systemctl status cloudsecure-agent.service_ shows the following:
-
-[root@demo ~]# systemctl status cloudsecure-agent.service 
-agent.service – Workload Security Agent Daemon Service 
-Loaded: loaded (/usr/lib/systemd/system/cloudsecure-agent.service; enabled; vendor preset: disabled) 
-Active: activating (auto-restart) (Result: exit-code) since Tue 2021-08-03 21:12:26 PDT; 2s ago 
-Process: 25889 ExecStart=/bin/bash /opt/netapp/cloudsecure/agent/bin/cloudsecure-agent (code=exited status=126) 
-Main PID: 25889 (code=exited, status=126), 
-
-Aug 03 21:12:26 demo systemd[1]: cloudsecure-agent.service: main process exited, code=exited, status=126/n/a 
-Aug 03 21:12:26 demo systemd[1]: Unit cloudsecure-agent.service entered failed state. 
-Aug 03 21:12:26 demo systemd[1]: cloudsecure-agent.service failed. 
-
-|This can be failing because _cssys_ user may not have permission to install.
-
-If /opt/netapp is an NFS mount and if _cssys_ user does not have access to this folder, installation will fail. _cssys_ is a local user created by the Workload Security installer that may not have permission to access the mounted share. 
-
-You can check this by attempting to access /opt/netapp/cloudsecure/agent/bin/cloudsecure-agent using _cssys_ user.
-If it returns “Permission denied”, installation permission is not present.
-
-Instead of a mounted folder, install on a directory local to the machine.
-
-|Agent was initially connected via a proxy server and the proxy was set during Agent installation. Now the proxy server has changed. How can the Agent’s proxy configuration be changed?
-|You can edit the agent.properties to add the proxy details. Follow these steps:
-
-1.	Change to the folder containing the properties file:
- 
-cd /opt/netapp/cloudsecure/conf
- 
-2.	Using your favorite text editor, open the _agent.properties_ file for editing.
- 
-3.	Add or modify the following lines:
- 
-AGENT_PROXY_HOST=scspa1950329001.vm.netapp.com  
-AGENT_PROXY_PORT=80
-AGENT_PROXY_USER=pxuser
-AGENT_PROXY_PASSWORD=pass1234
- 
-4.	Save the file.
- 
-5.	Restart the agent:
- 
-sudo systemctl restart cloudsecure-agent.service
- 
+++{++agentId}/configuration
 
 |===
 
+*Suggested approach*
 
+[arabic]
+. Pin the Agents you want to hold at their current version.
+. Unpin one Agent and let it upgrade.
+. Confirm that the Agent returns to Connected and that its collectors return to Running.
+. Unpin the remaining Agents in batches, so that an unexpected problem affects only part of your environment.
+
+== Best practices for Agents
+
+These practices apply to the Agent. For collector practices, including
+when to pause a collector, see Configuring the ONTAP SVM Data Collector.
+
+* Use pin and unpin to control when an Agent upgrades. You do not need to pause collectors for upgrade control.
+* Pin and unpin at the Agent level rather than the tenant level, so that an upgrade affects one Agent and its collectors at a time.
+* Do not plan to stay pinned indefinitely. A pinned Agent updates automatically 30 days after its most recent update.
+* Stay within Agent capacity: at most 50 collectors per Agent (all types combined), within a ceiling of 20,000 events per second. Approximately 10 collectors suit 4 CPU cores and 16 GB RAM; approximately 20 collectors suit 4 CPU cores and 32 GB RAM.
+* Size the Agent for peak event rate with the Event Rate Checker before you add collectors, and migrate a collector to another Agent rather than overloading one Agent.
+* Distribute collectors across Agents so that maintenance on one Agent does not stop monitoring for every SVM.
+* Give the Agent host a static IP address, and keep its clock synchronized with ONTAP using NTP.
+* Keep the reserved FPolicy callback ports open toward the Agent, including in the host firewall (see Network configuration).
+
+== Troubleshooting
+
+For Agent install and connectivity failures (unsupported OS, missing unzip/zip, cssys permission issues, NOT++_++CONNECTED, proxy changes, symptom-collector failures), see Troubleshooting the ONTAP SVM Data Collector — Agent install and health section, and Workload Security Agent Requirements.
+
+To collect a diagnostic bundle for Support (run as root):
+
+____
+sudo
+/opt/netapp/cloudsecure/agent/bin/cloudsecure-agent-symptom-collector.sh
+-o /tmp
+____
+
+Attach cloudsecure-agent-symptoms.zip (or the zip created in /tmp) to the case, along with your Data Infrastructure Insights serial number. Ensure the zip package is installed on the Agent host before running the symptom collector.

@@ -1,0 +1,118 @@
+---
+sidebar: sidebar
+permalink: mcp_concepts.html
+summary: Understanding these concepts helps an AI assistant select the right tools and construct valid queries.
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant
+---
+
+= DII MCP concepts and data model
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Understanding these concepts helps an AI assistant select the right tools and construct valid queries.
+
+NOTE: The DII MCP is a link:concept_preview_features.html[Preview] feature and is therefore subject to change.
+
+== Tenant scope
+
+Every DII MCP request runs within the authenticated user's DII tenant and permissions. A tool can only return data that exists in that tenant and is visible to that identity.
+
+== Acquisition units
+
+An acquisition unit (AU) is a remotely installed agent that polls data sources and reports telemetry to DII. AU records include connection status, reporting freshness, operating system, version, and the number of assigned data sources.
+
+Connection and reporting are different signals. For example, an AU can accept a connection while having no successful reporting history. Assess both status and `lastReported`.
+
+== Data sources
+
+A data source, also called a collector, is a configured connection to an infrastructure system such as a storage array, switch, hypervisor, or cloud service.
+
+Use the list operation for inventory and status. Retrieve a specific data source when you need configuration details such as collection packages, poll intervals, or recent activity.
+
+Supported data source types describe the broader DII collector catalog. They are not the same as collectors configured in the current tenant.
+
+== Objects
+
+Objects are normalized infrastructure entities such as storage systems, pools, volumes, hosts, virtual machines, Kubernetes workloads, and product-specific resources.
+
+Object types are dynamic. Always:
+
+. List object types.
+. Select the exact type.
+. Retrieve metadata for that type.
+. Query only attributes and metrics declared by the metadata.
+
+=== Attributes and metrics
+
+* *Attributes* describe identity, configuration, ownership, labels, or relationships.
+* *Metrics* are time-varying measurements such as capacity, latency, throughput, or utilization.
+* *Groupable attributes* can segment an aggregate query.
+
+Metric filters are evaluated against raw metric values before requested time-window aggregation is applied.
+
+== Logs
+
+Log types represent event streams such as ONTAP EMS, Kubernetes events, StorageGRID events, VMware events, and DII platform events.
+
+Log querying is also metadata-first:
+
+. List available log types.
+. Retrieve metadata for the selected type.
+. Request only valid attributes.
+. Search events or build an event-count histogram.
+
+== Monitors and alerts
+
+A monitor defines a condition DII evaluates. An alert is a specific monitor result for one or more related objects.
+
+* Use monitor tools to inspect intent, status, object type, and corrective guidance.
+* Use alert metadata before querying alerts.
+* Use an alert name such as `AL-123456` or its UUID to retrieve one alert.
+
+Alert status and severity are separate dimensions. Ask for both when prioritizing results.
+
+== Maintenance windows
+
+A maintenance window suppresses alerts that match an expression during a defined period. An empty successful result means that no matching windows exist; it is not evidence of missing data.
+
+== Notification rules and targets
+
+Notification rules route matching alerts. Targets can include Slack, Microsoft Teams, PagerDuty, or custom HTTP integrations.
+
+Webhook addresses can contain secret material. For reporting, request only the target name, engine type, and status. Never reproduce the complete address.
+
+== Metadata-first query flow
+
+[source,text]
+----
+Discover types
+    → retrieve type metadata
+        → select valid attributes and metrics
+            → query a bounded time range
+                → paginate, group, or retrieve time series
+----
+
+== Filters
+
+DII query tools support conditions and nested logical operators:
+
+* Comparisons: `EQ`, `NE`, `GT`, `LT`, `GE`, `LE`
+* Pattern matching: `WILDCARD`
+* Presence: `EXISTS`
+* Logic: `and`, `or`, `not`
+
+Use the exact field name and compatible value type declared in metadata. For `EXISTS`, omit a comparison value when supported by the connected server version.
+
+== Time ranges and pagination
+
+* Use ISO-8601 timestamps with explicit offsets or `Z`.
+* Supply an IANA timezone such as +America/New_York+ or `UTC` when required.
+* Keep query windows to 30 days or less unless a tool documents a smaller limit.
+* Object and alert queries generally use `limit` and `offset`.
+* Log event queries use a returned cursor for the next page.
+
+For errors and recovery steps, see link:mcp_troubleshooting.html[Troubleshooting].

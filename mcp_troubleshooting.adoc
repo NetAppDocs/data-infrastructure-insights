@@ -1,0 +1,118 @@
+---
+sidebar: sidebar
+permalink: mcp_troubleshooting.html
+summary: Common solutions for MCP server connection issues, authentication errors, query rejections, and API rate limiting.
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant
+---
+
+= Troubleshoot DII MCP
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+NOTE: The DII MCP is a link:concept_preview_features.html[Preview] feature and is therefore subject to change.
+
+== The server does not connect
+
+Check:
+
+. The configured URL matches the endpoint supplied for your DII environment.
+. The client supports remote HTTP MCP servers and the required authentication flow.
+. Authentication completed successfully.
+. Network policy allows access to the endpoint.
+. The connected identity can access the DII tenant.
+
+Restart or reload the MCP server after changing client configuration.
+
+== Authentication is required
+
+Complete the client's login flow, then retry the original request. If a service identity is used, verify that its credential is valid and stored through an approved secret mechanism.
+
+Do not repeatedly retry a confirmed authorization denial. Ask a DII administrator to review the user's tenant and resource permissions.
+
+== An object query rejects a field
+
+Object attributes and metrics vary by type.
+
+. Call +ObjectService_getObjectTypes+.
+. Confirm the exact object type.
+. Call +ObjectService_getMetadataForObjectType+.
+. Copy field names exactly from the metadata.
+. Verify that the value type and aggregation function are compatible.
+
+Only attributes marked as groupable can be used to group objects.
+
+== A log query rejects an attribute
+
+. Call +LogService_getLogTypes+.
+. Confirm the exact log type.
+. Call +LogService_getLogTypeMetadata+.
+. Use only attributes returned for that log type.
+
+Log event queries use cursor-based pagination. Pass the cursor returned by the previous page rather than an offset.
+
+== An alert query rejects a field
+
+Call +AlertsService_getMetadata+ immediately before constructing the query. Alert metadata can be broad and tenant-dependent; use exact field names.
+
+== The time range is invalid
+
+* Ensure `fromTime` is earlier than or equal to `toTime`.
+* Use ISO-8601 timestamps with an offset or `Z`.
+* Keep the requested window below 30 days.
+* Split longer investigations into consecutive, non-overlapping windows and summarize the results.
+* Supply a valid IANA timezone when the tool requires one.
+
+Runtime enforcement is authoritative if it is stricter than a client-cached tool description.
+
+== A query returns too many results
+
+* Add a valid filter.
+* Reduce the time range.
+* Sort by the most relevant metric.
+* Lower the result limit.
+* Use grouping or a histogram when individual records are unnecessary.
+* Continue with `offset` or a log cursor only when more detail is needed.
+
+== A successful call returns no rows
+
+An empty result is often a valid answer. It can mean:
+
+* No resources match the filter.
+* No events occurred in the selected time range.
+* No maintenance windows or notification rules are configured.
+* The selected data type is not populated by the tenant's collectors.
+
+Do not describe a successful empty result as missing data unless other evidence indicates a collection problem.
+
+== An acquisition unit is connected but has never reported
+
+Connection state and successful reporting are separate. Check:
+
+* `lastReported`
+* Assigned data-source count
+* Data-source acquisition status
+* AU host connectivity and version
+* Poll activity for an assigned data source
+
+== A collector is failed
+
+Use +CollectorService_getDataSourceById+ for the affected collector. Review recent poll activity, active patch information, package status, configuration, and the last successful acquisition time. Avoid displaying credentials or private configuration values.
+
+== Webhook results include complete addresses
+
+Do not repeat the values. Summarize only target names, integration types, counts, and status. Follow link:mcp_security.html[Security and privacy] if secret material was displayed or shared.
+
+== The AI assistant selected the wrong tool
+
+Use a more explicit prompt:
+
+[example]
+====
+First list the available object types. Retrieve metadata for the selected type. Then query only valid fields and explain which DII tools you used.
+====
+
+For common investigations, start from an link:mcp_recipe_overview.html[operational recipe].

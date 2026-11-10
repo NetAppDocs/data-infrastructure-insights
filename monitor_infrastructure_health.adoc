@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: monitor_infrastructure_health.html
 keywords: infra, infrastructure, health, monitor
-summary: Monitor infrastructure health with unified scoring based on performance, capacity, configuration, and component alerts for proactive issue resolution.
+summary: Get a unified view of your storage environment's health through comprehensive monitoring that combines performance, capacity, configuration, and component alerts into actionable health scores.
 ---
 
 = Monitor Infrastructure Health
@@ -13,11 +13,9 @@ summary: Monitor infrastructure health with unified scoring based on performance
 :imagesdir: ./media/
 
 [.lead]
-Data Infrastructure Insights provides comprehensive infrastructure health monitoring that tracks the performance, capacity, configuration, and component status of your storage environment. Health scores are calculated based on monitor alerts across these categories, giving you a unified view of system health and enabling proactive issue resolution.
+Data Infrastructure Insights monitors your storage environment's health by tracking performance, capacity, configuration, and component status. The system calculates unified health scores from monitor alerts across these categories, providing clear visibility into system health and enabling proactive issue resolution.
 
 == The Infrastructure Health dashboard
-
-NOTE: Monitoring Infrastructure Health is a link:concept_preview_features.html[Preview] feature and is subject to change.
 
 Navigate to *Observability > Analyze* and select *Infrastructure Health*. The dashboard provides an overview of your system health, based on monitor alert categories and scores as explained below. Set  filters at the top to narrow down the focus of your investigation.
 

@@ -13,7 +13,7 @@ keywords: support, knowledgebase, documentation, community, videos, help, contac
 :imagesdir: ./media/
 
 [.lead]
-You can access available support options in Data Infrastructure Insights by selecting *Help > Support*. 
+Data Infrastructure Insights provides comprehensive support options including self-service resources, community forums, documentation, and technical support. Access these support resources by selecting *Help > Support*, and consider activating your support entitlement to unlock full technical assistance via web tickets and phone support. 
 
 image:SupportPageExample.png[Support page, width=600]
 
@@ -99,10 +99,7 @@ It is highly recommended that you check the box to allow a NetApp Support Engine
 
 When your issue is resolved or your support session has ended, you can un-check the box. 
 
-You can request support by any of the following methods. You must have an active Data Infrastructure Insights subscription to use these support options:
-
-* link:https://www.netapp.com/us/contact-us/support.aspx[*Phone*]
-* link:https://mysupport.netapp.com/portal?_nfpb=true&_st=initialPage=true&_pageLabel=submitcase[*Support Ticket*]
+You can request support by going to the link:https://www.netapp.com/support-and-training/[NetApp Support Site]. You must have an active Data Infrastructure Insights subscription.
 
 You can also request sales support by clicking on the *Contact Sales* link.
 
