@@ -1,0 +1,73 @@
+---
+sidebar: sidebar
+permalink: mcp_setup.html
+summary: Use this guide to connect an MCP-compatible AI client to DII.
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant
+---
+
+= Set up the DII MCP Server
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Use this guide to connect an MCP-compatible AI client to DII.
+
+NOTE: The DII MCP is a link:concept_preview_features.html[Preview] feature and is therefore subject to change.
+
+== Before you begin
+
+You need:
+
+* Access to a DII tenant.
+* A DII user or service identity authorized to read the resources you intend to query.
+* The remote MCP endpoint supplied for your DII environment.
+* An MCP client that supports remote HTTP servers and your organization's authentication method.
+
+The examples use +<DII_HOST_URL>+ as a placeholder. Do not paste access tokens into source-controlled files. For example, the URL used by Cursor is: 
+
+ https://<DII_HOST_URL>/api/v1/mcp
+
+See the specific code snippets for your connection.
+
+== Configure the MCP client
+
+. Navigate to Admin > API Access and select the "MCP Configuration" tab.
+. Select the client you wish to configure. 
+. Provide a meaningful name and an expiration, and select _Generate Token_.
+. *Copy the code snippet* You will only be able to copy this during this step. The token is hidden in the snippet but will paste correctly into your client app.
+. In the client settings, enter the correct DII Host URL in the "url" field.
+. Save the configuration. 
+
+IMPORTANT: Do not place bearer tokens in shell history, prompts, screenshots, project files, or source control.
+
+== Verify access
+
+After the client reports that the server is connected, you can start sending requests like the following:
+
+[example]
+====
+List the DII object types available to me.
+List the DII log types available to me.
+List my acquisition units without displaying IP addresses or UUIDs.
+====
+
+Successful discovery confirms connectivity, but it does not guarantee access to every underlying resource. Tenant features, collectors, and permissions determine what data is returned.
+
+== Credential safety
+
+* Prefer interactive OAuth or another short-lived credential flow where available.
+* Use a dedicated service identity for unattended clients.
+* Do not put tokens in prompts, screenshots, examples, issue descriptions, or source control.
+* Do not ask the agent to display complete webhook addresses.
+
+For additional guidance, see link:mcp_security.html[Security and privacy].
+
+== Next steps
+
+* link:mcp_concepts.html[Understand the DII data model]
+* link:mcp_tools_overview.html[Browse the tool reference]
+* link:mcp_recipe_environment_inventory.html[Run the environment inventory recipe]
+* link:mcp_troubleshooting.html[Troubleshoot connection and query errors]

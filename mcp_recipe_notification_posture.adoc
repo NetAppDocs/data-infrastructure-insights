@@ -1,0 +1,112 @@
+---
+sidebar: sidebar
+permalink: mcp_recipe_notification_posture.html
+summary: Use this recipe to understand how DII alerts are routed and suppressed without exposing webhook endpoint addresses.
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant
+---
+
+= Review notification posture
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Use this recipe to understand how DII alerts are routed and suppressed without exposing webhook endpoint addresses.
+
+NOTE: The DII MCP is a link:concept_preview_features.html[Preview] feature and is therefore subject to change.
+
+== Prerequisites
+
+* Access to notification and maintenance-window tools.
+* An optional monitor, resource, or integration type to narrow the review.
+
+== Tools used
+
+* +NotificationService_getNotificationRules+
+* +NotificationService_getNotificationRuleById+
+* +NotificationService_getWebhooks+
+* +MaintenanceWindowService_getMaintenanceWindows+
+* +MaintenanceWindowService_getMaintenanceWindowById+
+* Optional: +MonitorsService_queryMonitors+
+
+== Starter prompt
+
+[example]
+====
+Review DII notification posture. Summarize active and inactive notification rules, the monitor or resource scope of each rule, webhook target counts by integration type, and current maintenance windows. Return only target names, engine types, and status--never endpoint addresses.
+====
+
+== Agent workflow
+
+. List notification rules.
+. Classify rules as active, inactive, expiring, or without expiry.
+. Summarize the expression scope of each rule:
++
+* Monitor name or group
+* Related object
+* Broad wildcard scope
+. Retrieve a specific rule only when additional detail is needed.
+. List webhook targets and immediately discard the address field from the working result.
+. Group targets by engine type and status.
+. List active maintenance windows.
+. Identify suppression windows that overlap important resources or unusually long periods.
+. Optionally compare rule expressions with available monitors.
+. Report routing coverage, broad rules, inactive rules, and suppression risks.
+
+== Security requirement
+
+Complete webhook addresses can contain:
+
+* Slack or Teams signing paths
+* PagerDuty routing keys
+* API tokens
+* Unique workflow signatures
+* Custom integration credentials
+
+Never display, quote, summarize, persist, or forward the address field. A masked suffix is also unnecessary for this workflow.
+
+If a complete endpoint appears in a transcript or shared artifact, follow the incident steps in link:mcp_security.html[Security and privacy].
+
+== Interpretation
+
+* An inactive rule may be intentional; confirm ownership before recommending removal.
+* A broad wildcard expression can create notification noise or unintended routing.
+* A target status may be null or unknown; do not report it as enabled.
+* A successful empty maintenance-window result means no matching windows exist.
+* A long-lived window can hide real issues even when it is technically active and valid.
+
+== Suggested output
+
+. Rule counts by status
+. Rule scope and destination type
+. Target counts by engine
+. Active maintenance windows
+. Broad, inactive, or ambiguous configurations
+. Security and data-quality caveats
+
+== Limits and privacy
+
+* Do not return addresses, tokens, UUIDs, or private resource identifiers.
+* This workflow reviews configuration but does not test message delivery.
+* The current tools do not create, update, disable, or delete rules and targets.
+
+== Follow-up prompts
+
+[example]
+====
+Which active notification rules have broad wildcard expressions, and which monitor groups can they match?
+====
+
+[example]
+====
+List current and upcoming maintenance windows and explain which alert scopes they suppress.
+====
+
+[example]
+====
+Count notification targets by integration type and identify targets with unknown status. Do not display addresses.
+====
+
+link:mcp_recipe_overview.html[Back to recipes]

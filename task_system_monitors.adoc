@@ -1,36 +1,28 @@
 ---
 sidebar: sidebar
 permalink: task_system_monitors.html
-keywords: monitors, alerts, log, metric
-summary: Create monitors to alert on performance or inventory thresholds, as well as metric or log conditions.
+keywords: monitors, alerts, log, metric, attribute
+summary: Review system-defined monitors for metric, log, attribute, and data collection conditions.
 ---
 
 = System Monitors
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-Data Infrastructure Insights includes a number of system-defined monitors for both metrics and logs. The system monitors available are dependent on the data collectors present on your tenant. Because of that, the monitors available in Data Infrastructure Insights may change as data collectors are added or their configurations changed.
+Data Infrastructure Insights includes system-defined monitors for metrics, logs, attributes, and data collection conditions. The system monitors available are dependent on the data collectors present on your tenant. Because of that, the monitors available in Data Infrastructure Insights may change as data collectors are added or their configurations changed.
 
 NOTE: Many System Monitors are in _Paused_ state by default. You can enable a system monitor by selecting the _Resume_ option for the monitor. Ensure that _Advanced Counter Data Collection_ and _Enable ONTAP EMS log collection_ are enabled in the Data Collector. These options can be found in the ONTAP Data Collector under _Advanced Configuration_: 
 image:Enable_Log_Monitor_Collection.png[Enabling Advanced Counter and EMS Log collection for ONTAP]
 
 
-[#top]
-
-toc:[]
-
-
-
-
 
 == Monitor Descriptions
 
-System-defined monitors are comprised of pre-defined metrics and conditions, as well as default descriptions and corrective actions, which can not be modified. You _can_ modify the notification recipient list for system-defined monitors. To view the metrics, conditions, description and corrective actions, or to modify the recipient list, open a system-defined monitor group and click the monitor name in the list.
+System-defined monitors are comprised of pre-defined metrics or attributes and conditions, as well as default descriptions and corrective actions, which can not be modified. You _can_ modify the notification recipient list for system-defined monitors. To view the metrics or attributes, conditions, description and corrective actions, or to modify the recipient list, open a system-defined monitor group and click the monitor name in the list.
 
 System-defined monitor groups cannot be modified or removed.
 
@@ -38,7 +30,8 @@ The following system-defined monitors are available, in the noted groups.
 
 * *ONTAP Infrastructure* includes monitors for infrastructure-related issues in ONTAP clusters. 
 * *ONTAP Workload Examples* includes monitors for workload-related issues. 
-* Monitors in both group default to _Paused_ state.
+* *CVO Infrastructure* and *CVO Workload Examples* include corresponding monitors for Cloud Volumes ONTAP.
+* Default state varies by monitor. Refer to the tables below and review a monitor before enabling notifications.
 
 
 
@@ -113,10 +106,7 @@ If warning threshold is breached, take the following actions immediately:
 |User Quota Capacity Hard Limit|CRITICAL|ONTAP recognizes the users of Unix or Windows systems who have the rights to access volumes, files or directories within a volume. As a result, ONTAP allows the customers to configure storage capacity for their users or groups of users of their Linux or Windows systems. The user or group policy quota limits the amount of space the user can utilize for their own data.…A hard limit of this quota allows notification of the user when the amount of capacity used within the volume is right before reaching the total capacity quota. Monitoring the amount of data stored within a user or group quota ensures that the user receives uninterrupted data service.|If critical threshold is breached, consider following immediate actions to minimize service disruption:  
 1. Increase the space of the user or group quota in order to accommodate the growth. 
 2. Instruct the user or group to delete unwanted data to free up space.
-|User Quota Capacity Soft Limit|WARNING|ONTAP recognizes the users of Unix or Windows systems that have the rights to access volumes, files or directories within a volume. As a result, ONTAP allows the customers to configure storage capacity for their users or groups of users of their Linux or Windows systems. The user or group policy quota limits the amount of space the user can utilize for their own data.…A soft limit of this quota allows proactive notification to the user when the amount of capacity used within the volume is reaching the total capacity quota. Monitoring the amount of data stored within a user or group quota ensures that the user receives uninterrupted data service.|If warning threshold is breached, plan to take the following immediate actions:
-1. Increase the space of the user or group quota in order to accommodate the growth. 
-2. Delete unwanted data to free up space.
-|Volume Capacity Full|CRITICAL|Storage capacity of a volume is necessary to store application and customer data. The more data stored in the ONTAP volume the less storage availability for future data. If the data storage capacity within a volume reaches the total storage capacity may lead to the customer being unable to store data due to lack of storage capacity. Monitoring the volume used storage capacity ensures data services continuity.|If critical threshold is breached, consider following immediate actions to minimize service disruption:
+|ONTAP Volume Capacity Full|CRITICAL|Storage capacity of a volume is necessary to store application and customer data. The more data stored in the ONTAP volume the less storage availability for future data. If the data storage capacity within a volume reaches the total storage capacity may lead to the customer being unable to store data due to lack of storage capacity. Monitoring the volume used storage capacity ensures data services continuity.|If critical threshold is breached, consider following immediate actions to minimize service disruption:
 1. Increase the space of the volume to accommodate the growth. 
 2. Delete unwanted data to free up space.
 3. If snapshot copies occupy more space than the snapshot reserve, delete old Snapshots or enable Volume Snapshot Autodelete.…If warning threshold is breached, plan to take the following immediate actions:
@@ -186,8 +176,6 @@ When warning threshold is breached, then consider increasing the space of the vo
 
 |===
 
-<<top,Back to Top>>
-
 === Log Monitors 
 
 |===
@@ -198,17 +186,13 @@ When warning threshold is breached, then consider increasing the space of the vo
 If you use Cloud Volumes ONTAP, perform the following corrective actions: …Ensure that the configuration of your object store has not changed.… Ensure that the login and connectivity information is still valid.…Contact NetApp technical support if the issue persists.
 |Disk Out of Service|INFO|This event occurs when a disk is removed from service because it has been marked failed, is being sanitized, or has entered the Maintenance Center.|None.
 |FlexGroup Constituent Full|CRITICAL|A constituent within a FlexGroup volume is full, which might cause a potential disruption of service. You can still create or expand files on the FlexGroup volume. However, none of the files that are stored on the constituent can be modified. As a result, you might see random out-of-space errors when you try to perform write operations on the FlexGroup volume.|It is recommended that you add capacity to the FlexGroup volume by using the "volume modify -files +X" command.…Alternatively, delete files from the FlexGroup volume. However, it is difficult to determine which files have landed on the constituent.
-|Flexgroup Constituent Nearly Full|WARNING|A constituent within a FlexGroup volume is nearly out of space, which might cause a potential disruption of service. Files can be created and expanded. However, if the constituent runs out of space, you might not be able to append to or modify the files on the constituent. |It is recommended that you add capacity to the FlexGroup volume by using the "volume modify -files +X" command.…Alternatively, delete files from the FlexGroup volume. However, it is difficult to determine which files have landed on the constituent.
-|FlexGroup Constituent Nearly Out of Inodes|WARNING|A constituent within a FlexGroup volume is almost out of inodes, which might cause a potential disruption of service. The constituent receives lesser create requests than average. This might impact the overall performance of the FlexGroup volume, because the requests are routed to constituents with more inodes.|It is recommended that you add capacity to the FlexGroup volume by using the "volume modify -files +X" command.…Alternatively, delete files from the FlexGroup volume. However, it is difficult to determine which files have landed on the constituent.
 |FlexGroup Constituent Out of Inodes|CRITICAL|A constituent of a FlexGroup volume has run out of inodes, which might cause a potential disruption of service. You cannot create new files on this constituent. This might lead to an overall imbalanced distribution of content across the FlexGroup volume.|It is recommended that you add capacity to the FlexGroup volume by using the "volume modify -files +X" command.…Alternatively, delete files from the FlexGroup volume. However, it is difficult to determine which files have landed on the constituent.
-|LUN Offline|INFO|This event occurs when a LUN is brought offline manually. |Bring the LUN back online. 
 |Main Unit Fan Failed|WARNING|One or more main unit fans have failed. The system remains operational.…However, if the condition persists for too long, the overtemperature might trigger an automatic shutdown.|Reseat the failed fans. If the error persists, replace them.
-|Main Unit Fan in Warning State|INFO|This event occurs when one or more main unit fans are in a warning state.|Replace the indicated fans to avoid overheating.
 |NVRAM Battery Low|WARNING|The NVRAM battery capacity is critically low. There might be a potential data loss if the battery runs out of power.…Your system generates and transmits an AutoSupport or "call home" message to NetApp technical support and the configured destinations if it is configured to do so. The successful delivery of an AutoSupport message significantly improves problem determination and resolution. |Perform the following corrective actions:…View the battery's current status, capacity, and charging state by using the "system node environment sensors show" command.…If the battery was replaced recently or the system was non-operational for an extended period of time, monitor the battery to verify that it is charging properly.…Contact NetApp technical support if the battery runtime continues to decrease below critical levels, and the storage system shuts down automatically.
 |Service Processor Not Configured|WARNING|This event occurs on a weekly basis, to remind you to configure the Service Processor (SP). The SP is a physical device that is incorporated into your system to provide remote access and remote management capabilities. You should configure the SP to use its full functionality. |Perform the following corrective actions:…Configure the SP by using the "system service-processor network modify" command.…Optionally, obtain the MAC address of the SP by using the "system service-processor network show" command.…Verify the SP network configuration by using the "system service-processor network show" command.…Verify that the SP can send an AutoSupport email by using the "system service-processor autosupport invoke" command.
 NOTE: AutoSupport email hosts and recipients should be configured in ONTAP before you issue this command.
 |Service Processor Offline|CRITICAL|ONTAP is no longer receiving heartbeats from the Service Processor (SP), even though all the SP recovery actions have been taken. ONTAP cannot monitor the health of the hardware without the SP.…The system will shut down to prevent hardware damage and data loss. Set up a panic alert to be notified immediately if the SP goes offline. |Power-cycle the system by performing the following actions:…Pull the controller out from the chassis.…Push the controller back in.…Turn the controller back on.…If the problem persists, replace the controller module.
-|Shelf Fans Failed|CRITICAL|The indicated cooling fan or fan module of the shelf has failed. The disks in the shelf might not receive enough cooling airflow, which might result in disk failure.|Perform the following corrective actions:…Verify that the fan module is fully seated and secured.
+|Shelf Fan Failed|CRITICAL|The indicated cooling fan or fan module of the shelf has failed. The disks in the shelf might not receive enough cooling airflow, which might result in disk failure.|Perform the following corrective actions:…Verify that the fan module is fully seated and secured.
 NOTE: The fan is integrated into the power supply module in some disk shelves.…If the issue persists, replace the fan module.…If the issue still persists, contact NetApp technical support for assistance.
 |System Cannot Operate Due to Main Unit Fan Failure |CRITICAL|One or more main unit fans have failed, disrupting system operation. This might lead to a potential data loss. |Replace the failed fans.
 |Unassigned Disks|INFO|System has unassigned disks - capacity is being wasted and your system may have some misconfiguration or partial configuration change applied.|Perform the following corrective actions:…Determine which disks are unassigned by using the "disk show -n" command.…Assign the disks to a system by using the "disk assign" command.
@@ -222,7 +206,7 @@ NOTE: The fan is integrated into the power supply module in some disk shelves.�
 |AWS Metadata Server Connection Fail|CRITICAL|The Identity and Access Management (IAM) roles thread cannot establish a communication link with the Amazon Web Services (AWS) metadata server. Communication should be established to acquire the necessary AWS IAM role-based credentials used to sign API requests to Amazon Simple Storage Service (Amazon S3). Cloud Volume ONTAP has become inaccessible.…|Perform the following:…Log in to the AWS EC2 Management Console.…Navigate to the Instances page.…Find the instance for the Cloud Volumes ONTAP deployment and check its health.… 
 |FabricPool Space Usage Limit Nearly Reached|WARNING|The total cluster-wide FabricPool space usage of object stores from capacity-licensed providers has nearly reached the licensed limit.|Perform the following corrective actions:…Check the percentage of the licensed capacity used by each FabricPool storage tier by using the "storage aggregate object-store show-space" command.…Delete Snapshot copies from volumes with the tiering policy "snapshot" or "backup" by using the "volume snapshot delete" command to clear up space.…Install a new license on the cluster to increase the licensed capacity.
 |FabricPool Space Usage Limit Reached|CRITICAL|The total cluster-wide FabricPool space usage of object stores from capacity-licensed providers has reached  the license limit.|Perform the following corrective actions:…Check the percentage of the licensed capacity used by each FabricPool storage tier by using the "storage aggregate object-store show-space" command.…Delete Snapshot copies from volumes with the tiering policy "snapshot" or "backup" by using the "volume snapshot delete" command to clear up space.…Install a new license on the cluster to increase the licensed capacity.
-|Giveback of Aggregate Failed|CRITICAL|This event occurs during the migration of an aggregate as part of a storage failover (SFO) giveback, when the destination node cannot reach the object stores. |Perform the following corrective actions:…Verify that your intercluster LIF is online and functional by using the "network interface show" command.…Check network connectivity to the object store server by using the"'ping" command over the destination node intercluster LIF. …Verify that the configuration of your object store has not changed and that login and connectivity information is still accurate by using the "aggregate object-store config show" command.…Alternatively, you can override the error by specifying false for the "require-partner-waiting" parameter of the giveback command.…Contact NetApp technical support for more information or assistance.
+|Giveback of Storage Pool Failed|CRITICAL|This event occurs during the migration of an aggregate as part of a storage failover (SFO) giveback, when the destination node cannot reach the object stores. |Perform the following corrective actions:…Verify that your intercluster LIF is online and functional by using the "network interface show" command.…Check network connectivity to the object store server by using the"'ping" command over the destination node intercluster LIF. …Verify that the configuration of your object store has not changed and that login and connectivity information is still accurate by using the "aggregate object-store config show" command.…Alternatively, you can override the error by specifying false for the "require-partner-waiting" parameter of the giveback command.…Contact NetApp technical support for more information or assistance.
 |HA Interconnect Down|WARNING|The high-availability (HA) interconnect is down. Risk of service outage when failover is not available.|Corrective actions depend on the number and type of HA interconnect links supported by the platform, as well as the reason why the interconnect is down. …If the links are down:…Verify that both controllers in the HA pair are operational.…For externally connected links, make sure that the interconnect cables are connected properly and that the small form-factor pluggables (SFPs), if applicable, are seated properly on both controllers.…For internally connected links, disable and re-enable the links, one after the other, by using the "ic link off" and "ic link on" commands. …If links are disabled, enable the links by using the "ic link on" command. …If a peer is not connected, disable and re-enable the links, one after the other, by using the "ic link off" and "ic link on" commands.…Contact NetApp technical support if the issue persists.
 |Max Sessions Per User Exceeded|WARNING
 |You have exceeded the maximum number of sessions allowed per user over a TCP connection. Any request to establish a session will be denied until some sessions are released. …|Perform the following corrective actions: …Inspect all the applications that run on the client, and terminate any that are not operating properly.…Reboot the client.…Check if the issue is caused by a new or existing application:…If the application is new, set a higher threshold for the client by using the "cifs option modify -max-opens-same-file-per-tree" command.
@@ -239,30 +223,25 @@ NOTE: Deleting a CIFS server can make data inaccessible. …Remove NetBIOS name 
 |Node Root Volume Space Low|CRITICAL|The system has detected that the root volume is dangerously low on space. The node is not fully operational. Data LIFs might have failed over within the cluster, because of which NFS and CIFS access is limited on the node. Administrative capability is limited to local recovery procedures for the node to clear up space on the root volume.|Perform the following corrective actions:…Clear up space on the root volume by deleting old Snapshot copies, deleting files you no longer need from the /mroot directory, or expanding the root volume capacity.…Reboot the controller.…Contact NetApp technical support for more information or assistance.
 |Nonexistent Admin Share|CRITICAL|Vscan issue: a client has attempted to connect to a nonexistent ONTAP_ADMIN$ share. |Ensure that Vscan is enabled for the mentioned SVM ID. Enabling Vscan on a SVM causes the ONTAP_ADMIN$ share to be created for the SVM automatically.
 |NVMe Namespace Out of Space|CRITICAL|An NVMe namespace has been brought offline because of a write failure caused by lack of space.|Add space to the volume, and then bring the NVMe namespace online by using the "vserver nvme namespace modify" command.
-|NVMe-oF Grace Period Active|WARNING|This event occurs on a daily basis when the NVMe over Fabrics (NVMe-oF) protocol is in use and the grace period of the license is active. The NVMe-oF functionality requires a license after the license grace period expires. NVMe-oF functionality is disabled when the license grace period is over. |Contact your sales representative to obtain an NVMe-oF license, and add it to the cluster, or remove all instances of NVMe-oF configuration from the cluster. 
-|NVMe-oF Grace Period Expired|WARNING|The NVMe over Fabrics (NVMe-oF) license grace period is over and the NVMe-oF functionality is disabled.|Contact your sales representative to obtain an NVMe-oF license, and add it to the cluster.
-|NVMe-oF Grace Period Start|WARNING|The NVMe over Fabrics (NVMe-oF) configuration was detected during the upgrade to ONTAP 9.5 software. NVMe-oF functionality requires a license after the license grace period expires.|Contact your sales representative to obtain an NVMe-oF license, and add it to the cluster.
+|NVMe-oF License Grace Period Active|WARNING|This event occurs on a daily basis when the NVMe over Fabrics (NVMe-oF) protocol is in use and the grace period of the license is active. The NVMe-oF functionality requires a license after the license grace period expires. NVMe-oF functionality is disabled when the license grace period is over. |Contact your sales representative to obtain an NVMe-oF license, and add it to the cluster, or remove all instances of NVMe-oF configuration from the cluster. 
+|NVMe-oF License Grace Period Expired|WARNING|The NVMe over Fabrics (NVMe-oF) license grace period is over and the NVMe-oF functionality is disabled.|Contact your sales representative to obtain an NVMe-oF license, and add it to the cluster.
+|NVMe-oF License Grace Period Start|WARNING|The NVMe over Fabrics (NVMe-oF) configuration was detected during the upgrade to ONTAP 9.5 software. NVMe-oF functionality requires a license after the license grace period expires.|Contact your sales representative to obtain an NVMe-oF license, and add it to the cluster.
 |Object Store Host Unresolvable|CRITICAL|The object store server host name cannot be resolved to an IP address. The object store client cannot communicate with the object-store server without resolving to an IP address. As a result, data might be inaccessible. |Check the DNS configuration to verify that the host name is configured correctly with an IP address.
 |Object Store Intercluster LIF Down|CRITICAL|The object-store client cannot find an operational LIF to communicate with the object store server. The node will not allow object store client traffic until the intercluster LIF is operational. As a result, data might be inaccessible. |Perform the following corrective actions:…Check the intercluster LIF status by using the "network interface show -role intercluster" command.…Verify that the intercluster LIF is configured correctly and operational.…If an intercluster LIF is not configured, add it by using the "network interface create -role intercluster" command.
 |Object Store Signature Mismatch|CRITICAL|The request signature sent to the object store server does not match the signature calculated by the client. As a result, data might be inaccessible. |Verify that the secret access key is configured correctly. If it is configured correctly, contact NetApp technical support for assistance.
 |READDIR Timeout|CRITICAL|A READDIR file operation has exceeded the timeout that it is allowed to run in WAFL. This can be because of very large or sparse directories. Corrective action is recommended. |Perform the following corrective actions:…Find information specific to recent directories that have had READDIR file operations expire by using the following 'diag' privilege nodeshell CLI command:
 wafl readdir notice show.…Check if directories are indicated as sparse or not:…If a directory is indicated as sparse, it is recommended that you copy the contents of the directory to a new directory to remove the sparseness of the directory file. …If a directory is not indicated as sparse and the directory is large, it is recommended that you reduce the size of the directory file by reducing the number of file entries in the directory.
-|Relocation of Aggregate Failed|CRITICAL|This event occurs during the relocation of an aggregate, when the destination node cannot reach the object stores. |Perform the following corrective actions:…Verify that your intercluster LIF is online and functional by using the "network interface show" command.…Check network connectivity to the object store server by using the"'ping" command over the destination node intercluster LIF. …Verify that the configuration of your object store has not changed and that login and connectivity information is still accurate by using the "aggregate object-store config show" command.…Alternatively, you can override the error by using the "override-destination-checks" parameter of the relocation command.…Contact NetApp technical support for more information or assistance.
+|Relocation of Storage Pool Failed|CRITICAL|This event occurs during the relocation of an aggregate, when the destination node cannot reach the object stores. |Perform the following corrective actions:…Verify that your intercluster LIF is online and functional by using the "network interface show" command.…Check network connectivity to the object store server by using the"'ping" command over the destination node intercluster LIF. …Verify that the configuration of your object store has not changed and that login and connectivity information is still accurate by using the "aggregate object-store config show" command.…Alternatively, you can override the error by using the "override-destination-checks" parameter of the relocation command.…Contact NetApp technical support for more information or assistance.
 |Shadow Copy Failed|CRITICAL|A Volume Shadow Copy Service (VSS), a Microsoft Server backup and restore service operation, has failed.|Check the following using the information provided in the event message:…Is shadow copy configuration enabled?…Are the appropriate licenses installed? …On which shares is the shadow copy operation performed?…Is the share name correct?…Does the share path exist?…What are the states of the shadow copy set and its shadow copies?
 |Storage Switch Power Supplies Failed|WARNING|There is a missing power supply in the cluster switch. Redundancy is reduced, risk of outage with any further power failures.|Perform the following corrective actions:…Ensure that the power supply mains, which supplies power to the cluster switch, is turned on.…Ensure that the power cord is connected to the power supply.…Contact NetApp technical support if the issue persists.
 |Too Many CIFS Authentication|WARNING|Many authentication negotiations have occurred simultaneously. There are 256 incomplete new session requests from this client.|Investigate why the client has created 256 or more new connection requests. You might have to contact the vendor of the client or of the application to determine why the error occurred.
 |Unauthorized User Access to Admin Share|WARNING|A client has attempted to connect to the privileged ONTAP_ADMIN$ share even though their logged-in user is not an allowed user.|Perform the following corrective actions:…Ensure that the mentioned username and IP address is configured in one of the active Vscan scanner pools.…Check the scanner pool configuration that is currently active by using the "vserver vscan scanner pool show-active" command.
 |Virus Detected|WARNING|A Vscan server has reported an error to the storage system. This typically indicates that a virus has been found. However, other errors on the Vscan server can cause this event.…Client access to the file is denied. The Vscan server might, depending on its settings and configuration, clean the file, quarantine it, or delete it.|Check the log of the Vscan server reported in the "syslog" event to see if it was able to successfully clean, quarantine, or delete the infected file. If it was not able to do so, a system administrator might have to manually delete the file.
 
-|Volume Offline|INFO|This message indicates that a volume is made offline.|Bring the volume back online.
-|Volume Restricted|INFO|This event indicates that a flexible volume is made restricted.|Bring the volume back online.
-|Storage VM Stop Succeeded|INFO|This message occurs when a 'vserver stop' operation succeeds.|Use 'vserver start' command to start the data access on a storage VM.
 |Node Panic|WARNING|This event is issued when a panic occurs|Contact NetApp customer support.|1 day
 
 |===
 
-
-<<top,Back to Top>>
 
 === Anti-Ransomware Log Monitors
 
@@ -286,8 +265,6 @@ Your system generates and transmits an AutoSupport or "call home" message to Net
 
 
 
-<<top,Back to Top>>
-
 
 === FSx for NetApp ONTAP Monitors
 
@@ -309,8 +286,6 @@ Your system generates and transmits an AutoSupport or "call home" message to Net
 
 |===
 
-
-<<top,Back to Top>>
 
 === K8s Monitors
 
@@ -412,7 +387,7 @@ If warning threshold is breached, plan to take the following immediate actions:
 |Check the Kubernetes event log for the cause of the configuration failure.
 |Critical
 
-|Persistent Volume Reclamation Failed
+|Kubernetes Persistent Volume Reclamation Failed
 |The volume has failed its automatic reclamation.
 |
 |Warning @ > 0 B
@@ -487,7 +462,7 @@ Right-size pods to free up memory on nodes.
 |Warning @ > 80 %
  Critical @ > 90 %
 
-|Pod Crash Loop Backoff
+|Kubernetes Pod Crash Loop Backoff
 |Pod has crashed and attempted to restart multiple times.
 |
 |Critical @ > 3
@@ -508,7 +483,7 @@ Check hardware network performance.
 |Warning @ > 150 ms
  Critical @ > 300 ms
 
-|Job Failed
+|Kubernetes Job Failed
 |Job did not complete successfully due to a node crash or reboot, resource exhaustion, job timeout, or pod scheduling failure.
 |Check the Kubernetes event logs for failure causes.
 |Warning @ > 1
@@ -604,32 +579,27 @@ Right-size pods to free up CPU on nodes.
 ////
 
 
-<<top,Back to Top>>
-
 === Change Log Monitors
 
 |===
 
 |Monitor Name|Severity|Monitor Description
 
-|Internal Volume Discovered|Informational|This message occurs when an Internal Volume is discovered.
-|Internal Volume Modified|Informational|This message occurs when an Internal Volume is modified.
-|Storage Node Discovered|Informational|This message occurs when an Storage Node is discovered.
-|Storage Node Removed|Informational|This message occurs when an Storage Node is removed.
+|Volume Discovered|Informational|This message occurs when an Internal Volume is discovered.
+|Volume Modified|Informational|This message occurs when an Internal Volume is modified.
+|Node Discovered|Informational|This message occurs when an Storage Node is discovered.
+|Node Removed|Informational|This message occurs when an Storage Node is removed.
 |Storage Pool Discovered|Informational|This message occurs when an Storage Pool is discovered.
 |Storage Virtual Machine Discovered|Informational|This message occurs when an Storage Virtual Machine is discovered.
 |Storage Virtual Machine Modified|Informational|This message occurs when an Storage Virtual Machine is modified.
 |===
 
 
-<<top,Back to Top>>
-
 
 === Data Collection Monitors
 
 |===
-Monitor Name|Description|Corrective Action
-|Acquisition Unit Shutdown|Data Infrastructure Insights Acquisition Units periodically restart as part of upgrades to introduce new features. This happens once a month or less in a typical environment. A Warning Alert that an Acquisition Unit has shutdown should be followed soon after by a Resolution noting that the newly-restarted Acquisition Unit has completed a registration with Data Infrastructure Insights. Typically this shutdown-to-registration cycle takes 5 to 15 minutes. |If the alert occurs frequently or lasts longer than 15 minutes, check on the operation of the system hosting the Acquisition Unit, the network, and any proxy connecting the AU to the Internet.
+|Monitor Name|Description|Corrective Action
 |Collector Failed|The poll of a data collector encountered an unexpected failure situation.|Visit the data collector page in Data Infrastructure Insights to learn more about the situation.
 |Collector Warning|This Alert typically can arise because of an erroneous configuration of the data collector or of the target system. Revisit the configurations to prevent future Alerts. It can also be due to a retrieval of less-than-complete data where the data collector gathered all the data that it could. This can happen when situations change during data collection (e.g., a virtual machine present at the beginning of data collection is deleted during data collection and before its data is captured).|Check the configuration of the data collector or target system.
 
@@ -637,36 +607,117 @@ Note that the monitor for Collector Warning can send more alerts than other moni
 |===
 
 
-<<top,Back to Top>>
+=== Attribute Monitors
 
-=== Security Monitors
+Attribute monitors evaluate configuration attributes reported for an object. Unlike metric monitors, they do not compare a time-series metric with a numeric threshold. Each condition below generates a _Warning_ alert when the reported attribute matches a noncompliant or unavailable state.
 
-|===
+The previous standalone ONTAP Essentials security metric monitors have been replaced by the consolidated *ONTAP Cluster Misconfigured* and *ONTAP Storage Misconfigured* attribute monitors. The corresponding CVO monitors apply the same checks to Cloud Volumes ONTAP.
 
-|Monitor Name|Threshold|Monitor Description|Corrective Action
-|AutoSupport HTTPS transport disabled|Warning @ < 1|AutoSupport supports HTTPS, HTTP, and SMTP for transport protocols. Because of the sensitive nature of AutoSupport messages, NetApp strongly recommends using HTTPS as the default transport protocol for sending AutoSupport messages to NetApp support.|To set HTTPS as the transport protocol for AutoSupport messages, run the following ONTAP command:…system node autosupport modify -transport https
-|Cluster Insecure ciphers for SSH|Warning @ < 1|Indicates that SSH is using insecure ciphers, for example ciphers beginning with *cbc.|To remove the CBC ciphers, run the following ONTAP command:…security ssh remove -vserver <admin vserver> -ciphers aes256-cbc,aes192-cbc,aes128-cbc,3des-cbc
-|Cluster Login Banner Disabled|Warning @ < 1|Indicates that the Login banner is disabled for users accessing the ONTAP system. Displaying a login banner is helpful for establishing expectations for access and use of the system.|To configure the login banner for a cluster, run the following ONTAP command:…security login banner modify -vserver <admin svm> -message "Access restricted to authorized users"
-|Cluster Peer Communication Not Encrypted|Warning @ < 1|When replicating data for disaster recovery, caching, or backup, you must protect that data during transport over the wire from one ONTAP cluster to another. Encryption must be configured on both the source and destination clusters.|To enable encryption on cluster peer relationships that were created prior to ONTAP 9.6, the source and destination cluster must be upgraded to 9.6. Then use the "cluster peer modify" command to change both the source and destination cluster peers to use Cluster Peering Encryption.…See the NetApp Security Hardening Guide for ONTAP 9 for details.
-|Default Local Admin User Enabled|Warning @ > 0|NetApp recommends locking (disabling) any unneeded Default Admin User (built-in) accounts with the lock command. They are primarily default accounts for which passwords were never updated or changed.|To lock the built-in "admin" account, run the following ONTAP command:…security login lock -username admin
-|FIPS Mode Disabled|Warning @ < 1|When FIPS 140-2 compliance is enabled, TLSv1 and SSLv3 are disabled, and only TLSv1.1 and TLSv1.2 remain enabled. ONTAP prevents you from enabling TLSv1 and SSLv3 when FIPS 140-2 compliance is enabled.|To enable FIPS 140-2 compliance on a cluster, run the following ONTAP command in advanced privilege mode:…security config modify -interface SSL -is-fips-enabled true
-|Log Forwarding Not Encrypted|Warning @ < 1|Offloading of syslog information is necessary for limiting the scope or footprint of a breach to a single system or solution. Therefore, NetApp recommends securely offloading syslog information to a secure storage or retention location.|Once a log forwarding destination is created, its protocol cannot be changed. To change to an encrypted protocol, delete and recreate the log forwarding destination using the following ONTAP command:…cluster log-forwarding create -destination <destination ip> -protocol tcp-encrypted
-|MD5 Hashed password|Warning @ > 0|NetApp strongly recommends to use the more secure SHA-512 hash function for ONTAP user account passwords. Accounts using the less secure MD5 hash function should migrate to the SHA-512 hash function.|NetApp strongly recommends user accounts migrate to the more secure SHA-512 solution by having users change their passwords.…to lock accounts with passwords that use the MD5 hash function, run the following ONTAP command:…security login lock -vserver * -username * -hash-function md5
-|No NTP servers are configured|Warning @ < 1|Indicates that the cluster has no configured NTP servers. For redundancy and optimum service, NetApp recommends that you associate at least three NTP servers with the cluster.|To associate an NTP server with the cluster, run the following ONTAP command:
-
-cluster time-service ntp server create -server <ntp server host name or ip address>
-|NTP server count is low|Warning @ < 3|Indicates that the cluster has less than 3 configured NTP servers. For redundancy and optimum service, NetApp recommends that you associate at least three NTP servers with the cluster.|To associate an NTP server with the cluster, run the following ONTAP command:…cluster time-service ntp server create -server <ntp server host name or ip address>
-|Remote Shell Enabled|Warning @ > 0|Remote Shell is not a secure method for establishing command-line access to the ONTAP solution. Remote Shell should be disabled for secure remote access.|NetApp recommends Secure Shell (SSH) for secure remote access.…To disable Remote shell on a cluster, run the following ONTAP command in advanced privilege mode:…security protocol modify -application rsh- enabled false
-|Storage VM Audit Log Disabled|Warning @ < 1|Indicates that Audit logging is disabled for SVM.|To configure the Audit log for a vserver, run the following ONTAP command:…vserver audit enable -vserver <svm>
-|Storage VM Insecure ciphers for SSH|Warning @ < 1|Indicates that SSH is using insecure ciphers, for example ciphers beginning with *cbc.|To remove the CBC ciphers, run the following ONTAP command:…security ssh remove -vserver <vserver> -ciphers aes256-cbc,aes192-cbc,aes128-cbc,3des-cbc
-|Storage VM Login banner disabled|Warning @ < 1|Indicates that the Login banner is disabled for users accessing SVMs on the system. Displaying a login banner is helpful for establishing expectations for access and use of the system.|To configure the login banner for a cluster, run the following ONTAP command:…security login banner modify -vserver <svm> -message "Access restricted to authorized users"
-|Telnet Protocol Enabled|Warning @ > 0|Telnet is not a secure method for establishing command-line access to the ONTAP solution. Telnet should be disabled for secure remote access.|NetApp recommends Secure Shell (SSH) for secure remote access.
-To disable Telnet on a cluster, run the following ONTAP command in advanced privilege mode:…security protocol modify -application telnet -enabled false
+==== ONTAP Attribute Monitors
 
 |===
+|Monitor Name|Group|Default State|Conditions|Corrective Action
 
+|ONTAP Cluster Misconfigured
+|ONTAP Infrastructure
+|Active
+|Alerts when one or more of these 12 security conditions is detected:
 
-<<top,Back to Top>>
+* AutoSupport HTTPS is not configured
+* Web HTTP is enabled
+* SSH is not secured
+* The login banner is disabled
+* Cluster peer communication is not encrypted
+* The certificate issuer is self-signed
+* The default local administrator is enabled
+* FIPS is disabled
+* Log forwarding is not encrypted
+* MD5 password hashing is enabled
+* Remote Shell (RSH) is enabled
+* Telnet is enabled
+|Review the affected attributes in the alert. Disable insecure protocols and password hashing, secure SSH and peer communication, enable the required security controls, and replace self-signed certificates according to your organization's security policy.
+
+|ONTAP Storage Misconfigured
+|ONTAP Infrastructure
+|Active
+|Alerts when an ONTAP Storage VM has audit logging disabled, SSH is not secured, or its login banner is disabled.
+|Enable Storage VM audit logging, secure SSH, and configure an appropriate login banner.
+
+|ONTAP Cluster Lacks Spare Disks
+|ONTAP Infrastructure
+|Active
+|Alerts when the cluster reports that spare disks are low.
+|Review spare disks by node and add compatible spare capacity to maintain data protection.
+
+|ONTAP Storage Service Unavailable
+|ONTAP Workload Examples
+|Active
+|Alerts when an enabled FCP or iSCSI service is unavailable on an ONTAP Storage VM.
+|Verify Storage VM, protocol, and data LIF status. Review recent ONTAP health and event messages, and restore the affected SAN service.
+
+|ONTAP Node Misconfigured
+|ONTAP Workload Examples
+|Paused
+|Alerts when Cisco Discovery Protocol (CDP) is disabled on an ONTAP node.
+|Verify the node's CDP setting and network port status, then enable CDP where it is required for network discovery and topology monitoring.
+|===
+
+==== Cloud Volumes ONTAP Attribute Monitors
+
+|===
+|Monitor Name|Group|Default State|Conditions|Corrective Action
+
+|CVO Cluster Misconfigured
+|CVO Infrastructure
+|Active
+|Applies the cluster security configuration checks described for *ONTAP Cluster Misconfigured* to Cloud Volumes ONTAP.
+|Review the affected attributes and correct the reported insecure or noncompliant cluster settings.
+
+|CVO Storage Misconfigured
+|CVO Infrastructure
+|Active
+|Alerts when a Cloud Volumes ONTAP Storage VM has audit logging disabled, SSH is not secured, or its login banner is disabled.
+|Enable Storage VM audit logging, secure SSH, and configure an appropriate login banner.
+
+|CVO Node Misconfigured
+|CVO Workload Examples
+|Paused
+|Alerts when CDP is disabled on a Cloud Volumes ONTAP node.
+|Verify the node's CDP and network settings, then enable CDP where required.
+|===
+
+==== NTP Configuration Monitors
+
+The following NTP monitors remain available as standalone system-defined monitors for ONTAP and Cloud Volumes ONTAP.
+
+|===
+|Monitor Name|Platform|Threshold|Monitor Description|Corrective Action
+
+|No NTP Servers are Configured
+|ONTAP
+|Warning @ < 1
+|The cluster has no configured NTP servers. For redundancy and optimum service, NetApp recommends associating at least three NTP servers with the cluster.
+|Associate an NTP server with the cluster by using `cluster time-service ntp server create -server <ntp_server>`.
+
+|NTP Server Count is Low
+|ONTAP
+|Warning @ < 3
+|The cluster has fewer than three configured NTP servers.
+|Associate additional NTP servers with the cluster by using `cluster time-service ntp server create -server <ntp_server>`.
+
+|CVO No NTP Servers are Configured
+|Cloud Volumes ONTAP
+|Warning @ < 1
+|The cluster has no configured NTP servers.
+|Associate an NTP server with the cluster by using `cluster time-service ntp server create -server <ntp_server>`.
+
+|CVO NTP Server Count is Low
+|Cloud Volumes ONTAP
+|Warning @ < 3
+|The cluster has fewer than three configured NTP servers.
+|Associate additional NTP servers with the cluster by using `cluster time-service ntp server create -server <ntp_server>`.
+|===
+
 
 === Data Protection Monitors
 
@@ -688,8 +739,6 @@ If warning threshold is breached, plan to take the following immediate actions:
 |===
 
 
-
-<<top,Back to Top>>
 
 === Cloud Volume (CVO) Monitors 
 
@@ -807,7 +856,6 @@ Is the share name correct?
 Does the share path exist?
 
 What are the states of the shadow copy set and its shadow copies?
-|CVO Storage VM Stop Succeeded|INFO|This message occurs when a 'vserver stop' operation succeeds.|Use 'vserver start' command to start the data access on a storage VM.
 |CVO Too Many CIFS Authentication|WARNING|Many authentication negotiations have occurred simultaneously. There are 256 incomplete new session requests from this client.|Investigate why the client has created 256 or more new connection requests. You might have to contact the vendor of the client or of the application to determine why the error occurred.
 |CVO Unassigned Disks|INFO|System has unassigned disks - capacity is being wasted and your system may have some misconfiguration or partial configuration change applied.|Perform the following corrective actions:
 
@@ -822,14 +870,10 @@ Check the scanner pool configuration that is currently active by using the "vser
 |CVO Virus Detected|WARNING|A Vscan server has reported an error to the storage system. This typically indicates that a virus has been found. However, other errors on the Vscan server can cause this event.
 
 Client access to the file is denied. The Vscan server might, depending on its settings and configuration, clean the file, quarantine it, or delete it.|Check the log of the Vscan server reported in the "syslog" event to see if it was able to successfully clean, quarantine, or delete the infected file. If it was not able to do so, a system administrator might have to manually delete the file.
-|CVO Volume Offline|INFO|This message indicates that a volume is made offline.|Bring the volume back online.
-|CVO Volume Restricted|INFO|This event indicates that a flexible volume is made restricted.|Bring the volume back online.
 
 |===
 
 
-
-<<top,Back to Top>>
 
 === SnapMirror for Business Continuity (SMBC) Mediator Log Monitors
 
@@ -851,8 +895,6 @@ Note: UM doesn't have this one|CRITICAL|This message occurs when a SnapMirror fo
 |SMBC Server Certificate Expiring|WARNING|This message occurs when the ONTAP Mediator server certificate is due to expire within the next 30 days.|Before this certificate expires, remove the configuration of the current ONTAP Mediator by using the "snapmirror mediator remove" command. Update a new server certificate on the ONTAP Mediator server. Reconfigure access to the ONTAP Mediator by using the "snapmirror mediator add" command.
 
 |===
-
-<<top,Back to Top>>
 
 === Additional Power, Heartbeat, and Miscellaneous System Monitors
 
@@ -877,15 +919,15 @@ Note: UM doesn't have this one|CRITICAL|This message occurs when a SnapMirror fo
 |MetroCluster Partners Not Reachable Over Peering Network|CRITICAL|The connectivity to the peer cluster is broken.|1) Ensure that the port is connected to the correct network/switch.
 2) Ensure that the intercluster LIF is connected with the peered cluster.
 3) Ensure that the peered cluster is up and running by using the command "cluster peer ping". Refer to the MetroCluster Disaster Recovery Guide if the peered cluster is down.
-|MetroCluster Inter Switch All Links Down|CRITICAL|All Inter-Switch Links (ISLs) on the storage switch are down.|1) Repair the back-end fabric ISLs on the storage switch.
+|MetroCluster Inter-Switch All Links Down|CRITICAL|All Inter-Switch Links (ISLs) on the storage switch are down.|1) Repair the back-end fabric ISLs on the storage switch.
 2) Ensure that the partner switch is up and its ISLs are operational.
 3) Ensure that intermediate equipment, such as xWDM devices, are operational.
 |MetroCluster Node To Storage Stack SAS Link Down|WARNING|The SAS adapter or its attached cable might be at fault.|1. Verify that the SAS adapter is online and running.
 2. Verify that the physical cable connection is secure and operating, and replace the cable if necessary.
 3. If the SAS adapter is connected to disk shelves, ensure IOMs and disks are properly seated.
-|MetroClusterFC Initiator Links Down|CRITICAL|The FC initiator adapter is at fault.|1. Ensure that the FC initiator link has not been tampered with.
+|MetroCluster FC Initiator Link Down|CRITICAL|The FC initiator adapter is at fault.|1. Ensure that the FC initiator link has not been tampered with.
 2. Verify the operational status of the FC initiator adapter by using the command "system node run -node local -command storage show adapter".
-|FC-VI Interconnect Link Down|CRITICAL|The physical link on the FC-VI port is offline.|1. Ensure that the FC-VI link has not been tampered with.
+|MetroCluster FC-VI Interconnect Link Down|CRITICAL|The physical link on the FC-VI port is offline.|1. Ensure that the FC-VI link has not been tampered with.
 2. Verify that the physical status of the FC-VI adapter is "Up" by using the command "metrocluster interconnect adapter show".
 3. If the configuration includes fabric switches, ensure that they are properly cabled and configured.
 |MetroCluster Spare Disks Left Behind|WARNING|The spare disk was left behind during switchback.|If the disk is not failed, return it to its original owner by using the command "metrocluster switchback".
@@ -903,17 +945,12 @@ Note: UM doesn't have this one|CRITICAL|This message occurs when a SnapMirror fo
 2) Verify that the switch is operating under recommended temperature conditions.
 |MetroCluster Switch Temperature Abnormal|CRITICAL|The temperature sensor on the Fibre Channel switch reported abnormal temperature.|1) Check the operational status of the temperature sensors on the storage switch by using the command "storage switch show -cooling".
 2) Verify that the switch is operating under recommended temperature conditions.
-|Service Processor Heartbeat Missed |INFORMATIONAL|This message occurs when ONTAP does not receive an expected "heartbeat" signal from the Service Processor (SP). Along with this message, log files from SP will be sent out for debugging. ONTAP will reset the SP to attempt to restore communication. The SP will be unavailable for up to two minutes while it reboots.|Contact NetApp technical support.
 |Service Processor Heartbeat Stopped|WARNING|This message occurs when ONTAP is no longer receiving heartbeats from the Service Processor (SP). Depending on the hardware design, the system may continue to serve data or may determine to shut down to prevent data loss or hardware damage. The system continues to serve data, but because the SP might not be working, the system cannot send notifications of down appliances, boot errors, or Open Firmware (OFW) Power-On Self-Test (POST) errors. If your system is configured to do so, it generates and transmits an AutoSupport (or 'call home') message to NetApp technical support and to the configured destinations. Successful delivery of an AutoSupport message significantly improves problem determination and resolution.|If the system has shut down, attempt a hard power cycle: Pull the controller out from the chassis, push it back in then power on the system. Contact NetApp technical support if the problem persists after the power cycle, or for any other condition that may warrant attention.
 
 |===
 
-<<top,Back to Top>>
-
 
 == More Information
-
-//* link:concept_notifications_email.html[Email Alerting] for Monitors
 
 * link:task_view_and_manage_alerts.html[Viewing and Dismissing Alerts]
 

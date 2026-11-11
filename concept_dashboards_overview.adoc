@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_dashboards_overview.html
-summary: Overview of dashboards in Data Infrastructure Insights.
+summary: Create custom dashboards with flexible widgets to visualize infrastructure data, monitor performance trends, and build operational views tailored to your specific monitoring needs.
 keywords: dashboard, widget, custom, view, data
 ---
 
@@ -13,7 +13,7 @@ keywords: dashboard, widget, custom, view, data
 :imagesdir: ./media/
 
 [.lead]
-Data Infrastructure Insights provides users the flexibility to create operational views of infrastructure data, by allowing you to create custom dashboards with a variety of widgets, each of which provides extensive flexibility in displaying and charting your data.
+Create custom dashboards that deliver the operational insights you need most. Choose from multiple widget types—including tables, charts, gauges, and plots—to visualize your infrastructure data exactly how you want it, enabling better decision-making and more effective monitoring.
 
 IMPORTANT: The examples in these sections are for explanation purposes only and do not cover every possible scenario. The concepts and steps herein can be used to create your own dashboards to highlight the data specific to your particular needs.
 

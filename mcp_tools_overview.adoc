@@ -1,0 +1,341 @@
+---
+sidebar: sidebar
+permalink: mcp_tools_overview.html
+summary: The DII MCP Server currently exposes 26 read-only product tools across nine domains. A separate `mcp_auth` helper may appear when the connected client needs to authenticate.
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant
+---
+
+= DII MCP tool reference
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The DII MCP Server currently exposes 26 read-only product tools across nine domains. A separate +mcp_auth+ helper may appear when the connected client needs to authenticate.
+
+NOTE: The DII MCP is a link:concept_preview_features.html[Preview] feature and is therefore subject to change.
+
+Tool availability and results depend on the authenticated tenant, enabled DII features, configured collectors, and user permissions.
+
+== Query conventions
+
+* Discover types and metadata before querying dynamic fields.
+* Use exact, case-sensitive attribute and metric names returned by metadata.
+* Use ISO-8601 timestamps and IANA timezone names where required.
+* Keep query windows to 30 days or less.
+* Use `limit` and `offset` for object and alert pagination.
+* Use the returned cursor for log-event pagination.
+* Do not display complete webhook endpoint addresses.
+
+== Acquisition units
+
+=== List acquisition units
+
++AcquisitionUnitsService_getAcquisitionUnits+
+
+Returns all acquisition units with connection status, reporting freshness, operating system, version, IP address, and assigned data-source count.
+
+Example:
+
+[example]
+====
+List acquisition units. Summarize connected, failed, and never-reported units without displaying IP addresses or UUIDs.
+====
+
+=== Get an acquisition unit
+
++AcquisitionUnitsService_getAcquisitionUnitByUuid+
+
+Retrieves full details for one acquisition unit. If the user supplies a name, list acquisition units first to resolve its UUID.
+
+Required input: `uuid`
+
+== Alerts
+
+=== Get alert metadata
+
++AlertsService_getMetadata+
+
+Returns valid alert field names and data types. Call this before querying alerts.
+
+=== Query alerts
+
++AlertsService_queryForAlerts+
+
+Queries active or inactive alerts with selected attributes, filters, sorting, time bounds, and offset pagination.
+
+Required inputs:
+
+* `active`
+* `attributeNames`
+* `fromTime`
+* `toTime`
+* `timezone`
+
+Optional inputs include `filter`, `sortField`, `sortAscending`, `limit`, and `offset`. `limit` is 1-500; `offset` is 0-1000. Keep the time window below 30 days.
+
+Example:
+
+[example]
+====
+Retrieve critical active storage alerts from the last seven days. Return alert ID, monitor name, severity, status, and related storage name.
+====
+
+=== Get an alert by name
+
++AlertsService_getAlertByName+
+
+Retrieves one alert using an alert ID in the `AL-123456` format.
+
+Required input: `name`
+
+=== Get an alert by UUID
+
++AlertsService_getAlertByUUID+
+
+Retrieves one alert using its UUID.
+
+Required input: `uuid`
+
+== Data collectors
+
+=== List data sources
+
++CollectorService_getDataSources+
+
+Lists configured collectors with name, status, vendor, model, acquisition unit, version, and last successful acquisition. Optionally filter by an AU UUID.
+
+Example:
+
+[example]
+====
+Group configured data sources by status and vendor. Highlight failures and stale successful acquisitions.
+====
+
+=== Get a data source
+
++CollectorService_getDataSourceById+
+
+Retrieves one collector with configuration, collection-package status, poll activity, discovered devices, patch information, and acquisition-unit context.
+
+Required input: `id`
+
+Use this tool for poll intervals, configured metrics, collection settings, or failure investigation.
+
+=== List supported data source types
+
++CollectorService_getDataSourceTypes+
+
+Lists product types supported by the DII collector catalog. This is not a list of collectors configured in the tenant.
+
+== Logs
+
+=== List log types
+
++LogService_getLogTypes+
+
+Lists log types currently available in the tenant.
+
+=== Get log type metadata
+
++LogService_getLogTypeMetadata+
+
+Returns valid attributes for a log type. Call it before searching or grouping events.
+
+Required input: `type`
+
+=== Query log events
+
++LogService_queryLogEvents+
+
+Returns log events in descending timestamp order.
+
+Required inputs:
+
+* `type`
+* `fromTime`
+* `toTime`
+* `timezone`
+
+Optional inputs include `attributes`, `filter`, `limit`, and `cursor`. `limit` is 1-200. The event window cannot exceed 30 days. Pass the previous response's cursor to retrieve the next page.
+
+=== Count log events over time
+
++LogService_queryLogEventsCountHistogram+
+
+Returns fixed-size time buckets of event counts. Optionally group each bucket by a valid groupable attribute; grouped results return the top segments and an +__other__+ segment.
+
+Required inputs:
+
+* `type`
+* `fromTime`
+* `toTime`
+* `timezone`
+
+Optional inputs: `filter`, `groupBy`
+
+== Maintenance windows
+
+=== List maintenance windows
+
++MaintenanceWindowService_getMaintenanceWindows+
+
+Lists active, non-expired alert-suppression windows. Set `includeExpired` to `true` to include expired windows.
+
+A successful empty response means no matching maintenance windows exist.
+
+=== Get a maintenance window
+
++MaintenanceWindowService_getMaintenanceWindowById+
+
+Retrieves one maintenance window.
+
+Required input: `id`
+
+== Monitors
+
+=== List monitors
+
++MonitorsService_queryMonitors+
+
+Lists DII monitors. Use `isSystem` to return only system monitors, exclude system monitors, or return all monitors.
+
+=== Get a monitor
+
++MonitorsService_getMonitorById+
+
+Retrieves one monitor, including its description and corrective guidance when available.
+
+Required input: `id`
+
+== Notifications
+
+=== List notification rules
+
++NotificationService_getNotificationRules+
+
+Lists rules that route matching alerts to notification targets. A successful empty response means no matching rules exist.
+
+=== Get a notification rule
+
++NotificationService_getNotificationRuleById+
+
+Retrieves one routing rule.
+
+Required input: `id`
+
+=== List webhook targets
+
++NotificationService_getWebhooks+
+
+Lists webhook target metadata for Slack, Microsoft Teams, Discord, PagerDuty, and custom HTTP integrations. Optionally filter by comma-separated engine types.
+
+Security requirement: complete endpoint addresses can contain credentials. Applications and agents must omit or redact the address field from displayed or forwarded results.
+
+Safe example:
+
+[example]
+====
+Count webhook targets by engine type and list only target names and status. Do not return endpoint addresses.
+====
+
+== Objects and metrics
+
+=== List object types
+
++ObjectService_getObjectTypes+
+
+Lists object types currently available in the tenant.
+
+=== Get object metadata
+
++ObjectService_getMetadataForObjectType+
+
+Returns valid attributes, metrics, types, and grouping capabilities for one object type.
+
+Required input: `objectType`
+
+=== Query objects
+
++ObjectService_query+
+
+Retrieves objects, selected attributes, and optional metrics. Filters referencing metrics apply to raw values before time-window aggregation.
+
+Required inputs:
+
+* `objectType`
+* `attributeNames`
+
+Optional inputs include `metricNames`, `filter`, `sortFieldName`, `isSortAscending`, `fromTime`, `toTime`, `aggregateFunctions`, `limit`, and `offset`.
+
+Supported query aggregations: `MAX`, `MIN`, `AVG`, `SUM`, `LAST`. `limit` is 1-500. If time bounds are omitted, the tool defaults to a recent three-hour window.
+
+=== Group objects
+
++ObjectService_groupObjects+
+
+Groups objects by one valid groupable attribute and aggregates selected metrics. Filters apply to raw values before aggregation.
+
+Required inputs:
+
+* `objectType`
+* `groupByAttribute`
+* `metricNames`
+
+Optional inputs include `aggregateFunctions`, `filter`, sorting, time bounds, `limit`, and `offset`.
+
+Supported group aggregations: `MAX`, `MIN`, `AVG`, `SUM`, `FIRST`, `CHANGE`, +CHANGE_RATIO+.
+
+=== Query performance time series
+
++ObjectService_queryPerformanceMetricsForObjects+
+
+Returns bucketed time-series data for one metric and matching objects.
+
+Required inputs:
+
+* `objectType`
+* `metricName`
+* `fromTime`
+* `toTime`
+* `timezone`
+
+Optional inputs include `filter`, `aggregationFunction`, `limit`, and `isSortAscending`. `limit` controls the number of returned series and must be 1-50.
+
+Supported bucket aggregations: `MAX`, `MIN`, `AVG`, `SUM`, `FIRST`, `CHANGE`, +CHANGE_RATIO+.
+
+== Kubernetes collectors
+
+=== List Kubernetes collectors
+
++OperatorsManagement_getKubernetesCollectors+
+
+Returns cluster name, overall currency status, operator version, Network Performance and Map component version, Change Analysis component version, and last-reported timestamp.
+
+Example:
+
+[example]
+====
+Identify outdated Kubernetes collectors and summarize which components need attention.
+====
+
+== Filter operators
+
+Alert, log, and object queries support nested conditions:
+
+* `EQ`, `NE`
+* `GT`, `LT`, `GE`, `LE`
+* `WILDCARD` using `++*++` and `?`
+* `EXISTS`
+* Nested `and`, `or`, and `not`
+
+The connected server validates fields against metadata. If a query is rejected, refresh the relevant metadata and reconstruct the filter.
+
+== Related documentation
+
+* link:mcp_overview.html[DII MCP overview]
+* link:mcp_concepts.html[Concepts and data model]
+* link:mcp_recipe_overview.html[Operational recipes]
+* link:mcp_troubleshooting.html[Troubleshooting]

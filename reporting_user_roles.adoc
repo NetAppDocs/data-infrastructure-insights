@@ -50,6 +50,23 @@ The following table shows the functions available to each Reporting role.
 
 |===
 
+== Reporting Administration
+
+The previous Reporting Administration Console is no longer available. Use Manage for reporting administration.
+
+. In Data Infrastructure Insights, open *Reports*.
+. Select *Menu > Manage*.
+
+From Manage, a Reporting administrator can configure reports and work with current, past, and upcoming reporting activities.
+
+To open run details for a completed activity:
+
+. Select *Menu > Manage > Activities > Past*.
+. On the activity, open the three-dots menu.
+. Select *Run Details*.
+
+For more information, see this link:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs/IBM_Cognos_Administration_Console_Does_Not_Load_for_DII_Reporting_Scheduled_Reports[KB Article^].
+
 == Setting Reporting (Cognos) email preferences
 
 NOTE: If you change your user email preferences within Data Infrastructure Insights Reporting (i.e. the Cognos application), those preferences are active _only for the current session_. Logging out of Cognos and back in again will reset your email preferences.

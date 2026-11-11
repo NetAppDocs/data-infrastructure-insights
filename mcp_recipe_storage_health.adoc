@@ -1,0 +1,114 @@
+---
+sidebar: sidebar
+permalink: mcp_recipe_storage_health.html
+summary: Use this recipe to prioritize storage issues by combining active alerts, monitor intent, corrective guidance, relevant platform logs, and object context.
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant
+---
+
+= Assess storage health
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Use this recipe to prioritize storage issues by combining active alerts, monitor intent, corrective guidance, relevant platform logs, and object context.
+
+NOTE: The DII MCP is a link:concept_preview_features.html[Preview] feature and is therefore subject to change.
+
+== Prerequisites
+
+* A time range of 30 days or less.
+* Optional storage-system, cluster, pool, or volume scope.
+* Access to alert, monitor, log, and object tools.
+
+== Tools used
+
+* +AlertsService_getMetadata+
+* +AlertsService_queryForAlerts+
+* +AlertsService_getAlertByName+
+* +MonitorsService_getMonitorById+
+* +LogService_getLogTypes+
+* +LogService_getLogTypeMetadata+
+* +LogService_queryLogEvents+
+* +ObjectService_getObjectTypes+
+* +ObjectService_getMetadataForObjectType+
+* +ObjectService_query+
+
+== Starter prompt
+
+[example]
+====
+Assess storage health for the last 24 hours. Identify critical and warning active alerts for storage systems, nodes, pools, and volumes. For the highest-impact alerts, explain the monitor condition and corrective guidance, then inspect relevant EMS or storage-platform logs around the trigger time. Separate confirmed evidence from likely causes.
+====
+
+== Agent workflow
+
+. Get alert metadata.
+. Identify valid fields for severity, status, monitor, related object, and trigger time.
+. Query active storage-related alerts in the requested window.
+. Rank alerts using:
++
+* Severity
+* Affected object type
+* Number of affected objects
+* Recency and recurrence
+* Availability, data-protection, performance, or capacity impact
+. Retrieve full details for the highest-priority alerts.
+. Retrieve their monitor definitions and corrective guidance.
+. List log types and select the platform-native stream relevant to each alert, such as ONTAP EMS or StorageGRID events.
+. Retrieve log metadata, then query a narrow interval around the alert.
+. Retrieve object attributes or metrics needed to confirm current state.
+. Produce a health summary with evidence, likely cause, impact, and next check.
+
+== Interpretation
+
+Do not treat one signal as a complete health assessment:
+
+* *Alerts* show detected conditions.
+* *Monitors* explain the detection rule and intended corrective action.
+* *Logs* provide platform-native event context.
+* *Objects and metrics* show current inventory or measured state.
+
+An active alert can remain open after the underlying condition changes. Use fresh object and metric data where possible.
+
+== Suggested output
+
+For each priority issue:
+
+* Affected resource
+* Severity and alert state
+* Trigger time
+* Monitor and condition
+* Corroborating logs or metrics
+* Confirmed evidence
+* Likely cause, labeled as an inference
+* Corrective guidance
+* Confidence and missing evidence
+
+== Limits and privacy
+
+* Keep alert and log windows below 30 days.
+* Use narrow log windows to reduce unrelated events.
+* Omit unnecessary UUIDs, addresses, annotations, and raw payloads.
+* Corrective guidance is informational; validate commands against the relevant product documentation and change process.
+
+== Follow-up prompts
+
+[example]
+====
+For alert `AL-123456`, show the monitor guidance and related EMS events within 30 minutes before and after the trigger.
+====
+
+[example]
+====
+Group active storage alerts by affected system and impact area. Which system needs attention first, and why?
+====
+
+[example]
+====
+Check whether the highest-priority alert is still supported by current object metrics.
+====
+
+link:mcp_recipe_overview.html[Back to recipes]

@@ -1,24 +1,23 @@
 ---
 sidebar: sidebar
 permalink: task_view_queries.html
-summary: Viewing queries that have been created
+summary: View and manage your saved queries with customizable display options including filtering, sorting, and column arrangement for efficient query organization and access.
 keywords: query, queries, viewing
 ---
 
 = Viewing queries
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-You can view your queries to monitor your assets and change how your queries display the data related to your assets.
+Access and manage your saved queries through the query interface, where you can filter, sort, and customize the display to efficiently organize and locate the queries you need for asset monitoring and analysis.
 
 .Steps
 . Log in to your Data Infrastructure Insights tenant.
-. Click *Queries* and select *Show all queries*.
+. Click *Explore* and select *All metric queries*.
 You can change how queries display by doing any of the following:
 . You can enter text in the filter box to search to display specific queries.
 . You can change the sort order of the columns in the table of queries to either ascending (up arrow) or descending (down arrow) by clicking the arrow in the column header.

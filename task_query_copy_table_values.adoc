@@ -1,20 +1,19 @@
 ---
 sidebar: sidebar
 permalink: task_query_copy_table_values.html
-summary: You can copy values from a table to the clipboard for use in other applications.
+summary: Copy table values to the clipboard using text selection or one-click copying for efficient data transfer to search fields and external applications.
 keywords: query, queries, copy, values, clipboard
 ---
 
 = Copying table values
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-You can copy values in tables to the clipboard for use in search boxes or other applications.
+Streamline your workflow by copying table values directly to the clipboard for use in searches or external applications. Choose between manual text selection or convenient one-click copying for single-value fields with asset links.
 
 .About this task
 There are two methods you can use to copy values from tables or query results to the clipboard.

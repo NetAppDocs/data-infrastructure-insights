@@ -1,0 +1,3260 @@
+---
+sidebar: sidebar
+permalink: reporting_schema_performance.html
+summary: Schema tables for the Performance data warehouse
+keywords: dwh, data warehouse, schema, reporting, performance
+---
+
+= Performance Schema
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+Source: *dwh_performance* OData endpoint — Data Infrastructure Insights
+
+Tables found: *74* | Associations: *167* 
+
+== Key Relationships Between Tables
+
+=== application_volume_hourly_performance_fact
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-application_dimension[application_dimension] |applicationTk |tk
+|link:#entity-application_group_dimension[application_group_dimension] |applicationGroupTk |tk
+|link:#entity-business_entity_dimension[business_entity_dimension] |businessEntityTk |tk
+|link:#entity-date_dimension[date_dimension] |dateTk |tk
+|link:#entity-service_level_dimension[service_level_dimension] |serviceLevelTk |tk
+|link:#entity-tier_dimension[tier_dimension] |tierTk |tk
+|link:#entity-time_dimension[time_dimension] |timeTk |tk
+|===
+
+=== disk_daily_performance_fact
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-date_dimension[date_dimension] |dateTk |tk
+|link:#entity-disk_dimension[disk_dimension] |diskTk |tk
+|link:#entity-storage_dimension[storage_dimension] |storageTk |tk
+|link:#entity-storage_pool_dimension[storage_pool_dimension] |storagePoolTk |tk
+|===
+
+=== disk_hourly_performance_fact
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-date_dimension[date_dimension] |dateTk |tk
+|link:#entity-disk_dimension[disk_dimension] |diskTk |tk
+|link:#entity-storage_dimension[storage_dimension] |storageTk |tk
+|link:#entity-storage_pool_dimension[storage_pool_dimension] |storagePoolTk |tk
+|link:#entity-time_dimension[time_dimension] |timeTk |tk
+|===
+
+=== host_vm_daily_performance_fact
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-date_dimension[date_dimension] |dateTk |tk
+|link:#entity-host_dimension[host_dimension] |hostTk |tk
+|===
+
+=== host_vm_hourly_performance_fact
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-date_dimension[date_dimension] |dateTk |tk
+|link:#entity-host_dimension[host_dimension] |hostTk |tk
+|link:#entity-time_dimension[time_dimension] |timeTk |tk
+|===
+
+=== host_volume_hourly_performance_fact
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-business_entity_dimension[business_entity_dimension] |businessEntityTk |tk
+|link:#entity-date_dimension[date_dimension] |dateTk |tk
+|link:#entity-host_dimension[host_dimension] |hostTk |tk
+|link:#entity-host_group_dimension[host_group_dimension] |hostGroupTk |tk
+|link:#entity-service_level_dimension[service_level_dimension] |serviceLevelTk |tk
+|link:#entity-tier_dimension[tier_dimension] |tierTk |tk
+|link:#entity-time_dimension[time_dimension] |timeTk |tk
+|===
+
+=== internal_volume_daily_performance_fact
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-application_dimension[application_dimension] |applicationTk |tk
+|link:#entity-application_group_dimension[application_group_dimension] |applicationGroupTk |tk
+|link:#entity-business_entity_dimension[business_entity_dimension] |businessEntityTk |tk
+|link:#entity-date_dimension[date_dimension] |dateTk |tk
+|link:#entity-internal_volume_dimension[internal_volume_dimension] |internalVolumeTk |tk
+|link:#entity-k8s_namespace_dimension[k8s_namespace_dimension] |k8sNamespaceTk |tk
+|link:#entity-k8s_namespace_group_dimension[k8s_namespace_group_dimension] |k8sNamespaceGroupTk |tk
+|link:#entity-service_level_dimension[service_level_dimension] |serviceLevelTk |tk
+|link:#entity-storage_dimension[storage_dimension] |storageTk |tk
+|link:#entity-storage_node_dimension[storage_node_dimension] |storageNodeTk |tk
+|link:#entity-storage_pool_dimension[storage_pool_dimension] |storagePoolTk |tk
+|link:#entity-tier_dimension[tier_dimension] |tierTk |tk
+|===
+
+=== internal_volume_hourly_performance_fact
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-application_dimension[application_dimension] |applicationTk |tk
+|link:#entity-application_group_dimension[application_group_dimension] |applicationGroupTk |tk
+|link:#entity-business_entity_dimension[business_entity_dimension] |businessEntityTk |tk
+|link:#entity-date_dimension[date_dimension] |dateTk |tk
+|link:#entity-internal_volume_dimension[internal_volume_dimension] |internalVolumeTk |tk
+|link:#entity-k8s_namespace_dimension[k8s_namespace_dimension] |k8sNamespaceTk |tk
+|link:#entity-k8s_namespace_group_dimension[k8s_namespace_group_dimension] |k8sNamespaceGroupTk |tk
+|link:#entity-service_level_dimension[service_level_dimension] |serviceLevelTk |tk
+|link:#entity-storage_dimension[storage_dimension] |storageTk |tk
+|link:#entity-storage_node_dimension[storage_node_dimension] |storageNodeTk |tk
+|link:#entity-storage_pool_dimension[storage_pool_dimension] |storagePoolTk |tk
+|link:#entity-tier_dimension[tier_dimension] |tierTk |tk
+|link:#entity-time_dimension[time_dimension] |timeTk |tk
+|===
+
+=== qtree_daily_performance_fact
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-application_dimension[application_dimension] |applicationTk |tk
+|link:#entity-application_group_dimension[application_group_dimension] |applicationGroupTk |tk
+|link:#entity-business_entity_dimension[business_entity_dimension] |businessEntityTk |tk
+|link:#entity-date_dimension[date_dimension] |dateTk |tk
+|link:#entity-internal_volume_dimension[internal_volume_dimension] |internalVolumeTk |tk
+|link:#entity-k8s_namespace_dimension[k8s_namespace_dimension] |k8sNamespaceTk |tk
+|link:#entity-k8s_namespace_group_dimension[k8s_namespace_group_dimension] |k8sNamespaceGroupTk |tk
+|link:#entity-qtree_dimension[qtree_dimension] |qtreeTk |tk
+|link:#entity-service_level_dimension[service_level_dimension] |serviceLevelTk |tk
+|link:#entity-storage_dimension[storage_dimension] |storageTk |tk
+|link:#entity-storage_pool_dimension[storage_pool_dimension] |storagePoolTk |tk
+|link:#entity-tier_dimension[tier_dimension] |tierTk |tk
+|===
+
+=== qtree_hourly_performance_fact
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-application_dimension[application_dimension] |applicationTk |tk
+|link:#entity-application_group_dimension[application_group_dimension] |applicationGroupTk |tk
+|link:#entity-business_entity_dimension[business_entity_dimension] |businessEntityTk |tk
+|link:#entity-date_dimension[date_dimension] |dateTk |tk
+|link:#entity-internal_volume_dimension[internal_volume_dimension] |internalVolumeTk |tk
+|link:#entity-k8s_namespace_dimension[k8s_namespace_dimension] |k8sNamespaceTk |tk
+|link:#entity-k8s_namespace_group_dimension[k8s_namespace_group_dimension] |k8sNamespaceGroupTk |tk
+|link:#entity-qtree_dimension[qtree_dimension] |qtreeTk |tk
+|link:#entity-service_level_dimension[service_level_dimension] |serviceLevelTk |tk
+|link:#entity-storage_dimension[storage_dimension] |storageTk |tk
+|link:#entity-storage_pool_dimension[storage_pool_dimension] |storagePoolTk |tk
+|link:#entity-tier_dimension[tier_dimension] |tierTk |tk
+|link:#entity-time_dimension[time_dimension] |timeTk |tk
+|===
+
+=== storage_node_daily_performance_fact
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-date_dimension[date_dimension] |dateTk |tk
+|link:#entity-storage_dimension[storage_dimension] |storageTk |tk
+|link:#entity-storage_node_dimension[storage_node_dimension] |storageNodeTk |tk
+|link:#entity-tier_dimension[tier_dimension] |tierTk |tk
+|===
+
+=== storage_node_hourly_performance_fact
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-date_dimension[date_dimension] |dateTk |tk
+|link:#entity-storage_dimension[storage_dimension] |storageTk |tk
+|link:#entity-storage_node_dimension[storage_node_dimension] |storageNodeTk |tk
+|link:#entity-tier_dimension[tier_dimension] |tierTk |tk
+|link:#entity-time_dimension[time_dimension] |timeTk |tk
+|===
+
+=== switch_performance_for_host_hourly_fact
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-application_dimension[application_dimension] |applicationTk |tk
+|link:#entity-application_group_dimension[application_group_dimension] |applicationGroupTk |tk
+|link:#entity-business_entity_dimension[business_entity_dimension] |businessEntityTk |tk
+|link:#entity-date_dimension[date_dimension] |dateTk |tk
+|link:#entity-host_dimension[host_dimension] |hostTk |tk
+|link:#entity-time_dimension[time_dimension] |timeTk |tk
+|===
+
+=== switch_performance_for_port_hourly_fact
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-connected_device_dimension[connected_device_dimension] |connectedDeviceTk |tk
+|link:#entity-date_dimension[date_dimension] |dateTk |tk
+|link:#entity-fabric_dimension[fabric_dimension] |fabricTk |tk
+|link:#entity-port_dimension[port_dimension] |portTk |tk
+|link:#entity-switch_dimension[switch_dimension] |switchTk |tk
+|link:#entity-time_dimension[time_dimension] |timeTk |tk
+|===
+
+=== switch_performance_for_storage_hourly_fact
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-date_dimension[date_dimension] |dateTk |tk
+|link:#entity-storage_dimension[storage_dimension] |storageTk |tk
+|link:#entity-time_dimension[time_dimension] |timeTk |tk
+|===
+
+=== switch_performance_for_tape_hourly_fact
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-date_dimension[date_dimension] |dateTk |tk
+|link:#entity-tape_dimension[tape_dimension] |tapeTk |tk
+|link:#entity-time_dimension[time_dimension] |timeTk |tk
+|===
+
+=== time_dimension
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-date_dimension[date_dimension] |dateTk |tk
+|===
+
+=== vm_daily_performance_fact
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-application_dimension[application_dimension] |applicationTk |tk
+|link:#entity-application_group_dimension[application_group_dimension] |applicationGroupTk |tk
+|link:#entity-business_entity_dimension[business_entity_dimension] |businessEntityTk |tk
+|link:#entity-date_dimension[date_dimension] |dateTk |tk
+|link:#entity-host_dimension[host_dimension] |hostTk |tk
+|link:#entity-k8s_node_dimension[k8s_node_dimension] |k8sNodeTk |tk
+|link:#entity-vm_dimension[vm_dimension] |vmTk |tk
+|===
+
+=== vm_hourly_performance_fact
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-application_dimension[application_dimension] |applicationTk |tk
+|link:#entity-application_group_dimension[application_group_dimension] |applicationGroupTk |tk
+|link:#entity-business_entity_dimension[business_entity_dimension] |businessEntityTk |tk
+|link:#entity-date_dimension[date_dimension] |dateTk |tk
+|link:#entity-host_dimension[host_dimension] |hostTk |tk
+|link:#entity-k8s_node_dimension[k8s_node_dimension] |k8sNodeTk |tk
+|link:#entity-time_dimension[time_dimension] |timeTk |tk
+|link:#entity-vm_dimension[vm_dimension] |vmTk |tk
+|===
+
+=== vmdk_daily_performance_fact
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-datastore_dimension[datastore_dimension] |dataStoreTk |tk
+|link:#entity-date_dimension[date_dimension] |dateTk |tk
+|link:#entity-host_dimension[host_dimension] |hostTk |tk
+|link:#entity-service_level_dimension[service_level_dimension] |serviceLevelTk |tk
+|link:#entity-storage_dimension[storage_dimension] |storageTk |tk
+|link:#entity-tier_dimension[tier_dimension] |tierTk |tk
+|link:#entity-vm_dimension[vm_dimension] |vmTk |tk
+|link:#entity-vmdk_dimension[vmdk_dimension] |vmdkTk |tk
+|===
+
+=== vmdk_hourly_performance_fact
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-datastore_dimension[datastore_dimension] |dataStoreTk |tk
+|link:#entity-date_dimension[date_dimension] |dateTk |tk
+|link:#entity-host_dimension[host_dimension] |hostTk |tk
+|link:#entity-service_level_dimension[service_level_dimension] |serviceLevelTk |tk
+|link:#entity-storage_dimension[storage_dimension] |storageTk |tk
+|link:#entity-tier_dimension[tier_dimension] |tierTk |tk
+|link:#entity-time_dimension[time_dimension] |timeTk |tk
+|link:#entity-vm_dimension[vm_dimension] |vmTk |tk
+|link:#entity-vmdk_dimension[vmdk_dimension] |vmdkTk |tk
+|===
+
+=== volume_daily_performance_fact
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-application_dimension[application_dimension] |applicationTk |tk
+|link:#entity-application_group_dimension[application_group_dimension] |applicationGroupTk |tk
+|link:#entity-business_entity_dimension[business_entity_dimension] |businessEntityTk |tk
+|link:#entity-date_dimension[date_dimension] |dateTk |tk
+|link:#entity-host_dimension[host_dimension] |hostTk |tk
+|link:#entity-host_group_dimension[host_group_dimension] |hostGroupTk |tk
+|link:#entity-k8s_namespace_dimension[k8s_namespace_dimension] |k8sNamespaceTk |tk
+|link:#entity-k8s_namespace_group_dimension[k8s_namespace_group_dimension] |k8sNamespaceGroupTk |tk
+|link:#entity-service_level_dimension[service_level_dimension] |serviceLevelTk |tk
+|link:#entity-storage_dimension[storage_dimension] |storageTk |tk
+|link:#entity-storage_node_dimension[storage_node_dimension] |storageNodeTk |tk
+|link:#entity-storage_pool_dimension[storage_pool_dimension] |storagePoolTk |tk
+|link:#entity-tier_dimension[tier_dimension] |tierTk |tk
+|link:#entity-volume_dimension[volume_dimension] |volumeTk |tk
+|===
+
+=== volume_hourly_performance_fact
+
+[cols="1,1,1", options="header"]
+|===
+|Referenced (parent) table |FK column |Parent PK
+
+|link:#entity-application_dimension[application_dimension] |applicationTk |tk
+|link:#entity-application_group_dimension[application_group_dimension] |applicationGroupTk |tk
+|link:#entity-business_entity_dimension[business_entity_dimension] |businessEntityTk |tk
+|link:#entity-date_dimension[date_dimension] |dateTk |tk
+|link:#entity-host_dimension[host_dimension] |hostTk |tk
+|link:#entity-host_group_dimension[host_group_dimension] |hostGroupTk |tk
+|link:#entity-k8s_namespace_dimension[k8s_namespace_dimension] |k8sNamespaceTk |tk
+|link:#entity-k8s_namespace_group_dimension[k8s_namespace_group_dimension] |k8sNamespaceGroupTk |tk
+|link:#entity-service_level_dimension[service_level_dimension] |serviceLevelTk |tk
+|link:#entity-storage_dimension[storage_dimension] |storageTk |tk
+|link:#entity-storage_node_dimension[storage_node_dimension] |storageNodeTk |tk
+|link:#entity-storage_pool_dimension[storage_pool_dimension] |storagePoolTk |tk
+|link:#entity-tier_dimension[tier_dimension] |tierTk |tk
+|link:#entity-time_dimension[time_dimension] |timeTk |tk
+|link:#entity-volume_dimension[volume_dimension] |volumeTk |tk
+|===
+
+== Tables & Fields
+
+PKPrimary KeyFKForeign KeyNOT NULLRequired field
+
+=== application_dimension
+
+=== ↑ top
+
+Entity Set(s):application_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this application row.
+|name |String |Yes |Name of the application.
+|description |String |Yes |Description of the application.
+|priority |String |Yes |Priority of the application.
+|url |String |Yes |Url to this application in Insight Server.
+|id |Int64 |Yes |GUID of the application in dwh_inventory.application.
+|latest |String |Yes |Indicates whether this row is the latest one for this application.
+|dateTk |Int32 |Yes |TK of the date in which this application row was created.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|qtree_hourly_performance_fact |link:#entity-qtree_hourly_performance_fact[qtree_hourly_performance_fact] |many
+|volume_hourly_performance_fact |link:#entity-volume_hourly_performance_fact[volume_hourly_performance_fact] |many
+|application_volume_hourly_performance_fact |link:#entity-application_volume_hourly_performance_fact[application_volume_hourly_performance_fact] |many
+|qtree_daily_performance_fact |link:#entity-qtree_daily_performance_fact[qtree_daily_performance_fact] |many
+|vm_hourly_performance_fact |link:#entity-vm_hourly_performance_fact[vm_hourly_performance_fact] |many
+|internal_volume_daily_performance_fact |link:#entity-internal_volume_daily_performance_fact[internal_volume_daily_performance_fact] |many
+|internal_volume_hourly_performance_fact |link:#entity-internal_volume_hourly_performance_fact[internal_volume_hourly_performance_fact] |many
+|vm_daily_performance_fact |link:#entity-vm_daily_performance_fact[vm_daily_performance_fact] |many
+|switch_performance_for_host_hourly_fact |link:#entity-switch_performance_for_host_hourly_fact[switch_performance_for_host_hourly_fact] |many
+|volume_daily_performance_fact |link:#entity-volume_daily_performance_fact[volume_daily_performance_fact] |many
+|===
+
+=== application_group_bridge
+
+=== ↑ top
+
+Entity Set(s):application_group_bridge
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|appGroupTk |Int32 |Yes |TK of the application group.
+|appTk |Int32 |Yes |TK of the application.
+|isRep |String |Yes |Indicates whether this application represents its application group.
+|===
+
+=== application_group_dimension
+
+=== ↑ top
+
+Entity Set(s):application_group_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of the application group.
+|repApp |String |Yes |Name of the application representing the application group.
+|repAppTk |Int32 |Yes |TK of the application representing the application group.
+|cardinality |Int32 |Yes |Number of applications in the application group.
+|dateTk |Int32 |Yes |TK of the date in which the application group row was created.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|qtree_hourly_performance_fact |link:#entity-qtree_hourly_performance_fact[qtree_hourly_performance_fact] |many
+|volume_hourly_performance_fact |link:#entity-volume_hourly_performance_fact[volume_hourly_performance_fact] |many
+|application_volume_hourly_performance_fact |link:#entity-application_volume_hourly_performance_fact[application_volume_hourly_performance_fact] |many
+|qtree_daily_performance_fact |link:#entity-qtree_daily_performance_fact[qtree_daily_performance_fact] |many
+|vm_hourly_performance_fact |link:#entity-vm_hourly_performance_fact[vm_hourly_performance_fact] |many
+|internal_volume_daily_performance_fact |link:#entity-internal_volume_daily_performance_fact[internal_volume_daily_performance_fact] |many
+|internal_volume_hourly_performance_fact |link:#entity-internal_volume_hourly_performance_fact[internal_volume_hourly_performance_fact] |many
+|vm_daily_performance_fact |link:#entity-vm_daily_performance_fact[vm_daily_performance_fact] |many
+|switch_performance_for_host_hourly_fact |link:#entity-switch_performance_for_host_hourly_fact[switch_performance_for_host_hourly_fact] |many
+|volume_daily_performance_fact |link:#entity-volume_daily_performance_fact[volume_daily_performance_fact] |many
+|===
+
+=== application_volume_hourly_performance_fact
+
+=== ↑ top
+
+Entity Set(s):application_volume_hourly_performance_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int64 |Yes |TK of the fact.
+|timeTk *[FK]* →link:#entity-time_dimension[time_dimension].tk |Int32 |Yes |TK of the time dimension.
+|dateTk *[FK]* →link:#entity-date_dimension[date_dimension].tk |Int32 |Yes |TK of the date dimension.
+|applicationTk *[FK]* →link:#entity-application_dimension[application_dimension].tk |Int32 |Yes |TK of the application representative.
+|applicationGroupTk *[FK]* →link:#entity-application_group_dimension[application_group_dimension].tk |Int32 |Yes |TK of the application group.
+|tierTk *[FK]* →link:#entity-tier_dimension[tier_dimension].tk |Int32 |Yes |TK of the tier.
+|serviceLevelTk *[FK]* →link:#entity-service_level_dimension[service_level_dimension].tk |Int32 |Yes |TK of the service level.
+|businessEntityTk *[FK]* →link:#entity-business_entity_dimension[business_entity_dimension].tk |Int32 |Yes |TK of the business entity.
+|readResponseTime |Double |Yes |Read response time.
+|writeResponseTime |Double |Yes |Write response time
+|totalResponseTime |Double |Yes |The total response time.
+|totalResponseTimeMax |Double |Yes |The maximum for response time.
+|readThroughput |Double |Yes |Read throughput average.
+|writeThroughput |Double |Yes |Write throughput average.
+|sumOfAveragesVolumeThroughput |Double |Yes |The sum of totalThroughput for all volume hourly samples related to application. Represents the average usage for application.
+|maxOfMaxVolumeThroughput |Double |Yes |The maximum totalThroughputMax for all volume hourly samples related to application. Represents the best case scenario of max usage for application.
+|sumOfMaxVolumeThroughput |Double |Yes |The sum of totalThroughputMax for all volume hourly sample related to application. Represents the worst case scenario of max usage when all maxes happen at the same time.
+|readIops |Double |Yes |Read io per second average.
+|writeIops |Double |Yes |Write io per second average.
+|sumOfAveragesVolumeIops |Double |Yes |The sum of totalIops for all volume hourly samples related to application. Represents the average usage for application.
+|maxOfMaxVolumeIops |Double |Yes |The maximum totalIopsMax for all volume hourly samples related to application. Represents the best case scenario of max usage for application.
+|sumOfMaxVolumeIops |Double |Yes |The sum of totalIopsMax for all volume hourly sample related to application. Represents the worst case scenario of max usage when all maxes happen at the same time.
+|readCacheHitRatio |Double |Yes |The read cache hit ratio.
+|writeCacheHitRatio |Double |Yes |The write cache hit ratio.
+|totalCacheHitRatio |Double |Yes |The total cache hit ratio.
+|totalCacheHitRatioMax |Double |Yes |The maximum total cache hit ratio.
+|writePending |Int64 |Yes |Number of pending writes.
+|readIoDensity |Double |Yes |Read io density.
+|writeIoDensity |Double |Yes |Write io density.
+|totalIoDensity |Double |Yes |Total io density.
+|totalIoDensityMax |Double |Yes |The maximun total io density.
+|compressionSavingsPercent |Double |Yes |Compression savings (%).
+|compressionSavingsSpace |Double |Yes |Compression savings space.
+|totalTimeToFull |Double |Yes |Time to Full.
+|confidenceIntervalTimeToFull |Double |Yes |Confidence Interval for Time to Full.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|service_level_dimension |link:#entity-service_level_dimension[service_level_dimension] |one JOIN:serviceLevelTk=link:#entity-service_level_dimension[service_level_dimension].tk
+|tier_dimension |link:#entity-tier_dimension[tier_dimension] |one JOIN:tierTk=link:#entity-tier_dimension[tier_dimension].tk
+|business_entity_dimension |link:#entity-business_entity_dimension[business_entity_dimension] |one JOIN:businessEntityTk=link:#entity-business_entity_dimension[business_entity_dimension].tk
+|application_dimension |link:#entity-application_dimension[application_dimension] |one JOIN:applicationTk=link:#entity-application_dimension[application_dimension].tk
+|time_dimension |link:#entity-time_dimension[time_dimension] |one JOIN:timeTk=link:#entity-time_dimension[time_dimension].tk
+|date_dimension |link:#entity-date_dimension[date_dimension] |one JOIN:dateTk=link:#entity-date_dimension[date_dimension].tk
+|application_group_dimension |link:#entity-application_group_dimension[application_group_dimension] |one JOIN:applicationGroupTk=link:#entity-application_group_dimension[application_group_dimension].tk
+|===
+
+=== business_entity_dimension
+
+=== ↑ top
+
+Entity Set(s):business_entity_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this business entity row.
+|fullname |String |Yes |Name of the business entity.
+|tenant |String |Yes |Name of the tenant.
+|lob |String |Yes |Name of the line of business.
+|businessUnit |String |Yes |Name of the business unit.
+|project |String |Yes |Name of the project.
+|id |Int64 |Yes |GUID of the business entity in dwh_inventory.annotation_value.
+|latest |String |Yes |Indicates whether this row is the latest one for this business entity.
+|dateTk |Int32 |Yes |TK of the date in which this business entity row was created.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|qtree_hourly_performance_fact |link:#entity-qtree_hourly_performance_fact[qtree_hourly_performance_fact] |many
+|volume_hourly_performance_fact |link:#entity-volume_hourly_performance_fact[volume_hourly_performance_fact] |many
+|application_volume_hourly_performance_fact |link:#entity-application_volume_hourly_performance_fact[application_volume_hourly_performance_fact] |many
+|qtree_daily_performance_fact |link:#entity-qtree_daily_performance_fact[qtree_daily_performance_fact] |many
+|vm_hourly_performance_fact |link:#entity-vm_hourly_performance_fact[vm_hourly_performance_fact] |many
+|host_volume_hourly_performance_fact |link:#entity-host_volume_hourly_performance_fact[host_volume_hourly_performance_fact] |many
+|internal_volume_daily_performance_fact |link:#entity-internal_volume_daily_performance_fact[internal_volume_daily_performance_fact] |many
+|internal_volume_hourly_performance_fact |link:#entity-internal_volume_hourly_performance_fact[internal_volume_hourly_performance_fact] |many
+|vm_daily_performance_fact |link:#entity-vm_daily_performance_fact[vm_daily_performance_fact] |many
+|switch_performance_for_host_hourly_fact |link:#entity-switch_performance_for_host_hourly_fact[switch_performance_for_host_hourly_fact] |many
+|volume_daily_performance_fact |link:#entity-volume_daily_performance_fact[volume_daily_performance_fact] |many
+|===
+
+=== capacity_volume_fact_current
+
+=== ↑ top
+
+Entity Set(s):capacity_volume_fact_current
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|chargebackFactTk |Int32 |Yes |TK of the chargeback fact row where the volume capacity is counted.
+|volumeId |Int64 |Yes |GUID of the volume as appears in inventory
+|storageId |Int64 |Yes |GUID of the storage where this volume resides, as appears in the inventory
+|volumeName |String |Yes |Name of the volume
+|volumeType |String |Yes |Vendor-specific type of volume (e.g., SFS, BCV).
+|thinProvisioned |String |Yes |Indicates whether this volume is thin provisioned.
+|isVirtual |String |Yes |Indicates whether this volume is a virtual volume.
+|snapshot |String |Yes |Indicates whether this volume is a snapshot volume.
+|technologyType |String |Yes |Specifies the technology type (FC/ISCSI/UNKNOWN).
+|physicalUsableMB |Int64 |Yes |The amount of volume usable capacity that is consumed from the storage and is counted in the fact row, in MB.
+|physicalRawMB |Int64 |Yes |The amount of volume raw capacity that is consumed from the storage and is counted in the fact row, in MB.
+|provisionedUsableMB |Int64 |Yes |The amount of volume usable capacity that is provisioned to hosts/users counted in the fact row, in MB.
+|provisionedRawMB |Int64 |Yes |The amount of volume raw capacity that is provisioned to hosts/users counted in the fact row, in MB.
+|===
+
+=== cluster_switch_dimension
+
+=== ↑ top
+
+Entity Set(s):cluster_switch_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this cluster switch row.
+|identifier |String |Yes |unique identifier of the cluster switch.
+|name |String |Yes |Name of the cluster switch.
+|address |String |Yes |Address of the cluster switch
+|serialNumber |String |Yes |Serial number of the cluster switch
+|network |String |Yes |Network of the cluster switch
+|version |String |Yes |Version of the cluster switch
+|model |String |Yes |Model of the cluster switch
+|monitored |String |Yes |Is this cluster switch monitored?
+|monitoringEnabled |String |Yes |Is monitoring enabled for the cluster switch?
+|monitoringReason |String |Yes |Reason for monitoring of the cluster switch
+|id |Int64 |Yes |GUID of the node in dwh_inventory.cluster_switch
+|latest |String |Yes |Indicates whether this row is the latest one for this cluster switch.
+|dateTk |Int32 |Yes |TK of the date in which this cluster switch row was created.
+|===
+
+=== cluster_switch_port_daily_metrics_fact
+
+=== ↑ top
+
+Entity Set(s):cluster_switch_port_daily_metrics_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int64 |Yes |TK of the fact.
+|dateTk |Int32 |Yes |TK of the date dimension.
+|clusterSwitchPortTk |Int32 |Yes |TK of the node.
+|clusterSwitchTk |Int32 |Yes |TK of the cluster.
+|storageTk |Int32 |Yes |TK of the connected storage node.
+|storageNodeTk |Int32 |Yes |TK of the connected storage.
+|receiveBytes |Double |Yes |Receive bytes.
+|transmitBytes |Double |Yes |Transmit bytes.
+|totalBytes |Double |Yes |Total bytes.
+|receiveDiscards |Double |Yes |Receive discards.
+|transmitDiscards |Double |Yes |Transmit discards.
+|totalDiscards |Double |Yes |Total discards.
+|receiveErrors |Double |Yes |Receive errors.
+|transmitErrors |Double |Yes |Transmit errors.
+|totalErrors |Double |Yes |Total errors.
+|receivePackets |Double |Yes |Receive packets.
+|transmitPackets |Double |Yes |Transmit packets.
+|totalPackets |Double |Yes |Total packets.
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+=== cluster_switch_port_dimension
+
+=== ↑ top
+
+Entity Set(s):cluster_switch_port_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this cluster switch port row.
+|identifier |String |Yes |unique identifier of the cluster switch port.
+|name |String |Yes |Name of the cluster switch port.
+|duplexType |String |Yes |Duplex type of the cluster switch port
+|storageNodePortName |String |Yes |Name of the node port for the cluster switch port
+|storageNodePortMtu |String |Yes |Maximum Transmission Unit of the node port for the cluster switch port
+|portIndex |String |Yes |Index of the cluster switch port
+|isl |String |Yes |Inter Switch Link of the cluster switch port
+|macAddress |String |Yes |Mac address of the cluster switch port
+|mtu |String |Yes |Maximum Transmission Unit of the cluster switch port
+|number |String |Yes |Number of the cluster switch port
+|type |String |Yes |Type of the cluster switch port
+|speed |String |Yes |Speed of the cluster switch port
+|id |Int64 |Yes |GUID of the node in dwh_inventory.cluster_switch_port
+|latest |String |Yes |Indicates whether this row is the latest one for this cluster switch port.
+|dateTk |Int32 |Yes |TK of the date in which this cluster switch port row was created.
+|===
+
+=== cluster_switch_port_hourly_metrics_fact
+
+=== ↑ top
+
+Entity Set(s):cluster_switch_port_hourly_metrics_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int64 |Yes |TK of the fact.
+|timeTk |Int32 |Yes |TK of the time dimension.
+|dateTk |Int32 |Yes |TK of the date dimension.
+|clusterSwitchPortTk |Int32 |Yes |TK of the node.
+|clusterSwitchTk |Int32 |Yes |TK of the cluster.
+|storageTk |Int32 |Yes |TK of the connected storage node.
+|storageNodeTk |Int32 |Yes |TK of the connected storage.
+|receiveBytes |Double |Yes |Receive bytes.
+|transmitBytes |Double |Yes |Transmit bytes.
+|totalBytes |Double |Yes |Total bytes.
+|receiveDiscards |Double |Yes |Receive discards.
+|transmitDiscards |Double |Yes |Transmit discards.
+|totalDiscards |Double |Yes |Total discards.
+|receiveErrors |Double |Yes |Receive errors.
+|transmitErrors |Double |Yes |Transmit errors.
+|totalErrors |Double |Yes |Total errors.
+|receivePackets |Double |Yes |Receive packets.
+|transmitPackets |Double |Yes |Transmit packets.
+|totalPackets |Double |Yes |Total packets.
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+=== connected_device_dimension
+
+=== ↑ top
+
+Entity Set(s):connected_device_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this fabric row.
+|identifier |String |Yes |Identifier of the device.
+|name |String |Yes |Name of the device.
+|manufacturer |String |Yes |Manufacturer of the device.
+|model |String |Yes |Manufacturer model of the device.
+|type |String |Yes |Type of the device.
+|firmware |String |Yes |Firmware version running on the device.
+|id |Int64 |Yes |The ID of the device
+|latest |String |Yes |Indicates whether this row is the latest one for this device.
+|dateTk |Int32 |Yes |TK of the date in which this connected device row was created.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|switch_performance_for_port_hourly_fact |link:#entity-switch_performance_for_port_hourly_fact[switch_performance_for_port_hourly_fact] |many
+|===
+
+=== datastore_dimension
+
+=== ↑ top
+
+Entity Set(s):datastore_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this datastore row.
+|naturalKey |String |Yes |Oid of the datastore.
+|name |String |Yes |Name of the datastore.
+|moid |String |Yes |Managed Object ID of the datastore.
+|virtualCenterIp |String |Yes |IP address of virtual center of the datastore.
+|url |String |Yes |Url to this datastore in Insight Server.
+|id |Int64 |Yes |GUID of the datastore in dwh_inventory.hv_data_store
+|latest |String |Yes |Indicates whether this row is the latest one for this datastore.
+|dateTk |Int32 |Yes |TK of the date in which this datastore row was created.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|vmdk_hourly_performance_fact |link:#entity-vmdk_hourly_performance_fact[vmdk_hourly_performance_fact] |many
+|vmdk_daily_performance_fact |link:#entity-vmdk_daily_performance_fact[vmdk_daily_performance_fact] |many
+|===
+
+=== date_dimension
+
+=== ↑ top
+
+Entity Set(s):date_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of the date object.
+|fullDate |DateTimeOffset |Yes |Date of the date object.
+|dayInMonth |Byte |Yes |Day of the month for the date object. The first day of the month has value 1.
+|dayInYear |Int32 |Yes |Day in year of the date object. The first day of the year has value 1.
+|dateYear |Int32 |Yes |Year of the date object.
+|yearLabel |String |Yes |Year formatted as String
+|monthNum |Byte |Yes |Month of the date object. January has value 1.
+|monthLabel |String |Yes |Month formatted as String
+|dayInWeekNum |Byte |Yes |Day of the week for the date object. Sunday has value 1.
+|quarter |Byte |Yes |Quarter of the date object. First quarter has value 1.
+|quarterLabel |String |Yes |Quarter formatted as String
+|dayInQuarter |Int32 |Yes |Day in quarter of the date object. First day of the quarter has value 1.
+|repQuarter |Byte |Yes |Indicates whether this date is the first date available for its quarter.
+|repMonth |Byte |Yes |Indicates whether this date is the first date available for its month.
+|repWeek |Byte |Yes |Indicates whether this date is the first date available for its week.
+|repDay |Byte |Yes |Indicates whether this date is the first date available for its day.
+|repMonthOrLatest |Byte |Yes |Indicates whether this date is the repmonth or the latest. This flag is used by Datamarts which works on monthly reps. Only difference being for the current month it is the latest
+|sspFlag |Byte |Yes |Indicates whether this date is used in Storage and Storage Pool Datamart. It is true for month representatives and for the last number of days as defined in configuration.
+|latest |String |Yes |Indicates whether this date is the last date available in the table.
+|future |String |Yes |Indicates whether this date is a future date (projection) or regular one.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|host_vm_daily_performance_fact |link:#entity-host_vm_daily_performance_fact[host_vm_daily_performance_fact] |many
+|time_dimension |link:#entity-time_dimension[time_dimension] |many
+|vm_hourly_performance_fact |link:#entity-vm_hourly_performance_fact[vm_hourly_performance_fact] |many
+|switch_performance_for_port_hourly_fact |link:#entity-switch_performance_for_port_hourly_fact[switch_performance_for_port_hourly_fact] |many
+|host_volume_hourly_performance_fact |link:#entity-host_volume_hourly_performance_fact[host_volume_hourly_performance_fact] |many
+|internal_volume_daily_performance_fact |link:#entity-internal_volume_daily_performance_fact[internal_volume_daily_performance_fact] |many
+|vm_daily_performance_fact |link:#entity-vm_daily_performance_fact[vm_daily_performance_fact] |many
+|switch_performance_for_tape_hourly_fact |link:#entity-switch_performance_for_tape_hourly_fact[switch_performance_for_tape_hourly_fact] |many
+|switch_performance_for_host_hourly_fact |link:#entity-switch_performance_for_host_hourly_fact[switch_performance_for_host_hourly_fact] |many
+|switch_performance_for_storage_hourly_fact |link:#entity-switch_performance_for_storage_hourly_fact[switch_performance_for_storage_hourly_fact] |many
+|storage_node_hourly_performance_fact |link:#entity-storage_node_hourly_performance_fact[storage_node_hourly_performance_fact] |many
+|qtree_hourly_performance_fact |link:#entity-qtree_hourly_performance_fact[qtree_hourly_performance_fact] |many
+|vmdk_hourly_performance_fact |link:#entity-vmdk_hourly_performance_fact[vmdk_hourly_performance_fact] |many
+|volume_hourly_performance_fact |link:#entity-volume_hourly_performance_fact[volume_hourly_performance_fact] |many
+|application_volume_hourly_performance_fact |link:#entity-application_volume_hourly_performance_fact[application_volume_hourly_performance_fact] |many
+|qtree_daily_performance_fact |link:#entity-qtree_daily_performance_fact[qtree_daily_performance_fact] |many
+|storage_node_daily_performance_fact |link:#entity-storage_node_daily_performance_fact[storage_node_daily_performance_fact] |many
+|disk_hourly_performance_fact |link:#entity-disk_hourly_performance_fact[disk_hourly_performance_fact] |many
+|disk_daily_performance_fact |link:#entity-disk_daily_performance_fact[disk_daily_performance_fact] |many
+|internal_volume_hourly_performance_fact |link:#entity-internal_volume_hourly_performance_fact[internal_volume_hourly_performance_fact] |many
+|volume_daily_performance_fact |link:#entity-volume_daily_performance_fact[volume_daily_performance_fact] |many
+|vmdk_daily_performance_fact |link:#entity-vmdk_daily_performance_fact[vmdk_daily_performance_fact] |many
+|host_vm_hourly_performance_fact |link:#entity-host_vm_hourly_performance_fact[host_vm_hourly_performance_fact] |many
+|===
+
+=== disk_daily_performance_fact
+
+=== ↑ top
+
+Entity Set(s):disk_daily_performance_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int32 |Yes |TK of the fact.
+|dateTk *[FK]* →link:#entity-date_dimension[date_dimension].tk |Int32 |Yes |TK of the date dimension.
+|diskTk *[FK]* →link:#entity-disk_dimension[disk_dimension].tk |Int32 |Yes |TK of the disk for performance numbers (if found).
+|storageTk *[FK]* →link:#entity-storage_dimension[storage_dimension].tk |Int32 |Yes |TK of the storage for performance numbers.
+|storagePoolTk *[FK]* →link:#entity-storage_pool_dimension[storage_pool_dimension].tk |Int32 |Yes |TK of the storage pool for performance numbers.
+|readThroughput |Double |Yes |Read throughput average.
+|writeThroughput |Double |Yes |Write throughput average.
+|totalThroughput |Double |Yes |Total throughput average (read+write).
+|totalThroughputMax |Double |Yes |The maximum total throughput.
+|readIops |Double |Yes |Read io per second.
+|writeIops |Double |Yes |Write io per second.
+|totalIops |Double |Yes |Total io per second average (read+write).
+|totalIopsMax |Double |Yes |The max io per second.
+|readUtilization |Double |Yes |Read utilization (%).
+|writeUtilization |Double |Yes |Write utilization (%).
+|totalUtilization |Double |Yes |Total utilization (%).
+|totalUtilizationMax |Double |Yes |The max utilization (%).
+|accessed |Int32 |Yes |Is disk accessed?
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage_dimension |link:#entity-storage_dimension[storage_dimension] |one JOIN:storageTk=link:#entity-storage_dimension[storage_dimension].tk
+|storage_pool_dimension |link:#entity-storage_pool_dimension[storage_pool_dimension] |one JOIN:storagePoolTk=link:#entity-storage_pool_dimension[storage_pool_dimension].tk
+|date_dimension |link:#entity-date_dimension[date_dimension] |one JOIN:dateTk=link:#entity-date_dimension[date_dimension].tk
+|disk_dimension |link:#entity-disk_dimension[disk_dimension] |one JOIN:diskTk=link:#entity-disk_dimension[disk_dimension].tk
+|===
+
+=== disk_dimension
+
+=== ↑ top
+
+Entity Set(s):disk_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this disk row.
+|identifier |String |Yes |Identifier of the disk.
+|storageIdentifier |String |Yes |Identifier of the disk storage.
+|name |String |Yes |Name of the disk.
+|speed |Int32 |Yes |Speed of disk.
+|location |String |Yes |Disk location.
+|role |String |Yes |Role for disk in storage group (e.g. PARITY, DATA, SPARE).
+|vendor |String |Yes |Disk vendor (e.g. NetApp, SEAGATE).
+|model |String |Yes |Disk model.
+|type |String |Yes |Type for the disk (e.g. SATA, FC).
+|diskGroup |String |Yes |Identifier for disk group the disk belongs to (e.g. rg0, 7).
+|status |String |Yes |Status for disk (e.g. NORMAL, FAILED).
+|serialNumber |String |Yes |The disk serial number
+|url |String |Yes |Url to this disk in Insight Server.
+|id |Int64 |Yes |GUID of the disk in dwh_inventory.disk
+|latest |String |Yes |Indicates whether this row is the latest one for this disk.
+|dateTk |Int32 |Yes |TK of the date in which this internal volume row was created.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|disk_hourly_performance_fact |link:#entity-disk_hourly_performance_fact[disk_hourly_performance_fact] |many
+|disk_daily_performance_fact |link:#entity-disk_daily_performance_fact[disk_daily_performance_fact] |many
+|===
+
+=== disk_hourly_performance_fact
+
+=== ↑ top
+
+Entity Set(s):disk_hourly_performance_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int64 |Yes |TK of the fact.
+|timeTk *[FK]* →link:#entity-time_dimension[time_dimension].tk |Int32 |Yes |TK of the time dimension.
+|dateTk *[FK]* →link:#entity-date_dimension[date_dimension].tk |Int32 |Yes |TK of the date dimension.
+|diskTk *[FK]* →link:#entity-disk_dimension[disk_dimension].tk |Int32 |Yes |TK of the disk for performance numbers (if found).
+|storageTk *[FK]* →link:#entity-storage_dimension[storage_dimension].tk |Int32 |Yes |TK of the storage for performance numbers.
+|storagePoolTk *[FK]* →link:#entity-storage_pool_dimension[storage_pool_dimension].tk |Int32 |Yes |TK of the storage pool for performance numbers.
+|readThroughput |Double |Yes |Read throughput average.
+|writeThroughput |Double |Yes |Write throughput average.
+|totalThroughput |Double |Yes |Total throughput average (read+write).
+|totalThroughputMax |Double |Yes |The maximum total throughput.
+|readIops |Double |Yes |Read io per second.
+|writeIops |Double |Yes |Write io per second.
+|totalIops |Double |Yes |Total io per second average (read+write).
+|totalIopsMax |Double |Yes |The max io per second.
+|readUtilization |Double |Yes |Read utilization (%).
+|writeUtilization |Double |Yes |Write utilization (%).
+|totalUtilization |Double |Yes |Total utilization (%).
+|totalUtilizationMax |Double |Yes |The max utilization (%).
+|accessed |Int32 |Yes |Is disk accessed?
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage_dimension |link:#entity-storage_dimension[storage_dimension] |one JOIN:storageTk=link:#entity-storage_dimension[storage_dimension].tk
+|time_dimension |link:#entity-time_dimension[time_dimension] |one JOIN:timeTk=link:#entity-time_dimension[time_dimension].tk
+|storage_pool_dimension |link:#entity-storage_pool_dimension[storage_pool_dimension] |one JOIN:storagePoolTk=link:#entity-storage_pool_dimension[storage_pool_dimension].tk
+|date_dimension |link:#entity-date_dimension[date_dimension] |one JOIN:dateTk=link:#entity-date_dimension[date_dimension].tk
+|disk_dimension |link:#entity-disk_dimension[disk_dimension] |one JOIN:diskTk=link:#entity-disk_dimension[disk_dimension].tk
+|===
+
+=== fabric_dimension
+
+=== ↑ top
+
+Entity Set(s):fabric_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this fabric row.
+|identifier |String |Yes |Identifier of the fabric.
+|wwn |String |Yes |WWN of the fabric.
+|name |String |Yes |Name of the fabric.
+|vsanEnabled |String |Yes |Indicates whether this fabric is a VSAN.
+|vsanId |String |Yes |Identifier for the VSAN in case this fabric is a VSAN.
+|zoningEnabled |String |Yes |If true, zoning is enforce based on the data in the zone and zone members table. Otherwise, zoning is not enforced in the Fabric.
+|url |String |Yes |Url to this fabric in Insight Server.
+|id |Int64 |Yes |GUID of the fabric in dwh_inventory.fabric
+|latest |String |Yes |Indicates whether this row is the latest one for this fabric.
+|dateTk |Int32 |Yes |TK of the date in which this fabric row was created.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|switch_performance_for_port_hourly_fact |link:#entity-switch_performance_for_port_hourly_fact[switch_performance_for_port_hourly_fact] |many
+|===
+
+=== host_dimension
+
+=== ↑ top
+
+Entity Set(s):host_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this host row.
+|name |String |Yes |Name of the host.
+|identifier |String |Yes |Identifier of the device.
+|ip |String |Yes |Comma separated list of IP addresses of the host.
+|os |String |Yes |Operating system running on the host.
+|model |String |Yes |Model number.
+|manufacturer |String |Yes |Manufacturer of the host.
+|url |String |Yes |Url to this host in Insight Server.
+|id |Int64 |Yes |GUID of the host in dwh_inventory.host.
+|latest |String |Yes |Indicates whether this row is the latest one for this host.
+|dateTk |Int32 |Yes |TK of the date in which this host row was created.
+|dataCenter |String |Yes |dataCenter annotation value assigned to dwh_dimensions.host_dimension
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|host_vm_daily_performance_fact |link:#entity-host_vm_daily_performance_fact[host_vm_daily_performance_fact] |many
+|vmdk_hourly_performance_fact |link:#entity-vmdk_hourly_performance_fact[vmdk_hourly_performance_fact] |many
+|volume_hourly_performance_fact |link:#entity-volume_hourly_performance_fact[volume_hourly_performance_fact] |many
+|vm_hourly_performance_fact |link:#entity-vm_hourly_performance_fact[vm_hourly_performance_fact] |many
+|host_volume_hourly_performance_fact |link:#entity-host_volume_hourly_performance_fact[host_volume_hourly_performance_fact] |many
+|vm_daily_performance_fact |link:#entity-vm_daily_performance_fact[vm_daily_performance_fact] |many
+|switch_performance_for_host_hourly_fact |link:#entity-switch_performance_for_host_hourly_fact[switch_performance_for_host_hourly_fact] |many
+|volume_daily_performance_fact |link:#entity-volume_daily_performance_fact[volume_daily_performance_fact] |many
+|vmdk_daily_performance_fact |link:#entity-vmdk_daily_performance_fact[vmdk_daily_performance_fact] |many
+|host_vm_hourly_performance_fact |link:#entity-host_vm_hourly_performance_fact[host_vm_hourly_performance_fact] |many
+|===
+
+=== host_group_bridge
+
+=== ↑ top
+
+Entity Set(s):host_group_bridge
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|hostGroupTk |Int32 |Yes |TK of the host group.
+|hostTk |Int32 |Yes |TK of the host.
+|isRep |String |Yes |Indicates whether this host represents its host group.
+|===
+
+=== host_group_dimension
+
+=== ↑ top
+
+Entity Set(s):host_group_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of the host group.
+|repHost |String |Yes |Name of the host representing the host group.
+|repHostTk |Int32 |Yes |TK of the host representing the host group.
+|cardinality |Int32 |Yes |Number of hosts in the host group.
+|dateTk |Int32 |Yes |TK of the date in which this host group row was created.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|volume_hourly_performance_fact |link:#entity-volume_hourly_performance_fact[volume_hourly_performance_fact] |many
+|host_volume_hourly_performance_fact |link:#entity-host_volume_hourly_performance_fact[host_volume_hourly_performance_fact] |many
+|volume_daily_performance_fact |link:#entity-volume_daily_performance_fact[volume_daily_performance_fact] |many
+|===
+
+=== host_vm_daily_performance_fact
+
+=== ↑ top
+
+Entity Set(s):host_vm_daily_performance_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int32 |Yes |TK of the fact.
+|dateTk *[FK]* →link:#entity-date_dimension[date_dimension].tk |Int32 |Yes |TK of the date dimension.
+|hostTk *[FK]* →link:#entity-host_dimension[host_dimension].tk |Int32 |Yes |TK of the host.
+|readIops |Double |Yes |Read io per second.
+|writeIops |Double |Yes |Write io per second.
+|totalIops |Double |Yes |Total io per second average (read+write).
+|totalIopsMax |Double |Yes |The max io per second.
+|readThroughput |Double |Yes |Read throughput average.
+|writeThroughput |Double |Yes |Write throughput average.
+|totalThroughput |Double |Yes |Total throughput average (read+write).
+|totalThroughputMax |Double |Yes |The maximum total throughput.
+|readResponseTime |Double |Yes |Read response time.
+|writeResponseTime |Double |Yes |Write response time.
+|totalResponseTime |Double |Yes |Total response time.
+|totalResponseTimeMax |Double |Yes |Total max response time.
+|ipReceiveThroughput |Double |Yes |Ip Receive Throughput.
+|ipTransmitThroughput |Double |Yes |Ip Transmit Throughput.
+|ipTotalThroughput |Double |Yes |Ip Total Throughput.
+|ipTotalThroughputMax |Double |Yes |The maximum ip Total Throughput.
+|cpuUtilization |Double |Yes |CPU utilization (%)
+|maxOfAvgCpuUtilization |Double |Yes |MAX CPU utilization (%)
+|memoryUtilization |Double |Yes |Memory utilization (%)
+|maxOfAvgMemoryUtilization |Double |Yes |MAX Memory utilization (%)
+|swapInRate |Double |Yes |Swap in rate
+|maxOfAvgSwapInRate |Double |Yes |Max swap in rate
+|swapOutRate |Double |Yes |Swap out rate
+|maxOfAvgSwapOutRate |Double |Yes |Max swap out rate
+|swapTotalRate |Double |Yes |Total swap rate
+|swapTotalRateMax |Double |Yes |The maximum total swap rate
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|host_dimension |link:#entity-host_dimension[host_dimension] |one JOIN:hostTk=link:#entity-host_dimension[host_dimension].tk
+|date_dimension |link:#entity-date_dimension[date_dimension] |one JOIN:dateTk=link:#entity-date_dimension[date_dimension].tk
+|===
+
+=== host_vm_hourly_performance_fact
+
+=== ↑ top
+
+Entity Set(s):host_vm_hourly_performance_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int64 |Yes |TK of the fact.
+|timeTk *[FK]* →link:#entity-time_dimension[time_dimension].tk |Int32 |Yes |TK of the time dimension.
+|dateTk *[FK]* →link:#entity-date_dimension[date_dimension].tk |Int32 |Yes |TK of the date dimension.
+|hostTk *[FK]* →link:#entity-host_dimension[host_dimension].tk |Int32 |Yes |TK of the host.
+|readIops |Double |Yes |Read io per second.
+|writeIops |Double |Yes |Write io per second.
+|totalIops |Double |Yes |Total io per second average (read+write).
+|totalIopsMax |Double |Yes |The max io per second.
+|readThroughput |Double |Yes |Read throughput average.
+|writeThroughput |Double |Yes |Write throughput average.
+|totalThroughput |Double |Yes |Total throughput average (read+write).
+|totalThroughputMax |Double |Yes |The maximum total throughput.
+|readResponseTime |Double |Yes |Read response time.
+|writeResponseTime |Double |Yes |Write response time.
+|totalResponseTime |Double |Yes |Total response time.
+|totalResponseTimeMax |Double |Yes |Total max response time.
+|ipReceiveThroughput |Double |Yes |Ip Receive Throughput.
+|ipTransmitThroughput |Double |Yes |Ip Transmit Throughput.
+|ipTotalThroughput |Double |Yes |Ip Total Throughput.
+|ipTotalThroughputMax |Double |Yes |The maximum ip Total Throughput.
+|cpuUtilization |Double |Yes |CPU utilization (%)
+|memoryUtilization |Double |Yes |Memory utilization (%)
+|swapInRate |Double |Yes |Swap in rate
+|swapOutRate |Double |Yes |Swap out rate
+|swapTotalRate |Double |Yes |Total swap rate
+|swapTotalRateMax |Double |Yes |The maximum total swap rate
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|time_dimension |link:#entity-time_dimension[time_dimension] |one JOIN:timeTk=link:#entity-time_dimension[time_dimension].tk
+|host_dimension |link:#entity-host_dimension[host_dimension] |one JOIN:hostTk=link:#entity-host_dimension[host_dimension].tk
+|date_dimension |link:#entity-date_dimension[date_dimension] |one JOIN:dateTk=link:#entity-date_dimension[date_dimension].tk
+|===
+
+=== host_volume_hourly_performance_fact
+
+=== ↑ top
+
+Entity Set(s):host_volume_hourly_performance_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int64 |Yes |TK of the fact.
+|timeTk *[FK]* →link:#entity-time_dimension[time_dimension].tk |Int32 |Yes |TK of the time dimension.
+|dateTk *[FK]* →link:#entity-date_dimension[date_dimension].tk |Int32 |Yes |TK of the date dimension.
+|hostTk *[FK]* →link:#entity-host_dimension[host_dimension].tk |Int32 |Yes |TK of the host representative.
+|hostGroupTk *[FK]* →link:#entity-host_group_dimension[host_group_dimension].tk |Int32 |Yes |TK of the host group.
+|tierTk *[FK]* →link:#entity-tier_dimension[tier_dimension].tk |Int32 |Yes |TK of the tier.
+|serviceLevelTk *[FK]* →link:#entity-service_level_dimension[service_level_dimension].tk |Int32 |Yes |TK of the service level.
+|businessEntityTk *[FK]* →link:#entity-business_entity_dimension[business_entity_dimension].tk |Int32 |Yes |TK of the business entity.
+|readResponseTime |Double |Yes |Read response time.
+|writeResponseTime |Double |Yes |Write response time
+|totalResponseTime |Double |Yes |The total response time.
+|totalResponseTimeMax |Double |Yes |The maximum for response time.
+|readThroughput |Double |Yes |Read throughput average.
+|writeThroughput |Double |Yes |Write throughput average.
+|sumOfAveragesVolumeThroughput |Double |Yes |The sum of totalThroughput for all volume hourly samples related to host. Represents the average usage for host.
+|maxOfMaxVolumeThroughput |Double |Yes |The maximum totalThroughputMax for all volume hourly samples related to host. Represents the best case scenario of max usage for host.
+|sumOfMaxVolumeThroughput |Double |Yes |The sum of totalThroughputMax for all volume hourly sample related to host. Represents the worst case scenario of max usage when all maxes happen at the same time.
+|readIops |Double |Yes |Read io per second average.
+|writeIops |Double |Yes |Write io per second average.
+|sumOfAveragesVolumeIops |Double |Yes |The sum of totalIops for all volume hourly samples related to host. Represents the average usage for host.
+|maxOfMaxVolumeIops |Double |Yes |The maximum totalIopsMax for all volume hourly samples related to host. Represents the best case scenario of max usage for host.
+|sumOfMaxVolumeIops |Double |Yes |The sum of totalIopsMax for all volume hourly sample related to host. Represents the worst case scenario of max usage when all maxes happen at the same time.
+|readCacheHitRatio |Double |Yes |The read cache hit ratio.
+|writeCacheHitRatio |Double |Yes |The write cache hit ratio.
+|totalCacheHitRatio |Double |Yes |The total cache hit ratio.
+|totalCacheHitRatioMax |Double |Yes |The maximum total cache hit ratio.
+|writePending |Int64 |Yes |Number of pending writes.
+|readIoDensity |Double |Yes |Read io density.
+|writeIoDensity |Double |Yes |Write io density.
+|totalIoDensity |Double |Yes |Total io density.
+|totalIoDensityMax |Double |Yes |The maximun total io density.
+|compressionSavingsPercent |Double |Yes |Compression savings (%).
+|compressionSavingsSpace |Double |Yes |Compression savings space.
+|totalTimeToFull |Double |Yes |Time to Full.
+|confidenceIntervalTimeToFull |Double |Yes |Confidence Interval for Time to Full.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|service_level_dimension |link:#entity-service_level_dimension[service_level_dimension] |one JOIN:serviceLevelTk=link:#entity-service_level_dimension[service_level_dimension].tk
+|tier_dimension |link:#entity-tier_dimension[tier_dimension] |one JOIN:tierTk=link:#entity-tier_dimension[tier_dimension].tk
+|business_entity_dimension |link:#entity-business_entity_dimension[business_entity_dimension] |one JOIN:businessEntityTk=link:#entity-business_entity_dimension[business_entity_dimension].tk
+|time_dimension |link:#entity-time_dimension[time_dimension] |one JOIN:timeTk=link:#entity-time_dimension[time_dimension].tk
+|host_group_dimension |link:#entity-host_group_dimension[host_group_dimension] |one JOIN:hostGroupTk=link:#entity-host_group_dimension[host_group_dimension].tk
+|host_dimension |link:#entity-host_dimension[host_dimension] |one JOIN:hostTk=link:#entity-host_dimension[host_dimension].tk
+|date_dimension |link:#entity-date_dimension[date_dimension] |one JOIN:dateTk=link:#entity-date_dimension[date_dimension].tk
+|===
+
+=== internal_volume_daily_performance_fact
+
+=== ↑ top
+
+Entity Set(s):internal_volume_daily_performance_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int32 |Yes |TK of the fact.
+|dateTk *[FK]* →link:#entity-date_dimension[date_dimension].tk |Int32 |Yes |TK of the date dimension.
+|internalVolumeTk *[FK]* →link:#entity-internal_volume_dimension[internal_volume_dimension].tk |Int32 |Yes |TK of the internal volume for performance numbers (if found).
+|storageTk *[FK]* →link:#entity-storage_dimension[storage_dimension].tk |Int32 |Yes |TK of the storage for performance numbers.
+|virtualStorageTk |Int32 |Yes |TK of the frontend array in case the capacity is on a backend array. Otherwise, the value is N/A.
+|storageNodeTk *[FK]* →link:#entity-storage_node_dimension[storage_node_dimension].tk |Int32 |Yes |TK of the storage node.
+|storagePoolTk *[FK]* →link:#entity-storage_pool_dimension[storage_pool_dimension].tk |Int32 |Yes |TK of the storage pool for performance numbers (if found).
+|applicationTk *[FK]* →link:#entity-application_dimension[application_dimension].tk |Int32 |Yes |TK of the application representative.
+|applicationGroupTk *[FK]* →link:#entity-application_group_dimension[application_group_dimension].tk |Int32 |Yes |TK of the application group.
+|tierTk *[FK]* →link:#entity-tier_dimension[tier_dimension].tk |Int32 |Yes |TK of the tier.
+|serviceLevelTk *[FK]* →link:#entity-service_level_dimension[service_level_dimension].tk |Int32 |Yes |TK of the service level.
+|businessEntityTk *[FK]* →link:#entity-business_entity_dimension[business_entity_dimension].tk |Int32 |Yes |TK of the business entity.
+|k8sNamespaceTk *[FK]* →link:#entity-k8s_namespace_dimension[k8s_namespace_dimension].tk |Int32 |Yes |TK of the k8s namespace.
+|k8sNamespaceGroupTk *[FK]* →link:#entity-k8s_namespace_group_dimension[k8s_namespace_group_dimension].tk |Int32 |Yes |TK of the k8s namespace group.
+|readResponseTime |Double |Yes |Read response time average.
+|writeResponseTime |Double |Yes |Write response time average.
+|totalResponseTime |Double |Yes |The total response time average.
+|totalResponseTimeMax |Double |Yes |The maximum for response time.
+|readThroughput |Double |Yes |Read throughput average.
+|writeThroughput |Double |Yes |Write throughput average.
+|totalThroughput |Double |Yes |Total throughput average (read+write).
+|totalThroughputMax |Double |Yes |The maximum total throughput.
+|readIops |Double |Yes |Read io per second average.
+|writeIops |Double |Yes |Write io per second average.
+|totalIops |Double |Yes |Total io per second average (read+write).
+|totalIopsMax |Double |Yes |The max io per second.
+|writePending |Int64 |Yes |Number of pending writes maximum for day.
+|readIoDensity |Double |Yes |Read io density.
+|writeIoDensity |Double |Yes |Write io density.
+|totalIoDensity |Double |Yes |Total io density.
+|totalIoDensityMax |Double |Yes |The maximun total io density.
+|objectCount |Double |Yes |Object Count.
+|filesystemCapacityPhysicalUsed |Double |Yes |Filesystem Physical Used Capacity (GB).
+|filesystemCapacityPhysicalAvailable |Double |Yes |Filesystem Physical Available Capacity (GB).
+|filesystemCapacityLogicalUsed |Double |Yes |Filesystem Logical Used Capacity (GB).
+|totalTimeToFull |Double |Yes |Time to Full.
+|confidenceIntervalTimeToFull |Double |Yes |Confidence Interval for Time to Full.
+|accessed |Int32 |Yes |Is internal volume accessed?
+|frontend |String |Yes |Is internal volume frontend?
+|backend |String |Yes |Is internal volume backend?
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|service_level_dimension |link:#entity-service_level_dimension[service_level_dimension] |one JOIN:serviceLevelTk=link:#entity-service_level_dimension[service_level_dimension].tk
+|internal_volume_dimension |link:#entity-internal_volume_dimension[internal_volume_dimension] |one JOIN:internalVolumeTk=link:#entity-internal_volume_dimension[internal_volume_dimension].tk
+|storage_node_dimension |link:#entity-storage_node_dimension[storage_node_dimension] |one JOIN:storageNodeTk=link:#entity-storage_node_dimension[storage_node_dimension].tk
+|storage_dimension |link:#entity-storage_dimension[storage_dimension] |one JOIN:storageTk=link:#entity-storage_dimension[storage_dimension].tk
+|tier_dimension |link:#entity-tier_dimension[tier_dimension] |one JOIN:tierTk=link:#entity-tier_dimension[tier_dimension].tk
+|business_entity_dimension |link:#entity-business_entity_dimension[business_entity_dimension] |one JOIN:businessEntityTk=link:#entity-business_entity_dimension[business_entity_dimension].tk
+|application_dimension |link:#entity-application_dimension[application_dimension] |one JOIN:applicationTk=link:#entity-application_dimension[application_dimension].tk
+|storage_pool_dimension |link:#entity-storage_pool_dimension[storage_pool_dimension] |one JOIN:storagePoolTk=link:#entity-storage_pool_dimension[storage_pool_dimension].tk
+|date_dimension |link:#entity-date_dimension[date_dimension] |one JOIN:dateTk=link:#entity-date_dimension[date_dimension].tk
+|k8s_namespace_group_dimension |link:#entity-k8s_namespace_group_dimension[k8s_namespace_group_dimension] |one JOIN:k8sNamespaceGroupTk=link:#entity-k8s_namespace_group_dimension[k8s_namespace_group_dimension].tk
+|application_group_dimension |link:#entity-application_group_dimension[application_group_dimension] |one JOIN:applicationGroupTk=link:#entity-application_group_dimension[application_group_dimension].tk
+|k8s_namespace_dimension |link:#entity-k8s_namespace_dimension[k8s_namespace_dimension] |one JOIN:k8sNamespaceTk=link:#entity-k8s_namespace_dimension[k8s_namespace_dimension].tk
+|===
+
+=== internal_volume_dimension
+
+=== ↑ top
+
+Entity Set(s):internal_volume_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this internal volume row.
+|name |String |Yes |Name of the internal volume.
+|identifier |String |Yes |Identifier of the internal volume.
+|storagePoolIdentifier |String |Yes |Identifer of the storage pool where this internal volume resides.
+|storageName |String |Yes |Name of the storage where this internal volume resides.
+|storageIP |String |Yes |IP of the storage where this internal volume resides.
+|type |String |Yes |internal volume type.
+|virtualStorage |String |Yes |Specifies VirtualStorage(e.g.vFiler)
+|spaceGuarantee |String |Yes |internal volume space guarantee.
+|thinProvisioningSupported |String |Yes |is thin provisioning supported for the internal volume.
+|thinProvisioned |String |Yes |is the internal volume thin provisioned.
+|uuid |String |Yes |UUID of the internal volume.
+|flexGroupIdentifier |String |Yes |FlexGroup identifier to which this internal volume belongs.
+|url |String |Yes |Url to this internal volume in Insight Server.
+|id |Int64 |Yes |GUID of the internal volume in dwh_inventory.internal_volume
+|latest |String |Yes |Indicates whether this row is the latest one for this internal volume.
+|dateTk |Int32 |Yes |TK of the date in which this internal volume row was created.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|qtree_hourly_performance_fact |link:#entity-qtree_hourly_performance_fact[qtree_hourly_performance_fact] |many
+|qtree_daily_performance_fact |link:#entity-qtree_daily_performance_fact[qtree_daily_performance_fact] |many
+|internal_volume_daily_performance_fact |link:#entity-internal_volume_daily_performance_fact[internal_volume_daily_performance_fact] |many
+|internal_volume_hourly_performance_fact |link:#entity-internal_volume_hourly_performance_fact[internal_volume_hourly_performance_fact] |many
+|===
+
+=== internal_volume_hourly_performance_fact
+
+=== ↑ top
+
+Entity Set(s):internal_volume_hourly_performance_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int64 |Yes |TK of the fact.
+|timeTk *[FK]* →link:#entity-time_dimension[time_dimension].tk |Int32 |Yes |TK of the time dimension.
+|dateTk *[FK]* →link:#entity-date_dimension[date_dimension].tk |Int32 |Yes |TK of the date dimension.
+|internalVolumeTk *[FK]* →link:#entity-internal_volume_dimension[internal_volume_dimension].tk |Int32 |Yes |TK of the internal volume for performance numbers (if found).
+|storageTk *[FK]* →link:#entity-storage_dimension[storage_dimension].tk |Int32 |Yes |TK of the storage for performance numbers.
+|virtualStorageTk |Int32 |Yes |TK of the frontend array in case the capacity is on a backend array. Otherwise, the value is N/A.
+|storageNodeTk *[FK]* →link:#entity-storage_node_dimension[storage_node_dimension].tk |Int32 |Yes |TK of the storage node.
+|storagePoolTk *[FK]* →link:#entity-storage_pool_dimension[storage_pool_dimension].tk |Int32 |Yes |TK of the storage pool for performance numbers (if found).
+|applicationTk *[FK]* →link:#entity-application_dimension[application_dimension].tk |Int32 |Yes |TK of the application representative.
+|applicationGroupTk *[FK]* →link:#entity-application_group_dimension[application_group_dimension].tk |Int32 |Yes |TK of the application group.
+|tierTk *[FK]* →link:#entity-tier_dimension[tier_dimension].tk |Int32 |Yes |TK of the tier.
+|serviceLevelTk *[FK]* →link:#entity-service_level_dimension[service_level_dimension].tk |Int32 |Yes |TK of the service level.
+|businessEntityTk *[FK]* →link:#entity-business_entity_dimension[business_entity_dimension].tk |Int32 |Yes |TK of the business entity.
+|k8sNamespaceTk *[FK]* →link:#entity-k8s_namespace_dimension[k8s_namespace_dimension].tk |Int32 |Yes |TK of the k8s namespace.
+|k8sNamespaceGroupTk *[FK]* →link:#entity-k8s_namespace_group_dimension[k8s_namespace_group_dimension].tk |Int32 |Yes |TK of the k8s namespace group.
+|readResponseTime |Double |Yes |Read response time.
+|writeResponseTime |Double |Yes |Write response time
+|totalResponseTime |Double |Yes |The total response time.
+|totalResponseTimeMax |Double |Yes |The maximum for response time.
+|readThroughput |Double |Yes |Read throughput average.
+|writeThroughput |Double |Yes |Write throughput average.
+|totalThroughput |Double |Yes |Total throughput average (read+write).
+|totalThroughputMax |Double |Yes |The maximum total throughput.
+|readIops |Double |Yes |Read io per second.
+|writeIops |Double |Yes |Write io per second.
+|totalIops |Double |Yes |Total io per second average (read+write).
+|totalIopsMax |Double |Yes |The max io per second.
+|writePending |Int64 |Yes |Number of pending writes.
+|readIoDensity |Double |Yes |Read io density.
+|writeIoDensity |Double |Yes |Write io density.
+|totalIoDensity |Double |Yes |Total io density.
+|totalIoDensityMax |Double |Yes |The maximun total io density.
+|objectCount |Double |Yes |Object Count.
+|filesystemCapacityPhysicalUsed |Double |Yes |Filesystem Physical Used Capacity (GB).
+|filesystemCapacityPhysicalAvailable |Double |Yes |Filesystem Physical Available Capacity (GB).
+|filesystemCapacityLogicalUsed |Double |Yes |Filesystem Logical Used Capacity (GB).
+|totalTimeToFull |Double |Yes |Time to Full.
+|confidenceIntervalTimeToFull |Double |Yes |Confidence Interval for Time to Full.
+|accessed |Int32 |Yes |Is internal volume accessed?
+|frontend |String |Yes |Is internal volume frontend?
+|backend |String |Yes |Is internal volume backend?
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|internal_volume_dimension |link:#entity-internal_volume_dimension[internal_volume_dimension] |one JOIN:internalVolumeTk=link:#entity-internal_volume_dimension[internal_volume_dimension].tk
+|storage_node_dimension |link:#entity-storage_node_dimension[storage_node_dimension] |one JOIN:storageNodeTk=link:#entity-storage_node_dimension[storage_node_dimension].tk
+|storage_dimension |link:#entity-storage_dimension[storage_dimension] |one JOIN:storageTk=link:#entity-storage_dimension[storage_dimension].tk
+|business_entity_dimension |link:#entity-business_entity_dimension[business_entity_dimension] |one JOIN:businessEntityTk=link:#entity-business_entity_dimension[business_entity_dimension].tk
+|k8s_namespace_group_dimension |link:#entity-k8s_namespace_group_dimension[k8s_namespace_group_dimension] |one JOIN:k8sNamespaceGroupTk=link:#entity-k8s_namespace_group_dimension[k8s_namespace_group_dimension].tk
+|application_group_dimension |link:#entity-application_group_dimension[application_group_dimension] |one JOIN:applicationGroupTk=link:#entity-application_group_dimension[application_group_dimension].tk
+|k8s_namespace_dimension |link:#entity-k8s_namespace_dimension[k8s_namespace_dimension] |one JOIN:k8sNamespaceTk=link:#entity-k8s_namespace_dimension[k8s_namespace_dimension].tk
+|service_level_dimension |link:#entity-service_level_dimension[service_level_dimension] |one JOIN:serviceLevelTk=link:#entity-service_level_dimension[service_level_dimension].tk
+|tier_dimension |link:#entity-tier_dimension[tier_dimension] |one JOIN:tierTk=link:#entity-tier_dimension[tier_dimension].tk
+|application_dimension |link:#entity-application_dimension[application_dimension] |one JOIN:applicationTk=link:#entity-application_dimension[application_dimension].tk
+|time_dimension |link:#entity-time_dimension[time_dimension] |one JOIN:timeTk=link:#entity-time_dimension[time_dimension].tk
+|storage_pool_dimension |link:#entity-storage_pool_dimension[storage_pool_dimension] |one JOIN:storagePoolTk=link:#entity-storage_pool_dimension[storage_pool_dimension].tk
+|date_dimension |link:#entity-date_dimension[date_dimension] |one JOIN:dateTk=link:#entity-date_dimension[date_dimension].tk
+|===
+
+=== k8s_cluster_daily_metrics_fact
+
+=== ↑ top
+
+Entity Set(s):k8s_cluster_daily_metrics_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int64 |Yes |TK of the fact.
+|dateTk |Int32 |Yes |TK of the date dimension.
+|clusterTk |Int32 |Yes |TK of the k8s cluster.
+|allocatableCpuSaturation |Double |Yes |Allocatable cpu saturation percent.
+|capacityCpuSaturation |Double |Yes |Capacity cpu saturation percent.
+|allocatableMemorySaturation |Double |Yes |Allocatable memory saturation percent.
+|capacityMemorySaturation |Double |Yes |Capacity memory saturation percent.
+|allocatableCpuCores |Double |Yes |Allocatable CPU cores.
+|capacityCpuCores |Double |Yes |Capacity CPU cores.
+|usageCpuCores |Double |Yes |Usage CPU cores.
+|requestsCpuCores |Double |Yes |Requests CPU cores.
+|limitsCpuCores |Double |Yes |Limits CPU cores.
+|allocatableMemoryBytes |Double |Yes |Allocatable memory in Bytes.
+|capacityMemoryBytes |Double |Yes |Capacity memory in Bytes.
+|limitsMemoryBytes |Double |Yes |Limits memory in Bytes.
+|requestsMemoryBytes |Double |Yes |Requests memory in Bytes.
+|usageMemoryBytes |Double |Yes |Usage memory in Bytes.
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+=== k8s_cluster_dimension
+
+=== ↑ top
+
+Entity Set(s):k8s_cluster_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this cluster row.
+|identifier |String |Yes |unique identifier of the cluster.
+|name |String |Yes |Name of the cluster.
+|id |Int64 |Yes |GUID of the cluster in dwh_inventory.k8s_cluster
+|latest |String |Yes |Indicates whether this row is the latest one for this cluster.
+|dateTk |Int32 |Yes |TK of the date in which this cluster row was created.
+|===
+
+=== k8s_cluster_hourly_metrics_fact
+
+=== ↑ top
+
+Entity Set(s):k8s_cluster_hourly_metrics_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int64 |Yes |TK of the fact.
+|timeTk |Int32 |Yes |TK of the time dimension.
+|dateTk |Int32 |Yes |TK of the date dimension.
+|clusterTk |Int32 |Yes |TK of the k8s cluster.
+|allocatableCpuSaturation |Double |Yes |Allocatable cpu saturation percent.
+|capacityCpuSaturation |Double |Yes |Capacity cpu saturation percent.
+|allocatableMemorySaturation |Double |Yes |Allocatable memory saturation percent.
+|capacityMemorySaturation |Double |Yes |Capacity memory saturation percent.
+|allocatableCpuCores |Double |Yes |Allocatable CPU cores.
+|capacityCpuCores |Double |Yes |Capacity CPU cores.
+|usageCpuCores |Double |Yes |Usage CPU cores.
+|requestsCpuCores |Double |Yes |Requests CPU cores.
+|limitsCpuCores |Double |Yes |Limits CPU cores.
+|allocatableMemoryBytes |Double |Yes |Allocatable memory in Bytes.
+|capacityMemoryBytes |Double |Yes |Capacity memory in Bytes.
+|limitsMemoryBytes |Double |Yes |Limits memory in Bytes.
+|requestsMemoryBytes |Double |Yes |Requests memory in Bytes.
+|usageMemoryBytes |Double |Yes |Usage memory in Bytes.
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+=== k8s_namespace_daily_metrics_fact
+
+=== ↑ top
+
+Entity Set(s):k8s_namespace_daily_metrics_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int64 |Yes |TK of the fact.
+|dateTk |Int32 |Yes |TK of the date dimension.
+|namespaceTk |Int32 |Yes |TK of the k8s namespace.
+|clusterTk |Int32 |Yes |TK of the k8s cluster.
+|cpuHardLimit |Double |Yes |K8S namespace Cpu hard limit.
+|cpuUsedLimit |Double |Yes |K8S namespace Cpu used limit.
+|cpuHardRequest |Double |Yes |K8S namespace Cpu hard request.
+|cpuUsedRequest |Double |Yes |K8S namespace Cpu used request.
+|memoryHardLimit |Double |Yes |K8S namespace Memory hard limit.
+|memoryUsedLimit |Double |Yes |K8S namespace Memory used limit.
+|memoryHardRequest |Double |Yes |K8S namespace Memory hard request.
+|memoryUsedRequest |Double |Yes |K8S namespace Memory used request.
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+=== k8s_namespace_dimension
+
+=== ↑ top
+
+Entity Set(s):k8s_namespace_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this namespace row.
+|identifier |String |Yes |unique identifier of the namespace.
+|name |String |Yes |Name of the namespace.
+|clusterName |String |Yes |Cluster name of the namespace.
+|id |Int64 |Yes |GUID of the namespace in dwh_inventory.k8s_namespace
+|latest |String |Yes |Indicates whether this row is the latest one for this namespace.
+|dateTk |Int32 |Yes |TK of the date in which this namespace row was created.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|qtree_hourly_performance_fact |link:#entity-qtree_hourly_performance_fact[qtree_hourly_performance_fact] |many
+|volume_hourly_performance_fact |link:#entity-volume_hourly_performance_fact[volume_hourly_performance_fact] |many
+|qtree_daily_performance_fact |link:#entity-qtree_daily_performance_fact[qtree_daily_performance_fact] |many
+|internal_volume_daily_performance_fact |link:#entity-internal_volume_daily_performance_fact[internal_volume_daily_performance_fact] |many
+|internal_volume_hourly_performance_fact |link:#entity-internal_volume_hourly_performance_fact[internal_volume_hourly_performance_fact] |many
+|volume_daily_performance_fact |link:#entity-volume_daily_performance_fact[volume_daily_performance_fact] |many
+|===
+
+=== k8s_namespace_group_bridge
+
+=== ↑ top
+
+Entity Set(s):k8s_namespace_group_bridge
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|k8sNamespaceGroupTk |Int32 |Yes |TK of the k8s namespace group.
+|k8sNamespaceTk |Int32 |Yes |TK of the k8s namespace.
+|isRep |String |Yes |Indicates whether this k8s namespace represents its k8s namespace group.
+|===
+
+=== k8s_namespace_group_dimension
+
+=== ↑ top
+
+Entity Set(s):k8s_namespace_group_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of the k8s namespace group.
+|repK8sNamespace |String |Yes |Name of the application representing the k8s namespace group.
+|repK8sNamespaceTk |Int32 |Yes |TK of the k8s namespace representing the group.
+|cardinality |Int32 |Yes |Number of k8s namespaces in the application group.
+|dateTk |Int32 |Yes |TK of the date in which the k8s namespace group row was created.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|qtree_hourly_performance_fact |link:#entity-qtree_hourly_performance_fact[qtree_hourly_performance_fact] |many
+|volume_hourly_performance_fact |link:#entity-volume_hourly_performance_fact[volume_hourly_performance_fact] |many
+|qtree_daily_performance_fact |link:#entity-qtree_daily_performance_fact[qtree_daily_performance_fact] |many
+|internal_volume_daily_performance_fact |link:#entity-internal_volume_daily_performance_fact[internal_volume_daily_performance_fact] |many
+|internal_volume_hourly_performance_fact |link:#entity-internal_volume_hourly_performance_fact[internal_volume_hourly_performance_fact] |many
+|volume_daily_performance_fact |link:#entity-volume_daily_performance_fact[volume_daily_performance_fact] |many
+|===
+
+=== k8s_namespace_hourly_metrics_fact
+
+=== ↑ top
+
+Entity Set(s):k8s_namespace_hourly_metrics_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int64 |Yes |TK of the fact.
+|timeTk |Int32 |Yes |TK of the time dimension.
+|dateTk |Int32 |Yes |TK of the date dimension.
+|namespaceTk |Int32 |Yes |TK of the k8s namespace.
+|clusterTk |Int32 |Yes |TK of the k8s cluster.
+|cpuHardLimit |Double |Yes |K8S namespace Cpu hard limit.
+|cpuUsedLimit |Double |Yes |K8S namespace Cpu used limit.
+|cpuHardRequest |Double |Yes |K8S namespace Cpu hard request.
+|cpuUsedRequest |Double |Yes |K8S namespace Cpu used request.
+|memoryHardLimit |Double |Yes |K8S namespace Memory hard limit.
+|memoryUsedLimit |Double |Yes |K8S namespace Memory used limit.
+|memoryHardRequest |Double |Yes |K8S namespace Memory hard request.
+|memoryUsedRequest |Double |Yes |K8S namespace Memory used request.
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+=== k8s_node_daily_metrics_fact
+
+=== ↑ top
+
+Entity Set(s):k8s_node_daily_metrics_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int64 |Yes |TK of the fact.
+|dateTk |Int32 |Yes |TK of the date dimension.
+|nodeTk |Int32 |Yes |TK of the k8s node.
+|clusterTk |Int32 |Yes |TK of the k8s cluster.
+|vmTk |Int32 |Yes |TK of the vm.
+|allocatableCpuSaturation |Double |Yes |Allocatable cpu saturation percent.
+|capacityCpuSaturation |Double |Yes |Capacity cpu saturation percent.
+|allocatableMemorySaturation |Double |Yes |Allocatable memory saturation percent.
+|capacityMemorySaturation |Double |Yes |Capacity memory saturation percent.
+|allocatableMemoryBytes |Double |Yes |Allocatable memory in bytes.
+|capacityMemoryBytes |Double |Yes |Capacity memory in bytes.
+|memoryUsageBytes |Double |Yes |Memory usage in bytes.
+|cpuUsageNanocores |Double |Yes |CPU usage in nanocores.
+|allocatableCpu |Double |Yes |Kube node status allocatable CPU.
+|capacityCpu |Double |Yes |Kube node status capacity CPU.
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+=== k8s_node_dimension
+
+=== ↑ top
+
+Entity Set(s):k8s_node_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this node row.
+|identifier |String |Yes |unique identifier of the node.
+|name |String |Yes |Name of the node.
+|clusterName |String |Yes |Cluster name of the node.
+|internalIp |String |Yes |Internal IP of the K8S node
+|osImage |String |Yes |OS image of the K8S node
+|id |Int64 |Yes |GUID of the node in dwh_inventory.k8s_node
+|latest |String |Yes |Indicates whether this row is the latest one for this node.
+|dateTk |Int32 |Yes |TK of the date in which this node row was created.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|vm_hourly_performance_fact |link:#entity-vm_hourly_performance_fact[vm_hourly_performance_fact] |many
+|vm_daily_performance_fact |link:#entity-vm_daily_performance_fact[vm_daily_performance_fact] |many
+|===
+
+=== k8s_node_hourly_metrics_fact
+
+=== ↑ top
+
+Entity Set(s):k8s_node_hourly_metrics_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int64 |Yes |TK of the fact.
+|timeTk |Int32 |Yes |TK of the time dimension.
+|dateTk |Int32 |Yes |TK of the date dimension.
+|nodeTk |Int32 |Yes |TK of the k8s node.
+|clusterTk |Int32 |Yes |TK of the k8s cluster.
+|vmTk |Int32 |Yes |TK of the vm.
+|allocatableCpuSaturation |Double |Yes |Allocatable cpu saturation percent.
+|capacityCpuSaturation |Double |Yes |Capacity cpu saturation percent.
+|allocatableMemorySaturation |Double |Yes |Allocatable memory saturation percent.
+|capacityMemorySaturation |Double |Yes |Capacity memory saturation percent.
+|allocatableMemoryBytes |Double |Yes |Allocatable memory in bytes.
+|capacityMemoryBytes |Double |Yes |Capacity memory in bytes.
+|memoryUsageBytes |Double |Yes |Memory usage in bytes.
+|cpuUsageNanocores |Double |Yes |CPU usage in nanocores.
+|allocatableCpu |Double |Yes |Kube node status allocatable CPU.
+|capacityCpu |Double |Yes |Kube node status capacity CPU.
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+=== k8s_pv_dimension
+
+=== ↑ top
+
+Entity Set(s):k8s_pv_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this pv row.
+|identifier |String |Yes |unique identifier of the pv.
+|name |String |Yes |Name of the pv.
+|clusterName |String |Yes |Cluster name of the pv.
+|phase |String |Yes |Phase of the K8S persistent volume (Bound, etc.)
+|pvcName |String |Yes |Name of the pvc to which the K8S persistent volume is bound
+|storageClass |String |Yes |Name of the storage class for the K8S persistent volume
+|id |Int64 |Yes |GUID of the pvc in dwh_inventory.k8s_pv
+|latest |String |Yes |Indicates whether this row is the latest one for this pv.
+|dateTk |Int32 |Yes |TK of the date in which this pv row was created.
+|===
+
+=== k8s_pvc_daily_metrics_fact
+
+=== ↑ top
+
+Entity Set(s):k8s_pvc_daily_metrics_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int64 |Yes |TK of the fact.
+|dateTk |Int32 |Yes |TK of the date dimension.
+|pvcTk |Int32 |Yes |TK of the k8s pvc.
+|clusterTk |Int32 |Yes |TK of the k8s cluster.
+|namespaceTk |Int32 |Yes |TK of the k8s namespace.
+|pvTk |Int32 |Yes |TK of the k8s pv.
+|readIops |Double |Yes |K8S pvc Read Iops.
+|writeIops |Double |Yes |K8S pvc Write Iops.
+|totalIops |Double |Yes |K8S pvc Total Iops.
+|readThroughput |Double |Yes |K8S pvc Read Throughput.
+|writeThroughput |Double |Yes |K8S pvc Write Throughput.
+|totalThroughput |Double |Yes |K8S pvc Total Throughput.
+|readLatency |Double |Yes |K8S pvc Read Latency.
+|writeLatency |Double |Yes |K8S pvc Write Latency.
+|totalLatency |Double |Yes |K8S pvc Total Latency.
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+=== k8s_pvc_dimension
+
+=== ↑ top
+
+Entity Set(s):k8s_pvc_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this pvc row.
+|identifier |String |Yes |unique identifier of the pvc.
+|name |String |Yes |Name of the pvc.
+|clusterName |String |Yes |Cluster name of the pvc.
+|namespaceName |String |Yes |Namespace name of the pvc.
+|pvName |String |Yes |Name of pv linked to this pvc.
+|phase |String |Yes |Phase of the K8S persistent volume claim (Bound, etc.)
+|id |Int64 |Yes |GUID of the pvc in dwh_inventory.k8s_pvc
+|latest |String |Yes |Indicates whether this row is the latest one for this pvc.
+|dateTk |Int32 |Yes |TK of the date in which this pvc row was created.
+|===
+
+=== k8s_pvc_hourly_metrics_fact
+
+=== ↑ top
+
+Entity Set(s):k8s_pvc_hourly_metrics_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int64 |Yes |TK of the fact.
+|timeTk |Int32 |Yes |TK of the time dimension.
+|dateTk |Int32 |Yes |TK of the date dimension.
+|pvcTk |Int32 |Yes |TK of the k8s pvc.
+|clusterTk |Int32 |Yes |TK of the k8s cluster.
+|namespaceTk |Int32 |Yes |TK of the k8s namespace.
+|pvTk |Int32 |Yes |TK of the k8s pv.
+|readIops |Double |Yes |K8S pvc Read Iops.
+|writeIops |Double |Yes |K8S pvc Write Iops.
+|totalIops |Double |Yes |K8S pvc Total Iops.
+|readThroughput |Double |Yes |K8S pvc Read Throughput.
+|writeThroughput |Double |Yes |K8S pvc Write Throughput.
+|totalThroughput |Double |Yes |K8S pvc Total Throughput.
+|readLatency |Double |Yes |K8S pvc Read Latency.
+|writeLatency |Double |Yes |K8S pvc Write Latency.
+|totalLatency |Double |Yes |K8S pvc Total Latency.
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+=== k8s_workload_daily_metrics_fact
+
+=== ↑ top
+
+Entity Set(s):k8s_workload_daily_metrics_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int64 |Yes |TK of the fact.
+|dateTk |Int32 |Yes |TK of the date dimension.
+|workloadTk |Int32 |Yes |TK of the k8s workload.
+|clusterTk |Int32 |Yes |TK of the k8s cluster.
+|namespaceTk |Int32 |Yes |TK of the k8s namespace.
+|usageCpuCores |Double |Yes |K8S workload Cpu usage (cores).
+|requestCpuCores |Double |Yes |K8S workload Request cpu (cores).
+|limitCpuCores |Double |Yes |K8S workload Limit cpu (cores).
+|usageMemoryBytes |Double |Yes |K8S workload Memory usage (bytes).
+|requestMemoryBytes |Double |Yes |K8S workload Request memory (bytes).
+|limitMemoryBytes |Double |Yes |K8S workload Limit memory (bytes).
+|runningPodCount |Int32 |Yes |K8S workload Number of running replicas.
+|desiredPodCount |Int32 |Yes |K8S workload Number of desired replicas.
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+=== k8s_workload_dimension
+
+=== ↑ top
+
+Entity Set(s):k8s_workload_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this workload row.
+|identifier |String |Yes |unique identifier of the workload.
+|name |String |Yes |Name of the workload.
+|clusterName |String |Yes |Cluster name of the workload.
+|namespaceName |String |Yes |Namespace name of the workload.
+|type |String |Yes |Workload type (pod, statefulset, etc.)
+|id |Int64 |Yes |GUID of the workload in dwh_inventory.k8s_workload
+|latest |String |Yes |Indicates whether this row is the latest one for this workload.
+|dateTk |Int32 |Yes |TK of the date in which this workload row was created.
+|===
+
+=== k8s_workload_hourly_metrics_fact
+
+=== ↑ top
+
+Entity Set(s):k8s_workload_hourly_metrics_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int64 |Yes |TK of the fact.
+|timeTk |Int32 |Yes |TK of the time dimension.
+|dateTk |Int32 |Yes |TK of the date dimension.
+|workloadTk |Int32 |Yes |TK of the k8s workload.
+|clusterTk |Int32 |Yes |TK of the k8s cluster.
+|namespaceTk |Int32 |Yes |TK of the k8s namespace.
+|usageCpuCores |Double |Yes |K8S workload Cpu usage (cores).
+|requestCpuCores |Double |Yes |K8S workload Request cpu (cores).
+|limitCpuCores |Double |Yes |K8S workload Limit cpu (cores).
+|usageMemoryBytes |Double |Yes |K8S workload Memory usage (bytes).
+|requestMemoryBytes |Double |Yes |K8S workload Request memory (bytes).
+|limitMemoryBytes |Double |Yes |K8S workload Limit memory (bytes).
+|runningPodCount |Int32 |Yes |K8S workload Number of running replicas.
+|desiredPodCount |Int32 |Yes |K8S workload Number of desired replicas.
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+=== port_dimension
+
+=== ↑ top
+
+Entity Set(s):port_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this port row.
+|wwn |String |Yes |WWN of the port.
+|name |String |Yes |Name of the port.
+|gbicType |String |Yes |Type of GBIC (Gigabit Interface Converter) used for the port.
+|type |String |Yes |Port type, typically used to identify the protocol used to communicate with the other device, taken from the device itself: F-port, E-port, and so forth.
+|speed |String |Yes |Speed of the port, in Gbps.
+|isGenerated |String |Yes |Indication whether this is a generated wwn (if we do not know the real wwn).
+|url |String |Yes |Url to this port in Insight Server.
+|id |Int64 |Yes |GUID of the port in dwh_inventory.switch_port.
+|latest |String |Yes |Indicates whether this row is the latest one for this port.
+|dateTk |Int32 |Yes |TK of the date in which the port row was created.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|switch_performance_for_port_hourly_fact |link:#entity-switch_performance_for_port_hourly_fact[switch_performance_for_port_hourly_fact] |many
+|===
+
+=== qtree_daily_performance_fact
+
+=== ↑ top
+
+Entity Set(s):qtree_daily_performance_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int32 |Yes |TK of the fact.
+|dateTk *[FK]* →link:#entity-date_dimension[date_dimension].tk |Int32 |Yes |TK of the date dimension.
+|qtreeTk *[FK]* →link:#entity-qtree_dimension[qtree_dimension].tk |Int32 |Yes |TK of the qtree for performance counters.
+|storageTk *[FK]* →link:#entity-storage_dimension[storage_dimension].tk |Int32 |Yes |TK of the qtree storage for performance counters.
+|storagePoolTk *[FK]* →link:#entity-storage_pool_dimension[storage_pool_dimension].tk |Int32 |Yes |TK of the qtree storage pool for performance counters.
+|internalVolumeTk *[FK]* →link:#entity-internal_volume_dimension[internal_volume_dimension].tk |Int32 |Yes |TK of the qtree internal volume for performance counters.
+|virtualStorageTk |Int32 |Yes |TK of the frontend array in case this qtree is on virtual internal volume. Otherwise, the value is N/A.
+|tierTk *[FK]* →link:#entity-tier_dimension[tier_dimension].tk |Int32 |Yes |TK of the tier.
+|serviceLevelTk *[FK]* →link:#entity-service_level_dimension[service_level_dimension].tk |Int32 |Yes |TK of the service level.
+|applicationTk *[FK]* →link:#entity-application_dimension[application_dimension].tk |Int32 |Yes |TK of the application.
+|applicationGroupTk *[FK]* →link:#entity-application_group_dimension[application_group_dimension].tk |Int32 |Yes |TK of the application group.
+|businessEntityTk *[FK]* →link:#entity-business_entity_dimension[business_entity_dimension].tk |Int32 |Yes |TK of the business entity.
+|k8sNamespaceTk *[FK]* →link:#entity-k8s_namespace_dimension[k8s_namespace_dimension].tk |Int32 |Yes |TK of the k8s namespace.
+|k8sNamespaceGroupTk *[FK]* →link:#entity-k8s_namespace_group_dimension[k8s_namespace_group_dimension].tk |Int32 |Yes |TK of the k8s namespace group.
+|totalIops |Double |Yes |Total io per second average (read+write).
+|totalIopsMax |Double |Yes |The max io per second.
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|service_level_dimension |link:#entity-service_level_dimension[service_level_dimension] |one JOIN:serviceLevelTk=link:#entity-service_level_dimension[service_level_dimension].tk
+|internal_volume_dimension |link:#entity-internal_volume_dimension[internal_volume_dimension] |one JOIN:internalVolumeTk=link:#entity-internal_volume_dimension[internal_volume_dimension].tk
+|storage_dimension |link:#entity-storage_dimension[storage_dimension] |one JOIN:storageTk=link:#entity-storage_dimension[storage_dimension].tk
+|tier_dimension |link:#entity-tier_dimension[tier_dimension] |one JOIN:tierTk=link:#entity-tier_dimension[tier_dimension].tk
+|business_entity_dimension |link:#entity-business_entity_dimension[business_entity_dimension] |one JOIN:businessEntityTk=link:#entity-business_entity_dimension[business_entity_dimension].tk
+|application_dimension |link:#entity-application_dimension[application_dimension] |one JOIN:applicationTk=link:#entity-application_dimension[application_dimension].tk
+|qtree_dimension |link:#entity-qtree_dimension[qtree_dimension] |one JOIN:qtreeTk=link:#entity-qtree_dimension[qtree_dimension].tk
+|storage_pool_dimension |link:#entity-storage_pool_dimension[storage_pool_dimension] |one JOIN:storagePoolTk=link:#entity-storage_pool_dimension[storage_pool_dimension].tk
+|date_dimension |link:#entity-date_dimension[date_dimension] |one JOIN:dateTk=link:#entity-date_dimension[date_dimension].tk
+|k8s_namespace_group_dimension |link:#entity-k8s_namespace_group_dimension[k8s_namespace_group_dimension] |one JOIN:k8sNamespaceGroupTk=link:#entity-k8s_namespace_group_dimension[k8s_namespace_group_dimension].tk
+|application_group_dimension |link:#entity-application_group_dimension[application_group_dimension] |one JOIN:applicationGroupTk=link:#entity-application_group_dimension[application_group_dimension].tk
+|k8s_namespace_dimension |link:#entity-k8s_namespace_dimension[k8s_namespace_dimension] |one JOIN:k8sNamespaceTk=link:#entity-k8s_namespace_dimension[k8s_namespace_dimension].tk
+|===
+
+=== qtree_dimension
+
+=== ↑ top
+
+Entity Set(s):qtree_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this qtree row.
+|name |String |Yes |Name of the qtree.
+|identifier |String |Yes |Identifier of the qtree.
+|storageIdentifier |String |Yes |Identifer of the storage where this qtree resides.
+|type |String |Yes |Qtree type.
+|url |String |Yes |Url to this qtree in Insight Server.
+|id |Int64 |Yes |GUID of the qtree in dwh_inventory.qtree
+|latest |String |Yes |Indicates whether this row is the latest one for this qtree.
+|dateTk |Int32 |Yes |TK of the date in which this qtree row was created.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|qtree_hourly_performance_fact |link:#entity-qtree_hourly_performance_fact[qtree_hourly_performance_fact] |many
+|qtree_daily_performance_fact |link:#entity-qtree_daily_performance_fact[qtree_daily_performance_fact] |many
+|===
+
+=== qtree_hourly_performance_fact
+
+=== ↑ top
+
+Entity Set(s):qtree_hourly_performance_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int64 |Yes |TK of the fact.
+|timeTk *[FK]* →link:#entity-time_dimension[time_dimension].tk |Int32 |Yes |TK of the time dimension.
+|dateTk *[FK]* →link:#entity-date_dimension[date_dimension].tk |Int32 |Yes |TK of the date dimension.
+|qtreeTk *[FK]* →link:#entity-qtree_dimension[qtree_dimension].tk |Int32 |Yes |TK of the qtree for performance counters.
+|storageTk *[FK]* →link:#entity-storage_dimension[storage_dimension].tk |Int32 |Yes |TK of the qtree storage for performance counters.
+|storagePoolTk *[FK]* →link:#entity-storage_pool_dimension[storage_pool_dimension].tk |Int32 |Yes |TK of the qtree storage pool for performance counters.
+|internalVolumeTk *[FK]* →link:#entity-internal_volume_dimension[internal_volume_dimension].tk |Int32 |Yes |TK of the qtree internal volume for performance counters.
+|virtualStorageTk |Int32 |Yes |TK of the frontend array in case this qtree is on virtual internal volume. Otherwise, the value is N/A.
+|tierTk *[FK]* →link:#entity-tier_dimension[tier_dimension].tk |Int32 |Yes |TK of the tier.
+|serviceLevelTk *[FK]* →link:#entity-service_level_dimension[service_level_dimension].tk |Int32 |Yes |TK of the service level.
+|applicationTk *[FK]* →link:#entity-application_dimension[application_dimension].tk |Int32 |Yes |TK of the application.
+|applicationGroupTk *[FK]* →link:#entity-application_group_dimension[application_group_dimension].tk |Int32 |Yes |TK of the application group.
+|businessEntityTk *[FK]* →link:#entity-business_entity_dimension[business_entity_dimension].tk |Int32 |Yes |TK of the business entity.
+|k8sNamespaceTk *[FK]* →link:#entity-k8s_namespace_dimension[k8s_namespace_dimension].tk |Int32 |Yes |TK of the k8s namespace.
+|k8sNamespaceGroupTk *[FK]* →link:#entity-k8s_namespace_group_dimension[k8s_namespace_group_dimension].tk |Int32 |Yes |TK of the k8s namespace group.
+|totalIops |Double |Yes |Total io per second average (read+write).
+|totalIopsMax |Double |Yes |The max io per second.
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|internal_volume_dimension |link:#entity-internal_volume_dimension[internal_volume_dimension] |one JOIN:internalVolumeTk=link:#entity-internal_volume_dimension[internal_volume_dimension].tk
+|storage_dimension |link:#entity-storage_dimension[storage_dimension] |one JOIN:storageTk=link:#entity-storage_dimension[storage_dimension].tk
+|business_entity_dimension |link:#entity-business_entity_dimension[business_entity_dimension] |one JOIN:businessEntityTk=link:#entity-business_entity_dimension[business_entity_dimension].tk
+|k8s_namespace_group_dimension |link:#entity-k8s_namespace_group_dimension[k8s_namespace_group_dimension] |one JOIN:k8sNamespaceGroupTk=link:#entity-k8s_namespace_group_dimension[k8s_namespace_group_dimension].tk
+|application_group_dimension |link:#entity-application_group_dimension[application_group_dimension] |one JOIN:applicationGroupTk=link:#entity-application_group_dimension[application_group_dimension].tk
+|k8s_namespace_dimension |link:#entity-k8s_namespace_dimension[k8s_namespace_dimension] |one JOIN:k8sNamespaceTk=link:#entity-k8s_namespace_dimension[k8s_namespace_dimension].tk
+|service_level_dimension |link:#entity-service_level_dimension[service_level_dimension] |one JOIN:serviceLevelTk=link:#entity-service_level_dimension[service_level_dimension].tk
+|tier_dimension |link:#entity-tier_dimension[tier_dimension] |one JOIN:tierTk=link:#entity-tier_dimension[tier_dimension].tk
+|application_dimension |link:#entity-application_dimension[application_dimension] |one JOIN:applicationTk=link:#entity-application_dimension[application_dimension].tk
+|time_dimension |link:#entity-time_dimension[time_dimension] |one JOIN:timeTk=link:#entity-time_dimension[time_dimension].tk
+|qtree_dimension |link:#entity-qtree_dimension[qtree_dimension] |one JOIN:qtreeTk=link:#entity-qtree_dimension[qtree_dimension].tk
+|storage_pool_dimension |link:#entity-storage_pool_dimension[storage_pool_dimension] |one JOIN:storagePoolTk=link:#entity-storage_pool_dimension[storage_pool_dimension].tk
+|date_dimension |link:#entity-date_dimension[date_dimension] |one JOIN:dateTk=link:#entity-date_dimension[date_dimension].tk
+|===
+
+=== service_level_dimension
+
+=== ↑ top
+
+Entity Set(s):service_level_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this service level row.
+|name |String |Yes |Identifying name for the service level.
+|sequence |Int32 |Yes |Sequencial number of the service level as defined in dwh_inventory.annotation_value.
+|cost |Double |Yes |Cost associated with this service level.
+|id |Int64 |Yes |GUID of the service level in dwh_inventory.annotation_value.
+|latest |String |Yes |Indicates whether this row is the latest one for this service level.
+|dateTk |Int32 |Yes |TK of the date in which this service level row was created.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|qtree_hourly_performance_fact |link:#entity-qtree_hourly_performance_fact[qtree_hourly_performance_fact] |many
+|vmdk_hourly_performance_fact |link:#entity-vmdk_hourly_performance_fact[vmdk_hourly_performance_fact] |many
+|volume_hourly_performance_fact |link:#entity-volume_hourly_performance_fact[volume_hourly_performance_fact] |many
+|application_volume_hourly_performance_fact |link:#entity-application_volume_hourly_performance_fact[application_volume_hourly_performance_fact] |many
+|qtree_daily_performance_fact |link:#entity-qtree_daily_performance_fact[qtree_daily_performance_fact] |many
+|host_volume_hourly_performance_fact |link:#entity-host_volume_hourly_performance_fact[host_volume_hourly_performance_fact] |many
+|internal_volume_daily_performance_fact |link:#entity-internal_volume_daily_performance_fact[internal_volume_daily_performance_fact] |many
+|internal_volume_hourly_performance_fact |link:#entity-internal_volume_hourly_performance_fact[internal_volume_hourly_performance_fact] |many
+|volume_daily_performance_fact |link:#entity-volume_daily_performance_fact[volume_daily_performance_fact] |many
+|vmdk_daily_performance_fact |link:#entity-vmdk_daily_performance_fact[vmdk_daily_performance_fact] |many
+|===
+
+=== storage_dimension
+
+=== ↑ top
+
+Entity Set(s):storage_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this storage array row.
+|name |String |Yes |Name of the storage array.
+|identifier |String |Yes |Identifier of the device.
+|ip |String |Yes |IP address of the storage array.
+|model |String |Yes |Model of the storage array.
+|manufacturer |String |Yes |Manufacturer of the storage array.
+|serialNumber |String |Yes |Serial number for the storage array.
+|microcodeVersion |String |Yes |Version of the firmware running on the storage array.
+|family |String |Yes |Family name of the storage array (e.g. Clariion, Symmetrix etc).
+|url |String |Yes |Url to this storage in Insight Server.
+|id |Int64 |Yes |GUID of the storage array in dwh_inventory.storage.
+|latest |String |Yes |Indicates whether this row is the latest one for this storage.
+|dateTk |Int32 |Yes |TK of the date in which this stroage array row was created.
+|dataCenter |String |Yes |dataCenter annotation value assigned to dwh_dimensions.storage_dimension
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|internal_volume_daily_performance_fact |link:#entity-internal_volume_daily_performance_fact[internal_volume_daily_performance_fact] |many
+|switch_performance_for_storage_hourly_fact |link:#entity-switch_performance_for_storage_hourly_fact[switch_performance_for_storage_hourly_fact] |many
+|storage_node_hourly_performance_fact |link:#entity-storage_node_hourly_performance_fact[storage_node_hourly_performance_fact] |many
+|qtree_hourly_performance_fact |link:#entity-qtree_hourly_performance_fact[qtree_hourly_performance_fact] |many
+|vmdk_hourly_performance_fact |link:#entity-vmdk_hourly_performance_fact[vmdk_hourly_performance_fact] |many
+|volume_hourly_performance_fact |link:#entity-volume_hourly_performance_fact[volume_hourly_performance_fact] |many
+|qtree_daily_performance_fact |link:#entity-qtree_daily_performance_fact[qtree_daily_performance_fact] |many
+|storage_node_daily_performance_fact |link:#entity-storage_node_daily_performance_fact[storage_node_daily_performance_fact] |many
+|disk_hourly_performance_fact |link:#entity-disk_hourly_performance_fact[disk_hourly_performance_fact] |many
+|disk_daily_performance_fact |link:#entity-disk_daily_performance_fact[disk_daily_performance_fact] |many
+|internal_volume_hourly_performance_fact |link:#entity-internal_volume_hourly_performance_fact[internal_volume_hourly_performance_fact] |many
+|volume_daily_performance_fact |link:#entity-volume_daily_performance_fact[volume_daily_performance_fact] |many
+|vmdk_daily_performance_fact |link:#entity-vmdk_daily_performance_fact[vmdk_daily_performance_fact] |many
+|===
+
+=== storage_node_daily_performance_fact
+
+=== ↑ top
+
+Entity Set(s):storage_node_daily_performance_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int32 |Yes |TK of the fact.
+|dateTk *[FK]* →link:#entity-date_dimension[date_dimension].tk |Int32 |Yes |TK of the date dimension.
+|storageTk *[FK]* →link:#entity-storage_dimension[storage_dimension].tk |Int32 |Yes |TK of the storage.
+|storageNodeTk *[FK]* →link:#entity-storage_node_dimension[storage_node_dimension].tk |Int32 |Yes |TK of the storage node.
+|tierTk *[FK]* →link:#entity-tier_dimension[tier_dimension].tk |Int32 |Yes |TK of the tier.
+|readResponseTime |Double |Yes |Read response time.
+|writeResponseTime |Double |Yes |Write response time.
+|totalResponseTime |Double |Yes |Total response time.
+|totalResponseTimeMax |Double |Yes |Total max response time.
+|readThroughput |Double |Yes |Read throughput average.
+|writeThroughput |Double |Yes |Write throughput average.
+|totalThroughput |Double |Yes |Total throughput average (read+write).
+|totalThroughputMax |Double |Yes |The maximum total throughput.
+|readIops |Double |Yes |Read io per second.
+|writeIops |Double |Yes |Write io per second.
+|totalIops |Double |Yes |Total io per second average (read+write).
+|totalIopsMax |Double |Yes |The max io per second.
+|diskReadsReplaced |Double |Yes |Disk read replaced.
+|cacheHitRatio |Double |Yes |Cache hit ration.
+|utilization |Double |Yes |Utilization (%)
+|utilizationMax |Double |Yes |Max utilization (%)
+|readFileSystemIops |Double |Yes |File System Read IOPS
+|writeFileSystemIops |Double |Yes |File System Write IOPS
+|readFileSystemThroughput |Double |Yes |File System Read Throughput
+|writeFileSystemThroughput |Double |Yes |File System Write Throughput
+|portUtilization |Double |Yes |[Deprecated] Port utilization (%)
+|portErrors |Int64 |Yes |[Deprecated] Port errors.
+|portTraffic |Double |Yes |[Deprecated] Port traffic.
+|accessed |Int32 |Yes |Is storage node accessed?
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage_node_dimension |link:#entity-storage_node_dimension[storage_node_dimension] |one JOIN:storageNodeTk=link:#entity-storage_node_dimension[storage_node_dimension].tk
+|storage_dimension |link:#entity-storage_dimension[storage_dimension] |one JOIN:storageTk=link:#entity-storage_dimension[storage_dimension].tk
+|tier_dimension |link:#entity-tier_dimension[tier_dimension] |one JOIN:tierTk=link:#entity-tier_dimension[tier_dimension].tk
+|date_dimension |link:#entity-date_dimension[date_dimension] |one JOIN:dateTk=link:#entity-date_dimension[date_dimension].tk
+|===
+
+=== storage_node_dimension
+
+=== ↑ top
+
+Entity Set(s):storage_node_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this storage node row.
+|name |String |Yes |Name of the storage node.
+|identifier |String |Yes |Identifier of the storage node.
+|version |String |Yes |Version of the storage node.
+|model |String |Yes |Model of the storage node.
+|serialNumber |String |Yes |SerialNumber of the storage node.
+|siteName |String |Yes |Site Name of the storage node.
+|url |String |Yes |Url to this storage node in Insight Server.
+|id |Int64 |Yes |GUID of the storage node in dwh_inventory.storage_node
+|latest |String |Yes |Indicates whether this row is the latest one for this storage node.
+|dateTk |Int32 |Yes |TK of the date in which this storage node row was created.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|volume_hourly_performance_fact |link:#entity-volume_hourly_performance_fact[volume_hourly_performance_fact] |many
+|storage_node_daily_performance_fact |link:#entity-storage_node_daily_performance_fact[storage_node_daily_performance_fact] |many
+|internal_volume_daily_performance_fact |link:#entity-internal_volume_daily_performance_fact[internal_volume_daily_performance_fact] |many
+|internal_volume_hourly_performance_fact |link:#entity-internal_volume_hourly_performance_fact[internal_volume_hourly_performance_fact] |many
+|volume_daily_performance_fact |link:#entity-volume_daily_performance_fact[volume_daily_performance_fact] |many
+|storage_node_hourly_performance_fact |link:#entity-storage_node_hourly_performance_fact[storage_node_hourly_performance_fact] |many
+|===
+
+=== storage_node_hourly_performance_fact
+
+=== ↑ top
+
+Entity Set(s):storage_node_hourly_performance_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int32 |Yes |TK of the fact.
+|timeTk *[FK]* →link:#entity-time_dimension[time_dimension].tk |Int32 |Yes |TK of the time dimension.
+|dateTk *[FK]* →link:#entity-date_dimension[date_dimension].tk |Int32 |Yes |TK of the date dimension.
+|storageTk *[FK]* →link:#entity-storage_dimension[storage_dimension].tk |Int32 |Yes |TK of the storage.
+|storageNodeTk *[FK]* →link:#entity-storage_node_dimension[storage_node_dimension].tk |Int32 |Yes |TK of the storage node.
+|tierTk *[FK]* →link:#entity-tier_dimension[tier_dimension].tk |Int32 |Yes |TK of the tier.
+|readResponseTime |Double |Yes |Read response time.
+|writeResponseTime |Double |Yes |Write response time.
+|totalResponseTime |Double |Yes |Total response time.
+|totalResponseTimeMax |Double |Yes |Total max response time.
+|readThroughput |Double |Yes |Read throughput average.
+|writeThroughput |Double |Yes |Write throughput average.
+|totalThroughput |Double |Yes |Total throughput average (read+write).
+|totalThroughputMax |Double |Yes |The maximum total throughput.
+|readIops |Double |Yes |Read io per second.
+|writeIops |Double |Yes |Write io per second.
+|totalIops |Double |Yes |Total io per second average (read+write).
+|totalIopsMax |Double |Yes |The max io per second.
+|diskReadsReplaced |Double |Yes |Disk read replaced.
+|cacheHitRatio |Double |Yes |Cache hit ration.
+|utilization |Double |Yes |Utilization (%)
+|utilizationMax |Double |Yes |Max utilization (%)
+|readFileSystemIops |Double |Yes |File System Read IOPS
+|writeFileSystemIops |Double |Yes |File System Write IOPS
+|readFileSystemThroughput |Double |Yes |File System Read Throughput
+|writeFileSystemThroughput |Double |Yes |File System Write Throughput
+|portUtilization |Double |Yes |[Deprecated] Port utilization (%)
+|portErrors |Int64 |Yes |[Deprecated] Port errors.
+|portTraffic |Double |Yes |[Deprecated] Port traffic.
+|accessed |Int32 |Yes |Is storage node accessed?
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage_node_dimension |link:#entity-storage_node_dimension[storage_node_dimension] |one JOIN:storageNodeTk=link:#entity-storage_node_dimension[storage_node_dimension].tk
+|storage_dimension |link:#entity-storage_dimension[storage_dimension] |one JOIN:storageTk=link:#entity-storage_dimension[storage_dimension].tk
+|tier_dimension |link:#entity-tier_dimension[tier_dimension] |one JOIN:tierTk=link:#entity-tier_dimension[tier_dimension].tk
+|time_dimension |link:#entity-time_dimension[time_dimension] |one JOIN:timeTk=link:#entity-time_dimension[time_dimension].tk
+|date_dimension |link:#entity-date_dimension[date_dimension] |one JOIN:dateTk=link:#entity-date_dimension[date_dimension].tk
+|===
+
+=== storage_pool_dimension
+
+=== ↑ top
+
+Entity Set(s):storage_pool_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this storage pool row.
+|identifier |String |Yes |Identifier of the device.
+|name |String |Yes |Name of the storage pool.
+|storageName |String |Yes |Name of the storage where this storage pool resides.
+|storageIP |String |Yes |IP of the storage where this storage pool resides.
+|type |String |Yes |Storage pool type (e.g., RAID, AGGREGATE, etc.).
+|redundancy |String |Yes |Storage pool redundancy.
+|thinProvisioningSupported |String |Yes |Indicates whether thin provisioning is supported by the storage pool.
+|isVirtual |String |Yes |Virtual indicates this is a frontend storage pool in array virtualization.
+|usesFlashPools |String |Yes |Indicates whether this storage pool uses flash pools.
+|url |String |Yes |Url to this storage pool in Insight Server.
+|id |Int64 |Yes |GUID of the storage pool in dwh_inventory.storage_pool
+|latest |String |Yes |Indicates whether this row is the latest one for this storage pool.
+|dateTk |Int32 |Yes |TK of the date in which this storage pool row was created.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|qtree_hourly_performance_fact |link:#entity-qtree_hourly_performance_fact[qtree_hourly_performance_fact] |many
+|volume_hourly_performance_fact |link:#entity-volume_hourly_performance_fact[volume_hourly_performance_fact] |many
+|qtree_daily_performance_fact |link:#entity-qtree_daily_performance_fact[qtree_daily_performance_fact] |many
+|disk_hourly_performance_fact |link:#entity-disk_hourly_performance_fact[disk_hourly_performance_fact] |many
+|disk_daily_performance_fact |link:#entity-disk_daily_performance_fact[disk_daily_performance_fact] |many
+|internal_volume_daily_performance_fact |link:#entity-internal_volume_daily_performance_fact[internal_volume_daily_performance_fact] |many
+|internal_volume_hourly_performance_fact |link:#entity-internal_volume_hourly_performance_fact[internal_volume_hourly_performance_fact] |many
+|volume_daily_performance_fact |link:#entity-volume_daily_performance_fact[volume_daily_performance_fact] |many
+|===
+
+=== switch_dimension
+
+=== ↑ top
+
+Entity Set(s):switch_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this switch row.
+|wwn |String |Yes |WWN of the switch.
+|name |String |Yes |Name of the switch.
+|identifier |String |Yes |Identifier of the device.
+|ip |String |Yes |IP address of the switch.
+|model |String |Yes |Model of the switch.
+|manufacturer |String |Yes |Manufacturer of the switch.
+|firmware |String |Yes |Firmware version running on the switch.
+|serialNumber |String |Yes |Serial number of the switch.
+|npv |String |Yes |Indication whether this is an NPV switch.
+|isGenerated |String |Yes |Indication whether this switch does not correspond to a physical device. It is used to model one to many port connectivity.
+|type |String |Yes |Switch type.
+|url |String |Yes |Url to this switch in Insight Server.
+|id |Int64 |Yes |GUID of the switch in dwh_inventory.switch.
+|latest |String |Yes |Indicates whether this row is the latest one for this switch.
+|dateTk |Int32 |Yes |TK of the date in which this switch row was created.
+|dataCenter |String |Yes |dataCenter annotation value assigned to dwh_dimensions.switch_dimension
+|switchLevel |String |Yes |switchLevel annotation value assigned to dwh_dimensions.switch_dimension
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|switch_performance_for_port_hourly_fact |link:#entity-switch_performance_for_port_hourly_fact[switch_performance_for_port_hourly_fact] |many
+|===
+
+=== switch_performance_for_host_hourly_fact
+
+=== ↑ top
+
+Entity Set(s):switch_performance_for_host_hourly_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int64 |Yes |TK of the fact.
+|timeTk *[FK]* →link:#entity-time_dimension[time_dimension].tk |Int32 |Yes |TK of the time dimension.
+|dateTk *[FK]* →link:#entity-date_dimension[date_dimension].tk |Int32 |Yes |TK of the date dimension.
+|hostTk *[FK]* →link:#entity-host_dimension[host_dimension].tk |Int32 |Yes |TK of the host.
+|applicationTk *[FK]* →link:#entity-application_dimension[application_dimension].tk |Int32 |Yes |TK of the representative application dimension for host.
+|applicationGroupTk *[FK]* →link:#entity-application_group_dimension[application_group_dimension].tk |Int32 |Yes |TK of the application group dimension.
+|businessEntityTk *[FK]* →link:#entity-business_entity_dimension[business_entity_dimension].tk |Int32 |Yes |TK of the business entity dimension.
+|rxTraffic |Double |Yes |Receiving traffic (MB)
+|txTraffic |Double |Yes |Transmitting traffic (MB)
+|totalTraffic |Double |Yes |Total traffic (MB)
+|errorRateFlag |String |Yes |Error rate flag
+|crcErrorRateFlag |String |Yes |CRC error rate flag
+|syncLossCount |Int64 |Yes |Synchronization loss count
+|signalLossCount |Int64 |Yes |Signal loss count
+|class3DiscardCount |Int64 |Yes |Class 3 discard count
+|frameTooShortCount |Int64 |Yes |Frame too short count
+|frameTooLongCount |Int64 |Yes |Frame too long count
+|bbCreditErrorCount |Int64 |Yes |BB Credit error count
+|rx |Double |Yes |Receive usage (%)
+|tx |Double |Yes |Transmit usage (%)
+|rxMax |Double |Yes |Max receive usage (%)
+|txMax |Double |Yes |Max transmit usage (%)
+|trafficUtilizationTotal |Double |Yes |Total traffic usage (%)
+|trafficUtilizationTotalMax |Double |Yes |The maximum total traffic usage (%)
+|rxLinkResets |Int64 |Yes |Receive link resets
+|txLinkResets |Int64 |Yes |Transfer link resets
+|balanceIndex |Int32 |Yes |The host port balance index
+|weightedBalanceIndex |Int32 |Yes |The host port weighted balance index
+|portSpeed |Int32 |Yes |The port speed for fact
+|portCount |Int32 |Yes |The port count for fact
+|portErrorsLinkFailure |Int64 |Yes |Link failures count
+|bbCreditZeroRx |Int64 |Yes |Receive BBCredit zero
+|bbCreditZeroTx |Int64 |Yes |Transfer BBCredit zero
+|bbCreditZeroMsTx |Double |Yes |[Deprecated] Transfer BBCredit zero Ms
+|bbCreditZeroTotal |Int64 |Yes |Total BBCredit zero
+|trafficRateTx |Double |Yes |Transfer traffic rate
+|trafficRateRx |Double |Yes |Receive traffic rate
+|trafficRateTotal |Double |Yes |Total traffic rate
+|trafficFrameRateTx |Double |Yes |Transfer traffic frame rate
+|trafficFrameRateRx |Double |Yes |Receive traffic frame rate
+|trafficFrameRateTotal |Double |Yes |Total traffic frame rate
+|trafficFrameSizeAvgTx |Int64 |Yes |Transfer traffic frame average size
+|trafficFrameSizeAvgRx |Int64 |Yes |Receive traffic frame average size
+|portErrorsTimeoutDiscardTx |Int64 |Yes |Transfer Timeout discard count
+|portErrorsCrc |Int64 |Yes |CRC errors count
+|portErrorsEncIn |Int64 |Yes |Encoding errors inside frames
+|portErrorsEncOut |Int64 |Yes |Encoding errors outside of frames
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|business_entity_dimension |link:#entity-business_entity_dimension[business_entity_dimension] |one JOIN:businessEntityTk=link:#entity-business_entity_dimension[business_entity_dimension].tk
+|application_dimension |link:#entity-application_dimension[application_dimension] |one JOIN:applicationTk=link:#entity-application_dimension[application_dimension].tk
+|time_dimension |link:#entity-time_dimension[time_dimension] |one JOIN:timeTk=link:#entity-time_dimension[time_dimension].tk
+|host_dimension |link:#entity-host_dimension[host_dimension] |one JOIN:hostTk=link:#entity-host_dimension[host_dimension].tk
+|date_dimension |link:#entity-date_dimension[date_dimension] |one JOIN:dateTk=link:#entity-date_dimension[date_dimension].tk
+|application_group_dimension |link:#entity-application_group_dimension[application_group_dimension] |one JOIN:applicationGroupTk=link:#entity-application_group_dimension[application_group_dimension].tk
+|===
+
+=== switch_performance_for_port_hourly_fact
+
+=== ↑ top
+
+Entity Set(s):switch_performance_for_port_hourly_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int64 |Yes |TK of the fact.
+|timeTk *[FK]* →link:#entity-time_dimension[time_dimension].tk |Int32 |Yes |TK of the time dimension.
+|dateTk *[FK]* →link:#entity-date_dimension[date_dimension].tk |Int32 |Yes |TK of the date dimension.
+|portTk *[FK]* →link:#entity-port_dimension[port_dimension].tk |Int32 |Yes |TK of the port.
+|switchTk *[FK]* →link:#entity-switch_dimension[switch_dimension].tk |Int32 |Yes |TK of the switch.
+|fabricTk *[FK]* →link:#entity-fabric_dimension[fabric_dimension].tk |Int32 |Yes |TK of the fabric.
+|connectedDeviceTk *[FK]* →link:#entity-connected_device_dimension[connected_device_dimension].tk |Int32 |Yes |TK of connected device.
+|connectivityType |String |Yes |Type of the connected device.
+|isl |String |Yes |Is this port an ISL port?
+|rxTraffic |Double |Yes |Receiving traffic (MB)
+|txTraffic |Double |Yes |Transmitting traffic (MB)
+|totalTraffic |Double |Yes |Total traffic (MB)
+|errorRateFlag |String |Yes |Error rate flag
+|crcErrorRateFlag |String |Yes |CRC error rate flag
+|syncLossCount |Int64 |Yes |Synchronization loss count
+|signalLossCount |Int64 |Yes |Signal loss count
+|class3DiscardCount |Int64 |Yes |Class 3 discard count
+|frameTooShortCount |Int64 |Yes |Frame too short count
+|frameTooLongCount |Int64 |Yes |Frame too long count
+|bbCreditErrorCount |Int64 |Yes |BB Credit error count
+|rx |Double |Yes |Receive usage (%)
+|tx |Double |Yes |Transmit usage (%)
+|rxMax |Double |Yes |Max receive usage (%)
+|txMax |Double |Yes |Max transmit usage (%)
+|trafficUtilizationTotal |Double |Yes |Total traffic usage (%)
+|trafficUtilizationTotalMax |Double |Yes |The maximum total traffic usage (%)
+|rxLinkResets |Int64 |Yes |Receive link resets
+|txLinkResets |Int64 |Yes |Transfer link resets
+|portErrorsLinkFailure |Int64 |Yes |Link failures count
+|bbCreditZeroRx |Int64 |Yes |Receive BBCredit zero
+|bbCreditZeroTx |Int64 |Yes |Transfer BBCredit zero
+|bbCreditZeroMsTx |Double |Yes |[Deprecated] Transfer BBCredit zero Ms
+|bbCreditZeroTotal |Int64 |Yes |Total BBCredit zero
+|trafficRateTx |Double |Yes |Transfer traffic rate
+|trafficRateRx |Double |Yes |Receive traffic rate
+|trafficRateTotal |Double |Yes |Total traffic rate
+|trafficFrameRateTx |Double |Yes |Transfer traffic frame rate
+|trafficFrameRateRx |Double |Yes |Receive traffic frame rate
+|trafficFrameRateTotal |Double |Yes |Total traffic frame rate
+|trafficFrameSizeAvgTx |Int64 |Yes |Transfer traffic frame average size
+|trafficFrameSizeAvgRx |Int64 |Yes |Receive traffic frame average size
+|portErrorsTimeoutDiscardTx |Int64 |Yes |Transfer Timeout discard count
+|portErrorsCrc |Int64 |Yes |CRC errors count
+|portErrorsEncIn |Int64 |Yes |Encoding errors inside frames
+|portErrorsEncOut |Int64 |Yes |Encoding errors outside of frames
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|connected_device_dimension |link:#entity-connected_device_dimension[connected_device_dimension] |one JOIN:connectedDeviceTk=link:#entity-connected_device_dimension[connected_device_dimension].tk
+|fabric_dimension |link:#entity-fabric_dimension[fabric_dimension] |one JOIN:fabricTk=link:#entity-fabric_dimension[fabric_dimension].tk
+|port_dimension |link:#entity-port_dimension[port_dimension] |one JOIN:portTk=link:#entity-port_dimension[port_dimension].tk
+|time_dimension |link:#entity-time_dimension[time_dimension] |one JOIN:timeTk=link:#entity-time_dimension[time_dimension].tk
+|date_dimension |link:#entity-date_dimension[date_dimension] |one JOIN:dateTk=link:#entity-date_dimension[date_dimension].tk
+|switch_dimension |link:#entity-switch_dimension[switch_dimension] |one JOIN:switchTk=link:#entity-switch_dimension[switch_dimension].tk
+|===
+
+=== switch_performance_for_storage_hourly_fact
+
+=== ↑ top
+
+Entity Set(s):switch_performance_for_storage_hourly_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int64 |Yes |TK of the fact.
+|timeTk *[FK]* →link:#entity-time_dimension[time_dimension].tk |Int32 |Yes |TK of the time dimension.
+|dateTk *[FK]* →link:#entity-date_dimension[date_dimension].tk |Int32 |Yes |TK of the date dimension.
+|storageTk *[FK]* →link:#entity-storage_dimension[storage_dimension].tk |Int32 |Yes |TK of the storage.
+|rxTraffic |Double |Yes |Receiving traffic (MB)
+|txTraffic |Double |Yes |Transmitting traffic (MB)
+|totalTraffic |Double |Yes |Total traffic (MB)
+|errorRateFlag |String |Yes |Error rate flag
+|crcErrorRateFlag |String |Yes |CRC error rate flag
+|syncLossCount |Int64 |Yes |Synchronization loss count
+|signalLossCount |Int64 |Yes |Signal loss count
+|class3DiscardCount |Int64 |Yes |Class 3 discard count
+|frameTooShortCount |Int64 |Yes |Frame too short count
+|frameTooLongCount |Int64 |Yes |Frame too long count
+|bbCreditErrorCount |Int64 |Yes |BB Credit error count
+|rx |Double |Yes |Receive usage (%)
+|tx |Double |Yes |Transmit usage (%)
+|rxMax |Double |Yes |Max receive usage (%)
+|txMax |Double |Yes |Max transmit usage (%)
+|trafficUtilizationTotal |Double |Yes |Total traffic usage (%)
+|trafficUtilizationTotalMax |Double |Yes |The maximum total traffic usage (%)
+|rxLinkResets |Int64 |Yes |Receive link resets
+|txLinkResets |Int64 |Yes |Transfer link resets
+|balanceIndex |Int32 |Yes |The host port balance index
+|weightedBalanceIndex |Int32 |Yes |The host port weighted balance index
+|portSpeed |Int32 |Yes |The port speed for fact
+|portCount |Int32 |Yes |The port count for fact
+|portErrorsLinkFailure |Int64 |Yes |Link failures count
+|bbCreditZeroRx |Int64 |Yes |Receive BBCredit zero
+|bbCreditZeroTx |Int64 |Yes |Transfer BBCredit zero
+|bbCreditZeroMsTx |Double |Yes |[Deprecated] Transfer BBCredit zero Ms
+|bbCreditZeroTotal |Int64 |Yes |Total BBCredit zero
+|trafficRateTx |Double |Yes |Transfer traffic rate
+|trafficRateRx |Double |Yes |Receive traffic rate
+|trafficRateTotal |Double |Yes |Total traffic rate
+|trafficFrameRateTx |Double |Yes |Transfer traffic frame rate
+|trafficFrameRateRx |Double |Yes |Receive traffic frame rate
+|trafficFrameRateTotal |Double |Yes |Total traffic frame rate
+|trafficFrameSizeAvgTx |Int64 |Yes |Transfer traffic frame average size
+|trafficFrameSizeAvgRx |Int64 |Yes |Receive traffic frame average size
+|portErrorsTimeoutDiscardTx |Int64 |Yes |Transfer Timeout discard count
+|portErrorsCrc |Int64 |Yes |CRC errors count
+|portErrorsEncIn |Int64 |Yes |Encoding errors inside frames
+|portErrorsEncOut |Int64 |Yes |Encoding errors outside of frames
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage_dimension |link:#entity-storage_dimension[storage_dimension] |one JOIN:storageTk=link:#entity-storage_dimension[storage_dimension].tk
+|time_dimension |link:#entity-time_dimension[time_dimension] |one JOIN:timeTk=link:#entity-time_dimension[time_dimension].tk
+|date_dimension |link:#entity-date_dimension[date_dimension] |one JOIN:dateTk=link:#entity-date_dimension[date_dimension].tk
+|===
+
+=== switch_performance_for_tape_hourly_fact
+
+=== ↑ top
+
+Entity Set(s):switch_performance_for_tape_hourly_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int64 |Yes |TK of the fact.
+|timeTk *[FK]* →link:#entity-time_dimension[time_dimension].tk |Int32 |Yes |TK of the time dimension.
+|dateTk *[FK]* →link:#entity-date_dimension[date_dimension].tk |Int32 |Yes |TK of the date dimension.
+|tapeTk *[FK]* →link:#entity-tape_dimension[tape_dimension].tk |Int32 |Yes |TK of the tape.
+|rxTraffic |Double |Yes |Receiving traffic (MB)
+|txTraffic |Double |Yes |Transmitting traffic (MB)
+|totalTraffic |Double |Yes |Total traffic (MB)
+|errorRateFlag |String |Yes |Error rate flag
+|crcErrorRateFlag |String |Yes |CRC error rate flag
+|syncLossCount |Int64 |Yes |Synchronization loss count
+|signalLossCount |Int64 |Yes |Signal loss count
+|class3DiscardCount |Int64 |Yes |Class 3 discard count
+|frameTooShortCount |Int64 |Yes |Frame too short count
+|frameTooLongCount |Int64 |Yes |Frame too long count
+|bbCreditErrorCount |Int64 |Yes |BB Credit error count
+|rx |Double |Yes |Receive usage (%)
+|tx |Double |Yes |Transmit usage (%)
+|rxMax |Double |Yes |Max receive usage (%)
+|txMax |Double |Yes |Max transmit usage (%)
+|trafficUtilizationTotal |Double |Yes |Total traffic usage (%)
+|trafficUtilizationTotalMax |Double |Yes |The maximum total traffic usage (%)
+|rxLinkResets |Int64 |Yes |Receive link resets
+|txLinkResets |Int64 |Yes |Transfer link resets
+|balanceIndex |Int32 |Yes |The host port balance index
+|weightedBalanceIndex |Int32 |Yes |The host port weighted balance index
+|portSpeed |Int32 |Yes |The port speed for fact
+|portCount |Int32 |Yes |The port count for fact
+|portErrorsLinkFailure |Int64 |Yes |Link failures count
+|bbCreditZeroRx |Int64 |Yes |Receive BBCredit zero
+|bbCreditZeroTx |Int64 |Yes |Transfer BBCredit zero
+|bbCreditZeroMsTx |Double |Yes |[Deprecated] Transfer BBCredit zero Ms
+|bbCreditZeroTotal |Int64 |Yes |Total BBCredit zero
+|trafficRateTx |Double |Yes |Transfer traffic rate
+|trafficRateRx |Double |Yes |Receive traffic rate
+|trafficRateTotal |Double |Yes |Total traffic rate
+|trafficFrameRateTx |Double |Yes |Transfer traffic frame rate
+|trafficFrameRateRx |Double |Yes |Receive traffic frame rate
+|trafficFrameRateTotal |Double |Yes |Total traffic frame rate
+|trafficFrameSizeAvgTx |Int64 |Yes |Transfer traffic frame average size
+|trafficFrameSizeAvgRx |Int64 |Yes |Receive traffic frame average size
+|portErrorsTimeoutDiscardTx |Int64 |Yes |Transfer Timeout discard count
+|portErrorsCrc |Int64 |Yes |CRC errors count
+|portErrorsEncIn |Int64 |Yes |Encoding errors inside frames
+|portErrorsEncOut |Int64 |Yes |Encoding errors outside of frames
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|time_dimension |link:#entity-time_dimension[time_dimension] |one JOIN:timeTk=link:#entity-time_dimension[time_dimension].tk
+|date_dimension |link:#entity-date_dimension[date_dimension] |one JOIN:dateTk=link:#entity-date_dimension[date_dimension].tk
+|tape_dimension |link:#entity-tape_dimension[tape_dimension] |one JOIN:tapeTk=link:#entity-tape_dimension[tape_dimension].tk
+|===
+
+=== tape_dimension
+
+=== ↑ top
+
+Entity Set(s):tape_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this tape row.
+|name |String |Yes |Name of the tape.
+|identifier |String |Yes |Identifier of the device.
+|ip |String |Yes |IP address of the tape.
+|manufacturer |String |Yes |Manufacturer of the tape.
+|serialNumber |String |Yes |Serial number for the tape.
+|id |Int64 |Yes |GUID of the tape in dwh_inventory.tape.
+|latest |String |Yes |Indicates whether this row is the latest one for this tape.
+|dateTk |Int32 |Yes |TK of the date in which this tape row was created.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|switch_performance_for_tape_hourly_fact |link:#entity-switch_performance_for_tape_hourly_fact[switch_performance_for_tape_hourly_fact] |many
+|===
+
+=== tier_dimension
+
+=== ↑ top
+
+Entity Set(s):tier_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this tier row.
+|name |String |Yes |Identifying name for the tier.
+|sequence |Int32 |Yes |Sequencial number of the tier as defined in dwh_inventory.annotation_value.
+|cost |Double |Yes |Cost associated with this tier.
+|id |Int64 |Yes |GUID of the tier in dwh_inventory.annotation_value.
+|latest |String |Yes |Indicates whether this row is the latest one for this tier.
+|dateTk |Int32 |Yes |TK of the date in which this tier row was created.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|qtree_hourly_performance_fact |link:#entity-qtree_hourly_performance_fact[qtree_hourly_performance_fact] |many
+|vmdk_hourly_performance_fact |link:#entity-vmdk_hourly_performance_fact[vmdk_hourly_performance_fact] |many
+|volume_hourly_performance_fact |link:#entity-volume_hourly_performance_fact[volume_hourly_performance_fact] |many
+|application_volume_hourly_performance_fact |link:#entity-application_volume_hourly_performance_fact[application_volume_hourly_performance_fact] |many
+|qtree_daily_performance_fact |link:#entity-qtree_daily_performance_fact[qtree_daily_performance_fact] |many
+|storage_node_daily_performance_fact |link:#entity-storage_node_daily_performance_fact[storage_node_daily_performance_fact] |many
+|host_volume_hourly_performance_fact |link:#entity-host_volume_hourly_performance_fact[host_volume_hourly_performance_fact] |many
+|internal_volume_daily_performance_fact |link:#entity-internal_volume_daily_performance_fact[internal_volume_daily_performance_fact] |many
+|internal_volume_hourly_performance_fact |link:#entity-internal_volume_hourly_performance_fact[internal_volume_hourly_performance_fact] |many
+|volume_daily_performance_fact |link:#entity-volume_daily_performance_fact[volume_daily_performance_fact] |many
+|vmdk_daily_performance_fact |link:#entity-vmdk_daily_performance_fact[vmdk_daily_performance_fact] |many
+|storage_node_hourly_performance_fact |link:#entity-storage_node_hourly_performance_fact[storage_node_hourly_performance_fact] |many
+|===
+
+=== time_dimension
+
+=== ↑ top
+
+Entity Set(s):time_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int32 |Yes |TK of the time dimension.
+|hourDateTime |DateTimeOffset |Yes |The full date + hour representation for this dimension (minutes and seconds zeroed out)
+|hour |Byte |Yes |Hour in day, 24 hour format
+|minute |Byte |Yes |Minute in hour
+|second |Byte |Yes |Second in minute
+|microsecond |Int32 |Yes |Microseconds in second
+|dateTk *[FK]* →link:#entity-date_dimension[date_dimension].tk |Int32 |Yes |TK for the related date dimension day representative (if any)
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|date_dimension |link:#entity-date_dimension[date_dimension] |one JOIN:dateTk=link:#entity-date_dimension[date_dimension].tk
+|vm_hourly_performance_fact |link:#entity-vm_hourly_performance_fact[vm_hourly_performance_fact] |many
+|switch_performance_for_port_hourly_fact |link:#entity-switch_performance_for_port_hourly_fact[switch_performance_for_port_hourly_fact] |many
+|host_volume_hourly_performance_fact |link:#entity-host_volume_hourly_performance_fact[host_volume_hourly_performance_fact] |many
+|switch_performance_for_tape_hourly_fact |link:#entity-switch_performance_for_tape_hourly_fact[switch_performance_for_tape_hourly_fact] |many
+|switch_performance_for_host_hourly_fact |link:#entity-switch_performance_for_host_hourly_fact[switch_performance_for_host_hourly_fact] |many
+|switch_performance_for_storage_hourly_fact |link:#entity-switch_performance_for_storage_hourly_fact[switch_performance_for_storage_hourly_fact] |many
+|storage_node_hourly_performance_fact |link:#entity-storage_node_hourly_performance_fact[storage_node_hourly_performance_fact] |many
+|qtree_hourly_performance_fact |link:#entity-qtree_hourly_performance_fact[qtree_hourly_performance_fact] |many
+|vmdk_hourly_performance_fact |link:#entity-vmdk_hourly_performance_fact[vmdk_hourly_performance_fact] |many
+|volume_hourly_performance_fact |link:#entity-volume_hourly_performance_fact[volume_hourly_performance_fact] |many
+|application_volume_hourly_performance_fact |link:#entity-application_volume_hourly_performance_fact[application_volume_hourly_performance_fact] |many
+|disk_hourly_performance_fact |link:#entity-disk_hourly_performance_fact[disk_hourly_performance_fact] |many
+|internal_volume_hourly_performance_fact |link:#entity-internal_volume_hourly_performance_fact[internal_volume_hourly_performance_fact] |many
+|host_vm_hourly_performance_fact |link:#entity-host_vm_hourly_performance_fact[host_vm_hourly_performance_fact] |many
+|===
+
+=== vm_daily_performance_fact
+
+=== ↑ top
+
+Entity Set(s):vm_daily_performance_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int32 |Yes |TK of the fact.
+|dateTk *[FK]* →link:#entity-date_dimension[date_dimension].tk |Int32 |Yes |TK of the date dimension.
+|hostTk *[FK]* →link:#entity-host_dimension[host_dimension].tk |Int32 |Yes |TK of the host.
+|vmTk *[FK]* →link:#entity-vm_dimension[vm_dimension].tk |Int32 |Yes |TK of the vm.
+|businessEntityTk *[FK]* →link:#entity-business_entity_dimension[business_entity_dimension].tk |Int32 |Yes |TK of the business entity.
+|applicationTk *[FK]* →link:#entity-application_dimension[application_dimension].tk |Int32 |Yes |TK of the application representative.
+|applicationGroupTk *[FK]* →link:#entity-application_group_dimension[application_group_dimension].tk |Int32 |Yes |TK of the application group.
+|k8sNodeTk *[FK]* →link:#entity-k8s_node_dimension[k8s_node_dimension].tk |Int32 |Yes |TK of the k8s node.
+|readIops |Double |Yes |Read io per second.
+|writeIops |Double |Yes |Write io per second.
+|totalIops |Double |Yes |Total io per second average (read+write).
+|totalIopsMax |Double |Yes |The max io per second.
+|readThroughput |Double |Yes |Read throughput average.
+|writeThroughput |Double |Yes |Write throughput average.
+|totalThroughput |Double |Yes |Total throughput average (read+write).
+|totalThroughputMax |Double |Yes |The maximum total throughput.
+|readResponseTime |Double |Yes |Read response time.
+|writeResponseTime |Double |Yes |Write response time.
+|totalResponseTime |Double |Yes |Total response time.
+|totalResponseTimeMax |Double |Yes |Total max response time.
+|ipReceiveThroughput |Double |Yes |Ip Receive Throughput.
+|ipTransmitThroughput |Double |Yes |Ip Transmit Throughput.
+|ipTotalThroughput |Double |Yes |Ip Total Throughput.
+|ipTotalThroughputMax |Double |Yes |The maximum ip Total Throughput.
+|cpuUtilization |Double |Yes |CPU utilization (%)
+|maxOfAvgCpuUtilization |Double |Yes |[Deprecated] MAX CPU utilization (%)
+|maxOfMaxCpuUtilization |Double |Yes |MAX CPU utilization (%)
+|memoryUtilization |Double |Yes |Memory utilization (%)
+|maxOfAvgMemoryUtilization |Double |Yes |[Deprecated] MAX Memory utilization (%)
+|maxOfMaxMemoryUtilization |Double |Yes |MAX Memory utilization (%)
+|swapInRate |Double |Yes |Swap in rate
+|maxOfAvgSwapInRate |Double |Yes |Max swap in rate
+|swapOutRate |Double |Yes |Swap out rate
+|maxOfAvgSwapOutRate |Double |Yes |Max swap out rate
+|swapTotalRate |Double |Yes |Total swap rate
+|swapTotalRateMax |Double |Yes |The maximum total swap rate
+|processors |Int32 |Yes |Number of processors of the virtual machine.
+|memory |Int64 |Yes |Memory of the virtual machine, in MB.
+|cpuCoSchedulingDelayTimePercent |Double |Yes |CPU Co-Stop Time (%)
+|cpuDemandToEntitlementPercent |Double |Yes |CPU Demand-To-Entitlement Ratio (%)
+|cpuIdleTimePercent |Double |Yes |CPU Idle Time (%)
+|waitingToBeScheduledTimePercent |Double |Yes |CPU Ready Time (%)
+|cpuTotalWaitTimePercent |Double |Yes |CPU Wait Time (%)
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|business_entity_dimension |link:#entity-business_entity_dimension[business_entity_dimension] |one JOIN:businessEntityTk=link:#entity-business_entity_dimension[business_entity_dimension].tk
+|k8s_node_dimension |link:#entity-k8s_node_dimension[k8s_node_dimension] |one JOIN:k8sNodeTk=link:#entity-k8s_node_dimension[k8s_node_dimension].tk
+|application_dimension |link:#entity-application_dimension[application_dimension] |one JOIN:applicationTk=link:#entity-application_dimension[application_dimension].tk
+|host_dimension |link:#entity-host_dimension[host_dimension] |one JOIN:hostTk=link:#entity-host_dimension[host_dimension].tk
+|vm_dimension |link:#entity-vm_dimension[vm_dimension] |one JOIN:vmTk=link:#entity-vm_dimension[vm_dimension].tk
+|date_dimension |link:#entity-date_dimension[date_dimension] |one JOIN:dateTk=link:#entity-date_dimension[date_dimension].tk
+|application_group_dimension |link:#entity-application_group_dimension[application_group_dimension] |one JOIN:applicationGroupTk=link:#entity-application_group_dimension[application_group_dimension].tk
+|===
+
+=== vm_dimension
+
+=== ↑ top
+
+Entity Set(s):vm_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this virtual machine row.
+|name |String |Yes |Name of the virtual machine.
+|naturalKey |String |Yes |Natural identifier of the virtual machine.
+|os |String |Yes |Guest operating system.
+|virtualCenterIp |String |Yes |IP address of virtual center of the virtual machine.
+|ips |String |Yes |Comma separated list of IP addresses of the virtual machine.
+|url |String |Yes |Url to this virtual machine in Insight Server.
+|id |Int64 |Yes |GUID of the virtual machine in dwh_inventory.hv_virtual_machine
+|latest |String |Yes |Indicates whether this row is the latest one for this virtual machine.
+|dateTk |Int32 |Yes |TK of the date in which this virtual machine row was created.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|vmdk_hourly_performance_fact |link:#entity-vmdk_hourly_performance_fact[vmdk_hourly_performance_fact] |many
+|vm_hourly_performance_fact |link:#entity-vm_hourly_performance_fact[vm_hourly_performance_fact] |many
+|vm_daily_performance_fact |link:#entity-vm_daily_performance_fact[vm_daily_performance_fact] |many
+|vmdk_daily_performance_fact |link:#entity-vmdk_daily_performance_fact[vmdk_daily_performance_fact] |many
+|===
+
+=== vm_hourly_performance_fact
+
+=== ↑ top
+
+Entity Set(s):vm_hourly_performance_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int64 |Yes |TK of the fact.
+|timeTk *[FK]* →link:#entity-time_dimension[time_dimension].tk |Int32 |Yes |TK of the time dimension.
+|dateTk *[FK]* →link:#entity-date_dimension[date_dimension].tk |Int32 |Yes |TK of the date dimension.
+|hostTk *[FK]* →link:#entity-host_dimension[host_dimension].tk |Int32 |Yes |TK of the host.
+|vmTk *[FK]* →link:#entity-vm_dimension[vm_dimension].tk |Int32 |Yes |TK of the vm.
+|businessEntityTk *[FK]* →link:#entity-business_entity_dimension[business_entity_dimension].tk |Int32 |Yes |TK of the business entity.
+|applicationTk *[FK]* →link:#entity-application_dimension[application_dimension].tk |Int32 |Yes |TK of the application representative.
+|applicationGroupTk *[FK]* →link:#entity-application_group_dimension[application_group_dimension].tk |Int32 |Yes |TK of the application group.
+|k8sNodeTk *[FK]* →link:#entity-k8s_node_dimension[k8s_node_dimension].tk |Int32 |Yes |TK of the k8s node.
+|readIops |Double |Yes |Read io per second.
+|writeIops |Double |Yes |Write io per second.
+|totalIops |Double |Yes |Total io per second average (read+write).
+|totalIopsMax |Double |Yes |The max io per second.
+|readThroughput |Double |Yes |Read throughput average.
+|writeThroughput |Double |Yes |Write throughput average.
+|totalThroughput |Double |Yes |Total throughput average (read+write).
+|totalThroughputMax |Double |Yes |The maximum total throughput.
+|readResponseTime |Double |Yes |Read response time.
+|writeResponseTime |Double |Yes |Write response time.
+|totalResponseTime |Double |Yes |Total response time.
+|totalResponseTimeMax |Double |Yes |Total max response time.
+|ipReceiveThroughput |Double |Yes |Ip Receive Throughput.
+|ipTransmitThroughput |Double |Yes |Ip Transmit Throughput.
+|ipTotalThroughput |Double |Yes |Ip Total Throughput.
+|ipTotalThroughputMax |Double |Yes |The maximum ip Total Throughput.
+|cpuUtilization |Double |Yes |CPU utilization (%)
+|memoryUtilization |Double |Yes |Memory utilization (%)
+|cpuUtilizationMax |Double |Yes |The maximum CPU utilization (%)
+|memoryUtilizationMax |Double |Yes |The maximum memory utilization (%)
+|swapInRate |Double |Yes |Swap in rate
+|swapOutRate |Double |Yes |Swap out rate
+|swapTotalRate |Double |Yes |Total swap rate
+|swapTotalRateMax |Double |Yes |The maximum total swap rate
+|processors |Int32 |Yes |Number of processors of the virtual machine.
+|memory |Int64 |Yes |Memory of the virtual machine, in MB.
+|cpuCoSchedulingDelayTimePercent |Double |Yes |CPU Co-Stop Time (%)
+|cpuDemandToEntitlementPercent |Double |Yes |CPU Demand-To-Entitlement Ratio (%)
+|cpuIdleTimePercent |Double |Yes |CPU Idle Time (%)
+|waitingToBeScheduledTimePercent |Double |Yes |CPU Ready Time (%)
+|cpuTotalWaitTimePercent |Double |Yes |CPU Wait Time (%)
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|business_entity_dimension |link:#entity-business_entity_dimension[business_entity_dimension] |one JOIN:businessEntityTk=link:#entity-business_entity_dimension[business_entity_dimension].tk
+|k8s_node_dimension |link:#entity-k8s_node_dimension[k8s_node_dimension] |one JOIN:k8sNodeTk=link:#entity-k8s_node_dimension[k8s_node_dimension].tk
+|application_dimension |link:#entity-application_dimension[application_dimension] |one JOIN:applicationTk=link:#entity-application_dimension[application_dimension].tk
+|time_dimension |link:#entity-time_dimension[time_dimension] |one JOIN:timeTk=link:#entity-time_dimension[time_dimension].tk
+|host_dimension |link:#entity-host_dimension[host_dimension] |one JOIN:hostTk=link:#entity-host_dimension[host_dimension].tk
+|vm_dimension |link:#entity-vm_dimension[vm_dimension] |one JOIN:vmTk=link:#entity-vm_dimension[vm_dimension].tk
+|date_dimension |link:#entity-date_dimension[date_dimension] |one JOIN:dateTk=link:#entity-date_dimension[date_dimension].tk
+|application_group_dimension |link:#entity-application_group_dimension[application_group_dimension] |one JOIN:applicationGroupTk=link:#entity-application_group_dimension[application_group_dimension].tk
+|===
+
+=== vmdk_daily_performance_fact
+
+=== ↑ top
+
+Entity Set(s):vmdk_daily_performance_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int32 |Yes |TK of the fact.
+|dateTk *[FK]* →link:#entity-date_dimension[date_dimension].tk |Int32 |Yes |TK of the date dimension.
+|vmdkTk *[FK]* →link:#entity-vmdk_dimension[vmdk_dimension].tk |Int32 |Yes |TK of the virtual disk.
+|dataStoreTk *[FK]* →link:#entity-datastore_dimension[datastore_dimension].tk |Int32 |Yes |TK of the datastore.
+|vmTk *[FK]* →link:#entity-vm_dimension[vm_dimension].tk |Int32 |Yes |TK of the vm.
+|hostTk *[FK]* →link:#entity-host_dimension[host_dimension].tk |Int32 |Yes |TK of the host.
+|tierTk *[FK]* →link:#entity-tier_dimension[tier_dimension].tk |Int32 |Yes |TK of the tier.
+|serviceLevelTk *[FK]* →link:#entity-service_level_dimension[service_level_dimension].tk |Int32 |Yes |TK of the service level.
+|storageTk *[FK]* →link:#entity-storage_dimension[storage_dimension].tk |Int32 |Yes |TK of the storage.
+|readIops |Double |Yes |Read io per second.
+|writeIops |Double |Yes |Write io per second.
+|totalIops |Double |Yes |Total io per second average (read+write).
+|totalIopsMax |Double |Yes |The max io per second.
+|readThroughput |Double |Yes |Read throughput average.
+|writeThroughput |Double |Yes |Write throughput average.
+|totalThroughput |Double |Yes |Total throughput average (read+write).
+|totalThroughputMax |Double |Yes |The maximum total throughput.
+|readResponseTime |Double |Yes |Read response time.
+|writeResponseTime |Double |Yes |Write response time.
+|totalResponseTime |Double |Yes |Total response time.
+|totalResponseTimeMax |Double |Yes |Total max response time.
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|service_level_dimension |link:#entity-service_level_dimension[service_level_dimension] |one JOIN:serviceLevelTk=link:#entity-service_level_dimension[service_level_dimension].tk
+|storage_dimension |link:#entity-storage_dimension[storage_dimension] |one JOIN:storageTk=link:#entity-storage_dimension[storage_dimension].tk
+|tier_dimension |link:#entity-tier_dimension[tier_dimension] |one JOIN:tierTk=link:#entity-tier_dimension[tier_dimension].tk
+|datastore_dimension |link:#entity-datastore_dimension[datastore_dimension] |one JOIN:dataStoreTk=link:#entity-datastore_dimension[datastore_dimension].tk
+|host_dimension |link:#entity-host_dimension[host_dimension] |one JOIN:hostTk=link:#entity-host_dimension[host_dimension].tk
+|vm_dimension |link:#entity-vm_dimension[vm_dimension] |one JOIN:vmTk=link:#entity-vm_dimension[vm_dimension].tk
+|vmdk_dimension |link:#entity-vmdk_dimension[vmdk_dimension] |one JOIN:vmdkTk=link:#entity-vmdk_dimension[vmdk_dimension].tk
+|date_dimension |link:#entity-date_dimension[date_dimension] |one JOIN:dateTk=link:#entity-date_dimension[date_dimension].tk
+|===
+
+=== vmdk_dimension
+
+=== ↑ top
+
+Entity Set(s):vmdk_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this virtual disk row.
+|naturalKey |String |Yes |Oid of the virtual disk.
+|name |String |Yes |Name of the virtual disk.
+|type |String |Yes |Type of the virtual disk.
+|url |String |Yes |Url to this virtual disk in Insight Server.
+|id |Int64 |Yes |GUID of the virtual disk in dwh_inventory.hv_virtual_disk
+|latest |String |Yes |Indicates whether this row is the latest one for this virtual disk.
+|dateTk |Int32 |Yes |TK of the date in which this virtual disk row was created.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|vmdk_hourly_performance_fact |link:#entity-vmdk_hourly_performance_fact[vmdk_hourly_performance_fact] |many
+|vmdk_daily_performance_fact |link:#entity-vmdk_daily_performance_fact[vmdk_daily_performance_fact] |many
+|===
+
+=== vmdk_hourly_performance_fact
+
+=== ↑ top
+
+Entity Set(s):vmdk_hourly_performance_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int64 |Yes |TK of the fact.
+|timeTk *[FK]* →link:#entity-time_dimension[time_dimension].tk |Int32 |Yes |TK of the time dimension.
+|dateTk *[FK]* →link:#entity-date_dimension[date_dimension].tk |Int32 |Yes |TK of the date dimension.
+|vmdkTk *[FK]* →link:#entity-vmdk_dimension[vmdk_dimension].tk |Int32 |Yes |TK of the virtual disk.
+|dataStoreTk *[FK]* →link:#entity-datastore_dimension[datastore_dimension].tk |Int32 |Yes |TK of the datastore.
+|vmTk *[FK]* →link:#entity-vm_dimension[vm_dimension].tk |Int32 |Yes |TK of the vm.
+|hostTk *[FK]* →link:#entity-host_dimension[host_dimension].tk |Int32 |Yes |TK of the host.
+|tierTk *[FK]* →link:#entity-tier_dimension[tier_dimension].tk |Int32 |Yes |TK of the tier.
+|serviceLevelTk *[FK]* →link:#entity-service_level_dimension[service_level_dimension].tk |Int32 |Yes |TK of the service level.
+|storageTk *[FK]* →link:#entity-storage_dimension[storage_dimension].tk |Int32 |Yes |TK of the storage.
+|readIops |Double |Yes |Read io per second.
+|writeIops |Double |Yes |Write io per second.
+|totalIops |Double |Yes |Total io per second average (read+write).
+|totalIopsMax |Double |Yes |The max io per second.
+|readThroughput |Double |Yes |Read throughput average.
+|writeThroughput |Double |Yes |Write throughput average.
+|totalThroughput |Double |Yes |Total throughput average (read+write).
+|totalThroughputMax |Double |Yes |The maximum total throughput.
+|readResponseTime |Double |Yes |Read response time.
+|writeResponseTime |Double |Yes |Write response time.
+|totalResponseTime |Double |Yes |Total response time.
+|totalResponseTimeMax |Double |Yes |Total max response time.
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|service_level_dimension |link:#entity-service_level_dimension[service_level_dimension] |one JOIN:serviceLevelTk=link:#entity-service_level_dimension[service_level_dimension].tk
+|storage_dimension |link:#entity-storage_dimension[storage_dimension] |one JOIN:storageTk=link:#entity-storage_dimension[storage_dimension].tk
+|tier_dimension |link:#entity-tier_dimension[tier_dimension] |one JOIN:tierTk=link:#entity-tier_dimension[tier_dimension].tk
+|time_dimension |link:#entity-time_dimension[time_dimension] |one JOIN:timeTk=link:#entity-time_dimension[time_dimension].tk
+|datastore_dimension |link:#entity-datastore_dimension[datastore_dimension] |one JOIN:dataStoreTk=link:#entity-datastore_dimension[datastore_dimension].tk
+|host_dimension |link:#entity-host_dimension[host_dimension] |one JOIN:hostTk=link:#entity-host_dimension[host_dimension].tk
+|vm_dimension |link:#entity-vm_dimension[vm_dimension] |one JOIN:vmTk=link:#entity-vm_dimension[vm_dimension].tk
+|vmdk_dimension |link:#entity-vmdk_dimension[vmdk_dimension] |one JOIN:vmdkTk=link:#entity-vmdk_dimension[vmdk_dimension].tk
+|date_dimension |link:#entity-date_dimension[date_dimension] |one JOIN:dateTk=link:#entity-date_dimension[date_dimension].tk
+|===
+
+=== vmware_host_daily_metrics_fact
+
+=== ↑ top
+
+Entity Set(s):vmware_host_daily_metrics_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int64 |Yes |TK of the fact.
+|dateTk |Int32 |Yes |TK of the date dimension.
+|vmwareHostTk |Int32 |Yes |TK of the vmware host dimension.
+|powerAvg |Double |Yes |Power average
+|powerCapAvg |Double |Yes |Power cap average
+|energyAvg |Double |Yes |Energy summation
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+=== vmware_host_dimension
+
+=== ↑ top
+
+Entity Set(s):vmware_host_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this vmware host row.
+|identifier |String |Yes |Unique identifier of the vmware host.
+|name |String |Yes |Name of the vmware Host
+|numCpuCores |Int64 |Yes |Number of CPU cores for the vmware host
+|numCpuPackages |Int64 |Yes |Number of CPU packages for the vmware host
+|numCpuThreads |Int64 |Yes |Number of CPU threads for the vmware host
+|numNodes |Int64 |Yes |Number of nodes for the vmware host
+|hyperThreadActive |String |Yes |Indicates whether hyperthreading is enabled on the vmware host
+|hyperThreadAvailable |String |Yes |Indicates whether hyperthreading is available on the vmware host
+|hyperThreadConfig |String |Yes |Indicates whether hyperthreading is configured to be enabled on the vmware host
+|id |Int64 |Yes |GUID of the host in dwh_inventory.vmware_host
+|latest |String |Yes |Indicates whether this row is the latest one for this vmware host.
+|dateTk |Int32 |Yes |TK of the date in which this vmware host row was created.
+|===
+
+=== vmware_host_hourly_metrics_fact
+
+=== ↑ top
+
+Entity Set(s):vmware_host_hourly_metrics_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int64 |Yes |TK of the fact.
+|timeTk |Int32 |Yes |TK of the time dimension.
+|dateTk |Int32 |Yes |TK of the date dimension.
+|vmwareHostTk |Int32 |Yes |TK of the vmware host dimension.
+|powerAvg |Double |Yes |Power average
+|powerCapAvg |Double |Yes |Power cap average
+|energyAvg |Double |Yes |Energy summation
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+=== volume_daily_performance_fact
+
+=== ↑ top
+
+Entity Set(s):volume_daily_performance_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int32 |Yes |TK of the fact.
+|dateTk *[FK]* →link:#entity-date_dimension[date_dimension].tk |Int32 |Yes |TK of the date dimension.
+|volumeTk *[FK]* →link:#entity-volume_dimension[volume_dimension].tk |Int32 |Yes |TK of the volume for performance numbers.
+|storageTk *[FK]* →link:#entity-storage_dimension[storage_dimension].tk |Int32 |Yes |TK of the storage for performance numbers.
+|virtualStorageTk |Int32 |Yes |TK of the frontend array in case the capacity is on a backend array. Otherwise, the value is N/A.
+|storageNodeTk *[FK]* →link:#entity-storage_node_dimension[storage_node_dimension].tk |Int32 |Yes |TK of the storage node.
+|storagePoolTk *[FK]* →link:#entity-storage_pool_dimension[storage_pool_dimension].tk |Int32 |Yes |TK of the storage pool for performance numbers.
+|applicationTk *[FK]* →link:#entity-application_dimension[application_dimension].tk |Int32 |Yes |TK of the application representative.
+|applicationGroupTk *[FK]* →link:#entity-application_group_dimension[application_group_dimension].tk |Int32 |Yes |TK of the application group.
+|hostTk *[FK]* →link:#entity-host_dimension[host_dimension].tk |Int32 |Yes |TK of the host representative.
+|hostGroupTk *[FK]* →link:#entity-host_group_dimension[host_group_dimension].tk |Int32 |Yes |TK of the host group.
+|tierTk *[FK]* →link:#entity-tier_dimension[tier_dimension].tk |Int32 |Yes |TK of the tier.
+|serviceLevelTk *[FK]* →link:#entity-service_level_dimension[service_level_dimension].tk |Int32 |Yes |TK of the service level.
+|businessEntityTk *[FK]* →link:#entity-business_entity_dimension[business_entity_dimension].tk |Int32 |Yes |TK of the business entity.
+|k8sNamespaceTk *[FK]* →link:#entity-k8s_namespace_dimension[k8s_namespace_dimension].tk |Int32 |Yes |TK of the k8s namespace.
+|k8sNamespaceGroupTk *[FK]* →link:#entity-k8s_namespace_group_dimension[k8s_namespace_group_dimension].tk |Int32 |Yes |TK of the k8s namespace group.
+|readResponseTime |Double |Yes |Read response time average.
+|writeResponseTime |Double |Yes |Write response time average.
+|totalResponseTime |Double |Yes |The maximum for average response time.
+|totalResponseTimeMax |Double |Yes |The maximum for response time.
+|readThroughput |Double |Yes |Read throughput average.
+|writeThroughput |Double |Yes |Write throughput average.
+|totalThroughput |Double |Yes |Total throughput average (read+write).
+|totalThroughputMax |Double |Yes |The maximum total throughput.
+|readIops |Double |Yes |Read io per second average.
+|writeIops |Double |Yes |Write io per second average.
+|totalIops |Double |Yes |Total io per second average (read+write).
+|totalIopsMax |Double |Yes |The max io per second.
+|readCacheHitRatio |Double |Yes |The read cache hit ratio.
+|writeCacheHitRatio |Double |Yes |The write cache hit ratio.
+|totalCacheHitRatio |Double |Yes |The total cache hit ratio.
+|totalCacheHitRatioMax |Double |Yes |The maximum total cache hit ratio.
+|writePending |Int64 |Yes |Number of pending writes maximum for day.
+|readIoDensity |Double |Yes |Read io density.
+|writeIoDensity |Double |Yes |Write io density.
+|totalIoDensity |Double |Yes |Total io density.
+|totalIoDensityMax |Double |Yes |The maximun total io density.
+|compressionSavingsPercent |Double |Yes |Compression savings (%).
+|compressionSavingsSpace |Double |Yes |Compression savings space.
+|totalTimeToFull |Double |Yes |Time to Full.
+|confidenceIntervalTimeToFull |Double |Yes |Confidence Interval for Time to Full.
+|accessed |Int32 |Yes |Is volume accessed?
+|frontend |String |Yes |Is volume frontend?
+|backend |String |Yes |Is volume backend?
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage_node_dimension |link:#entity-storage_node_dimension[storage_node_dimension] |one JOIN:storageNodeTk=link:#entity-storage_node_dimension[storage_node_dimension].tk
+|storage_dimension |link:#entity-storage_dimension[storage_dimension] |one JOIN:storageTk=link:#entity-storage_dimension[storage_dimension].tk
+|business_entity_dimension |link:#entity-business_entity_dimension[business_entity_dimension] |one JOIN:businessEntityTk=link:#entity-business_entity_dimension[business_entity_dimension].tk
+|host_group_dimension |link:#entity-host_group_dimension[host_group_dimension] |one JOIN:hostGroupTk=link:#entity-host_group_dimension[host_group_dimension].tk
+|k8s_namespace_group_dimension |link:#entity-k8s_namespace_group_dimension[k8s_namespace_group_dimension] |one JOIN:k8sNamespaceGroupTk=link:#entity-k8s_namespace_group_dimension[k8s_namespace_group_dimension].tk
+|application_group_dimension |link:#entity-application_group_dimension[application_group_dimension] |one JOIN:applicationGroupTk=link:#entity-application_group_dimension[application_group_dimension].tk
+|k8s_namespace_dimension |link:#entity-k8s_namespace_dimension[k8s_namespace_dimension] |one JOIN:k8sNamespaceTk=link:#entity-k8s_namespace_dimension[k8s_namespace_dimension].tk
+|service_level_dimension |link:#entity-service_level_dimension[service_level_dimension] |one JOIN:serviceLevelTk=link:#entity-service_level_dimension[service_level_dimension].tk
+|tier_dimension |link:#entity-tier_dimension[tier_dimension] |one JOIN:tierTk=link:#entity-tier_dimension[tier_dimension].tk
+|application_dimension |link:#entity-application_dimension[application_dimension] |one JOIN:applicationTk=link:#entity-application_dimension[application_dimension].tk
+|storage_pool_dimension |link:#entity-storage_pool_dimension[storage_pool_dimension] |one JOIN:storagePoolTk=link:#entity-storage_pool_dimension[storage_pool_dimension].tk
+|host_dimension |link:#entity-host_dimension[host_dimension] |one JOIN:hostTk=link:#entity-host_dimension[host_dimension].tk
+|date_dimension |link:#entity-date_dimension[date_dimension] |one JOIN:dateTk=link:#entity-date_dimension[date_dimension].tk
+|volume_dimension |link:#entity-volume_dimension[volume_dimension] |one JOIN:volumeTk=link:#entity-volume_dimension[volume_dimension].tk
+|===
+
+=== volume_dimension
+
+=== ↑ top
+
+Entity Set(s):volume_dimension
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk |Int32 |Yes |TK of this volume row.
+|storageIdentifier |String |Yes |Identifier of the volume storage.
+|name |String |Yes |Name of the volume.
+|label |String |Yes |Label of the volume.
+|thinProvisioned |String |Yes |Is volume thin provisioned?
+|type |String |Yes |type of the volume.
+|isVirtual |String |Yes |Is volume a virtual volume?
+|meta |String |Yes |Is volume a meta volume?
+|snapshot |String |Yes |Indicates whether this volume is a snapshot volume.
+|technologyType |String |Yes |Specifies the technology type (FC/ISCSI/UNKNOWN).
+|uuid |String |Yes |UUID of the volume.
+|isMainframe |String |Yes |Is Mainframe volume?
+|url |String |Yes |Url to this volume in Insight Server.
+|id |Int64 |Yes |GUID of the volume in dwh_inventory.volume
+|latest |String |Yes |Indicates whether this row is the latest one for this volume.
+|dateTk |Int32 |Yes |TK of the date in which this volume row was created.
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|volume_hourly_performance_fact |link:#entity-volume_hourly_performance_fact[volume_hourly_performance_fact] |many
+|volume_daily_performance_fact |link:#entity-volume_daily_performance_fact[volume_daily_performance_fact] |many
+|===
+
+=== volume_hourly_performance_fact
+
+=== ↑ top
+
+Entity Set(s):volume_hourly_performance_fact
+[cols="1,1,1,1", options="header"]
+|===
+|Field |Type |Nullable |Comment
+
+|tk *[PK]* |Int64 |Yes |TK of the fact.
+|timeTk *[FK]* →link:#entity-time_dimension[time_dimension].tk |Int32 |Yes |TK of the time dimension.
+|dateTk *[FK]* →link:#entity-date_dimension[date_dimension].tk |Int32 |Yes |TK of the date dimension.
+|volumeTk *[FK]* →link:#entity-volume_dimension[volume_dimension].tk |Int32 |Yes |TK of the volume for performance numbers.
+|storageTk *[FK]* →link:#entity-storage_dimension[storage_dimension].tk |Int32 |Yes |TK of the storage for performance numbers.
+|virtualStorageTk |Int32 |Yes |TK of the frontend array in case the capacity is on a backend array. Otherwise, the value is N/A.
+|storageNodeTk *[FK]* →link:#entity-storage_node_dimension[storage_node_dimension].tk |Int32 |Yes |TK of the storage node.
+|storagePoolTk *[FK]* →link:#entity-storage_pool_dimension[storage_pool_dimension].tk |Int32 |Yes |TK of the storage pool for performance numbers.
+|applicationTk *[FK]* →link:#entity-application_dimension[application_dimension].tk |Int32 |Yes |TK of the application representative.
+|applicationGroupTk *[FK]* →link:#entity-application_group_dimension[application_group_dimension].tk |Int32 |Yes |TK of the application group.
+|hostTk *[FK]* →link:#entity-host_dimension[host_dimension].tk |Int32 |Yes |TK of the host representative.
+|hostGroupTk *[FK]* →link:#entity-host_group_dimension[host_group_dimension].tk |Int32 |Yes |TK of the host group.
+|tierTk *[FK]* →link:#entity-tier_dimension[tier_dimension].tk |Int32 |Yes |TK of the tier.
+|serviceLevelTk *[FK]* →link:#entity-service_level_dimension[service_level_dimension].tk |Int32 |Yes |TK of the service level.
+|businessEntityTk *[FK]* →link:#entity-business_entity_dimension[business_entity_dimension].tk |Int32 |Yes |TK of the business entity.
+|k8sNamespaceTk *[FK]* →link:#entity-k8s_namespace_dimension[k8s_namespace_dimension].tk |Int32 |Yes |TK of the k8s namespace.
+|k8sNamespaceGroupTk *[FK]* →link:#entity-k8s_namespace_group_dimension[k8s_namespace_group_dimension].tk |Int32 |Yes |TK of the k8s namespace group.
+|readResponseTime |Double |Yes |Read response time.
+|writeResponseTime |Double |Yes |Write response time
+|totalResponseTime |Double |Yes |The total response time.
+|totalResponseTimeMax |Double |Yes |The maximum for response time.
+|readThroughput |Double |Yes |Read throughput average.
+|writeThroughput |Double |Yes |Write throughput average.
+|totalThroughput |Double |Yes |Total throughput average (read+write).
+|totalThroughputMax |Double |Yes |The maximum total throughput.
+|readIops |Double |Yes |Read io per second average.
+|writeIops |Double |Yes |Write io per second average.
+|totalIops |Double |Yes |Total io per second average (read+write).
+|totalIopsMax |Double |Yes |The max io per second.
+|readCacheHitRatio |Double |Yes |The read cache hit ratio.
+|writeCacheHitRatio |Double |Yes |The write cache hit ratio.
+|totalCacheHitRatio |Double |Yes |The total cache hit ratio.
+|totalCacheHitRatioMax |Double |Yes |The maximum total cache hit ratio.
+|writePending |Int64 |Yes |Number of pending writes.
+|readIoDensity |Double |Yes |Read io density.
+|writeIoDensity |Double |Yes |Write io density.
+|totalIoDensity |Double |Yes |Total io density.
+|totalIoDensityMax |Double |Yes |The maximun total io density.
+|compressionSavingsPercent |Double |Yes |Compression savings (%).
+|compressionSavingsSpace |Double |Yes |Compression savings space.
+|totalTimeToFull |Double |Yes |Time to Full.
+|confidenceIntervalTimeToFull |Double |Yes |Confidence Interval for Time to Full.
+|accessed |Int32 |Yes |Is volume accessed?
+|frontend |String |Yes |Is volume frontend?
+|backend |String |Yes |Is volume backend?
+|timestamp *[PK]* |Int64 |Yes |fact start timestamp, for partitioning
+|===
+
+==== Navigation Properties (Joins)
+
+[cols="1,1,1", options="header"]
+|===
+|Nav Property |Related Entity |Cardinality / Join
+
+|storage_node_dimension |link:#entity-storage_node_dimension[storage_node_dimension] |one JOIN:storageNodeTk=link:#entity-storage_node_dimension[storage_node_dimension].tk
+|storage_dimension |link:#entity-storage_dimension[storage_dimension] |one JOIN:storageTk=link:#entity-storage_dimension[storage_dimension].tk
+|business_entity_dimension |link:#entity-business_entity_dimension[business_entity_dimension] |one JOIN:businessEntityTk=link:#entity-business_entity_dimension[business_entity_dimension].tk
+|host_group_dimension |link:#entity-host_group_dimension[host_group_dimension] |one JOIN:hostGroupTk=link:#entity-host_group_dimension[host_group_dimension].tk
+|k8s_namespace_group_dimension |link:#entity-k8s_namespace_group_dimension[k8s_namespace_group_dimension] |one JOIN:k8sNamespaceGroupTk=link:#entity-k8s_namespace_group_dimension[k8s_namespace_group_dimension].tk
+|application_group_dimension |link:#entity-application_group_dimension[application_group_dimension] |one JOIN:applicationGroupTk=link:#entity-application_group_dimension[application_group_dimension].tk
+|k8s_namespace_dimension |link:#entity-k8s_namespace_dimension[k8s_namespace_dimension] |one JOIN:k8sNamespaceTk=link:#entity-k8s_namespace_dimension[k8s_namespace_dimension].tk
+|service_level_dimension |link:#entity-service_level_dimension[service_level_dimension] |one JOIN:serviceLevelTk=link:#entity-service_level_dimension[service_level_dimension].tk
+|tier_dimension |link:#entity-tier_dimension[tier_dimension] |one JOIN:tierTk=link:#entity-tier_dimension[tier_dimension].tk
+|application_dimension |link:#entity-application_dimension[application_dimension] |one JOIN:applicationTk=link:#entity-application_dimension[application_dimension].tk
+|time_dimension |link:#entity-time_dimension[time_dimension] |one JOIN:timeTk=link:#entity-time_dimension[time_dimension].tk
+|storage_pool_dimension |link:#entity-storage_pool_dimension[storage_pool_dimension] |one JOIN:storagePoolTk=link:#entity-storage_pool_dimension[storage_pool_dimension].tk
+|host_dimension |link:#entity-host_dimension[host_dimension] |one JOIN:hostTk=link:#entity-host_dimension[host_dimension].tk
+|date_dimension |link:#entity-date_dimension[date_dimension] |one JOIN:dateTk=link:#entity-date_dimension[date_dimension].tk
+|volume_dimension |link:#entity-volume_dimension[volume_dimension] |one JOIN:volumeTk=link:#entity-volume_dimension[volume_dimension].tk
+|===
+
