@@ -20,10 +20,14 @@ NetApp is continually improving and enhancing its products and services. Here ar
 
 === Data Collector updates:
 
-The following data collectors are now available in Preview:
+The following data collectors are now available:
 
-* *NVIDIA Base Command Manager REST* gathers inventory, host performance, and GPU workload metrics from BCM head nodes. In HYBRID mode, it can also collect GPU metrics from the DCGM exporter. 
-* *Proxmox VE*: The Proxmox Virtual Environment collector gathers inventory and performance data for PVE virtual machines (excluding LXC containers) and hosts/hypervisors. 
+*NVIDIA Base Command Manager (BCM) Collector (Preview)*
+Data Infrastructure Insights now offers a preview collector for NVIDIA Base Command Manager, giving you visibility into your HPC and AI clusters. Correlate cluster nodes and workloads with their underlying storage components, so you can spot I/O bottlenecks, find which jobs or nodes are driving load, and keep costly GPU resources from sitting idle waiting on data.
+
+*Proxmox VE Data Collector (Preview)*
+Data Infrastructure Insights now offers a preview collector for Proxmox VE. It gives you visibility into your Proxmox hosts and VMs, and the storage behind them, so you can pinpoint issues throughout the data path and troubleshoot faster.
+
 
 
 
