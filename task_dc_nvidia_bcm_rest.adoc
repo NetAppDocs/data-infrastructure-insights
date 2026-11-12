@@ -1,0 +1,166 @@
+---
+sidebar: sidebar
+permalink: task_dc_nvidia_bcm_rest.html
+keywords: data collector, NVIDIA, Base Command Manager, BCM, GPU, REST
+summary: Configure the NVIDIA Base Command Manager REST data collector to gather inventory, host performance, and GPU workload metrics.
+---
+
+= NVIDIA Base Command Manager REST data collector
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The NVIDIA Base Command Manager (BCM) data collector gathers inventory, host performance, and GPU workload metrics from a BCM head node through its HTTPS REST and JSON APIs (CMDaemon, default port *8081*). *HYBRID* mode can also collect DCGM exporter GPU metrics through `/exporter`. Configure one data source per cluster. This collector is in *Preview*; use a dedicated BCM service account rather than `root` or the BCM `admin` profile.
+
+== Terminology
+
+For each asset type acquired by Data Infrastructure Insights, the most common terminology used for the asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+
+[cols="1,1",options="header"]
+|===
+|Vendor/Model Term | Data Infrastructure Insights Term
+|BCM cluster | Vendor Specific Metrics — `nvidia_bcm.cluster`
+|Compute / head node | Host (inventory)
+|Slurm job or chargeback row | Vendor Specific Metrics — `nvidia_bcm.workload`
+|GPU metrics (BCM GPU sampler and profiling, nvidia-smi fallback, optional DCGM exporter) | Vendor Specific Metrics — `nvidia_bcm.gpu`
+|Node status | Vendor Specific Metrics — `nvidia_bcm.host`
+|===
+
+NOTE: These are common terminology mappings only and might not represent every case for this data collector.
+
+== Configuration
+
+[cols="1,2",options="header"]
+|===
+|Field |Description
+|BCM Head Node IP/Hostname |IP address or FQDN of the BCM head node
+|HTTPS Port |CMDaemon port. The default is *8081*
+|User Name |BCM service account for Basic authentication
+|Password |Password for the service account
+|===
+
+Before you save the data source, confirm the acquisition unit can reach `https://<head>:8081` and that these endpoints return HTTP *200* with data:
+
+[source,bash]
+----
+curl -sk -u user:pass https://<head>:8081/rest/v1/device
+curl -sk -u user:pass "https://<head>:8081/rest/v1/monitoring/latest?measurable=CPUUsage"
+----
+
+Vendor Specific Metrics use the host inventory from the latest inventory poll, so a newly added node appears there after the next inventory poll (up to 60 minutes by default).
+
+== Advanced configuration
+
+The UI *Advanced* screen lists settings from all collector packages. Poll intervals are separate *mandatory* fields per package (not hidden); you will typically see all three below together with optional expert properties.
+
+[cols="1,2",options="header"]
+|===
+|Field |Description
+|Inventory Poll Interval (min) |Foundation / inventory package. The default is *60* minutes
+|Performance Poll Interval (sec) |Host performance package. The default is *300* seconds
+|Integration Poll Interval (sec) |*Vendor Specific Metrics* package. The default is *300* seconds
+|Collection Mode |*REST_ONLY* (default) uses only the REST and JSON APIs. *HYBRID* also reads `/exporter` for DCGM exporter GPU metrics; see *Enabling /exporter for HYBRID mode*. If `/exporter` fails, the poll continues and shows a warning with the fix
+|Exporter Metric Allowlist |HYBRID only. Optional comma-separated `/exporter` metric names. Empty (default) collects all DCGM series
+|Client Certificate Path |HYBRID only. Path on the acquisition unit to the BCM client certificate (`.pem`)
+|Client Key Path |HYBRID only. Path on the acquisition unit to the certificate's key (`.key`)
+|NVIDIA SMI REST integration |Fallback GPU source. Calls `/rest/v1/nvidia-smi` for `smi_*` fields only when `/monitoring/latest` returns no GPU sampler rows. The default is *true*. Needs `RUN_NVIDIA_SMI_TOKEN` (see *nvidia-smi token (optional)*); without it a warning is shown and the poll continues. Calls are spaced by the interval (15 minutes by default). Set to *false* to never call it
+|===
+
+== Service account (BCM head node)
+
+As `root` on the head node, create a read-only user for collection with the built-in `readonly` profile:
+
+[source,bash]
+----
+cmsh -c "user; add dii-monitor; set password '<password>'; set profile readonly; commit"
+----
+
+Use `dii-monitor` and its password in the data source. The built-in `readonly` profile covers inventory, the JSON API, `/rest/v1/monitoring/latest` (including the GPU sampler metrics), and GPU profiling data. No token is needed for this default setup. Slurm chargeback and the nvidia-smi fallback need extra tokens; see *Chargeback token (optional)* and *nvidia-smi token (optional)*.
+
+No other head node change is needed for the default *REST_ONLY* mode.
+
+== Chargeback token (optional)
+
+Skip this section if you do not need Slurm chargeback data. Without the token, `/chargeback` returns *401*. The collector logs a warning and the rest of the poll continues.
+
+Chargeback (`/chargeback`, requires `CHARGE_BACK_TOKEN`) adds Slurm job and chargeback rows to `nvidia_bcm.workload`. As `root` on the head node, clone `readonly` into a profile that holds the token, and move the service account to that profile:
+
+[source,bash]
+----
+cmsh -c "profile; clone readonly dii-readonly; append tokens CHARGE_BACK_TOKEN; commit"
+cmsh -c "user; use dii-monitor; set profile dii-readonly; commit"
+----
+
+Keep the data source user name and password unchanged. The stock `readonly` profile is not changed. The nvidia-smi token and the HYBRID steps below add their tokens to this same `dii-readonly` profile.
+
+== nvidia-smi token (optional)
+
+Skip this section unless you want the nvidia-smi fallback. `/nvidia-smi` (requires `RUN_NVIDIA_SMI_TOKEN`) is a fallback GPU source. The collector calls it only when `/monitoring/latest` returns no GPU sampler rows. Without the token, it returns *401*, the collector logs a warning, and the rest of the poll continues.
+
+As `root` on the head node, add the token to the `dii-readonly` profile from the previous section. If you skipped that section, run its clone command first:
+
+[source,bash]
+----
+cmsh -c "profile; use dii-readonly; append tokens RUN_NVIDIA_SMI_TOKEN; commit"
+----
+
+== Enabling GPU profiling metrics (optional)
+
+BCM collects GPU profiling metrics (such as SM and tensor activity) only after you turn them on. Once they are on, the collector reports them on `nvidia_bcm.gpu` as `gpu_profiling_*`. As `root` on the head node:
+
+[source,bash]
+----
+cmsh -c "device; gpuprofiling watch -c <gpu-category> 1001 1002 1003 1004 1005 1006 1007 1008 1009 1010"
+----
+
+No restart is needed, and BCM starts collecting within a few minutes. If the command reports `not initialized yet`, run it again a minute later. The setting does not survive a GPU node reboot; run the command again after the nodes restart. To turn profiling off, run the same command without the numbers.
+
+== Enabling /exporter for HYBRID mode
+
+Only needed if *Collection Mode* is *HYBRID*. Leave `PrometheusExporterRequireCertificate` at its default; the collector logs in to `/exporter` with a BCM client certificate. As `root` on the head node:
+
+. Make sure dcgm-exporter runs on each GPU node (port 9400), and register it so its data reaches `/exporter`:
++
+[source,bash]
+----
+cmsh -c "device; use <node>; prometheusmetricforwarders; add dcgm-<node>; set urls http://127.0.0.1:9400/metrics; commit"
+----
+. In `/cm/local/apps/cmd/etc/cmd.conf`, set `EnablePrometheusExporterService = true`, then run `systemctl restart cmd`.
+. Give the service profile the exporter token, and create a certificate for it. The service profile is `dii-readonly` from *Chargeback token (optional)*; create it there first if you skipped that section:
++
+[source,bash]
+----
+cmsh -c "profile; use dii-readonly; append tokens PROMETHEUS_EXPORTER_TOKEN; commit"
+cmsh -c "cert; createcertificate 2048 dii-monitor <org> <unit> <city> <state> <country> dii-readonly dii-monitor 365 /root/dii-monitor.key /root/dii-monitor.pem"
+----
+. Copy `dii-monitor.pem` and `dii-monitor.key` to the acquisition unit, and enter their paths in *Client Certificate Path* and *Client Key Path*.
+
+To check from the acquisition unit (a number above 0 means it works):
+
+[source,bash]
+----
+curl -sk --cert dii-monitor.pem --key dii-monitor.key https://<head>:8081/exporter | grep -ci '^dcgm_'
+----
+
+The certificate is valid for 365 days; create a new one before it expires.
+
+== Troubleshooting
+
+[cols="1,2",options="header"]
+|===
+|Problem |Try this
+|HTTP *401* |Check the user name and password. If only `/chargeback` returns *401*, add `CHARGE_BACK_TOKEN` as shown in *Chargeback token (optional)*.
+|Warning `BCM /exporter refused with HTTP 401` or `403` |Set *Client Certificate Path* and *Client Key Path*, and check that the certificate's profile has `PROMETHEUS_EXPORTER_TOKEN` (see *Enabling /exporter for HYBRID mode*). Or set *Collection Mode* to *REST_ONLY*.
+|Warning `BCM /exporter not called: the client certificate cannot be used` |Fix the file named in the warning. Both files must be readable on the acquisition unit, the key must belong to the certificate, and the certificate must not be expired.
+|Warning `BCM /nvidia-smi refused with HTTP 401` or `403`, or `BCM /nvidia-smi failed` |The GPU sampler returned no rows, so the collector used the nvidia-smi fallback, and that failed. For a 401 or 403, the service profile has no `RUN_NVIDIA_SMI_TOKEN`: fix the GPU sampler (see *No GPU metrics*), or add the token as shown in *nvidia-smi token (optional)*. The poll continues without `smi_*` fields.
+|Warning `BCM /exporter not found (HTTP 404)` |Set `EnablePrometheusExporterService = true` in `cmd.conf` and restart CMDaemon, or set *Collection Mode* to *REST_ONLY*.
+|No performance data |Check that `/rest/v1/monitoring/latest?measurable=CPUUsage` returns rows. If it is empty for a node, check `cmsh -c "device; use <node>; latestmonitoringdata"` on the head node. If the node reports no measurables at all, BCM is not running samplers on it; reinstalling the node (for cloud nodes: power off, terminate, power on) restores them.
+|No GPU metrics |Check that `/rest/v1/monitoring/latest?measurable=gpu_utilization:gpu0` returns rows. BCM's `GPUSampler` needs the `cuda-dcgm` package and the GPU driver in the node image, and it must be enabled: `cmsh -c "monitoring setup; use GPUSampler; get disabled"` prints `no`. Rows that are only `gpu_recovery_*` do not mean the sampler is running.
+|No `gpu_profiling_*` fields |Run the `gpuprofiling watch` command in *Enabling GPU profiling metrics*, and run it again after a GPU node reboot. The `dcgm_fi_prof_*` fields come only from dcgm-exporter in *HYBRID* mode.
+|No workload / chargeback in UI |Confirm Slurm jobs have run and chargeback is enabled; idle clusters often have empty APIs. Ensure `CHARGE_BACK_TOKEN` is in place (see *Chargeback token (optional)*) and server `nvidia_bcm` metadata is in place.
+|===
+
+Additional information on this data collector may be found from the Support page or in the Data Collector Support Matrix.

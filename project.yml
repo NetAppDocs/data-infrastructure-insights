@@ -516,6 +516,8 @@ sidebar:
                   url: /task_dc_na_solidfire.html
                 - title: StorageGRID
                   url: /task_dc_na_storagegrid.html
+            - title: NVIDIA Base Command Manager REST
+              url: /task_dc_nvidia_bcm_rest.html
 #            - title: Nutanix AHV
 #              url: /task_dc_nutanix_ahv.html
             - title: Nutanix
