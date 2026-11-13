@@ -13,9 +13,11 @@ summary: Configuring VPLEX data collector.
 :imagesdir: ./media/
 
 [.lead] 
-This data collector acquires inventory and performance data from EMC VPLEX storage systems. For  configuration, the data collector requires an IP address of the VPLEX server and an administrative level domain account.
+This data collector acquires inventory and performance data from EMC VPLEX or Metro Node storage systems. For Vplex configuration, the data collector requires an IP address of the VPLEX/Metro Node management server and an administrative level domain account. On Metro Node systems, DII requires "service" or "admin" level accounts because lesser privileged users are not able to browse the management station's file system to retrieve performance archive artifacts for performance reporting
 
-NOTE: Data Infrastructure Insights' performance collection from VPLEX clusters requires that the performance archive service be operational, in order to populate the .CSV files and logs that Data Infrastructure Insights retrieves via SCP-based file copies. NetApp has observed that many VPLEX firmware upgrade/management station updates will leave this functionality non-operational. Customers planning such upgrades may want to proactively ask Dell/EMC if their planned upgrade will leave this functionality inoperable, and if so, how can they re-enable it to minimize gaps in performance visibility? Cloud Insight's VPLEX performance code will assess on each poll whether all the expected files exist, and if they are being properly updated; if they are missing or stale, Data Infrastructure Insights will log performance collection failures.
+NOTE: Vplex / Metro Node management stations may have visibility into 2 Vplex / Metro Node storage arrays if you have a geographically distributed configuration. In such configurations, the DII data collector will discover both storage arrays involved with one collector. This may not be your desired state, which you can use the collector's exclusion capability to control - VPlex/Metro environments in such topologies will generally have 2 management stations, one per site. 
+
+NOTE: Data Infrastructure Insights' performance collection from VPLEX/Metro Node clusters requires that the performance archive service be operational, in order to populate the .CSV files and logs that Data Infrastructure Insights retrieves via SCP-based file copies. NetApp has observed that many VPLEX firmware upgrade/management station updates will leave this functionality non-operational. Customers planning such upgrades may want to proactively ask Dell/EMC if their planned upgrade will leave this functionality inoperable, and if so, how can they re-enable it to minimize gaps in performance visibility? Cloud Insight's VPLEX performance code will assess on each poll whether all the expected files exist, and if they are being properly updated; if they are missing or stale, Data Infrastructure Insights will log performance collection failures.
 
 
 == Terminology
@@ -42,9 +44,8 @@ Note: These are common terminology mappings only and might not represent every c
 
 * An IP address of the VPLEX Management Console
 * Administrative level domain account for the VPLEX server
-* Port 443 (HTTPS).  Requires outbound connectivity to TCP port 443 on the VPLEX management station. 
-* For performance, read-only username and password for ssh/scp access.
-* For performance, port 22 is required.   
+* Port 443 (HTTPS).  Requires outbound connectivity to TCP port 443 on the VPLEX/Metro management station for Inventory gathering
+* Port 22 (SSH).  Requires outbound connectivity to TCP port 22 on the VPLEX/metro management station to retrieve performance archive files via SCP
 
 
 == Configuration
@@ -53,8 +54,8 @@ Note: These are common terminology mappings only and might not represent every c
 |===
 |Field|Description
 |IP address of VPLEX Management Console|IP address or fully-qualified domain name of the VPLEX Management Console
-|User Name|User name for VPLEX CLI
-|Password|Password used for VPLEX CLI
+|User Name|User name for VPLEX/Metro
+|Password|Password used for VPLEX/Metro
 |Performance Remote IP Address|Performance Remote IP address of the VPLEX Management Console
 |Performance Remote User Name|Performance Remote user name of VPLEX Management Console
 |Performance Remote Password|Performance Remote Password of VPLEX Management Console
