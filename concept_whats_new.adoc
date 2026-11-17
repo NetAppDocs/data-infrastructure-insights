@@ -16,6 +16,19 @@ keywords: features
 [.lead]
 NetApp is continually improving and enhancing its products and services. Here are some of the latest features and functionalities available in Data Infrastructure Insights (formerly Cloud Insights).
 
+== November 2026
+
+=== Data Collector updates:
+
+The following data collectors are now available:
+
+*NVIDIA Base Command Manager (BCM) Collector (Preview)*
+Data Infrastructure Insights now offers a preview collector for NVIDIA Base Command Manager, giving you visibility into your HPC and AI clusters. Correlate cluster nodes and workloads with their underlying storage components, so you can spot I/O bottlenecks, find which jobs or nodes are driving load, and keep costly GPU resources from sitting idle waiting on data.
+
+*Proxmox VE Data Collector (Preview)*
+Data Infrastructure Insights now offers a preview collector for Proxmox VE. It gives you visibility into your Proxmox hosts and VMs, and the storage behind them, so you can pinpoint issues throughout the data path and troubleshoot faster.
+
+'''
 == September 2026
 
 === AI Assistant Visualizations
@@ -27,9 +40,9 @@ image:ai_assistant-column_graph.png[AI Assistant visualization]
 
 === Enhanced VM Analyzer filtering
 
-A new toggle in the VM Analyzer view allows you hide mounted volumes without a datastore, offering a cleaner view to simplify troubleshooting VMs.
+A new toggle in the VM Analyzer view allows you to hide mounted volumes without a datastore, offering a cleaner view to simplify troubleshooting VMs.
 
-image:vm_analyzer_datastore_only_view.png[datastore-only view slider]
+image:vm_analyzer_datastore_only_view.png[VM Analyzer showing the toggle that hides mounted volumes without a datastore]
 
 
 === UI update: User Data Edit Mode
@@ -40,9 +53,9 @@ Edit only when you need to. From a slideout panel, expand the asset details and 
  
 You can also open the asset landing page directly and select Edit in the upper-right corner.
 
-image:UserDataEdit-Slideout.png[Edit User Data in Slideout Panel-Pencil Icon, width=400]
+image:user_data_edit_slideout.png[Asset details slideout showing User Data in read-only mode with the pencil icon used to enter edit mode, width=400]
 
-image:UserDataEdit-LP.png[Landing Page Edit Mode, width=200]
+image:user_data_edit_lp.png[Asset landing page with User Data opened in edit mode and ready to save changes, width=200]
 
 '''
 
@@ -63,6 +76,8 @@ image:AI_assistant_access_button.png[AI Assistant access from anywhere, width=30
 
 
 '''
+
+
 == June 2026
 
 
