@@ -1,22 +1,19 @@
 ---
 sidebar: sidebar
 permalink: task_dashboard_example_VM_performance.html
-summary: Dashboard example highlighting virtual machine performance.
+summary: Step-by-step tutorial for creating a virtual machine performance dashboard with tables, charts, and widgets that compare VM and storage metrics.
 keywords: dashboard, widget, custom, example, virtual machine, vm, performance
 ---
 
 = Dashboard Example: Virtual Machine Performance
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-There are many challenges facing IT operations today. Administrators are being asked to do more with less, and having full visibility into your dynamic data centers is a must. In this example, we will show you how to create a dashboard with widgets that give you operational insights into the virtual machine (VM) performance on your tenant. By following this example, and creating widgets to target your own specific needs, you can do things like visualizing backend storage performance compared to frontend virtual machine performance, or viewing VM latency versus I/O demand.
-
-//Custom dashboards allow to you to prioritize efforts and identify resource availability. You can respond to the ebb and flow of workloads and minimize the time to detect and remediate emerging issues. Custom dashboards allow you the flexibility to create prioritized views into business-critical infrastructure, and are useful for identifying performance availability across multi-vendor technologies.
+Learn to create a comprehensive virtual machine performance dashboard through this step-by-step tutorial. You'll build widgets that visualize VM performance data, compare backend storage metrics with frontend VM performance, and analyze relationships between VM latency and I/O demand for better operational insights.
 
 .About this task
 

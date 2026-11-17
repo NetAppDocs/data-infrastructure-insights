@@ -6,15 +6,13 @@ summary: Presents Kubernetes workload dependencies and flows and highlights netw
 ---
 = Kubernetes Network Performance Monitoring and Map
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-The Kubernetes Network Performance Monitoring and Map feature simplifies troubleshooting by mapping dependencies between services (also called workloads), and provides real-time visibility into network performance latencies and anomalies to identify performance issues before they affect users.
-This capability helps organizations reduce overall costs by analyzing and auditing Kubernetes traffic flows.
+Data Infrastructure Insights provides comprehensive network performance monitoring and visual mapping for Kubernetes environments. Gain real-time visibility into workload dependencies, network latencies, and traffic flows to proactively identify performance issues and optimize costs through detailed traffic analysis.
 
 Key Features:
 • The Workload Map presents Kubernetes workload dependencies and flows and highlights network and performance issues.
