@@ -1,20 +1,19 @@
 ---
 sidebar: sidebar
 permalink: task_modify_delete_query.html
-summary: Modifying or deleting a query
+summary: Modify existing queries by changing criteria and columns, with flexible save options to update, rename, or create new versions, plus options to delete queries when no longer needed.
 keywords: query, queries, modify, edit, delete, remove
 ---
 
 = Modifying or Deleting a Query
 :hardbreaks:
-
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-You can change the criteria that are associated with a query when you want to change the search criteria for the assets that you are querying.
+Manage your queries effectively by modifying search criteria, adding or removing columns, and choosing from flexible save options. Update existing queries, create new versions, or delete queries that are no longer needed to keep your query library organized and current.
 
 == Modifying a Query
 

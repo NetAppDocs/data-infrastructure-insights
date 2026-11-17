@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_querying_assets.html
-summary: Query inventory assets and integration metrics to monitor, troubleshoot, and analyze performance across your entire infrastructure including storage, compute, and network resources.
+summary: Query physical and virtual infrastructure assets as well as integration metrics to monitor performance, troubleshoot issues, and create targeted views of your environment using granular search criteria.
 keywords: query, queries, Application, Datastore, Disk, Fabric, Generic Device, Host, Internal Volume, iSCSI, Network, Portal, Path, Port, Qtree, Quota, Share, Storage, Node, Pool, SVM, Switch, Tape, VMDK, Virtual Machine, VM, Volume, Zone, Member
 ---
 
@@ -13,7 +13,7 @@ keywords: query, queries, Application, Datastore, Disk, Fabric, Generic Device, 
 :imagesdir: ./media/
 
 [.lead]
-Query your infrastructure's physical and virtual assets to monitor performance, troubleshoot issues, and perform granular searches based on custom criteria like annotations. Data Infrastructure Insights enables queries across diverse asset types—from storage arrays and hosts to applications and virtual machines—along with integration metrics from Kubernetes, Docker, and ONTAP Advanced Data for comprehensive visibility. 
+Use queries to search and analyze your infrastructure assets and metrics at a granular level. Query physical and virtual inventory assets, integration data from Kubernetes and ONTAP, and performance metrics to monitor your environment, troubleshoot issues, and create targeted views based on your specific criteria. 
 
 Note that annotation rules, which automatically assign annotations to assets, require a query that has been shared with everyone. See below for more on sharing queries.
 

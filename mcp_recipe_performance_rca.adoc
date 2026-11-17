@@ -1,0 +1,123 @@
+---
+sidebar: sidebar
+permalink: mcp_recipe_performance_rca.html
+summary: Use this recipe to investigate a slow volume, datastore, virtual machine, Kubernetes workload, or other DII object by correlating performance metrics, alerts, and platform logs.
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant
+---
+
+= Troubleshoot performance
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Use this recipe to investigate a slow volume, datastore, virtual machine, Kubernetes workload, or other DII object by correlating performance metrics, alerts, and platform logs.
+
+NOTE: The DII MCP is a link:concept_preview_features.html[Preview] feature and is therefore subject to change.
+
+== Prerequisites
+
+* The affected resource name and approximate incident time.
+* A time range of 30 days or less.
+* A comparison period or known healthy baseline when possible.
+
+== Tools used
+
+* +ObjectService_getObjectTypes+
+* +ObjectService_getMetadataForObjectType+
+* +ObjectService_query+
+* +ObjectService_queryPerformanceMetricsForObjects+
+* +ObjectService_groupObjects+
+* +AlertsService_getMetadata+
+* +AlertsService_queryForAlerts+
+* +LogService_getLogTypes+
+* +LogService_getLogTypeMetadata+
+* +LogService_queryLogEvents+
+
+== Starter prompt
+
+[example]
+====
+Investigate why the volume `example-volume` was slow between 09:00 and 11:00 UTC. Discover the correct object type and valid metrics, compare latency, IOPS, and throughput over the incident window, inspect related active alerts and platform logs, and compare with a healthy period. Separate evidence from hypotheses and identify the next measurement needed.
+====
+
+== Agent workflow
+
+. Resolve the resource to an exact object type and identity.
+. Retrieve metadata for that object type.
+. Identify valid latency, operations, throughput, utilization, and capacity metrics.
+. Query current object attributes to establish placement and relationships.
+. Retrieve time series over:
++
+* The incident window
+* A comparable healthy window
+. Align timestamps and aggregation functions across metrics.
+. Retrieve alerts related to the resource, containing system, host, node, or storage pool.
+. Select relevant log streams, retrieve metadata, and search a narrow interval around metric changes.
+. Test plausible hypotheses:
++
+* Demand spike
+* Resource saturation
+* Storage or fabric errors
+* Capacity pressure
+* Host or VM contention
+* Collection gap
+. Report the most supported explanation and unresolved alternatives.
+
+== Evidence standards
+
+Label findings:
+
+* *Observed:* directly returned by a tool.
+* *Correlated:* independent signals changed in the same interval.
+* *Inferred:* a plausible explanation not yet proven.
+* *Unknown:* required evidence is unavailable.
+
+Correlation is not causation. A simultaneous alert should be treated as supporting evidence, not proof, unless the mechanism is established.
+
+== Metric guidance
+
+* Use `AVG` for broad behavior, but inspect `MAX` when short spikes matter.
+* Use `SUM` only for additive metrics.
+* Use `CHANGE` or +CHANGE_RATIO+ for counters or growth where metadata supports it.
+* Avoid comparing series with different bucket boundaries or units.
+* Filters apply before time-bucket aggregation.
+
+== Suggested output
+
+. Incident scope and timeline
+. Metric evidence
+. Alert and log evidence
+. Healthy-period comparison
+. Most likely explanation
+. Alternative hypotheses
+. Confidence and missing evidence
+. Recommended next check
+
+== Limits and privacy
+
+* Time-series windows cannot exceed 30 days.
+* The performance tool returns a limited number of series; narrow the filter before increasing the limit.
+* Omit sensitive raw log fields that do not contribute to the diagnosis.
+* Do not propose disruptive remediation without validating it through normal operational controls.
+
+== Follow-up prompts
+
+[example]
+====
+Compare maximum and average latency during the incident to the same hour on the previous healthy day.
+====
+
+[example]
+====
+Group related workloads by host or storage pool and identify whether the slowdown was isolated or shared.
+====
+
+[example]
+====
+Show the platform events within 15 minutes of the first latency increase.
+====
+
+link:mcp_recipe_overview.html[Back to recipes]
