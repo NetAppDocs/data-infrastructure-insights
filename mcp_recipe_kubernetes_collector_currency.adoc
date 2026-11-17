@@ -1,0 +1,100 @@
+---
+sidebar: sidebar
+permalink: mcp_recipe_kubernetes_collector_currency.html
+summary: Use this recipe to identify Kubernetes clusters whose DII operator or collection components are outdated, disabled, or stale.
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant
+---
+
+= Check Kubernetes collector currency
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Use this recipe to identify Kubernetes clusters whose DII operator or collection components are outdated, disabled, or stale.
+
+NOTE: The DII MCP is a link:concept_preview_features.html[Preview] feature and is therefore subject to change.
+
+== Prerequisites
+
+* Kubernetes collection is configured in the DII tenant.
+* Access to Kubernetes collector information.
+
+== Tools used
+
+* +OperatorsManagement_getKubernetesCollectors+
+* Optional: +AcquisitionUnitsService_getAcquisitionUnits+
+* Optional: +CollectorService_getDataSources+
+
+== Starter prompt
+
+[example]
+====
+Review DII Kubernetes collector currency. Group clusters by overall status, identify outdated or disabled operators and components, and flag stale last-reported timestamps. Do not display internal addresses or UUIDs.
+====
+
+== Agent workflow
+
+. List Kubernetes collectors.
+. Normalize each cluster into:
++
+* Up to date
+* Outdated
+* Disabled
+* Unknown
+. Compare:
++
+* Operator version
+* Network Performance and Map component version
+* Change Analysis component version
+. Convert the last-reported timestamp into the requested timezone.
+. Flag clusters that have not reported within the agreed freshness threshold.
+. Distinguish `N/A` from an outdated version:
++
+* `N/A` can mean the component is not installed, not enabled, or not applicable.
+. If reporting is stale, inspect related acquisition-unit and collector status where available.
+. Return a prioritized upgrade and investigation list.
+
+== Interpretation
+
+* *Outdated:* at least one installed component is behind the DII-expected version.
+* *Disabled:* collection is intentionally or administratively disabled.
+* *Stale reporting:* version data may not reflect the cluster's current state.
+* *N/A:* requires context; do not automatically classify it as a failure.
+
+The tool reports versions and status. It does not perform upgrades.
+
+== Suggested output
+
+. Cluster counts by status
+. Outdated clusters ranked by reporting freshness
+. Component-level version differences
+. Disabled or unavailable components
+. Recommended verification steps
+
+== Limits and privacy
+
+* Cluster names can be sensitive; use approved handling when sharing results.
+* Do not infer vulnerability exposure from version currency alone.
+* Validate upgrade compatibility and process outside this read-only workflow.
+
+== Follow-up prompts
+
+[example]
+====
+Which clusters have an outdated operator and have not reported in the last hour?
+====
+
+[example]
+====
+Separate clusters with an outdated Change Analysis component from clusters where that component is unavailable.
+====
+
+[example]
+====
+For stale clusters, check whether the associated DII collection infrastructure is healthy.
+====
+
+link:mcp_recipe_overview.html[Back to recipes]
