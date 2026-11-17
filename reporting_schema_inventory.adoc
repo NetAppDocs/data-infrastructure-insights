@@ -12,6 +12,9 @@ keywords: dwh, data warehouse, schema, reporting, inventory
 :linkattrs:
 :imagesdir: ./media/
 
+[.lead]
+The Inventory schema contains comprehensive asset and object data, including storage systems, hosts, applications, and annotations. This is the largest schema in the data warehouse and forms the foundation for asset management and infrastructure visibility.
+
 Source: *dwh_inventory* OData endpoint — Data Infrastructure Insights
 
 Tables found: *106* | Associations: *171* 
